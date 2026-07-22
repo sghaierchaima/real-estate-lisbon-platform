@@ -1,0 +1,6838 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-28T10:22:15Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 257950731,
+      "lat": 38.6944899,
+      "lon": -9.1984011,
+      "tags": {
+        "amenity": "ferry_terminal",
+        "cargo": "passengers;vehicle",
+        "ferry": "yes",
+        "name": "Belém",
+        "operator": "Transtejo Soflusa",
+        "public_transport": "stop_position",
+        "source": "https://ttsl.pt/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 477853299,
+      "lat": 38.6975196,
+      "lon": -9.2036756,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:floor": "0",
+        "addr:housenumber": "110",
+        "addr:postcode": "1300-085",
+        "addr:street": "Rua de Belém",
+        "amenity": "cafe",
+        "brand": "Starbucks",
+        "brand:wikidata": "Q37158",
+        "brand:wikipedia": "pt:Starbucks",
+        "changing_table": "yes",
+        "check_date": "2025-05-17",
+        "contact:email": "starbucks@starbucks.pt",
+        "contact:facebook": "StarbucksPortugal",
+        "contact:instagram": "starbucksptg",
+        "contact:phone": "+351 211 147 602",
+        "contact:tiktok": "starbucksportugal",
+        "contact:twitter": "starbucksPTG",
+        "cuisine": "coffee_shop",
+        "entrance:step_count": "0",
+        "entrance:width": "122cm",
+        "internet_access": "wlan",
+        "level": "0",
+        "name": "Starbucks",
+        "note": "Corredores estreitos, especialmente o da casa de banho",
+        "official_name": "Starbucks Coffee",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "ref": "1893-122524",
+        "source:contact": "website",
+        "source:opening_hours": "survey",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:fee": "no",
+        "toilets:level": "0",
+        "toilets:wheelchair": "no",
+        "toilets:wheelchair:support_brackets": "2",
+        "toilets:wheelchair:width": "75",
+        "website": "https://www.starbucks.pt/",
+        "wheelchair": "yes",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 578460076,
+      "lat": 38.6921999,
+      "lon": -9.2174961,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housename": "Forte do Bom Sucesso",
+        "addr:street": "Avenida de Brasília",
+        "check_date": "2024-05-02",
+        "fee": "yes",
+        "name": "Museu dos Combatentes do Ultramar",
+        "tourism": "museum",
+        "website": "https://www.ligacombatentes.org/museu-do-combatente-lisboa/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 593576649,
+      "lat": 38.7064514,
+      "lon": -9.2052254,
+      "tags": {
+        "addr:housenumber": "10-B",
+        "addr:postcode": "1400-352 Santa Maria de Belém",
+        "addr:street": "Rua Tristão Vaz",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 595010406,
+      "lat": 38.7070334,
+      "lon": -9.2079461,
+      "tags": {
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 595010409,
+      "lat": 38.7067277,
+      "lon": -9.2095152,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Spots"
+      }
+    },
+    {
+      "type": "node",
+      "id": 950506548,
+      "lat": 38.7033448,
+      "lon": -9.2115079,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Pêro de Alenquer",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 950508832,
+      "lat": 38.7024372,
+      "lon": -9.2062211,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 954061295,
+      "lat": 38.707032,
+      "lon": -9.2085988,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Mem Rodrigues",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "13103",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 954061317,
+      "lat": 38.6973385,
+      "lon": -9.2036753,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date": "2025-12-20",
+        "check_date:tactile_paving": "2025-12-20",
+        "departures_board": "realtime",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "mapillary": "256019326270406",
+        "name": "Mosteiro dos Jerónimos",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "9609",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 954068009,
+      "lat": 38.6951273,
+      "lon": -9.2074335,
+      "tags": {
+        "addr:street": "Praça do Império",
+        "amenity": "restaurant",
+        "name": "Este-Oeste",
+        "name:es": "Este-Oeste",
+        "opening_hours": "Mo-Su 10:00-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 954710515,
+      "lat": 38.6955321,
+      "lon": -9.2152348,
+      "tags": {
+        "addr:housenumber": "7",
+        "addr:postcode": "1400-342",
+        "addr:street": "Avenida da Torre de Belém",
+        "branch": "Restelo",
+        "brand": "Pingo Doce",
+        "brand:wikidata": "Q1575057",
+        "brand:wikipedia": "pt:Pingo Doce",
+        "contact:facebook": "pingodoce",
+        "contact:instagram": "pingodoce",
+        "contact:linkedin": "https://www.linkedin.com/company/pingo-doce",
+        "contact:phone": "+351 938 875 438",
+        "contact:tiktok": "pingodoce",
+        "contact:youtube": "pingodocept",
+        "name": "Pingo Doce",
+        "opening_hours": "Mo-Su 08:00-21:00; easter 08:00-14:00",
+        "ref": "438",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.pingodoce.pt/lojas/restelo/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1139052570,
+      "lat": 38.6960843,
+      "lon": -9.1984247,
+      "tags": {
+        "local_ref": "1",
+        "name": "Belém",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q801107",
+        "wikipedia": "pt:Estação Ferroviária de Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1204384734,
+      "lat": 38.6956474,
+      "lon": -9.20931,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:place": "Centro Cultural de Belém",
+        "addr:postcode": "1449-003",
+        "addr:street": "Praça do Império",
+        "charge": "15 EUR",
+        "contact:email": "mac@ccb.pt",
+        "contact:phone": "+351 213 612 400",
+        "fee": "yes",
+        "internet_access": "wlan",
+        "museum": "art",
+        "name": "Museu de Arte Contemporânea MAC/CCB",
+        "old_name": "Museu Coleção Berardo",
+        "opening_hours": "Mo-Su 10:00-19:00",
+        "short_name": "MAC;MAC/CCB",
+        "start_date": "2007-06-25",
+        "tourism": "museum",
+        "website": "https://www.ccb.pt/macccb/",
+        "wikidata": "Q2191491",
+        "wikimedia_commons": "Category:Museu Coleção Berardo",
+        "wikipedia": "pt:Museu de Arte Contemporânea do Centro Cultural de Belém",
+        "wikipedia:en": "en:Berardo Collection Museum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1213461384,
+      "lat": 38.6972539,
+      "lon": -9.2030676,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "89",
+        "addr:postcode": "1300-083",
+        "addr:street": "Rua de Belém",
+        "amenity": "pharmacy",
+        "contact:email": "farmaciadosjeronimos@gmail.com",
+        "contact:fax": "+351 213 030 298",
+        "contact:phone": "+351 213 011 454",
+        "contact:website": "http://www.farmaciabarral.com/farmacia-dos-jeronimos",
+        "dispensing": "yes",
+        "entrance:step_count": "0",
+        "entrance:width": "102cm",
+        "healthcare": "pharmacy",
+        "name": "Farmácia dos Jerónimos",
+        "note": "Responsável Técnico - Pedro Daniel Morais Aragonez",
+        "opening_hours": "Mo-Fr 08:00-21:00; Sa,Su 10:00-20:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1213461417,
+      "lat": 38.6984991,
+      "lon": -9.2184776,
+      "tags": {
+        "addr:city": "Belém",
+        "addr:housenumber": "11-C",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "pharmacy",
+        "contact:phone": "+351 213 031 650",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia do Restelo",
+        "opening_hours": "Mo-Sun 9-14 15-19"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1213598992,
+      "lat": 38.6975683,
+      "lon": -9.1959177,
+      "tags": {
+        "addr:city": "Santa Maria de Belém",
+        "addr:housenumber": "326;328",
+        "addr:postcode": "1300-340",
+        "addr:street": "Rua da Junqueira",
+        "amenity": "pharmacy",
+        "contact:email": "farmaciagomes@sapo.pt",
+        "contact:phone": "+351 213 638 193",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Gomes Sucessores",
+        "note": "Director Técnico - Vítor Manuel Gomes David Silva."
+      }
+    },
+    {
+      "type": "node",
+      "id": 1239241431,
+      "lat": 38.7021733,
+      "lon": -9.2016862,
+      "tags": {
+        "addr:city": "Ajuda",
+        "addr:housenumber": "45 B",
+        "addr:postcode": "1300-402",
+        "addr:street": "Travessa da Memória",
+        "amenity": "pharmacy",
+        "check_date:opening_hours": "2023-10-04",
+        "contact:email": "geral@farmaciamoura.pt",
+        "contact:phone": "+351 213 630 944",
+        "contact:website": "https://www.facebook.com/Farm%C3%A1cia-Moura-Ajuda-191566341005363/",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Moura",
+        "note": "Director Técnico - Joana Marques Monteiro Telhada.",
+        "opening_hours": "Mo-Fr 08:30-20:00; Sa 08:30-13:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1240465058,
+      "lat": 38.6962343,
+      "lon": -9.2195701,
+      "tags": {
+        "addr:city": "Santa Maria de Belém",
+        "addr:housenumber": "50;52",
+        "addr:postcode": "1400-290",
+        "addr:street": "Rua de Pedrouços",
+        "amenity": "pharmacy",
+        "contact:phone": "+351 213 010 280",
+        "contact:website": "www.facebook.com/Farmácia-Sociedade-Higilux-1640964636184095",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Sociedade Higilux",
+        "official_name": "Farmácia Sociedade Higilux, Lda."
+      }
+    },
+    {
+      "type": "node",
+      "id": 1302863147,
+      "lat": 38.6952351,
+      "lon": -9.2152776,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Café Império"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1302863154,
+      "lat": 38.6983591,
+      "lon": -9.2181686,
+      "tags": {
+        "addr:housenumber": "30 D",
+        "addr:postcode": "1400-140",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Restelo",
+        "brand": "Millennium bcp",
+        "brand:wikidata": "Q118581",
+        "brand:wikipedia": "pt:Banco Comercial Português",
+        "email": "restelo@millenniumbcp.pt",
+        "fax": "+351 210 098 901",
+        "name": "Millennium bcp",
+        "official_name": "Banco Comercial Português",
+        "official_name:en": "Portuguese Commercial Bank",
+        "official_name:es": "Banco Comercial Português",
+        "opening_hours": "Mo-Fr 08:30-15:30",
+        "operator": "Banco Comercial Português",
+        "operator:wikidata": "Q118581",
+        "operator:wikipedia": "pt:Banco Comercial Português",
+        "phone": "+351 211 126 690"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1302870977,
+      "lat": 38.6979527,
+      "lon": -9.219215,
+      "tags": {
+        "addr:city": "Belém",
+        "addr:housenumber": "7A",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "2good",
+        "opening_hours": "Mon-Sat 11:00-23:00 // Sun 11:00-17:00",
+        "phone": "+351213013867"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1302870987,
+      "lat": 38.6983756,
+      "lon": -9.218618,
+      "tags": {
+        "addr:city": "Belem",
+        "addr:housenumber": "9B",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "cafe",
+        "cuisine": "takeaway;portuguese",
+        "name": "Madalen AS",
+        "opening_hours": "Mon-Fri 10:00-19:00 // Sat 10:00-13:00",
+        "outdoor_seating": "yes",
+        "phone": "+351213011670"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1302870989,
+      "lat": 38.6981305,
+      "lon": -9.2189838,
+      "tags": {
+        "addr:housenumber": "7F",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop;ice_cream",
+        "name": "Café gelados Chile"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1302870990,
+      "lat": 38.6985484,
+      "lon": -9.2184023,
+      "tags": {
+        "addr:city": "Belem",
+        "addr:housenumber": "11B",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "alt_name": "O Careca",
+        "amenity": "cafe",
+        "cuisine": "cake;coffee_shop;portuguese",
+        "name": "Pastelaria Restelo (Careca)",
+        "opening_hours": "Mon-Sun 8:00-20:00 (closed wednesday)",
+        "outdoor_seating": "yes",
+        "phone": "+351 213 010 987",
+        "website": "https://pastelariaocareca.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1302870999,
+      "lat": 38.6976188,
+      "lon": -9.2190655,
+      "tags": {
+        "addr:city": "Belém",
+        "addr:housenumber": "24A",
+        "addr:postcode": "1400-140",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Vintequatro",
+        "opening_hours": "Mon-Sun 12:00-15:00 19:00-22:30",
+        "phone": "+351213011100"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1302881356,
+      "lat": 38.6931618,
+      "lon": -9.2135462,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Vella Café",
+        "outdoor_seating": "yes",
+        "phone": "+351213032778"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1302888592,
+      "lat": 38.6939185,
+      "lon": -9.2179776,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513403812,
+      "lat": 38.6978772,
+      "lon": -9.199268,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2026-02-08",
+        "name": "O Frade"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513471696,
+      "lat": 38.6975221,
+      "lon": -9.1983219,
+      "tags": {
+        "addr:housenumber": "472",
+        "addr:street": "Rua da Junqueira",
+        "amenity": "restaurant",
+        "changing_table": "yes",
+        "check_date": "2026-02-08",
+        "cuisine": "portuguese",
+        "entrance:kerb:height": "13cm",
+        "entrance:ramp": "no",
+        "entrance:step_count": "1",
+        "entrance:width": "117cm",
+        "internet_access": "wlan",
+        "name": "O Prado",
+        "note": "Não tem acesso para cadeiras de rodas nas casas de banho e os corredores são pequenos",
+        "opening_hours": "Mo-Sa 09:00-00:00",
+        "phone": "+351 21 364 2412",
+        "toilets": "yes",
+        "toilets:fee": "no",
+        "toilets:level": "0",
+        "toilets:wheelchair": "no",
+        "website": "oprado.pt",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513471725,
+      "lat": 38.6978821,
+      "lon": -9.1991346,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Solar do Embaixador"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513483126,
+      "lat": 38.6969463,
+      "lon": -9.2018334,
+      "tags": {
+        "amenity": "restaurant",
+        "contact:email": "info@florestadebelem.com",
+        "contact:phone": "+351 213 636 307",
+        "contact:website": "http://florestadebelem.com",
+        "cuisine": "regional",
+        "name": "Floresta de Belém",
+        "opening_hours": "11:00-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513483139,
+      "lat": 38.6971728,
+      "lon": -9.2021881,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "7",
+        "addr:postcode": "1300-082",
+        "addr:street": "Rua de Belém",
+        "amenity": "cafe",
+        "changing_table": "no",
+        "entrance:kerb:height": "10cm",
+        "entrance:ramp": "no",
+        "entrance:step_count": "3",
+        "entrance:width": "94cm",
+        "name": "Manteigaria \"Fábrica de Pastéis de Nata\"",
+        "note": "muito espaçoso por dentro",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "shop": "pastry",
+        "toilets": "no",
+        "toilets:wheelchair": "no",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513483152,
+      "lat": 38.6970982,
+      "lon": -9.201824,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "1",
+        "addr:postcode": "1300-004",
+        "addr:street": "Rua de Belém",
+        "amenity": "cafe",
+        "changing_table": "no",
+        "entrance:step_count": "0",
+        "entrance:width": "119cm",
+        "name": "Queijadas de Belem",
+        "note": "A pastelaria tem espaço para cadeira de rodas mas não tem casa de banho não com espaço suficiente",
+        "outdoor_seating": "yes",
+        "toilets": "yes",
+        "toilets:fee": "no",
+        "toilets:level": "0",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited",
+        "wheelchair:description": "Außenbereich voll berollbar! Zum Innenbereich muss eine Stufe von 10-15cm überwunden werden (Eingang von der Straße her). Zweite Glastür muss bei normalem Selbstfahrerrolli noch nicht mal geöffnet werden.",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513486157,
+      "lat": 38.6969812,
+      "lon": -9.2030577,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2022-10-12",
+        "name": "BemBelem",
+        "opening_hours": "Mo 10:00-15:30; We-Su 10:00-22:30",
+        "phone": "+351 21 364 8768"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513486164,
+      "lat": 38.6969791,
+      "lon": -9.2029505,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Cais de Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513486166,
+      "lat": 38.6969768,
+      "lon": -9.2030974,
+      "tags": {
+        "amenity": "restaurant",
+        "changing_table": "no",
+        "check_date": "2022-10-12",
+        "entrance:kerb:height": "14cm",
+        "entrance:ramp": "no",
+        "entrance:step_count": "1",
+        "entrance:width": "1cm",
+        "name": "Dina",
+        "note": "tem mesas no exterior",
+        "toilets": "yes",
+        "toilets:fee": "no",
+        "toilets:level": "0",
+        "toilets:wheelchair": "no",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513491510,
+      "lat": 38.6969476,
+      "lon": -9.2024892,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Jardins de Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513491516,
+      "lat": 38.6974047,
+      "lon": -9.2025475,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "42",
+        "addr:postcode": "1300-085",
+        "addr:street": "Rua de Belém",
+        "amenity": "restaurant",
+        "check_date": "2026-02-08",
+        "cuisine": "portuguese",
+        "name": "Adega de Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1513491520,
+      "lat": 38.6973886,
+      "lon": -9.2021584,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1300-084",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Belém",
+        "branch:type": "retail",
+        "brand": "Caixa Geral de Depósitos",
+        "brand:website": "https://www.cgd.pt/",
+        "brand:wikidata": "Q1026044",
+        "brand:wikipedia": "pt:Caixa Geral de Depósitos",
+        "check_date": "2026-02-08",
+        "contact:facebook": "caixageraldedepositos",
+        "contact:instagram": "caixageraldedepositos",
+        "contact:linkedin": "https://www.linkedin.com/company/caixageraldedepositos/",
+        "contact:phone": "+351 217 900 790",
+        "contact:youtube": "http://www.youtube.com/user/mediacgd",
+        "name": "Caixa Geral de Depósitos",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa,Su,PH off",
+        "operator": "Caixa Geral de Depósitos",
+        "operator:wikidata": "Q1026044",
+        "operator:wikipedia": "pt:Caixa Geral de Depósitos",
+        "ref": "1279",
+        "short_name": "CGD",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.cgd.pt/Corporativo/Rede-CGD/Pages/BELEM.aspx"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1514445079,
+      "lat": 38.6975445,
+      "lon": -9.2038683,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "126",
+        "addr:postcode": "1300-086",
+        "addr:street": "Rua de Belém",
+        "amenity": "restaurant",
+        "changing_table": "no",
+        "check_date": "2025-05-17",
+        "entrance:kerb:height": "3cm",
+        "entrance:ramp": "no",
+        "entrance:step_count": "1",
+        "entrance:width": "77cm",
+        "name": "Pão Pão Queijo Queijo",
+        "opening_hours": "Mo-Sa 10:00-23:30; Su 10:00-22:30",
+        "toilets": "yes",
+        "toilets:fee": "no",
+        "toilets:wheelchair": "no",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1514746862,
+      "lat": 38.6975878,
+      "lon": -9.1947481,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Chique de Belem II"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1558080346,
+      "lat": 38.7037423,
+      "lon": -9.199344,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "170",
+        "addr:postcode": "1300-017",
+        "addr:street": "Calçada da Ajuda",
+        "amenity": "pharmacy",
+        "contact:email": "geral@farmacialidiaalmeida.com",
+        "contact:phone": "+351 213 637 318",
+        "contact:website": "http://www.farmaciaemcasa.pt/index.php/quem-somos/8-quem-somos/156-farmacia-lidia-almeida",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Lídia Almeida",
+        "note": "Director Técnico - Salome Dionisio",
+        "opening_hours": "Mo-Fr 09:00-19:00; Sa 09:00-18:00",
+        "payment:cash": "yes",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:telephone_cards": "yes",
+        "payment:visa": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1587080575,
+      "lat": 38.7036103,
+      "lon": -9.1958947,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "16",
+        "addr:postcode": "1300-104",
+        "addr:street": "Travessa da Boa Hora à Ajuda",
+        "amenity": "clinic",
+        "emergency": "yes",
+        "healthcare": "clinic",
+        "name": "Centro Clinico da Ajuda",
+        "phone": "+351 213 630 409"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1600399977,
+      "lat": 38.6931832,
+      "lon": -9.2107106,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-05-02",
+        "name": "Mensagem",
+        "source": "knowledge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1600400066,
+      "lat": 38.700737,
+      "lon": -9.1998423,
+      "tags": {
+        "bus": "yes",
+        "name": "Calçada da Ajuda / Rua General João de Almeida",
+        "public_transport": "stop_position",
+        "short_name": "Cç. Ajuda / R. Gen. João Almeida"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1719291892,
+      "lat": 38.6951616,
+      "lon": -9.2137276,
+      "tags": {
+        "addr:city": "Lisboa (Belém)",
+        "addr:housenumber": "148 B",
+        "addr:postcode": "1400-031",
+        "addr:street": "Rua Bartolomeu Dias",
+        "amenity": "cafe",
+        "check_date": "2025-03-12",
+        "cuisine": "coffee;cocktail;wine",
+        "email": "geral@casuallounge.com",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Casual Lounge Caffe",
+        "opening_hours": "Tu-Fr 12:00-02:00;Sa 15:00-02:00;Su 15:00-00:00",
+        "phone": "+351 21 301 9024",
+        "website": "https://www.casuallounge.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1723900865,
+      "lat": 38.706206,
+      "lon": -9.2127821,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Restelo (EPUL)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1846915409,
+      "lat": 38.695694,
+      "lon": -9.2126281,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1962025505,
+      "lat": 38.6950509,
+      "lon": -9.2127147,
+      "tags": {
+        "addr:housenumber": "65",
+        "addr:street": "Rua Bartolomeu Dias",
+        "amenity": "restaurant",
+        "cuisine": "international",
+        "email": "mfr@descobre.com.pt",
+        "name": "Descobre",
+        "phone": "+351 218 056 461",
+        "website": "https://www.descobre.com.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1962025506,
+      "lat": 38.695076,
+      "lon": -9.2125806,
+      "tags": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1977650560,
+      "lat": 38.6935337,
+      "lon": -9.2133407,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Yellow bus tour",
+        "name:en": "yellow bus tour (12,3)",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2295708194,
+      "lat": 38.7060049,
+      "lon": -9.2085546,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "35 B",
+        "addr:postcode": "1400-203",
+        "addr:street": "Avenida da Ilha da Madeira",
+        "brand": "Supercor",
+        "brand:wikidata": "Q6135841",
+        "brand:wikipedia": "es:Supercor",
+        "name": "Supercor",
+        "operator": "El Corte Inglés",
+        "phone": "+351 21 304 2100",
+        "shop": "supermarket",
+        "website": "https://www.elcorteingles.pt/informacao/localizacao_horarios.asp"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2473018001,
+      "lat": 38.6979789,
+      "lon": -9.2191761,
+      "tags": {
+        "addr:city": "Belém",
+        "addr:housenumber": "7B",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "restaurant",
+        "branch": "Restelo",
+        "brand": "Hamburgueria do Bairro",
+        "cuisine": "burger",
+        "name": "Hamburgueria do Bairro",
+        "opening_hours": "Mon-Sun 12:00-24:00",
+        "phone": "+351 213 010 610",
+        "website": "https://www.hamburgueriadobairro.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2483762168,
+      "lat": 38.6943523,
+      "lon": -9.206488,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-05-02",
+        "name": "Nosolo Italia Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2484443621,
+      "lat": 38.6977949,
+      "lon": -9.2045224,
+      "tags": {
+        "bus": "yes",
+        "name": "Mosteiro dos Jerónimos",
+        "name:TML": "Mosteiro Jerónimos",
+        "network": "Carris;Carris Metropolitana",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2491785179,
+      "lat": 38.6973662,
+      "lon": -9.2070794,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housename": "Mosteiro dos Jerónimos",
+        "addr:postcode": "1400-206",
+        "addr:street": "Praça do Império",
+        "check_date": "2024-05-04",
+        "contact:email": "geral@mnarqueologia.dgpc.pt",
+        "contact:fax": "+351 213 620 016",
+        "contact:phone": "+351 213 620 000;+351 213 620 025",
+        "contact:website": "www.museuarqueologia.pt",
+        "description": "Instalado em 1893, possui um acervo vastíssimo e diversificado dividido em núcleos: arqueologia, etnografia, numismática, epigrafia pré-latina e latina, escultura, documentos escritos, mosaicos e antropologia física. Na sala do tesouro encontra-se u",
+        "fee": "yes",
+        "name": "Museu Nacional de Arqueologia",
+        "name:de": "Nationalmuseum für Archäologie",
+        "name:en": "National Archaeology Museum",
+        "name:es": "Museo Nacional de Arqueología",
+        "name:it": "Museo archeologico nazionale",
+        "name:pt": "Museu Nacional de Arqueologia",
+        "note": "Currently closed (5/2024)",
+        "opening_hours": "Tu-Su 10:00-18:00; Jan 01,May 01,Jun 13,Dec 25 off;easter off",
+        "source": "dadosabertos.cm-lisboa.pt",
+        "source:name": "Museu",
+        "source:pkey": "d502d173-87bd-4a4a-8009-76fc941feb63",
+        "start_date": "1893",
+        "tourism": "museum",
+        "website": "https://www.mnarqueologia-ipmuseus.pt/",
+        "wikidata": "Q1954384",
+        "wikimedia_commons": "Category:Museu Nacional de Arqueologia",
+        "wikipedia": "pt:Museu Nacional de Arqueologia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2803622903,
+      "lat": 38.7040011,
+      "lon": -9.2064281,
+      "tags": {
+        "bus": "yes",
+        "name": "Estádio do Restelo",
+        "name:TML": "Estádio Restelo",
+        "network": "Carris;Carris Metropolitana",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "stop_position",
+        "ref": "13107"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3157300013,
+      "lat": 38.6976284,
+      "lon": -9.2024813,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "10",
+        "addr:postcode": "1300-390",
+        "addr:street": "Travessa Marta Pinto",
+        "amenity": "restaurant",
+        "cuisine": "portuguese;wine bar",
+        "name": "Enoteca De Belém",
+        "opening_hours": "Tu-Su 13:00-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3592514414,
+      "lat": 38.69511,
+      "lon": -9.2145416,
+      "tags": {
+        "addr:city": "Lisboa (Belém)",
+        "addr:housenumber": "172 E - F",
+        "addr:postcode": "1400-031",
+        "addr:street": "Rua Bartolomeu Dias",
+        "amenity": "restaurant",
+        "cuisine": "regional;seafood",
+        "name": "Nune’s Real Marisqueira",
+        "opening_hours": "Tu-Su 12:00-00:00",
+        "phone": "+351 213 019 899"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3897929818,
+      "lat": 38.6919435,
+      "lon": -9.2139781,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-05-02",
+        "name": "Nacional",
+        "name:pt": "Nacional"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4111229196,
+      "lat": 38.696682,
+      "lon": -9.1991111,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Estação Fluvial Belém",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "network:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "operator:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "public_transport": "platform",
+        "ref": "04102",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4226590369,
+      "lat": 38.6949778,
+      "lon": -9.2134616,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Céu na Boca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4226590370,
+      "lat": 38.6947665,
+      "lon": -9.2130346,
+      "tags": {
+        "addr:housenumber": "24",
+        "addr:postcode": "1400-035",
+        "addr:street": "Rua da Praia do Bom-Sucesso",
+        "amenity": "restaurant",
+        "name": "O Recanto",
+        "opening_hours": "Mo-Sa 12:00-17:00, Su 12:00-17:00",
+        "phone": "+351 21 301 2776"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4226590371,
+      "lat": 38.6947688,
+      "lon": -9.2140787,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2025-03-12",
+        "cuisine": "portuguese",
+        "internet_access": "wlan",
+        "name": "Restaurante O Navegador"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4287730566,
+      "lat": 38.7034989,
+      "lon": -9.1956536,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "17C",
+        "addr:postcode": "1300-429",
+        "addr:street": "Travessa da Boa Hora à Ajuda",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Ajuda",
+        "brand": "Caixa Geral de Depósitos",
+        "brand:website": "https://www.cgd.pt/",
+        "brand:wikidata": "Q1026044",
+        "brand:wikipedia": "pt:Caixa Geral de Depósitos",
+        "name": "Caixa Geral de Depósitos",
+        "opening_hours": "24/7",
+        "operator": "Caixa Geral de Depósitos",
+        "operator:wikidata": "Q1026044",
+        "operator:wikipedia": "pt:Caixa Geral de Depósitos",
+        "short_name": "CGD"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4317295391,
+      "lat": 38.6980136,
+      "lon": -9.1954001,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Cafetaria Snack Bar Ice"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4354488215,
+      "lat": 38.6962699,
+      "lon": -9.1967473,
+      "tags": {
+        "local_ref": "2",
+        "name": "Belém",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q801107",
+        "wikipedia": "pt:Estação Ferroviária de Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4377471013,
+      "lat": 38.7047423,
+      "lon": -9.1987076,
+      "tags": {
+        "name": "Rua da Bica do Marquês",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "ref": "13303",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4377537610,
+      "lat": 38.7047501,
+      "lon": -9.1989303,
+      "tags": {
+        "name": "Rua da Bica do Marquês",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "ref": "13304",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379446142,
+      "lat": 38.6973505,
+      "lon": -9.2034785,
+      "tags": {
+        "name": "Mosteiro dos Jerónimos",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "ref": "9609",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379446153,
+      "lat": 38.6974103,
+      "lon": -9.194079,
+      "tags": {
+        "name": "Altinho (MAAT)",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379512109,
+      "lat": 38.6960854,
+      "lon": -9.2195628,
+      "tags": {
+        "name": "Pedrouços",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379525900,
+      "lat": 38.6961102,
+      "lon": -9.2097069,
+      "tags": {
+        "name": "Centro Cultural de Belém",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379525901,
+      "lat": 38.6950179,
+      "lon": -9.2155453,
+      "tags": {
+        "name": "Largo da Princesa",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "short_name": "Lg. Princesa",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379547128,
+      "lat": 38.6974005,
+      "lon": -9.1988495,
+      "tags": {
+        "name": "Belém",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379567939,
+      "lat": 38.6974979,
+      "lon": -9.1959787,
+      "tags": {
+        "name": "Altinho (MAAT)",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379567940,
+      "lat": 38.6974412,
+      "lon": -9.1985467,
+      "tags": {
+        "name": "Belém",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379567943,
+      "lat": 38.6972178,
+      "lon": -9.2050619,
+      "tags": {
+        "name": "Mosteiro dos Jerónimos",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "toilets:wheelchair": "no",
+        "tram": "yes",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379571686,
+      "lat": 38.6962828,
+      "lon": -9.2092937,
+      "tags": {
+        "name": "Centro Cultural de Belém",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379571687,
+      "lat": 38.6950278,
+      "lon": -9.2145554,
+      "tags": {
+        "name": "Largo da Princesa",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "short_name": "Lg. Princesa",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4470320314,
+      "lat": 38.6955153,
+      "lon": -9.2118377,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "94",
+        "addr:postcode": "1400-038",
+        "addr:street": "Rua Bartolomeu Dias",
+        "amenity": "cafe",
+        "check_date": "2026-02-08",
+        "contact:instagram": "Obolodamarta",
+        "cuisine": "cake;deli",
+        "level": "0",
+        "name": "O Bolo da Marta",
+        "opening_hours": "Mo-Sa 11:00-18:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4755305622,
+      "lat": 38.6974199,
+      "lon": -9.2018903,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:housenumber": "2-8",
+        "addr:postcode": "1300-085",
+        "addr:street": "Rua de Belém",
+        "amenity": "restaurant",
+        "changing_table": "no",
+        "cuisine": "portuguese",
+        "email": "belem2a8@gmail.com",
+        "entrance:kerb:height": "0cm",
+        "entrance:ramp": "no",
+        "entrance:step_count": "0",
+        "entrance:width": "83cm",
+        "internet_access": "wlan",
+        "mobile": "+351968840494",
+        "name": "Belém 2a8  \"Bistrô\"",
+        "note": "tem mesas exteriores",
+        "phone": "+351213639055",
+        "source": "survey",
+        "toilets": "yes",
+        "toilets:fee": "no",
+        "toilets:level": "0",
+        "toilets:wheelchair": "no",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4783523494,
+      "lat": 38.6951141,
+      "lon": -9.2144664,
+      "tags": {
+        "addr:housenumber": "172B",
+        "addr:street": "Rua Bartolomeu Dias",
+        "amenity": "pharmacy",
+        "contact:phone": "+351 218 685 264",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Torre de Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4919568823,
+      "lat": 38.7044403,
+      "lon": -9.1992719,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "212-216",
+        "addr:postcode": "1300-017",
+        "addr:street": "Calçada da Ajuda",
+        "name": "Minimercado São José da Ajuda",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5075378123,
+      "lat": 38.7040232,
+      "lon": -9.1993232,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "184-186",
+        "addr:postcode": "1300-146",
+        "addr:street": "Calcada Ajuda",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Churrasqueira do Marques",
+        "name:pt": "Churrasqueira do Marques",
+        "opening_hours": "Mo-Su 12:00-15:30 19:00-22:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5087468923,
+      "lat": 38.6994129,
+      "lon": -9.2058621,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "7 A",
+        "addr:postcode": "1400-210",
+        "addr:street": "Rua dos Jerónimos",
+        "alt_name": "Centro Cultural Casapiano",
+        "contact:email": "centro.cultural@casapia.pt",
+        "contact:phone": "+351 213 610 830",
+        "fee": "no",
+        "name": "Museu do Centro Cultural Casapiano",
+        "opening_hours": "Mo-Sa 09:30-18:00",
+        "start_date": "2000",
+        "tourism": "museum",
+        "website": "https://www.visitlisboa.com/pt-pt/locais/centro-cultural-casapiano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5087468970,
+      "lat": 38.6943666,
+      "lon": -9.2118953,
+      "tags": {
+        "addr:housenumber": "166",
+        "addr:street": "Avenida da Índia",
+        "contact:email": "centro.arqueologia@cm-lisboa.pt",
+        "contact:phone": "+351 218 172 180",
+        "fee": "no",
+        "museum": "archaeological",
+        "name": "Centro de Arqueologia de Lisboa",
+        "opening_hours": "Mo-Fr 09:00-12:30,14:00-17:30",
+        "start_date": "2013-06-13",
+        "tourism": "museum",
+        "website": "https://informacoeseservicos.lisboa.pt/contactos/diretorio-da-cidade/centro-de-arqueologia-de-lisboa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5118549217,
+      "lat": 38.7048825,
+      "lon": -9.1994155,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "197",
+        "addr:postcode": "1300-017",
+        "addr:street": "Calçada da Ajuda",
+        "addr:unit": "A",
+        "amenity": "restaurant",
+        "name": "Restaurante Andorinhas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5150663698,
+      "lat": 38.6957445,
+      "lon": -9.1953987,
+      "tags": {
+        "fee": "yes",
+        "name": "MAAT - A Fábrica da Eletricidade",
+        "name:en": "MAAT - Tejo Power Station",
+        "operator": "MAAT",
+        "tourism": "museum",
+        "website": "https://www.maat.pt/pt/event/fabrica-da-eletricidade",
+        "wikidata": "Q1262183",
+        "wikimedia_commons": "Category:Museu da Electricidade",
+        "wikipedia": "pt:Museu da Eletricidade (Lisboa)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5150663708,
+      "lat": 38.6962217,
+      "lon": -9.1983524,
+      "tags": {
+        "alt_name": "Estação Fluvial Belém",
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Estação Fluvial Belém",
+        "name:TML": "Estação Fluvial Belém",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q1045108;Q111611112",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "04101",
+        "ref:TML": "060384",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5278779954,
+      "lat": 38.705716,
+      "lon": -9.2075525,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:housenumber": "28-A",
+        "addr:postcode": "1400-204",
+        "addr:street": "Avenida Ilha da Madeira",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Lisboa - Restelo",
+        "brand": "Santander",
+        "brand:website": "https://www.santander.pt/",
+        "brand:wikidata": "Q4854116",
+        "brand:wikipedia": "pt:Banco Santander Portugal",
+        "cash_in": "yes",
+        "cash_out": "yes",
+        "contact:email": "lisboa.restelo@santander.pt",
+        "contact:facebook": "santanderpt",
+        "contact:instagram": "santanderpt",
+        "contact:linkedin": "https://www.linkedin.com/company/santanderpt/",
+        "contact:phone": "+351 213 031 430",
+        "contact:twitter": "santanderpt",
+        "contact:youtube": "@santanderpt",
+        "internet_access": "wlan",
+        "language:en": "yes",
+        "language:es": "yes",
+        "language:pt": "yes",
+        "name": "Santander",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa-Su off; Jan 01,Apr 25,May 25,Jun 01,Jun 26,Aug 10,Aug 24,Oct 15,Nov 05,Dec 01,Dec 08,Dec 25 off",
+        "operator": "Banco Santander (Portugal)",
+        "operator:wikidata": "Q4854116",
+        "operator:wikipedia": "pt:Banco Santander Portugal",
+        "ref": "376",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.santander.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5371177857,
+      "lat": 38.6952353,
+      "lon": -9.2077213,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Topo Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5546701237,
+      "lat": 38.7014089,
+      "lon": -9.2062982,
+      "tags": {
+        "bus": "yes",
+        "name": "Bairro das Terras do Forno",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5592126060,
+      "lat": 38.6965775,
+      "lon": -9.2086786,
+      "tags": {
+        "bus": "yes",
+        "email": "contact@caravelonwheels.com",
+        "highway": "bus_stop",
+        "mapillary": "762276451144609",
+        "name": "Caravel on Wheels Belem Bus Stop - City tour",
+        "name:pt": "Caravel on Wheels Belém - tour guiado por vídeo no autocarro caravela",
+        "operator": "Caravel on Wheels",
+        "phone": "+351215955155",
+        "pole": "yes",
+        "public_transport": "platform",
+        "shelter": "no",
+        "survey:date": "2018-05-17",
+        "website": "https://www.caravelonwheels.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5631421804,
+      "lat": 38.7056414,
+      "lon": -9.2047567,
+      "tags": {
+        "addr:housenumber": "18 C",
+        "addr:postcode": "1400-191",
+        "addr:street": "Rua Gonçalves Zarco",
+        "email": "geral@villabio.pt",
+        "facebook": "facebook.com/VillaBio.pt/",
+        "name": "VillaBio",
+        "opening_hours": "Mo-Fr 09:30-20:00;Sa 11:00-16:00",
+        "organic": "only",
+        "phone": "+351 213 011 518",
+        "shop": "supermarket",
+        "start_date": "2015",
+        "website": "https://biomiosotis.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5743626284,
+      "lat": 38.6978821,
+      "lon": -9.2043908,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-05-04",
+        "fixme": "Check tag: it's more like a bar with cafe and some food (sandwitchs and salads)",
+        "name": "BANANACAFE"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5900602993,
+      "lat": 38.6973778,
+      "lon": -9.2036715,
+      "tags": {
+        "bus": "yes",
+        "name": "Mosteiro dos Jerónimos",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "9609"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5900603009,
+      "lat": 38.6974795,
+      "lon": -9.1959787,
+      "tags": {
+        "bus": "yes",
+        "name": "Altinho (MAAT)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5934945913,
+      "lat": 38.6958803,
+      "lon": -9.2188378,
+      "tags": {
+        "name": "Pedrouços",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5934945923,
+      "lat": 38.695016,
+      "lon": -9.2145564,
+      "tags": {
+        "bus": "yes",
+        "name": "Largo da Princesa",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Lg. Princesa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5934945935,
+      "lat": 38.6962689,
+      "lon": -9.209286,
+      "tags": {
+        "bus": "yes",
+        "name": "Centro Cultural de Belém",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5951443385,
+      "lat": 38.696931,
+      "lon": -9.2025832,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Le comptoir Parisien"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6214544881,
+      "lat": 38.6969988,
+      "lon": -9.2088836,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1400-206",
+        "addr:street": "Praça do Império",
+        "amenity": "cafe",
+        "name": "Cafetaria Navy Museum",
+        "name:pt": "Cafetaria do Museu de Marinha",
+        "opening_hours": "Mo-Su 10:00-17:00",
+        "phone": "+351 21 097 7387",
+        "website": "https://www.facebook.com/cafetariamuseumarinha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6216727635,
+      "lat": 38.6971218,
+      "lon": -9.2080263,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "1400-206",
+        "addr:place": "Belém",
+        "addr:postcode": "1400-206",
+        "addr:street": "Praça do Império",
+        "check_date": "2024-05-04",
+        "email": "geral@museumarinha.pt",
+        "fee": "yes",
+        "name": "Museu de Marinha",
+        "name:de": "Marinemuseum",
+        "name:en": "Navy Museum",
+        "name:es": "Museo de la Marina",
+        "name:fr": "Musée de la Marine (Lisbonne)",
+        "name:pl": "Muzeum Morskie w Lizbonie",
+        "name:ru": "Морской музей (Лиссабон)",
+        "opening_hours": "May 01-Sep 30 10:00-18:00; Oct 01-Apr 30 10:00-17:00; easter off; Jan 01,May 01,Dec 25 off",
+        "phone": "+351 21 097 7390",
+        "start_date": "1962-08-15",
+        "tourism": "museum",
+        "website": "https://ccm.marinha.pt/pt/museu",
+        "wheelchair": "yes",
+        "wikidata": "Q1540177",
+        "wikimedia_commons": "Category:Museu de Marinha de Lisboa",
+        "wikipedia": "pt:Museu de Marinha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6295314772,
+      "lat": 38.6961779,
+      "lon": -9.1975875,
+      "tags": {
+        "name": "Belém",
+        "nat_ref": "69054",
+        "official_name": "Apeadeiro de Belém",
+        "operator": "Infraestruturas de Portugal",
+        "operator:short": "IP",
+        "operator:wikidata": "Q20730106",
+        "public_transport": "station",
+        "railway": "halt",
+        "railway:ref": "BEL",
+        "train": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q801107",
+        "wikimedia_commons": "Category:Belém train station",
+        "wikipedia": "pt:Estação Ferroviária de Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6296909186,
+      "lat": 38.7047545,
+      "lon": -9.1987098,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua da Bica do Marquês",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "ref": "13303",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389504944,
+      "lat": 38.6960591,
+      "lon": -9.2195772,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Pedrouços",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "13203",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389504945,
+      "lat": 38.6961032,
+      "lon": -9.2195532,
+      "tags": {
+        "bus": "yes",
+        "name": "Pedrouços",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389528185,
+      "lat": 38.6950325,
+      "lon": -9.2155448,
+      "tags": {
+        "bus": "yes",
+        "name": "Largo da Princesa",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Lg. Princesa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389528187,
+      "lat": 38.6961269,
+      "lon": -9.2097158,
+      "tags": {
+        "bus": "yes",
+        "name": "Centro Cultural de Belém",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389528188,
+      "lat": 38.6973233,
+      "lon": -9.2034816,
+      "tags": {
+        "alt_name": "Mosteiro Jerónimos",
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2023-02-09",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Mosteiro dos Jerónimos",
+        "name:TML": "Mosteiro Jerónimos",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref:TML": "060099",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389528189,
+      "lat": 38.6973634,
+      "lon": -9.2034771,
+      "tags": {
+        "bus": "yes",
+        "name": "Mosteiro dos Jerónimos",
+        "name:TML": "Mosteiro Jerónimos",
+        "network": "Carris;Carris Metropolitana",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389528190,
+      "lat": 38.6971205,
+      "lon": -9.2007576,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Belém",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref:signed": "no",
+        "route_ref": "201;727;728;729;751",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389528191,
+      "lat": 38.6971536,
+      "lon": -9.2007663,
+      "tags": {
+        "bus": "yes",
+        "name": "Belém",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389528192,
+      "lat": 38.6970925,
+      "lon": -9.200936,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Belém",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389528193,
+      "lat": 38.6971207,
+      "lon": -9.2009421,
+      "tags": {
+        "bus": "yes",
+        "name": "Belém",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389529905,
+      "lat": 38.6984915,
+      "lon": -9.1994811,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Belém - Calçada da Ajuda",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "04104",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389529906,
+      "lat": 38.6984847,
+      "lon": -9.1995631,
+      "tags": {
+        "bus": "yes",
+        "name": "Belém - Calçada da Ajuda",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575240,
+      "lat": 38.7007334,
+      "lon": -9.1997892,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2026-02-08",
+        "highway": "bus_stop",
+        "name": "Calçada da Ajuda / Rua General João de Almeida",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "short_name": "Cç. Ajuda / R. Gen. João Almeida",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575241,
+      "lat": 38.7029658,
+      "lon": -9.1994972,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2023-10-03",
+        "highway": "bus_stop",
+        "name": "Calçada da Ajuda / Travessa da Boa Hora",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575242,
+      "lat": 38.7029714,
+      "lon": -9.199552,
+      "tags": {
+        "bus": "yes",
+        "name": "Calçada da Ajuda / Travessa da Boa Hora",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575243,
+      "lat": 38.7044017,
+      "lon": -9.1993349,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rua da Bica do Marquês",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "13308",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575244,
+      "lat": 38.7044039,
+      "lon": -9.1993846,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua da Bica do Marquês",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575245,
+      "lat": 38.7057589,
+      "lon": -9.199869,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua do Jardim Botânico",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575246,
+      "lat": 38.7057307,
+      "lon": -9.1998663,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua do Jardim Botânico",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575248,
+      "lat": 38.7057334,
+      "lon": -9.2022813,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2023-09-21",
+        "highway": "bus_stop",
+        "name": "Escola Paula Vicente",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575249,
+      "lat": 38.7057323,
+      "lon": -9.202351,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola Paula Vicente",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575250,
+      "lat": 38.7056431,
+      "lon": -9.2024426,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2023-09-21",
+        "highway": "bus_stop",
+        "name": "Escola Paula Vicente",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389575251,
+      "lat": 38.7056431,
+      "lon": -9.2023522,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola Paula Vicente",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389770827,
+      "lat": 38.7056945,
+      "lon": -9.199907,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua do Jardim Botânico",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "13301",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389770828,
+      "lat": 38.7057303,
+      "lon": -9.1999037,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua do Jardim Botânico",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "13301"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389770830,
+      "lat": 38.7042112,
+      "lon": -9.199452,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rua da Bica do Marquês",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389770831,
+      "lat": 38.7042079,
+      "lon": -9.1994089,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua da Bica do Marquês",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389770832,
+      "lat": 38.7012592,
+      "lon": -9.1998296,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Calçada da Ajuda / Rua General João de Almeida",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "short_name": "Cç. Ajuda / R. Gen. João Almeida",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389770833,
+      "lat": 38.7012552,
+      "lon": -9.1997747,
+      "tags": {
+        "bus": "yes",
+        "name": "Calçada da Ajuda / Rua General João de Almeida",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Cç. Ajuda / R. Gen. João Almeida"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389775450,
+      "lat": 38.6978895,
+      "lon": -9.1994769,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Belém - Calçada da Ajuda",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389775451,
+      "lat": 38.6978985,
+      "lon": -9.1994239,
+      "tags": {
+        "bus": "yes",
+        "name": "Belém - Calçada da Ajuda",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389775453,
+      "lat": 38.6972401,
+      "lon": -9.2050706,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Mosteiro dos Jerónimos",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389775454,
+      "lat": 38.6972035,
+      "lon": -9.2050552,
+      "tags": {
+        "bus": "yes",
+        "name": "Mosteiro dos Jerónimos",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389778289,
+      "lat": 38.6963041,
+      "lon": -9.2093041,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Centro Cultural de Belém",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "network:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "operator:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389782644,
+      "lat": 38.6950559,
+      "lon": -9.2145565,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Largo da Princesa",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "network:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "operator:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "public_transport": "platform",
+        "ref": "13206",
+        "shelter": "yes",
+        "short_name": "Lg. Princesa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389782645,
+      "lat": 38.6959249,
+      "lon": -9.2188132,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Pedrouços",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6389782646,
+      "lat": 38.6958683,
+      "lon": -9.2188443,
+      "tags": {
+        "bus": "yes",
+        "name": "Pedrouços",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6399124526,
+      "lat": 38.6968735,
+      "lon": -9.2201265,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Instituto de Altos Estudos Militares",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "short_name": "Inst. Altos Estudos Militares"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6399124528,
+      "lat": 38.6969017,
+      "lon": -9.2201771,
+      "tags": {
+        "bus": "yes",
+        "name": "Instituto de Altos Estudos Militares",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Inst. Altos Estudos Militares"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6399158915,
+      "lat": 38.6987569,
+      "lon": -9.217846,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua São Francisco Xavier",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "network:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "operator:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "public_transport": "platform",
+        "ref": "09716",
+        "shelter": "yes",
+        "short_name": "R. S. Francisco Xavier"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6399158916,
+      "lat": 38.6987986,
+      "lon": -9.2178982,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua São Francisco Xavier",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "R. S. Francisco Xavier"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6399158917,
+      "lat": 38.7009317,
+      "lon": -9.2163742,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Dom Vasco da Gama",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Av. D. Vasco Gama"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6399158918,
+      "lat": 38.7009593,
+      "lon": -9.2163207,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Dom Vasco da Gama",
+        "network": "Carris",
+        "operator": "Carris",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "09712",
+        "shelter": "yes",
+        "short_name": "Av. D. Vasco Gama"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6399583384,
+      "lat": 38.7014151,
+      "lon": -9.2167965,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Dom Vasco da Gama",
+        "network": "Carris",
+        "operator": "Carris",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "09711",
+        "shelter": "yes",
+        "short_name": "Av. D. Vasco Gama"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6399583685,
+      "lat": 38.701433,
+      "lon": -9.2167254,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Dom Vasco da Gama",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Av. D. Vasco Gama"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6399583687,
+      "lat": 38.6991358,
+      "lon": -9.2175663,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua São Francisco Xavier",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "network:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "operator:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "public_transport": "platform",
+        "ref": "09717",
+        "shelter": "yes",
+        "short_name": "R. S. Francisco Xavier"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412355466,
+      "lat": 38.6974262,
+      "lon": -9.1985497,
+      "tags": {
+        "bus": "yes",
+        "name": "Belém",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412359055,
+      "lat": 38.6978144,
+      "lon": -9.2044877,
+      "tags": {
+        "alt_name": "Mosteiro Jerónimos",
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Mosteiro dos Jerónimos",
+        "name:TML": "Mosteiro Jerónimos",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref:TML": "060103",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412367706,
+      "lat": 38.6998151,
+      "lon": -9.2059203,
+      "tags": {
+        "alt_name": "R Jerónimos",
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Rua dos Jerónimos",
+        "name:TML": "R Jerónimos",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref:TML": "060097",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412367707,
+      "lat": 38.6998363,
+      "lon": -9.2058295,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua dos Jerónimos",
+        "name:TML": "R Jerónimos",
+        "network": "Carris;Carris Metropolitana",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412367708,
+      "lat": 38.6998835,
+      "lon": -9.2057441,
+      "tags": {
+        "alt_name": "R Jerónimos",
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Rua dos Jerónimos",
+        "name:TML": "R Jerónimos",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref:TML": "060098",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412367709,
+      "lat": 38.699856,
+      "lon": -9.2058373,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua dos Jerónimos",
+        "name:TML": "R Jerónimos",
+        "network": "Carris;Carris Metropolitana",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412378940,
+      "lat": 38.7005389,
+      "lon": -9.209766,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida do Restelo (Estádio)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412378941,
+      "lat": 38.7004914,
+      "lon": -9.2097441,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida do Restelo (Estádio)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412378942,
+      "lat": 38.7003613,
+      "lon": -9.2099893,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida do Restelo (Estádio)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412378943,
+      "lat": 38.7004175,
+      "lon": -9.2100126,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida do Restelo (Estádio)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412421576,
+      "lat": 38.6996132,
+      "lon": -9.2136779,
+      "tags": {
+        "alt_name": "Av Restelo",
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida do Restelo",
+        "name:TML": "Av Restelo",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref:TML": "060119",
+        "shelter": "yes",
+        "short_name": "Av. Restelo",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6412421579,
+      "lat": 38.6998336,
+      "lon": -9.2142948,
+      "tags": {
+        "alt_name": "Av Restelo",
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida do Restelo",
+        "name:TML": "Av Restelo",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "09714",
+        "ref:TML": "060109",
+        "shelter": "yes",
+        "short_name": "Av. Restelo",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417305352,
+      "lat": 38.696288,
+      "lon": -9.1983627,
+      "tags": {
+        "bus": "yes",
+        "name": "Estação Fluvial de Belém",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417305353,
+      "lat": 38.6966736,
+      "lon": -9.1991824,
+      "tags": {
+        "bus": "yes",
+        "name": "Estação Fluvial de Belém",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417551024,
+      "lat": 38.7041511,
+      "lon": -9.2078014,
+      "tags": {
+        "bus": "yes",
+        "name": "Estádio do Restelo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417551025,
+      "lat": 38.7042006,
+      "lon": -9.2078195,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estádio do Restelo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417555943,
+      "lat": 38.7055174,
+      "lon": -9.203846,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola Paula Vicente",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417555944,
+      "lat": 38.7055904,
+      "lon": -9.2038475,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Escola Paula Vicente",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417571745,
+      "lat": 38.7032595,
+      "lon": -9.2112745,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Pêro de Alenquer",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417571747,
+      "lat": 38.7033095,
+      "lon": -9.2112792,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Pêro de Alenquer",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417571748,
+      "lat": 38.7032949,
+      "lon": -9.211503,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Pêro de Alenquer",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417588991,
+      "lat": 38.7062639,
+      "lon": -9.2127388,
+      "tags": {
+        "bus": "yes",
+        "name": "Restelo (EPUL)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417592085,
+      "lat": 38.7070753,
+      "lon": -9.2084905,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Mem Rodrigues",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "13103"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417600792,
+      "lat": 38.7073044,
+      "lon": -9.2086746,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Mem Rodrigues",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6417600793,
+      "lat": 38.7073568,
+      "lon": -9.2085891,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Mem Rodrigues",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431771874,
+      "lat": 38.7038811,
+      "lon": -9.2064646,
+      "tags": {
+        "bus": "yes",
+        "name": "Estádio do Restelo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431771875,
+      "lat": 38.703904,
+      "lon": -9.2065602,
+      "tags": {
+        "alt_name": "Estádio Restelo",
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estádio do Restelo",
+        "name:TML": "Estádio Restelo",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref:TML": "60095",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431771876,
+      "lat": 38.7039891,
+      "lon": -9.2063486,
+      "tags": {
+        "alt_name": "Estádio Restelo",
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estádio do Restelo",
+        "name:TML": "Estádio Restelo",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "13107",
+        "ref:TML": "060096",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431772203,
+      "lat": 38.7056667,
+      "lon": -9.2050251,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Gonçalves Zarco",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431772204,
+      "lat": 38.7056467,
+      "lon": -9.2051048,
+      "tags": {
+        "alt_name": "R Gonçalves Zarco",
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Rua Gonçalves Zarco",
+        "name:TML": "R Gonçalves Zarco",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref:TML": "60093",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431772205,
+      "lat": 38.7058879,
+      "lon": -9.2051251,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Gonçalves Zarco",
+        "name:TML": "R Gonçalves Zarco",
+        "network": "Carris;Carris Metropolitana",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431772206,
+      "lat": 38.7059155,
+      "lon": -9.2050382,
+      "tags": {
+        "alt_name": "R Gonçalves Zarco",
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Rua Gonçalves Zarco",
+        "name:TML": "R Gonçalves Zarco",
+        "network": "Carris;Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref:TML": "060094",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431778629,
+      "lat": 38.7023723,
+      "lon": -9.2065842,
+      "tags": {
+        "bus": "yes",
+        "name": "Bairro das Terras do Forno",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431778630,
+      "lat": 38.7023618,
+      "lon": -9.2067052,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Bairro das Terras do Forno",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433307785,
+      "lat": 38.7014185,
+      "lon": -9.2062373,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Bairro das Terras do Forno",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6446103619,
+      "lat": 38.6974284,
+      "lon": -9.1940837,
+      "tags": {
+        "bus": "yes",
+        "name": "Altinho (MAAT)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6741521978,
+      "lat": 38.7047378,
+      "lon": -9.1989288,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua da Bica do Marquês",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "13304"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6777896794,
+      "lat": 38.7066357,
+      "lon": -9.208983,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Banco CTT",
+        "brand:wikidata": "Q65161642",
+        "brand:wikipedia": "pt:Banco CTT",
+        "drive_through": "no",
+        "name": "Banco CTT",
+        "operator": "CTT",
+        "operator:wikidata": "Q1024518",
+        "operator:wikipedia": "pt:CTT Correios de Portugal"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6778490647,
+      "lat": 38.6997508,
+      "lon": -9.2142994,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida do Restelo",
+        "name:TML": "Av Restelo",
+        "network": "Carris;Carris Metropolitana",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "stop_position",
+        "short_name": "Av. Restelo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6785514731,
+      "lat": 38.6991026,
+      "lon": -9.2175234,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua São Francisco Xavier",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6785514732,
+      "lat": 38.6996644,
+      "lon": -9.2136723,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida do Restelo",
+        "name:TML": "Av Restelo",
+        "network": "Carris;Carris Metropolitana",
+        "operator": "Carris",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "stop_position",
+        "short_name": "Av. Restelo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6848539521,
+      "lat": 38.6950562,
+      "lon": -9.2085595,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1449-003",
+        "addr:street": "Praça do Império",
+        "amenity": "restaurant",
+        "cuisine": "sushi;pizza;italian;japanese",
+        "delivery": "no",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Este Oeste",
+        "outdoor_seating": "yes",
+        "phone": "+351 215 904 358",
+        "website": "http://www.esteoeste.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6848539559,
+      "lat": 38.6944734,
+      "lon": -9.2093385,
+      "tags": {
+        "check_date": "2024-05-02",
+        "fee": "yes",
+        "name": "Garagem Sul",
+        "tourism": "museum",
+        "website": "https://garagemsul.ccb.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7085445893,
+      "lat": 38.7055439,
+      "lon": -9.207611,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Avenida da Ilha da Madeira (Museu de Etnologia)",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7085445894,
+      "lat": 38.7055167,
+      "lon": -9.2077074,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida da Ilha da Madeira (Museu de Etnologia)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7085445895,
+      "lat": 38.7053726,
+      "lon": -9.2076341,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida da Ilha da Madeira (Museu de Etnologia)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "13105"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7085445896,
+      "lat": 38.7053461,
+      "lon": -9.2077176,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Avenida da Ilha da Madeira (Museu de Etnologia)",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "13105",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7085470331,
+      "lat": 38.7053652,
+      "lon": -9.2044582,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Escola Paula Vicente",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "13109",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7085470332,
+      "lat": 38.7054595,
+      "lon": -9.2044884,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola Paula Vicente",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "13109"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103976488,
+      "lat": 38.7056015,
+      "lon": -9.2125895,
+      "tags": {
+        "bus": "yes",
+        "name": "Restelo (EPUL)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103976489,
+      "lat": 38.7055921,
+      "lon": -9.2125206,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Restelo (EPUL)",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7106733213,
+      "lat": 38.6974187,
+      "lon": -9.1988526,
+      "tags": {
+        "bus": "yes",
+        "name": "Belém",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7279344982,
+      "lat": 38.694533,
+      "lon": -9.2183465,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "59",
+        "addr:postcode": "1400-038",
+        "addr:street": "Rua Praia de Pedrouços",
+        "amenity": "restaurant",
+        "capacity": "25",
+        "cuisine": "regional;portuguese;pork",
+        "name": "Portas Verdes",
+        "phone": "+351 21 301 8562",
+        "website": "https://www.instagram.com/rportasverdes/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7285984486,
+      "lat": 38.6975582,
+      "lon": -9.1943004,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2026-02-08",
+        "cuisine": "indian",
+        "name": "Restaurante Cocina Indiana Italana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7850321844,
+      "lat": 38.7007566,
+      "lon": -9.2029171,
+      "tags": {
+        "bus": "yes",
+        "name": "Calçada do Galvão",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Cç. Galvão"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7850321845,
+      "lat": 38.7007682,
+      "lon": -9.2029583,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Calçada do Galvão",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "3599",
+        "route_ref": "79B;727",
+        "shelter": "yes",
+        "short_name": "Cç. Galvão",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7850321846,
+      "lat": 38.7023503,
+      "lon": -9.202438,
+      "tags": {
+        "bus": "yes",
+        "name": "Igreja da Memória",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Igreja Memória"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7850321847,
+      "lat": 38.7023514,
+      "lon": -9.2025432,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Igreja da Memória",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "route_ref": "76B;79B;727",
+        "shelter": "yes",
+        "short_name": "Igreja Memória",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7856836972,
+      "lat": 38.7023495,
+      "lon": -9.2023734,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Igreja da Memória",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "route_ref": "79B;727",
+        "shelter": "yes",
+        "short_name": "Igreja Memória",
+        "tactile_paving": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7856836973,
+      "lat": 38.7002911,
+      "lon": -9.203092,
+      "tags": {
+        "bus": "yes",
+        "name": "Calçada do Galvão",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Cç. Galvão"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7856836974,
+      "lat": 38.7002814,
+      "lon": -9.2030452,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Calçada do Galvão",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "3599",
+        "route_ref": "79B;727",
+        "shelter": "yes",
+        "short_name": "Cç. Galvão",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924407126,
+      "lat": 38.6957523,
+      "lon": -9.214954,
+      "tags": {
+        "bus": "yes",
+        "name": "Largo da Princesa",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Lg. Princesa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924407127,
+      "lat": 38.6957725,
+      "lon": -9.2150793,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Largo da Princesa",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "network:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "operator:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "public_transport": "platform",
+        "ref": "13207",
+        "route_ref": "79B",
+        "shelter": "no",
+        "short_name": "Lg. Princesa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924407128,
+      "lat": 38.6992809,
+      "lon": -9.2141265,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida do Restelo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Av. Restelo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924407129,
+      "lat": 38.6992981,
+      "lon": -9.2142419,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Avenida do Restelo",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "network:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "operator:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "public_transport": "platform",
+        "ref": "09707",
+        "route_ref": "79B",
+        "shelter": "no",
+        "short_name": "Av. Restelo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924509787,
+      "lat": 38.6979314,
+      "lon": -9.2045287,
+      "tags": {
+        "name": "Mosteiro dos Jerónimos",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924550217,
+      "lat": 38.7065269,
+      "lon": -9.2040014,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Conselheiro Martins de Carvalho",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "R. Cons. Martins Carvalho"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924550218,
+      "lat": 38.7065845,
+      "lon": -9.2040496,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Rua Conselheiro Martins de Carvalho",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "route_ref": "79B",
+        "shelter": "no",
+        "short_name": "R. Cons. Martins Carvalho"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924550223,
+      "lat": 38.6979596,
+      "lon": -9.2045392,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Mosteiro dos Jerónimos",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7967814480,
+      "lat": 38.7026715,
+      "lon": -9.2009148,
+      "tags": {
+        "bus": "yes",
+        "name": "Travessa da Memória",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Tv. Memória"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7967814481,
+      "lat": 38.702647,
+      "lon": -9.2008882,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Travessa da Memória",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "route_ref": "76B",
+        "shelter": "no",
+        "short_name": "Tv. Memória",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8196843133,
+      "lat": 38.7035381,
+      "lon": -9.2025692,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8223236737,
+      "lat": 38.695245,
+      "lon": -9.2163916,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Chopsn'sticks"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8433019118,
+      "lat": 38.6974977,
+      "lon": -9.1988209,
+      "tags": {
+        "addr:housenumber": "502",
+        "addr:street": "Rua da Junqueira",
+        "amenity": "restaurant",
+        "check_date": "2026-02-08",
+        "cuisine": "sushi",
+        "name": "Restaurante Japones Samurai"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685265797,
+      "lat": 38.7037674,
+      "lon": -9.1995794,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "127",
+        "addr:postcode": "1300-008",
+        "addr:street": "Calçada da Ajuda",
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Banco Português de Investimento",
+        "brand:wikidata": "Q537886",
+        "brand:wikipedia": "pt:Banco Português de Investimento",
+        "name": "BPI",
+        "official_name": "Banco Português de Investimento",
+        "opening_hours": "Mo-Fr 08:30-12:00, 13:00-15:00",
+        "operator": "Banco Português de Investimento",
+        "operator:wikidata": "Q537886",
+        "operator:wikipedia": "pt:Banco Português de Investimento",
+        "short_name": "BPI"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685265808,
+      "lat": 38.7043429,
+      "lon": -9.1994877,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "159",
+        "addr:postcode": "1300-008",
+        "addr:street": "Calçada da Ajuda",
+        "addr:unit": "A",
+        "amenity": "cafe",
+        "name": "Aromas Cafeteria"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685265809,
+      "lat": 38.7043895,
+      "lon": -9.1992776,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "206",
+        "addr:postcode": "1300-017",
+        "addr:street": "Calçada da Ajuda",
+        "amenity": "restaurant",
+        "name": "Recanto Serrano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685265811,
+      "lat": 38.7050148,
+      "lon": -9.1994084,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Rota dos Petiscos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8694246918,
+      "lat": 38.7031884,
+      "lon": -9.195521,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Princesa da Boa Hora"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8694284723,
+      "lat": 38.7030774,
+      "lon": -9.1953547,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Tapas 4U take away"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9765016176,
+      "lat": 38.6975449,
+      "lon": -9.2039218,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "128",
+        "addr:postcode": "1300-086",
+        "addr:street": "Rua de Belém",
+        "amenity": "restaurant",
+        "changing_table": "no",
+        "check_date": "2024-05-04",
+        "entrance:kerb:height": "10cm",
+        "entrance:ramp": "no",
+        "entrance:step_count": "1",
+        "entrance:width": "80cm",
+        "name": "Flor dos Jerónimos",
+        "toilets:wheelchair": "no",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9765052742,
+      "lat": 38.6973948,
+      "lon": -9.2024083,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "36",
+        "addr:postcode": "1300-083",
+        "addr:street": "Rua de Belém",
+        "amenity": "restaurant",
+        "changing_table": "no",
+        "check_date": "2026-02-08",
+        "diet:vegetarian": "yes",
+        "entrance:kerb:height": "17cm",
+        "entrance:ramp": "no",
+        "entrance:step_count": "1",
+        "entrance:width": "117cm",
+        "name": "Miolo \"Local COOFFE & Brunch",
+        "note": "pouco espaço entre mesas",
+        "opening_hours": "Tu-Su 09:00-17:00",
+        "phone": "+351 913504260",
+        "toilets": "yes",
+        "toilets:fee": "no",
+        "toilets:level": "0",
+        "toilets:wheelchair": "no",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9779363718,
+      "lat": 38.6955457,
+      "lon": -9.2198667,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Meia Nau"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9820865298,
+      "lat": 38.6938088,
+      "lon": -9.21174,
+      "tags": {
+        "addr:city": "Lisboa (Belém)",
+        "addr:street": "Avenida de Brasília",
+        "amenity": "cafe",
+        "check_date": "2026-02-08",
+        "indoor_seating": "no",
+        "name": "Cafe do Mar",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9932677909,
+      "lat": 38.7031932,
+      "lon": -9.2172229,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av D Vasco da Gama",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "060117"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9932677910,
+      "lat": 38.7026032,
+      "lon": -9.2174117,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av D Vasco da Gama",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "060115",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9977874463,
+      "lat": 38.6953307,
+      "lon": -9.2124097,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2025-03-12",
+        "name": "Maritima do Restelo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10017056882,
+      "lat": 38.6969737,
+      "lon": -9.1995983,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Belém (Estação)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "60101",
+        "route_ref": "1714",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10064083595,
+      "lat": 38.6961284,
+      "lon": -9.1998957,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estação Fluvial de Belém",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Estação Fluvial Belém",
+        "public_transport": "platform",
+        "ref": "060383",
+        "shelter": "no",
+        "short_name": "Estação Fluvial Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10095217527,
+      "lat": 38.6969781,
+      "lon": -9.2031687,
+      "tags": {
+        "addr:housenumber": "82",
+        "addr:street": "Rua Vieira Portuense",
+        "amenity": "restaurant",
+        "changing_table": "no",
+        "check_date": "2022-10-12",
+        "entrance:kerb:height": "4cm",
+        "entrance:ramp": "no",
+        "entrance:step_count": "1",
+        "entrance:width": "126cm",
+        "name": "Ver Belém",
+        "toilets:wheelchair": "no",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290625964,
+      "lat": 38.6971381,
+      "lon": -9.1996377,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Belém (Estação)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "060107",
+        "route_ref": "1715;1718",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10903396490,
+      "lat": 38.6967299,
+      "lon": -9.1995431,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "Gray Line",
+        "operator": "Gray Line",
+        "public_transport": "platform",
+        "ref": "2b",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10915167653,
+      "lat": 38.6967988,
+      "lon": -9.1991407,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "description": "ref:Gray Line 07;Yellow Bus 9;CitySightseeing 6",
+        "highway": "bus_stop",
+        "network": "Gray Line;Yellow Bus;CitySightseeing",
+        "operator": "Gray Line;Yellow Bus;CitySightseeing",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11011268583,
+      "lat": 38.6973905,
+      "lon": -9.2022166,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Abanca",
+        "brand:wikidata": "Q9598744",
+        "brand:wikipedia": "pt:Abanca",
+        "check_date": "2026-02-08",
+        "name": "Abanca",
+        "official_name": "ABANCA Corporación Bancaria",
+        "operator": "Abanca",
+        "operator:wikidata": "Q9598744",
+        "operator:wikipedia": "pt:Abanca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11011364953,
+      "lat": 38.6973623,
+      "lon": -9.1984095,
+      "tags": {
+        "addr:housenumber": "477",
+        "addr:street": "Rua da Junqueira",
+        "amenity": "restaurant",
+        "changing_table": "no",
+        "entrance:kerb:height": "19cm",
+        "entrance:ramp": "no",
+        "entrance:step_count": "1",
+        "entrance:width": "105cm",
+        "name": "Rui Dos Pregos",
+        "toilets:wheelchair": "no",
+        "wheelchair:turning_circle": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11048887905,
+      "lat": 38.6951973,
+      "lon": -9.2134363,
+      "tags": {
+        "addr:housenumber": "134B",
+        "addr:postcode": "1400-031",
+        "addr:street": "Rua Bartolomeu Dias",
+        "amenity": "restaurant",
+        "name": "Torre sandwich bar cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11048888005,
+      "lat": 38.6951772,
+      "lon": -9.2136214,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "4s Hamburger House"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11110085964,
+      "lat": 38.696938,
+      "lon": -9.2023781,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "30",
+        "addr:postcode": "1300-315",
+        "addr:street": "Rua Vieira Portuense",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/RestauranteBelemCanico",
+        "cuisine": "regional;portuguese",
+        "name": "O Caniço",
+        "opening_hours": "Tu-Su 12:00-16:00",
+        "phone": "+351213630593"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11112159393,
+      "lat": 38.6974925,
+      "lon": -9.1989413,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2026-02-08",
+        "name": "Belém Palácio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11112159394,
+      "lat": 38.6974947,
+      "lon": -9.1988708,
+      "tags": {
+        "addr:housenumber": "508",
+        "amenity": "restaurant",
+        "name": "Rui Dos Pregos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11463757521,
+      "lat": 38.6960441,
+      "lon": -9.1998672,
+      "tags": {
+        "bus": "yes",
+        "name": "Estação Fluvial de Belém",
+        "network": "Carris Metropolitana",
+        "operator": "Carris Metropolitana",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11592464558,
+      "lat": 38.6971813,
+      "lon": -9.2023683,
+      "tags": {
+        "addr:housenumber": "35",
+        "addr:postcode": "1300-315",
+        "addr:street": "Rua de Belém",
+        "amenity": "restaurant",
+        "cuisine": "fish;shellfish",
+        "name": "Guelra",
+        "opening_hours": "tu-Sa 12:00-23:00",
+        "phone": "+351 939 002 081"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11592519317,
+      "lat": 38.6973967,
+      "lon": -9.1937118,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "207",
+        "addr:street": "Rua da Junqueira",
+        "amenity": "restaurant",
+        "name": "Canalha",
+        "phone": "+351 962 152 742"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11595043403,
+      "lat": 38.6971393,
+      "lon": -9.195923,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Corações Com Coroa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11834056139,
+      "lat": 38.7014667,
+      "lon": -9.2072504,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "2A;2B;2C;2D",
+        "addr:postcode": "1400-314",
+        "addr:street": "Avenida do Restelo",
+        "branch": "Lisboa - Belenenses",
+        "brand": "Lidl",
+        "brand:wikidata": "Q151954",
+        "brand:wikipedia": "pt:Lidl",
+        "contact:facebook": "lidlportugal",
+        "contact:instagram": "lidlportugal",
+        "contact:linkedin": "https://www.linkedin.com/company/lidl-portugal",
+        "contact:phone": "+351 210 207 000",
+        "contact:tiktok": "lidl.portugal",
+        "contact:youtube": "https://www.youtube.com/user/LidlPortugal",
+        "name": "Lidl",
+        "opening_hours": "Mo-Su 08:00-21:30",
+        "ref": "PT00529",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.lidl.pt/s/pt-PT/pesquisa-de-loja/lisboa/avenida-do-restelo-2a-2b-2c-2d/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11872169858,
+      "lat": 38.7067561,
+      "lon": -9.2081039,
+      "tags": {
+        "addr:city": "Belém",
+        "addr:housenumber": "36A",
+        "addr:postcode": "1400-903",
+        "addr:street": "Avenida da Ilha da Madeira",
+        "amenity": "bank",
+        "brand": "Bankinter",
+        "brand:wikidata": "Q806808",
+        "brand:wikipedia": "en:Bankinter",
+        "contact:phone": "+351 21 303 1690",
+        "name": "Bankinter",
+        "opening_hours": "Mo-Fr 08:30-15:00",
+        "operator": "Bankinter",
+        "operator:wikidata": "Q806808",
+        "operator:wikipedia": "en:Bankinter"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11872169860,
+      "lat": 38.7051257,
+      "lon": -9.2072381,
+      "tags": {
+        "addr:housenumber": "22C",
+        "addr:postcode": "1400-204",
+        "addr:street": "Avenida da Ilha da Madeira",
+        "amenity": "restaurant",
+        "delivery": "yes",
+        "name": "Restaurante Dez Prá Uma",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+351 21 195 5733",
+        "website": "https://dezprauma.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11872289188,
+      "lat": 38.7062413,
+      "lon": -9.2072947,
+      "tags": {
+        "addr:city": "Belém",
+        "addr:housenumber": "1A",
+        "addr:postcode": "1400-225",
+        "addr:street": "Rua João de Paiva",
+        "amenity": "restaurant",
+        "name": "Restaurante O Canto da Marina",
+        "opening_hours": "Mo-Fr 07:30-17:00",
+        "phone": "+351 934 944 531"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11876749525,
+      "lat": 38.7073515,
+      "lon": -9.2068654,
+      "tags": {
+        "addr:street": "Rua Capitão-Mor Pedro Teixeira",
+        "amenity": "school",
+        "name": "Escola Básica Moinhos do Restelo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11876777504,
+      "lat": 38.6976962,
+      "lon": -9.2025005,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "bubble_tea",
+        "name": "Bubble Tea Factory"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11876777507,
+      "lat": 38.6970833,
+      "lon": -9.2022159,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "DINAstia Selvagem"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11876777512,
+      "lat": 38.6972498,
+      "lon": -9.2030236,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Taberda de Belém \" Adamastor\""
+      }
+    },
+    {
+      "type": "node",
+      "id": 11876777513,
+      "lat": 38.6972603,
+      "lon": -9.2031142,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Xi-Hu",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11876777516,
+      "lat": 38.6969355,
+      "lon": -9.2020819,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Notalho"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11876777517,
+      "lat": 38.6969627,
+      "lon": -9.2022239,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Bombeiros de Campo de Ourique - Cruz Branca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11876777518,
+      "lat": 38.6969365,
+      "lon": -9.2020205,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Roger's"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11878794856,
+      "lat": 38.6984303,
+      "lon": -9.2185681,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "9D",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Ouvi Dizer",
+        "opening_hours": "Mo-Sun 12:00-15:30 19:00-22:00",
+        "phone": "+3510175723"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11884016392,
+      "lat": 38.7057788,
+      "lon": -9.2075771,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "28C",
+        "addr:postcode": "1400-204",
+        "addr:street": "Avenida da Ilha da Madeira",
+        "amenity": "restaurant",
+        "name": "Galeria Food Store"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11884840596,
+      "lat": 38.7039768,
+      "lon": -9.1993322,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "180-182",
+        "addr:postcode": "1300-146",
+        "addr:street": "Calçada da Ajuda",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop;portuguese",
+        "name": "Pastelaria Outra Opção- Fabrico Próprio",
+        "opening_hours": "Mo-Sa 07:00-19:00",
+        "outdoor_seating": "yes",
+        "phone": "+351 21 409 8136"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11884840599,
+      "lat": 38.703492,
+      "lon": -9.1996062,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "107",
+        "addr:postcode": "1300-011",
+        "addr:street": "Calçada da Ajuda",
+        "amenity": "restaurant",
+        "cuisine": "pizza;italian",
+        "name": "Di Amici by Pizza em Casa",
+        "opening_hours": "Tu-Su 12:00-15:00 19:00-23:00",
+        "phone": "+351 21 808 9020",
+        "website": "https://diamici.pt/ementas.html"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11884859906,
+      "lat": 38.7031552,
+      "lon": -9.1996577,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "79",
+        "addr:postcode": "1300-006",
+        "addr:street": "Calçada da Ajuda",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Paraiso Violeta",
+        "opening_hours": "Mo-Sa 08:00-23:30 | Su 08:00-17:00",
+        "phone": "+351 21 364 8847",
+        "website": "https://www.facebook.com/profile.php?id=100063757071804"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11885044763,
+      "lat": 38.6988319,
+      "lon": -9.2052098,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "12",
+        "addr:postcode": "1400-211",
+        "addr:street": "Rua dos Jerónimos",
+        "addr:unit": "A-B",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Belém",
+        "brand": "Novo Banco",
+        "brand:wikidata": "Q17488861",
+        "brand:wikipedia": "pt:Novo Banco",
+        "check_date": "2026-02-08",
+        "contact:fax": "+351 218834059",
+        "contact:phone": "+351 218834058",
+        "description": "O novobanco é uma instituição de referência no setor financeiro português, reconhecida pelos elevados padrões de qualidade de serviço e dinâmica comercial com que serve os seus clientes.",
+        "name": "Novo Banco",
+        "opening_hours": "Mo-Fr 08:30-15:00",
+        "operator": "Novo Banco",
+        "operator:old_name": "Banco Espírito Santo",
+        "operator:old_name:short": "BES",
+        "operator:wikidata": "Q17488861",
+        "operator:wikipedia": "pt:Novo Banco",
+        "ref": "B0013",
+        "ref_name": "Belém",
+        "website": "https://www.novobanco.pt/site/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11885081471,
+      "lat": 38.6994618,
+      "lon": -9.2054979,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "18",
+        "addr:postcode": "1400-206",
+        "addr:street": "Rua dos Jerónimos",
+        "addr:unit": "D",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "La Fóllia de Bélem",
+        "opening_hours": "Mo-Su 12:30-15:00 19:00-22:00",
+        "phone": "+351 21 5881217",
+        "toilets": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11885081473,
+      "lat": 38.7001906,
+      "lon": -9.2058046,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "32",
+        "addr:postcode": "1400-212",
+        "addr:street": "Rua dos Jerónimos",
+        "addr:unit": "A-B",
+        "amenity": "pharmacy",
+        "description": "Na Farmácia Estádio Restelo encontrará à sua disposição um vasto leque de produtos e serviços para a sua saúde e bem-estar num espaço único a pensar em si.",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Estádio Restelo",
+        "opening_hours": "Mo-Sa 09:00-21:00",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+351 21 3638193",
+        "website": "https://www.farmaciasportuguesas.pt/catalogo/ficha-farmacia?code=17558",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11886846343,
+      "lat": 38.7030039,
+      "lon": -9.2001003,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "15",
+        "addr:street": "Rua das Mercês",
+        "amenity": "cafe",
+        "cuisine": "portuguese",
+        "name": "Ponto de Encontro",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11886860460,
+      "lat": 38.7038109,
+      "lon": -9.2001259,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "18",
+        "addr:place": "Ajuda",
+        "addr:street": "Travessa Paulo Martins",
+        "alcohol": "yes",
+        "amenity": "cafe",
+        "name": "O 18",
+        "opening_hours": "Mo-Su 07:300-01:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11886878729,
+      "lat": 38.703448,
+      "lon": -9.2002799,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "34",
+        "addr:street": "Rua da Paz à Ajuda",
+        "amenity": "cafe",
+        "cuisine": "portuguese",
+        "name": "o sossego"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11886878730,
+      "lat": 38.7038572,
+      "lon": -9.2004681,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "1",
+        "addr:street": "Largo da Paz",
+        "addr:unit": "A",
+        "amenity": "cafe",
+        "name": "Manápula",
+        "opening_hours": "Mo-Su 12:00-15:00,19:30-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11886923896,
+      "lat": 38.7038239,
+      "lon": -9.2018887,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "47",
+        "addr:street": "Travessa Paulo Martins",
+        "addr:unit": "B",
+        "amenity": "cafe",
+        "name": "O casalinho",
+        "opening_hours": "Mo-Su 07:00-21:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11893487413,
+      "lat": 38.7052165,
+      "lon": -9.2005984,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Tasca a Rosa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11893487414,
+      "lat": 38.7040464,
+      "lon": -9.2002244,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Mestrias Tasca Nova"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11901260957,
+      "lat": 38.6991028,
+      "lon": -9.2053374,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "14",
+        "addr:postcode": "1400-206",
+        "addr:street": "Rua dos Jerónimos",
+        "addr:unit": "D",
+        "amenity": "cafe",
+        "check_date": "2026-02-08",
+        "name": "11:11",
+        "old_name": "C & B coffee",
+        "outdoor_seating": "yes",
+        "toilets": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11901260959,
+      "lat": 38.6992775,
+      "lon": -9.2054078,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "16",
+        "addr:postcode": "1400-211",
+        "addr:street": "Rua dos Jerónimos",
+        "addr:unit": "C",
+        "amenity": "restaurant",
+        "cuisine": "pizza;kebab",
+        "name": "BELEM KEBAB & PIZZARIA",
+        "opening_hours": "Mo-Su 07:00-00:00",
+        "phone": "+351 920 562 344"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12048053240,
+      "lat": 38.6969813,
+      "lon": -9.1995356,
+      "tags": {
+        "bus": "yes",
+        "name": "Belém (Estação)",
+        "network": "Carris Metropolitana",
+        "operator": "Viaçõ Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063757117,
+      "lat": 38.6989893,
+      "lon": -9.205678,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "5",
+        "addr:postcode": "1400-210",
+        "addr:street": "Rua dos Jerónimos",
+        "amenity": "school",
+        "contact:fax": "+351 213630281",
+        "contact:phone": "+351 213651200",
+        "grades": "12-17",
+        "name": "Centro de Educação e Desenvolvimento Pina Manique",
+        "operator": "Casa Pia de Lisboa",
+        "operator:type": "public",
+        "ref": "800274",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063757118,
+      "lat": 38.6982378,
+      "lon": -9.2045726,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:floor": "2",
+        "addr:housenumber": "3",
+        "addr:postcode": "1400-209",
+        "addr:street": "Largo dos Jerónimos",
+        "amenity": "kindergarten",
+        "contact:email": "ainfantilstambelem@escolas.min-edu.pt",
+        "contact:fax": "+351 213634242",
+        "contact:phone": "+351 213634242",
+        "grades": "3-5",
+        "name": "Abrigo Infantil de Santa Maria de Belém",
+        "operator": "Centro Paroquial Santa Maria de Belém",
+        "operator:type": "private",
+        "ref": "517161",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063757135,
+      "lat": 38.7054778,
+      "lon": -9.1990691,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:floor": "0",
+        "addr:housenumber": "234",
+        "addr:postcode": "1300-012",
+        "addr:street": "Calçada da Ajuda",
+        "alt_name": "Escola \"A Voz do Operário\" da Ajuda",
+        "amenity": "school",
+        "contact:email": "esc.n6.avdooperario@escolas.min-edu.pt",
+        "contact:phone": "+351 213645710",
+        "grades": "3-9",
+        "name": "Escola Privativa n.º 6 de A Voz do Operário",
+        "operator": "A Voz do Operário",
+        "operator:type": "private",
+        "ref": "508445",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063785629,
+      "lat": 38.6979053,
+      "lon": -9.2192746,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "5E",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "school",
+        "contact:email": "colegiosaofranciscoxavier@gmail.com",
+        "contact:fax": "+351 213010039",
+        "contact:phone": "+351 213010039",
+        "contact:website": "http://www.esfranciscoxavier.com.sapo.pt",
+        "grades": "6-14",
+        "name": "Escola \"São Francisco Xavier\"",
+        "operator": "Simas, Lda.",
+        "operator:type": "private",
+        "ref": "505274",
+        "ref:aeep": "1243",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12096668457,
+      "lat": 38.6971466,
+      "lon": -9.1995698,
+      "tags": {
+        "bus": "yes",
+        "name": "Belém (Estação)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12307578038,
+      "lat": 38.7034392,
+      "lon": -9.1981643,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "53",
+        "addr:postcode": "1300-102",
+        "addr:street": "Travessa da Boa Hora à Ajuda",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop;tosta;pastry",
+        "name": "Cantinho Doce",
+        "opening_hours": "segunda-sexta,07:00-18:00 sábado-domingo ,07:00-13:00",
+        "outdoor_seating": "yes",
+        "phone": "+351 965 063 856"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12307652499,
+      "lat": 38.70344,
+      "lon": -9.1976632,
+      "tags": {
+        "addr:housenumber": "49B",
+        "addr:postcode": "1300-102",
+        "addr:street": "Travessa da Boa Hora à Ajuda",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Café da Carla"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12307694217,
+      "lat": 38.7035506,
+      "lon": -9.1971042,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "30K",
+        "addr:postcode": "1300-110",
+        "addr:street": "Travessa da Boa Hora à Ajuda",
+        "amenity": "cafe",
+        "cuisine": "sandwich;cake",
+        "name": "Celeste",
+        "phone": "+351 21 920 6950"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12307694220,
+      "lat": 38.7034283,
+      "lon": -9.1967695,
+      "tags": {
+        "addr:housenumber": "35C",
+        "addr:postcode": "1300-102",
+        "addr:street": "Travessa da Boa Hora à Ajuda",
+        "amenity": "cafe",
+        "cuisine": "brazilian",
+        "name": "Skina Brazil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12314190454,
+      "lat": 38.7031188,
+      "lon": -9.1996798,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Maria Henriqueta Santos",
+        "phone": "+351 21 364 8847"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320165972,
+      "lat": 38.7045974,
+      "lon": -9.1992303,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "220-222",
+        "addr:postcode": "1300-017",
+        "addr:street": "Calçada da Ajuda",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Mendes Gomes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320363231,
+      "lat": 38.6972562,
+      "lon": -9.2031331,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "97",
+        "addr:postcode": "1300-083",
+        "addr:street": "Rua de belem",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Xi-Hu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320363233,
+      "lat": 38.6972404,
+      "lon": -9.2030233,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "85",
+        "addr:postcode": "1300-315",
+        "addr:street": "Rua de Belém",
+        "amenity": "restaurant",
+        "name": "Taberna Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320363234,
+      "lat": 38.6972379,
+      "lon": -9.2029924,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "83",
+        "addr:postcode": "1300-083",
+        "addr:street": "Rua de Belém",
+        "amenity": "restaurant",
+        "name": "Restaurante Adamastor"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320433742,
+      "lat": 38.6976624,
+      "lon": -9.1991995,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Versailles"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320531543,
+      "lat": 38.6980873,
+      "lon": -9.1992923,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Restaurante Chinês-Grande Mundo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320531544,
+      "lat": 38.6982263,
+      "lon": -9.1993524,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Augusto Lisboa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12326985267,
+      "lat": 38.6984501,
+      "lon": -9.2185426,
+      "tags": {
+        "addr:housenumber": "9E",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "PROVA (enoteca)",
+        "opening_hours": "Thu-Sat 11:00-15:00 18:00-22:00",
+        "phone": "+351215819080",
+        "website": "https://www.facebook.com/ProvaEnoteca/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12326985270,
+      "lat": 38.698032,
+      "lon": -9.2191178,
+      "tags": {
+        "addr:city": "Belém",
+        "addr:housenumber": "7C",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "restaurant",
+        "cuisine": "pizza;italian",
+        "name": "Pizza na Brasa (Forno de Lenha)",
+        "opening_hours": "Mon-Sun 12:00-15:00 18:30-23:00",
+        "phone": "+351213030550",
+        "website": "https://pizzanabrasa.pt/a-nossa-ementa/pizza/pizzas/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12326985275,
+      "lat": 38.6978572,
+      "lon": -9.2187815,
+      "tags": {
+        "addr:city": "Belém",
+        "addr:housenumber": "26C",
+        "addr:postcode": "1400-140",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "restaurant",
+        "cuisine": "oriental;japanese;vietnamese;fusion",
+        "name": "Tjela",
+        "opening_hours": "Mon-Fri 12:00-15:00 19:00-22:30 // Sat-Sun 10:00-22:30",
+        "phone": "+351911967921",
+        "website": "https://www.tjela.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12801184166,
+      "lat": 38.6978503,
+      "lon": -9.2194043,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "5",
+        "addr:postcode": "1400-139",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "school",
+        "name": "Colégio São Francisco Xavier"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12842723933,
+      "lat": 38.6970056,
+      "lon": -9.2146601,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida da Torre de Belém",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "13213",
+        "short_name": "Av. Torre Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12842723934,
+      "lat": 38.6969902,
+      "lon": -9.2145507,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida da Torre de Belém",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "network:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "operator:wikipedia": "pt:Companhia Carris de Ferro de Lisboa",
+        "public_transport": "platform",
+        "ref": "13213",
+        "route_ref": "723;79B",
+        "shelter": "no",
+        "short_name": "Av. Torre Belém"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12844000116,
+      "lat": 38.6975711,
+      "lon": -9.2019259,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Taberna dos Ferreiros"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13052427284,
+      "lat": 38.703202,
+      "lon": -9.1999212,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "30",
+        "addr:place": "Belem",
+        "addr:street": "Rua das Mercês",
+        "alt_name": "Mrs Lemon",
+        "amenity": "cafe",
+        "bar": "no",
+        "capacity": "20",
+        "check_date": "2025-08-06",
+        "contact:facebook": "@kuleacafe",
+        "diet:gluten_free": "yes",
+        "diet:lactose_free": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "name": "Kulea",
+        "outdoor_seating": "yes",
+        "smoking": "outside",
+        "toilets": "yes",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13063298381,
+      "lat": 38.7037109,
+      "lon": -9.201964,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Jorge D'Amália"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13063298391,
+      "lat": 38.7025531,
+      "lon": -9.2027169,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13141791901,
+      "lat": 38.6966256,
+      "lon": -9.210612,
+      "tags": {
+        "addr:housenumber": "3A",
+        "addr:postcode": "1400-124",
+        "addr:street": "Rua Dom Lourenço d'Almeida",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Focacceria BM - Bread Maniacs",
+        "opening_hours": "Tu-Su 12:00-22:00",
+        "website": "https://www.focacceriabm.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 19647687,
+      "center": {
+        "lat": 38.6962836,
+        "lon": -9.2031942
+      },
+      "tags": {
+        "addr:street": "Rua Vieira Portuense",
+        "description": "Construído nos anos oitenta do século XX, projeto do arquiteto António Saraiva, em homenagem ao grande navegador português Vasco da Gama que, em 1498, descobriu o Caminho Marítimo para a Índia. Situa-se na Rua Vieira Portuense, num dos mais antigos",
+        "leisure": "park",
+        "name": "Jardim Vasco da Gama",
+        "name:de": "Vasco-da-Gama-Garten",
+        "name:en": "Vasco da Gama Garden",
+        "name:pt": "Jardim Vasco da Gama",
+        "source": "dadosabertos.cm-lisboa.pt",
+        "website": "https://informacoeseservicos.lisboa.pt/contactos/diretorio-da-cidade/jardim-vasco-da-gama",
+        "wikidata": "Q10306190",
+        "wikimedia_commons": "Category:Jardim Vasco da Gama",
+        "wikipedia": "pt:Jardim Vasco da Gama"
+      }
+    },
+    {
+      "type": "way",
+      "id": 19647778,
+      "center": {
+        "lat": 38.6966367,
+        "lon": -9.2002748
+      },
+      "tags": {
+        "addr:street": "Praça Afonso de Albuquerque",
+        "description": "Trata-se do jardim fronteiro ao Palácio Nacional de Belém, residência oficial do Presidente da República Portuguesa. No centro deste jardim encontramos o monumento em homenagem a Afonso de Albuquerque, Governador da Índia Portuguesa entre 1507 e 151",
+        "leisure": "park",
+        "name": "Jardim Afonso de Albuquerque",
+        "name:en": "Afonso de Albuquerque Square Garden",
+        "operator": "Câmara Municipal de Lisboa",
+        "operator:type": "government",
+        "operator:wikidata": "Q30255955",
+        "source": "dadosabertos.cm-lisboa.pt",
+        "source:pkey": "124922f3-53a3-4368-8464-dd6f340e7698",
+        "wikidata": "Q10305395",
+        "wikipedia": "pt:Jardim Afonso de Albuquerque"
+      }
+    },
+    {
+      "type": "way",
+      "id": 34497689,
+      "center": {
+        "lat": 38.6971687,
+        "lon": -9.2093308
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1400-206",
+        "addr:street": "Praça do Império",
+        "building": "hangar",
+        "name": "Pavilhão das Galeotas",
+        "note": "Parte do Museu de Marinha",
+        "opening_hours": "May 01-Sep 30 10:00-18:00; Oct 01-Apr 30 10:00-17:00; easter off; Jan 01,May 01,Dec 25 off",
+        "tourism": "museum"
+      }
+    },
+    {
+      "type": "way",
+      "id": 131706619,
+      "center": {
+        "lat": 38.7009842,
+        "lon": -9.1934053
+      },
+      "tags": {
+        "addr:street": "Rua da Quinta do Almargem",
+        "amenity": "university",
+        "name": "Universidade Lusíada de Lisboa",
+        "wikidata": "Q635878",
+        "wikipedia": "pt:Universidade Lusíada de Lisboa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 131706815,
+      "center": {
+        "lat": 38.6986967,
+        "lon": -9.1922945
+      },
+      "tags": {
+        "addr:street": "Rua Pinto Ferreira",
+        "amenity": "university",
+        "name": "Universidade Lusíada de Lisboa",
+        "wikidata": "Q635878",
+        "wikipedia": "pt:Universidade Lusíada de Lisboa"
+      }
+    },
+    {
+      "type": "way",
+      "id": 138040033,
+      "center": {
+        "lat": 38.6992958,
+        "lon": -9.2065297
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Centro Cultural Casa Piano"
+      }
+    },
+    {
+      "type": "way",
+      "id": 138220371,
+      "center": {
+        "lat": 38.6952059,
+        "lon": -9.1998643
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140759625,
+      "center": {
+        "lat": 38.696777,
+        "lon": -9.1960404
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 141123677,
+      "center": {
+        "lat": 38.7048338,
+        "lon": -9.2084503
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:postcode": "1400-203",
+        "addr:street": "Avenida Ilha da Madeira",
+        "contact:email": "geral@mnetnologia.dgpc.pt",
+        "contact:fax": "+351 210 109 206",
+        "contact:phone": "+351 213 041 160;+351 213 041 169",
+        "contact:website": "https://mnetnologia.wordpress.com",
+        "name": "Museu Nacional de Etnologia",
+        "name:de": "Nationalmuseum für Völkerkunde",
+        "name:en": "National Museum of Ethnology",
+        "opening_hours": "Tu 14:00-18:00; We-Su 10:00-18:00; Jan 01,May 01,Jun 13,Dec 25 off;easter off",
+        "tourism": "museum",
+        "wikidata": "Q6974467",
+        "wikimedia_commons": "Category:Museu Nacional de Etnologia",
+        "wikipedia": "en:National Museum of Ethnology (Portugal)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 155332133,
+      "center": {
+        "lat": 38.692859,
+        "lon": -9.2133215
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "check_date": "2024-05-02",
+        "height": "4",
+        "name": "Vela Latina",
+        "source": "Result of an automatic process from Esri Portugal to calculate the height of buildings using LIDAR data from the Instituto da Conservacao da Natureza e das Florestas - ICNF, Projeto AGIL LiDAR",
+        "source:type": "aerial imagery"
+      }
+    },
+    {
+      "type": "way",
+      "id": 155332134,
+      "center": {
+        "lat": 38.6929371,
+        "lon": -9.2099068
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "retail",
+        "check_date": "2025-11-21",
+        "cuisine": "regional",
+        "height": "2",
+        "name": "À Margem",
+        "outdoor_seating": "yes",
+        "toilets": "yes",
+        "toilets:unisex": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 155477750,
+      "center": {
+        "lat": 38.6949724,
+        "lon": -9.1985326
+      },
+      "tags": {
+        "amenity": "ferry_terminal",
+        "building": "transportation",
+        "ferry": "yes",
+        "name": "Estação Fluvial de Belém",
+        "operator": "Transtejo Soflusa",
+        "public_transport": "station",
+        "source": "https://ttsl.pt/",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q10275808",
+        "wikimedia_commons": "Category:Estação Fluvial de Belém",
+        "wikipedia": "pt:Estação Fluvial de Belém"
+      }
+    },
+    {
+      "type": "way",
+      "id": 169086965,
+      "center": {
+        "lat": 38.6920282,
+        "lon": -9.2168875
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1400-038",
+        "addr:street": "Jardim da Torre de Belém",
+        "amenity": "cafe",
+        "building": "yes",
+        "check_date": "2024-05-02",
+        "cuisine": "coffee_shop",
+        "internet_access": "no",
+        "name": "Café do Forte",
+        "opening_hours": "Mo-Fr 10:00-19:00; Sa,Su 10:00-19:30"
+      }
+    },
+    {
+      "type": "way",
+      "id": 240664168,
+      "center": {
+        "lat": 38.693036,
+        "lon": -9.2135141
+      },
+      "tags": {
+        "building": "yes",
+        "height": "5",
+        "name": "Vela Latina",
+        "shop": "mall",
+        "source": "Result of an automatic process from Esri Portugal to calculate the height of buildings using LIDAR data from the Instituto da Conservacao da Natureza e das Florestas - ICNF, Projeto AGIL LiDAR",
+        "source:type": "aerial imagery"
+      }
+    },
+    {
+      "type": "way",
+      "id": 241540590,
+      "center": {
+        "lat": 38.6938942,
+        "lon": -9.2069296
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "check_date": "2024-05-02",
+        "height": "2",
+        "name": "Cervejaria Portugália"
+      }
+    },
+    {
+      "type": "way",
+      "id": 241540591,
+      "center": {
+        "lat": 38.69385,
+        "lon": -9.2072776
+      },
+      "tags": {
+        "addr:street": "Avenida de Brasília",
+        "addr:unit": "Espelho d'Agua",
+        "amenity": "restaurant",
+        "building": "yes",
+        "check_date": "2025-04-22",
+        "cuisine": "italian;pizza",
+        "name": "ZeroZero Belém",
+        "opening_hours": "Mo-Su 12:00-24:00",
+        "phone": "+351 210364245",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 259348812,
+      "center": {
+        "lat": 38.6918751,
+        "lon": -9.2138804
+      },
+      "tags": {
+        "amenity": "cafe",
+        "building": "yes",
+        "floating": "no",
+        "height": "5",
+        "man_made": "pier",
+        "source": "Result of an automatic process from Esri Portugal to calculate the height of buildings using LIDAR data from the Instituto da Conservacao da Natureza e das Florestas - ICNF, Projeto AGIL LiDAR",
+        "source:type": "aerial imagery"
+      }
+    },
+    {
+      "type": "way",
+      "id": 280989956,
+      "center": {
+        "lat": 38.694259,
+        "lon": -9.212502
+      },
+      "tags": {
+        "building": "yes",
+        "height": "11",
+        "museum": "art",
+        "name": "Pavilhão Julião Sarmento",
+        "source": "Result of an automatic process from Esri Portugal to calculate the height of buildings using LIDAR data from the Instituto da Conservacao da Natureza e das Florestas - ICNF, Projeto AGIL LiDAR",
+        "source:type": "aerial imagery",
+        "start_date": "2025-06-04",
+        "tourism": "museum",
+        "wikidata": "Q134704067",
+        "wikimedia_commons": "Category:Pavilhão Julião Sarmento"
+      }
+    },
+    {
+      "type": "way",
+      "id": 309096559,
+      "center": {
+        "lat": 38.7057893,
+        "lon": -9.2093392
+      },
+      "tags": {
+        "addr:street": "Encosta do Restelo",
+        "alt_name": "Jardim Fernanda de Castro",
+        "description": "Jardim cuja toponímia é uma homenagem à escritora, casada com António Ferro, uma das fundadoras da atual Sociedade Portuguesa de Autores e presidente da Associação Nacional de Parques Infantis. Área: 0,6 ha Horário: 24 horas",
+        "leisure": "park",
+        "name": "Jardim Fernanda de Castro",
+        "operator": "Câmara Municipal de Lisboa",
+        "source": "dadosabertos.cm-lisboa.pt",
+        "source:pkey": "34ccfcdc-9f24-4ca6-b711-ae44f514496c",
+        "start_date": "1999-07-30"
+      }
+    },
+    {
+      "type": "way",
+      "id": 360722979,
+      "center": {
+        "lat": 38.7012738,
+        "lon": -9.2176471
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:postcode": "1400-184",
+        "addr:street": "Praça de Goa",
+        "amenity": "school",
+        "email": "escolabairrorestelo@gmail.com;eb1.n63.lisboa@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica do Bairro do Restelo",
+        "note": "Agrupamento: Restelo",
+        "operator": "Agrupamento de Escolas do Restelo, Lisboa",
+        "operator:ref": "171153",
+        "operator:type": "public",
+        "ownership": "municipal",
+        "phone": "+351 213 019 564",
+        "ref": "253959",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1 Bairro do Restelo",
+        "source": "Ministério da Educação"
+      }
+    },
+    {
+      "type": "way",
+      "id": 360724939,
+      "center": {
+        "lat": 38.7071063,
+        "lon": -9.2068056
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:postcode": "1400-041",
+        "addr:street": "Rua Capitão-Mor Pedro Teixeira",
+        "amenity": "school",
+        "barrier": "fence",
+        "email": "eb1moinhosdorestelo@gmail.com;eb1.n30.lisboa@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica de Moinhos do Restelo",
+        "note": "Agrupamento: Restelo. Ano de construção - 1984. Património Municipal. Construído de base para o Ensino.",
+        "operator": "Agrupamento de Escolas do Restelo, Lisboa",
+        "operator:ref": "171153",
+        "operator:type": "public",
+        "ownership": "municipal",
+        "phone": "+351 213 019 101",
+        "ref": "251987",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1/JI Moinhos do Restelo",
+        "source": "Ministério da Educação",
+        "website": "http://www.eb1-n30-restelo.rcts.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 360725074,
+      "center": {
+        "lat": 38.7049014,
+        "lon": -9.2042632
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1400-203",
+        "addr:street": "Rua Gonçalves Zarco",
+        "amenity": "school",
+        "email": "eb23.paulavicente@escolas.min-edu.pt",
+        "grades": "10-14",
+        "name": "Escola Básica Paula Vicente",
+        "operator": "Agrupamento de Escolas do Restelo, Lisboa",
+        "operator:ref": "171153",
+        "operator:type": "public",
+        "phone": "+351 213 018 334",
+        "ref": "342520",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 2,3 Paula Vicente"
+      }
+    },
+    {
+      "type": "way",
+      "id": 389940298,
+      "center": {
+        "lat": 38.6952627,
+        "lon": -9.2114185
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "53",
+        "addr:postcode": "1400-026",
+        "addr:street": "Rua Bartolomeu Dias",
+        "amenity": "school",
+        "check_date": "2024-07-14",
+        "contact:email": "felicidadepinheiro@cbomsucesso.pt;colegiobomsucesso@gmail.com",
+        "contact:fax": "+351 213020435",
+        "contact:phone": "+351 213 014 434;+351 213010442",
+        "contact:website": "http://www.colegiobomsucesso.pt",
+        "grades": "3-14",
+        "name": "Colégio do Bom Sucesso",
+        "operator": "Fundação Obra Social das Religiosas Dominicanas Irlandesas",
+        "operator:type": "private",
+        "ref": "505079",
+        "ref:aeep": "1096",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 403827294,
+      "center": {
+        "lat": 38.7001479,
+        "lon": -9.2175511
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 429591699,
+      "center": {
+        "lat": 38.7031026,
+        "lon": -9.1949977
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:housenumber": "4",
+        "addr:postcode": "1300-428",
+        "addr:street": "Rua Nova do Calhariz",
+        "amenity": "school",
+        "email": "info@eb1-lisboa-n19.rcts.pt;eb1.n19.lisboa@escolas.min-edu.pt",
+        "grades": "6-9",
+        "name": "Escola Básica Alexandre Herculano",
+        "note": "Agrupamento: Francisco Arruda Património Municipal. Em 1852 o edifício funcionou como Câmara do Concelho de Belém. O edifício funciona como estabelecimento escolar desde 1878, tendo sido adaptado para esse efeito.",
+        "operator": "Agrupamento de Escolas Francisco de Arruda, Lisboa",
+        "operator:ref": "171372",
+        "operator:type": "public",
+        "ownership": "municipal",
+        "phone": "+351 213 624 701",
+        "ref": "243838",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1 Alexandre Herculano",
+        "source": "Ministério da Educação",
+        "website": "https://sites.google.com/site/eb1alexandreherculano/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 429619863,
+      "center": {
+        "lat": 38.7043463,
+        "lon": -9.1974869
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:housenumber": "18",
+        "addr:postcode": "1300-148",
+        "addr:street": "Rua Coronel Pereira da Silva",
+        "alt_name": "EB 1 Alexandre Rodrigues Ferreira",
+        "amenity": "kindergarten",
+        "contact:email": "eb1.n60.lisboa@escolas.min-edu.pt",
+        "contact:fax": "+351 213634446",
+        "email": "direccao@farruda.com",
+        "grades": "3-5",
+        "name": "Jardim de Infância Alexandre Rodrigues Ferreira",
+        "note": "Agrupamento: Francisco de Arruda. Ano de Construção - 1934. Património Municipal. Construído de base para o Ensino.",
+        "old_name": "Escola Básica do 1º Ciclo Alexandre Rodrigues Ferreira",
+        "operator": "Agrupamento de Escolas Francisco de Arruda, Lisboa",
+        "operator:ref": "171372",
+        "operator:type": "public",
+        "ownership": "municipal",
+        "phone": "+351 21 363 4446",
+        "ref": "253923",
+        "ref:qzp": "QZP.45",
+        "source": "Ministério da Educação",
+        "start_date": "1934"
+      }
+    },
+    {
+      "type": "way",
+      "id": 555654790,
+      "center": {
+        "lat": 38.7063967,
+        "lon": -9.2092458
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "chinese",
+        "height": "9",
+        "name": "Restaurante Chinês"
+      }
+    },
+    {
+      "type": "way",
+      "id": 573295529,
+      "center": {
+        "lat": 38.7067914,
+        "lon": -9.204927
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1400-069",
+        "addr:street": "Rua Conselheiro Martins de Carvalho",
+        "branch": "Restelo",
+        "brand": "Continente Bom Dia",
+        "brand:wikidata": "Q123570507",
+        "brand:wikipedia": "pt:Continente Bom Dia",
+        "building": "yes",
+        "contact:facebook": "continenteoficial",
+        "contact:instagram": "continente",
+        "contact:phone": "+351 210 739 210",
+        "contact:youtube": "https://www.youtube.com/user/continentept",
+        "height": "11",
+        "name": "Continente Bom Dia",
+        "opening_hours": "Mo-Su 08:30-21:00",
+        "ref": "52db7031-46b7-535d-9b18-1693427ff91c",
+        "shop": "supermarket",
+        "source": "Result of an automatic process from Esri Portugal to calculate the height of buildings using LIDAR data from the Instituto da Conservacao da Natureza e das Florestas - ICNF, Projeto AGIL LiDAR",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "source:type": "aerial imagery",
+        "website": "https://feed.continente.pt/lojas/continente-bom-dia-restelo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 664145144,
+      "center": {
+        "lat": 38.6948412,
+        "lon": -9.2156171
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 834075472,
+      "center": {
+        "lat": 38.6959429,
+        "lon": -9.1934298
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "bar": "yes",
+        "changing_table": "yes",
+        "layer": "1",
+        "level": "1",
+        "name": "MAAT Café & Kitchen",
+        "outdoor_seating": "yes",
+        "reservation": "yes",
+        "room": "restaurant",
+        "toilets": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 885225627,
+      "center": {
+        "lat": 38.6993946,
+        "lon": -9.2107113
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "3",
+        "addr:postcode": "1400-239",
+        "addr:street": "Praça de Malaca",
+        "amenity": "school",
+        "contact:email": "geral@atorre.pt;direcao@atorre.pt",
+        "contact:website": "https://atorre.pt/",
+        "email": "geral@atorre.pt",
+        "grades": "3-11",
+        "name": "Cooperativa \"A Torre\"",
+        "name:pt": "A Torre",
+        "operator": "Sociedade Cooperativa \" A Torre - Educação e Ensino CRL\"",
+        "operator:type": "cooperative",
+        "phone": "+351 21 301 1407",
+        "ref": "505160",
+        "ref:aeep": "1299",
+        "ref:qzp": "QZP.45",
+        "website": "https://atorre.pt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 938462937,
+      "center": {
+        "lat": 38.7035388,
+        "lon": -9.1962704
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "height": "9",
+        "name": "24 A",
+        "source": "Result of an automatic process from Esri Portugal to calculate the height of buildings using LIDAR data from the Instituto da Conservacao da Natureza e das Florestas - ICNF, Projeto AGIL LiDAR",
+        "source:type": "aerial imagery"
+      }
+    },
+    {
+      "type": "way",
+      "id": 938463618,
+      "center": {
+        "lat": 38.7035852,
+        "lon": -9.196421
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "26",
+        "addr:postcode": "1300-102",
+        "addr:street": "Travessa da Boa Hora à Ajuda",
+        "amenity": "restaurant",
+        "building": "yes",
+        "diet:local": "yes",
+        "name": "O Caçador",
+        "opening_hours": "Mon-Sat 8:00-22:00",
+        "outdoor_seating": "yes",
+        "phone": "+351 21 363 4673"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1011831136,
+      "center": {
+        "lat": 38.6928104,
+        "lon": -9.2158216
+      },
+      "tags": {
+        "alt_name": "Jardim da Torre de Belém",
+        "description": "Toponímia: Arquiteto Paisagista 1924 - 2012. Início: Jardim da Torre de Belém. Este jardim, localizado junto ao Tejo, está implantado no local onde funcionou até meados do séc. XX a \"Fábrica do Gás de Belém\"",
+        "leisure": "park",
+        "name": "Jardim António Viana Barreto",
+        "note": "Topónimo atribuído pelo edital 155/2021, de 18 de agosto, publicado em Boletim Municipal n.º 1440, de 23 de setembro de 2021.",
+        "old_name": "Jardim da Torre de Belém",
+        "operator": "Câmara Municipal de Lisboa",
+        "operator:type": "government",
+        "operator:wikidata": "Q30255955",
+        "source": "dadosabertos.cm-lisboa.pt;https://bmpesquisa.cm-lisboa.pt/pls/OKUL/app_bm.download_my_file?p_file=3815",
+        "source:pkey": "4616cec3-038f-4615-a9d2-bdd261d2a568",
+        "start_date": "2021-09-23",
+        "wikidata": "Q6698351",
+        "wikimedia_commons": "Category:Jardim da Torre de Belém",
+        "wikipedia": "pt:Jardim da Torre de Belém"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1011835163,
+      "center": {
+        "lat": 38.7048327,
+        "lon": -9.2084594
+      },
+      "tags": {
+        "addr:street": "Rua Rui Pereira",
+        "description": "Horário: 3.ª feira das 14h00 às 18h00 4.ª feira a Domingo das 10h00 às 18h00",
+        "leisure": "park",
+        "name": "Jardim do Museu de Etnologia",
+        "source": "dadosabertos.cm-lisboa.pt",
+        "source:pkey": "2e13d000-1f23-4cf4-9922-fe1413d0cad8"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1011835167,
+      "center": {
+        "lat": 38.7009901,
+        "lon": -9.2183006
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Praça de Goa",
+        "name:etymology:wikidata": "Q1171"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1011835168,
+      "center": {
+        "lat": 38.6988166,
+        "lon": -9.2158779
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Praça de Damão"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1011835169,
+      "center": {
+        "lat": 38.6984159,
+        "lon": -9.2128452
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Praça de Dio",
+        "name:etymology:wikidata": "Q631849"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1011835172,
+      "center": {
+        "lat": 38.6991098,
+        "lon": -9.2096964
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1400-239",
+        "addr:street": "Praça de Malaca",
+        "leisure": "park",
+        "name": "Praça de Malaca",
+        "name:etymology:wikidata": "Q61089"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1053294263,
+      "center": {
+        "lat": 38.6972013,
+        "lon": -9.1970836
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "39",
+        "addr:postcode": "1300-598",
+        "addr:street": "Rua do Cais da Alfândega Velha",
+        "building": "yes",
+        "fee": "yes",
+        "name": "Quake - Centro do Terramoto de Lisboa",
+        "name:en": "Quake - Lisbon Earthquake Centre",
+        "opening_hours": "Mo-Su 10:00-18:00",
+        "tourism": "museum"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1053294281,
+      "center": {
+        "lat": 38.6954634,
+        "lon": -9.1980713
+      },
+      "tags": {
+        "amenity": "cafe",
+        "architect": "Bak Gordon Arquitectos",
+        "architect:wikidata": "Q126983827",
+        "building": "yes",
+        "name": "Gandalata"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1064852750,
+      "center": {
+        "lat": 38.6951907,
+        "lon": -9.2196099
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1064852859,
+      "center": {
+        "lat": 38.696276,
+        "lon": -9.2177612
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Academia Ten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1064852861,
+      "center": {
+        "lat": 38.6974642,
+        "lon": -9.2191561
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1064852895,
+      "center": {
+        "lat": 38.6958027,
+        "lon": -9.2164429
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1066174957,
+      "center": {
+        "lat": 38.6984544,
+        "lon": -9.2179935
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1066174964,
+      "center": {
+        "lat": 38.6977667,
+        "lon": -9.2195656
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1148579366,
+      "center": {
+        "lat": 38.7022723,
+        "lon": -9.2000543
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1276081396,
+      "center": {
+        "lat": 38.7003312,
+        "lon": -9.1945602
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1349-003",
+        "addr:street": "Rua Alexandre de Sá Pinto",
+        "amenity": "school",
+        "architect": "António Pedroso",
+        "email": "direcao@esmpombal.edu.gov.pt;servicos@esmpombal.edu.gov.pt",
+        "grades": "12-17",
+        "name": "Escola Secundária Marquês de Pombal",
+        "operator": "Escola Secundária Marquês de Pombal, Lisboa",
+        "operator:ref": "402163",
+        "operator:type": "public",
+        "phone": "+351 213 616 630",
+        "ref": "402163",
+        "ref:qzp": "QZP.45",
+        "website": "https://esmp.pt/",
+        "wikidata": "Q10274441"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1276780779,
+      "center": {
+        "lat": 38.6992303,
+        "lon": -9.2042734
+      },
+      "tags": {
+        "addr:city": "LISBOA",
+        "addr:postcode": "1400-345",
+        "addr:street": "Largo das Escolas 3/4",
+        "amenity": "kindergarten",
+        "grades": "3-5",
+        "name": "Jardim de Infância de Belém",
+        "operator": "Agrupamento de Escolas do Restelo, Lisboa",
+        "operator:ref": "171153",
+        "operator:type": "public",
+        "ref": "645850",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302579205,
+      "center": {
+        "lat": 38.6994409,
+        "lon": -9.2123537
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "21",
+        "addr:postcode": "1400-314",
+        "addr:street": "Avenida do Restelo",
+        "amenity": "kindergarten",
+        "barrier": "wall",
+        "contact:email": "info@lecoletrilingue.com;admin@lecoletrilingue.com;direction@lecolebiligue.com",
+        "contact:phone": "+351 910335102;+351 211931518",
+        "contact:website": "https://lecoletrilingue.com",
+        "grades": "3-5",
+        "name": "L'École Trilingue",
+        "operator": "E3LIS - École Trilingue, Lda.",
+        "operator:type": "private",
+        "ref": "806875",
+        "ref:aeep": "1419",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302579206,
+      "center": {
+        "lat": 38.6993764,
+        "lon": -9.2128023
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "23",
+        "addr:postcode": "1400-343",
+        "addr:street": "Avenida do Restelo",
+        "amenity": "school",
+        "contact:email": "esc.raiz@escolas.min-edu.pt",
+        "contact:fax": "+351 213042089",
+        "contact:phone": "+351 213042080",
+        "grades": "3-11",
+        "name": "Escola Raiz",
+        "operator:type": "private",
+        "ref": "522119",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302579207,
+      "center": {
+        "lat": 38.6984114,
+        "lon": -9.2098242
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "1",
+        "addr:postcode": "1400-117",
+        "addr:street": "Rua Dom Francisco de Almeida",
+        "amenity": "school",
+        "contact:fax": "+351 213018585",
+        "contact:phone": "+351 213041070",
+        "grades": "3-17",
+        "name": "Centro de Educação e Desenvolvimento Jacob Rodrigues Pereira",
+        "operator": "Casa Pia de Lisboa",
+        "operator:type": "public",
+        "ref": "600015",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302579208,
+      "center": {
+        "lat": 38.7046121,
+        "lon": -9.2134327
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "14",
+        "addr:postcode": "1400-267",
+        "addr:street": "Rua Paulo da Gama",
+        "amenity": "school",
+        "contact:email": "fmartins.binet@gmail.com",
+        "contact:fax": "+351 213012374",
+        "contact:phone": "+351 213 012 374;+351 213 014 247",
+        "contact:website": "http://www.alfredbinet.com",
+        "grades": "3-14",
+        "name": "Externato Alfredo Binet",
+        "operator": "Sorabi - Sociedade de Reeducação Infantil. Lda.",
+        "operator:type": "private",
+        "ref": "803194",
+        "ref:aeep": "1317",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302579209,
+      "center": {
+        "lat": 38.6976201,
+        "lon": -9.2189143
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:floor": "1",
+        "addr:housenumber": "24",
+        "addr:postcode": "1400-140",
+        "addr:street": "Rua Duarte Pacheco Pereira",
+        "amenity": "school",
+        "contact:email": "geral@externatosantamariadebelem.com",
+        "contact:fax": "+351 213032424",
+        "contact:phone": "+351 213011343;+351 212011343",
+        "grades": "3-9",
+        "name": "Externato Santa Maria de Belém",
+        "operator:type": "private",
+        "ref": "502108",
+        "ref:aeep": "1426",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302579210,
+      "center": {
+        "lat": 38.6955153,
+        "lon": -9.2165034
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:floor": "0",
+        "addr:housenumber": "5",
+        "addr:postcode": "1400-016",
+        "addr:street": "Rua António de Abreu",
+        "alt_name": "Primeira Secção do Externato Alfredo Binet",
+        "amenity": "school",
+        "contact:email": "sextalfredobinet@escolas.min-edu.pt",
+        "contact:fax": "+351 213012374",
+        "contact:phone": "+351 213014247",
+        "grades": "6-11",
+        "name": "Externato Alfred Binet",
+        "name:pt": "Externato Alfred Binet, 1ciclo",
+        "opening_hours": "Mo-Fr 09:00-17:00",
+        "operator:type": "private",
+        "ref": "804244",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302579211,
+      "center": {
+        "lat": 38.7003191,
+        "lon": -9.2167813
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "7",
+        "addr:postcode": "1400-144",
+        "addr:street": "Rua Fernão Lopes Castanhede",
+        "amenity": "kindergarten",
+        "contact:email": "ji.onossocolegio@escolas.min-edu.pt",
+        "contact:phone": "+351 914968527",
+        "grades": "3-5",
+        "name": "Jardim Infantil \"O Nosso Colégio\"",
+        "operator:type": "private",
+        "ref": "502662",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 5363219,
+      "center": {
+        "lat": 38.6972785,
+        "lon": -9.1987051
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "136",
+        "addr:postcode": "1300-300",
+        "addr:street": "Avenida da Índia",
+        "alt_name": "Museu dos Coches",
+        "architect": "Paulo Mendes da Rocha;Bak Gordon Arquitectos",
+        "architect:wikidata": "Q312855;Q126983827",
+        "building": "yes",
+        "contact:email": "geral@mncoches.dgpc.pt",
+        "contact:phone": "+351 210 732 319;+351 210 492 400",
+        "contact:website": "www.museudoscoches.pt",
+        "fee": "yes",
+        "layer": "1",
+        "name": "Museu Nacional dos Coches",
+        "name:de": "Nationales Kutschenmuseum",
+        "name:en": "National Coach Museum",
+        "name:fr": "Musée national des Carrosses",
+        "name:it": "Museo Nazionale delle Carrozze",
+        "name:ko": "마차 박물관",
+        "name:pt": "Museu Nacional dos Coches",
+        "opening_hours": "Tu-Su 10:00-18:00; Jan 01,May 01,Dec 25; easter off",
+        "subject:wikipedia": "pt:Museu Nacional dos Coches",
+        "tourism": "museum",
+        "type": "multipolygon",
+        "wikidata": "Q1659559"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 8342750,
+      "center": {
+        "lat": 38.6987239,
+        "lon": -9.1950457
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housename": "Convento das Salésias",
+        "addr:housenumber": "26",
+        "addr:postcode": "1300-036",
+        "addr:street": "Rua Alexandre de Sá Pinto",
+        "alt_name": "Convento das Salésias;Convento de Nossa Senhora da Visitação",
+        "amenity": "school",
+        "building": "yes",
+        "contact:fax": "+351 213630302",
+        "contact:phone": "+351 213616710",
+        "denomination": "roman_catholic",
+        "description": "O convento de religiosas salésias fundado em 1714 pelo Padre Teodoro de Almeida, sob a invocação de Nª Sra. da Visitação, viu a sua estrutura arquitectónica edificada, neste local, em 1846. De planta composta, organiza-se em torno de um pátio...",
+        "disused:amenity": "place_of_worship",
+        "grades": "3-17",
+        "historic": "monastery",
+        "name": "Colégio Dom Nuno Álvares Pereira",
+        "official_name": "Centro de Educação e Desenvolvimento Dom Nuno Álvares Pereira",
+        "old_name": "Igreja de Nossa Senhora da Visitação",
+        "operator": "Casa Pia de Lisboa",
+        "operator:type": "public",
+        "ref": "610318",
+        "ref:qzp": "QZP.45",
+        "religion": "christian",
+        "source:pkey": "51435fe0-5806-48c5-b0cf-b734fe3907eb",
+        "start_date": "1714",
+        "type": "multipolygon",
+        "wikidata": "Q90314871"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 8797676,
+      "center": {
+        "lat": 38.6997649,
+        "lon": -9.2021712
+      },
+      "tags": {
+        "addr:street": "Calçada do Galvão",
+        "alt_name": "Jardim do Ultramar",
+        "barrier": "wall",
+        "charge": "5 EUR",
+        "description": "Criado em 1912, no local onde hoje se localiza a antiga cerca do Palácio de Belém. Presentemente sob administração do Instituto de Investigação Científica Tropical, foi construído com o objetivo de promover o estudo sistemático da flora das anti",
+        "fee": "yes",
+        "garden:type": "botanical",
+        "leisure": "park",
+        "name": "Jardim Botânico Tropical",
+        "name:cs": "Tropická botanická zahrada",
+        "name:de": "Tropischer Botanischer Garten",
+        "name:en": "Tropical Botanical Garden",
+        "name:it": "Giardino botanico tropicale",
+        "name:pt": "Jardim Botânico Tropical",
+        "old_name": "Jardim-Museu Agrícola Tropical",
+        "opening_hours": "Apr-Sep Mo-Su 09:00-20:00; Oct-Mar Mo-Su 10:00-17:00; PH; Jan 01,Dec 25 off",
+        "source": "dadosabertos.cm-lisboa.pt",
+        "source:pkey": "408e5c2d-7181-4d2b-9bde-20f81ca3c566",
+        "surface": "grass",
+        "type": "multipolygon",
+        "website": "https://www.museus.ulisboa.pt/pt-pt/jardim-botanico-tropical",
+        "wikidata": "Q2249320",
+        "wikipedia": "pt:Jardim Botânico Tropical"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 8800173,
+      "center": {
+        "lat": 38.7069244,
+        "lon": -9.2020964
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Restaurante Estufa Real",
+        "type": "multipolygon",
+        "website": "http://estufareal.com/"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 9227991,
+      "center": {
+        "lat": 38.6960645,
+        "lon": -9.2060199
+      },
+      "tags": {
+        "addr:street": "Praça do Império",
+        "alt_name": "Praça do Império",
+        "architect": "Cottinelli Telmo",
+        "architect:wikidata": "Q1709752",
+        "description": "Jardim construído por altura da \"Exposição do Mundo Português\" (1940), evento comemorativo dos 800 anos da Independência de Portugal e dos 300 anos da Restauração da Independência, da autoria do arquiteto Cottineli Telmo. É também desta época",
+        "leisure": "park",
+        "name": "Jardim da Praça do Império",
+        "name:de": "Platz des Império",
+        "name:en": "Império Square",
+        "name:ko": "제국광장의 정원",
+        "operator": "Câmara Municipal de Lisboa",
+        "operator:type": "government",
+        "operator:wikidata": "Q30255955",
+        "source": "dadosabertos.cm-lisboa.pt",
+        "source:pkey": "c30a926b-d248-4d7e-a924-70a3520aa6bc",
+        "type": "multipolygon",
+        "wikidata": "Q1483993",
+        "wikipedia": "pt:Jardim da Praça do Império"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 10093261,
+      "center": {
+        "lat": 38.6954273,
+        "lon": -9.2085305
+      },
+      "tags": {
+        "amenity": "arts_centre",
+        "building": "no",
+        "building:levels": "0",
+        "check_date": "2024-12-16",
+        "name": "Centro Cultural de Belém",
+        "name:ko": "벨렝 문화센터",
+        "tourism": "museum",
+        "type": "multipolygon",
+        "wheelchair": "limited",
+        "wikidata": "Q1054277",
+        "wikipedia": "pt:Centro Cultural de Belém"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 11318514,
+      "center": {
+        "lat": 38.6980047,
+        "lon": -9.205598
+      },
+      "tags": {
+        "email": "geral@mjeronimos.dgpc.pt",
+        "fee": "yes",
+        "museum_type": "national",
+        "name": "Mosteiro dos Jerónimos",
+        "name:de": "Hieronymitenkloster",
+        "name:en": "Jerónimos Monastery",
+        "name:es": "Monasterio de los Jerónimos",
+        "name:fr": "Monastère des Hiéronymites",
+        "name:ja": "ジェローニモス修道院",
+        "name:ko": "제로니무스 수도원",
+        "name:pl": "Klasztor Hieronimitów",
+        "name:ru": "Жеронимуш",
+        "name:zh": "熱羅尼莫斯修道院",
+        "opening_hours": "Oct-Apr 10:00-17:30; May-Sep 10:00-18:30; Mo off; Jan 1 off; May 1 off; Dec 25 off",
+        "phone": "+351 213 620 034",
+        "toilets:wheelchair": "yes",
+        "tourism": "museum",
+        "type": "multipolygon",
+        "website": "http://www.mosteirojeronimos.pt",
+        "wheelchair": "yes",
+        "wheelchair:description:de": "EG fast komplett befahrbar. Rolli und Begleitung hat Vortritt + freien Eintritt. Rampen vorhanden + Hilfe vom Personal. Rollitoilette: ja. Kleiner Bereich im EG mit 1-2 hohen Stufen. OG nur über lange Treppe erreichbar.",
+        "wikidata": "Q272781",
+        "wikipedia": "en:Jerónimos Monastery"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 11381632,
+      "center": {
+        "lat": 38.6959366,
+        "lon": -9.1936178
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housename": "Central Tejo",
+        "addr:postcode": "1300-598",
+        "addr:street": "Avenida de Brasília",
+        "alt_name": "Central Tejo",
+        "building": "yes",
+        "contact:email": "maat@edp.pt",
+        "contact:phone": "+351 210 028 130",
+        "contact:website": "www.maat.pt",
+        "layer": "2",
+        "level": "2",
+        "name": "Museu de Arte, Arquitetura e Tecnologia (MAAT)",
+        "name:en": "Museum of Art, Architecture and Technology",
+        "opening_hours": "Mo-Su 12:00-20:00; Tu off; Jan 01,May 01,Dec 25",
+        "operator": "Fundação EDP",
+        "owner": "Fundação EDP",
+        "short_name": "MAAT",
+        "tourism": "museum",
+        "type": "multipolygon",
+        "website": "www.maat.pt",
+        "wheelchair": "yes",
+        "wikidata": "Q27522479",
+        "wikipedia": "pt:Museu de Arte, Arquitetura e Tecnologia"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 15467035,
+      "center": {
+        "lat": 38.69431,
+        "lon": -9.2022684
+      },
+      "tags": {
+        "addr:city": "Lisboa (Belém)",
+        "addr:country": "PT",
+        "addr:housenumber": "1400",
+        "addr:place": "Doca de Belém",
+        "addr:postcode": "1400-032",
+        "addr:street": "Avenida de Brasilia",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "regional",
+        "email": "bdtejo@gmail.com",
+        "internet_access": "no",
+        "name": "Clube Naval de Lisboa",
+        "opening_hours": "We-Mo 12:00-22:00",
+        "outdoor_seating": "yes",
+        "phone": "+351 21 363 6014",
+        "smoking": "isolated",
+        "type": "multipolygon",
+        "website": "https://restaurantedoclubenavaldelisboa.pt/en_GB/"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 15467072,
+      "center": {
+        "lat": 38.6942863,
+        "lon": -9.2025963
+      },
+      "tags": {
+        "alt_name": "Associação Regional de Vela do Centro",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "A Vela",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 15467073,
+      "center": {
+        "lat": 38.6942846,
+        "lon": -9.2024313
+      },
+      "tags": {
+        "addr:postcode": "1300-598",
+        "addr:street": "Doca de Belém",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Restaurante O Pedroucos",
+        "phone": "+351213644475",
+        "type": "multipolygon",
+        "website": "http://www.opedroucos.hi5.com"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 15482569,
+      "center": {
+        "lat": 38.6975882,
+        "lon": -9.2014943
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housename": "Palácio de Belém",
+        "addr:postcode": "1349-022",
+        "addr:street": "Praça Afonso de Albuquerque",
+        "building": "yes",
+        "contact:email": "museu@presidencia.pt",
+        "contact:fax": "+351 213 614 764",
+        "contact:phone": "+351 213 614 660",
+        "contact:website": "www.museu.presidencia.pt",
+        "name": "Museu da Presidência da República",
+        "name:de": "Museum der Präsidentschaft der Republik",
+        "name:en": "Museum of the Presidency of the Republic",
+        "name:pt": "Museu da Presidência da República",
+        "opening_hours": "Tu-Fr 10:00-18:00; Sa,Su 10:00-13:00,14:00-18:00; Jan 01,May 01,Jun 13,Dec 24-25,31 off; easter off; PH 10:00-13:00,14:00-18:00",
+        "tourism": "museum",
+        "type": "multipolygon",
+        "website": "https://www.museu.presidencia.pt",
+        "wheelchair": "yes",
+        "wikidata": "Q17167658",
+        "wikipedia": "pt:Museu da Presidência da República"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 15987229,
+      "center": {
+        "lat": 38.7009965,
+        "lon": -9.2136399
+      },
+      "tags": {
+        "addr:street": "Jardim Ducla Soares",
+        "description": "Situa-se na denominada Colina de São Jerónimo, integrado numa zona histórica que inclui os monumentos nacionais mais representativos do período das Descobertas: Ermida de São Jerónimo, Torre de Belém e Mosteiro dos Jerónimos. Em meados da década",
+        "leisure": "park",
+        "name": "Jardim Ducla Soares",
+        "operator": "Câmara Municipal de Lisboa",
+        "operator:type": "government",
+        "operator:wikidata": "Q30255955",
+        "operator:wikipedia": "pt:Câmara Municipal de Lisboa",
+        "source": "dadosabertos.cm-lisboa.pt",
+        "start_date": "1987-09-07",
+        "type": "multipolygon",
+        "wikidata": "Q10305633",
+        "wikipedia": "pt:Jardim Ducla Soares"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 17988877,
+      "center": {
+        "lat": 38.7087957,
+        "lon": -9.2063842
+      },
+      "tags": {
+        "addr:street": "Rua Tristão Vaz",
+        "description": "134. Parque Recreativo dos Moinhos de Santana Parque que se distingue pela presença de dois antigos moinhos com uma vista deslumbrante sobre a cidade e o Tejo, destinado ao recreio e estadia. Com amplos relvados, inúmeras árvores e arbustos e a presen",
+        "leisure": "park",
+        "name": "Parque Recreativo dos Moinhos de Santana",
+        "operator": "Câmara Municipal de Lisboa",
+        "operator:type": "government",
+        "operator:wikidata": "Q30255955",
+        "source": "dadosabertos.cm-lisboa.pt",
+        "type": "multipolygon",
+        "website": "https://informacoeseservicos.lisboa.pt/contactos/diretorio-da-cidade/parque-recreativo-dos-moinhos-de-santana-1",
+        "wikidata": "Q10331529",
+        "wikimedia_commons": "Category:Parque Recreativo dos Moinhos de Santana",
+        "wikipedia": "pt:Parque dos Moinhos de Santana"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 18302021,
+      "center": {
+        "lat": 38.6936374,
+        "lon": -9.208496
+      },
+      "tags": {
+        "addr:housename": "Museu de Arte Popular",
+        "addr:street": "Avenida de Brasília",
+        "addr:unit": "R/C",
+        "building": "public",
+        "check_date": "2024-05-02",
+        "contact:email": "map.geral@imc-ip.pt",
+        "contact:phone": "+351 213 011 282;+351 213 011 675;+351 213 011 128",
+        "contact:website": "https://museuartepopular.wordpress.com",
+        "height": "3",
+        "museum": "art",
+        "name": "Museu de Arte Popular",
+        "name:de": "Volkskundemuseum",
+        "name:en": "Museum of Popular Art",
+        "name:it": "Museo di arte popolare",
+        "opening_hours": "We-Fr 10:00-18:00; Sa,Su 10:00-13:00,14:00-18:00; Jan 01,May 01,Jun 13,Dec 25 off; easter off",
+        "start_date": "1948",
+        "tourism": "museum",
+        "type": "multipolygon",
+        "wikidata": "Q10333771",
+        "wikimedia_commons": "Category:Museu de Arte Popular (Lisboa)",
+        "wikipedia": "en:Museu de Arte Popular"
+      }
+    }
+  ]
+}

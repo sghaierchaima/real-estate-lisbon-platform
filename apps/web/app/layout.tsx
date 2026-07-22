@@ -1,0 +1,41 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import AppProviders from "@/components/providers/AppProviders";
+import SessionExpiryWatcher from "@/components/auth/SessionExpiryWatcher";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Real Estate Lisbon",
+  description: "Trusted property platform for Portugal buyers",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full">
+        
+        <AppProviders>
+          <SessionExpiryWatcher />
+          {children}
+        </AppProviders>
+      </body>
+    </html>
+  );
+}

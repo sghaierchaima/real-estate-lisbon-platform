@@ -1,0 +1,26 @@
+# Root
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+# Uploaded files
+/uploads/
+# Backend uploaded files
+apps/api/uploads/

@@ -1,0 +1,384 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  BUYER
+  PROFESSIONAL
+}
+
+enum ProfileTier {
+  REGISTERED
+  EXPLORER
+  ACTIVE_BUYER
+  QUALIFIED
+  PRIORITY
+}
+
+enum ProfessionalType {
+  MORTGAGE_BROKER
+  PROPERTY_AGENT
+  PROPERTY_LAWYER
+  TAX_ADVISOR
+  HOME_INSPECTOR
+  PROPERTY_VALUER
+  INSURANCE_BROKER
+}
+
+enum VerificationStatus {
+  PENDING
+  ACTIVE
+  SUSPENDED
+  REJECTED
+}
+
+enum PropertyStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum LeadQuality {
+  HOT
+  WARM
+  COLD
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  MATCHED
+  CLOSED
+  LOST
+}
+
+enum MatchStatus {
+  PENDING
+  ACTIVE
+  CONTACTED
+  COMPLETED
+  CANCELLED
+}
+
+enum StoryStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model User {
+  id       String  @id @default(uuid())
+  email    String  @unique
+  password String?
+  fullName String?
+  role     Role    @default(BUYER)
+
+  profileCompletion Int         @default(20)
+  profileTier       ProfileTier @default(REGISTERED)
+
+  phone     String?
+  country   String?
+  city      String?
+  avatarUrl String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  professionalProfile ProfessionalProfile?
+  leads               Lead[]
+  matchesAsBuyer      Match[]              @relation("BuyerMatches")
+  stories             Story[]
+  notifications       Notification[]
+  passwordResetTokens PasswordResetToken[]
+  savedProperties     SavedProperty[]
+  reviewsGiven        Review[]             @relation("BuyerReviews")
+}
+
+model ProfessionalProfile {
+  id                 String             @id @default(uuid())
+  userId             String             @unique
+  professionalType   ProfessionalType
+  companyName        String?
+  bio                String?
+  languages          String[]
+  rating             Float              @default(0)
+  reviewsCount       Int                @default(0)
+  clientsCount       Int                @default(0)
+  verificationStatus VerificationStatus @default(PENDING)
+  isFeatured         Boolean            @default(false)
+  profileCompletion  Int                @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  matches    Match[]    @relation("ProfessionalMatches")
+  properties Property[]
+  reviews    Review[]
+}
+
+model Property {
+  id                    String @id @default(uuid())
+  professionalProfileId String
+
+  title        String
+  description  String?
+  location     String?
+  region       String?
+  city         String?
+  price        Float
+  propertyType String?
+  status       PropertyStatus @default(DRAFT)
+  featured     Boolean        @default(false)
+
+  bedrooms         Int?
+  bathrooms        Int?
+  area             Float?
+  landArea         Float?
+  constructionYear Int?
+  equipments       String[]
+  imageUrls        String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  professionalProfile ProfessionalProfile @relation(fields: [professionalProfileId], references: [id], onDelete: Cascade)
+  savedBy             SavedProperty[]
+}
+
+model SavedProperty {
+  id String @id @default(uuid())
+
+  userId     String
+  propertyId String
+
+  createdAt DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, propertyId])
+  @@index([userId])
+  @@index([propertyId])
+  @@index([userId, createdAt])
+}
+
+model Lead {
+  id     String  @id @default(uuid())
+  userId String?
+
+  fullName String?
+  email    String?
+  phone    String?
+
+  source   String?
+  interest String?
+  location String?
+  budget   String?
+
+  quality LeadQuality @default(COLD)
+  status  LeadStatus  @default(NEW)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user    User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  matches Match[]
+}
+
+model Match {
+  id             String  @id @default(uuid())
+  buyerId        String?
+  professionalId String
+  leadId         String?
+
+  score  Int         @default(0)
+  status MatchStatus @default(PENDING)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  buyer        User?               @relation("BuyerMatches", fields: [buyerId], references: [id], onDelete: SetNull)
+  professional ProfessionalProfile @relation("ProfessionalMatches", fields: [professionalId], references: [id], onDelete: Cascade)
+  lead         Lead?               @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  chatRoom     ChatRoom?
+  review       Review?
+}
+
+model Story {
+  id     String  @id @default(uuid())
+  userId String?
+
+  title      String
+  excerpt    String?
+  content    String?
+  author     String?
+  location   String?
+  imageUrl   String?
+  status     StoryStatus @default(PENDING)
+  isVerified Boolean     @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+model Notification {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  title   String
+  message String
+  type    NotificationType
+
+  isRead Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, isRead])
+  @@index([userId, createdAt])
+}
+
+enum NotificationType {
+  MATCH
+  LEAD
+  STORY
+  SYSTEM
+}
+
+model ChatRoom {
+  id             String @id @default(uuid())
+  matchId        String @unique
+  buyerId        String
+  professionalId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  match    Match         @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  messages ChatMessage[]
+}
+
+model ChatMessage {
+  id         String  @id @default(uuid())
+  chatRoomId String
+  senderId   String
+  content    String
+  isRead     Boolean @default(false)
+
+  status String    @default("SENT")
+  readAt DateTime?
+
+  createdAt DateTime @default(now())
+  chatRoom  ChatRoom @relation(fields: [chatRoomId], references: [id], onDelete: Cascade)
+}
+
+model Neighborhood {
+  id String @id @default(uuid())
+
+  name        String  @unique
+  zone        String?
+  description String?
+
+  tags       String[]
+  highlights String[]
+
+  avgPrice      Int?
+  pricePerSqm   Int?
+  rentYield     Float?
+  growthPercent Float?
+
+  schoolsCount   Int @default(0)
+  transportCount Int @default(0)
+  amenitiesCount Int @default(0)
+
+  schoolsScore   Float?
+  transportScore Float?
+  amenitiesScore Float?
+  safetyScore    Float?
+
+  aiScore   Int?
+  aiSummary String?
+
+  icon      String?
+  latitude  Float?
+  longitude Float?
+
+  sourceNotes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id String @id @default(uuid())
+
+  userId   String?
+  userRole Role?
+
+  action   String
+  entity   String?
+  entityId String?
+
+  description String?
+
+  ipAddress String?
+  userAgent String?
+
+  createdAt DateTime @default(now())
+}
+
+model PasswordResetToken {
+  id String @id @default(uuid())
+
+  userId    String
+  tokenHash String @unique
+
+  expiresAt DateTime
+  usedAt    DateTime?
+
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Review {
+  id String @id @default(uuid())
+
+  rating  Int
+  comment String?
+
+  status ReviewStatus @default(PENDING)
+
+  buyerId String
+  buyer   User   @relation("BuyerReviews", fields: [buyerId], references: [id], onDelete: Cascade)
+
+  professionalId String
+  professional   ProfessionalProfile @relation(fields: [professionalId], references: [id], onDelete: Cascade)
+
+  matchId String @unique
+  match   Match  @relation(fields: [matchId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([buyerId])
+  @@index([professionalId])
+  @@index([status])
+}

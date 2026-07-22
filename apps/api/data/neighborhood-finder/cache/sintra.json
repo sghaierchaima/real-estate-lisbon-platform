@@ -1,0 +1,4184 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-28T10:26:11Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 149704971,
+      "lat": 38.7954551,
+      "lon": -9.3869266,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Fonte da Sabuga",
+        "network": "Sintra434",
+        "official_name": "Sabuga",
+        "operator": "Viação 434",
+        "public_transport": "platform",
+        "route_ref": "434;435",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 256517826,
+      "lat": 38.8011087,
+      "lon": -9.3834746,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Dr Miguel Bombarda",
+        "name:Sintra434": "Paragem Millenium",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "platform",
+        "ref": "171917",
+        "route_ref": "1252;1253",
+        "route_ref:Sintra434": "434;435",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 256517827,
+      "lat": 38.8011455,
+      "lon": -9.3835351,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Dr Miguel Bombarda",
+        "name:Sintra434": "Paragem Millenium",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "stop_position",
+        "ref": "171917"
+      }
+    },
+    {
+      "type": "node",
+      "id": 256517869,
+      "lat": 38.7970278,
+      "lon": -9.3907713,
+      "tags": {
+        "operator": "Transportes Parque da Pena (TPP)",
+        "public_transport": "stop_position",
+        "tourist_train": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 290854065,
+      "lat": 38.802268,
+      "lon": -9.3763754,
+      "tags": {
+        "local_ref": "2",
+        "name": "Portela de Sintra",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q4120785",
+        "wikipedia": "pt:Estação Ferroviária da Portela de Sintra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 444416589,
+      "lat": 38.8011489,
+      "lon": -9.3791046,
+      "tags": {
+        "addr:postcode": "2710-521",
+        "branch": "Sintra",
+        "brand": "Pingo Doce",
+        "brand:wikidata": "Q1575057",
+        "brand:wikipedia": "pt:Pingo Doce",
+        "contact:facebook": "pingodoce",
+        "contact:instagram": "pingodoce",
+        "contact:linkedin": "https://www.linkedin.com/company/pingo-doce",
+        "contact:phone": "+351 938 875 841",
+        "contact:tiktok": "pingodoce",
+        "contact:youtube": "pingodocept",
+        "name": "Pingo Doce",
+        "opening_hours": "Mo-Su 08:00-21:00; easter 08:00-14:00",
+        "ref": "841",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "toilets": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 631504133,
+      "lat": 38.8014798,
+      "lon": -9.3832814,
+      "tags": {
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "fixme": "resurvey",
+        "healthcare": "pharmacy",
+        "name": "Marrazes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 631504154,
+      "lat": 38.8007487,
+      "lon": -9.3788196,
+      "tags": {
+        "amenity": "pharmacy",
+        "dispensing": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 910327772,
+      "lat": 38.8039305,
+      "lon": -9.3818239,
+      "tags": {
+        "name": "Sintra",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1146426351,
+      "lat": 38.7992895,
+      "lon": -9.3853944,
+      "tags": {
+        "local_ref": "2",
+        "name": "Sintra",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q801446",
+        "wikipedia": "pt:Estação Ferroviária de Sintra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1146426354,
+      "lat": 38.7992058,
+      "lon": -9.3853052,
+      "tags": {
+        "local_ref": "3",
+        "name": "Sintra",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q801446",
+        "wikipedia": "pt:Estação Ferroviária de Sintra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1146426583,
+      "lat": 38.799313,
+      "lon": -9.3854265,
+      "tags": {
+        "local_ref": "1",
+        "name": "Sintra",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q801446",
+        "wikipedia": "pt:Estação Ferroviária de Sintra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1418398052,
+      "lat": 38.802283,
+      "lon": -9.3951158,
+      "tags": {
+        "name": "Ribeira de Sintra",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1421318502,
+      "lat": 38.800105,
+      "lon": -9.3821702,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pastelaria Gregório"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1421318503,
+      "lat": 38.8024216,
+      "lon": -9.3816922,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:country": "PT",
+        "addr:postcode": "2710-573",
+        "amenity": "bank",
+        "atm": "yes",
+        "atm:network": "Telebanco 4B",
+        "atm:operator": "Santander Totta",
+        "branch": "Sintra",
+        "brand": "Santander",
+        "brand:website": "https://www.santander.pt/",
+        "brand:wikidata": "Q4854116",
+        "brand:wikipedia": "pt:Banco Santander Portugal",
+        "cash_in": "yes",
+        "cash_out": "yes",
+        "cheque_in": "yes",
+        "contact:email": "sintra@santander.pt",
+        "contact:facebook": "santanderpt",
+        "contact:instagram": "santanderpt",
+        "contact:linkedin": "https://www.linkedin.com/company/santanderpt/",
+        "contact:phone": "+351 219 106 870",
+        "contact:twitter": "santanderpt",
+        "contact:youtube": "@santanderpt",
+        "internet_access": "wlan",
+        "language:en": "yes",
+        "language:es": "yes",
+        "language:pt": "yes",
+        "name": "Santander",
+        "network": "Telebanco 4B",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa-Su off; Jan 01,Apr 25,May 25,Jun 01,Jun 26,Aug 10,Aug 24,Oct 15,Nov 05,Dec 01,Dec 08,Dec 25 off",
+        "operator": "Banco Santander (Portugal)",
+        "operator:wikidata": "Q4854116",
+        "operator:wikipedia": "pt:Banco Santander Portugal",
+        "ref": "5035",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.santander.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1421318504,
+      "lat": 38.7982482,
+      "lon": -9.3883655,
+      "tags": {
+        "addr:housenumber": "12",
+        "addr:street": "Volta do Duche",
+        "amenity": "cafe",
+        "name": "Sapa",
+        "opening_hours": "Tu-Su 09:30-18:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1422199979,
+      "lat": 38.8022279,
+      "lon": -9.376372,
+      "tags": {
+        "local_ref": "1",
+        "name": "Portela de Sintra",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q4120785",
+        "wikipedia": "pt:Estação Ferroviária da Portela de Sintra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1422200026,
+      "lat": 38.8024015,
+      "lon": -9.3769896,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "2",
+        "name": "Portela de Sintra (Estação) P2 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172482",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/stops/172482"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1422200029,
+      "lat": 38.8024096,
+      "lon": -9.376829,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "3",
+        "name": "Portela Sintra (Estação) P3 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172481",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/stops/172481"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1422200031,
+      "lat": 38.8024162,
+      "lon": -9.376641,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "4",
+        "name": "Portela Sintra (Estação) P4 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172485",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/stops/172485"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1422200035,
+      "lat": 38.8024251,
+      "lon": -9.3764254,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "5",
+        "name": "Portela Sintra (Estação) P5 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172483",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/stops/172483"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1422200038,
+      "lat": 38.8024303,
+      "lon": -9.376239,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "6",
+        "name": "Portela Sintra (Estação) P6 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "170307",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/stops/170307"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1422200041,
+      "lat": 38.802432,
+      "lon": -9.3760558,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "7",
+        "name": "Portela de Sintra (Estação) P7 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "170391",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/stops/170391"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1422244055,
+      "lat": 38.7996234,
+      "lon": -9.3852013,
+      "tags": {
+        "addr:street": "Avenida Doutor Miguel Bombarda",
+        "amenity": "restaurant",
+        "brand": "Pizza Hut",
+        "brand:wikidata": "Q191615",
+        "check_date": "2024-05-08",
+        "cuisine": "pizza",
+        "description": "Edifício da Estação",
+        "name": "Pizza Hut",
+        "opening_hours": "Mo-Su 12:00-23:00",
+        "operator": "Pizza Hut"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1422244075,
+      "lat": 38.8004548,
+      "lon": -9.3844936,
+      "tags": {
+        "bus": "yes",
+        "name": "R Alfredo da Costa 57",
+        "name:Sintra434": "Soldado Desconhecido",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "stop_position",
+        "ref": "171953"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1568420492,
+      "lat": 38.8002861,
+      "lon": -9.3793389,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "40",
+        "addr:postcode": "2710-432",
+        "addr:street": "Avenida Movimento das Forças Armadas",
+        "branch": "Sintra Centro",
+        "brand": "Auchan Supermercado",
+        "brand:wikidata": "Q105857776",
+        "brand:wikipedia": "pt:Auchan",
+        "contact:email": "apoiocliente@auchan.pt",
+        "contact:facebook": "AuchanPortugal",
+        "contact:instagram": "auchan_pt",
+        "contact:phone": "+351 210 403 270",
+        "contact:tiktok": "auchan_pt",
+        "contact:youtube": "https://www.youtube.com/channel/UC6FSI7tYO9ISV11U2PHBBYQ",
+        "name": "Auchan Supermercado",
+        "opening_hours": "Mo-Su 08:30-21:00",
+        "ref": "B84",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.auchan.pt/pt/loja?StoreID=B84"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1569367405,
+      "lat": 38.7977153,
+      "lon": -9.3762285,
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1569558873,
+      "lat": 38.8002583,
+      "lon": -9.3797894,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Banco Português de Investimento",
+        "brand:wikidata": "Q537886",
+        "brand:wikipedia": "pt:Banco Português de Investimento",
+        "name": "BPI",
+        "official_name": "Banco Português de Investimento",
+        "operator": "Banco Português de Investimento",
+        "operator:wikidata": "Q537886",
+        "operator:wikipedia": "pt:Banco Português de Investimento"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1571663174,
+      "lat": 38.8060281,
+      "lon": -9.3803257,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "burger",
+        "name": "Rubisa I"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1571691276,
+      "lat": 38.8075768,
+      "lon": -9.3775976,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1576094526,
+      "lat": 38.7970269,
+      "lon": -9.3910666,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Cintra Central"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1576094653,
+      "lat": 38.7964399,
+      "lon": -9.3916158,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:country": "PT",
+        "addr:housenumber": "2",
+        "addr:postcode": "2710-568",
+        "addr:street": "Rua Gil Vicente",
+        "amenity": "restaurant",
+        "name": "Romaria de Baco",
+        "website": "https://www.facebook.com/pages/Romaria-de-Baco/193998234015662"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1576094743,
+      "lat": 38.7969572,
+      "lon": -9.3909708,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Café Paris"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1583683401,
+      "lat": 38.80254,
+      "lon": -9.3809712,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Café Pielas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1583683406,
+      "lat": 38.8018,
+      "lon": -9.3796677,
+      "tags": {
+        "addr:street": "Travessa da Portela",
+        "amenity": "clinic",
+        "emergency": "no",
+        "name": "Clínica Cintramédica Sintra",
+        "opening_hours": "Mo-Sa 07:00-21:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1583683409,
+      "lat": 38.8004977,
+      "lon": -9.3797132,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Crédito Agrícola",
+        "brand:wikidata": "Q10262017",
+        "name": "Crédito Agrícola"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1583683415,
+      "lat": 38.8003828,
+      "lon": -9.3788603,
+      "tags": {
+        "alt_name": "BIC",
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "EuroBic",
+        "brand:wikidata": "Q806175",
+        "brand:wikipedia": "pt:EuroBic",
+        "name": "EuroBic",
+        "operator": "Abanca",
+        "operator:wikidata": "Q9598744",
+        "operator:wikipedia": "en:Abanca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1591490870,
+      "lat": 38.7966277,
+      "lon": -9.3904684,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Alcobaça",
+        "opening_hours": "Mo-Su 12:00-24:00",
+        "source": "knowledge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594014803,
+      "lat": 38.798171,
+      "lon": -9.3899737,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "20",
+        "addr:postcode": "2710-602",
+        "addr:street": "Rua do Paço",
+        "alt_name": "Colecção Miguel Barbosa",
+        "email": "dbmu.museu.hnatural@cm-sintra.pt",
+        "fee": "no",
+        "museum": "nature",
+        "name": "Museu de História Natural",
+        "opening_hours": "Tu-Fr 10:00-17:00; Sa-Su 12:00-17:00",
+        "phone": "+351 219 238 563",
+        "tourism": "museum",
+        "website": "https://cm-sintra.pt/atualidade/cultura/museus-municipais-de-sintra/museu-de-historia-natural-de-sintra",
+        "wikidata": "Q7525146",
+        "wikimedia_commons": "Category:Museu de História Natural de Sintra",
+        "wikipedia": "pt:Museu de História Natural de Sintra",
+        "wikipedia:en": "en:Sintra Natural History Museum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594015609,
+      "lat": 38.7957011,
+      "lon": -9.3764539,
+      "tags": {
+        "fee": "no",
+        "name": "Museu do Bonsai",
+        "tourism": "museum",
+        "wikidata": "Q136436938",
+        "wikimedia_commons": "Category:Museu do Bonsai"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594128779,
+      "lat": 38.799634,
+      "lon": -9.3855537,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:housenumber": "53",
+        "addr:street": "Avenida Doutor Miguel Bombarda",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Restaurante Da Fu Lou"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594128838,
+      "lat": 38.7991635,
+      "lon": -9.3879625,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "2",
+        "addr:postcode": "2710-592",
+        "addr:street": "Travessa do Município",
+        "alt_name": "O Regional",
+        "amenity": "restaurant",
+        "check_date": "2024-05-08",
+        "cuisine": "portuguese",
+        "name": "Restaurante Regional de Sintra",
+        "opening_hours": "Quarta- Fechado  Segunda a Domingo- 12:00-16:00 e 19:00-22:00",
+        "phone": "+351 21 923 4444",
+        "website": "https://www.regional.pt/pt/home/?p=pt/home/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594128884,
+      "lat": 38.7988619,
+      "lon": -9.3881361,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "5",
+        "addr:postcode": "2710-630",
+        "addr:street": "Largo Doutor Virgílio Horta",
+        "amenity": "restaurant",
+        "cuisine": "portuguese;european",
+        "name": "A Tasca do Manel",
+        "opening_hours": "Segunda a Sabado - 7:30-20:00",
+        "phone": "+351 219 230 215"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594128995,
+      "lat": 38.7987591,
+      "lon": -9.387294,
+      "tags": {
+        "addr:housenumber": "3-A",
+        "addr:street": "Avenida Doutor Miguel Bombarda",
+        "amenity": "restaurant",
+        "check_date": "2024-05-08",
+        "cuisine": "portuguese",
+        "internet_access": "wlan",
+        "name": "Apeadeiro",
+        "name:en": "Restaurante Apeadeiro",
+        "name:pt": "Restaurante Apeadeiro",
+        "opening_hours": "Fr-We 11:00-23:30",
+        "phone": "+351219231804",
+        "website": "http://facebook.com/restauranteapeafeiro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594149565,
+      "lat": 38.8013198,
+      "lon": -9.3830733,
+      "tags": {
+        "addr:country": "PT",
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "name": "Noodle Chingu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594149606,
+      "lat": 38.7986348,
+      "lon": -9.3870826,
+      "tags": {
+        "addr:housenumber": "6",
+        "addr:street": "Avenida Doutor Miguel Bombarda",
+        "amenity": "cafe",
+        "check_date": "2024-05-08",
+        "cuisine": "regional",
+        "name": "Saudade",
+        "opening_hours": "Mo-Su 08:30-20:00",
+        "source": "survey",
+        "wikimedia_commons": "Category:Café Saudade"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594149630,
+      "lat": 38.8018811,
+      "lon": -9.3823726,
+      "tags": {
+        "addr:country": "PT",
+        "amenity": "bank",
+        "atm:network": "Servired",
+        "atm:operator": "BBVA",
+        "brand": "BBVA",
+        "brand:wikidata": "Q806189",
+        "brand:wikipedia": "en:Banco Bilbao Vizcaya Argentaria",
+        "name": "BBVA",
+        "network": "Servired",
+        "official_name": "Banco Bilbao Vizcaya Argentaria",
+        "operator": "BBVA",
+        "operator:wikidata": "Q806189",
+        "operator:wikipedia": "en:Banco Bilbao Vizcaya Argentaria"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594149703,
+      "lat": 38.8012842,
+      "lon": -9.3829453,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "indian;pizza",
+        "name": "Kebabish"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594149728,
+      "lat": 38.8016193,
+      "lon": -9.3826872,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pastelaria Monserrate"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594149734,
+      "lat": 38.8026398,
+      "lon": -9.3818925,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Tulipa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594149804,
+      "lat": 38.8012352,
+      "lon": -9.3832202,
+      "tags": {
+        "amenity": "bank",
+        "brand": "Millennium bcp",
+        "brand:wikidata": "Q118581",
+        "brand:wikipedia": "pt:Banco Comercial Português",
+        "name": "Millennium bcp",
+        "operator": "Banco Comercial Português",
+        "operator:wikidata": "Q118581",
+        "operator:wikipedia": "pt:Banco Comercial Português"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594158348,
+      "lat": 38.8018288,
+      "lon": -9.3775473,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "12",
+        "addr:postcode": "2710",
+        "addr:street": "Rua Dr. António José Soares",
+        "amenity": "cafe",
+        "name": "Xitaca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594158398,
+      "lat": 38.8004868,
+      "lon": -9.3781884,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Panisintra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594955921,
+      "lat": 38.7962182,
+      "lon": -9.390359,
+      "tags": {
+        "addr:housenumber": "4",
+        "addr:street": "Rua da Ferraria",
+        "amenity": "restaurant",
+        "name": "Tacho Real"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1594956139,
+      "lat": 38.7960163,
+      "lon": -9.3901093,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Pizzeria do Carmo",
+        "outdoor_seating": "yes",
+        "toilets": "yes",
+        "toilets:unisex": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1595194961,
+      "lat": 38.7995565,
+      "lon": -9.3815166,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Dom Café Expresso"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1595236545,
+      "lat": 38.8011811,
+      "lon": -9.3825361,
+      "tags": {
+        "addr:city": "Sintra",
+        "alt_name": "EPAV",
+        "amenity": "school",
+        "contact:email": "ep.abvasconcelos@escolas.min-edu.pt",
+        "contact:fax": "+351 219292667",
+        "contact:phone": "+351 219290587",
+        "contact:website": "http://www.epav.pt",
+        "grades": "12-17",
+        "name": "Escola Profissional Alda Brandão de Vasconcelos",
+        "operator:type": "private",
+        "ref": "802712",
+        "ref:qzp": "QZP.45",
+        "short_name": "EPAV"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1595684328,
+      "lat": 38.8013445,
+      "lon": -9.3845479,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1595696547,
+      "lat": 38.8015654,
+      "lon": -9.3772253,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Casa do largo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1645025524,
+      "lat": 38.7966073,
+      "lon": -9.3899846,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "16-22",
+        "addr:postcode": "2710-591",
+        "addr:street": "Rua Visconde de Monserrate",
+        "amenity": "restaurant",
+        "cuisine": "mediterranean;european;portuguese",
+        "name": "Bristol",
+        "name:ru": "gazeta",
+        "phone": "+351 219 233 438"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1645025528,
+      "lat": 38.7966907,
+      "lon": -9.3901825,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "A Taverna"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1802629591,
+      "lat": 38.7985812,
+      "lon": -9.3880649,
+      "tags": {
+        "bus": "yes",
+        "name": "Largo Virgilío Horta Ft Câm Mun Sintra",
+        "name:Sintra434": "Câmara Municipal de Sintra",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "stop_position",
+        "ref": "171913"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1808345981,
+      "lat": 38.800494,
+      "lon": -9.3845476,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "fixme": "Sintra434 - Verificar paragem",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "R Alfredo da Costa 57",
+        "name:Sintra434": "Soldado Desconhecido",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "platform",
+        "ref": "171953",
+        "route_ref": "1253",
+        "route_ref:Sintra434": "435",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1819617365,
+      "lat": 38.7968793,
+      "lon": -9.3912779,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "11",
+        "addr:street": "Rua da Pendôa",
+        "amenity": "restaurant",
+        "cuisine": "italian;indian",
+        "name": "Bengal Tandoori",
+        "website": "http://www.bengal-tandoori.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1819617366,
+      "lat": 38.7964016,
+      "lon": -9.3917224,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:country": "PT",
+        "addr:housenumber": "4",
+        "addr:street": "Rua Gil Vicente",
+        "amenity": "restaurant",
+        "name": "Tulhas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1831390490,
+      "lat": 38.796708,
+      "lon": -9.390525,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "1",
+        "addr:street": "Rua das Padarias",
+        "amenity": "cafe",
+        "check_date": "2025-05-06",
+        "name": "Casa Piriquita",
+        "opening_hours": "Th-Tu 09:00-21:00",
+        "operator": "Antiga Fabrica de Queijadas, Lda",
+        "wikimedia_commons": "Category:Casa Piriquita"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1831390769,
+      "lat": 38.8025241,
+      "lon": -9.3810613,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Desidério Cambournac 1",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171384",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1831546754,
+      "lat": 38.7966406,
+      "lon": -9.3908119,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Paço Real",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1831546770,
+      "lat": 38.7968699,
+      "lon": -9.3906238,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-05-08",
+        "name": "Loja do Vinho"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1839073952,
+      "lat": 38.7967546,
+      "lon": -9.3904146,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:country": "PT",
+        "addr:housenumber": "6",
+        "addr:postcode": "2710",
+        "addr:street": "Rua do Arco do Teixeira",
+        "amenity": "restaurant",
+        "cuisine": "local",
+        "name": "Restaurante Tasca do Xico"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1870798803,
+      "lat": 38.7999218,
+      "lon": -9.3840025,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "O Tunnel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1870798808,
+      "lat": 38.7992935,
+      "lon": -9.3856364,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1895507573,
+      "lat": 38.7963739,
+      "lon": -9.3915208,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:country": "PT",
+        "addr:housenumber": "23",
+        "addr:postcode": "2710-616",
+        "addr:street": "Praça da República",
+        "fee": "yes",
+        "museum": "local_history",
+        "name": "Centro Interpretativo Mitos e Lendas de Sintra",
+        "name:en": "Sintra Myths and Legends",
+        "name:pt": "Centro Interpretativo Mitos e Lendas de Sintra",
+        "opening_hours": "Mo-Su 09:30-18:00",
+        "tourism": "museum",
+        "website": "https://www.sintramitoselendas.pt/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1942792007,
+      "lat": 38.8014215,
+      "lon": -9.3834293,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Abanca",
+        "brand:wikidata": "Q9598744",
+        "brand:wikipedia": "pt:Abanca",
+        "name": "Abanca",
+        "operator": "Abanca",
+        "operator:wikidata": "Q9598744",
+        "operator:wikipedia": "pt:Abanca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2371152491,
+      "lat": 38.80389,
+      "lon": -9.3812513,
+      "tags": {
+        "addr:housenumber": "6",
+        "addr:street": "Rua Veiga da Cunha",
+        "amenity": "restaurant",
+        "internet_access": "yes",
+        "name": "Culto da Tasca",
+        "phone": "+351 21 923 4256"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2408899382,
+      "lat": 38.7961771,
+      "lon": -9.391398,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "6",
+        "addr:postcode": "2710-557",
+        "addr:street": "Rua Consiglieiri Pedroso",
+        "amenity": "cafe",
+        "brand": "Starbucks",
+        "brand:wikidata": "Q37158",
+        "brand:wikipedia": "pt:Starbucks",
+        "check_date": "2025-09-18",
+        "contact:email": "starbucks@starbucks.pt",
+        "contact:facebook": "StarbucksPortugal",
+        "contact:instagram": "starbucksptg",
+        "contact:tiktok": "starbucksportugal",
+        "contact:twitter": "starbucksPTG",
+        "cuisine": "coffee_shop",
+        "name": "Starbucks",
+        "official_name": "Starbucks Coffee",
+        "opening_hours": "Mo-Su 09:00-18:30",
+        "ref": "62027-296281",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "takeaway": "yes",
+        "website": "https://www.starbucks.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2408996513,
+      "lat": 38.796482,
+      "lon": -9.3905249,
+      "tags": {
+        "amenity": "cafe",
+        "indoor_seating": "yes",
+        "internet_access": "yes",
+        "name": "Vila Velha",
+        "opening_hours": "Mo-We,Fr-Su 10:00-19:00",
+        "payment:cash": "yes",
+        "payment:debit_cards": "yes",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "no",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2562531218,
+      "lat": 38.7958888,
+      "lon": -9.3890844,
+      "tags": {
+        "fee": "no",
+        "name": "Museu Klaus Ohnsmann",
+        "tourism": "museum",
+        "website": "https://www.visitportugal.com/pt-pt/NR/exeres/784E7695-7EF3-4AB1-9474-6C3E8C37E37A"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2562570264,
+      "lat": 38.7965494,
+      "lon": -9.3913079,
+      "tags": {
+        "amenity": "bus_station",
+        "name": "Scotturb",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611623827,
+      "lat": 38.8005387,
+      "lon": -9.3767985,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Rubisa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2615192410,
+      "lat": 38.8002584,
+      "lon": -9.377888,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "3",
+        "addr:postcode": "2710-436",
+        "addr:street": "Rua José Bento Costa",
+        "addr:unit": "A",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Hao Ri Zi",
+        "phone": "+351 219 243 398"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2908444040,
+      "lat": 38.796528,
+      "lon": -9.3901087,
+      "tags": {
+        "amenity": "cafe",
+        "shop": "gift"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2908444045,
+      "lat": 38.7988335,
+      "lon": -9.3881197,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "2",
+        "addr:postcode": "2710-631",
+        "addr:street": "Volta do Duche",
+        "addr:unit": "A",
+        "amenity": "restaurant",
+        "name": "Moons - Sintra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3711673177,
+      "lat": 38.7994472,
+      "lon": -9.3859617,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Espaço Edla"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3942689823,
+      "lat": 38.8017786,
+      "lon": -9.3772361,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3942698554,
+      "lat": 38.8021292,
+      "lon": -9.376987,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "9",
+        "name": "Portela de Sintra (Estação) P9 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172534",
+        "route_ref": "1620;1621;1623;1626;1629;1630",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3942698771,
+      "lat": 38.8009734,
+      "lon": -9.3765915,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "Av Mov F Armadas (Pcta 25 Abril)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171921",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3942699905,
+      "lat": 38.8016639,
+      "lon": -9.3743849,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Av Movimento das Forças Armadas 110",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "170820",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3942700093,
+      "lat": 38.8017766,
+      "lon": -9.3743339,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Movimento das Forças Armadas",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "170819",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4033364856,
+      "lat": 38.8034662,
+      "lon": -9.3814087,
+      "tags": {
+        "amenity": "pharmacy",
+        "name": "Farmácia Simões"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4229565132,
+      "lat": 38.7988837,
+      "lon": -9.3871979,
+      "tags": {
+        "addr:housenumber": "22",
+        "addr:postcode": "2710-523",
+        "addr:street": "Rua Doutor Alfredo da Costa",
+        "amenity": "restaurant",
+        "check_date": "2024-09-22",
+        "cuisine": "fine_dining;portuguese",
+        "name": "Incomum by Luis Santos",
+        "opening_hours": "Th-Tu 12:00-00:00",
+        "outdoor_seating": "yes",
+        "phone": "+351 21 924 3719",
+        "website": "https://www.incomumbyluissantos.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4355117595,
+      "lat": 38.8019974,
+      "lon": -9.3823416,
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4414909093,
+      "lat": 38.7957148,
+      "lon": -9.3910323,
+      "tags": {
+        "addr:housenumber": "2-4",
+        "addr:street": "Escadinhas da Fonte da Pipa",
+        "amenity": "restaurant",
+        "check_date": "2024-05-08",
+        "cuisine": "regional",
+        "indoor_seating": "yes",
+        "microbrewery": "yes",
+        "name": "Tascantiga",
+        "name:pt": "Tascantiga",
+        "outdoor_seating": "yes",
+        "payment:contactless": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "smoking": "outside",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4699734304,
+      "lat": 38.802968,
+      "lon": -9.3814816,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-09-16",
+        "cuisine": "chinese",
+        "name": "Mei Si Cheng"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4699734305,
+      "lat": 38.8029558,
+      "lon": -9.3813829,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "kebab"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4786436242,
+      "lat": 38.8037563,
+      "lon": -9.3813345,
+      "tags": {
+        "addr:housenumber": "78",
+        "addr:street": "Avenida Heliodoro Salgado",
+        "amenity": "restaurant",
+        "internet_access": "wlan",
+        "name": "Cafes Tofa Restaurante Cafetaria Solar Saloio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5205650016,
+      "lat": 38.7963024,
+      "lon": -9.3899801,
+      "tags": {
+        "amenity": "restaurant",
+        "bar": "yes",
+        "changing_table": "no",
+        "cuisine": "tapas",
+        "name": "Sintra Terrace",
+        "opening_hours": "Mo-Su 10:00-19:00; summer Mo-Su 10:00-22:00",
+        "outdoor_seating": "yes",
+        "toilets": "yes",
+        "toilets:unisex": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5236372921,
+      "lat": 38.8013153,
+      "lon": -9.3829857,
+      "tags": {
+        "addr:housenumber": "11",
+        "addr:postcode": "2710-519",
+        "addr:street": "Largo Afonso de Albuquerque",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "Taj Palace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5326258723,
+      "lat": 38.7994282,
+      "lon": -9.3857449,
+      "tags": {
+        "addr:street": "Avenida Doutor Miguel Bombarda",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Cyntia Cafe Restaurant",
+        "name:en": "Cynthia Cafe Restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5460227518,
+      "lat": 38.8000032,
+      "lon": -9.3850431,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-05-08",
+        "name": "Palace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5559971389,
+      "lat": 38.7995292,
+      "lon": -9.384401,
+      "tags": {
+        "addr:housenumber": "2710-580",
+        "addr:postcode": "2710-580",
+        "addr:street": "Rua João de Deus",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Métamorphosis",
+        "opening_hours": "Mo-Su 11:45-22:30",
+        "phone": "+351 21 924 2511",
+        "website": "https://m.facebook.com/restaurantemetamorphosis/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5672932624,
+      "lat": 38.796828,
+      "lon": -9.391136,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "14",
+        "addr:street": "Rua da Pendôa",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Becco da Villa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5718901232,
+      "lat": 38.8033815,
+      "lon": -9.3802472,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Feijoca Portuguesa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6018432394,
+      "lat": 38.7964253,
+      "lon": -9.3903741,
+      "tags": {
+        "addr:housenumber": "3",
+        "addr:street": "Rua Arco do Terreirinho",
+        "amenity": "restaurant",
+        "check_date": "2024-05-08",
+        "cuisine": "regional",
+        "name": "Bacalhau Na Vila",
+        "opening_hours": "Mo,Fr-Sa 12:00-17:00,19:00-22:00; Tu off; We-Th,Su 12:00-17:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6018432395,
+      "lat": 38.7965091,
+      "lon": -9.3903969,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Cantinho Gourmet",
+        "opening_hours": "Mo-Su 09:30-20:00",
+        "payment:cash": "yes",
+        "payment:debit_cards": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020646298,
+      "lat": 38.79602,
+      "lon": -9.3898056,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "6",
+        "addr:postcode": "2710-555",
+        "addr:street": "Rua da Ferraria",
+        "amenity": "restaurant",
+        "diet:vegetarian": "yes",
+        "name": "Villa 6",
+        "opening_hours": "Mo-Su 10:00-24:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6124615985,
+      "lat": 38.8030512,
+      "lon": -9.3830611,
+      "tags": {
+        "addr:street": "Rua Camara Pestana",
+        "amenity": "restaurant",
+        "diet:vegan": "yes",
+        "name": "Bosque",
+        "opening_hours": "Th-Su 12:30-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6677384186,
+      "lat": 38.7965357,
+      "lon": -9.3900943,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Cantinho Gourmet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7688432225,
+      "lat": 38.8053308,
+      "lon": -9.3888872,
+      "tags": {
+        "name": "Monte Santos",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7855182133,
+      "lat": 38.7980921,
+      "lon": -9.3899642,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "diet:vegetarian": "yes",
+        "name": "A Praço",
+        "opening_hours": "Tu-Sa 10:00-18:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7945968524,
+      "lat": 38.7985507,
+      "lon": -9.3883558,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Raíz Sintra",
+        "opening_hours": "Su-Tu 13:00-23:00; Th 13:00-23:00; Fr,Sa 13:00-24:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8709441589,
+      "lat": 38.7925921,
+      "lon": -9.3805498,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-05-08",
+        "name": "Tira Tapas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8709441590,
+      "lat": 38.79222,
+      "lon": -9.3804217,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "O Santo - Gastro Pub"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8709441600,
+      "lat": 38.7928059,
+      "lon": -9.3807519,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Nau Palatina"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8891037683,
+      "lat": 38.7962815,
+      "lon": -9.3904732,
+      "tags": {
+        "addr:city": "Vila de Sintra",
+        "addr:housenumber": "7",
+        "addr:postcode": "2710-555",
+        "addr:street": "Rua da Ferraria",
+        "amenity": "restaurant",
+        "bar": "yes",
+        "brewery": "yes;estrella_damn;sagres;heineken",
+        "capacity": "40",
+        "contact:facebook": "piadinas.wine.co",
+        "cuisine": "italian;mediterranean;portuguese",
+        "diet:healthy": "yes",
+        "diet:meat": "yes",
+        "diet:non-vegetarian": "yes",
+        "diet:organic": "yes",
+        "diet:vegetarian": "yes",
+        "internet_access": "wlan",
+        "name": "Piadina's, Wine & Co.",
+        "opening_hours": "12:00H às 16:00H",
+        "organic": "yes",
+        "phone": "+351 918 153 594",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.piadinas.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9041801751,
+      "lat": 38.7962417,
+      "lon": -9.3898763,
+      "tags": {
+        "addr:housenumber": "2",
+        "addr:street": "Miradouro da ferraria",
+        "amenity": "restaurant",
+        "name": "Hamburgueria da Ferraria",
+        "opening_hours": "Mo, We-Fr 12:00-22:00; Sa 12:00-22:30; Su 11:00-15:30",
+        "phone": "+351 966 254 633"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9440839026,
+      "lat": 38.7957868,
+      "lon": -9.3905771,
+      "tags": {
+        "bus": "yes",
+        "name": "Largo Ferreira Castro",
+        "name:Sintra434": "Largo Ferreira de Castro",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "stop_position",
+        "ref": "171926"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9939173348,
+      "lat": 38.7957098,
+      "lon": -9.3908837,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2022-08-08",
+        "cuisine": "regional",
+        "name": "Meia Pipa",
+        "outdoor_seating": "yes",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9971189342,
+      "lat": 38.8024551,
+      "lon": -9.3758125,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Sintra",
+        "operator": "Rede Expressos;FlixBus",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9971189345,
+      "lat": 38.8024766,
+      "lon": -9.3769923,
+      "tags": {
+        "bus": "yes",
+        "name": "Portela de Sintra (Estação) P2 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9971189346,
+      "lat": 38.8024818,
+      "lon": -9.3768306,
+      "tags": {
+        "bus": "yes",
+        "name": "Portela de Sintra (Estação) P3 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9971189347,
+      "lat": 38.8024878,
+      "lon": -9.3766414,
+      "tags": {
+        "bus": "yes",
+        "name": "Portela de Sintra (Estação) P4 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9971189348,
+      "lat": 38.8024947,
+      "lon": -9.3764281,
+      "tags": {
+        "bus": "yes",
+        "name": "Portela de Sintra (Estação) P5 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9971189349,
+      "lat": 38.8025006,
+      "lon": -9.3762424,
+      "tags": {
+        "bus": "yes",
+        "name": "Portela de Sintra (Estação) P6 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9971189350,
+      "lat": 38.8025065,
+      "lon": -9.3760584,
+      "tags": {
+        "bus": "yes",
+        "name": "Portela de Sintra (Estação) P7 Entrada Norte",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10196582903,
+      "lat": 38.8014257,
+      "lon": -9.3797862,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "Av Álvaro Vasconcelos (Clínica)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171875",
+        "shelter": "yes",
+        "tactile_paving": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10221606668,
+      "lat": 38.8024428,
+      "lon": -9.3804799,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Desidério Cambournac 15",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Desidério Cambournac 1;Av Desidério Cambournac 15",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171314",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10221640330,
+      "lat": 38.8096699,
+      "lon": -9.3752223,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Aviação Portuguesa (Cemitério)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "note": "A paragem com id #171307, também se localiza aqui, no entanto, na Placa do abrigo, apenas se encontra o id #171543. Situação já reportada à TML",
+        "operator": "Viação Alvorada;Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "171543",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10288558349,
+      "lat": 38.8021395,
+      "lon": -9.3766258,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "10",
+        "name": "Portela de Sintra (Estação) P10 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172533",
+        "route_ref": "1234;1252",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10289206487,
+      "lat": 38.7998286,
+      "lon": -9.3850433,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Sintra (Estação)",
+        "name:Sintra434": "Estação de Sintra",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "171923",
+        "route_ref": "1252;1253",
+        "route_ref:Sintra434": "435",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290625405,
+      "lat": 38.7987617,
+      "lon": -9.3812899,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "Av Francisco Almeida (X) Largo Morais",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171880",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290625406,
+      "lat": 38.7988289,
+      "lon": -9.381416,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Av Francisco Almeida (X) Largo Morais",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171879",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290629732,
+      "lat": 38.8096037,
+      "lon": -9.3749554,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Aviação Portuguesa (Quinta Boyalvo)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "note": "A paragem com id #171308, também se localiza aqui, no entanto, na Placa do Postalete, apenas se encontra o id #171544. Situação já reportada à TML",
+        "official_name": "Av Aviação Portuguesa (Quinta Boyalvo)",
+        "operator": "Viação Alvorada;Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "171544",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290629733,
+      "lat": 38.8046017,
+      "lon": -9.3700712,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Tribunal de Sintra",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172567"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290644782,
+      "lat": 38.8023534,
+      "lon": -9.3809442,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Desidério Cambournac 1;Av Desidério Cambournac (J Freguesia)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada;Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "171313;171383",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290674922,
+      "lat": 38.8019085,
+      "lon": -9.3764737,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "11",
+        "name": "Portela de Sintra (Estação) P11 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "170821",
+        "route_ref": "1223;1251;1614;1618",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799895,
+      "lat": 38.800391,
+      "lon": -9.379111,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "Av Movimento das Forças Armadas 48",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171919",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799896,
+      "lat": 38.7985431,
+      "lon": -9.3880191,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "fixme": "Sintra434 - Verificar paragem",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Largo Virgílio Horta Ft Câm Mun Sintra",
+        "name:Sintra434": "Câmara Municipal de Sintra",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "platform",
+        "ref": "171913",
+        "route_ref": "1252",
+        "route_ref:Sintra434": "434",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799897,
+      "lat": 38.7964299,
+      "lon": -9.386515,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Volta do Duche Ft Parque da Liberdade",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171911",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799898,
+      "lat": 38.7965295,
+      "lon": -9.3895428,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "fixme": "Sintra434 - Verificar paragem",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Volta do Duche",
+        "name:Sintra434": "Volta do Duche",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "platform",
+        "ref": "171909",
+        "route_ref": "1252",
+        "route_ref:Sintra434": "434",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799899,
+      "lat": 38.7963137,
+      "lon": -9.3891649,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "R Visc Monserrate (Palácio Valenças)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171907",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799900,
+      "lat": 38.7947137,
+      "lon": -9.3854004,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "R Bernardim Ribeiro 4",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171905",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799901,
+      "lat": 38.7942082,
+      "lon": -9.3831091,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "fixme": "Sintra434 - Verificar paragem",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Lgo Sousa Brandão (Casa Cantoneiros)",
+        "name:Sintra434": "Casa dos Cantoneiros",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "platform",
+        "ref": "171903",
+        "route_ref": "1252;1253",
+        "route_ref:Sintra434": "434;435",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799902,
+      "lat": 38.7930561,
+      "lon": -9.3808241,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "fixme": "Sintra434 - Verificar paragem",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Calçada São Pedro (Queijadas da Sapa)",
+        "name:Sintra434": "Calçada de São Pedro",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "platform",
+        "ref": "171901",
+        "route_ref": "1252;1253",
+        "route_ref:Sintra434": "434;435",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799912,
+      "lat": 38.795165,
+      "lon": -9.3749137,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "Estr Chão de Meninos (X) R 5 de Outubro",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171884",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799913,
+      "lat": 38.7951249,
+      "lon": -9.3749778,
+      "tags": {
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Estr Chão de Meninos (X) R 5 de Outubro",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171883",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799914,
+      "lat": 38.7958588,
+      "lon": -9.3767883,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "Estr Ch Meninos 10 (Bonsai)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171882",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799915,
+      "lat": 38.7957757,
+      "lon": -9.3770035,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "Estr Ch Meninos 10 (Bonsai)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171881",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799916,
+      "lat": 38.8001857,
+      "lon": -9.3806107,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "Av Mov Forças Armadas frente Smas",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171878",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799917,
+      "lat": 38.8002602,
+      "lon": -9.3807781,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "level": "0",
+        "lit": "yes",
+        "name": "Av Mov Forças Armadas frente Smas",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Vição Alvorada",
+        "public_transport": "platform",
+        "ref": "171877",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799986,
+      "lat": 38.8103391,
+      "lon": -9.3893994,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R 25 de Abril (Casal da Recosta)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171798",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799987,
+      "lat": 38.8103864,
+      "lon": -9.3893406,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R 25 de Abril (Casal da Recosta)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171797",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799988,
+      "lat": 38.809268,
+      "lon": -9.3877606,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R 25 de Abril Frente Monte Ciprestes",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171796",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799989,
+      "lat": 38.8092691,
+      "lon": -9.3875591,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R 25 de Abril Frente Monte Ciprestes",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171795",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799990,
+      "lat": 38.8079881,
+      "lon": -9.3883691,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "fixme": "Melhorar localização",
+        "highway": "bus_stop",
+        "name": "R 25 de Abril (Casal do Monte)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171794",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799991,
+      "lat": 38.8077922,
+      "lon": -9.388671,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "fixme": "Melhorar localização",
+        "highway": "bus_stop",
+        "name": "R 25 de Abril (Casal do Monte)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171793",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800338,
+      "lat": 38.8040791,
+      "lon": -9.3817904,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Nunes de Carvalho 5",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171382",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800339,
+      "lat": 38.8039881,
+      "lon": -9.3818612,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Nunes de Carvalho -term Electrico",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171381",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800340,
+      "lat": 38.8058008,
+      "lon": -9.3864607,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Nunes de Carvalho 60",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171380",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800341,
+      "lat": 38.8055313,
+      "lon": -9.3872014,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Nunes de Carvalho 60",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171379",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800342,
+      "lat": 38.8054201,
+      "lon": -9.3887802,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av N Carvalho 98 (Monte Santos)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171378",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800343,
+      "lat": 38.8052242,
+      "lon": -9.3887753,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "fixme": "Sintra434 - Verificar paragem",
+        "highway": "bus_stop",
+        "name": "Av N Carval 92 (Monte Santos)",
+        "name:Sintra434": "Monte Santos",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "platform",
+        "ref": "171377",
+        "route_ref": "1253;1241;1247;1254;1624",
+        "route_ref:Sintra434": "435",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800344,
+      "lat": 38.8057584,
+      "lon": -9.3926265,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Nunes de Carvalho (Qta do Poço)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171376",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800345,
+      "lat": 38.8057634,
+      "lon": -9.3924647,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Nunes de Carvalho (Qta do Poço)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171375",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800346,
+      "lat": 38.8041927,
+      "lon": -9.3947496,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Nunes de Carvalho Km73 9",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171374",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800347,
+      "lat": 38.8040777,
+      "lon": -9.3946015,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Nunes de Carvalho Km73 9",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171373",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800348,
+      "lat": 38.8022748,
+      "lon": -9.3953555,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Nunes de Carvalho (Ciência Viva)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171372",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800349,
+      "lat": 38.8023647,
+      "lon": -9.3952617,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "fixme": "Sintra434 - Verificar paragem",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Av Nunes de Carvalho (Ciência Viva)",
+        "name:Sintra434": "Ribeira de Sintra",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "platform",
+        "ref": "171371",
+        "route_ref": "1253;1241;1254;1624",
+        "route_ref:Sintra434": "435",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800386,
+      "lat": 38.8064358,
+      "lon": -9.3794953,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Aviação Portuguesa Frente 33",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171316",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800387,
+      "lat": 38.8064063,
+      "lon": -9.3793787,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Aviação Portuguesa 21",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Aviação Portuguesa 21",
+        "operator": "Viação Alvorada;Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "171315",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800388,
+      "lat": 38.8053074,
+      "lon": -9.3803822,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Aviação Portuguesa 3",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Aviação Portuguesa 2",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171311",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800389,
+      "lat": 38.8078673,
+      "lon": -9.3778051,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Aviação Portuguesa (Bombeiros)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada;Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "171310",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800390,
+      "lat": 38.8079334,
+      "lon": -9.3779507,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Aviação Portuguesa (Bombeiros)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada;Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "171309",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800723,
+      "lat": 38.801206,
+      "lon": -9.3711384,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Mov Forças Armadas (Zn Industrial)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "170818",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800724,
+      "lat": 38.8013046,
+      "lon": -9.3710515,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Av Mov Forças Armadas (Smas)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "170817",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10565418909,
+      "lat": 38.7994132,
+      "lon": -9.3860109,
+      "tags": {
+        "addr:housenumber": "50",
+        "addr:postcode": "2710-523",
+        "addr:street": "Rua Doutor Alfredo da Costa",
+        "amenity": "cafe",
+        "check_date": "2024-05-08",
+        "internet_access": "wlan",
+        "name": "Padaria Saloia",
+        "opening_hours": "Su-Mo,We-Sa 08:00-19:00",
+        "phone": "+351 219 234 147",
+        "website": "https://www.padariasaloia.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10756268386,
+      "lat": 38.8018503,
+      "lon": -9.3828467,
+      "tags": {
+        "amenity": "school",
+        "education": "school",
+        "name": "Iscte Sintra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10892260910,
+      "lat": 38.793031,
+      "lon": -9.3808591,
+      "tags": {
+        "bus": "yes",
+        "name": "Calçada São Pedro (Queijadas da Sapa)",
+        "name:Sintra434": "Calçada de São Pedro",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "stop_position",
+        "ref": "171901"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10939123237,
+      "lat": 38.7951836,
+      "lon": -9.3910952,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Casa Das Minas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10994170259,
+      "lat": 38.8012534,
+      "lon": -9.3724211,
+      "tags": {
+        "amenity": "restaurant",
+        "contact:facebook": "WokWorld Sintra",
+        "contact:instagram": "wokworldsintra",
+        "contact:phone": "+351 219 231 208",
+        "cuisine": "chinese;japanese",
+        "name": "Wok World",
+        "opening_hours": "Mo-Su 12:00-15:00,19:00-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11015469736,
+      "lat": 38.7958057,
+      "lon": -9.3906093,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Largo Ferreira Castro",
+        "name:Sintra434": "Largo Ferreira de Castro",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "official_name": "Largo Ferreira Castro",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "platform",
+        "ref": "171926",
+        "route_ref": "1253",
+        "route_ref:Sintra434": "434;435",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11016826105,
+      "lat": 38.7980574,
+      "lon": -9.3899413,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "local;portuguese;tapas",
+        "name": "Botica Saloia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11022300464,
+      "lat": 38.7960032,
+      "lon": -9.3903507,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Casa Antiga Lounge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11025240402,
+      "lat": 38.7983674,
+      "lon": -9.3884204,
+      "tags": {
+        "addr:housenumber": "2",
+        "addr:postcode": "2710-631",
+        "addr:street": "Volta do Duche",
+        "amenity": "restaurant",
+        "contact:facebook": "share/1bbuajai4w",
+        "contact:instagram": "volta.e.meia_sintra",
+        "cuisine": "coffee_shop;diner;portuguese;regional",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "email": "restaurantevoltaemeia@gmail.com",
+        "name": "Volta e Meia Restaurante Bar",
+        "opening_hours": "Mo, We-Fr 15:00-23:00; Sa-Su 12:00-23:00",
+        "phone": "+351 21 923 1331",
+        "self_service": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11061360290,
+      "lat": 38.8035553,
+      "lon": -9.380606,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2023-07-22",
+        "name": "Dona Estefânia - Fábrica de queijadas e travesseiros de Sintra",
+        "outdoor_seating": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11335521272,
+      "lat": 38.7987583,
+      "lon": -9.3849054,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2025-11-18",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "name": "Salus Brunch Garden",
+        "opening_hours": "Mo,Tu,We,Fr,Sa 09:00-17:00; Su 09:00-16:00",
+        "outdoor_seating": "yes",
+        "toilets": "yes",
+        "toilets:unisex": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11374414569,
+      "lat": 38.8039788,
+      "lon": -9.3802567,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Sopa da Avo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11772252097,
+      "lat": 38.8023643,
+      "lon": -9.3814059,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "4",
+        "addr:postcode": "2710-553",
+        "addr:street": "Avenida Desidério Cambournac",
+        "amenity": "clinic",
+        "email": "usf.cynthia@arslvt.min-saude.pt",
+        "healthcare": "clinic",
+        "name": "USF Cynthia",
+        "operator": "Serviço Nacional de Saúde",
+        "operator:short": "SNS",
+        "operator:wikidata": "Q1299901",
+        "phone": "+351 219247770"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11838836977,
+      "lat": 38.8020658,
+      "lon": -9.3769852,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "9",
+        "name": "Portela de Sintra (Estação) P9 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11838836978,
+      "lat": 38.802075,
+      "lon": -9.3766225,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "10",
+        "name": "Portela de Sintra (Estação) P10 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11923639395,
+      "lat": 38.7998577,
+      "lon": -9.3850936,
+      "tags": {
+        "bus": "yes",
+        "name": "Sintra (Estação)",
+        "name:Sintra434": "Estação de Sintra",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "stop_position",
+        "ref": "171923"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11931622885,
+      "lat": 38.7987922,
+      "lon": -9.3865665,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Larmanjat",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "outdoor_seating": "yes",
+        "phone": "+351219235206",
+        "website": "https://larmanjat.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11962720770,
+      "lat": 38.7986964,
+      "lon": -9.3900537,
+      "tags": {
+        "addr:housenumber": "16",
+        "addr:postcode": "2710-602",
+        "addr:street": "Rua do Paço",
+        "amenity": "restaurant",
+        "name": "A Praça",
+        "name:en": "A Praca",
+        "opening_hours": "Tu-We,Fr-Sa,Th 12:00-16:00",
+        "phone": "+351914334"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12072029880,
+      "lat": 38.8010585,
+      "lon": -9.3826005,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Casa d’Ana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12144223517,
+      "lat": 38.7994463,
+      "lon": -9.3843268,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "50",
+        "addr:postcode": "2710-579",
+        "addr:street": "Rua João de Deus",
+        "amenity": "restaurant",
+        "name": "Tasca",
+        "opening_hours": "Mo-Sa 10:30-23:00; Su off",
+        "phone": "+351924264055"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12595590660,
+      "lat": 38.8004321,
+      "lon": -9.3783512,
+      "tags": {
+        "addr:city": "Portela de Sintra",
+        "addr:housenumber": "21",
+        "addr:postcode": "8150",
+        "addr:street": "Rua Pedro de Cintra",
+        "amenity": "restaurant",
+        "cuisine": "european;portuguese",
+        "name": "Mira Serra Restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12600753856,
+      "lat": 38.7987334,
+      "lon": -9.3885422,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "19",
+        "addr:postcode": "2710-721",
+        "addr:street": "Rua Guilherme Gomes Fernandes",
+        "amenity": "restaurant",
+        "cuisine": "mediterranean;european",
+        "name": "COMO Restaurante",
+        "opening_hours": "Segunda a Sabado - 18:00 - 23:00",
+        "phone": "+351 960 154 129",
+        "website": "https://comoorigins.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13119613734,
+      "lat": 38.8019527,
+      "lon": -9.3764763,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "11",
+        "name": "Portela de Sintra (Estação) P11 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13131321701,
+      "lat": 38.8000475,
+      "lon": -9.3850774,
+      "tags": {
+        "amenity": "restaurant",
+        "diet:vegan": "yes",
+        "name": "Mela canela"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13277700527,
+      "lat": 38.7992614,
+      "lon": -9.3853576,
+      "tags": {
+        "ele": "210",
+        "name": "Sintra",
+        "nat_ref": "61101",
+        "official_name": "Estação Ferroviária de Sintra",
+        "official_name:en": "Sintra Railway Station",
+        "old_name": "Cintra",
+        "operator": "Infraestruturas de Portugal",
+        "operator:short": "IP",
+        "operator:wikidata": "Q20730106",
+        "public_transport": "station",
+        "railway": "station",
+        "railway:ref": "SIA",
+        "start_date": "1887-04-02",
+        "train": "yes",
+        "wikidata": "Q801446",
+        "wikimedia_commons": "Category:Sintra train station",
+        "wikipedia": "pt:Estação Ferroviária de Sintra",
+        "wikipedia:en": "en:Sintra railway station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13277700528,
+      "lat": 38.8022463,
+      "lon": -9.3763734,
+      "tags": {
+        "name": "Portela de Sintra",
+        "nat_ref": "61093",
+        "official_name": "Apeadeiro de Portela de Sintra",
+        "operator": "Infraestruturas de Portugal",
+        "operator:short": "IP",
+        "operator:wikidata": "Q20730106",
+        "public_transport": "station",
+        "railway": "halt",
+        "railway:ref": "PSI",
+        "train": "yes",
+        "wikidata": "Q4120785",
+        "wikimedia_commons": "Category:Portela de Sintra train station",
+        "wikipedia": "pt:Estação Ferroviária da Portela de Sintra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13308556030,
+      "lat": 38.7962576,
+      "lon": -9.3909005,
+      "tags": {
+        "amenity": "restaurant",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "name": "Pátio à Esquina",
+        "outdoor_seating": "yes",
+        "toilets": "yes",
+        "toilets:unisex": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13316567228,
+      "lat": 38.7963861,
+      "lon": -9.3884833,
+      "tags": {
+        "amenity": "cafe",
+        "name": "The Chestnut",
+        "opening_hours": "Apr-Sep Mo-Su 10:00-19:00; Oct-Mar Mo-Su 10:00-18:00; Jun-Sep Sa,Su,PH 10:00-20:00",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13639486390,
+      "lat": 38.8089844,
+      "lon": -9.377353,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13639486391,
+      "lat": 38.8090045,
+      "lon": -9.3774109,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13668238738,
+      "lat": 38.797122,
+      "lon": -9.3900808,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "2",
+        "addr:postcode": "2710-570",
+        "addr:street": "Largo Doutor Gregório d'Almeida",
+        "amenity": "restaurant",
+        "cuisine": "mediterranean;european;portuguese",
+        "name": "Tasca Saloia",
+        "opening_hours": "Mo-Su 12:00-24:00",
+        "phone": "+351 219 105 863"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13668238739,
+      "lat": 38.7972221,
+      "lon": -9.3900571,
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:postcode": "2710-608",
+        "addr:street": "Calçada do Pelourinho",
+        "amenity": "restaurant",
+        "check_date": "2024-05-08",
+        "cuisine": "european;portuguese",
+        "name": "Café da Villa",
+        "opening_hours": "Mo-Su 12:00-02:00",
+        "phone": "+351 219 241 174"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13739824601,
+      "lat": 38.8019846,
+      "lon": -9.3825028,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "italian;mexican",
+        "internet_access": "wlan",
+        "name": "Mezcalito",
+        "opening_hours": "Mo-Sa 12:30-15:00, 18:00-22:30",
+        "self_service": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13742545001,
+      "lat": 38.8020059,
+      "lon": -9.3822371,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Taberna Criativa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13743617001,
+      "lat": 38.8040005,
+      "lon": -9.38017,
+      "tags": {
+        "addr:housenumber": "34",
+        "addr:street": "Rua Veiga da Cunha",
+        "amenity": "restaurant",
+        "cuisine": "thai",
+        "internet_access": "wlan",
+        "name": "Baan Thai",
+        "opening_hours": "We-Mo 12:00-22:30",
+        "phone": "+351 21 923 3292",
+        "self_service": "no",
+        "website": "https://baanthai.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13759351567,
+      "lat": 38.8012902,
+      "lon": -9.3795582,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Jardim da Portela"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13787340985,
+      "lat": 38.7992285,
+      "lon": -9.3857407,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Sintra (Estação)",
+        "network": "Sintra434",
+        "official_name": "Estação de Sintra",
+        "operator": "Viação 434",
+        "public_transport": "platform",
+        "route_ref": "434"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13787340986,
+      "lat": 38.7992575,
+      "lon": -9.3858134,
+      "tags": {
+        "bus": "yes",
+        "name": "Sintra (Estação)",
+        "network": "Sintra434",
+        "operator": "Viação 434",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13787340990,
+      "lat": 38.7941677,
+      "lon": -9.3831097,
+      "tags": {
+        "bus": "yes",
+        "name": "Lgo Sousa Brandão (Casa Cantoneiros)",
+        "name:Sintra434": "Casa dos Cantoneiros",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "stop_position",
+        "ref": "171903"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13787340991,
+      "lat": 38.7954307,
+      "lon": -9.3869309,
+      "tags": {
+        "bus": "yes",
+        "name": "Fonte da Sabuga",
+        "network": "Sintra434",
+        "operator": "Viação 434",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13787363508,
+      "lat": 38.7965982,
+      "lon": -9.3895158,
+      "tags": {
+        "bus": "yes",
+        "name": "Volta do Duche",
+        "name:Sintra434": "Volta do Duche",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "stop_position",
+        "ref": "171909"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13787363539,
+      "lat": 38.802328,
+      "lon": -9.3953119,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Nunes de Carvalho (Ciência Viva)",
+        "name:Sintra434": "Ribeira de Sintra",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "stop_position",
+        "ref": "171371"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13787363540,
+      "lat": 38.8052461,
+      "lon": -9.3887401,
+      "tags": {
+        "bus": "yes",
+        "name": "Av N Carval 92 (Monte Santos)",
+        "name:Sintra434": "Monte Santos",
+        "network": "Carris Metropolitana;Sintra434",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "operator:Sintra434": "Viação 434",
+        "public_transport": "stop_position",
+        "ref": "171377"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13895701327,
+      "lat": 38.7992556,
+      "lon": -9.3859146,
+      "tags": {
+        "amenity": "cafe",
+        "indoor_seating": "yes",
+        "name": "Coffee House",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 33888526,
+      "center": {
+        "lat": 38.8024875,
+        "lon": -9.3765844
+      },
+      "tags": {
+        "amenity": "bus_station",
+        "bus": "yes",
+        "name": "Portela de Sintra (Estação Norte)",
+        "network": "Carris Metropolitana;Rede Expressos;Flixbus",
+        "operator": "Viação Alvorada;Rodoviária de Lisboa;outros",
+        "public_transport": "station"
+      }
+    },
+    {
+      "type": "way",
+      "id": 49682520,
+      "center": {
+        "lat": 38.8032917,
+        "lon": -9.3819709
+      },
+      "tags": {
+        "alt_name": "MU.SA",
+        "architect": "Manuel Norte Júnior",
+        "building": "yes",
+        "fee": "no",
+        "name": "Museu de Arte Moderna",
+        "opening_hours": "Tu-Fr 10:00-18:00; Sa-Su 12:00-18:00",
+        "phone": "+351 965 233 692;+351 219 236 106",
+        "tourism": "museum",
+        "website": "https://cm-sintra.pt/atualidade/cultura/museus-municipais-de-sintra/mu-sa-museu-das-artes-de-sintra",
+        "wikidata": "Q70737471",
+        "wikimedia_commons": "Category:MU.SA - Museu das Artes de Sintra",
+        "wikipedia": "pt:Museu das Artes de Sintra"
+      }
+    },
+    {
+      "type": "way",
+      "id": 49684213,
+      "center": {
+        "lat": 38.8009946,
+        "lon": -9.3782852
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque da Portela de Sintra"
+      }
+    },
+    {
+      "type": "way",
+      "id": 50465653,
+      "center": {
+        "lat": 38.7957492,
+        "lon": -9.3865963
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque da Liberdade",
+        "old_name": "Parque Doutor Oliveira Salazar",
+        "wikidata": "Q111731508",
+        "wikimedia_commons": "Category:Parque da Liberdade"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143312827,
+      "center": {
+        "lat": 38.7995029,
+        "lon": -9.3790117
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:postcode": "2710-436",
+        "addr:street": "Rua Pedro de Cintra",
+        "amenity": "school",
+        "contact:email": "direcao@agml.edu.gov.pt;servicos@agml.edu.gov.pt",
+        "contact:fax": "+351 219231164",
+        "contact:phone": "+351 219231880",
+        "contact:website": "http://essmaria.net",
+        "grades": "15-17",
+        "name": "Escola Secundária de Santa Maria",
+        "operator": "Agrupamento de Escolas Monte da Lua, Sintra",
+        "operator:ref": "172455",
+        "operator:type": "public",
+        "ref": "400415",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143323091,
+      "center": {
+        "lat": 38.799071,
+        "lon": -9.3756297
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:postcode": "2710-716",
+        "addr:street": "Rua Félix Alves Pereira",
+        "amenity": "school",
+        "contact:email": "eb1.n3.sintra@escolas.min-edu.pt",
+        "contact:fax": "+351 219241985",
+        "contact:phone": "+351 219241985",
+        "grades": "3-9",
+        "name": "Escola Básica da Portela de Sintra",
+        "operator": "Agrupamento de Escolas Monte da Lua, Sintra",
+        "operator:ref": "172455",
+        "operator:type": "public",
+        "ref": "290312"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143331297,
+      "center": {
+        "lat": 38.8006042,
+        "lon": -9.3752967
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "20",
+        "addr:postcode": "2710-422",
+        "addr:street": "Rua Mestre Neves",
+        "amenity": "school",
+        "contact:email": "cl.dmariadeportugal@escolas.min-edu.pt",
+        "contact:fax": "+351 219235498",
+        "contact:phone": "+351 219235496",
+        "contact:website": "http://www.colegioinfanta.pt",
+        "fence_type": "hedge",
+        "image": "https://commons.wikimedia.org/wiki/File:Fachada_Noite_Col%C3%A9gio_Infanta.jpg",
+        "name": "Prime School International",
+        "old_name": "Colégio Infanta Dona Maria",
+        "operator:type": "private",
+        "ref": "800372",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143333245,
+      "center": {
+        "lat": 38.7994673,
+        "lon": -9.3755818
+      },
+      "tags": {
+        "amenity": "kindergarten",
+        "name": "Infantário Popular de Sintra"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143435932,
+      "center": {
+        "lat": 38.8000945,
+        "lon": -9.3806268
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "20, 22",
+        "addr:postcode": "2710-431",
+        "addr:street": "Avenida Movimento das Forças Armadas",
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Novo Banco",
+        "brand:wikidata": "Q17488861",
+        "brand:wikipedia": "pt:Novo Banco",
+        "building": "yes",
+        "contact:fax": "+351 218836466",
+        "contact:phone": "+351 218836464",
+        "drive_through": "no",
+        "name": "Novo Banco",
+        "opening_hours": "Mo-Fr 08:30-15:00",
+        "operator": "Novo Banco",
+        "operator:old_name": "Banco Espírito Santo",
+        "operator:old_name:short": "BES",
+        "operator:wikidata": "Q17488861",
+        "operator:wikipedia": "pt:Novo Banco",
+        "ref": "B0359",
+        "ref_name": "Sintra"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143609300,
+      "center": {
+        "lat": 38.8058882,
+        "lon": -9.3807161
+      },
+      "tags": {
+        "amenity": "kindergarten",
+        "building": "school",
+        "name": "Jardim de Infância Nº 2 de Sintra"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143612115,
+      "center": {
+        "lat": 38.8053061,
+        "lon": -9.3778122
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:postcode": "2710-531",
+        "addr:street": "Rua António Cunha",
+        "amenity": "school",
+        "contact:email": "eb23.dfernandoii@escolas.min-edu.pt",
+        "contact:fax": "+351 219108225",
+        "contact:phone": "+351 219108220",
+        "grades": "10-14",
+        "name": "Escola Básica do 2º e 3º Ciclo Dom Fernando II",
+        "operator": "Agrupamento de Escolas Monte da Lua, Sintra",
+        "operator:ref": "172455",
+        "operator:type": "public",
+        "ref": "340741",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB2/3 D. Fernando II"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143615387,
+      "center": {
+        "lat": 38.8088554,
+        "lon": -9.3792445
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "8",
+        "addr:postcode": "2710-348",
+        "addr:street": "Rua do Alecrim",
+        "amenity": "school",
+        "contact:email": "direcao@adcarlosi.edu.gov.pt;servicos@adcarlosi.edu.gov.pt",
+        "contact:fax": "+351 219239295",
+        "contact:phone": "+351 219239290",
+        "contact:website": "http://www.adcarlosi.pt",
+        "description": "Escola Sede do Agrupamento de Escolas D. Carlos I",
+        "grades": "3-14",
+        "name": "Escola Básica Dom Carlos I",
+        "operator": "Agrupamento de Escolas D. Carlos I, Sintra",
+        "operator:ref": "171554",
+        "operator:type": "public",
+        "ref": "346792",
+        "ref:qzp": "QZP.45",
+        "website": "https://adcarlosi.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 143616098,
+      "center": {
+        "lat": 38.8082115,
+        "lon": -9.3780241
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "japanese;sushi",
+        "name": "Samurai"
+      }
+    },
+    {
+      "type": "way",
+      "id": 146142048,
+      "center": {
+        "lat": 38.7991971,
+        "lon": -9.3875614
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "29",
+        "addr:postcode": "2710-631",
+        "addr:street": "Rua Conde Ferreira",
+        "air_conditioning": "yes",
+        "amenity": "restaurant",
+        "building": "yes",
+        "building:levels": "2",
+        "check_date": "2024-05-08",
+        "description": "A Raposa starts in 2010, located in the unique village of Sintra, in a space included in a secular house that originated from one of the oldest tea houses in Sintra. It presents a fusion cuisine, the result of several Mediterranean synergies...",
+        "mapillary": "3506196732955178",
+        "name": "Restaurante A Raposa",
+        "opening_hours": "Tu-Sa 12:30-16:00, 18:30-22:00; Su 12:30-16:00; Mo off",
+        "outdoor_seating": "no",
+        "phone": "+351219243440",
+        "toilets": "yes",
+        "website": "https://www.restaurantearaposa-sintra.com/",
+        "website:menu": "https://www.restaurantearaposa-sintra.com/menu",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 146222313,
+      "center": {
+        "lat": 38.7964054,
+        "lon": -9.3899326
+      },
+      "tags": {
+        "addr:housenumber": "26",
+        "addr:street": "Rua Visconde de Monserrate",
+        "building": "yes",
+        "name": "NewsMuseum",
+        "old_name": "Museu do Brinquedo",
+        "tourism": "museum",
+        "wikidata": "Q21401826",
+        "wikimedia_commons": "Category:NewsMuseum",
+        "wikipedia": "pt:NewsMuseum",
+        "wikipedia:en": "en:NewsMuseum"
+      }
+    },
+    {
+      "type": "way",
+      "id": 146222351,
+      "center": {
+        "lat": 38.7957543,
+        "lon": -9.3918675
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Patéo do Garret"
+      }
+    },
+    {
+      "type": "way",
+      "id": 151662352,
+      "center": {
+        "lat": 38.7968532,
+        "lon": -9.3871567
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Museu Anjos Teixeira",
+        "name:en": "Anjos Teixerira Museum",
+        "opening_hours": "Tu-Fr 10:00-18:00; Sa-Su 12:00-18:00; PH closed",
+        "tourism": "museum",
+        "wikidata": "Q10333389",
+        "wikimedia_commons": "Category:Museu Anjos Teixeira",
+        "wikipedia": "pt:Museu Anjos Teixeira"
+      }
+    },
+    {
+      "type": "way",
+      "id": 151662358,
+      "center": {
+        "lat": 38.7962929,
+        "lon": -9.3880028
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque dos Castanheiros"
+      }
+    },
+    {
+      "type": "way",
+      "id": 171753792,
+      "center": {
+        "lat": 38.7962967,
+        "lon": -9.3907541
+      },
+      "tags": {
+        "addr:housenumber": "2710-623",
+        "addr:street": "Rua das Padarias",
+        "amenity": "cafe",
+        "building": "yes",
+        "check_date": "2024-05-08",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "name": "Piriquita II",
+        "opening_hours": "Mo-Su 08:30-20:00",
+        "outdoor_seating": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 195319333,
+      "center": {
+        "lat": 38.7996,
+        "lon": -9.3841002
+      },
+      "tags": {
+        "addr:housenumber": "62",
+        "addr:street": "Rua João de Deus",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Dom Pipas",
+        "opening_hours": "Tu-Su 12:00-15:00, 19:00-23:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 469434936,
+      "center": {
+        "lat": 38.8017033,
+        "lon": -9.3768056
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 666926922,
+      "center": {
+        "lat": 38.7977173,
+        "lon": -9.3748719
+      },
+      "tags": {
+        "description": "Parque de máquinas para exercício físico",
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1161656337,
+      "center": {
+        "lat": 38.7977597,
+        "lon": -9.3763625
+      },
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1161723956,
+      "center": {
+        "lat": 38.7997377,
+        "lon": -9.3778894
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "21",
+        "addr:postcode": "2710-436",
+        "addr:street": "Rua Pedro de Cintra",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Restaurante Mira Serra",
+        "phone": "+351 21 924 4021"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1275076782,
+      "center": {
+        "lat": 38.7998999,
+        "lon": -9.3923665
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:postcode": "2710-628",
+        "addr:street": "Rua Sotto Mayor",
+        "amenity": "school",
+        "contact:email": "eb1.n2.sintra@escolas.min-edu.pt",
+        "contact:phone": "+351 219241240",
+        "grades": "3-9",
+        "name": "Escola Básica de Sintra",
+        "operator": "Agrupamento de Escolas Monte da Lua, Sintra",
+        "operator:ref": "172455",
+        "operator:type": "public",
+        "ref": "290348",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB1/JI de Sintra"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1279728752,
+      "center": {
+        "lat": 38.7986794,
+        "lon": -9.3818244
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1280486653,
+      "center": {
+        "lat": 38.8023171,
+        "lon": -9.3945706
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "19",
+        "addr:postcode": "2710-540",
+        "addr:street": "Rua Carlos da Oliveira Carvalho",
+        "building": "yes",
+        "email": "reservas@smas-sintra.pt",
+        "museum": "nature",
+        "name": "Museu da Água e Resíduos",
+        "opening_hours": "Tu-Su 10:00-13:00,14:00-18:00",
+        "operator": "SMAS de Sintra",
+        "operator:type": "public",
+        "phone": "+351 219 247 730",
+        "tourism": "museum",
+        "website": "https://www.smas-sintra.pt/",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1301988511,
+      "center": {
+        "lat": 38.8038124,
+        "lon": -9.3789251
+      },
+      "tags": {
+        "addr:city": "Sintra",
+        "addr:housenumber": "44",
+        "addr:postcode": "2710-000",
+        "addr:street": "Travessa da Roussada a Rua Veiga da Cunha",
+        "amenity": "kindergarten",
+        "contact:email": "ji.opinhao@escolas.min-edu.pt",
+        "contact:fax": "+351 219233022",
+        "contact:phone": "+351 219233022",
+        "grades": "3-5",
+        "name": "Jardim Infantil \"O Pinhão\"",
+        "operator:type": "private",
+        "ref": "504506",
+        "ref:qzp": "QZP.45"
+      }
+    }
+  ]
+}

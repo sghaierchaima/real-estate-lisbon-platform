@@ -1,0 +1,3587 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-28T10:27:18Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 433454053,
+      "lat": 38.8392928,
+      "lon": -9.1707671,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Joaquim Fernandes 9",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "stop_position",
+        "ref": "070544"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1474086839,
+      "lat": 38.8283886,
+      "lon": -9.1645658,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "22",
+        "addr:postcode": "2670-469",
+        "addr:street": "Rua da República",
+        "addr:unit": "A/B",
+        "amenity": "restaurant",
+        "brand": "Toyota",
+        "cuisine": "american;steak_house",
+        "name": "Ribs & Ca."
+      }
+    },
+    {
+      "type": "node",
+      "id": 1474209773,
+      "lat": 38.8264829,
+      "lon": -9.1749123,
+      "tags": {
+        "bus": "yes",
+        "name": "Loures (Urmeira)",
+        "network": "Santo António Barraqueiro",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1537662450,
+      "lat": 38.8344804,
+      "lon": -9.1562774,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "257",
+        "addr:postcode": "2670-482",
+        "addr:street": "Avenida das Descobertas",
+        "branch": "LoureShopping",
+        "brand": "Continente",
+        "brand:wikidata": "Q2995683",
+        "brand:wikipedia": "pt:Continente (hipermercados)",
+        "contact:facebook": "continenteoficial",
+        "contact:instagram": "continente",
+        "contact:phone": "+351 210 171 200",
+        "contact:youtube": "https://www.youtube.com/user/continentept",
+        "name": "Continente",
+        "opening_hours": "Mo-Su 08:00-23:00",
+        "ref": "95624ad7-1f6c-574d-aa6b-aec04648bdbf",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://feed.continente.pt/lojas/continente-loureshopping"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1537679030,
+      "lat": 38.8295582,
+      "lon": -9.1663479,
+      "tags": {
+        "addr:housenumber": "29",
+        "addr:street": "Rua da República",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Sálvia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1537679094,
+      "lat": 38.8312571,
+      "lon": -9.1686739,
+      "tags": {
+        "addr:housenumber": "86 A",
+        "addr:street": "Rua da República",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Saraiva",
+        "opening_hours": "Mo-Fr 08:30-20:00; Sa 08:30-13:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1537679107,
+      "lat": 38.8260752,
+      "lon": -9.1713109,
+      "tags": {
+        "amenity": "pharmacy",
+        "name": "Farmácia Nova de Loures"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538066694,
+      "lat": 38.8318496,
+      "lon": -9.1784928,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "O Pátio de Santa Maria",
+        "opening_hours": "Mo-Su 10:30-15:30,19:00-12:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538066709,
+      "lat": 38.8257124,
+      "lon": -9.1618561,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:floor": "0",
+        "addr:place": "Parque da Cidade",
+        "addr:postcode": "2670-331",
+        "amenity": "cafe",
+        "level": "0",
+        "name": "Sente"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538066736,
+      "lat": 38.8309699,
+      "lon": -9.1680536,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pastelaria O Monumento"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538066746,
+      "lat": 38.8295616,
+      "lon": -9.166455,
+      "tags": {
+        "amenity": "cafe",
+        "name": "ABCDoce"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538066757,
+      "lat": 38.8302804,
+      "lon": -9.1775942,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Tentação"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538066760,
+      "lat": 38.8252705,
+      "lon": -9.1618173,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:floor": "0",
+        "addr:place": "Parque da Cidade",
+        "addr:postcode": "2670-331",
+        "amenity": "restaurant",
+        "level": "0",
+        "name": "Palácio da Cerveja"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538072929,
+      "lat": 38.8290037,
+      "lon": -9.1668252,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Millennium bcp",
+        "brand:wikidata": "Q118581",
+        "brand:wikipedia": "pt:Banco Comercial Português",
+        "name": "Millennium bcp",
+        "official_name": "Banco Comercial Português",
+        "official_name:en": "Portuguese Commercial Bank",
+        "official_name:es": "Banco Comercial Português",
+        "opening_hours": "Mo-Sa 08:30-15:00",
+        "operator": "Banco Comercial Português",
+        "operator:wikidata": "Q118581",
+        "operator:wikipedia": "pt:Banco Comercial Português"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538072935,
+      "lat": 38.8365944,
+      "lon": -9.1695798,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Crédito Agrícola",
+        "brand:wikidata": "Q10262017",
+        "brand:wikipedia": "pt:Crédito Agrícola",
+        "name": "Crédito Agrícola",
+        "operator": "Crédito Agrícola",
+        "operator:alt_name": "Caixa de Crédito Agrícola",
+        "operator:wikidata": "Q10262017",
+        "operator:wikipedia": "pt:Crédito Agrícola",
+        "short_name": "CA"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538072942,
+      "lat": 38.8313251,
+      "lon": -9.1688368,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "88",
+        "addr:postcode": "2670-470",
+        "addr:street": "Rua da República",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Loures",
+        "brand": "Santander",
+        "brand:website": "https://www.santander.pt/",
+        "brand:wikidata": "Q4854116",
+        "brand:wikipedia": "pt:Banco Santander Portugal",
+        "cash_in": "yes",
+        "cash_out": "yes",
+        "cheque_in": "yes",
+        "contact:email": "loures@santander.pt",
+        "contact:facebook": "santanderpt",
+        "contact:instagram": "santanderpt",
+        "contact:linkedin": "https://www.linkedin.com/company/santanderpt/",
+        "contact:phone": "+351 219 839 680",
+        "contact:twitter": "santanderpt",
+        "contact:youtube": "@santanderpt",
+        "internet_access": "wlan",
+        "language:en": "yes",
+        "language:es": "yes",
+        "language:pt": "yes",
+        "name": "Santander",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa-Su off; Jan 01,Apr 25,May 25,Jun 01,Jun 26,Aug 10,Aug 24,Oct 15,Nov 05,Dec 01,Dec 08,Dec 25 off",
+        "operator": "Banco Santander (Portugal)",
+        "operator:wikidata": "Q4854116",
+        "operator:wikipedia": "pt:Banco Santander Portugal",
+        "ref": "5354",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.santander.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538072951,
+      "lat": 38.8304891,
+      "lon": -9.1683514,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Crédito Agrícola",
+        "brand:wikidata": "Q10262017",
+        "brand:wikipedia": "pt:Crédito Agrícola",
+        "name": "Crédito Agrícola",
+        "operator": "Crédito Agrícola",
+        "operator:alt_name": "Caixa de Crédito Agrícola",
+        "operator:wikidata": "Q10262017",
+        "operator:wikipedia": "pt:Crédito Agrícola",
+        "short_name": "CA"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538072954,
+      "lat": 38.8307359,
+      "lon": -9.1680885,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:postcode": "2670-420",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Loures",
+        "branch:type": "retail",
+        "brand": "Caixa Geral de Depósitos",
+        "brand:website": "https://www.cgd.pt/",
+        "brand:wikidata": "Q1026044",
+        "brand:wikipedia": "pt:Caixa Geral de Depósitos",
+        "contact:facebook": "caixageraldedepositos",
+        "contact:instagram": "caixageraldedepositos",
+        "contact:linkedin": "https://www.linkedin.com/company/caixageraldedepositos/",
+        "contact:phone": "+351 217 900 790",
+        "contact:youtube": "http://www.youtube.com/user/mediacgd",
+        "name": "Caixa Geral de Depósitos",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa,Su,PH off",
+        "operator": "Caixa Geral de Depósitos",
+        "operator:wikidata": "Q1026044",
+        "operator:wikipedia": "pt:Caixa Geral de Depósitos",
+        "ref": "1310",
+        "short_name": "CGD",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.cgd.pt/Corporativo/Rede-CGD/Pages/LOURES.aspx"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538072958,
+      "lat": 38.8301404,
+      "lon": -9.1686223,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Bankinter",
+        "brand:wikidata": "Q806808",
+        "brand:wikipedia": "en:Bankinter",
+        "name": "Bankinter",
+        "operator": "Bankinter",
+        "operator:wikidata": "Q806808",
+        "operator:wikipedia": "en:Bankinter"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1538713049,
+      "lat": 38.8308469,
+      "lon": -9.1786517,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:country": "PT",
+        "addr:place": "Quinta do Marzação",
+        "addr:postcode": "2670",
+        "addr:state": "Lisboa",
+        "addr:street": "Praceta Arnaldo Jesus Primavera",
+        "amenity": "restaurant",
+        "name": "Grelha do Miradouro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539625688,
+      "lat": 38.8236091,
+      "lon": -9.163566,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Ruacaná"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539625690,
+      "lat": 38.830607,
+      "lon": -9.1651378,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Ginha",
+        "opening_hours": "Tu-Sa 10:00-14:00,17:00-22:00; Su 10:00-14:00",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539625691,
+      "lat": 38.8247532,
+      "lon": -9.1657064,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Concha Saloia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539625693,
+      "lat": 38.8280182,
+      "lon": -9.1667552,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Churrasqueira Ideal de Loures"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539854114,
+      "lat": 38.8307477,
+      "lon": -9.1676764,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "A Horta"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539854117,
+      "lat": 38.8303361,
+      "lon": -9.1678776,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Salero"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539854461,
+      "lat": 38.8311502,
+      "lon": -9.168815,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Frango da Gare",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539854501,
+      "lat": 38.8310367,
+      "lon": -9.1682122,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "80B",
+        "addr:postcode": "2670-470",
+        "addr:street": "Rua da República",
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Novo Banco",
+        "brand:wikidata": "Q17488861",
+        "brand:wikipedia": "pt:Novo Banco",
+        "contact:fax": "+351 218836896",
+        "contact:phone": "+351 218836895",
+        "name": "Novo Banco",
+        "operator": "Novo Banco",
+        "operator:old_name": "Banco Espírito Santo",
+        "operator:old_name:short": "BES",
+        "operator:wikidata": "Q17488861",
+        "operator:wikipedia": "pt:Novo Banco",
+        "ref": "B0276",
+        "ref_name": "Loures"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539854506,
+      "lat": 38.8319282,
+      "lon": -9.1705759,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539854547,
+      "lat": 38.8266941,
+      "lon": -9.1745456,
+      "tags": {
+        "amenity": "cafe",
+        "name": "A Torre"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539854779,
+      "lat": 38.8292997,
+      "lon": -9.1659008,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Raiz e sol"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539854811,
+      "lat": 38.8305785,
+      "lon": -9.1680761,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "O Grelhador"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1539854910,
+      "lat": 38.8306328,
+      "lon": -9.1677649,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "O Pedroguense"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1585168217,
+      "lat": 38.8318413,
+      "lon": -9.1764139,
+      "tags": {
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "farmácia loures"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1708396541,
+      "lat": 38.8332584,
+      "lon": -9.1570054,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "level": "1",
+        "name": "Giorno"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1708396571,
+      "lat": 38.8354243,
+      "lon": -9.1560088,
+      "tags": {
+        "addr:housenumber": "90",
+        "addr:street": "Avenida das Descobertas",
+        "addr:unit": "0.12",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "level": "0",
+        "name": "Farmácia Tanara",
+        "phone": "+351 21 983 4616",
+        "website": "https://www.farmaciastanara.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1708396582,
+      "lat": 38.8380241,
+      "lon": -9.1586974,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Banco Montepio",
+        "brand:wikidata": "Q1946091",
+        "brand:wikipedia": "pt:Banco Montepio",
+        "name": "Banco Montepio",
+        "operator": "Associação Mutualista Montepio",
+        "operator:wikidata": "Q1946091",
+        "operator:wikipedia": "pt:Banco Montepio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3162577569,
+      "lat": 38.8279365,
+      "lon": -9.1641,
+      "tags": {
+        "amenity": "cafe",
+        "name": "A República"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3162577570,
+      "lat": 38.8286949,
+      "lon": -9.163326,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Sensation"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4281847391,
+      "lat": 38.8317641,
+      "lon": -9.1696632,
+      "tags": {
+        "addr:housenumber": "106",
+        "addr:postcode": "2660",
+        "addr:street": "Rua da República",
+        "amenity": "restaurant",
+        "contact:facebook": "saboreseculturasrestaurante",
+        "contact:instagram": "saboreseculturas",
+        "cuisine": "portuguese",
+        "name": "Sabores & Culturas",
+        "phone": "+351 939531208"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4291516789,
+      "lat": 38.8275039,
+      "lon": -9.1734573,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Cantinho da Olga"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4294269496,
+      "lat": 38.8364756,
+      "lon": -9.1572198,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "relote do infantado"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5298439286,
+      "lat": 38.8384505,
+      "lon": -9.1684422,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Mercearia do Fanqueiro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5416414965,
+      "lat": 38.8257888,
+      "lon": -9.1718735,
+      "tags": {
+        "addr:street": "Rua Abel João Manta",
+        "amenity": "cafe",
+        "name": "Mil Delicias"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7799256046,
+      "lat": 38.8392529,
+      "lon": -9.1695311,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Café Moderno"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7847599479,
+      "lat": 38.840342,
+      "lon": -9.1717394,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pires com Canelas",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7847642219,
+      "lat": 38.8393354,
+      "lon": -9.1708022,
+      "tags": {
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "R Joaquim Fernandes 8A (Fanqueiro)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Joaquim Fernandes 8A (Fanqueiro)",
+        "old_name": "Fanqueiro (Rua Joaquim Fernandes, 8A)",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "70543",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7847642220,
+      "lat": 38.8391186,
+      "lon": -9.1686547,
+      "tags": {
+        "bus": "yes",
+        "departures_board": "timetable",
+        "disused": "yes",
+        "highway": "bus_stop",
+        "name": "Fanqueiro",
+        "network": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7847642221,
+      "lat": 38.8388246,
+      "lon": -9.1688555,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "disused": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Fanqueiro (Rua Anselmo Braamcamp) Escolas",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7847642224,
+      "lat": 38.8386701,
+      "lon": -9.1716996,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "R S João Deus 7 (Fanqueiro)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R S João Deus 7 (Fanqueiro)",
+        "old_name": "Fanqueiro (Rua São João de Deus, 7)",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "70545",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7865646684,
+      "lat": 38.831175,
+      "lon": -9.168502,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:postcode": "2670-470",
+        "branch": "República - Loures",
+        "brand": "My Auchan",
+        "brand:wikidata": "Q115800307",
+        "brand:wikipedia": "pt:Auchan",
+        "contact:email": "apoiocliente@auchan.pt",
+        "contact:facebook": "AuchanPortugal",
+        "contact:instagram": "auchan_pt",
+        "contact:phone": "+351 210 403 270",
+        "contact:tiktok": "auchan_pt",
+        "contact:youtube": "https://www.youtube.com/channel/UC6FSI7tYO9ISV11U2PHBBYQ",
+        "name": "My Auchan",
+        "old_name": "Minipreço",
+        "ref": "D76",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "website": "https://www.auchan.pt/pt/loja?StoreID=D76"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8312364413,
+      "lat": 38.8278633,
+      "lon": -9.1670933,
+      "tags": {
+        "addr:housenumber": "4",
+        "amenity": "cafe",
+        "brand": "Bogani",
+        "name": "Bogani Desperta - Home Coffee",
+        "opening_hours": "07:00-20:00",
+        "outdoor_seating": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8740341334,
+      "lat": 38.8220895,
+      "lon": -9.1757686,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Grupo Alfredo de Jesus",
+        "opening_hours": "Mo-Fr 07:00-22:00; Sa,PH 08:00-21:00; Su 08:00-17:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8746348379,
+      "lat": 38.8308573,
+      "lon": -9.1678584,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Buondi caffé",
+        "name": "Sabores Vibrantes",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8914518816,
+      "lat": 38.8314753,
+      "lon": -9.1707954,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Raízes",
+        "outdoor_seating": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8920538818,
+      "lat": 38.8314312,
+      "lon": -9.1700758,
+      "tags": {
+        "amenity": "cafe",
+        "name": "O Pastor"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8920538820,
+      "lat": 38.8311257,
+      "lon": -9.1691312,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Café Cubano",
+        "name": "Doces Momentos",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8926715982,
+      "lat": 38.831413,
+      "lon": -9.1690128,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Café Dias",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8926715989,
+      "lat": 38.8302624,
+      "lon": -9.1673058,
+      "tags": {
+        "amenity": "cafe",
+        "name": "O Folhadinho"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8968836783,
+      "lat": 38.8263825,
+      "lon": -9.1597492,
+      "tags": {
+        "light_rail": "yes",
+        "name": "Loures",
+        "operator": "Metropolitano de Lisboa",
+        "planned:railway": "station",
+        "public_transport": "stop_position",
+        "railway": "proposed"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9150261453,
+      "lat": 38.8255834,
+      "lon": -9.1619264,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:postcode": "2670-332",
+        "addr:street": "Rua da República",
+        "amenity": "restaurant",
+        "contact:facebook": "restaurantehayaci",
+        "cuisine": "japanese",
+        "internet_access": "yes",
+        "level": "1",
+        "name": "Hayaci - Restaurante Japonês",
+        "opening_hours": "Mo-Fr 12:00-15:00, 19:00-23:00; Sa,Su,PH 12:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+351 211 565 292"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9288851464,
+      "lat": 38.8258013,
+      "lon": -9.161992,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:floor": "1",
+        "addr:place": "Parque da Cidade",
+        "addr:postcode": "2670-331",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "level": "1",
+        "name": "Giosario"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9295915025,
+      "lat": 38.8288944,
+      "lon": -9.1667917,
+      "tags": {
+        "bus": "yes",
+        "name": "Lg Marcos Romão Reis Junior",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9341186789,
+      "lat": 38.8249821,
+      "lon": -9.1672878,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "disused": "yes",
+        "highway": "bus_stop",
+        "operator": "Santo António Barraqueiro",
+        "public_transport": "platform",
+        "route_ref": "460",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9532613680,
+      "lat": 38.8292881,
+      "lon": -9.1620813,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Rua 25 de Abril - Loures (Escola)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "old_name": "Loures (Escolas)",
+        "operator": "Rodoviária de Lisboa",
+        "pole": "yes",
+        "public_transport": "platform",
+        "ref": "70030",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9532613688,
+      "lat": 38.8402163,
+      "lon": -9.1711257,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "disused": "yes",
+        "flag": "no",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Fanqueiro (Rua Anselmo Braamcamp Freire, 26)",
+        "operator": "Rodoviária de Lisboa",
+        "passenger_information_display": "no",
+        "pole": "yes",
+        "public_transport": "platform",
+        "shelter": "no",
+        "traffic_sign": "PT:H20a"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9532613689,
+      "lat": 38.8397943,
+      "lon": -9.1687486,
+      "tags": {
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "R Marechal Craveiro Lopes 26",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Marechal Craveiro Lopes 26",
+        "old_name": "Fanqueiro (Rua Marechal Craveiro Lopes, 26)",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "70541"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9532613690,
+      "lat": 38.8391534,
+      "lon": -9.1686338,
+      "tags": {
+        "bus": "yes",
+        "disused": "yes",
+        "name": "Fanqueiro",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9598477412,
+      "lat": 38.8253414,
+      "lon": -9.1618595,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:floor": "1",
+        "addr:place": "Parque da Cidade",
+        "addr:postcode": "2670-331",
+        "addr:unit": "Loja M",
+        "amenity": "restaurant",
+        "bar": "yes",
+        "contact:facebook": "ritualerestaurante",
+        "contact:instagram": "ritualerestaurante",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "level": "1",
+        "name": "Rituale",
+        "opening_hours": "Mo-Su 11:00-23:00",
+        "phone": "+351 219 830 247",
+        "reservation": "yes",
+        "strapline": "Bar & Grill",
+        "website": "https://rituale.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9869150850,
+      "lat": 38.8283698,
+      "lon": -9.1704592,
+      "tags": {
+        "amenity": "restaurant",
+        "brand": "Casa do Porco Preto",
+        "cuisine": "barbecue",
+        "name": "Nova Loures Churrasqueira",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9869150851,
+      "lat": 38.8283353,
+      "lon": -9.1704773,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "Nicola Cafés",
+        "name": "Pastelaria Snack-Bar Jovan",
+        "short_name": "Jovan"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10037562992,
+      "lat": 38.8335729,
+      "lon": -9.1556852,
+      "tags": {
+        "light_rail": "yes",
+        "name": "Várzea de Loures",
+        "operator": "Metropolitano de Lisboa",
+        "planned:railway": "station",
+        "public_transport": "stop_position",
+        "railway": "proposed"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10074713428,
+      "lat": 38.8369133,
+      "lon": -9.1695392,
+      "tags": {
+        "amenity": "pharmacy",
+        "contact:facebook": "FarmaciaDoFanqueiro",
+        "delivery": "yes",
+        "name": "Farmácia do Fanqueiro",
+        "opening_hours": "Mo-Su 08:30-21:00",
+        "phone": "+351 213 660 188"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235042811,
+      "lat": 38.83513,
+      "lon": -9.1558706,
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housename": "Loures Shopping",
+        "addr:housenumber": "90",
+        "addr:postcode": "2670-457",
+        "addr:street": "Avenida das Descobertas",
+        "addr:unit": "Loja 16A,17",
+        "branch": "Loures",
+        "brand": "Celeiro",
+        "brand:wikidata": "Q114102189",
+        "contact:facebook": "celeiro.pt",
+        "contact:instagram": "celeiro_viverdecorpoealma",
+        "contact:phone": "+351 219 825 353",
+        "level": "0",
+        "name": "Celeiro",
+        "opening_hours": "Mo-Su 09:00-23:00; Dec 24,Dec 31 09:00-19:00",
+        "organic": "only",
+        "ref": "826",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.celeiro.pt/lojas/celeiro-loures"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235056731,
+      "lat": 38.8331376,
+      "lon": -9.1563907,
+      "tags": {
+        "amenity": "restaurant",
+        "brand": "Pizza Hut",
+        "brand:wikidata": "Q191615",
+        "cuisine": "pizza",
+        "level": "1",
+        "name": "Pizza Hut"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235056733,
+      "lat": 38.8332542,
+      "lon": -9.1568296,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "level": "1",
+        "name": "Portugália"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235056746,
+      "lat": 38.8333067,
+      "lon": -9.1562037,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "salad",
+        "name": "Vitaminas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424306,
+      "lat": 38.8397583,
+      "lon": -9.1623039,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Descobertas 27",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Descobertas 27",
+        "public_transport": "platform",
+        "ref": "71425",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424307,
+      "lat": 38.8383878,
+      "lon": -9.1610052,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Descobertas 43",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Descobertas 43",
+        "public_transport": "platform",
+        "ref": "71423",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424654,
+      "lat": 38.8380227,
+      "lon": -9.1667811,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Funchal 77 (Qta Sacouto)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Funchal 77 (Qta Sacouto)",
+        "public_transport": "platform",
+        "ref": "70950",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424655,
+      "lat": 38.8378215,
+      "lon": -9.1667089,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Funchal 77 (Qta Sacouto)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Funchal 77 (Qta Sacouto)",
+        "public_transport": "platform",
+        "ref": "70949",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424656,
+      "lat": 38.8283575,
+      "lon": -9.1624264,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dr Henrique Barbas Albuquerque 8",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Dr Henrique Barbas Albuquerque 8",
+        "public_transport": "platform",
+        "ref": "070947",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424926,
+      "lat": 38.825972,
+      "lon": -9.1728662,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R João Abel Manta 6",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R João Abel Manta 6",
+        "public_transport": "platform",
+        "ref": "070569",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424935,
+      "lat": 38.8258607,
+      "lon": -9.1719804,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R João Abel Manta 1 (Urmeira)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R João Abel Manta 1 (Urmeira)",
+        "public_transport": "platform",
+        "ref": "070551",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424936,
+      "lat": 38.8266678,
+      "lon": -9.1758065,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Pcta Prof Barahona Fernandes (Urmeira)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Pcta Prof Barahona Fernandes (Urmeira)",
+        "public_transport": "platform",
+        "ref": "70550",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424937,
+      "lat": 38.8267869,
+      "lon": -9.1758162,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Pcta Prof Barahona Fernandes (Urmeira)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Pcta Prof Barahona Fernandes (Urmeira)",
+        "public_transport": "platform",
+        "ref": "70549",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424938,
+      "lat": 38.8264295,
+      "lon": -9.174896,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R João Abel Manta 10 (Urmeira)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R João Abel Manta 10 (Urmeira)",
+        "public_transport": "platform",
+        "ref": "70548",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424939,
+      "lat": 38.8265401,
+      "lon": -9.1749351,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R João Abel Manta 10 (Urmeira)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R João Abel Manta 10 (Urmeira)",
+        "public_transport": "platform",
+        "ref": "70547",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424940,
+      "lat": 38.838748,
+      "lon": -9.1716324,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R S João Deus 7 (Fanqueiro)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R S João Deus 7 (Fanqueiro)",
+        "public_transport": "platform",
+        "ref": "70546",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424942,
+      "lat": 38.8392718,
+      "lon": -9.1707629,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Joaquim Fernandes 9",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Rua Joaquim Fernandes 9",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "070544",
+        "route_ref": "2040",
+        "short_name": "R. Joaquom Fernandes 9",
+        "website": "https://carrismetropolitana.pt/stops/070544"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424944,
+      "lat": 38.8397316,
+      "lon": -9.168809,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Marechal Craveiro Lopes 26",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Marechal Craveiro Lopes 26",
+        "public_transport": "platform",
+        "ref": "70542"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424946,
+      "lat": 38.8387812,
+      "lon": -9.1671636,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Marechal Craveiro Lopes 6 (Fanqueiro)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Marechal Craveiro Lopes 6 (Fanqueiro)",
+        "public_transport": "platform",
+        "ref": "70540",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424947,
+      "lat": 38.838843,
+      "lon": -9.1670551,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Marechal Craveiro Lopes 6 (Fanqueiro)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Marechal Craveiro Lopes 6 (Fanqueiro)",
+        "public_transport": "platform",
+        "ref": "70539",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424954,
+      "lat": 38.827918,
+      "lon": -9.1705316,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Cidade Horta 10 (IEFP)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Cidade Horta 10 (IEFP)",
+        "public_transport": "platform",
+        "ref": "070529",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424955,
+      "lat": 38.8284731,
+      "lon": -9.1688659,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Man Franc Soromenho 41A",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Man Franc Soromenho 41A",
+        "public_transport": "platform",
+        "ref": "070527",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424956,
+      "lat": 38.8235676,
+      "lon": -9.1605116,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Cidade Janeiro 67 (Mealhada)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Cidade Janeiro 67 (Mealhada)",
+        "public_transport": "platform",
+        "ref": "70525",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424994,
+      "lat": 38.823617,
+      "lon": -9.1612237,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Cidade Rio Janeiro 71",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Cidade Rio Janeiro 71",
+        "public_transport": "platform",
+        "ref": "70481",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424995,
+      "lat": 38.8283867,
+      "lon": -9.1681211,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Manuel Augusto Pacheco 23",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Manuel Augusto Pacheco 23",
+        "public_transport": "platform",
+        "ref": "070479",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424996,
+      "lat": 38.8269969,
+      "lon": -9.1693105,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R M Francisco Soromenho 25 (X) Cartório",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R M Francisco Soromenho 25 (X) Cartório",
+        "public_transport": "platform",
+        "ref": "70478",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424997,
+      "lat": 38.8269154,
+      "lon": -9.1692529,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R M Francisco Soromenho 25 (X) Cartório",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R M Francisco Soromenho 25 (X) Cartório",
+        "public_transport": "platform",
+        "ref": "70477",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424998,
+      "lat": 38.8264801,
+      "lon": -9.1714211,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R 4 Outubro (Urmeira)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R 4 Outubro (Urmeira)",
+        "public_transport": "platform",
+        "ref": "070476",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296424999,
+      "lat": 38.8265472,
+      "lon": -9.1710705,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R 4 Outubro (Urmeira)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R 4 Outubro (Urmeira)",
+        "public_transport": "platform",
+        "ref": "070475",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425000,
+      "lat": 38.8244414,
+      "lon": -9.1691362,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Manuel Francisco Soromenho 59",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Manuel Francisco Soromenho 59",
+        "public_transport": "platform",
+        "ref": "70474",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425001,
+      "lat": 38.8245506,
+      "lon": -9.1690893,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Manuel Francisco Soromenho 59",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Manuel Francisco Soromenho 59",
+        "public_transport": "platform",
+        "ref": "70473",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425002,
+      "lat": 38.8241546,
+      "lon": -9.171626,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Ponta Delgada (Rotunda)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Ponta Delgada (Rotunda)",
+        "public_transport": "platform",
+        "ref": "70472",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425003,
+      "lat": 38.8242295,
+      "lon": -9.1717115,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Ponta Delgada (Rotunda)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Ponta Delgada (Rotunda)",
+        "public_transport": "platform",
+        "ref": "70471",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425017,
+      "lat": 38.8294815,
+      "lon": -9.1658943,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R República 32 (Mercado)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R República 32 (Mercado)",
+        "public_transport": "platform",
+        "ref": "70453",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425027,
+      "lat": 38.833542,
+      "lon": -9.1555396,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Descobertas (C Comercial)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Descobertas (C Comercial)",
+        "public_transport": "platform",
+        "ref": "70435",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425065,
+      "lat": 38.8269167,
+      "lon": -9.1624312,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Alfredo Duarte Pinto (P Combustível)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Alfredo Duarte Pinto (P Combustível)",
+        "public_transport": "platform",
+        "ref": "70390",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425066,
+      "lat": 38.8267937,
+      "lon": -9.1623368,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Alfredo Duarte Pinto (P Combustível)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Alfredo Duarte Pinto (P Combustível)",
+        "public_transport": "platform",
+        "ref": "70389",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425067,
+      "lat": 38.8321914,
+      "lon": -9.156587,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Descobertas (C Comercial)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Descobertas (C Comercial)",
+        "public_transport": "platform",
+        "ref": "70388",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425069,
+      "lat": 38.8335817,
+      "lon": -9.1557984,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Descobertas (C Comercial)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Descobertas (C Comercial)",
+        "public_transport": "platform",
+        "ref": "70385",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425070,
+      "lat": 38.8371255,
+      "lon": -9.1572022,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Descobertas 79 (Infantado)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Descobertas 79 (Infantado)",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "70383",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425075,
+      "lat": 38.8237528,
+      "lon": -9.1757976,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Carlos Teixeira (Hospital Beatriz Ângelo)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Avenida Carlos Teixeira (Hospital)",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "070374",
+        "route_ref": "2513;2601;2605;2724;2725;2726;2727;2780",
+        "shelter": "yes",
+        "short_name": "Av. Carlos Teixeira (Hospital Beatriz Ângelo)",
+        "website": "https://carrismetropolitana.pt/stops/070374"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425076,
+      "lat": 38.824014,
+      "lon": -9.1764216,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Hospital Beatriz Ângelo",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Hospital Beatriz Ângelo",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "70373",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425077,
+      "lat": 38.8222807,
+      "lon": -9.1761383,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Hospital Beatriz Ângelo (Consultas)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Hospital Beatriz Ângelo (Consultas)",
+        "public_transport": "platform",
+        "ref": "070369",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425080,
+      "lat": 38.8237758,
+      "lon": -9.1761644,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Carlos Teixeira (Hospital Beatriz Ângelo)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Avenida Carlos Teixeira (Hospital)",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "070364",
+        "route_ref": "2016;2020;2024;2026;2028;2040;2505;2511;2517;2524;2526;2717;2761;2781;2821",
+        "shelter": "yes",
+        "short_name": "Av. Carlos Teixeira (Hospital Beatriz Ângelo)",
+        "website": "https://carrismetropolitana.pt/stops/070364"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425082,
+      "lat": 38.826111,
+      "lon": -9.169332,
+      "tags": {
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Man Franc Soromenho 25 (X) Cartório",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Man Franc Soromenho 25 (X) Cartório",
+        "public_transport": "platform",
+        "ref": "070362",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425083,
+      "lat": 38.8263014,
+      "lon": -9.169336,
+      "tags": {
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Câmara de Lobos",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Câmara de Lobos",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "070361",
+        "route_ref": "2016;2026;2720",
+        "shelter": "no",
+        "short_name": "R. Câmara de Lobos",
+        "website": "https://carrismetropolitana.pt/stops/070361"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425084,
+      "lat": 38.8246206,
+      "lon": -9.1659397,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Câmara de Lobos 28 (Mealhada)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Câmara de Lobos 28 (Mealhada)",
+        "public_transport": "platform",
+        "ref": "70360",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425085,
+      "lat": 38.8246966,
+      "lon": -9.1658344,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Câmara de Lobos 28 (Mealhada)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Câmara de Lobos 28 (Mealhada)",
+        "public_transport": "platform",
+        "ref": "70359",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425086,
+      "lat": 38.8238746,
+      "lon": -9.1636685,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Câmara de Lobos 1 (Mealhada)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Câmara de Lobos 1 (Mealhada)",
+        "public_transport": "platform",
+        "ref": "70358",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425087,
+      "lat": 38.8237664,
+      "lon": -9.1637192,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Câmara de Lobos 1 (Mealhada)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Câmara de Lobos 1 (Mealhada)",
+        "public_transport": "platform",
+        "ref": "70357",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425088,
+      "lat": 38.8240567,
+      "lon": -9.162516,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Ilha Terceira 21 (Rotunda) (Mealhada)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Ilha Terceira 21 (Rotunda) (Mealhada)",
+        "public_transport": "platform",
+        "ref": "70356",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425089,
+      "lat": 38.8239922,
+      "lon": -9.162506,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Ilha Terceira 21 (Rotunda) (Mealhada)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Ilha Terceira 21 (Rotunda) (Mealhada)",
+        "public_transport": "platform",
+        "ref": "70355",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425148,
+      "lat": 38.8257953,
+      "lon": -9.1621794,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R República (Palácio Justiça)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R República (Palácio Justiça)",
+        "public_transport": "platform",
+        "ref": "70283",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425175,
+      "lat": 38.8362531,
+      "lon": -9.169683,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "EN 115 (Supermercado)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "EN 115 (Supermercado)",
+        "public_transport": "platform",
+        "ref": "70252",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425176,
+      "lat": 38.8364463,
+      "lon": -9.1693317,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "EN 115 (Supermercado)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "EN 115 (Supermercado)",
+        "public_transport": "platform",
+        "ref": "70251",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425177,
+      "lat": 38.8285771,
+      "lon": -9.165047,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R República 26 (Campo Futebol)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R República 26 (Campo Futebol)",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "70250",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425178,
+      "lat": 38.8334816,
+      "lon": -9.1709769,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estrada Nacional 115 Frente (X) Rua da Horta da Ponte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Estrada Nacional 115 Frente (X) Rua Horta da Ponte",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "070248",
+        "route_ref": "2011;2037;2038;2039;2040;2525;2534;2535;2719;2750;2762;2764;2765;2782",
+        "shelter": "yes",
+        "short_name": "EN115 Ft. (X) R. da Horta da Ponte",
+        "website": "https://carrismetropolitana.pt/stops/070248"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425179,
+      "lat": 38.8332925,
+      "lon": -9.1712049,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "EN 115 (X) R Horta Ponte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "EN 115 (X) R Horta Ponte",
+        "public_transport": "platform",
+        "ref": "070247",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425181,
+      "lat": 38.8376111,
+      "lon": -9.1702986,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Comandante Carvalho Araújo 9",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Rua Comandante Carvalho Araújo 9",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "070244",
+        "route_ref": "2011;2021;2026;2039;2525;2719;2743;2745;2765;2782",
+        "shelter": "yes",
+        "short_name": "R. Cmdt. Carvalho Araújo 9",
+        "website": "https://carrismetropolitana.pt/stops/070244"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425182,
+      "lat": 38.8377448,
+      "lon": -9.1703506,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Cmte Carvalho Araújo 9 (Fanqueiro)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Cmte Carvalho Araújo 9 (Fanqueiro)",
+        "public_transport": "platform",
+        "ref": "70243",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425183,
+      "lat": 38.837415,
+      "lon": -9.1733845,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Cmte Carvalho Araújo 52 (Sete Casas)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Cmte Carvalho Araújo 52 (Sete Casas)",
+        "public_transport": "platform",
+        "ref": "70242",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425184,
+      "lat": 38.837676,
+      "lon": -9.1741894,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Cmte Carvalho Araújo 71 (Sete Casas)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Cmte Carvalho Araújo 71 (Sete Casas)",
+        "public_transport": "platform",
+        "ref": "70241",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425186,
+      "lat": 38.8393386,
+      "lon": -9.1764024,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Cmte Carvalho Araújo (Chafariz)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Cmte Carvalho Araújo (Chafariz)",
+        "public_transport": "platform",
+        "ref": "70239",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425338,
+      "lat": 38.8254078,
+      "lon": -9.1630385,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Egas Moniz (Centro Saúde)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Egas Moniz (Centro Saúde)",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "070043",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425339,
+      "lat": 38.8318052,
+      "lon": -9.1745493,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Avelar Brotero 12A (Cemitério)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Avelar Brotero 12A (Cemitério)",
+        "public_transport": "platform",
+        "ref": "70042",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425340,
+      "lat": 38.8318568,
+      "lon": -9.1742825,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Avelar Brotero 12A (Cemitério)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Avelar Brotero 12A (Cemitério)",
+        "public_transport": "platform",
+        "ref": "70041",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425343,
+      "lat": 38.8309832,
+      "lon": -9.1681502,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua da República 80",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Rua da República 80",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "070037",
+        "route_ref": "2002;2004;2011;2016;2017;2037;2038;2039;2040;2505;2525;2534;2535;2620;2719;2750;2751;2752;2753;2754;2755;2756;2758;2762;2764;2765;2776;2782;2785",
+        "shelter": "no",
+        "short_name": "R. da República 80",
+        "website": "https://carrismetropolitana.pt/stops/070037"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425344,
+      "lat": 38.8280427,
+      "lon": -9.1642607,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R República 14 (Escola)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R República 14 (Escola)",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "070035",
+        "route_ref": "2002;2004;2011;2016;2017;2028;2040;2037;2038;2513;2039;2525;2532;2534;2535;2601;2605;2620;2719;2725;2726;2727;2733;2751;2751;2752",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425346,
+      "lat": 38.8288331,
+      "lon": -9.1668732,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Lg Marcos Romão Reis Junior",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Lg Marcos Romão Reis Junior",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "070032",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425348,
+      "lat": 38.830168,
+      "lon": -9.1689813,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Frederico Tarre 5",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Frederico Tarre 5",
+        "public_transport": "platform",
+        "ref": "70029",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425349,
+      "lat": 38.8318607,
+      "lon": -9.1718839,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R da República 138 (Jardim)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R da República 138 (Jardim)",
+        "public_transport": "platform",
+        "ref": "70028",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425350,
+      "lat": 38.8318875,
+      "lon": -9.1715078,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R da República 138 (Jardim)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R da República 138 (Jardim)",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "070027",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425351,
+      "lat": 38.8318064,
+      "lon": -9.1783241,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Avelar Brotero 49 (Igreja)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Avelar Brotero 49 (Igreja)",
+        "public_transport": "platform",
+        "ref": "70026",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296425352,
+      "lat": 38.8317897,
+      "lon": -9.1780349,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Avelar Brotero 49 (Igreja)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Avelar Brotero 49 (Igreja)",
+        "public_transport": "platform",
+        "ref": "70025",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11446387340,
+      "lat": 38.826036,
+      "lon": -9.1639028,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R. Prof. Dr. Afonso Costa (Tribunal)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "071657",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11446387341,
+      "lat": 38.8266368,
+      "lon": -9.1641905,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Professor Egas Moniz (Supermercado)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "071658",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12007262130,
+      "lat": 38.8256709,
+      "lon": -9.1721263,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "burger",
+        "name": "Burger One"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12059502020,
+      "lat": 38.8238184,
+      "lon": -9.1757911,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Carlos Teixeira (Hospital Beatriz Ângelo)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "stop_position",
+        "ref": "070374"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12117122825,
+      "lat": 38.8251445,
+      "lon": -9.1674075,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "disused": "yes",
+        "flag": "no",
+        "highway": "bus_stop",
+        "lit": "no",
+        "operator": "Santo António Barraqueiro",
+        "passenger_information_display": "no",
+        "pole": "no",
+        "public_transport": "platform",
+        "route_ref": "460",
+        "shelter": "no",
+        "traffic_sign": "PT:H20a"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12152771239,
+      "lat": 38.8270868,
+      "lon": -9.1698815,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "check_date:bench": "2024-11-24",
+        "check_date:bin": "2024-11-24",
+        "check_date:shelter": "2024-11-24",
+        "highway": "bus_stop",
+        "name": "Rua Cidade da Horta Frente 2",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Rua Cidade da Horta Frente 2",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "platform",
+        "ref": "077887",
+        "route_ref": "2027;2720",
+        "shelter": "no",
+        "short_name": "R. Cidade da Horta Ft. 2",
+        "website": "https://www.carrismetropolitana.pt/stops/077887"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12612481715,
+      "lat": 38.8300289,
+      "lon": -9.1670145,
+      "tags": {
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Abanca",
+        "brand:wikidata": "Q9598744",
+        "name": "Abanca",
+        "opening_hours": "Mo-Fr 08:30-15:00",
+        "operator": "Abanca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12832467562,
+      "lat": 38.8316609,
+      "lon": -9.1698212,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Joaquim Chaves"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12832467565,
+      "lat": 38.8320332,
+      "lon": -9.1729933,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13098277474,
+      "lat": 38.8334796,
+      "lon": -9.1570335,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "japanese;sushi",
+        "name": "Hong Sha Long"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13098277475,
+      "lat": 38.8335046,
+      "lon": -9.1565071,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "level": "0",
+        "name": "Bifanas de Vendas Novas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13116915295,
+      "lat": 38.8332818,
+      "lon": -9.1571356,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "noodle",
+        "name": "KungFu Noodles"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13116915296,
+      "lat": 38.8333622,
+      "lon": -9.1562481,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Quiosque dos Sabores"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13453372783,
+      "lat": 38.8240633,
+      "lon": -9.1617459,
+      "tags": {
+        "amenity": "pharmacy",
+        "name": "Farmácia Loures Mealhada"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13502475694,
+      "lat": 38.8309476,
+      "lon": -9.1681776,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua da República 80",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "stop_position",
+        "ref": "070037"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13502559803,
+      "lat": 38.837649,
+      "lon": -9.170273,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Comandante Carvalho Araújo 9",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "stop_position",
+        "ref": "070244"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13556654051,
+      "lat": 38.8262859,
+      "lon": -9.1693856,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Câmara de Lobos",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "stop_position",
+        "ref": "070361"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13653304423,
+      "lat": 38.8238428,
+      "lon": -9.1761595,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Carlos Teixeira (Hospital Beatriz Ângelo)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "stop_position",
+        "ref": "070364"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13807149881,
+      "lat": 38.8334771,
+      "lon": -9.1711149,
+      "tags": {
+        "bus": "yes",
+        "name": "Estrada Nacional 115 Frente (X) Rua da Horta da Ponte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Rodoviária de Lisboa",
+        "public_transport": "stop_position",
+        "ref": "070248"
+      }
+    },
+    {
+      "type": "way",
+      "id": 136711032,
+      "center": {
+        "lat": 38.8258426,
+        "lon": -9.1609793
+      },
+      "tags": {
+        "alt_name": "Parque da Cidade;Parque da Cidade de Loures",
+        "leisure": "park",
+        "name": "Parque Adão Barata",
+        "website": "https://www.cm-loures.pt/AreaConteudo.aspx?DisplayId=995"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140339473,
+      "center": {
+        "lat": 38.829548,
+        "lon": -9.1630837
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:postcode": "2670-482",
+        "alt_name": "Escola Secundária Doutor António Carvalho Figueiredo",
+        "amenity": "school",
+        "email": "direcao@ae4outubro.edu.gov.pt;servicos@ae4outubro.edu.gov.pt",
+        "grades": "12-17",
+        "name": "Escola Secundária António Carvalho Figueiredo",
+        "operator": "Agrupamento de Escolas 4 de Outubro, Loures",
+        "operator:ref": "171128",
+        "operator:type": "public",
+        "phone": "+351 219 835 156",
+        "ref": "401390",
+        "ref:qzp": "QZP.45",
+        "website": "http://www.esec-acf.pt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140339485,
+      "center": {
+        "lat": 38.8315764,
+        "lon": -9.1711945
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:street": "Avenida Major Rosa Bastos",
+        "alt_name": "Parque Municipal de Loures",
+        "leisure": "park",
+        "name": "Jardim Major Rosa Bastos"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140339493,
+      "center": {
+        "lat": 38.8276865,
+        "lon": -9.1632488
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:postcode": "2670-468",
+        "addr:street": "Rua da República",
+        "amenity": "school",
+        "email": "direcao@esjaloures.edu.gov.pt;servicos@esjaloures.edu.gov.pt",
+        "grades": "15-17",
+        "name": "Escola Secundária José Afonso",
+        "operator": "Agrupamento de Escolas José Afonso, Loures",
+        "operator:ref": "172054",
+        "operator:type": "public",
+        "phone": "+351 219 827 110",
+        "ref": "400610",
+        "ref:qzp": "QZP.45",
+        "website": "https://www.esjaloures.org/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140346045,
+      "center": {
+        "lat": 38.8247953,
+        "lon": -9.1729225
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:postcode": "2670-526",
+        "addr:street": "Rua Carolina Michäelis de Vasconcelos",
+        "amenity": "school",
+        "contact:email": "it.ptransportes@escolas.min-edu.pt",
+        "contact:fax": "+351 219832488",
+        "contact:phone": "+351 219836948",
+        "grades": "12-17",
+        "name": "Instituto Profissional de Transportes",
+        "operator": "Associação para o Ensino Profissional em Transportes e Logística",
+        "operator:type": "private",
+        "ref": "803330",
+        "ref:qzp": "QZP.45",
+        "short_name": "IPTrans",
+        "website": "https://www.iptrans.com.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140346060,
+      "center": {
+        "lat": 38.8260849,
+        "lon": -9.1669577
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:postcode": "2670-430",
+        "addr:street": "Rua Guilherme Henrique Soromenho",
+        "amenity": "school",
+        "email": "direcao@aelsm.edu.gov.pt;servicos@aelsm.edu.gov.pt",
+        "grades": "10-14",
+        "name": "Escola Básica Luís de Sttau Monteiro",
+        "operator": "Agrupamento de Escolas Luís de Sttau Monteiro",
+        "operator:ref": "172029",
+        "operator:type": "public",
+        "operator:wikidata": "Q131446716",
+        "phone": "+351 219 838 330",
+        "ref": "341976",
+        "ref:qzp": "QZP.45",
+        "website": "http://agrupamentodeescolasn1loures.pt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140350251,
+      "center": {
+        "lat": 38.8240096,
+        "lon": -9.1653265
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:postcode": "2670-489",
+        "amenity": "school",
+        "email": "eb1.n2.loures@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica da Mealhada",
+        "operator": "Agrupamento de Escolas Luís de Sttau Monteiro",
+        "operator:ref": "172029",
+        "operator:type": "public",
+        "operator:wikidata": "Q131446716",
+        "phone": "+351 219 824 827",
+        "ref": "246955",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140376364,
+      "center": {
+        "lat": 38.8324719,
+        "lon": -9.1776621
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:country": "PT",
+        "addr:postcode": "2670-400",
+        "addr:street": "Praceta António Francisco da Silva Penetra 6",
+        "amenity": "kindergarten",
+        "contact:email": "carlabatista@lpm-loures.com",
+        "contact:fax": "+351 219830058",
+        "contact:phone": "+351 219830058",
+        "grades": "3-5",
+        "name": "Jardim de Infância da Associação Luiz Pereira da Motta",
+        "operator": "Associação Luiz Pereira da Motta",
+        "operator:type": "private",
+        "ref": "508548",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140415219,
+      "center": {
+        "lat": 38.8293604,
+        "lon": -9.1691543
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140416052,
+      "center": {
+        "lat": 38.8298933,
+        "lon": -9.1645323
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140416058,
+      "center": {
+        "lat": 38.8307928,
+        "lon": -9.1757544
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140416059,
+      "center": {
+        "lat": 38.8308812,
+        "lon": -9.1684686
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140569816,
+      "center": {
+        "lat": 38.8278515,
+        "lon": -9.1737221
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140569829,
+      "center": {
+        "lat": 38.8270662,
+        "lon": -9.1745657
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140574386,
+      "center": {
+        "lat": 38.828841,
+        "lon": -9.1681458
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140574408,
+      "center": {
+        "lat": 38.8283081,
+        "lon": -9.1674534
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 140574426,
+      "center": {
+        "lat": 38.8280674,
+        "lon": -9.1670837
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 141448300,
+      "center": {
+        "lat": 38.8305177,
+        "lon": -9.1719637
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 141576755,
+      "center": {
+        "lat": 38.8280889,
+        "lon": -9.1745486
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:postcode": "2670-531",
+        "amenity": "school",
+        "email": "eb1ji.loures@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica de Loures",
+        "operator": "Agrupamento de Escolas Luís de Sttau Monteiro, Loures",
+        "operator:ref": "172029",
+        "operator:type": "public",
+        "phone": "+351 219 827 711",
+        "ref": "239446",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 220475946,
+      "center": {
+        "lat": 38.8350099,
+        "lon": -9.1582596
+      },
+      "tags": {
+        "barrier": "fence",
+        "leisure": "park",
+        "name": "Parque Verde Loureshopping"
+      }
+    },
+    {
+      "type": "way",
+      "id": 230772764,
+      "center": {
+        "lat": 38.8387437,
+        "lon": -9.1695322
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "9",
+        "addr:postcode": "2670-355",
+        "addr:street": "Rua Anselmo Braancamp Freire",
+        "amenity": "school",
+        "contact:email": "eb1.n3.loures@escolas.min-edu.pt",
+        "contact:phone": "+351 219 824 711",
+        "grades": "3-9",
+        "name": "Escola Básica de Fanqueiro",
+        "operator": "Agrupamento de Escolas João Villaret, Loures",
+        "operator:ref": "172030",
+        "operator:type": "public",
+        "ref": "251185",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310655227,
+      "center": {
+        "lat": 38.8391886,
+        "lon": -9.1690888
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310655228,
+      "center": {
+        "lat": 38.8389635,
+        "lon": -9.1687779
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310655229,
+      "center": {
+        "lat": 38.8390519,
+        "lon": -9.1698066
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310655240,
+      "center": {
+        "lat": 38.8398226,
+        "lon": -9.1710153
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310655241,
+      "center": {
+        "lat": 38.8402144,
+        "lon": -9.1716332
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310656127,
+      "center": {
+        "lat": 38.8404693,
+        "lon": -9.1716123
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310656131,
+      "center": {
+        "lat": 38.8406841,
+        "lon": -9.1711245
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310656137,
+      "center": {
+        "lat": 38.8410875,
+        "lon": -9.1712017
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310656138,
+      "center": {
+        "lat": 38.840838,
+        "lon": -9.1719519
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310656712,
+      "center": {
+        "lat": 38.8403189,
+        "lon": -9.1724287
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310656716,
+      "center": {
+        "lat": 38.8403288,
+        "lon": -9.1720229
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 316053275,
+      "center": {
+        "lat": 38.8381288,
+        "lon": -9.1724775
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 316123967,
+      "center": {
+        "lat": 38.8386908,
+        "lon": -9.1690448
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 327467852,
+      "center": {
+        "lat": 38.8364998,
+        "lon": -9.1672148
+      },
+      "tags": {
+        "addr:postcode": "2670-364",
+        "branch": "Loures",
+        "brand": "Pingo Doce",
+        "brand:wikidata": "Q1575057",
+        "brand:wikipedia": "pt:Pingo Doce",
+        "building": "yes",
+        "contact:facebook": "pingodoce",
+        "contact:instagram": "pingodoce",
+        "contact:linkedin": "https://www.linkedin.com/company/pingo-doce",
+        "contact:phone": "+351 938 875 687",
+        "contact:tiktok": "pingodoce",
+        "contact:youtube": "pingodocept",
+        "name": "Pingo Doce",
+        "opening_hours": "Mo-Su 08:00-22:00; easter 08:00-14:00",
+        "ref": "687",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.pingodoce.pt/lojas/loures/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 371594917,
+      "center": {
+        "lat": 38.826909,
+        "lon": -9.1602377
+      },
+      "tags": {
+        "addr:postcode": "2670-457",
+        "addr:street": "Parque Adão Barata",
+        "building": "yes",
+        "email": "dc@cm-loures.pt",
+        "name": "Pavilhão de Macau",
+        "phone": "+351 21 115 0660",
+        "tourism": "museum",
+        "website": "https://www.cm-loures.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 510427026,
+      "center": {
+        "lat": 38.8215177,
+        "lon": -9.1764478
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "3",
+        "addr:postcode": "2674-514",
+        "addr:street": "Avenida Carlos Teixeira",
+        "alt_name": "Hospital de Loures",
+        "amenity": "hospital",
+        "architect": "Saraiva+Associados",
+        "architect:wikidata": "Q132247398",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Hospital Beatriz Ângelo",
+        "operator": "SGHL - Sociedade Gestora do Hospital de Loures, SA",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q10298349",
+        "wikimedia_commons": "Category:Hospital Beatriz Ângelo",
+        "wikipedia": "pt:Hospital Beatriz Ângelo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 525432932,
+      "center": {
+        "lat": 38.8252171,
+        "lon": -9.1631808
+      },
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "Centro de Saúde de Loures"
+      }
+    },
+    {
+      "type": "way",
+      "id": 666617038,
+      "center": {
+        "lat": 38.8264006,
+        "lon": -9.1652786
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "1",
+        "addr:postcode": "2670-583",
+        "addr:street": "Rua Professor Egas Moniz",
+        "branch": "Loures",
+        "brand": "Lidl",
+        "brand:wikidata": "Q151954",
+        "brand:wikipedia": "pt:Lidl",
+        "building": "yes",
+        "building:levels": "1",
+        "contact:facebook": "lidlportugal",
+        "contact:instagram": "lidlportugal",
+        "contact:linkedin": "https://www.linkedin.com/company/lidl-portugal",
+        "contact:phone": "+351 210 207 000",
+        "contact:tiktok": "lidl.portugal",
+        "contact:youtube": "https://www.youtube.com/user/LidlPortugal",
+        "internet_access": "wlan",
+        "name": "Lidl",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "ref": "PT00125",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.lidl.pt/s/pt-PT/pesquisa-de-loja/loures/rua-professor-dr-egas-moniz-1/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 843306877,
+      "center": {
+        "lat": 38.8336917,
+        "lon": -9.182386
+      },
+      "tags": {
+        "amenity": "college",
+        "name": "Instituto de Polícia Judiciária e Ciências Criminais"
+      }
+    },
+    {
+      "type": "way",
+      "id": 944778347,
+      "center": {
+        "lat": 38.8322001,
+        "lon": -9.1718021
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "3",
+        "addr:postcode": "2670-410",
+        "addr:street": "Rua Padre António Vieira",
+        "amenity": "clinic",
+        "building": "yes",
+        "email": "secretariado.loures@diaverum.com",
+        "healthcare": "dialysis",
+        "healthcare:speciality": "dialysis",
+        "name": "Diaverum",
+        "opening_hours": "Mo, We, Fr 08:00-05:30; Tu, Th, Sa 08:00-22:00",
+        "phone": "+351 21 983 9490",
+        "website": "https://www.diaverum.pt/pt/clinic-container/loures"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1076188569,
+      "center": {
+        "lat": 38.8282236,
+        "lon": -9.1709944
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "brand": "Sagres",
+        "brand:wikidata": "Q1299917",
+        "cuisine": "burger;portuguese;sandwich;grill;fish_and_chips;fish;regional;pizza;hot_dog;pasta;coffee_shop;barbecue",
+        "name": "Restaurante Cervejaria A Tribuna",
+        "short_name": "Tribuna"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1076194908,
+      "center": {
+        "lat": 38.8278782,
+        "lon": -9.163805
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "1",
+        "addr:postcode": "2670-433",
+        "addr:street": "Rua Doutor Henrique Barbas de Albuquerque",
+        "amenity": "cafe",
+        "brand": "Camelo Cafés",
+        "building": "yes",
+        "email": "leitariazezita@gmail.com",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Zézita",
+        "official_name": "Leitaria Zézita, Lda",
+        "opening_hours": "Mo-Sa 08:00-22:00",
+        "outdoor_seating": "yes",
+        "phone": "+351 21 982 3210"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1105415080,
+      "center": {
+        "lat": 38.8392838,
+        "lon": -9.1609697
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housename": "EB 1 / JI do Infantado",
+        "addr:postcode": "2670-387",
+        "addr:street": "Rua Fernão de Magalhães",
+        "amenity": "school",
+        "barrier": "fence",
+        "email": "eb1.n4.loures@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica do Infantado",
+        "operator": "Agrupamento de Escolas João Villaret, Loures",
+        "operator:ref": "172030",
+        "operator:type": "public",
+        "phone": "+351 219 823 279",
+        "ref": "252578",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1 / JI do Infantado"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1301858456,
+      "center": {
+        "lat": 38.8283898,
+        "lon": -9.1690724
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "39",
+        "addr:postcode": "2670-454",
+        "addr:street": "Rua Manuel Francisco Soromenho",
+        "amenity": "kindergarten",
+        "contact:email": "geral@colegiosabercrescer.com",
+        "contact:phone": "+351 965517882",
+        "grades": "3-5",
+        "name": "Colégio \"Saber Crescer\"",
+        "operator:type": "private",
+        "ref": "806855",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1301858458,
+      "center": {
+        "lat": 38.8286386,
+        "lon": -9.1685219
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housenumber": "46",
+        "addr:postcode": "2670-452",
+        "addr:street": "Rua Manuel Francisco Soromenho",
+        "amenity": "kindergarten",
+        "contact:email": "ext.pinfantilloures@escolas.min-edu.pt",
+        "contact:fax": "+351 219834431",
+        "contact:phone": "+351 219830325",
+        "grades": "3-5",
+        "name": "Externato \"Paraíso Infantil\"",
+        "operator:type": "private",
+        "ref": "503356",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1362302146,
+      "center": {
+        "lat": 38.8327534,
+        "lon": -9.1681344
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 2915561,
+      "center": {
+        "lat": 38.8345238,
+        "lon": -9.1565415
+      },
+      "tags": {
+        "addr:city": "Loures",
+        "addr:housename": "LoureShopping",
+        "addr:housenumber": "90",
+        "addr:postcode": "2670-457",
+        "addr:street": "Avenida das Descobertas",
+        "building": "retail",
+        "contact:facebook": "loureshopping",
+        "name": "LoureShopping",
+        "opening_hours": "Mo-Su 08:00-23:00",
+        "operator": "Sonae Sierra",
+        "phone": "+351 21 984 9520",
+        "shop": "mall",
+        "type": "multipolygon",
+        "website": "https://www.loureshopping.pt/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 7127990,
+      "center": {
+        "lat": 38.8271335,
+        "lon": -9.1849394
+      },
+      "tags": {
+        "alt_name": "Palácio e Quinta do Correio-Mor;Casa Agrícola da Quinta da Mata",
+        "heritage": "2",
+        "heritage:operator": "dgpc",
+        "heritage:ref": "IIP",
+        "heritage:since": "1967",
+        "heritage:website": "https://servicos.dgpc.gov.pt/pesquisapatrimonioimovel/detalhes.php?code=73316",
+        "leisure": "park",
+        "name": "Quinta do Correio-Mor",
+        "protection_title": "Imóvel de Interesse Público",
+        "start_date": "C18",
+        "type": "multipolygon",
+        "wikidata": "Q7126273",
+        "wikipedia": "pt:Palácio do Correio-Mor (Loures)"
+      }
+    }
+  ]
+}

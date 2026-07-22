@@ -1,0 +1,4531 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-28T10:23:15Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 25414256,
+      "lat": 38.7471052,
+      "lon": -9.1028612,
+      "tags": {
+        "local_ref": "2",
+        "name": "Braço de Prata",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q253357",
+        "wikipedia": "pt:Estação Ferroviária de Braço de Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 25414265,
+      "lat": 38.7470748,
+      "lon": -9.1027308,
+      "tags": {
+        "local_ref": "3",
+        "name": "Braço de Prata",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "ref": "3",
+        "train": "yes",
+        "wikidata": "Q253357",
+        "wikipedia": "pt:Estação Ferroviária de Braço de Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 255739964,
+      "lat": 38.7494597,
+      "lon": -9.1049664,
+      "tags": {
+        "bus": "yes",
+        "name": "Vale Formoso de Cima",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "02206"
+      }
+    },
+    {
+      "type": "node",
+      "id": 256975148,
+      "lat": 38.7475415,
+      "lon": -9.1176782,
+      "tags": {
+        "name": "Bela Vista",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "subway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 287426033,
+      "lat": 38.7471152,
+      "lon": -9.1029036,
+      "tags": {
+        "local_ref": "1",
+        "name": "Braço de Prata",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "ref": "1",
+        "train": "yes",
+        "wikidata": "Q253357",
+        "wikipedia": "pt:Estação Ferroviária de Braço de Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 333652165,
+      "lat": 38.7440888,
+      "lon": -9.1184906,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Virgílio Ferreira (Fundação Oriente)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "3610"
+      }
+    },
+    {
+      "type": "node",
+      "id": 333653666,
+      "lat": 38.7363646,
+      "lon": -9.113198,
+      "tags": {
+        "bus": "yes",
+        "name": "Azinhaga da Salgada",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "83115"
+      }
+    },
+    {
+      "type": "node",
+      "id": 333680356,
+      "lat": 38.7423194,
+      "lon": -9.1168605,
+      "tags": {
+        "bus": "yes",
+        "name": "Largo do Broma",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "03604",
+        "short_name": "Lg. Broma"
+      }
+    },
+    {
+      "type": "node",
+      "id": 333681912,
+      "lat": 38.7352463,
+      "lon": -9.1085383,
+      "tags": {
+        "bus": "yes",
+        "name": "Estrada de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 333682501,
+      "lat": 38.740066,
+      "lon": -9.1105305,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 344686021,
+      "lat": 38.753062,
+      "lon": -9.1056375,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Doutor José Espírito Santo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89907",
+        "short_name": "R. Dr. José Espirito Santo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 541646941,
+      "lat": 38.7471196,
+      "lon": -9.104784,
+      "tags": {
+        "bus": "yes",
+        "name": "Estação de Braço de Prata",
+        "public_transport": "stop_position",
+        "ref": "2208",
+        "short_name": "Estação Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1139936644,
+      "lat": 38.7470648,
+      "lon": -9.1026882,
+      "tags": {
+        "local_ref": "4",
+        "name": "Braço de Prata",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q253357",
+        "wikipedia": "pt:Estação Ferroviária de Braço de Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1145507621,
+      "lat": 38.7470602,
+      "lon": -9.103288,
+      "tags": {
+        "bus": "yes",
+        "name": "Estação de Braço de Prata",
+        "public_transport": "stop_position",
+        "ref": "02223",
+        "short_name": "Estação Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1212710134,
+      "lat": 38.7472392,
+      "lon": -9.1043226,
+      "tags": {
+        "addr:housenumber": "79-B",
+        "addr:postcode": "1950-266",
+        "addr:street": "Rua do Vale Formoso de Cima",
+        "amenity": "pharmacy",
+        "contact:email": "farmaciabg@gmail.com",
+        "contact:phone": "+351 218 595 180",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Barros Gouveia",
+        "opening_hours": "Sa 09:00-13:00; Mo-Fr 09:00-19:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1212710162,
+      "lat": 38.748668,
+      "lon": -9.1162028,
+      "tags": {
+        "addr:housenumber": "Lote 12, Loja C",
+        "addr:postcode": "1950-442",
+        "addr:street": "Avenida República da Bulgária",
+        "amenity": "pharmacy",
+        "contact:email": "farmaciadabelavista@gmail.com",
+        "contact:phone": "+351 218 682 241",
+        "contact:website": "www.farmaciadabelavista.com",
+        "dispensing": "no",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Bela Vista"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1213370006,
+      "lat": 38.7418794,
+      "lon": -9.1085716,
+      "tags": {
+        "addr:housenumber": "LT 35-36",
+        "addr:postcode": "1950-363",
+        "addr:street": "Rua Eduarda Lapa",
+        "addr:suburb": "Bairro Marquês de Abrantes",
+        "amenity": "pharmacy",
+        "contact:phone": "+351 218 314 283",
+        "contact:website": "https://www.facebook.com/Farmácia-de-Marvila-1499210477073961",
+        "dispensing": "no",
+        "healthcare": "pharmacy",
+        "name": "Farmácia de Marvila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1213563561,
+      "lat": 38.7459929,
+      "lon": -9.1015829,
+      "tags": {
+        "addr:housenumber": "23-A",
+        "addr:postcode": "1950-278",
+        "addr:street": "Rua do Vale Formoso",
+        "amenity": "pharmacy",
+        "dispensing": "no",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Freitas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1240465099,
+      "lat": 38.7466116,
+      "lon": -9.1124518,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "B",
+        "addr:postcode": "1950-157",
+        "addr:street": "Avenida João Paulo II",
+        "addr:unit": "531",
+        "amenity": "pharmacy",
+        "contact:email": "farmacia.serejo@grupo-holon.pt",
+        "contact:phone": "+351 218 592 611",
+        "contact:website": "http://www.grupo-holon.pt/",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Serejo",
+        "official_name": "Farmácia Serejo, Lda."
+      }
+    },
+    {
+      "type": "node",
+      "id": 1240465103,
+      "lat": 38.7429014,
+      "lon": -9.1116069,
+      "tags": {
+        "addr:housenumber": "14 A",
+        "addr:postcode": "1950-230",
+        "addr:street": "Avenida Paulo VI",
+        "addr:unit": "Loja 3",
+        "amenity": "pharmacy",
+        "contact:email": "diogomroliveira@netcabo.pt",
+        "contact:phone": "+351 218 394 314",
+        "dispensing": "no",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Santo António"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1240465121,
+      "lat": 38.7456012,
+      "lon": -9.1188048,
+      "tags": {
+        "addr:housenumber": "39-B",
+        "addr:postcode": "1950-354",
+        "addr:street": "Avenida François Mitterrand",
+        "amenity": "pharmacy",
+        "contact:email": "farmaciapontesleite@gmail.com",
+        "contact:phone": "+351 218 593 720",
+        "contact:website": "https://www.facebook.com/Farmácia-Pontes-Leite-1403663666536145",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Pontes Leite"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1309960935,
+      "lat": 38.7435102,
+      "lon": -9.1141488,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1509388905,
+      "lat": 38.7478016,
+      "lon": -9.0969573,
+      "tags": {
+        "bus": "yes",
+        "name": "Matinha",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1601643781,
+      "lat": 38.7369297,
+      "lon": -9.1038181,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua do Açúcar",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1601643870,
+      "lat": 38.7424289,
+      "lon": -9.1024442,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "check_date:shelter": "2025-01-24",
+        "departures_board": "realtime",
+        "highway": "bus_stop",
+        "name": "Poço do Bispo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "12512",
+        "shelter": "yes",
+        "short_name": "Poço Bispo",
+        "source": "knowledge",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1601705203,
+      "lat": 38.7352423,
+      "lon": -9.1039589,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2022-04-21",
+        "highway": "bus_stop",
+        "name": "Beato",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "source": "knowledge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1707142385,
+      "lat": 38.7503389,
+      "lon": -9.0963442,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Fábrica do Gás",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1934929538,
+      "lat": 38.747109,
+      "lon": -9.1049274,
+      "tags": {
+        "bus": "yes",
+        "name": "Estação de Braço de Prata",
+        "public_transport": "stop_position",
+        "ref": "2207",
+        "short_name": "Estação Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1934929539,
+      "lat": 38.747195,
+      "lon": -9.099425,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Fernando Palha",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2223513641,
+      "lat": 38.7521774,
+      "lon": -9.1139444,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola Dom Dinis",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89911",
+        "short_name": "Esc. D. Dinis"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2260322652,
+      "lat": 38.744206,
+      "lon": -9.1135904,
+      "tags": {
+        "bus": "yes",
+        "name": "Praça Eduardo Mondlane",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "3706",
+        "short_name": "Pç. Eduardo Mondlane"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2488204771,
+      "lat": 38.7443404,
+      "lon": -9.1022332,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Fábrica de Braço de Prata",
+        "public_transport": "platform",
+        "ref": "12524",
+        "shelter": "yes",
+        "short_name": "Fábrica Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2488204781,
+      "lat": 38.7446041,
+      "lon": -9.1020782,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Fábrica de Braço de Prata",
+        "public_transport": "platform",
+        "ref": "12523",
+        "shelter": "yes",
+        "short_name": "Fábrica Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2492030437,
+      "lat": 38.7466938,
+      "lon": -9.1068571,
+      "tags": {
+        "bus": "yes",
+        "name": "Bairro Prodac",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "2210",
+        "short_name": "B.º Prodac"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4090735059,
+      "lat": 38.7440995,
+      "lon": -9.1184351,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Virgílio Ferreira (Fundação Oriente)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "3610",
+        "route_ref": "34B;793;794",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4642555489,
+      "lat": 38.7508747,
+      "lon": -9.104512,
+      "tags": {
+        "bus": "yes",
+        "name": "Vale Formoso de Cima",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Vale Formoso Cima"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4642555490,
+      "lat": 38.7508972,
+      "lon": -9.1046205,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-01-24",
+        "highway": "bus_stop",
+        "name": "Vale Formoso de Cima",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "short_name": "Vale Formoso Cima"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4692612171,
+      "lat": 38.7389251,
+      "lon": -9.1089012,
+      "tags": {
+        "name": "Marvila",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "ref": "2",
+        "train": "yes",
+        "wikidata": "Q48855300",
+        "wikipedia": "pt:Apeadeiro de Marvila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4692612172,
+      "lat": 38.7392341,
+      "lon": -9.1084405,
+      "tags": {
+        "name": "Marvila",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "ref": "1",
+        "train": "yes",
+        "wikidata": "Q48855300",
+        "wikipedia": "pt:Apeadeiro de Marvila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4783966466,
+      "lat": 38.7517251,
+      "lon": -9.1107737,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "65A",
+        "addr:street": "Rua Rui de Sousa",
+        "addr:unit": "65",
+        "amenity": "pharmacy",
+        "contact:email": "farmacia_falcao@yahoo.com.br",
+        "contact:phone": "+351 218 596 565",
+        "contact:website": "http://falcaofarmacias.pai.pt/",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Falcão"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4784953621,
+      "lat": 38.7483442,
+      "lon": -9.1040546,
+      "tags": {
+        "addr:housenumber": "140B",
+        "addr:street": "Rua do Vale Formoso de Cima",
+        "amenity": "restaurant",
+        "name": "Filho do Menino Júlio dos Caracóis",
+        "name:en": "Filho do Menino Júlio Dos Caracóis",
+        "name:pt": "Filho do Menino Júlio dos Caracóis"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4784956822,
+      "lat": 38.7484626,
+      "lon": -9.1044055,
+      "tags": {
+        "addr:housenumber": "113",
+        "addr:street": "Rua do Vale Formoso de Cima",
+        "amenity": "restaurant",
+        "name": "Varanda do Vale Formoso",
+        "name:en": "Varanda do Vale Formoso",
+        "name:pt": "Varanda do Vale Formoso",
+        "opening_hours": "Tu-Su 07:30-00:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5256910063,
+      "lat": 38.7459178,
+      "lon": -9.1018545,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:housenumber": "56",
+        "addr:postcode": "1900-665",
+        "addr:street": "Rua Doutor Estêvão de Vasconcelos",
+        "amenity": "clinic",
+        "email": "ucsp.marvila@arslvt.min-saude.pt",
+        "healthcare": "centre",
+        "name": "Unidade de Cuidados de Saúde Personalizados de Marvila",
+        "note": "Agrupamento de Centros de Saúde Lisboa Central",
+        "phone": "+351 218 620 750",
+        "short_name": "UCSP Marvila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5480801400,
+      "lat": 38.7443804,
+      "lon": -9.1109231,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI / Rua José Patrocínio",
+        "public_transport": "platform",
+        "ref": "3720",
+        "route_ref": "749;755;793",
+        "shelter": "yes",
+        "short_name": "Av. Paulo VI/R. José Patrocínio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5480801401,
+      "lat": 38.7443014,
+      "lon": -9.1107414,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI / Rua José Patrocínio",
+        "public_transport": "platform",
+        "ref": "3719",
+        "route_ref": "749;755;793",
+        "shelter": "yes",
+        "short_name": "Av. Paulo VI/R. José Patrocínio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5487589409,
+      "lat": 38.7466378,
+      "lon": -9.1072056,
+      "tags": {
+        "bus": "yes",
+        "name": "Bairro Prodac",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "2209",
+        "short_name": "B.º Prodac"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5487589410,
+      "lat": 38.746589,
+      "lon": -9.1071944,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Bairro Prodac",
+        "public_transport": "platform",
+        "ref": "2209",
+        "route_ref": "755",
+        "shelter": "yes",
+        "short_name": "B.º Prodac"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5487599471,
+      "lat": 38.7467387,
+      "lon": -9.1068751,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Bairro Prodac",
+        "public_transport": "platform",
+        "ref": "2210",
+        "route_ref": "755",
+        "short_name": "B.º Prodac"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489706639,
+      "lat": 38.7417804,
+      "lon": -9.101733,
+      "tags": {
+        "addr:housenumber": "9",
+        "amenity": "restaurant",
+        "name": "El  Bulo Social Club"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996382,
+      "lat": 38.7424262,
+      "lon": -9.1023965,
+      "tags": {
+        "bus": "yes",
+        "name": "Poço do Bispo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "12512",
+        "short_name": "Poço Bispo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996383,
+      "lat": 38.7430338,
+      "lon": -9.1017548,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Poço do Bispo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "12511",
+        "route_ref": "718;728;781;210",
+        "shelter": "yes",
+        "short_name": "Poço Bispo",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996384,
+      "lat": 38.7430505,
+      "lon": -9.101814,
+      "tags": {
+        "bus": "yes",
+        "name": "Poço do Bispo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "12511",
+        "short_name": "Poço Bispo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996410,
+      "lat": 38.7517103,
+      "lon": -9.1134786,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Escola Dom Dinis",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "09912",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996411,
+      "lat": 38.7519987,
+      "lon": -9.1136061,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola Dom Dinis",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89913",
+        "short_name": "Esc. D. Dinis"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996412,
+      "lat": 38.7519987,
+      "lon": -9.1134915,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "highway": "bus_stop",
+        "name": "Escola Dom Dinis",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89913",
+        "route_ref": "718;749;755;759;794;20B;31B;32B",
+        "shelter": "yes",
+        "short_name": "Esc. D. Dinis"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996413,
+      "lat": 38.7480813,
+      "lon": -9.112954,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Salgueiro Maia",
+        "public_transport": "stop_position",
+        "ref": "03713",
+        "short_name": "R. Salgueiro Maia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996414,
+      "lat": 38.7481354,
+      "lon": -9.112924,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "highway": "bus_stop",
+        "name": "Rua Salgueiro Maia",
+        "public_transport": "platform",
+        "ref": "03713",
+        "route_ref": "749;755;759;793;31B",
+        "shelter": "yes",
+        "short_name": "R. Salgueiro Maia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996415,
+      "lat": 38.7464566,
+      "lon": -9.1127975,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "highway": "bus_stop",
+        "name": "Praça Doutor Fernando Amado",
+        "public_transport": "platform",
+        "ref": "03705",
+        "route_ref": "749;755;759;31B",
+        "shelter": "yes",
+        "short_name": "Pç. Dr. Fernando Amado"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996416,
+      "lat": 38.7464551,
+      "lon": -9.1128856,
+      "tags": {
+        "bus": "yes",
+        "name": "Praça Doutor Fernando Amado",
+        "public_transport": "stop_position",
+        "ref": "03705",
+        "short_name": "Pç. Dr. Fernando Amado"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489996420,
+      "lat": 38.7444211,
+      "lon": -9.1132143,
+      "tags": {
+        "bus": "yes",
+        "name": "Praça Eduardo Mondlane",
+        "public_transport": "stop_position",
+        "ref": "03703",
+        "short_name": "Pç. Eduardo Mondlane"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997521,
+      "lat": 38.7444575,
+      "lon": -9.113213,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "highway": "bus_stop",
+        "name": "Praça Eduardo Mondlane",
+        "public_transport": "platform",
+        "ref": "03703",
+        "route_ref": "749;755;759;31B",
+        "shelter": "yes",
+        "short_name": "Pç. Eduardo Mondlane"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997522,
+      "lat": 38.7431995,
+      "lon": -9.1119165,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI (Igreja)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "3718",
+        "route_ref": "749;755",
+        "shelter": "yes",
+        "short_name": "Av. Paulo VI (Igreja)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997523,
+      "lat": 38.7431379,
+      "lon": -9.1118828,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI (Igreja)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "3718",
+        "short_name": "Av. Paulo VI (Igreja)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997524,
+      "lat": 38.7443098,
+      "lon": -9.1108325,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI / Rua José Patrocínio",
+        "public_transport": "stop_position",
+        "ref": "3719"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997525,
+      "lat": 38.7443694,
+      "lon": -9.1108207,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI / Rua José Patrocínio",
+        "public_transport": "stop_position",
+        "ref": "3720"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997526,
+      "lat": 38.7480152,
+      "lon": -9.1078421,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "2212",
+        "short_name": "Av. Paulo VI"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997527,
+      "lat": 38.7480161,
+      "lon": -9.1077753,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI",
+        "public_transport": "platform",
+        "ref": "2212",
+        "route_ref": "755",
+        "shelter": "yes",
+        "short_name": "Av. Paulo VI"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997528,
+      "lat": 38.7470905,
+      "lon": -9.1049966,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-01-24",
+        "highway": "bus_stop",
+        "name": "Estação de Braço de Prata",
+        "public_transport": "platform",
+        "ref": "2207",
+        "route_ref": "718;755;782",
+        "shelter": "yes",
+        "short_name": "Estação Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997529,
+      "lat": 38.7471466,
+      "lon": -9.1046846,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-01-24",
+        "highway": "bus_stop",
+        "name": "Estação de Braço de Prata",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "2208",
+        "route_ref": "718;782;31B",
+        "shelter": "yes",
+        "short_name": "Estação Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997530,
+      "lat": 38.7445105,
+      "lon": -9.102146,
+      "tags": {
+        "bus": "yes",
+        "name": "Fábrica de Braço de Prata",
+        "public_transport": "stop_position",
+        "ref": "12523",
+        "short_name": "Fábrica Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5489997531,
+      "lat": 38.7494563,
+      "lon": -9.1048515,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-01-24",
+        "highway": "bus_stop",
+        "name": "Vale Formoso de Cima",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "02206",
+        "route_ref": "718;31B",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221119,
+      "lat": 38.7444262,
+      "lon": -9.1021943,
+      "tags": {
+        "bus": "yes",
+        "name": "Fábrica de Braço de Prata",
+        "public_transport": "stop_position",
+        "ref": "12524",
+        "short_name": "Fábrica Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221120,
+      "lat": 38.7458125,
+      "lon": -9.1046873,
+      "tags": {
+        "bus": "yes",
+        "name": "Estação Braço de Prata",
+        "public_transport": "stop_position",
+        "ref": "2213",
+        "short_name": "Est. Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221721,
+      "lat": 38.7457973,
+      "lon": -9.1047414,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-01-24",
+        "highway": "bus_stop",
+        "name": "Estação Braço de Prata",
+        "public_transport": "platform",
+        "ref": "2213",
+        "route_ref": "755",
+        "shelter": "yes",
+        "short_name": "Est. Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221722,
+      "lat": 38.7480546,
+      "lon": -9.1081294,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "2211",
+        "short_name": "Av. Paulo VI"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221723,
+      "lat": 38.7480263,
+      "lon": -9.1080913,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI",
+        "public_transport": "platform",
+        "ref": "2211",
+        "route_ref": "793",
+        "shelter": "yes",
+        "short_name": "Av. Paulo VI"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221724,
+      "lat": 38.7430775,
+      "lon": -9.1118154,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI (Igreja)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "3717",
+        "route_ref": "749;755",
+        "shelter": "yes",
+        "short_name": "Av. Paulo VI (Igreja)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221725,
+      "lat": 38.7431539,
+      "lon": -9.1118426,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI (Igreja)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "3717",
+        "short_name": "Av. Paulo VI (Igreja)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221726,
+      "lat": 38.7442049,
+      "lon": -9.1136876,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "highway": "bus_stop",
+        "name": "Praça Eduardo Mondlane",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "3706",
+        "route_ref": "749;755;759;31B",
+        "shelter": "yes",
+        "short_name": "Pç. Eduardo Mondlane"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221733,
+      "lat": 38.7463316,
+      "lon": -9.1128868,
+      "tags": {
+        "bus": "yes",
+        "name": "Praça Doutor Fernando Amado",
+        "public_transport": "stop_position",
+        "ref": "3708",
+        "short_name": "Pç. Dr. Fernando Amado"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221734,
+      "lat": 38.7463305,
+      "lon": -9.1129825,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "highway": "bus_stop",
+        "name": "Praça Doutor Fernando Amado",
+        "public_transport": "platform",
+        "ref": "3708",
+        "route_ref": "749;755;759;31B",
+        "shelter": "yes",
+        "short_name": "Pç. Dr. Fernando Amado"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221735,
+      "lat": 38.748063,
+      "lon": -9.112907,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Salgueiro Maia",
+        "public_transport": "stop_position",
+        "ref": "3714",
+        "short_name": "R. Salgueiro Maia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221736,
+      "lat": 38.7480103,
+      "lon": -9.1129451,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "highway": "bus_stop",
+        "name": "Rua Salgueiro Maia",
+        "public_transport": "platform",
+        "ref": "3714",
+        "route_ref": "749;755;759;793;31B",
+        "shelter": "yes",
+        "short_name": "R. Salgueiro Maia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221738,
+      "lat": 38.7521761,
+      "lon": -9.1140681,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "highway": "bus_stop",
+        "name": "Escola Dom Dinis",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89911",
+        "route_ref": "749;755;759",
+        "shelter": "yes",
+        "short_name": "Esc. D. Dinis"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221739,
+      "lat": 38.7519679,
+      "lon": -9.1140605,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "highway": "bus_stop",
+        "name": "Escola Dom Dinis",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89910",
+        "route_ref": "31B",
+        "shelter": "yes",
+        "short_name": "Esc. D. Dinis"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5491221740,
+      "lat": 38.751969,
+      "lon": -9.1139377,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola Dom Dinis",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89910",
+        "short_name": "Esc. D. Dinis"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960508993,
+      "lat": 38.748012,
+      "lon": -9.10308,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Vale Formoso",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "02222",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960508994,
+      "lat": 38.748012,
+      "lon": -9.1030166,
+      "tags": {
+        "bus": "yes",
+        "name": "Vale Formoso",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "02222"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960508995,
+      "lat": 38.7418476,
+      "lon": -9.1084658,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Bairro dos Alfinetes",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "03722",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960508996,
+      "lat": 38.7418228,
+      "lon": -9.1084112,
+      "tags": {
+        "bus": "yes",
+        "name": "Bairro dos Alfinetes",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "03722"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960549982,
+      "lat": 38.7504433,
+      "lon": -9.1044116,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-01-24",
+        "highway": "bus_stop",
+        "name": "Vale Formoso de Cima",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "02220",
+        "shelter": "yes",
+        "short_name": "Vale Formoso Cima"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960549983,
+      "lat": 38.7504771,
+      "lon": -9.1045228,
+      "tags": {
+        "bus": "yes",
+        "name": "Vale Formoso de Cima",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "02220",
+        "short_name": "Vale Formoso Cima"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960549984,
+      "lat": 38.7530178,
+      "lon": -9.1057102,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Doutor José Espírito Santo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89907",
+        "shelter": "yes",
+        "short_name": "R. Dr. José Espirito Santo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960549985,
+      "lat": 38.7530233,
+      "lon": -9.1054891,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Doutor José Espírito Santo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89908",
+        "shelter": "yes",
+        "short_name": "R. Dr. José Espirito Santo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960549986,
+      "lat": 38.7529841,
+      "lon": -9.1055537,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Doutor José Espírito Santo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89908",
+        "short_name": "R. Dr. José Espirito Santo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960549995,
+      "lat": 38.7543878,
+      "lon": -9.1087062,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rua Capitão-Mor Lopes de Sequeira",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89902",
+        "shelter": "yes",
+        "short_name": "R. Capitão - Mor Lopes Sequeira",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960549996,
+      "lat": 38.7543196,
+      "lon": -9.108739,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Capitão-Mor Lopes de Sequeira",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89902",
+        "short_name": "R. Capitão - Mor Lopes Sequeira"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960549997,
+      "lat": 38.7544366,
+      "lon": -9.1093684,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rua Capitão-Mor Lopes de Sequeira",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89901",
+        "shelter": "yes",
+        "short_name": "R. Capitão - Mor Lopes Sequeira",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960549998,
+      "lat": 38.7544986,
+      "lon": -9.1093391,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Capitão-Mor Lopes de Sequeira",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89901",
+        "short_name": "R. Capitão - Mor Lopes Sequeira"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960549999,
+      "lat": 38.7529941,
+      "lon": -9.1102832,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Tomás Alcaide",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89922",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550000,
+      "lat": 38.7529437,
+      "lon": -9.1103468,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Tomás Alcaide",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89922"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550001,
+      "lat": 38.7528416,
+      "lon": -9.1103725,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Tomás Alcaide",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89921",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550002,
+      "lat": 38.7529066,
+      "lon": -9.1103024,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Tomás Alcaide",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89921"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550003,
+      "lat": 38.7517623,
+      "lon": -9.1094839,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-01-24",
+        "highway": "bus_stop",
+        "name": "Rua Manuel Teixeira Gomes",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89923",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550004,
+      "lat": 38.7517484,
+      "lon": -9.1093945,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Manuel Teixeira Gomes",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89923"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550005,
+      "lat": 38.7516246,
+      "lon": -9.1093586,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-01-24",
+        "highway": "bus_stop",
+        "name": "Rua Manuel Teixeira Gomes",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89924",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550006,
+      "lat": 38.7516501,
+      "lon": -9.1094359,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Manuel Teixeira Gomes",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89924"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550007,
+      "lat": 38.7515459,
+      "lon": -9.1118902,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Rua Manuel Teixeira Gomes (Escola Dom Dinis)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89926",
+        "shelter": "yes",
+        "short_name": "R. Manuel Teixeira Gomes (Esc. D. Dinis)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550008,
+      "lat": 38.7515656,
+      "lon": -9.1118447,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Manuel Teixeira Gomes (Escola Dom Dinis)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89926",
+        "short_name": "R. Manuel Teixeira Gomes (Esc. D. Dinis)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550009,
+      "lat": 38.7520244,
+      "lon": -9.1120317,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Manuel Teixeira Gomes (Escola Dom Dinis)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89925",
+        "short_name": "R. Manuel Teixeira Gomes (Esc. D. Dinis)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5960550010,
+      "lat": 38.7520395,
+      "lon": -9.1119961,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Rua Manuel Teixeira Gomes (Escola Dom Dinis)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89925",
+        "shelter": "yes",
+        "short_name": "R. Manuel Teixeira Gomes (Esc. D. Dinis)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6104681240,
+      "lat": 38.7493091,
+      "lon": -9.1044904,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Germano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6388364469,
+      "lat": 38.7482349,
+      "lon": -9.1088593,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "02218"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6388364470,
+      "lat": 38.7482345,
+      "lon": -9.1087693,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "02218",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6388364475,
+      "lat": 38.7498043,
+      "lon": -9.1031421,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Vale Formoso de Cima",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "02214",
+        "route_ref": "749;755",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6388364476,
+      "lat": 38.7497356,
+      "lon": -9.1031644,
+      "tags": {
+        "bus": "yes",
+        "name": "Vale Formoso de Cima",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "02214"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6388414946,
+      "lat": 38.7479234,
+      "lon": -9.1089579,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6388414947,
+      "lat": 38.7479232,
+      "lon": -9.108856,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6388414948,
+      "lat": 38.7517106,
+      "lon": -9.1136007,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola Dom Dinis",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "09912"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6408146103,
+      "lat": 38.7408559,
+      "lon": -9.1057116,
+      "tags": {
+        "bus": "yes",
+        "name": "Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6408146106,
+      "lat": 38.7408445,
+      "lon": -9.1056592,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-07-20",
+        "highway": "bus_stop",
+        "name": "Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431861379,
+      "lat": 38.7352312,
+      "lon": -9.1038831,
+      "tags": {
+        "bus": "yes",
+        "name": "Beato",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431861381,
+      "lat": 38.735529,
+      "lon": -9.1036243,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Beato",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "source": "knowledge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431861382,
+      "lat": 38.7355371,
+      "lon": -9.1036825,
+      "tags": {
+        "bus": "yes",
+        "name": "Beato",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431867520,
+      "lat": 38.7397058,
+      "lon": -9.102914,
+      "tags": {
+        "bus": "yes",
+        "name": "Palácio da Mitra",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431867521,
+      "lat": 38.7396973,
+      "lon": -9.1028436,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2023-10-27",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Palácio da Mitra",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "source": "knowledge",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431871112,
+      "lat": 38.7446335,
+      "lon": -9.1010645,
+      "tags": {
+        "bus": "yes",
+        "name": "Fábrica de Braço de Prata",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431871113,
+      "lat": 38.7446183,
+      "lon": -9.1010159,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "check_date:shelter": "2024-10-06",
+        "highway": "bus_stop",
+        "name": "Fábrica de Braço de Prata",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431875412,
+      "lat": 38.7471712,
+      "lon": -9.0993841,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Fernando Palha",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431879994,
+      "lat": 38.7477865,
+      "lon": -9.0968594,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Matinha",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431881297,
+      "lat": 38.7509907,
+      "lon": -9.0960472,
+      "tags": {
+        "bus": "yes",
+        "name": "Fábrica do Gás",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6431881298,
+      "lat": 38.7509685,
+      "lon": -9.0959069,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Fábrica do Gás",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433245628,
+      "lat": 38.7503245,
+      "lon": -9.0962531,
+      "tags": {
+        "bus": "yes",
+        "name": "Fábrica do Gás",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433245629,
+      "lat": 38.7481226,
+      "lon": -9.0969597,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Matinha",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433245630,
+      "lat": 38.7481062,
+      "lon": -9.0968711,
+      "tags": {
+        "bus": "yes",
+        "name": "Matinha",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433245631,
+      "lat": 38.7469925,
+      "lon": -9.0997258,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Fernando Palha",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433245632,
+      "lat": 38.746961,
+      "lon": -9.0996833,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Fernando Palha",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433245633,
+      "lat": 38.7448859,
+      "lon": -9.1010112,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "check_date:shelter": "2024-10-06",
+        "highway": "bus_stop",
+        "name": "Fábrica de Braço de Prata",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433245634,
+      "lat": 38.7448699,
+      "lon": -9.1009568,
+      "tags": {
+        "bus": "yes",
+        "name": "Fábrica de Braço de Prata",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433248288,
+      "lat": 38.7392003,
+      "lon": -9.1031375,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2022-04-21",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Palácio da Mitra",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "source": "knowledge",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433248289,
+      "lat": 38.7391859,
+      "lon": -9.103064,
+      "tags": {
+        "bus": "yes",
+        "name": "Palácio da Mitra",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433249419,
+      "lat": 38.7369176,
+      "lon": -9.1037614,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua do Açúcar",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433518849,
+      "lat": 38.7547856,
+      "lon": -9.1031313,
+      "tags": {
+        "bus": "yes",
+        "name": "Rotunda do Cabo Ruivo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6433518850,
+      "lat": 38.7547856,
+      "lon": -9.1031921,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rotunda do Cabo Ruivo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6518163025,
+      "lat": 38.7346969,
+      "lon": -9.1049661,
+      "tags": {
+        "bus": "yes",
+        "name": "Beato",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6518163026,
+      "lat": 38.7349381,
+      "lon": -9.1048406,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Beato",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6518193001,
+      "lat": 38.7349714,
+      "lon": -9.1047255,
+      "tags": {
+        "bus": "yes",
+        "name": "Beato",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6518193002,
+      "lat": 38.7349035,
+      "lon": -9.1046947,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-01-24",
+        "highway": "bus_stop",
+        "name": "Beato",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6518193003,
+      "lat": 38.7372426,
+      "lon": -9.1035963,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua do Açúcar",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6518193004,
+      "lat": 38.737252,
+      "lon": -9.1036441,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua do Açúcar",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6563104832,
+      "lat": 38.7417855,
+      "lon": -9.1004308,
+      "tags": {
+        "bus": "yes",
+        "name": "Poço do Bispo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Poço Bispo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6845653709,
+      "lat": 38.7374257,
+      "lon": -9.1037209,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Entra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854474648,
+      "lat": 38.7363692,
+      "lon": -9.1131211,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Azinhaga da Salgada",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "83115",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854474649,
+      "lat": 38.7383808,
+      "lon": -9.113155,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Bairro das Salgadas",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "03711",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854474678,
+      "lat": 38.7383695,
+      "lon": -9.113238,
+      "tags": {
+        "bus": "yes",
+        "name": "Bairro das Salgadas",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "03711"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854474679,
+      "lat": 38.7384637,
+      "lon": -9.1132601,
+      "tags": {
+        "bus": "yes",
+        "name": "Bairro das Salgadas",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854474680,
+      "lat": 38.7384512,
+      "lon": -9.1133622,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Bairro das Salgadas",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "03712",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854476203,
+      "lat": 38.7380682,
+      "lon": -9.1073389,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Estrada de Marvila / Azinhaga dos Alfinetes",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854476204,
+      "lat": 38.7380527,
+      "lon": -9.1072761,
+      "tags": {
+        "bus": "yes",
+        "name": "Estrada de Marvila / Azinhaga dos Alfinetes",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854493403,
+      "lat": 38.7393324,
+      "lon": -9.1066516,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Rua de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854493404,
+      "lat": 38.7393334,
+      "lon": -9.1065713,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854499379,
+      "lat": 38.7362658,
+      "lon": -9.1081222,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Azinhaga das Veigas",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854499380,
+      "lat": 38.7362415,
+      "lon": -9.1080385,
+      "tags": {
+        "bus": "yes",
+        "name": "Azinhaga das Veigas",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854499384,
+      "lat": 38.7351477,
+      "lon": -9.1087032,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Estrada de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854505285,
+      "lat": 38.735118,
+      "lon": -9.1086431,
+      "tags": {
+        "bus": "yes",
+        "name": "Estrada de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854516987,
+      "lat": 38.7399824,
+      "lon": -9.110516,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Escola de Marvila",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854516988,
+      "lat": 38.7415243,
+      "lon": -9.1079042,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Rua Alberto José Pessoa",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854516989,
+      "lat": 38.7415451,
+      "lon": -9.1079498,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Alberto José Pessoa",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854516990,
+      "lat": 38.7403059,
+      "lon": -9.1098192,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Escola de Marvila",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854516991,
+      "lat": 38.7402581,
+      "lon": -9.109777,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854516994,
+      "lat": 38.7407209,
+      "lon": -9.1120797,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Rua Dinah Silveira de Queiroz",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854516995,
+      "lat": 38.7407355,
+      "lon": -9.1119931,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Dinah Silveira de Queiroz",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854516996,
+      "lat": 38.7407526,
+      "lon": -9.1119975,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Dinah Silveira de Queiroz",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "03701"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6854516997,
+      "lat": 38.7407664,
+      "lon": -9.1119134,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Rua Dinah Silveira de Queiroz",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "03701",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6970639672,
+      "lat": 38.7424586,
+      "lon": -9.1011605,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Poço do Bispo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "short_name": "Poço Bispo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6970639673,
+      "lat": 38.742406,
+      "lon": -9.1011872,
+      "tags": {
+        "bus": "yes",
+        "name": "Poço do Bispo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Poço Bispo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6986474911,
+      "lat": 38.7525321,
+      "lon": -9.1146607,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-01-07",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Escola Dom Dinis",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "89918",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6986474912,
+      "lat": 38.7524788,
+      "lon": -9.1146532,
+      "tags": {
+        "bus": "yes",
+        "name": "Escola Dom Dinis",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "89918"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6986553599,
+      "lat": 38.7489531,
+      "lon": -9.1161643,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Bela Vista",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "03612",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6986553600,
+      "lat": 38.7489621,
+      "lon": -9.1161236,
+      "tags": {
+        "bus": "yes",
+        "name": "Bela Vista",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "03612"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6986570058,
+      "lat": 38.748731,
+      "lon": -9.1134531,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Avenida Doutor Augusto de Castro / Rua Salgueiro Maia",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "03723",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6986570059,
+      "lat": 38.7487407,
+      "lon": -9.1135274,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Doutor Augusto de Castro / Rua Salgueiro Maia",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "03723"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7102264771,
+      "lat": 38.7529017,
+      "lon": -9.103538,
+      "tags": {
+        "bus": "yes",
+        "name": "Azinhaga do Baptista",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7102264772,
+      "lat": 38.7529245,
+      "lon": -9.1036078,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Azinhaga do Baptista",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7102264773,
+      "lat": 38.7530594,
+      "lon": -9.1033452,
+      "tags": {
+        "bus": "yes",
+        "name": "Azinhaga do Baptista",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "02319"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7102264774,
+      "lat": 38.7530406,
+      "lon": -9.1032738,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2025-07-05",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Azinhaga do Baptista",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "02319",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103628152,
+      "lat": 38.7473662,
+      "lon": -9.1103144,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida João Paulo II",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Av. João Paulo II"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103628153,
+      "lat": 38.7474219,
+      "lon": -9.1102492,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida João Paulo II",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "short_name": "Av. João Paulo II"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103666664,
+      "lat": 38.7396243,
+      "lon": -9.1065222,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103666665,
+      "lat": 38.7396206,
+      "lon": -9.106489,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Rua de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103666666,
+      "lat": 38.7380789,
+      "lon": -9.1072647,
+      "tags": {
+        "bus": "yes",
+        "name": "Estrada de Marvila / Azinhaga dos Alfinetes",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103666667,
+      "lat": 38.7380592,
+      "lon": -9.1072055,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Estrada de Marvila / Azinhaga dos Alfinetes",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103666668,
+      "lat": 38.7365532,
+      "lon": -9.107884,
+      "tags": {
+        "bus": "yes",
+        "name": "Azinhaga das Veigas",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103666669,
+      "lat": 38.7365273,
+      "lon": -9.1077847,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Azinhaga das Veigas",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103666670,
+      "lat": 38.7352198,
+      "lon": -9.108467,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Estrada de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103666674,
+      "lat": 38.7474337,
+      "lon": -9.1104191,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida João Paulo II",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Av. João Paulo II"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7103666675,
+      "lat": 38.7473808,
+      "lon": -9.1104803,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida João Paulo II",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "short_name": "Av. João Paulo II"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874358963,
+      "lat": 38.7424264,
+      "lon": -9.1168585,
+      "tags": {
+        "bus": "yes",
+        "name": "Largo do Broma",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Lg. Broma"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874358964,
+      "lat": 38.7424256,
+      "lon": -9.1169165,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Largo do Broma",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "route_ref": "34B;794",
+        "shelter": "no",
+        "short_name": "Lg. Broma",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874358965,
+      "lat": 38.7423197,
+      "lon": -9.1167945,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Largo do Broma",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "03604",
+        "route_ref": "34B;794",
+        "shelter": "yes",
+        "short_name": "Lg. Broma",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874547000,
+      "lat": 38.7346827,
+      "lon": -9.1085701,
+      "tags": {
+        "bus": "yes",
+        "name": "Estrada de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Estr. Marvila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874547001,
+      "lat": 38.7346585,
+      "lon": -9.1085907,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Estrada de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "route_ref": "34B",
+        "shelter": "no",
+        "short_name": "Estr. Marvila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874740932,
+      "lat": 38.7424148,
+      "lon": -9.1128362,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI (Igreja)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "03715",
+        "short_name": "Av. Paulo VI (Igreja)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874740933,
+      "lat": 38.742379,
+      "lon": -9.1127589,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI (Igreja)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "03715",
+        "shelter": "yes",
+        "short_name": "Av. Paulo VI (Igreja)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874740934,
+      "lat": 38.7424366,
+      "lon": -9.1128186,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI (Igreja)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Av. Paulo VI (Igreja)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874740935,
+      "lat": 38.7424729,
+      "lon": -9.1128973,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "check_date:shelter": "2024-12-29",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI (Igreja)",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "3706",
+        "shelter": "yes",
+        "short_name": "Av. Paulo VI (Igreja)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874773540,
+      "lat": 38.7497663,
+      "lon": -9.1032913,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Armandinho",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "R. Armandinho"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7874773541,
+      "lat": 38.7496514,
+      "lon": -9.1033356,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rua Armandinho",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "route_ref": "31B",
+        "shelter": "no",
+        "short_name": "R. Armandinho",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924567002,
+      "lat": 38.7426497,
+      "lon": -9.1001287,
+      "tags": {
+        "bus": "yes",
+        "name": "Poço do Bispo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "short_name": "Poço Bispo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924567003,
+      "lat": 38.7426672,
+      "lon": -9.1001909,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Poço do Bispo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "route_ref": "782",
+        "short_name": "Poço Bispo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7924603385,
+      "lat": 38.7417572,
+      "lon": -9.1003944,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Poço do Bispo",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "route_ref": "782",
+        "short_name": "Poço Bispo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7967726751,
+      "lat": 38.7482785,
+      "lon": -9.1078799,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Paulo VI",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "2211",
+        "short_name": "Av. Paulo VI"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7967726752,
+      "lat": 38.7482758,
+      "lon": -9.1079668,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Paulo VI",
+        "public_transport": "platform",
+        "ref": "2211",
+        "route_ref": "755;793",
+        "shelter": "yes",
+        "short_name": "Av. Paulo VI"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8246608512,
+      "lat": 38.7470271,
+      "lon": -9.1032622,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estação de Braço de Prata",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "02223",
+        "route_ref": "755",
+        "shelter": "no",
+        "short_name": "Estação Braço Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9021872501,
+      "lat": 38.7430473,
+      "lon": -9.1175082,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Carlos Pinhão",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "03614",
+        "short_name": "Av. Carlos Pinhão"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9021872502,
+      "lat": 38.7430476,
+      "lon": -9.1176037,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Avenida Carlos Pinhão",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "03614",
+        "shelter": "no",
+        "short_name": "Av. Carlos Pinhão"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9021872503,
+      "lat": 38.7477214,
+      "lon": -9.1174123,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida da Ucrânia",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "03617",
+        "short_name": "Av. Ucrânia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9021872504,
+      "lat": 38.7477623,
+      "lon": -9.1174044,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Avenida da Ucrânia",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "03617",
+        "shelter": "no",
+        "short_name": "Av. Ucrânia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9021872507,
+      "lat": 38.7472365,
+      "lon": -9.1176364,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida da Ucrânia",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "03616",
+        "short_name": "Av. Ucrânia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9021872508,
+      "lat": 38.7472044,
+      "lon": -9.1176252,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Avenida da Ucrânia",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "platform",
+        "ref": "03616",
+        "shelter": "no",
+        "short_name": "Av. Ucrânia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9172458005,
+      "lat": 38.7390314,
+      "lon": -9.1087569,
+      "tags": {
+        "name": "Marvila",
+        "nat_ref": "66019",
+        "official_name": "Apeadeiro de Marvila",
+        "operator": "Infraestruturas de Portugal",
+        "operator:short": "IP",
+        "operator:wikidata": "Q20730106",
+        "public_transport": "station",
+        "railway": "halt",
+        "railway:ref": "MVA",
+        "train": "yes",
+        "wikidata": "Q48855300",
+        "wikipedia": "pt:Apeadeiro de Marvila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10080579917,
+      "lat": 38.7421261,
+      "lon": -9.1126127,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Ninguém faz isso"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10102800035,
+      "lat": 38.7398716,
+      "lon": -9.1101233,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Escadinhas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10583618730,
+      "lat": 38.7401334,
+      "lon": -9.1029122,
+      "tags": {
+        "addr:city": "Beato",
+        "addr:housenumber": "54",
+        "addr:street": "Rua do Açúcar",
+        "amenity": "restaurant",
+        "cuisine": "cafe;brunch;grelhados_no_carvão",
+        "diet:local": "yes",
+        "diet:meat": "yes",
+        "diet:pescetarian": "yes",
+        "email": "liv.beato@restauranteromanus.pt",
+        "name": "LIV BEATO",
+        "opening_hours": "Mo-Fr 09:00-18:00",
+        "phone": "+351 968 811 539",
+        "website": "https://restauranteromanus.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10735817069,
+      "lat": 38.747091,
+      "lon": -9.1028003,
+      "tags": {
+        "name": "Braço de Prata",
+        "nat_ref": "31005",
+        "official_name": "Estação Ferroviária de Braço de Prata",
+        "operator": "Infraestruturas de Portugal",
+        "operator:short": "IP",
+        "operator:wikidata": "Q20730106",
+        "platforms": "4",
+        "public_transport": "station",
+        "railway": "station",
+        "railway:ref": "BPR",
+        "train": "yes",
+        "wikidata": "Q253357",
+        "wikimedia_commons": "Category:Braço de Prata train station",
+        "wikipedia": "pt:Estação Ferroviária de Braço de Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10743639738,
+      "lat": 38.739095,
+      "lon": -9.1044806,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Mar da Vila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11240041667,
+      "lat": 38.7443367,
+      "lon": -9.1008581,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Cozinha da Prata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11303648425,
+      "lat": 38.7475293,
+      "lon": -9.1176464,
+      "tags": {
+        "name": "Bela Vista",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "subway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11304102295,
+      "lat": 38.7475354,
+      "lon": -9.1176623,
+      "tags": {
+        "name": "Bela Vista",
+        "opening_hours": "Mo-Su 06:30-01:00",
+        "operator": "Metropolitano de Lisboa",
+        "public_transport": "station",
+        "railway": "station",
+        "station": "subway",
+        "subway": "yes",
+        "website": "https://www.metrolisboa.pt/viajar/bela-vista/",
+        "wheelchair": "limited",
+        "wikidata": "Q2894181",
+        "wikimedia_commons": "Category:Bela Vista (Lisbon Metro)",
+        "wikipedia": "pt:Estação Bela Vista"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11509583608,
+      "lat": 38.7474326,
+      "lon": -9.0982948,
+      "tags": {
+        "addr:city": "Marvila",
+        "addr:postcode": "1950-132",
+        "addr:street": "Rua 3 da Matinha",
+        "addr:unit": "Loja \"E\"",
+        "amenity": "restaurant",
+        "brewery": "yes;dois_corvos",
+        "cuisine": "regional;burger;coffee_shop;dessert;sandwich;portuguese;brazilian;salad",
+        "name": "Praça do Tejo Gastropub Marvila",
+        "opening_hours": "Mo-Sa 07:00-21:00",
+        "outdoor_seating": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11944814738,
+      "lat": 38.741887,
+      "lon": -9.1021723,
+      "tags": {
+        "addr:housenumber": "Armazém 15 e 16",
+        "addr:street": "Praça David Leandro da Silva",
+        "name": "Ah Amália Living Experience",
+        "tourism": "museum",
+        "website": "https://ah-amalia.pt"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12087432738,
+      "lat": 38.738721,
+      "lon": -9.1030951,
+      "tags": {
+        "addr:housenumber": "89",
+        "addr:street": "Rua do Açúcar",
+        "amenity": "restaurant",
+        "name": "Aquele lugar que não existe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12157222029,
+      "lat": 38.7411144,
+      "lon": -9.1091845,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Eduarda Lapa",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position",
+        "ref": "3724",
+        "short_name": "R. Eduarda Lapa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12157222030,
+      "lat": 38.741146,
+      "lon": -9.109209,
+      "tags": {
+        "bus": "yes",
+        "fixme": "verificar localização",
+        "highway": "bus_stop",
+        "name": "Rua Eduarda Lapa",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "3724",
+        "shelter": "no",
+        "short_name": "R. Eduarda Lapa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12209366631,
+      "lat": 38.7448639,
+      "lon": -9.0979329,
+      "tags": {
+        "addr:street": "R. F aos Jardins Braço de Prata 7, 1950-322 Lisboa",
+        "amenity": "cafe",
+        "name": "Jeronymo Riverside",
+        "opening_hours": "Mo-Su 08:00-21:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320497461,
+      "lat": 38.7415644,
+      "lon": -9.1026421,
+      "tags": {
+        "addr:housenumber": "20",
+        "addr:street": "Rua do Açúcar",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Restaurante do Quim"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320497482,
+      "lat": 38.7362364,
+      "lon": -9.1042418,
+      "tags": {
+        "addr:housenumber": "88",
+        "addr:street": "Rua do Açúcar",
+        "amenity": "school",
+        "name": "CENFIM"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320497491,
+      "lat": 38.7379196,
+      "lon": -9.1031116,
+      "tags": {
+        "addr:housenumber": "107",
+        "addr:street": "Rua do Açúcar",
+        "amenity": "restaurant",
+        "name": "Dinastia Tang"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12320497494,
+      "lat": 38.7389747,
+      "lon": -9.1033975,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Santa Casa Dr. José Domingos Barreiro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12323339274,
+      "lat": 38.7423059,
+      "lon": -9.1004876,
+      "tags": {
+        "addr:street": "Rua Amorim",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Delta Cafés - Delta Prata",
+        "opening_hours": "09:00-18:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12328495427,
+      "lat": 38.7403474,
+      "lon": -9.1020074,
+      "tags": {
+        "addr:city": "Beato",
+        "addr:housenumber": "L",
+        "addr:postcode": "1950-408",
+        "addr:street": "Rua Pereira Henriques",
+        "name": "Poupança Cash & Carry",
+        "opening_hours": "Mo-Fr 08:00-18:30",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+351 21 765 5128",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12328518538,
+      "lat": 38.7422727,
+      "lon": -9.1020899,
+      "tags": {
+        "addr:city": "Marvila",
+        "addr:housenumber": "9A",
+        "addr:street": "Praça David Leandro da Silva",
+        "amenity": "restaurant",
+        "cuisine": "mexican",
+        "name": "Taqueria Paloma",
+        "opening_hours": "thur-sun 12:00- Late"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12328529055,
+      "lat": 38.7420615,
+      "lon": -9.1025056,
+      "tags": {
+        "addr:city": "Marvila",
+        "addr:housenumber": "18",
+        "addr:street": "Rua do Açúcar",
+        "amenity": "restaurant",
+        "cuisine": "coffee_shop;portuguese",
+        "diet:fish": "yes",
+        "diet:local": "yes",
+        "diet:meat": "yes",
+        "name": "O Jardim",
+        "phone": "+351 21 607 8946"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12383686977,
+      "lat": 38.743435,
+      "lon": -9.1054493,
+      "tags": {
+        "bus": "yes",
+        "name": "Azinhaga do Vale Fundão",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12383686978,
+      "lat": 38.7434556,
+      "lon": -9.1054894,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Azinhaga do Vale Fundão",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "03725",
+        "short_name": "Az. Vale Fundão"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12383736317,
+      "lat": 38.741883,
+      "lon": -9.1097751,
+      "tags": {
+        "bus": "yes",
+        "fixme": "verificar localização",
+        "highway": "bus_stop",
+        "name": "Centro de Saúde de Marvila",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "03726",
+        "short_name": "Centro Saúde Marvila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12383736318,
+      "lat": 38.7419065,
+      "lon": -9.1098138,
+      "tags": {
+        "bus": "yes",
+        "name": "Centro de Saúde de Marvila",
+        "network": "Carris",
+        "operator": "Carris",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12383736320,
+      "lat": 38.7434148,
+      "lon": -9.1054101,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Azinhaga do Vale Fundão",
+        "network": "Carris",
+        "network:wikidata": "Q1045108",
+        "operator": "Carris",
+        "operator:wikidata": "Q1045108",
+        "public_transport": "platform",
+        "ref": "03726",
+        "short_name": "Az. Vale Fundão"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12518671188,
+      "lat": 38.7446457,
+      "lon": -9.0989665,
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "Lote 6",
+        "addr:postcode": "1950-322",
+        "addr:street": "Rua Madalena Iglésias",
+        "addr:unit": "Loja 5",
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "drive_through": "no",
+        "healthcare": "pharmacy",
+        "name": "Farmácia do Prata",
+        "opening_hours": "Mo-Fr 09:00-20:00; Sa 09:00-19:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12712984301,
+      "lat": 38.7456069,
+      "lon": -9.0977227,
+      "tags": {
+        "addr:housenumber": "8 Loja 1",
+        "addr:postcode": "1950-132",
+        "addr:street": "R. da Cintura do Porto de Lisboa",
+        "amenity": "cafe",
+        "name": "Delta The Coffee House Experience Prata Riverside",
+        "opening_hours": "Mo-Su 08:00-20:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13123512601,
+      "lat": 38.7419029,
+      "lon": -9.1010434,
+      "tags": {
+        "amenity": "cafe",
+        "name": "scoopn dough"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13622411101,
+      "lat": 38.7470941,
+      "lon": -9.1012334,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13622411501,
+      "lat": 38.7458842,
+      "lon": -9.1013941,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "way",
+      "id": 99179010,
+      "center": {
+        "lat": 38.7493157,
+        "lon": -9.1175673
+      },
+      "tags": {
+        "building": "retail",
+        "name": "Centro Comercial Pingo Doce Bela Vista",
+        "shop": "mall"
+      }
+    },
+    {
+      "type": "way",
+      "id": 183132929,
+      "center": {
+        "lat": 38.7514909,
+        "lon": -9.1125242
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1950-186",
+        "addr:street": "Rua Doutor Manuel Teixeira Gomes",
+        "amenity": "school",
+        "email": "direcao@aeddinis.edu.gov.pt;servicos@aeddinis.edu.gov.pt",
+        "grades": "12-17",
+        "name": "Escola Secundária Dom Dinis",
+        "operator": "Agrupamento de Escolas Dom Dinis, Lisboa",
+        "operator:ref": "171384",
+        "operator:type": "public",
+        "phone": "+351 218 310 190",
+        "ref": "401250",
+        "ref:qzp": "QZP.45",
+        "website": "http://www.esecddinis.pt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 216539832,
+      "center": {
+        "lat": 38.7520648,
+        "lon": -9.1092137
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque Urbano do Vale Fundão",
+        "wikidata": "Q10345526",
+        "wikimedia_commons": "Category:Parque do Vale Fundão",
+        "wikipedia": "pt:Parque do Vale Fundão"
+      }
+    },
+    {
+      "type": "way",
+      "id": 216539851,
+      "center": {
+        "lat": 38.7455161,
+        "lon": -9.1082453
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 216539878,
+      "center": {
+        "lat": 38.7452545,
+        "lon": -9.1059757
+      },
+      "tags": {
+        "addr:street": "Rua Pedro de Azevedo",
+        "description": "O Parque da Quinta das Flores está integrado no Corredor Verde Oriental e dispõe de uma área de recreio infantil, localizada no topo mais próximo da zona habitacional. O parque hortícola é composto por 40 talhões para a prática da agricultura urb",
+        "leisure": "park",
+        "name": "Parque da Quinta das Flores",
+        "operator": "Câmara Municipal de Lisboa",
+        "operator:wikidata": "Q30255955",
+        "source": "dadosabertos.cm-lisboa.pt",
+        "website": "https://informacoeseservicos.lisboa.pt/contactos/diretorio-da-cidade/parque-da-quinta-das-flores"
+      }
+    },
+    {
+      "type": "way",
+      "id": 216651668,
+      "center": {
+        "lat": 38.7467044,
+        "lon": -9.1114603
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 221204032,
+      "center": {
+        "lat": 38.7533366,
+        "lon": -9.1114069
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:housename": "Rua Tomás Alcaide",
+        "addr:postcode": "1950-001",
+        "addr:street": "Rua Manuel Teixeira Gomes",
+        "amenity": "school",
+        "email": "eb1mtgomes@gmail.com;eb1.n187.lisboa@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica Manuel Teixeira Gomes",
+        "note": "Agrupamento: Santa Maria dos Olivais Ano de Construção - 1972. Património Municipal. Construído de base para o Ensino.",
+        "operator": "Agrupamento de Escolas de Santa Maria dos Olivais, Lisboa",
+        "operator:ref": "171712",
+        "operator:type": "public",
+        "ownership": "municipal",
+        "phone": "+351 218 594 529",
+        "ref": "243784",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1 Manuel Teixeira Gomes",
+        "source": "Ministério da Educação",
+        "start_date": "1972",
+        "website": "http://www.aesmo.pt/1ciclo/eb1mtg.htm"
+      }
+    },
+    {
+      "type": "way",
+      "id": 221217474,
+      "center": {
+        "lat": 38.7551085,
+        "lon": -9.0983124
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:housenumber": "Lote 3.12.01",
+        "addr:postcode": "1990-601",
+        "addr:street": "Rua Gaivotas em Terra",
+        "amenity": "school",
+        "email": "coord.ebpn@queiroz.pt",
+        "grades": "3-14",
+        "name": "Escola Básica do Parque das Nações",
+        "note": "Agrupamento: Eça de Queirós",
+        "operator": "Agrupamento de Escolas Eça de Queirós, Lisboa",
+        "operator:ref": "172420",
+        "operator:type": "public",
+        "ownership": "municipal",
+        "phone": "+351 218 988 020",
+        "polling_station": "yes",
+        "ref": "331053",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1 Parque das Nações",
+        "source": "Ministério da Educação",
+        "website": "https://aeeq.weebly.com/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 241678748,
+      "center": {
+        "lat": 38.7409201,
+        "lon": -9.1111639
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1950-069",
+        "addr:street": "Rua António Gedeão",
+        "amenity": "school",
+        "email": "eb23.marvila@escolas.min-edu.pt",
+        "grades": "10-14",
+        "name": "Escola Básica de Marvila",
+        "operator": "Agrupamento de Escolas D. Dinis, Lisboa",
+        "operator:ref": "171384",
+        "operator:type": "public",
+        "phone": "+351 218 590 502",
+        "ref": "342154",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 429355706,
+      "center": {
+        "lat": 38.7449912,
+        "lon": -9.1117576
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:place": "Bairro do Condado",
+        "addr:postcode": "1950-105",
+        "addr:street": "Rua Engenheiro Cunha Leal",
+        "amenity": "school",
+        "architect": "Ferreira dos Santos",
+        "email": "eb54ji3@gmail.com;eb1.n54.lisboa@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica do Condado",
+        "operator": "Agrupamento de Escolas Luís António Verney, Lisboa",
+        "operator:ref": "171396",
+        "operator:type": "public",
+        "ownership": "municipal",
+        "phone": "+351 218 370 132;+351 218 376 669",
+        "ref": "253595",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1 do Condado",
+        "source": "Ministério da Educação",
+        "start_date": "1980"
+      }
+    },
+    {
+      "type": "way",
+      "id": 429356486,
+      "center": {
+        "lat": 38.7449759,
+        "lon": -9.1072904
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:postcode": "1950-234",
+        "addr:street": "Rua Pedro de Azevedo",
+        "amenity": "school",
+        "email": "gestao@esecddinis.pt;eb1.joaosantos@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica João dos Santos",
+        "operator": "Agrupamento de Escolas D. Dinis, Lisboa",
+        "operator:ref": "171384",
+        "operator:type": "public",
+        "ownership": "municipal",
+        "phone": "+351 218 594 072",
+        "ref": "243851",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1 João dos Santos",
+        "source": "Ministério da Educação",
+        "start_date": "1974",
+        "website": "http://www.eb1-lisboa-n193.rcts.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 429357611,
+      "center": {
+        "lat": 38.7475138,
+        "lon": -9.1055513
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:postcode": "1950-299",
+        "addr:street": "Rua Lino Ferreira",
+        "amenity": "school",
+        "email": "gestao@esecddinis.pt;eb1.pfagostinhosilva@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica Professor Agostinho da Silva",
+        "operator": "Agrupamento de Escolas D. Dinis, Lisboa",
+        "operator:ref": "171384",
+        "operator:type": "public",
+        "ownership": "municipal",
+        "phone": "+351 218 593 084",
+        "ref": "253583",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1 Agostinho da Silva",
+        "source": "Ministério da Educação",
+        "website": "http://eb1-pfagostinhosilva.edu.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 469987846,
+      "center": {
+        "lat": 38.7520604,
+        "lon": -9.103187
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:country": "PT",
+        "addr:housenumber": "LT 309",
+        "addr:postcode": "1950-421",
+        "addr:street": "Avenida Infante Dom Henrique",
+        "amenity": "school",
+        "contact:email": "geral@cesarioverde-ensino.pt",
+        "contact:fax": "+351 219457599",
+        "contact:phone": "+351 219457590;+351 219457591;+351 219457592",
+        "contact:website": "http://www.cesarioverde-ensino.pt",
+        "email": "geral@cesarioverde-ensino.pt",
+        "facebook": "facebook.com/CesarioVerdeEnsino/",
+        "grades": "3-14",
+        "name": "Colégio Cesário Verde",
+        "name:en": "Cesário Verde International School",
+        "opening_hours": "Mo-Fr 07:30-20:00",
+        "operator": "Cesário Verde - Ensino e Formação, Lda.",
+        "operator:type": "private",
+        "phone": "+351 219 457 590",
+        "ref": "505213",
+        "ref:aeep": "1074",
+        "ref:qzp": "QZP.45",
+        "website": "https://www.cesarioverde-ensino.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 698915484,
+      "center": {
+        "lat": 38.7448315,
+        "lon": -9.0975336
+      },
+      "tags": {
+        "architect": "Catarina Assis Pacheco;Filipa Cardoso de Menezes;FC Arquitectura Paisagista",
+        "contact:website": "https://informacoeseservicos.lisboa.pt/contactos/diretorio-da-cidade/parque-ribeirinho-oriente",
+        "leisure": "park",
+        "name": "Parque Ribeirinho Oriente"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1003762775,
+      "center": {
+        "lat": 38.7422823,
+        "lon": -9.1101727
+      },
+      "tags": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "USF de Marvila",
+        "operator": "Serviço Nacional de Saúde",
+        "operator:short": "SNS",
+        "operator:type": "public",
+        "operator:wikidata": "Q1299901"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1004694505,
+      "center": {
+        "lat": 38.7562687,
+        "lon": -9.1076046
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "9",
+        "addr:postcode": "1800-255",
+        "addr:street": "Avenida Marechal Gomes da Costa",
+        "amenity": "school",
+        "contact:email": "info@unitedlisbon.school",
+        "contact:phone": "+351 218370973",
+        "contact:website": "https://www.unitedlisbon.school/",
+        "name": "United Lisbon International School",
+        "operator:type": "private",
+        "ref": "806747",
+        "ref:qzp": "QZP.45",
+        "short_name": "ULIS"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1017621516,
+      "center": {
+        "lat": 38.7542415,
+        "lon": -9.1119644
+      },
+      "tags": {
+        "leisure": "park",
+        "natural": "grassland"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1253446417,
+      "center": {
+        "lat": 38.7503276,
+        "lon": -9.1029747
+      },
+      "tags": {
+        "amenity": "kindergarten",
+        "name": "Associação Ester Janz"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1258451592,
+      "center": {
+        "lat": 38.7456004,
+        "lon": -9.100765
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Trinca Forte"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1258451610,
+      "center": {
+        "lat": 38.7399908,
+        "lon": -9.1090668
+      },
+      "tags": {
+        "fixme": "limits",
+        "leisure": "park",
+        "name": "Parque Urbano Mar e Vila",
+        "operator": "Câmara Municipal de Lisboa",
+        "operator:type": "government",
+        "operator:wikidata": "Q30255955",
+        "start_date": "2026-04-19"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1262736156,
+      "center": {
+        "lat": 38.7430641,
+        "lon": -9.098874
+      },
+      "tags": {
+        "description": "Toponímia: Dia da Liberdade. Início do Arruamento: Confluência da Avenida Infante Dom Henrique, a Rua A e o arruamento pedonal ao Braço de Prata.",
+        "leisure": "park",
+        "name": "Praça 25 de Abril",
+        "name:etymology:wikidata": "Q193245",
+        "source": "https://revelar.lisboa.pt/explorar/toponimia",
+        "start_date": "1999-04-22"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302688329,
+      "center": {
+        "lat": 38.7450666,
+        "lon": -9.1083808
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:postcode": "1950-306",
+        "addr:street": "Largo Vitoriano Braga",
+        "amenity": "kindergarten",
+        "contact:fax": "+351 218594051",
+        "contact:phone": "+351 218310620",
+        "grades": "3-5",
+        "name": "Centro de Acolhimento Infantil Vale Fundão I",
+        "operator:type": "public",
+        "ref": "800262",
+        "ref:qzp": "QZP.45",
+        "short_name": "CAI Vale Fundão I"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302688330,
+      "center": {
+        "lat": 38.7446348,
+        "lon": -9.1079893
+      },
+      "tags": {
+        "addr:city": "Lisboa",
+        "addr:housenumber": "610B",
+        "addr:postcode": "1950-234",
+        "addr:street": "Rua Pedro de Azevedo",
+        "amenity": "kindergarten",
+        "contact:email": "cps.prodac@scml.pt",
+        "contact:fax": "+351 218373993",
+        "contact:phone": "+351 218310950",
+        "grades": "3-5",
+        "name": "Centro de Promoção Social da PRODAC",
+        "network": "Santa Casa da Misericórdia",
+        "operator": "Santa Casa da Misericórdia de Lisboa",
+        "operator:type": "public",
+        "ref": "800299",
+        "ref:qzp": "QZP.45"
+      }
+    }
+  ]
+}

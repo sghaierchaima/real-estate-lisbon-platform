@@ -1,0 +1,5745 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-28T10:26:11Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 213764501,
+      "lat": 38.697115,
+      "lon": -9.2901409,
+      "tags": {
+        "local_ref": "2",
+        "name": "Paço de Arcos",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q8841431",
+        "wikipedia": "pt:Estação Ferroviária de Paço de Arcos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 595839243,
+      "lat": 38.6927524,
+      "lon": -9.297862,
+      "tags": {
+        "amenity": "pharmacy",
+        "name": "Pargana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 595839380,
+      "lat": 38.692249,
+      "lon": -9.2988126,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 595839381,
+      "lat": 38.6921407,
+      "lon": -9.2991155,
+      "tags": {
+        "addr:housenumber": "18",
+        "addr:street": "Avenida Engenheiro Bonneville Franco",
+        "amenity": "restaurant",
+        "name": "Xico",
+        "opening_hours": "Mo-Su 07:00-22:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 620172733,
+      "lat": 38.7024687,
+      "lon": -9.2982314,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "clinic",
+        "name": "Centro de Saúde de Paço de Arcos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 620172844,
+      "lat": 38.7059877,
+      "lon": -9.302318,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:postcode": "2770-219",
+        "addr:street": "Avenida António Bernardo Cabral de Macedo",
+        "branch": "Oeiras",
+        "brand": "Continente",
+        "brand:wikidata": "Q2995683",
+        "brand:wikipedia": "pt:Continente (hipermercados)",
+        "contact:facebook": "continenteoficial",
+        "contact:instagram": "continente",
+        "contact:phone": "+351 214 468 200",
+        "contact:youtube": "https://www.youtube.com/user/continentept",
+        "name": "Continente",
+        "opening_hours": "Mo-Su 08:00-23:00",
+        "ref": "37d6cfaa-6582-506c-8e5e-187f22969968",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://feed.continente.pt/lojas/continente-oeiras",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 620172845,
+      "lat": 38.7046608,
+      "lon": -9.3021043,
+      "tags": {
+        "amenity": "restaurant",
+        "brand": "100 Montaditos",
+        "brand:wikidata": "Q8355805",
+        "cuisine": "sandwich",
+        "name": "100 Montaditos",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 620172916,
+      "lat": 38.7005115,
+      "lon": -9.2927367,
+      "tags": {
+        "amenity": "pharmacy",
+        "name": "Farmácia Dias"
+      }
+    },
+    {
+      "type": "node",
+      "id": 620173032,
+      "lat": 38.6950869,
+      "lon": -9.2923137,
+      "tags": {
+        "amenity": "pharmacy"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1139501066,
+      "lat": 38.697125,
+      "lon": -9.2917005,
+      "tags": {
+        "local_ref": "1",
+        "name": "Paço de Arcos",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q8841431",
+        "wikipedia": "pt:Estação Ferroviária de Paço de Arcos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1262852674,
+      "lat": 38.7024316,
+      "lon": -9.2988345,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Ant Bern Cabral Macedo (C Saúde)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1284589578,
+      "lat": 38.6945335,
+      "lon": -9.304068,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "12",
+        "addr:postcode": "2780-027",
+        "addr:street": "Avenida de Moçambique",
+        "addr:unit": "A",
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "drive_through": "no",
+        "email": "farmacia.holon.oeiras@farmaciasholon.pt",
+        "healthcare": "pharmacy",
+        "name": "Oeiras Figueirinha",
+        "opening_hours": "Mo-Su 08:00-24:00",
+        "phone": "+351 214411190",
+        "website": "https://www.farmaciasholon.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1285998446,
+      "lat": 38.6926566,
+      "lon": -9.3115787,
+      "tags": {
+        "addr:housenumber": "98",
+        "addr:postcode": "2780-211",
+        "addr:street": "Rua Cândido dos Reis",
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "drive_through": "no",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Godinho"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1286005506,
+      "lat": 38.6959919,
+      "lon": -9.3019414,
+      "tags": {
+        "addr:housenumber": "9 A",
+        "addr:postcode": "2780-034",
+        "addr:street": "Rua Recife",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Alecrim e Manjerona"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1964753402,
+      "lat": 38.6927733,
+      "lon": -9.3110028,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "72",
+        "addr:postcode": "2780-211",
+        "addr:street": "Rua Cândido dos Reis",
+        "branch": "Cândido dos Reis - Oeiras",
+        "brand": "My Auchan",
+        "brand:wikidata": "Q115800307",
+        "brand:wikipedia": "pt:Auchan",
+        "contact:email": "apoiocliente@auchan.pt",
+        "contact:facebook": "AuchanPortugal",
+        "contact:instagram": "auchan_pt",
+        "contact:phone": "+351 210 403 270",
+        "contact:tiktok": "auchan_pt",
+        "contact:youtube": "https://www.youtube.com/channel/UC6FSI7tYO9ISV11U2PHBBYQ",
+        "name": "My Auchan",
+        "old_name": "Minipreço",
+        "ref": "D03",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "website": "https://www.auchan.pt/pt/loja?StoreID=D03"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2011593683,
+      "lat": 38.692031,
+      "lon": -9.3113038,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Mensa",
+        "opening_hours": "Mo-Sa 12:00-15:00,19:30-22:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2011594094,
+      "lat": 38.6919535,
+      "lon": -9.3111269,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Chá da barra",
+        "opening_hours": "Tu,We 10:00-15:00; Th,Su 10:00-19:00; Fr,Sa 10:00-23:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2011595303,
+      "lat": 38.6919116,
+      "lon": -9.3111001,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Chá da barra",
+        "opening_hours": "Tu,We 10:00-15:00; Th,Su 10:00-19:00; Fr,Sa 10:00-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2013999016,
+      "lat": 38.70021,
+      "lon": -9.2977387,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2013999068,
+      "lat": 38.7000852,
+      "lon": -9.2979045,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2142487810,
+      "lat": 38.6913793,
+      "lon": -9.3130038,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2142487813,
+      "lat": 38.6922335,
+      "lon": -9.313374,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2229603578,
+      "lat": 38.6877557,
+      "lon": -9.3070688,
+      "tags": {
+        "addr:street": "Avenida Duarte Pacheco",
+        "amenity": "cafe",
+        "name": "A Marquesa",
+        "source": "Local Knowledge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2276771424,
+      "lat": 38.7008521,
+      "lon": -9.2934123,
+      "tags": {
+        "name": "Supermercado \"JOANINHA\"",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2309492182,
+      "lat": 38.6915326,
+      "lon": -9.3121792,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "A Tendinha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2368407412,
+      "lat": 38.6934154,
+      "lon": -9.3083696,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "sushi",
+        "name": "SushiCome"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2368407414,
+      "lat": 38.692779,
+      "lon": -9.3102525,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "sushi",
+        "name": "Wok Kirin"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2368407431,
+      "lat": 38.6935829,
+      "lon": -9.3085411,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Maria da Conceição Rodrigues"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2380716548,
+      "lat": 38.6923023,
+      "lon": -9.3126328,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Até Chia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2380716549,
+      "lat": 38.6924687,
+      "lon": -9.3119516,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Taberna"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2381246261,
+      "lat": 38.7056312,
+      "lon": -9.3024441,
+      "tags": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Veritas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2384256908,
+      "lat": 38.6922075,
+      "lon": -9.3050995,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "11",
+        "addr:postcode": "2780-241",
+        "addr:street": "Avenida Doutor Francisco de Sá Carneiro",
+        "addr:unit": "A",
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Millennium bcp",
+        "brand:wikidata": "Q118581",
+        "brand:wikipedia": "pt:Banco Comercial Português",
+        "drive_through": "no",
+        "fax": "+351 210098906",
+        "name": "Millennium bcp",
+        "official_name": "Banco Comercial Português",
+        "official_name:en": "Portuguese Commercial Bank",
+        "official_name:es": "Banco Comercial Português",
+        "opening_hours": "Mo-Fr 8:30-15:30; Sa-Su off",
+        "operator": "Banco Comercial Português",
+        "operator:wikidata": "Q118581",
+        "operator:wikipedia": "pt:Banco Comercial Português",
+        "phone": "+351 211126960"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2386972155,
+      "lat": 38.7049262,
+      "lon": -9.2977001,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2426743272,
+      "lat": 38.6959694,
+      "lon": -9.3092072,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "14",
+        "addr:postcode": "2780-199",
+        "addr:street": "Avenida Embaixador Augusto de Castro",
+        "branch": "Oeiras",
+        "brand": "Continente Bom Dia",
+        "brand:wikidata": "Q123570507",
+        "brand:wikipedia": "pt:Continente Bom Dia",
+        "contact:facebook": "continenteoficial",
+        "contact:instagram": "continente",
+        "contact:phone": "+351 212 489 999",
+        "contact:youtube": "https://www.youtube.com/user/continentept",
+        "name": "Continente Bom Dia",
+        "opening_hours": "Mo-Su 08:30-21:00",
+        "payment:cash": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_electron": "yes",
+        "ref": "71625283-5442-57b3-b4a9-a0744e69c1dc",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://feed.continente.pt/lojas/continente-bom-dia-oeiras"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3182584261,
+      "lat": 38.7026738,
+      "lon": -9.3056793,
+      "tags": {
+        "amenity": "pharmacy"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3182584262,
+      "lat": 38.7029795,
+      "lon": -9.3063284,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Stones"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3182584265,
+      "lat": 38.702588,
+      "lon": -9.3057866,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Sacolinha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3182624263,
+      "lat": 38.6925337,
+      "lon": -9.3135354,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "O Pombalino"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3343903258,
+      "lat": 38.6926488,
+      "lon": -9.3127142,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "77",
+        "addr:postcode": "2780-213",
+        "addr:street": "Rua Cândido dos Reis",
+        "amenity": "restaurant",
+        "cuisine": "burger;sandwich;pancake;breakfast;tea;cake;coffee_shop",
+        "email": "saboresdavilaoeiras@gmail.com",
+        "internet_access": "wlan",
+        "name": "Sabores Da Vila",
+        "phone": "+351 210103375",
+        "website": "https://m.facebook.com/saboresdavilaoeiras/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3359398422,
+      "lat": 38.693173,
+      "lon": -9.3051625,
+      "tags": {
+        "amenity": "cafe",
+        "internet_access": "wlan",
+        "name": "Lutece",
+        "opening_hours": "Mo-Su 07:00-20:00",
+        "outdoor_seating": "yes",
+        "smoking": "outside"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3418232300,
+      "lat": 38.6935046,
+      "lon": -9.2933244,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-09-20",
+        "cuisine": "italian",
+        "name": "La Rúcula"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3645921565,
+      "lat": 38.7029638,
+      "lon": -9.3037871,
+      "tags": {
+        "amenity": "restaurant",
+        "indoor_seating": "yes",
+        "name": "Dim Sum",
+        "outdoor_seating": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4156918190,
+      "lat": 38.6971467,
+      "lon": -9.305274,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "12",
+        "addr:postcode": "2780-005",
+        "addr:street": "Rua de Belém",
+        "air_conditioning": "yes",
+        "amenity": "cafe",
+        "internet_access": "wlan",
+        "name": "Pastelaria Paris Village",
+        "opening_hours": "Mo-Su 07:00-20:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+351 218235011",
+        "smoking": "separated",
+        "takeaway": "yes",
+        "website": "https://pastelariaparis3.eatbu.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4431205008,
+      "lat": 38.6938063,
+      "lon": -9.308419,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Sol da Barra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4991325822,
+      "lat": 38.6984979,
+      "lon": -9.2909825,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "regional",
+        "name": "Queques  da Linha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5111823023,
+      "lat": 38.6955309,
+      "lon": -9.2899464,
+      "tags": {
+        "addr:housenumber": "17",
+        "addr:street": "Rua Costa Pinto",
+        "amenity": "restaurant",
+        "name": "Casa da Dizima",
+        "phone": "+351 21 446 2965"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5315038081,
+      "lat": 38.6928931,
+      "lon": -9.305458,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Areal",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5483332392,
+      "lat": 38.6924609,
+      "lon": -9.3121139,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "chinese;japanese;sushi",
+        "name": "Sushi Miura"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5690961413,
+      "lat": 38.6935003,
+      "lon": -9.2981396,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Borges",
+        "outdoor_seating": "no",
+        "smoking": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5837258186,
+      "lat": 38.6951792,
+      "lon": -9.292155,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Comida Goesa by Tessa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6047281752,
+      "lat": 38.697128,
+      "lon": -9.3065783,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "5",
+        "addr:postcode": "2780-016",
+        "addr:street": "Rua Carlos Lacerda",
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "drive_through": "no",
+        "email": "farmacia.alcantara.guerreiro@farmaciasholon.pt",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Alcântara Guerreiro",
+        "opening_hours": "Mo-Su 09:00-20:00; Sa 09:00-13:00",
+        "phone": "+351 214430691",
+        "website": "https://www.farmaciasholon.pt"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6047281753,
+      "lat": 38.697256,
+      "lon": -9.306416,
+      "tags": {
+        "name": "Mini-mercado Favorito da Figuerinha",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6047281754,
+      "lat": 38.697097,
+      "lon": -9.3042193,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Milá",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6047281755,
+      "lat": 38.6971726,
+      "lon": -9.3039043,
+      "tags": {
+        "amenity": "cafe",
+        "internet_access": "no",
+        "name": "Garfo II",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6047281756,
+      "lat": 38.6958733,
+      "lon": -9.309905,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pastelaria Paris"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6047281757,
+      "lat": 38.6959049,
+      "lon": -9.309707,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Jovinela"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6047281758,
+      "lat": 38.6959086,
+      "lon": -9.3094791,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "16",
+        "addr:postcode": "2780-199",
+        "addr:street": "Avenida Embaixador Augusto de Castro",
+        "addr:unit": "A",
+        "amenity": "restaurant",
+        "branch": "Oeiras",
+        "brand": "Pizza Hut",
+        "brand:wikidata": "Q191615",
+        "brand:wikipedia": "en:Pizza Hut",
+        "cuisine": "pizza",
+        "name": "Pizza Hut",
+        "website": "https://www.pizzahut.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6055861243,
+      "lat": 38.6955999,
+      "lon": -9.3072038,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Angodoce"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6055861244,
+      "lat": 38.6943605,
+      "lon": -9.3073151,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pisca Pisca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6055890936,
+      "lat": 38.6959146,
+      "lon": -9.3028409,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6055890938,
+      "lat": 38.6958565,
+      "lon": -9.3043238,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6055890939,
+      "lat": 38.6979388,
+      "lon": -9.3015918,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-09-30",
+        "name": "Margobeth"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6058831156,
+      "lat": 38.6992421,
+      "lon": -9.3057778,
+      "tags": {
+        "amenity": "bank",
+        "brand": "Bankinter",
+        "brand:wikidata": "Q806808",
+        "brand:wikipedia": "en:Bankinter",
+        "name": "Bankinter",
+        "operator": "Bankinter",
+        "operator:wikidata": "Q806808",
+        "operator:wikipedia": "en:Bankinter"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6058831157,
+      "lat": 38.6937605,
+      "lon": -9.3043429,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Dim Sum Macau"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6058831158,
+      "lat": 38.6923273,
+      "lon": -9.3050891,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Rong Hua"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6061575789,
+      "lat": 38.6950158,
+      "lon": -9.3052396,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "1",
+        "addr:postcode": "2780-044",
+        "addr:street": "Rua António Enes",
+        "addr:unit": "A",
+        "amenity": "restaurant",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "name": "Home Burger",
+        "outdoor_seating": "no",
+        "phone": "+351 21 5955040",
+        "website": "https://www.homeburger.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6061575791,
+      "lat": 38.6959161,
+      "lon": -9.3030219,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6061575822,
+      "lat": 38.6928651,
+      "lon": -9.3049272,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Moinho das Antas",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6061575827,
+      "lat": 38.6927094,
+      "lon": -9.3046141,
+      "tags": {
+        "addr:housenumber": "23",
+        "addr:street": "Rua Doutor António Patrício Gouveia",
+        "addr:unit": "A",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/pg/tonsdesushi/",
+        "cuisine": "sushi;japanese",
+        "diet:vegetarian": "yes",
+        "name": "Tons de Sushi",
+        "opening_hours": "Mo-Su 12:00-15:30,19:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+351 214414848"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6061639686,
+      "lat": 38.6982175,
+      "lon": -9.3000139,
+      "tags": {
+        "addr:housenumber": "8B",
+        "addr:postcode": "2780",
+        "addr:street": "Rua A Gazeta de Oeiras",
+        "amenity": "restaurant",
+        "name": "O Faustino"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6073363897,
+      "lat": 38.697166,
+      "lon": -9.3102372,
+      "tags": {
+        "amenity": "cafe",
+        "name": "2780-Oasis"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6077264808,
+      "lat": 38.6930129,
+      "lon": -9.3025802,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "8",
+        "addr:postcode": "2780-185",
+        "addr:street": "Rua Doutor António Patrício Gouveia",
+        "addr:unit": "B",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/beijameburro",
+        "email": "info@beija-me-burro.pt",
+        "name": "Beija-me Burro",
+        "outdoor_seating": "no",
+        "phone": "+351 214412976",
+        "reservation": "yes",
+        "website": "https://www.beija-me-burro.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6077330586,
+      "lat": 38.6957441,
+      "lon": -9.290302,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6077330587,
+      "lat": 38.6954848,
+      "lon": -9.2912532,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6077330590,
+      "lat": 38.6959077,
+      "lon": -9.2931254,
+      "tags": {
+        "addr:postcode": "2780-161",
+        "branch": "Paço de Arcos",
+        "brand": "Pingo Doce",
+        "brand:wikidata": "Q1575057",
+        "brand:wikipedia": "pt:Pingo Doce",
+        "contact:facebook": "pingodoce",
+        "contact:instagram": "pingodoce",
+        "contact:linkedin": "https://www.linkedin.com/company/pingo-doce",
+        "contact:phone": "+351 938 875 839",
+        "contact:tiktok": "pingodoce",
+        "contact:youtube": "pingodocept",
+        "name": "Pingo Doce",
+        "opening_hours": "Mo-Su 08:00-21:00; easter 08:00-14:00",
+        "ref": "839",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.pingodoce.pt/lojas/paco-de-arcos/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6106423265,
+      "lat": 38.7011352,
+      "lon": -9.2933752,
+      "tags": {
+        "name": "Centro Comercial Bugio",
+        "shop": "mall"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6106423266,
+      "lat": 38.7014189,
+      "lon": -9.2930517,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Floresta da Loba"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6106423268,
+      "lat": 38.7014694,
+      "lon": -9.2926604,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Café Jordana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6106423269,
+      "lat": 38.7011376,
+      "lon": -9.293175,
+      "tags": {
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "healthcare": "pharmacy"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6106423270,
+      "lat": 38.7010236,
+      "lon": -9.2924843,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Café Perfeito Sabor"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6106423271,
+      "lat": 38.70158,
+      "lon": -9.2930825,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6106423274,
+      "lat": 38.6963577,
+      "lon": -9.3109049,
+      "tags": {
+        "name": "Loja Oeiras",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6361280299,
+      "lat": 38.7020871,
+      "lon": -9.3063464,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Padaria Portuguesa",
+        "website": "https://www.zomato.com/grande-lisboa/a-padaria-portuguesa-oeiras-oeiras-e-s%C3%A3o-juli%C3%A3o-da-barra-lisboa/info"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6396698488,
+      "lat": 38.6945757,
+      "lon": -9.3055503,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "ramen",
+        "name": "Hakata Ramen",
+        "shop": "convenience"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6410215760,
+      "lat": 38.6942466,
+      "lon": -9.3092501,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Sublime"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6410215762,
+      "lat": 38.6941011,
+      "lon": -9.3067612,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "5",
+        "addr:postcode": "2780-007",
+        "addr:street": "Praceta de Benguela",
+        "branch": "Oeiras",
+        "brand": "Spar",
+        "brand:wikidata": "Q610492",
+        "brand:wikipedia": "pt:SPAR",
+        "contact:email": "spar.oeiras@spar.pt",
+        "contact:facebook": "sparportugal",
+        "contact:instagram": "sparportugal",
+        "contact:linkedin": "https://www.linkedin.com/company/spar-portugal/",
+        "contact:phone": "+351 925 975 629",
+        "name": "Spar",
+        "opening_hours": "Mo-Su,PH 08:00-20:00",
+        "ref": "170",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.spar.pt/loja/detalhe/170/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6410215763,
+      "lat": 38.6948119,
+      "lon": -9.3090355,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Buteco Prime"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6410215766,
+      "lat": 38.6944769,
+      "lon": -9.3110928,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Snack Oeiras Lounge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6410215768,
+      "lat": 38.6927275,
+      "lon": -9.3104316,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "37",
+        "addr:postcode": "2780-211",
+        "addr:street": "Rua Cândido dos Reis",
+        "addr:unit": "B",
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Banco Português de Investimento",
+        "brand:wikidata": "Q537886",
+        "brand:wikipedia": "pt:Banco Português de Investimento",
+        "drive_through": "no",
+        "fax": "+351 214414319",
+        "name": "BPI",
+        "official_name": "Banco Português de Investimento",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa-Su off",
+        "operator": "Banco Português de Investimento",
+        "operator:wikidata": "Q537886",
+        "operator:wikipedia": "pt:Banco Português de Investimento",
+        "phone": "+351 214400000",
+        "website": "https://www.bancobpi.pt"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6410215769,
+      "lat": 38.6925613,
+      "lon": -9.3108882,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:postcode": "2780-228",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Oeiras",
+        "branch:type": "retail",
+        "brand": "Caixa Geral de Depósitos",
+        "brand:website": "https://www.cgd.pt/",
+        "brand:wikidata": "Q1026044",
+        "brand:wikipedia": "pt:Caixa Geral de Depósitos",
+        "contact:facebook": "caixageraldedepositos",
+        "contact:instagram": "caixageraldedepositos",
+        "contact:linkedin": "https://www.linkedin.com/company/caixageraldedepositos/",
+        "contact:phone": "+351 217 900 790",
+        "contact:youtube": "http://www.youtube.com/user/mediacgd",
+        "drive_through": "no",
+        "name": "Caixa Geral de Depósitos",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa,Su,PH off",
+        "operator": "Caixa Geral de Depósitos",
+        "operator:wikidata": "Q1026044",
+        "operator:wikipedia": "pt:Caixa Geral de Depósitos",
+        "ref": "1325",
+        "short_name": "CGD",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.cgd.pt/Corporativo/Rede-CGD/Pages/OEIRAS.aspx"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6410215773,
+      "lat": 38.6925592,
+      "lon": -9.3120469,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Tasca do António"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6530404871,
+      "lat": 38.6937891,
+      "lon": -9.3054044,
+      "tags": {
+        "addr:housenumber": "1",
+        "addr:street": "Avenida do Ultramar",
+        "amenity": "cafe",
+        "contact:facebook": "https://www.facebook.com/Central-Da-Figueirinha-1471193006429156/",
+        "cuisine": "fast_food",
+        "name": "Central da Figueirinha",
+        "opening_hours": "Mo-We 8:30-22:00; Th off; Fr-Su 8:30-22:00",
+        "outdoor_seating": "yes",
+        "phone": "+315214234666"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6530588270,
+      "lat": 38.6971857,
+      "lon": -9.3047253,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "2/4",
+        "addr:postcode": "2780-005",
+        "addr:street": "Rua de Belém",
+        "branch": "Belém - Oeiras",
+        "brand": "My Auchan",
+        "brand:wikidata": "Q115800307",
+        "brand:wikipedia": "pt:Auchan",
+        "contact:email": "apoiocliente@auchan.pt",
+        "contact:facebook": "AuchanPortugal",
+        "contact:instagram": "auchan_pt",
+        "contact:phone": "+351 210 403 270",
+        "contact:tiktok": "auchan_pt",
+        "contact:youtube": "https://www.youtube.com/channel/UC6FSI7tYO9ISV11U2PHBBYQ",
+        "name": "My Auchan",
+        "old_name": "Minipreço",
+        "payment:cash": "yes",
+        "payment:multibanco": "yes",
+        "ref": "E74",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "website": "https://www.auchan.pt/pt/loja?StoreID=E74"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6530588277,
+      "lat": 38.6971692,
+      "lon": -9.3050845,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "10",
+        "addr:postcode": "2780-005",
+        "addr:street": "Rua de Belém",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Condimenta",
+        "opening_hours": "Mo-Fr 11:00-14:00,17:00-19:30; Sa 11:00-14:00",
+        "phone": "+351 913765301;+351 914678670",
+        "takeaway": "only",
+        "website": "https://www.instagram.com/condimenta.takeaway/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6534169635,
+      "lat": 38.6933427,
+      "lon": -9.3049644,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "15",
+        "addr:postcode": "2780-285",
+        "addr:street": "Rua de Oeiras de Piauí",
+        "alt_name": "Eurobic",
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Abanca",
+        "brand:wikidata": "Q9598744",
+        "drive_through": "no",
+        "fax": "+351 214405841",
+        "name": "Abanca",
+        "official_name": "ABANCA Corporación Bancaria",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa-Su off",
+        "operator": "Abanca",
+        "operator:wikidata": "Q9598744",
+        "operator:wikipedia": "en:Abanca",
+        "phone": "+351 214405840"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6534169654,
+      "lat": 38.6935793,
+      "lon": -9.3022851,
+      "tags": {
+        "addr:housenumber": "12",
+        "addr:street": "Rua de Oeiras de Piauí",
+        "amenity": "restaurant",
+        "name": "Caçoila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6534338538,
+      "lat": 38.69268,
+      "lon": -9.3108052,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "39",
+        "addr:postcode": "2780-213",
+        "addr:street": "Rua Cândido dos Reis",
+        "addr:unit": "C",
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Banco Montepio",
+        "brand:wikidata": "Q1946091",
+        "brand:wikipedia": "pt:Banco Montepio",
+        "drive_through": "no",
+        "fax": "+351 210089291",
+        "name": "Banco Montepio",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa-Su off",
+        "operator": "Associação Mutualista Montepio",
+        "operator:wikidata": "Q1946091",
+        "operator:wikipedia": "pt:Banco Montepio",
+        "phone": "+351 210089290",
+        "website": "https://www.bancomontepio.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6534338539,
+      "lat": 38.6926632,
+      "lon": -9.3114316,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "84",
+        "addr:postcode": "2780-211",
+        "addr:street": "Rua Cândido dos Reis",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Oeiras - Cândido dos Reis",
+        "brand": "Santander",
+        "brand:website": "https://www.santander.pt/",
+        "brand:wikidata": "Q4854116",
+        "brand:wikipedia": "pt:Banco Santander Portugal",
+        "cash_in": "yes",
+        "cash_out": "yes",
+        "contact:email": "oeiras.creis@santander.pt",
+        "contact:facebook": "santanderpt",
+        "contact:instagram": "santanderpt",
+        "contact:linkedin": "https://www.linkedin.com/company/santanderpt/",
+        "contact:phone": "+351 214 467 680",
+        "contact:twitter": "santanderpt",
+        "contact:youtube": "@santanderpt",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "language:en": "yes",
+        "language:es": "yes",
+        "language:pt": "yes",
+        "name": "Santander",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa-Su off; Jan 01,Apr 25,May 25,Jun 01,Jun 26,Aug 10,Aug 24,Oct 15,Nov 05,Dec 01,Dec 08,Dec 25 off",
+        "operator": "Banco Santander (Portugal)",
+        "operator:wikidata": "Q4854116",
+        "operator:wikipedia": "pt:Banco Santander Portugal",
+        "ref": "3170",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.santander.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6534338540,
+      "lat": 38.6948338,
+      "lon": -9.3086836,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "O Garfo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6659571898,
+      "lat": 38.6954712,
+      "lon": -9.3032653,
+      "tags": {
+        "addr:street": "Praceta de Manica",
+        "amenity": "cafe",
+        "name": "Manica",
+        "outdoor_seating": "yes",
+        "phone": "+351 21 4429393"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6797091202,
+      "lat": 38.6969967,
+      "lon": -9.3016782,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-09-30",
+        "name": "O Cantinho Da Dete"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7086507412,
+      "lat": 38.7012559,
+      "lon": -9.2982788,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7261491586,
+      "lat": 38.6921141,
+      "lon": -9.3035556,
+      "tags": {
+        "addr:housenumber": "5B",
+        "addr:postcode": "2780-177",
+        "addr:street": "Rua Alfredo de Sousa",
+        "amenity": "restaurant",
+        "name": "Restaurante Transmontano",
+        "opening_hours": "Th-Tu 10:00-23:00",
+        "phone": "+351 21 443 0784"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8634617364,
+      "lat": 38.6944979,
+      "lon": -9.2917443,
+      "tags": {
+        "addr:city": "Paco de Arcos",
+        "addr:housenumber": "9",
+        "addr:postcode": "2770-122",
+        "addr:street": "Rua Marquês de Pombal",
+        "amenity": "bank",
+        "branch": "Paço de Arcos",
+        "brand": "Novo Banco",
+        "brand:wikidata": "Q17488861",
+        "brand:wikipedia": "pt:Novo Banco",
+        "contact:fax": "+351 218834293",
+        "contact:phone": "+351 218834290",
+        "description": "Balcão 0562",
+        "name": "Novo Banco",
+        "opening_hours": "Mo-Fr 08:30-12:00, 13:00-15:00",
+        "operator": "Novo Banco",
+        "operator:old_name": "Banco Espírito Santo",
+        "operator:old_name:short": "BES",
+        "operator:wikidata": "Q17488861",
+        "operator:wikipedia": "pt:Novo Banco",
+        "ref": "B0022",
+        "ref_name": "Paço de Arcos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8928433536,
+      "lat": 38.6973967,
+      "lon": -9.303921,
+      "tags": {
+        "addr:housenumber": "12",
+        "addr:street": "Rua de São Paulo",
+        "check_date:opening_hours": "2023-11-01",
+        "name": "Supermercado Pomsr de Oeiras",
+        "opening_hours": "Mo-Su 08:00-20:00",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9178988962,
+      "lat": 38.6998721,
+      "lon": -9.2923244,
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "3",
+        "addr:postcode": "2770-081",
+        "addr:street": "Rua do Instituto Conde do Agrolongo",
+        "addr:unit": "A-B",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;stomatology",
+        "name": "Clínica Médica Dentária Renée & Roque Lda",
+        "opening_hours": "Mo-Fr 10:00-19:00",
+        "phone": "+351214421490"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9467346917,
+      "lat": 38.6927344,
+      "lon": -9.3128787,
+      "tags": {
+        "addr:postcode": "2780-289",
+        "addr:street": "2780-289 Oeiras, Portogallo",
+        "amenity": "restaurant",
+        "contact:facebook": "chezidrisslounge",
+        "contact:instagram": "chezidrisslounge",
+        "cuisine": "moroccan",
+        "email": "chidriss.geral@gmail.com",
+        "name": "Chez Idriss",
+        "opening_hours": "Tu 19:00-00:00; We 12:00-15:00; Mo, Th 12:00-15:00; Fr-Sa 12:00-15:00; Su 12:00-16:00",
+        "phone": "+351916486472",
+        "website": "https://www.chezidriss.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9555968117,
+      "lat": 38.6936489,
+      "lon": -9.2933609,
+      "tags": {
+        "addr:housenumber": "4A",
+        "addr:postcode": "2770-029",
+        "addr:street": "Praça 5 de Outubro",
+        "amenity": "restaurant",
+        "check_date": "2024-09-20",
+        "contact:facebook": "VillaGourmet.pt",
+        "cuisine": "burger;chicken;diner;fish;fish_and_chips;international",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "email": "villagourmetpt@gmail.com",
+        "internet_access": "wlan",
+        "name": "Villa Lounge",
+        "opening_hours": "We-Mo 12:00-23:00",
+        "phone": "+351 21 442 1297"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235021534,
+      "lat": 38.7047701,
+      "lon": -9.3027239,
+      "tags": {
+        "amenity": "bank",
+        "brand": "ActivoBank",
+        "brand:wikidata": "Q9581725",
+        "brand:wikipedia": "pt:ActivoBank",
+        "name": "ActivoBank",
+        "operator": "Banco Comercial Português",
+        "operator:wikidata": "Q118581",
+        "operator:wikipedia": "pt:Banco Comercial Português"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235021542,
+      "lat": 38.7050682,
+      "lon": -9.3027261,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housename": "Oeiras Parque Shopping",
+        "addr:housenumber": "42",
+        "addr:postcode": "2770-219",
+        "addr:street": "Avenida António Bernardo Cabral de Macedo",
+        "branch": "Oeiras",
+        "brand": "Celeiro",
+        "brand:wikidata": "Q114102189",
+        "contact:facebook": "celeiro.pt",
+        "contact:instagram": "celeiro_viverdecorpoealma",
+        "contact:phone": "+351 214 460 786;+351 21 446 0050",
+        "level": "1",
+        "name": "Celeiro",
+        "opening_hours": "Mo-Su 09:00-23:00",
+        "organic": "only",
+        "ref": "829",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.celeiro.pt/lojas/celeiro-oeiras"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235021552,
+      "lat": 38.7047031,
+      "lon": -9.3023119,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "mexican",
+        "name": "Guacamole"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235021553,
+      "lat": 38.7046445,
+      "lon": -9.302003,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "burger",
+        "name": "h3"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235021564,
+      "lat": 38.7062534,
+      "lon": -9.3022548,
+      "tags": {
+        "amenity": "bank",
+        "brand": "Millennium bcp",
+        "brand:wikidata": "Q118581",
+        "brand:wikipedia": "pt:Banco Comercial Português",
+        "name": "Millennium bcp",
+        "official_name": "Banco Comercial Português",
+        "operator": "Banco Comercial Português",
+        "operator:wikidata": "Q118581",
+        "operator:wikipedia": "pt:Banco Comercial Português"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235021569,
+      "lat": 38.7050479,
+      "lon": -9.302438,
+      "tags": {
+        "amenity": "restaurant",
+        "brand": "Pizza Hut",
+        "brand:wikidata": "Q191615",
+        "cuisine": "pizza",
+        "name": "Pizza Hut"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235021571,
+      "lat": 38.7047193,
+      "lon": -9.3024201,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "poke",
+        "name": "Poke House"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10235021592,
+      "lat": 38.7046259,
+      "lon": -9.3019128,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "salad",
+        "name": "Vitaminas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801291,
+      "lat": 38.7024308,
+      "lon": -9.2999429,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Gazeta Oeiras 64",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "121293"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801292,
+      "lat": 38.7025493,
+      "lon": -9.3002641,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Gazeta Oeiras Fte 66",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "121292"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801306,
+      "lat": 38.6944498,
+      "lon": -9.305253,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Ultramar (Jardim Ultramar)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121269",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801307,
+      "lat": 38.6971671,
+      "lon": -9.2989576,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "R Carlos Vieira Ramos 20 (Escola)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "121268",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801308,
+      "lat": 38.6973752,
+      "lon": -9.2995911,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "R Carlos Vieira Ramos 20 (Escola)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "121267",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801318,
+      "lat": 38.6982515,
+      "lon": -9.2967634,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Elvira Velez (Esc Preparatória)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121243"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801344,
+      "lat": 38.6958557,
+      "lon": -9.3099833,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Embaixador Aug Castro 18 D",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121195"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801345,
+      "lat": 38.6951763,
+      "lon": -9.30255,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Moçambique - (PSP)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121193",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801346,
+      "lat": 38.6933236,
+      "lon": -9.3077898,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Cândido dos Reis - PSP",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121191",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801399,
+      "lat": 38.7017027,
+      "lon": -9.3082601,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Oeiras (Posto Combust)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121121",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801400,
+      "lat": 38.6938198,
+      "lon": -9.3080503,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "R Figueirinha 14",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121119",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801401,
+      "lat": 38.6981943,
+      "lon": -9.306869,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Rio Janeiro (Cemitério)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121116",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801402,
+      "lat": 38.6981257,
+      "lon": -9.3067125,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Rio Janeiro (Cemitério)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121115"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801403,
+      "lat": 38.6973798,
+      "lon": -9.3093465,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Pça Com Henrique Moreira Rato 34B",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121114",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801404,
+      "lat": 38.6974107,
+      "lon": -9.3096159,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Pça Com Henrique Moreira Rato",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121113",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801405,
+      "lat": 38.6977906,
+      "lon": -9.3113842,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Rio Janeiro (X) R Gaspar Lemos",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121112",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801406,
+      "lat": 38.6976644,
+      "lon": -9.3113608,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Rio Janeiro (X) R Franc Manuel Melo",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121111"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801454,
+      "lat": 38.7020261,
+      "lon": -9.3076455,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dr José da Cunha 23",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121035",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801509,
+      "lat": 38.7056558,
+      "lon": -9.3097218,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Ribeira da Lage 35",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120960"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801510,
+      "lat": 38.705744,
+      "lon": -9.309769,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Ribeira da Lage 35",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120959"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801543,
+      "lat": 38.6943739,
+      "lon": -9.2958745,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "R Costa Pinto 216",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120915",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801544,
+      "lat": 38.6947937,
+      "lon": -9.2937704,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Pça Dionísio Matias (Mercado)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120913",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801556,
+      "lat": 38.7031326,
+      "lon": -9.3045474,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Oeiras Parque (Posto Combust)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120898"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801557,
+      "lat": 38.7035707,
+      "lon": -9.3038863,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Oeiras Parque",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120897",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801558,
+      "lat": 38.7009881,
+      "lon": -9.3057511,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Eng Álvaro Roquette (Hospital)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120895"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801559,
+      "lat": 38.6976766,
+      "lon": -9.2949582,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "R Manuel Pinhanços (Fte Escola)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120894",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801560,
+      "lat": 38.6999126,
+      "lon": -9.2955302,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Paço Arcos (X) Tap Mocho",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120891",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801561,
+      "lat": 38.6976637,
+      "lon": -9.2928022,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Paço De Arcos (Estação Sul)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120890",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801562,
+      "lat": 38.6973296,
+      "lon": -9.2923842,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Paço De Arcos (Estação Sul)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120889",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801563,
+      "lat": 38.6947387,
+      "lon": -9.2936336,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Costa Pinto (Mercado)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120887",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801564,
+      "lat": 38.6942944,
+      "lon": -9.2956131,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "R Costa Pinto (Quartel)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120885",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801565,
+      "lat": 38.6922043,
+      "lon": -9.2990575,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av Eng Bonneville Franco (Esc Náutica)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120884",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801566,
+      "lat": 38.6919529,
+      "lon": -9.2991399,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Av Eng Bonneville Franco (Esc Náutica)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120883",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801567,
+      "lat": 38.6910325,
+      "lon": -9.301542,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Bº Joaquim Matias",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120882",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801568,
+      "lat": 38.6909141,
+      "lon": -9.301393,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Bº Joaquim Matias",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120881",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801572,
+      "lat": 38.6930225,
+      "lon": -9.3053408,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Dr Francisco de Sá Carneiro 6",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120871"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801574,
+      "lat": 38.6989285,
+      "lon": -9.3055814,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R José Malhoa 33",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120869"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801575,
+      "lat": 38.7010163,
+      "lon": -9.3050549,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Coro de Santo Amaro de Oeiras 12A",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120867"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801576,
+      "lat": 38.7035247,
+      "lon": -9.3018847,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Oeiras (Aerlis)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120865"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801577,
+      "lat": 38.7026753,
+      "lon": -9.3075916,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Oeiras (Posto Combust)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120863",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801579,
+      "lat": 38.7054727,
+      "lon": -9.3060935,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Cacilhas (C Morais)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120860"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801580,
+      "lat": 38.7053157,
+      "lon": -9.3060318,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Estr de Oeiras 10",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120859",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801581,
+      "lat": 38.7021507,
+      "lon": -9.3074698,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dr José da Cunha 23",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120857",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801582,
+      "lat": 38.7015724,
+      "lon": -9.3074671,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dr José da Cunha 17B",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120856",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801583,
+      "lat": 38.7014494,
+      "lon": -9.3073679,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dr José da Cunha 17B",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120855",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801588,
+      "lat": 38.6981907,
+      "lon": -9.3027927,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R São Salvador da Baía 24",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120850"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801589,
+      "lat": 38.6982958,
+      "lon": -9.3026955,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R São Salvador da Baía 24",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120849"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801590,
+      "lat": 38.6961931,
+      "lon": -9.3024428,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "R Salvador da Baía - Jardins dos Arcos",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120847",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801591,
+      "lat": 38.6943379,
+      "lon": -9.3041345,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Moçambique 12",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120845",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801592,
+      "lat": 38.6929226,
+      "lon": -9.3052011,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Dr Francisco de Sá Carneiro 6",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120843"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801593,
+      "lat": 38.6915781,
+      "lon": -9.304978,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Biblioteca de Oeiras",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120842",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801594,
+      "lat": 38.6916336,
+      "lon": -9.3047943,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Biblioteca de Oeiras",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120841",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801595,
+      "lat": 38.6885664,
+      "lon": -9.3068703,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Associação Desportiva de Oeiras 4",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120840"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801596,
+      "lat": 38.6886008,
+      "lon": -9.3065763,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Associação Desportiva de Oeiras 4",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120839"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801598,
+      "lat": 38.6897435,
+      "lon": -9.3118121,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Lgo Luís Pereira Mota",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120835"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801623,
+      "lat": 38.6934715,
+      "lon": -9.3136731,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Lgo Avião Lusitania 7",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120783"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801624,
+      "lat": 38.6956426,
+      "lon": -9.3120262,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Emb Aug Castro (X) R Junção Bem",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120781"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801625,
+      "lat": 38.6948385,
+      "lon": -9.3109576,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Copacabana (X) Jaime Cortesão",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120779",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801626,
+      "lat": 38.6939961,
+      "lon": -9.3103649,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Com Germano Dias (X) Av Copacabana",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120777",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801627,
+      "lat": 38.694763,
+      "lon": -9.3083187,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Com Germano Dias 2",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120775"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801628,
+      "lat": 38.6946717,
+      "lon": -9.305436,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Ultramar (Jardim)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120773",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801629,
+      "lat": 38.6959892,
+      "lon": -9.3066533,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Oeiras (B Augusto Castro)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120771"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801630,
+      "lat": 38.6982783,
+      "lon": -9.2909304,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Paço de Arcos (Estação Norte)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120769",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801631,
+      "lat": 38.7010029,
+      "lon": -9.2964242,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av A B Cab Macedo (X) R Joaquim Quirino",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120768",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801632,
+      "lat": 38.7007581,
+      "lon": -9.2962394,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av A B Cab Macedo (X) R Joaquim Quirino",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120767",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801633,
+      "lat": 38.7027748,
+      "lon": -9.299031,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Ant Bern Cabr Macedo (X) R Fund",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120766",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801634,
+      "lat": 38.702411,
+      "lon": -9.2988809,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Ant Bern Cabral Macedo (C Saúde)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120765",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801635,
+      "lat": 38.7014527,
+      "lon": -9.2986646,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Gazeta Oeiras Fte 52",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120762"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801636,
+      "lat": 38.7012846,
+      "lon": -9.2982558,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Gazeta Oeiras 48",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120761"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801637,
+      "lat": 38.7002248,
+      "lon": -9.2977964,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Gazeta Oeiras (X) Franco Nogueira",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120760"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801638,
+      "lat": 38.7000508,
+      "lon": -9.2978715,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Gazeta Oeiras (X) R Franco Nogueira",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120759"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801639,
+      "lat": 38.6999892,
+      "lon": -9.2997345,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Gazeta Oeiras 31",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120758"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801640,
+      "lat": 38.6998907,
+      "lon": -9.2993824,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Gazeta Oeiras 33",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120757"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801641,
+      "lat": 38.698227,
+      "lon": -9.3003113,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Gazeta Oeiras 8",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120756",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801642,
+      "lat": 38.6983101,
+      "lon": -9.3002063,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Gazeta Oeiras 8",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120755",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801643,
+      "lat": 38.6976735,
+      "lon": -9.3013506,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Rua Carlos Vieira Ramos 47",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Rua Carlos Vieira Ramos 47",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120753",
+        "route_ref": "1120;1725",
+        "shelter": "no",
+        "short_name": "R. Carlos Vieira Ramos 47",
+        "tactile_paving": "no",
+        "website": "https://carrismetropolitana.pt/stops/120753"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801644,
+      "lat": 38.697758,
+      "lon": -9.3013414,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Rua Carlos Vieira Ramos Frente 47",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Rua Carlos Vieira Ramos Frente 47",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120754",
+        "route_ref": "1120;1725",
+        "shelter": "no",
+        "short_name": "R. Carlos Vieira Ramos Ft. 47",
+        "tactile_paving": "no",
+        "website": "https://carrismetropolitana.pt/stops/120754"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801645,
+      "lat": 38.6976687,
+      "lon": -9.3030947,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Brasília 33",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120752",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801646,
+      "lat": 38.6975733,
+      "lon": -9.3031032,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Brasília 33",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120751",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801647,
+      "lat": 38.6975627,
+      "lon": -9.3052212,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Oeiras (Bº Augusto Castro)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120750",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801648,
+      "lat": 38.6974642,
+      "lon": -9.3051532,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Brasilia 12",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120749",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801649,
+      "lat": 38.6972541,
+      "lon": -9.3061887,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "R Figueirinha 26",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120747",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801650,
+      "lat": 38.6960608,
+      "lon": -9.3058562,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Ultramar 12",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120745",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801651,
+      "lat": 38.6943279,
+      "lon": -9.3057413,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Angola (X) Av Ultramar",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120743",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801652,
+      "lat": 38.6947691,
+      "lon": -9.3065605,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Angola (X) Pcta Cabinda",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120742",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801653,
+      "lat": 38.6948889,
+      "lon": -9.3066752,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Angola (X) Pcta Cabinda",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120741",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801654,
+      "lat": 38.6946885,
+      "lon": -9.3079595,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Com Germano Dias 3",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120739"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801655,
+      "lat": 38.6942009,
+      "lon": -9.3094119,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Com Germano Dias (X) R Fern Pessoa",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "120737"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801656,
+      "lat": 38.6937345,
+      "lon": -9.3104587,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Copacabana 8",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120735"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801657,
+      "lat": 38.6926209,
+      "lon": -9.311273,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "R Cândido dos Reis 84",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120733",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801688,
+      "lat": 38.6976026,
+      "lon": -9.2963566,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Paço Arcos (Esc Preparatória)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120689",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801689,
+      "lat": 38.699894,
+      "lon": -9.295375,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Paço Arcos (X) Tap Mocho",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120687",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801698,
+      "lat": 38.7002532,
+      "lon": -9.2908137,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Angola 14",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120673"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801726,
+      "lat": 38.7022147,
+      "lon": -9.290795,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Inst C Agrolongo 35",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120632",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801727,
+      "lat": 38.7022906,
+      "lon": -9.2905984,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Instituto Conde Agrolongo 36A",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120631",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801728,
+      "lat": 38.7003006,
+      "lon": -9.2908967,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Conde S Januário 21",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120629",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801729,
+      "lat": 38.6985418,
+      "lon": -9.2910736,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Paço De Arcos (Estação Norte)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120627",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801730,
+      "lat": 38.70384,
+      "lon": -9.3012226,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Av A Bern Cabral Macedo (Pq Poetas)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120625",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801731,
+      "lat": 38.7052316,
+      "lon": -9.3068008,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr de Oeiras 10",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120622"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801732,
+      "lat": 38.7056111,
+      "lon": -9.3075784,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr de Oeiras 10",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120621"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801733,
+      "lat": 38.7041954,
+      "lon": -9.3016417,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av A Bern Cabral Macedo (Oeiras Parque)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120619"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801734,
+      "lat": 38.7036384,
+      "lon": -9.2989243,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Fundadores (Ringue)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120618",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801735,
+      "lat": 38.7036494,
+      "lon": -9.2990651,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Fundadores (Ringue)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120617",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801736,
+      "lat": 38.7054097,
+      "lon": -9.2975087,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Fundadores 26",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120616",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801737,
+      "lat": 38.7055177,
+      "lon": -9.2975669,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Fundadores 26",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120615",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801740,
+      "lat": 38.7061453,
+      "lon": -9.2954036,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Paço Arcos (Supermercado)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120612"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801741,
+      "lat": 38.7059649,
+      "lon": -9.295184,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Paço Arcos (Supermercado)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120611",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801742,
+      "lat": 38.7042996,
+      "lon": -9.29518,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Paço Arcos 42",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120610",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801743,
+      "lat": 38.7042221,
+      "lon": -9.295042,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Paço Arcos (Veolia)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120609",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801744,
+      "lat": 38.7017254,
+      "lon": -9.2940948,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Paço Arcos (Lj Solid Seg Social)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120608",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801745,
+      "lat": 38.7008518,
+      "lon": -9.2935462,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Estr Paço Arcos (CC)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120607",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290801746,
+      "lat": 38.6987271,
+      "lon": -9.2911673,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Paço De Arcos (Estação Norte)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "120605",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10699086751,
+      "lat": 38.6945184,
+      "lon": -9.3043078,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Moçambique (X) Fte Prct Maputo",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Moçambique (X) Fte Prct Maputo",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121304",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10699086752,
+      "lat": 38.6951909,
+      "lon": -9.3032115,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Moçambique (X) Prct Manica",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Moçambique (X) Prct Manica",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121303",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10699086753,
+      "lat": 38.6960539,
+      "lon": -9.302558,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R São Salvador da Baía (X) R Macau",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R São Salvador da Baía (X) R Macau",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121302",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10699091522,
+      "lat": 38.696842,
+      "lon": -9.2940342,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Lino de Assunção 4B",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Lino de Assunção 4B",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121314",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10699091523,
+      "lat": 38.7022416,
+      "lon": -9.2923092,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Conde Rio Maior (Escola)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Conde Rio Maior (Escola)",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121313",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10699091524,
+      "lat": 38.7023396,
+      "lon": -9.2922904,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Conde Rio Maior (Escola)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Conde Rio Maior (Escola)",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121312",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10699091525,
+      "lat": 38.7003892,
+      "lon": -9.2922496,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Adriano José da Silva 1",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Adriano José da Silva 1",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121310",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10699091526,
+      "lat": 38.7004384,
+      "lon": -9.2921856,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Adriano José da Silva 1",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Adriano José da Silva 1",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "121311",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11042907686,
+      "lat": 38.6957166,
+      "lon": -9.309374,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "note": "Old COMBUS stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11055986162,
+      "lat": 38.6977972,
+      "lon": -9.3062729,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "note": "Old Scotturb stop",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11055986165,
+      "lat": 38.7018352,
+      "lon": -9.3068921,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "note": "Old COMBUS stop",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11248434639,
+      "lat": 38.6951907,
+      "lon": -9.2921748,
+      "tags": {
+        "addr:housenumber": "85",
+        "addr:street": "Rua Costa Pinto",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "internet_access": "wlan",
+        "name": "Bib's Crew",
+        "opening_hours": "Mo, We-Sa 08:00-17:30; Su 09:00-15:00",
+        "website": "https://www.bibscrew.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11248457440,
+      "lat": 38.6950686,
+      "lon": -9.2907097,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "japanese;sushi",
+        "name": "Yuzu",
+        "name:en": "Yuzu Sushi Bar",
+        "name:pt": "Yuzu Sushi Bar",
+        "opening_hours": "Tu-Su 12:30-15:00, 19:30-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11248459338,
+      "lat": 38.6954036,
+      "lon": -9.2906473,
+      "tags": {
+        "addr:housenumber": "26A",
+        "addr:street": "Praça Guilherme Gomes Fernandes",
+        "amenity": "cafe",
+        "cuisine": "brazilian",
+        "name": "Oakberry Açaí",
+        "opening_hours": "Mo-Su 10:00-21:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11365887073,
+      "lat": 38.6966714,
+      "lon": -9.2928835,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Mental de Oeiras"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577536,
+      "lat": 38.7053138,
+      "lon": -9.3060769,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577537,
+      "lat": 38.7017374,
+      "lon": -9.3083289,
+      "tags": {
+        "bus": "yes",
+        "name": "Estr Oeiras (Posto Combust)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577538,
+      "lat": 38.697752,
+      "lon": -9.3114253,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Rio Janeiro (X) R Gaspar Lemos",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577539,
+      "lat": 38.697362,
+      "lon": -9.3093774,
+      "tags": {
+        "bus": "yes",
+        "name": "Pça Com Henrique Moreira Rato 34B",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577540,
+      "lat": 38.6981426,
+      "lon": -9.3068215,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Rio Janeiro (Cemitério)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577541,
+      "lat": 38.693857,
+      "lon": -9.3080881,
+      "tags": {
+        "bus": "yes",
+        "name": "R Figueirinha 14",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577543,
+      "lat": 38.700774,
+      "lon": -9.296225,
+      "tags": {
+        "bus": "yes",
+        "name": "AV A B Cab Macedo (X) R Joaquim Quirinho",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577544,
+      "lat": 38.7024046,
+      "lon": -9.2999722,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577545,
+      "lat": 38.6999234,
+      "lon": -9.2993916,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577546,
+      "lat": 38.698302,
+      "lon": -9.3002517,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577548,
+      "lat": 38.6972652,
+      "lon": -9.306278,
+      "tags": {
+        "bus": "yes",
+        "name": "R Figueirinha 26",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577549,
+      "lat": 38.6960468,
+      "lon": -9.3059086,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Ultramar 12",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577550,
+      "lat": 38.6943571,
+      "lon": -9.305764,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577551,
+      "lat": 38.6947257,
+      "lon": -9.3079602,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577552,
+      "lat": 38.6942534,
+      "lon": -9.3094277,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577553,
+      "lat": 38.6937263,
+      "lon": -9.3105333,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Copacabana 8",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577554,
+      "lat": 38.692654,
+      "lon": -9.311281,
+      "tags": {
+        "bus": "yes",
+        "name": "R Cândido dos Reis 84",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577558,
+      "lat": 38.6934796,
+      "lon": -9.3136208,
+      "tags": {
+        "bus": "yes",
+        "name": "Lgo Avião Lusitania 7",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577559,
+      "lat": 38.6956154,
+      "lon": -9.31208,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Emb Aug Castro (X) R Junção Bem",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577560,
+      "lat": 38.6948215,
+      "lon": -9.3110387,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Copacabana (X) Jaime Cortesão",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577561,
+      "lat": 38.6939433,
+      "lon": -9.3103475,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577562,
+      "lat": 38.6947186,
+      "lon": -9.3083169,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577563,
+      "lat": 38.6947646,
+      "lon": -9.3066318,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577564,
+      "lat": 38.6948859,
+      "lon": -9.3066428,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577565,
+      "lat": 38.6946664,
+      "lon": -9.3053623,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577566,
+      "lat": 38.6959781,
+      "lon": -9.3065622,
+      "tags": {
+        "bus": "yes",
+        "name": "Oeiras (B Augusto Castro)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577567,
+      "lat": 38.6975104,
+      "lon": -9.3052196,
+      "tags": {
+        "bus": "yes",
+        "name": "Oeiras (Bº Augusto Castro)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491577568,
+      "lat": 38.6976246,
+      "lon": -9.3030917,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Brasília 33",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491617569,
+      "lat": 38.6982267,
+      "lon": -9.3002462,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491617570,
+      "lat": 38.6999055,
+      "lon": -9.2997172,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491617571,
+      "lat": 38.7014851,
+      "lon": -9.2986226,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491617572,
+      "lat": 38.7025852,
+      "lon": -9.30024,
+      "tags": {
+        "bus": "yes",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491617573,
+      "lat": 38.7041277,
+      "lon": -9.3016716,
+      "tags": {
+        "bus": "yes",
+        "name": "Av A Bern Cabral Machado (Oeiras Parque)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491617574,
+      "lat": 38.7039066,
+      "lon": -9.3011731,
+      "tags": {
+        "bus": "yes",
+        "name": "Av A Bern Cabral Macedo (Pq Poetas)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491617575,
+      "lat": 38.7027261,
+      "lon": -9.2990969,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Ant Bern Cabr Macedo (X) R Fund",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491617576,
+      "lat": 38.7009818,
+      "lon": -9.2964604,
+      "tags": {
+        "bus": "yes",
+        "name": "Av A B Cab Macedo (X) R Joaquim Quirino",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11491617578,
+      "lat": 38.6982709,
+      "lon": -9.2909931,
+      "tags": {
+        "bus": "yes",
+        "name": "Paço de Arcos (Estação Norte)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11861012529,
+      "lat": 38.698707,
+      "lon": -9.2912306,
+      "tags": {
+        "bus": "yes",
+        "name": "Paço De Arcos (Estação Norte)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12062066538,
+      "lat": 38.6906009,
+      "lon": -9.3008091,
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housename": "Complexo de Estudos Náuticos",
+        "addr:postcode": "2770-058",
+        "addr:street": "Avenida Engenheiro Bonneville Franco",
+        "addr:unit": "Edifício 2",
+        "amenity": "school",
+        "contact:email": "it.tnauticas@escolas.min-edu.pt",
+        "contact:fax": "+351 214421755",
+        "contact:phone": "+351 214697010",
+        "grades": "12-17",
+        "name": "Escola Profissional do Instituto de Tecnologias Náuticas",
+        "operator": "Associação de Estudos e Ensino para o Mar",
+        "operator:type": "private_non_profit",
+        "ref": "800018",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12095919732,
+      "lat": 38.6960878,
+      "lon": -9.2883463,
+      "tags": {
+        "addr:housenumber": "84",
+        "addr:street": "Rua Costa Pinto",
+        "amenity": "restaurant",
+        "check_date": "2024-08-06",
+        "email": "valeriameca.56@hotmail.com",
+        "name": "Marginalíssimo",
+        "phone": "+351 918 169 718; +351 962 342 840"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12116102103,
+      "lat": 38.6872741,
+      "lon": -9.3076184,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "25",
+        "addr:postcode": "2780-316",
+        "addr:street": "Avenida Duarte Pacheco",
+        "branch": "Santo Amaro de Oeiras",
+        "brand": "Continente Bom Dia",
+        "brand:wikidata": "Q123570507",
+        "brand:wikipedia": "pt:Continente Bom Dia",
+        "contact:facebook": "continenteoficial",
+        "contact:instagram": "continente",
+        "contact:phone": "+351 210 155 170",
+        "contact:youtube": "https://www.youtube.com/user/continentept",
+        "name": "Continente Bom Dia",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "ref": "af2658dd-6d6b-5f99-beef-601d724dda3f",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://feed.continente.pt/lojas/continente-bom-dia-santo-amaro-de-oeiras"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12211656864,
+      "lat": 38.6979291,
+      "lon": -9.3017785,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-09-30",
+        "cuisine": "pasta",
+        "name": "Quasi Pronti"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12211730586,
+      "lat": 38.6975052,
+      "lon": -9.2998179,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-09-30",
+        "cuisine": "coffee_shop",
+        "name": "Cheiro a Café"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12236897133,
+      "lat": 38.6952432,
+      "lon": -9.2907246,
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "7",
+        "addr:postcode": "2770-077",
+        "addr:street": "Praça Guilherme Gomes Fernandes",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Astrolábio",
+        "phone": "+351 21 248 8011",
+        "website": "http://restauranteastrolabio.pt/imagens/vinhos.pdf"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12236897134,
+      "lat": 38.6958875,
+      "lon": -9.2908361,
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "6",
+        "addr:postcode": "2770-106",
+        "addr:street": "Praça da República",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Pátio Antico",
+        "phone": "+351 21 442 8924"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12236897136,
+      "lat": 38.6957458,
+      "lon": -9.2901705,
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "104",
+        "addr:postcode": "2770-031",
+        "addr:street": "Rua Costa Pinto",
+        "amenity": "restaurant",
+        "cuisine": "burger",
+        "name": "Blue Jeans Hamburgeria & Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12236897137,
+      "lat": 38.6954923,
+      "lon": -9.2907855,
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "47",
+        "addr:postcode": "2770-046",
+        "addr:street": "Rua Costa Pinto",
+        "amenity": "restaurant",
+        "cuisine": "seafood",
+        "name": "Os Arcos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12236897138,
+      "lat": 38.6956986,
+      "lon": -9.2910294,
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "4",
+        "addr:postcode": "2770-150",
+        "addr:street": "Praça da República",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "name": "Tasquinha da Vila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12271411918,
+      "lat": 38.6971063,
+      "lon": -9.2905353,
+      "tags": {
+        "name": "Paço de Arcos",
+        "nat_ref": "69146",
+        "official_name": "Apeadeiro de Paço de Arcos",
+        "operator": "Infraestruturas de Portugal",
+        "operator:short": "IP",
+        "operator:wikidata": "Q20730106",
+        "public_transport": "station",
+        "railway": "halt",
+        "railway:ref": "PAR",
+        "train": "yes",
+        "wikidata": "Q8841431",
+        "wikimedia_commons": "Category:Paço de Arcos train station",
+        "wikipedia": "pt:Estação Ferroviária de Paço de Arcos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12304233007,
+      "lat": 38.690989,
+      "lon": -9.308879,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Rua Afonso Albuquerque (X) Avenida Carlos Silva",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Rua Afonso Albuquerque (X) Avenida Carlos Silva",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "128231",
+        "route_ref": "1121",
+        "short_name": "R. Afonso Albuquerque (X) Av. Carlos Silva",
+        "website": "https://www.carrismetropolitana.pt/stops/128231"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12304233009,
+      "lat": 38.6910474,
+      "lon": -9.3089193,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Avenida Carlos Silva Frente 30",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Avenida Carlos Silva Frente 30",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "124135",
+        "route_ref": "1121",
+        "short_name": "Av. Carlos Silva Ft. 30",
+        "website": "https://www.carrismetropolitana.pt/stops/124135"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12304495019,
+      "lat": 38.6910028,
+      "lon": -9.301442,
+      "tags": {
+        "bus": "yes",
+        "name": "Bº Joaquim Matias",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12304495020,
+      "lat": 38.6985242,
+      "lon": -9.2911334,
+      "tags": {
+        "bus": "yes",
+        "name": "Paço De Arcos (Estação Norte)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12304825007,
+      "lat": 38.6977029,
+      "lon": -9.2927029,
+      "tags": {
+        "bus": "yes",
+        "name": "Paço De Arcos (Estação Sul)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12305510569,
+      "lat": 38.7016413,
+      "lon": -9.3061538,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Rua Doutor José da Cunha (X) Avenida Engenheiro Álvaro Roquette",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Rua Doutor José da Cunha (X) Avenida Engenheiro Álvaro Roquette",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "129634",
+        "route_ref": "1125",
+        "short_name": "R. Dr. José da Cunha (X) Av. Eng. Álvaro Roquette",
+        "website": "https://www.carrismetropolitana.pt/stops/129634"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12537397275,
+      "lat": 38.6977139,
+      "lon": -9.3013393,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Carlos Vieira Ramos Frente 47",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position",
+        "ref": "120754"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12596241631,
+      "lat": 38.6945654,
+      "lon": -9.2917151,
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:postcode": "2770-122",
+        "addr:street": "Rua Marques de Pombal, 9",
+        "amenity": "bank",
+        "brand": "Novo Banco",
+        "brand:wikidata": "Q17488861",
+        "brand:wikipedia": "pt:Novo Banco",
+        "contact:fax": "+351 218834592",
+        "contact:phone": "+351 218834591",
+        "name": "Novo Banco Empresas",
+        "operator": "Novo Banco",
+        "operator:wikidata": "Q17488861",
+        "operator:wikipedia": "pt:Novo Banco",
+        "ref": "B0562",
+        "ref_name": "Centro Empresas Oeiras"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12598722527,
+      "lat": 38.7029544,
+      "lon": -9.3064338,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housename": "Fórum Oeiras",
+        "addr:housenumber": "31",
+        "addr:postcode": "2780-187",
+        "addr:street": "Rua Doutor José da Cunha",
+        "addr:unit": "Loja B",
+        "amenity": "bank",
+        "brand": "Novo Banco",
+        "brand:wikidata": "Q17488861",
+        "brand:wikipedia": "pt:Novo Banco",
+        "contact:fax": "+351 218834482",
+        "contact:phone": "+351 218834481",
+        "name": "Novo Banco",
+        "operator": "Novo Banco",
+        "operator:wikidata": "Q17488861",
+        "operator:wikipedia": "pt:Novo Banco",
+        "ref": "B1125",
+        "ref_name": "Fórum Oeiras"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12598722528,
+      "lat": 38.6918879,
+      "lon": -9.3121764,
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "3-6",
+        "addr:postcode": "2780-225",
+        "addr:street": "Largo 5 de Outubro",
+        "amenity": "bank",
+        "brand": "Novo Banco",
+        "brand:wikidata": "Q17488861",
+        "brand:wikipedia": "pt:Novo Banco",
+        "contact:fax": "+351 218834531",
+        "contact:phone": "+351 218834488",
+        "name": "Novo Banco",
+        "operator": "Novo Banco",
+        "operator:wikidata": "Q17488861",
+        "operator:wikipedia": "pt:Novo Banco",
+        "ref": "B0020",
+        "ref_name": "Oeiras"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12710731214,
+      "lat": 38.6972613,
+      "lon": -9.2936822,
+      "tags": {
+        "addr:housenumber": "6",
+        "addr:street": "Rua Lino de Assunção",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Clínica Médica da Linha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12739839869,
+      "lat": 38.6940102,
+      "lon": -9.292898,
+      "tags": {
+        "addr:floor": "0",
+        "amenity": "restaurant",
+        "check_date": "2025-04-08",
+        "level": "0",
+        "name": "O Pastus",
+        "opening_hours": "Tu-Sa 19:30-23:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12740137964,
+      "lat": 38.7002178,
+      "lon": -9.2927382,
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "15",
+        "addr:postcode": "2770-009",
+        "addr:street": "Rua Alfredo Lopes Vilaverde",
+        "amenity": "restaurant",
+        "bar": "yes",
+        "changing_table": "yes",
+        "coffee": "yes",
+        "contact:instagram": "https://www.instagram.com/panorama.lisboa",
+        "cuisine": "ukrainian;european;dessert;coffee_shop",
+        "delivery": "yes",
+        "delivery:partner": "bolt;uber",
+        "diet:healthy": "yes",
+        "diet:meat": "yes",
+        "diet:vegetarian": "yes",
+        "drink:coffee:togo": "yes",
+        "highchair": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "kids_area": "yes",
+        "level": "0",
+        "name": "Panorama Loft & Garden",
+        "opening_hours": "Mo-Fr 17:00-22:00; Sa 10:00-23:00; Su 10:00-22:00",
+        "outdoor_seating": "yes",
+        "payment:apple_pay": "yes",
+        "payment:cards": "yes",
+        "payment:cash": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:google_pay": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "pets_allowed": "yes",
+        "phone": "+351 968 767 105",
+        "ref:vatin": "517784882",
+        "reservation": "yes",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "website:menu": "https://qrconnect.online/c/919"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13138173222,
+      "lat": 38.6947708,
+      "lon": -9.3038682,
+      "tags": {
+        "amenity": "cafe",
+        "indoor_seating": "yes",
+        "name": "Sol de Oeiras",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13186643945,
+      "lat": 38.6989545,
+      "lon": -9.2928147,
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "7",
+        "addr:postcode": "2770-081",
+        "addr:street": "Rua Armando Cortez",
+        "amenity": "restaurant",
+        "check_date": "2025-10-01",
+        "currency:XBT": "yes",
+        "name": "Espaço in Café",
+        "opening_hours": "Mo-Fr 07:00-19:30; Sa 10:00-19:00; Su off",
+        "payment:lightning": "yes",
+        "payment:lightning_contactless": "no",
+        "payment:onchain": "yes",
+        "phone": "+351 214 410539",
+        "website": "https://restaurantguru.com/Espaco-IN-Cafe-Paco-de-Arcos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13387679201,
+      "lat": 38.6948325,
+      "lon": -9.308594,
+      "tags": {
+        "addr:housenumber": "8",
+        "addr:postcode": "2780-247",
+        "addr:street": "Rua Comandante Germano Dias",
+        "amenity": "restaurant",
+        "contact:instagram": "sucesso_restaurante",
+        "cuisine": "chinese;japanese;sushi",
+        "internet_access": "wlan",
+        "name": "Sucesso",
+        "opening_hours": "Mo-Su 12:00-15:00, 19:00-23:00",
+        "phone": "+351 21 823 6817;+351 96 101 7500",
+        "self_service": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13387679401,
+      "lat": 38.693059,
+      "lon": -9.3091248,
+      "tags": {
+        "addr:housenumber": "15",
+        "addr:postcode": "2780-213",
+        "addr:street": "Rua Cândido dos Reis",
+        "amenity": "restaurant",
+        "contact:facebook": "share/17tbBEjzCY",
+        "contact:instagram": "tiamatloungeoeiras",
+        "cuisine": "burger;cake;coffee_shop;fish_and_chips;international;pasta",
+        "diet:vegan": "yes",
+        "email": "info@tiamatlounge.com",
+        "internet_access": "wlan",
+        "name": "Tiamat Lounge",
+        "opening_hours": "Tu 12:00-16:00; We 16:00-00:00; Su, Th 12:00-15:00, 17:00-00:00; Fr-Sa 12:00-02:00",
+        "phone": "+351214852268;+351914105606",
+        "self_service": "no",
+        "website": "https://www.tiamatlounge.com",
+        "website:menu": "https://www.tiamatlounge.com/menu-da-semana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13454278351,
+      "lat": 38.6977137,
+      "lon": -9.30135,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Carlos Vieira Ramos 47",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position",
+        "ref": "120753"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13514599801,
+      "lat": 38.6945586,
+      "lon": -9.3042168,
+      "tags": {
+        "addr:housenumber": "14A",
+        "addr:postcode": "2780-027",
+        "addr:street": "Avenida de Moçambique",
+        "amenity": "cafe",
+        "contact:facebook": "share/1AkU6apcNM",
+        "contact:instagram": "cafelabpt",
+        "cuisine": "brazilian;breakfast;cake;coffee_shop;local;portuguese;regional",
+        "email": "cafelabpt@gmail.com",
+        "internet_access": "wlan",
+        "name": "CafeLab",
+        "opening_hours": "Tu-Fr 09:00-12:30, 14:00-19:00; Sa 09:30-12:30, 14:30-19:00",
+        "phone": "+351 21 442 0636",
+        "website": "https://cafelab.pt"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13514599802,
+      "lat": 38.6945807,
+      "lon": -9.3038631,
+      "tags": {
+        "addr:housenumber": "10",
+        "addr:postcode": "2780-027",
+        "addr:street": "Avenida de Moçambique",
+        "amenity": "restaurant",
+        "contact:instagram": "loungecafelab",
+        "cuisine": "brazilian;breakfast;cake;coffee_shop;diner;international",
+        "internet_access": "wlan",
+        "name": "Lounge by CafeLab",
+        "opening_hours": "We-Su 11:00-17:00",
+        "phone": "+351 21 800 5585",
+        "self_service": "no",
+        "website": "https://reserva-lounge.setmore.com/loungebycafelab"
+      }
+    },
+    {
+      "type": "way",
+      "id": 29123756,
+      "center": {
+        "lat": 38.6986927,
+        "lon": -9.2957406
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:postcode": "2770-053",
+        "addr:street": "Avenida Elvira Velez",
+        "amenity": "school",
+        "email": "eb23.drjoaquimbarros@escolas.min-edu.pt",
+        "grades": "6-14",
+        "name": "Escola Básica Dr. Joaquim de Barros",
+        "operator": "Agrupamento de Escolas de Paço de Arcos, Oeiras",
+        "operator:ref": "171827",
+        "operator:type": "public",
+        "phone": "+351 214 420 018",
+        "ref": "341174",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 179417431,
+      "center": {
+        "lat": 38.6945949,
+        "lon": -9.3048519
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Jardim do Ultramar"
+      }
+    },
+    {
+      "type": "way",
+      "id": 179417836,
+      "center": {
+        "lat": 38.6996199,
+        "lon": -9.3013934
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque dos Poetas - Fase III"
+      }
+    },
+    {
+      "type": "way",
+      "id": 179418209,
+      "center": {
+        "lat": 38.6956546,
+        "lon": -9.3004787
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque dos Poetas - Fase II"
+      }
+    },
+    {
+      "type": "way",
+      "id": 179535214,
+      "center": {
+        "lat": 38.6895049,
+        "lon": -9.3151241
+      },
+      "tags": {
+        "alt_name": "Jardim Municipal de Oeiras",
+        "leisure": "park",
+        "name": "Parque Almirante Gago Coutinho",
+        "wikidata": "Q111592757",
+        "wikimedia_commons": "Category:Jardim Municipal (Oeiras)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 179876935,
+      "center": {
+        "lat": 38.7056389,
+        "lon": -9.3014329
+      },
+      "tags": {
+        "addr:housename": "Centro Comercial Oeiras Parque",
+        "addr:postcode": "2770-219",
+        "building": "retail",
+        "name": "Oeiras Parque",
+        "shop": "mall",
+        "website": "https://www.oeirasparque.com/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 180060361,
+      "center": {
+        "lat": 38.7018959,
+        "lon": -9.3028728
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque dos Poetas - Fase I"
+      }
+    },
+    {
+      "type": "way",
+      "id": 180110513,
+      "center": {
+        "lat": 38.687679,
+        "lon": -9.3099456
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Jardim dos Sete Castelos"
+      }
+    },
+    {
+      "type": "way",
+      "id": 188618695,
+      "center": {
+        "lat": 38.6904173,
+        "lon": -9.3027001
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:postcode": "2770-094",
+        "addr:street": "Avenida Engenheiro Bonneville Franco",
+        "amenity": "school",
+        "email": "eb1.n3.pacoarcos@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica Anselmo de Oliveira",
+        "operator": "Agrupamento de Escolas de Paço de Arcos, Oeiras",
+        "operator:ref": "171827",
+        "operator:type": "public",
+        "phone": "+351 214 425 020",
+        "ref": "251458",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 188626246,
+      "center": {
+        "lat": 38.6935007,
+        "lon": -9.2925846
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Jardim Municipal de Paço de Arcos",
+        "wikidata": "Q111631893",
+        "wikimedia_commons": "Category:Jardim Público de Paço de Arcos"
+      }
+    },
+    {
+      "type": "way",
+      "id": 190311446,
+      "center": {
+        "lat": 38.6989267,
+        "lon": -9.297629
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:postcode": "2774-516",
+        "addr:street": "R. Carlos Vieira Ramos",
+        "amenity": "school",
+        "email": "direcao@aepa.edu.gov.pt;servicos@aepa.edu.gov.pt",
+        "grades": "12-17",
+        "name": "Escola Secundária Luís de Freitas Branco",
+        "operator": "Agrupamento de Escolas de Paço de Arcos, Oeiras",
+        "operator:ref": "171827",
+        "operator:type": "public",
+        "phone": "+351 214 425 049",
+        "ref": "402072",
+        "ref:qzp": "QZP.45",
+        "website": "http://www.eslfb.pt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 190777792,
+      "center": {
+        "lat": 38.7031288,
+        "lon": -9.2984342
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "4, 4A",
+        "addr:postcode": "2770-162",
+        "addr:street": "Rua do Serrado do Velhinho",
+        "amenity": "school",
+        "contact:email": "ji.parkids@escolas.min-edu.pt",
+        "contact:phone": "+351 214467311",
+        "contact:website": "http://www.parkids.pt",
+        "grades": "3-9",
+        "name": "Parkids",
+        "operator:type": "private",
+        "ref": "804194",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 193855948,
+      "center": {
+        "lat": 38.6995673,
+        "lon": -9.2916526
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:postcode": "2770-043",
+        "addr:street": "Avenida Conde São Januário",
+        "amenity": "kindergarten",
+        "contact:email": "escoladoarco@escolas.min-edu.pt",
+        "contact:phone": "+351 214542120",
+        "grades": "3-5",
+        "name": "Escola do Arco",
+        "operator:type": "private",
+        "ref": "803130",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 204235953,
+      "center": {
+        "lat": 38.69069,
+        "lon": -9.3001227
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Escola Náutica Infante Dom Henrique",
+        "wikidata": "Q10274375",
+        "wikipedia": "en:Escola Superior Náutica Infante Dom Henrique"
+      }
+    },
+    {
+      "type": "way",
+      "id": 205342332,
+      "center": {
+        "lat": 38.6952428,
+        "lon": -9.3009234
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 217904171,
+      "center": {
+        "lat": 38.7022656,
+        "lon": -9.2919099
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:postcode": "2770-001",
+        "addr:street": "Rua Conde de Rio Maior",
+        "amenity": "school",
+        "email": "eb1.n4.pacoarcos@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica Maria Luciana Seruca",
+        "operator": "Agrupamento de Escolas de Paço de Arcos, Oeiras",
+        "operator:ref": "171827",
+        "operator:type": "public",
+        "phone": "+351 214 427 452",
+        "ref": "293635",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 543774480,
+      "center": {
+        "lat": 38.6962737,
+        "lon": -9.2886099
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Jardim do Palácio dos Arcos"
+      }
+    },
+    {
+      "type": "way",
+      "id": 545138380,
+      "center": {
+        "lat": 38.700829,
+        "lon": -9.3017173
+      },
+      "tags": {
+        "building": "yes",
+        "fee": "no",
+        "name": "Templo da Poesia",
+        "tourism": "museum"
+      }
+    },
+    {
+      "type": "way",
+      "id": 545761846,
+      "center": {
+        "lat": 38.6942973,
+        "lon": -9.3080157
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 563486183,
+      "center": {
+        "lat": 38.7059822,
+        "lon": -9.2982666
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque das Perdizes",
+        "start_date": "2013-08-30"
+      }
+    },
+    {
+      "type": "way",
+      "id": 589044270,
+      "center": {
+        "lat": 38.6953927,
+        "lon": -9.3094886
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 638349076,
+      "center": {
+        "lat": 38.7016044,
+        "lon": -9.2917727
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Jardim da Rua de Conde Rio Maior"
+      }
+    },
+    {
+      "type": "way",
+      "id": 642303697,
+      "center": {
+        "lat": 38.6967947,
+        "lon": -9.3017198
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 643516841,
+      "center": {
+        "lat": 38.6985567,
+        "lon": -9.3057468
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 646954560,
+      "center": {
+        "lat": 38.6963877,
+        "lon": -9.305239
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 661879822,
+      "center": {
+        "lat": 38.6951152,
+        "lon": -9.3114586
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 671601261,
+      "center": {
+        "lat": 38.7025489,
+        "lon": -9.3098048
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 675502269,
+      "center": {
+        "lat": 38.6979496,
+        "lon": -9.3090198
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque do Pombal"
+      }
+    },
+    {
+      "type": "way",
+      "id": 713646388,
+      "center": {
+        "lat": 38.6965772,
+        "lon": -9.3081436
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 715461387,
+      "center": {
+        "lat": 38.6964934,
+        "lon": -9.3097969
+      },
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:postcode": "2780-197",
+        "addr:street": "Avenida Embaixador Assis Chateaubriand",
+        "amenity": "school",
+        "email": "eb1.n3.oeiras@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica Gomes Freire de Andrade",
+        "operator": "Agrupamento de Escolas de São Julião da Barra, Oeiras",
+        "operator:ref": "171980",
+        "operator:type": "public",
+        "phone": "+351 214 420 538",
+        "ref": "251367",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 846867521,
+      "center": {
+        "lat": 38.705774,
+        "lon": -9.2941406
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "48",
+        "addr:postcode": "2770-129",
+        "addr:street": "Estrada de Paço de Arcos",
+        "branch": "Paço de Arcos",
+        "brand": "Auchan",
+        "brand:wikidata": "Q758603",
+        "brand:wikipedia": "pt:Auchan",
+        "building": "yes",
+        "contact:email": "apoiocliente@auchan.pt",
+        "contact:facebook": "AuchanPortugal",
+        "contact:instagram": "auchan_pt",
+        "contact:phone": "+351 210 403 270",
+        "contact:tiktok": "auchan_pt",
+        "contact:youtube": "https://www.youtube.com/channel/UC6FSI7tYO9ISV11U2PHBBYQ",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Auchan",
+        "opening_hours": "Mo-Su 08:30-22:00;easter, Dec 25, Jan 01 off",
+        "operator": "Auchan",
+        "operator:wikidata": "Q758603",
+        "operator:wikipedia": "pt:Auchan",
+        "ref": "018",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.auchan.pt/pt/loja?StoreID=018"
+      }
+    },
+    {
+      "type": "way",
+      "id": 869138580,
+      "center": {
+        "lat": 38.6887548,
+        "lon": -9.3071088
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 882983095,
+      "center": {
+        "lat": 38.7014883,
+        "lon": -9.3069115
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 883784663,
+      "center": {
+        "lat": 38.696747,
+        "lon": -9.3034312
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 883836524,
+      "center": {
+        "lat": 38.7027055,
+        "lon": -9.3061374
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 884546682,
+      "center": {
+        "lat": 38.7057577,
+        "lon": -9.3039699
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1275414477,
+      "center": {
+        "lat": 38.6949662,
+        "lon": -9.2951954
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:postcode": "2770-050",
+        "addr:street": "Rua Dionísio dos Santos Matias",
+        "amenity": "school",
+        "email": "eb1.n1.pacoarcos@escolas.min-edu.pt",
+        "grades": "6-9",
+        "name": "Escola Básica Dionísio dos Santos Matias",
+        "operator": "Agrupamento de Escolas de Paço de Arcos, Oeiras",
+        "operator:ref": "171827",
+        "operator:type": "public",
+        "phone": "+351 214 425 019",
+        "ref": "240369",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1296577492,
+      "center": {
+        "lat": 38.693995,
+        "lon": -9.2923525
+      },
+      "tags": {
+        "amenity": "cafe",
+        "building": "yes",
+        "check_date": "2025-04-08",
+        "name": "Madrasta",
+        "opening_hours": "12:00-24:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302364636,
+      "center": {
+        "lat": 38.6969089,
+        "lon": -9.2951116
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "16",
+        "addr:postcode": "2770-109",
+        "addr:street": "Rua Lino de Assunção",
+        "amenity": "school",
+        "contact:email": "info@aminhaescola.pt",
+        "contact:fax": "+351 214421071",
+        "contact:phone": "+351 214435011",
+        "contact:website": "http://www.aminhaescola.pt",
+        "grades": "3-9",
+        "name": "Externato \"A Minha Escola\"",
+        "operator": "Lampreia & Cardoso, Lda.",
+        "operator:type": "private",
+        "ref": "503010",
+        "ref:aeep": "1147",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302364637,
+      "center": {
+        "lat": 38.6972539,
+        "lon": -9.2944622
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "3",
+        "addr:postcode": "2770-106",
+        "addr:street": "Rua José Moreira Rato",
+        "amenity": "kindergarten",
+        "contact:email": "cl.flordalinha@escolas.min-edu.pt",
+        "contact:fax": "+351 214540438",
+        "contact:phone": "+351 214540430",
+        "contact:website": "http://colegiodalinha.com",
+        "grades": "3-5",
+        "name": "Colégio Flor da Linha",
+        "operator:type": "private",
+        "ref": "800367",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302364638,
+      "center": {
+        "lat": 38.6968476,
+        "lon": -9.2896209
+      },
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "7",
+        "addr:postcode": "2780-000",
+        "addr:street": "Largo Dona Leonor Faria Gomes",
+        "amenity": "kindergarten",
+        "contact:email": "ass.popularpacoarcos@escolas.min-edu.pt",
+        "contact:fax": "+351 214430298",
+        "contact:phone": "+351 214437818",
+        "grades": "3-5",
+        "name": "Infantário Popular de Paço de Arcos",
+        "operator:type": "private",
+        "ref": "517999",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302364639,
+      "center": {
+        "lat": 38.6946988,
+        "lon": -9.2949478
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "1",
+        "addr:postcode": "2770-050",
+        "addr:street": "Rua Dionísio Santos Matias",
+        "alt_name": "Externato do Centro da Assistência Infantil Rainha Santa Isabel",
+        "amenity": "kindergarten",
+        "contact:email": "geral@nibpacodearcos.com",
+        "contact:phone": "+351 214460570;+351 968121047",
+        "contact:website": "https://nibpacodearcos.com",
+        "grades": "3-5",
+        "name": "Casa da Criança Rainha Santa Isabel",
+        "operator": "Núcleo de Instrução e Beneficência",
+        "operator:type": "private",
+        "ref": "503381",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302364640,
+      "center": {
+        "lat": 38.6976142,
+        "lon": -9.2986911
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "10-12",
+        "addr:postcode": "2770-217",
+        "addr:street": "Rua Carlos Vieira Ramos",
+        "alt_name": "Colégio da Torre do Bugio",
+        "amenity": "school",
+        "contact:email": "info@colegiodatorre.pt;susana.martinez@colegiodatorre.pt",
+        "contact:fax": "+351 214408111",
+        "contact:phone": "+351 214408110;+351 933888856",
+        "contact:website": "https://www.colegiodatorre.pt/",
+        "grades": "3-11",
+        "name": "Colégio da Torre",
+        "operator": "Colégio da Torre Lda.",
+        "operator:type": "private",
+        "ref": "800457",
+        "ref:aeep": "1409",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302364643,
+      "center": {
+        "lat": 38.6946949,
+        "lon": -9.312233
+      },
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:housenumber": "3",
+        "addr:postcode": "2780-261",
+        "addr:street": "Rua Junção do Bem",
+        "amenity": "school",
+        "contact:email": "ep.valriooeiras@escolas.min-edu.pt",
+        "contact:fax": "+351 214426370",
+        "contact:phone": "+351 214413072",
+        "contact:website": "http://www.valdorio.net;www.valdorio.net",
+        "grades": "15-17",
+        "name": "Escola Profissional Val do Rio",
+        "operator:type": "private",
+        "ref": "802763",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302364644,
+      "center": {
+        "lat": 38.7036978,
+        "lon": -9.3094948
+      },
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:floor": "0",
+        "addr:housenumber": "LT 18",
+        "addr:postcode": "2780-329",
+        "addr:street": "Rua Marechal Costa Gomes",
+        "addr:suburb": "Urbanização Terraços do Marquês",
+        "amenity": "kindergarten",
+        "contact:email": "geral@ospequenosmarqueses.pt",
+        "contact:fax": "+351 211932918",
+        "contact:phone": "+351 917995103",
+        "grades": "3-5",
+        "name": "Os Pequenos Marqueses",
+        "operator:type": "private",
+        "ref": "806671",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1442544871,
+      "center": {
+        "lat": 38.7016647,
+        "lon": -9.3051142
+      },
+      "tags": {
+        "addr:city": "Oeiras",
+        "addr:country": "PT",
+        "addr:housenumber": "12",
+        "addr:postcode": "2780-379",
+        "addr:street": "Rua Coro de Santo Amaro de Oeiras",
+        "amenity": "hospital",
+        "contact:phone": "+351 217 104 400",
+        "contact:website": "https://www.hospitaldaluz.pt/oeiras",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Hospital da Luz Oeiras",
+        "operator": "Hospital da Luz",
+        "operator:type": "private",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 12004506,
+      "center": {
+        "lat": 38.6936584,
+        "lon": -9.3033808
+      },
+      "tags": {
+        "leisure": "park",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 17854117,
+      "center": {
+        "lat": 38.70334,
+        "lon": -9.2924423
+      },
+      "tags": {
+        "addr:city": "Paço de Arcos",
+        "addr:housenumber": "28",
+        "addr:postcode": "2770-036",
+        "addr:street": "Rua Conde de Rio Maior",
+        "addr:unit": "B",
+        "amenity": "kindergarten",
+        "contact:email": "ji.staanapacoarcos@escolas.min-edu.pt",
+        "contact:phone": "+351 214413646;+351 914487095",
+        "grades": "3-5",
+        "name": "Jardim de Infância Santa Ana",
+        "network": "Santa Casa da Misericórdia",
+        "operator": "Santa Casa da Misericórdia de Oeiras",
+        "operator:type": "private",
+        "ref": "518013",
+        "ref:qzp": "QZP.45",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 18355675,
+      "center": {
+        "lat": 38.692583,
+        "lon": -9.3155636
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Jardins do Palácio do Marquês de Pombal",
+        "type": "multipolygon"
+      }
+    }
+  ]
+}

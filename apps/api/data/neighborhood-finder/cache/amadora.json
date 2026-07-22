@@ -1,0 +1,5977 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-28T10:27:18Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 26241902,
+      "lat": 38.7592156,
+      "lon": -9.2346281,
+      "tags": {
+        "local_ref": "4",
+        "name": "Amadora",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 295400456,
+      "lat": 38.7579875,
+      "lon": -9.2344593,
+      "tags": {
+        "bus": "yes",
+        "name": "Amadora (Estação) P7 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 721688885,
+      "lat": 38.7529165,
+      "lon": -9.232758,
+      "tags": {
+        "addr:housenumber": "12C",
+        "addr:postcode": "2720-127",
+        "addr:street": "Avenida Conde de Oeiras",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Jardim"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1159228821,
+      "lat": 38.7673036,
+      "lon": -9.2373912,
+      "tags": {
+        "addr:housenumber": "N.º 31, Loja B",
+        "addr:postcode": "2700",
+        "addr:street": "Avenida Fernando Valle",
+        "amenity": "pharmacy",
+        "name": "Farmácia Carlos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1159228828,
+      "lat": 38.7609359,
+      "lon": -9.2331921,
+      "tags": {
+        "addr:housenumber": "3A",
+        "addr:postcode": "2700",
+        "addr:street": "Praça 25 de Abril",
+        "amenity": "pharmacy",
+        "name": "Amadora"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1159228829,
+      "lat": 38.7607889,
+      "lon": -9.2369888,
+      "tags": {
+        "addr:housenumber": "25",
+        "addr:postcode": "2700",
+        "addr:street": "Avenida Cardoso Lopes",
+        "amenity": "pharmacy",
+        "name": "Farmácia Central",
+        "opening_hours": "Mo-Fr 08:00-20:00; Sa 09:00-19:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1159228830,
+      "lat": 38.7629138,
+      "lon": -9.2381449,
+      "tags": {
+        "addr:housenumber": "45-A",
+        "addr:postcode": "2700",
+        "addr:street": "Avenida Marquês de Pombal",
+        "amenity": "pharmacy",
+        "name": "Farmácia Dias e Brito"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1161506293,
+      "lat": 38.7651265,
+      "lon": -9.2304764,
+      "tags": {
+        "addr:housenumber": "32B",
+        "addr:postcode": "2700",
+        "addr:street": "Estrada da Serra da Mira",
+        "amenity": "pharmacy",
+        "name": "Farmácia Nunes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1161599622,
+      "lat": 38.7579686,
+      "lon": -9.2470757,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "9B",
+        "addr:postcode": "2700-248",
+        "addr:street": "Praça D. João",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Melo",
+        "website": "http://www.farmaciamelo.com.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1161626709,
+      "lat": 38.7571056,
+      "lon": -9.2397191,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "22-A",
+        "addr:postcode": "2700",
+        "addr:street": "Praça da Igreja",
+        "amenity": "pharmacy",
+        "name": "Farmácia da Igreja",
+        "opening_hours": "Mo-Fr 08:30-20:00; Sa 09:00-18:00",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1161626721,
+      "lat": 38.7591015,
+      "lon": -9.2418534,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "15A",
+        "addr:postcode": "2700-253",
+        "addr:street": "Avenida Dom Nuno Álvares Pereira",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Confiança",
+        "phone": "+351 21 493 8149"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1161626727,
+      "lat": 38.7598903,
+      "lon": -9.2389847,
+      "tags": {
+        "addr:housenumber": "372 C",
+        "addr:postcode": "2700",
+        "addr:street": "Rua Elias Garcia",
+        "amenity": "pharmacy",
+        "name": "Farmácia Helenica"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1161651929,
+      "lat": 38.7580071,
+      "lon": -9.2350038,
+      "tags": {
+        "addr:housenumber": "187",
+        "addr:postcode": "2700",
+        "addr:street": "Rua Elias Garcia",
+        "amenity": "pharmacy",
+        "name": "Farmácia Campos",
+        "phone": "+351 214 987 900"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1161651958,
+      "lat": 38.7582665,
+      "lon": -9.2366131,
+      "tags": {
+        "addr:housenumber": "N.º 221 R/C A",
+        "addr:postcode": "2700",
+        "addr:street": "Rua Elias Garcia",
+        "amenity": "pharmacy",
+        "name": "Farmácia Cavaca",
+        "phone": "+351 214 915 962"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1161656887,
+      "lat": 38.7580469,
+      "lon": -9.228116,
+      "tags": {
+        "addr:housenumber": "123 A",
+        "addr:postcode": "2700",
+        "addr:street": "Rua Elias Garcia",
+        "amenity": "pharmacy",
+        "name": "Farmácia Carmele"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1163774288,
+      "lat": 38.759968,
+      "lon": -9.2380081,
+      "tags": {
+        "addr:postcode": "2700-336",
+        "branch": "Amadora",
+        "brand": "Pingo Doce",
+        "brand:wikidata": "Q1575057",
+        "brand:wikipedia": "pt:Pingo Doce",
+        "contact:facebook": "pingodoce",
+        "contact:instagram": "pingodoce",
+        "contact:linkedin": "https://www.linkedin.com/company/pingo-doce",
+        "contact:phone": "+351 938 875 824",
+        "contact:tiktok": "pingodoce",
+        "contact:youtube": "pingodocept",
+        "name": "Pingo Doce",
+        "opening_hours": "Mo-Su 08:00-21:00; easter 08:00-14:00",
+        "ref": "824",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.pingodoce.pt/lojas/amadora/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1679121732,
+      "lat": 38.7597041,
+      "lon": -9.2272703,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Isabelinha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1995888899,
+      "lat": 38.767968,
+      "lon": -9.2392732,
+      "tags": {
+        "addr:street": "Av. Álvares Cabral, 58-A, Loja 1, Vila Chã, Amadora",
+        "amenity": "restaurant",
+        "cuisine": "steak_house",
+        "name": "O nosso prego - Loja III",
+        "website": "https://onossoprego.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1995912713,
+      "lat": 38.7678275,
+      "lon": -9.2358287,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Betana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1996135611,
+      "lat": 38.7675326,
+      "lon": -9.2324652,
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2299469380,
+      "lat": 38.7659572,
+      "lon": -9.231061,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "40",
+        "addr:postcode": "2700-364",
+        "addr:street": "Estrada da Serra da Mira",
+        "branch": "Serra da Mira",
+        "brand": "Pingo Doce",
+        "brand:wikidata": "Q1575057",
+        "brand:wikipedia": "pt:Pingo Doce",
+        "contact:facebook": "pingodoce",
+        "contact:instagram": "pingodoce",
+        "contact:linkedin": "https://www.linkedin.com/company/pingo-doce",
+        "contact:phone": "+351 938 875 812",
+        "contact:tiktok": "pingodoce",
+        "contact:youtube": "pingodocept",
+        "name": "Pingo Doce",
+        "opening_hours": "Mo-Su 08:00-21:00; easter 08:00-14:00",
+        "ref": "812",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.pingodoce.pt/lojas/serra-da-mira/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2347257304,
+      "lat": 38.7670966,
+      "lon": -9.2314659,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "Loja 1 B/C",
+        "addr:postcode": "2700-606",
+        "addr:street": "Praceta Notícias da Amadora",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Bella Venezia",
+        "phone": "+351218213890",
+        "website": "http://www.bella-venezia.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2390224428,
+      "lat": 38.767102,
+      "lon": -9.2365657,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pão de Mel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2390225103,
+      "lat": 38.7557087,
+      "lon": -9.2388524,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Armazém de Café"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2870513801,
+      "lat": 38.7585006,
+      "lon": -9.2279206,
+      "tags": {
+        "shop": "mall"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3215108856,
+      "lat": 38.7557472,
+      "lon": -9.2333413,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "16-A",
+        "addr:postcode": "2720",
+        "addr:street": "Avenida da Aviação Portuguesa",
+        "amenity": "cafe",
+        "cuisine": "snackbar",
+        "internet_access": "no",
+        "name": "Pastelaria Florença",
+        "opening_hours": "09:00-19:00",
+        "smoking": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3215145465,
+      "lat": 38.7561226,
+      "lon": -9.2335634,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "20-A",
+        "addr:postcode": "2720",
+        "addr:street": "Avenida da Aviação Portuguesa",
+        "amenity": "cafe",
+        "cuisine": "snackbar",
+        "internet_access": "no",
+        "name": "Pastelaria Jota-Jota",
+        "opening_hours": "9:00-19:00",
+        "smoking": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3215170044,
+      "lat": 38.756564,
+      "lon": -9.2336868,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2720",
+        "addr:street": "Avenida da Aviação Portuguesa",
+        "amenity": "bank",
+        "atm": "yes",
+        "brand": "Bankinter",
+        "brand:wikidata": "Q806808",
+        "brand:wikipedia": "en:Bankinter",
+        "name": "Bankinter",
+        "operator": "Bankinter",
+        "operator:wikidata": "Q806808",
+        "operator:wikipedia": "en:Bankinter"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3633017018,
+      "lat": 38.7573983,
+      "lon": -9.2472083,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Alqueva",
+        "opening_hours": "Closed / not availabe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4242963389,
+      "lat": 38.7665351,
+      "lon": -9.2314054,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "2",
+        "addr:postcode": "2700-619",
+        "addr:street": "Rua Oliveira Martins",
+        "amenity": "cafe",
+        "cuisine": "regional",
+        "internet_access": "no",
+        "name": "A Curicana",
+        "smoking": "outside"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4242964045,
+      "lat": 38.7664311,
+      "lon": -9.2314288,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "2",
+        "addr:postcode": "2700-619",
+        "addr:street": "Rua Oliveira Martins",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "delivery": "no",
+        "name": "Os Arcos de São Brás",
+        "smoking": "no",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4349886097,
+      "lat": 38.7620282,
+      "lon": -9.2271608,
+      "tags": {
+        "addr:housenumber": "4a",
+        "addr:postcode": "2700-689",
+        "addr:street": "Rua da Quinta da Bolacha",
+        "amenity": "restaurant",
+        "cuisine": "burger;friture;arab;oriental;sandwich;pizza;kebab;coffee_shop;tea;crepe",
+        "email": "alferuzcafe@gmil.com",
+        "internet_access": "wlan",
+        "name": "AL feruz",
+        "opening_hours": "Mo-Su 11:59-22:59",
+        "phone": "+351 21 093 8258"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4630858900,
+      "lat": 38.7602166,
+      "lon": -9.2367476,
+      "tags": {
+        "local_ref": "2",
+        "name": "Amadora",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4630858901,
+      "lat": 38.7601199,
+      "lon": -9.2368201,
+      "tags": {
+        "local_ref": "1",
+        "name": "Amadora",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4630858911,
+      "lat": 38.7591344,
+      "lon": -9.2346994,
+      "tags": {
+        "local_ref": "3",
+        "name": "Amadora",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4707337609,
+      "lat": 38.7561986,
+      "lon": -9.2510947,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Nosso Prego",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5473004172,
+      "lat": 38.7575607,
+      "lon": -9.2266195,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Espaço Sénior da Falagueira"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5610096321,
+      "lat": 38.7575827,
+      "lon": -9.239268,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Jardim da igreja"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5841564410,
+      "lat": 38.7609626,
+      "lon": -9.2430955,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "7A",
+        "addr:street": "Rua Ernesto Melo Antunes",
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Clabel",
+        "phone": "+351 21 493 8551",
+        "postal_code": "2700-002",
+        "website": "https://www.farmaciaclabel.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5841564411,
+      "lat": 38.7608391,
+      "lon": -9.2433502,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "1",
+        "addr:street": "Praça Ernesto Melo Antunes",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Hospital da Luz - Clínica da Amadora",
+        "phone": "+351 21 710 4400",
+        "postal_code": "2700-339",
+        "website": "https://www.hospitaldaluz.pt/amadora/pt",
+        "wikimedia_commons": "File:Hospital da Luz, Lisboa, 2023 05.jpg"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5842070793,
+      "lat": 38.7587246,
+      "lon": -9.2360272,
+      "tags": {
+        "amenity": "restaurant",
+        "brand": "100 Montaditos",
+        "brand:wikidata": "Q8355805",
+        "cuisine": "sandwich",
+        "name": "100 Montaditos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5848531021,
+      "lat": 38.7597518,
+      "lon": -9.2390293,
+      "tags": {
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Espaço Saúde Helenica"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6292739785,
+      "lat": 38.7575684,
+      "lon": -9.2351773,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Maria Azeitona"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6725218885,
+      "lat": 38.7571008,
+      "lon": -9.2520057,
+      "tags": {
+        "addr:housenumber": "51",
+        "addr:postcode": "2745",
+        "addr:street": "Avenida José Elias Garcia",
+        "amenity": "pharmacy",
+        "name": "Farmácia Simões Lopes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7270632028,
+      "lat": 38.7553183,
+      "lon": -9.2504461,
+      "tags": {
+        "amenity": "school",
+        "name": "Escola EB 1 n.º 2 de Queluz"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8500797040,
+      "lat": 38.7574504,
+      "lon": -9.2348031,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "7",
+        "addr:postcode": "2700-197",
+        "addr:street": "Rua 5 de Outubro",
+        "addr:unit": "A",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "O Vigilante",
+        "opening_hours": "Mo-Fr 09:00-18:00",
+        "phone": "+351 21 498 9900",
+        "website": "https://www.ovigilante.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685930866,
+      "lat": 38.7581845,
+      "lon": -9.226674,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Jorge dos Caracóis"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685930868,
+      "lat": 38.7582782,
+      "lon": -9.226453,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Vimeca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685930869,
+      "lat": 38.7578448,
+      "lon": -9.2268928,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Chafariz das Gravatas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685930871,
+      "lat": 38.7578682,
+      "lon": -9.2268156,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Taberna da Porcalhota"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685930872,
+      "lat": 38.7578716,
+      "lon": -9.2267383,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pastelaria Padaria Novo Aroma"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685958372,
+      "lat": 38.7583864,
+      "lon": -9.2265126,
+      "tags": {
+        "name": "Choicefruit",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685958375,
+      "lat": 38.7587028,
+      "lon": -9.2265881,
+      "tags": {
+        "amenity": "cafe",
+        "name": "O Marques"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8685958379,
+      "lat": 38.7587947,
+      "lon": -9.2263202,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Aroma Café"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691323377,
+      "lat": 38.7599931,
+      "lon": -9.2396506,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Estrela Rosa",
+        "outdoor_seating": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691323397,
+      "lat": 38.7597593,
+      "lon": -9.2390465,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Joaquim Chaves Saúde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691323414,
+      "lat": 38.7598584,
+      "lon": -9.2388839,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "Ali Shoarma Halal Food"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326742,
+      "lat": 38.7593858,
+      "lon": -9.2382895,
+      "tags": {
+        "name": "Centro Comercial Galerias São José",
+        "shop": "mall"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326744,
+      "lat": 38.7593975,
+      "lon": -9.238187,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Colóquio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326750,
+      "lat": 38.7596251,
+      "lon": -9.2382972,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "steak_house",
+        "name": "Rei dos Grelhados"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326761,
+      "lat": 38.7600426,
+      "lon": -9.2383949,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Restaurante Beleza"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326790,
+      "lat": 38.7594319,
+      "lon": -9.2378619,
+      "tags": {
+        "amenity": "bank",
+        "brand": "Caixa Geral de Depósitos",
+        "brand:website": "https://www.cgd.pt/",
+        "brand:wikidata": "Q1026044",
+        "brand:wikipedia": "pt:Caixa Geral de Depósitos",
+        "name": "Caixa Geral de Depósitos",
+        "operator": "Caixa Geral de Depósitos",
+        "operator:wikidata": "Q1026044",
+        "operator:wikipedia": "pt:Caixa Geral de Depósitos",
+        "short_name": "CGD"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326794,
+      "lat": 38.7593265,
+      "lon": -9.2374777,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-710",
+        "amenity": "bank",
+        "branch": "Agencia Central de Amadora",
+        "branch:type": "retail",
+        "brand": "Caixa Geral de Depósitos",
+        "brand:website": "https://www.cgd.pt/",
+        "brand:wikidata": "Q1026044",
+        "brand:wikipedia": "pt:Caixa Geral de Depósitos",
+        "contact:facebook": "caixageraldedepositos",
+        "contact:instagram": "caixageraldedepositos",
+        "contact:linkedin": "https://www.linkedin.com/company/caixageraldedepositos/",
+        "contact:phone": "+351 217 900 790",
+        "contact:youtube": "http://www.youtube.com/user/mediacgd",
+        "name": "Caixa Geral de Depósitos",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa,Su,PH off",
+        "operator": "Caixa Geral de Depósitos",
+        "operator:wikidata": "Q1026044",
+        "operator:wikipedia": "pt:Caixa Geral de Depósitos",
+        "ref": "1358",
+        "short_name": "CGD",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.cgd.pt/Corporativo/Rede-CGD/Pages/AGENCIA-CENTRAL-DE-AMADORA.aspx"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326797,
+      "lat": 38.7589687,
+      "lon": -9.2376642,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Restaurante O Bandarra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326798,
+      "lat": 38.7589262,
+      "lon": -9.237704,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Restaurante Aquário"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326817,
+      "lat": 38.7586273,
+      "lon": -9.2385457,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pastelaria Valente, Actividades Hoteleiras",
+        "official_name": "Pastelaria Valente, Actividades Hoteleiras, Lda.",
+        "phone": "+351 214 921 940"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326820,
+      "lat": 38.7585866,
+      "lon": -9.2388223,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "Restaurante Indiano Keshav"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326890,
+      "lat": 38.7590374,
+      "lon": -9.2386154,
+      "tags": {
+        "name": "Centro Comercial Douriense",
+        "shop": "mall"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326903,
+      "lat": 38.7590312,
+      "lon": -9.239427,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Cuscuz da Terra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326954,
+      "lat": 38.7601588,
+      "lon": -9.2403155,
+      "tags": {
+        "amenity": "bank",
+        "brand": "Millennium bcp",
+        "brand:wikidata": "Q118581",
+        "brand:wikipedia": "pt:Banco Comercial Português",
+        "name": "Millennium bcp",
+        "official_name": "Banco Comercial Português",
+        "official_name:en": "Portuguese Commercial Bank",
+        "official_name:es": "Banco Comercial Português",
+        "operator": "Banco Comercial Português",
+        "operator:wikidata": "Q118581",
+        "operator:wikipedia": "pt:Banco Comercial Português"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326962,
+      "lat": 38.7602846,
+      "lon": -9.2401391,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "steak_house",
+        "name": "Os barbas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326971,
+      "lat": 38.7601508,
+      "lon": -9.2405051,
+      "tags": {
+        "amenity": "cafe",
+        "name": "ArtCoffe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8691326983,
+      "lat": 38.7599646,
+      "lon": -9.2405108,
+      "tags": {
+        "name": "Casa Diervina Produtos Naturals e Dietéticos",
+        "organic": "only",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8703115281,
+      "lat": 38.7608246,
+      "lon": -9.2422631,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "4",
+        "addr:postcode": "2700-666",
+        "addr:street": "Praça Ernesto Melo Antunes",
+        "amenity": "restaurant",
+        "cuisine": "sushi",
+        "name": "SushiCome",
+        "opening_hours": "Mo-Su 12:00-23:00",
+        "phone": "+351214931851",
+        "website": "https://www.sushicome.com/pt/?page_id=280"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8703176755,
+      "lat": 38.7611601,
+      "lon": -9.2465652,
+      "tags": {
+        "addr:housenumber": "428",
+        "addr:street": "Rua Elias Garcia",
+        "addr:unit": "A",
+        "amenity": "restaurant",
+        "name": "L'Hamburguices",
+        "opening_hours": "Mo-Sa 12:00-22:00",
+        "phone": "+351215838088"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8703176756,
+      "lat": 38.7612765,
+      "lon": -9.2460791,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "5",
+        "addr:postcode": "2700-543",
+        "addr:street": "Praceta Major Cabrita",
+        "addr:unit": "A",
+        "amenity": "restaurant",
+        "name": "Pap's Dog - Cachorros Quentes",
+        "opening_hours": "Praceta Maj. Cabrita 5A, 2700-543 Amadora",
+        "phone": "+351211602406",
+        "website": "https://papsdog.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8703176790,
+      "lat": 38.7601225,
+      "lon": -9.2456678,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "2",
+        "addr:postcode": "2700-552",
+        "addr:street": "Rua Manuel da Silva",
+        "addr:unit": "B",
+        "amenity": "cafe",
+        "name": "Mira Escola",
+        "outdoor_seating": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8703176791,
+      "lat": 38.7600284,
+      "lon": -9.2456576,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "2",
+        "addr:postcode": "2700-552",
+        "addr:street": "Rua Manuel da Silva",
+        "addr:unit": "B",
+        "amenity": "cafe",
+        "name": "Café Girassol",
+        "outdoor_seating": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8730762904,
+      "lat": 38.7597403,
+      "lon": -9.2455076,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "22",
+        "addr:postcode": "2700-324",
+        "addr:street": "Praça Álvaro Lopes",
+        "amenity": "cafe",
+        "name": "O Divino"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8730762909,
+      "lat": 38.7601192,
+      "lon": -9.244132,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "13",
+        "addr:postcode": "2700-703",
+        "addr:street": "Rua Ramalho Ortigão",
+        "amenity": "restaurant",
+        "name": "Gonçalves Café Restaurante"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8730762910,
+      "lat": 38.7600434,
+      "lon": -9.2438024,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "7",
+        "addr:postcode": "2700-703",
+        "addr:street": "Rua Ramalho Ortigão",
+        "amenity": "cafe",
+        "name": "Rosinha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8730762912,
+      "lat": 38.7599547,
+      "lon": -9.2432992,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "10",
+        "addr:postcode": "2700-703",
+        "addr:street": "Rua Ramalho Ortigão",
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8752781410,
+      "lat": 38.7589204,
+      "lon": -9.2437307,
+      "tags": {
+        "addr:street": "Rua de Angola",
+        "amenity": "cafe",
+        "name": "O Cantinho da Aurora"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9346394017,
+      "lat": 38.7585159,
+      "lon": -9.2451682,
+      "tags": {
+        "amenity": "restaurant",
+        "internet_access": "wlan",
+        "name": "Beira Alta"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9595744119,
+      "lat": 38.7617821,
+      "lon": -9.2287386,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Falagueira Fte 58A",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030139",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9595744120,
+      "lat": 38.7647007,
+      "lon": -9.2302061,
+      "tags": {
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Serra Mira 31",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030137",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9595744121,
+      "lat": 38.7671939,
+      "lon": -9.2319951,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Oliveira Martins 7C",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030135",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9595744122,
+      "lat": 38.7681825,
+      "lon": -9.2317276,
+      "tags": {
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "EB1 Artur M Simões",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030167",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9930401942,
+      "lat": 38.7588631,
+      "lon": -9.2370481,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "R Elias Garcia (Parque)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030319",
+        "shelter": "yes",
+        "tactile_paving": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9930401944,
+      "lat": 38.7599204,
+      "lon": -9.2409235,
+      "tags": {
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Av D Nuno Álv Pereira (C Emprego)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030345"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290724475,
+      "lat": 38.7620328,
+      "lon": -9.2511327,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Carenque (X) Est Militar",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171029",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290724476,
+      "lat": 38.7607166,
+      "lon": -9.2479452,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "R Elias Garcia (Fte Escolas)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030327",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290724477,
+      "lat": 38.7605713,
+      "lon": -9.2478614,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "R Elias Garcia (Escolas)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030328",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290724478,
+      "lat": 38.761179,
+      "lon": -9.2454913,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "R Elias Garcia Fte 323",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030325",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290724479,
+      "lat": 38.7590394,
+      "lon": -9.2372723,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "R Elias Garcia (Parque)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030880",
+        "shelter": "yes",
+        "tactile_paving": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290724480,
+      "lat": 38.7608904,
+      "lon": -9.2375131,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Estação) P2 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030843",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290724481,
+      "lat": 38.7605621,
+      "lon": -9.2369391,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Estação) P4 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030119",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290724482,
+      "lat": 38.7610562,
+      "lon": -9.237807,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Estação) P1 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030687",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290724483,
+      "lat": 38.7607504,
+      "lon": -9.2372605,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Estação) P3 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030842",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290789252,
+      "lat": 38.7605264,
+      "lon": -9.2298926,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Gen Humberto Delgado 1",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030093",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799063,
+      "lat": 38.7688144,
+      "lon": -9.2325487,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "R Julio Dantas 7B",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030886"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799064,
+      "lat": 38.7689675,
+      "lon": -9.2339745,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "R Camilo Pessanha 1",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030885"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799065,
+      "lat": 38.7681559,
+      "lon": -9.2374494,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Melhorar localização",
+        "highway": "bus_stop",
+        "name": "R António Ribeiro Chiado 14",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030884"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799066,
+      "lat": 38.7676907,
+      "lon": -9.2393038,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Av Pedro Álvares Cabral 58",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030883"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799071,
+      "lat": 38.7559725,
+      "lon": -9.2276346,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Brasil 23",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030877",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799072,
+      "lat": 38.7575148,
+      "lon": -9.2272175,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Brasil 5",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030876",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799074,
+      "lat": 38.7651553,
+      "lon": -9.236231,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dr Azevedo Neves 13",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030874",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799075,
+      "lat": 38.7649461,
+      "lon": -9.2343027,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dr Azevedo Neves 31A",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "030873"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799076,
+      "lat": 38.7580459,
+      "lon": -9.2344306,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Estação) P7 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030869",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799078,
+      "lat": 38.7523429,
+      "lon": -9.2313419,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R D Dinis 10",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030867"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799079,
+      "lat": 38.7521648,
+      "lon": -9.2311548,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R D Dinis 23",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030866"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799081,
+      "lat": 38.7658005,
+      "lon": -9.2298728,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Ordem Militar Hospital (EDP)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030864",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799082,
+      "lat": 38.7636269,
+      "lon": -9.2333645,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Marquês Pombal 25",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030863"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799085,
+      "lat": 38.7581464,
+      "lon": -9.2349627,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Estação) P5 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Amadora (Estação) P5 Entrada Sul",
+        "public_transport": "platform",
+        "ref": "030845",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799086,
+      "lat": 38.7532329,
+      "lon": -9.2309057,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R D Dinis - Café",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030841"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799087,
+      "lat": 38.7534029,
+      "lon": -9.2298319,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Correia Teles 6",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030840"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799088,
+      "lat": 38.7533375,
+      "lon": -9.2297424,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Correia Teles 6",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030839"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799089,
+      "lat": 38.7531451,
+      "lon": -9.2309577,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R D Dinis - Café",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030837"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799092,
+      "lat": 38.7579868,
+      "lon": -9.2343139,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Estação) P8 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030821",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799106,
+      "lat": 38.7619728,
+      "lon": -9.2441765,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Av Ultramar)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030736",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799107,
+      "lat": 38.762076,
+      "lon": -9.2438696,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Av Ultramar 32)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030735"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799108,
+      "lat": 38.7620275,
+      "lon": -9.2413515,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Ultramar Fte 12",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030734",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799109,
+      "lat": 38.7621367,
+      "lon": -9.2415863,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Ultramar 14",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030733",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799112,
+      "lat": 38.7596828,
+      "lon": -9.2273544,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr da Falagueira 18",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030727",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799127,
+      "lat": 38.7648986,
+      "lon": -9.2283802,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Ord Milit Hospital 16B",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030692",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799128,
+      "lat": 38.7645091,
+      "lon": -9.2282514,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Ord Milit Hospital 16B",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030691",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799129,
+      "lat": 38.7656107,
+      "lon": -9.2300881,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Ordem Militar Hospital (EDP)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030689",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799130,
+      "lat": 38.7575261,
+      "lon": -9.2339686,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Estação) P9 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030685",
+        "shelter": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799148,
+      "lat": 38.7558038,
+      "lon": -9.2433089,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Av D Filipa de Lencastre",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030653",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799160,
+      "lat": 38.7677381,
+      "lon": -9.2395227,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Melhorar localização",
+        "highway": "bus_stop",
+        "name": "Av Pedro Álvares Cabral (Fte Escola)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030624"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799161,
+      "lat": 38.7682927,
+      "lon": -9.2393658,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Pedro Álvares Cabral (Escola)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030623",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799163,
+      "lat": 38.7585612,
+      "lon": -9.2443032,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Av D Nuno Álvares Pereira 35",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030621",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799164,
+      "lat": 38.7585836,
+      "lon": -9.2447422,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Av D Nuno Álvares Pereira 54",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030620",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799165,
+      "lat": 38.7574777,
+      "lon": -9.2471949,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Praça D João I",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "note": "PARAGEM DESATIVADA TEMPORÁRIAMENTE (estima-se até agosto/setembro)\n\nParagem substituição: Avenida Dom Nuno Álvares Pereira 51",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030617",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799169,
+      "lat": 38.7581201,
+      "lon": -9.2267336,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (B Bosque)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030606"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799170,
+      "lat": 38.7579199,
+      "lon": -9.226425,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Elias Garcia 103",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030605",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799171,
+      "lat": 38.7579909,
+      "lon": -9.2294139,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "R Elias Garcia (X) Est Salv Allende",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030604",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799172,
+      "lat": 38.7579114,
+      "lon": -9.2290846,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Praceta Miguel Cláudio 2",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030603",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799173,
+      "lat": 38.7566822,
+      "lon": -9.2332719,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Estr Salv Allende (Posto Combustivel)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030601",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799201,
+      "lat": 38.75427,
+      "lon": -9.2332812,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Aviação Portuguesa (Escola)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "30541",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799202,
+      "lat": 38.7558321,
+      "lon": -9.2334831,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Av Aviação Portuguesa 18",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030539",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799203,
+      "lat": 38.7531722,
+      "lon": -9.2324064,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Moínho Velho 3E",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030538",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799204,
+      "lat": 38.7533052,
+      "lon": -9.2321514,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Moínho Velho 3E",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "30537",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799230,
+      "lat": 38.7526979,
+      "lon": -9.2292065,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Dr José Pontes 11",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030483"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799231,
+      "lat": 38.7550648,
+      "lon": -9.2315231,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Alexandre Sales (Esc Secundária)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030481",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799232,
+      "lat": 38.7558696,
+      "lon": -9.233636,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Av Aviação Portuguesa 21",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030479",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799233,
+      "lat": 38.7572333,
+      "lon": -9.2361144,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "R Luís Camões 9 (CTT)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030477",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799234,
+      "lat": 38.7592712,
+      "lon": -9.2379386,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "R Elias Garcia 362",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "passenger_information_display": "yes",
+        "public_transport": "platform",
+        "ref": "030475",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799235,
+      "lat": 38.7693612,
+      "lon": -9.2449691,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Av Comandante Gomes Mota",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030473",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799236,
+      "lat": 38.7686031,
+      "lon": -9.2450626,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Casal Brancas (Entr)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030471",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799237,
+      "lat": 38.7573835,
+      "lon": -9.2338856,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Estação) P10 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030469",
+        "shelter": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799238,
+      "lat": 38.7557149,
+      "lon": -9.2331486,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Brito Pais (X) R Pais Ramos",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030467",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799239,
+      "lat": 38.7556327,
+      "lon": -9.2315324,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Alexandre Sales (Esc Secundária)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030465",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799240,
+      "lat": 38.7542363,
+      "lon": -9.2294728,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Dr José Pontes Fte 33",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030464"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799241,
+      "lat": 38.7541437,
+      "lon": -9.229316,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Dr José Pontes Fte 33",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030463"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799293,
+      "lat": 38.7577318,
+      "lon": -9.2475265,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Bº Janeiro)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "note": "PARAGEM DESATIVADA TEMPORARIAMENTE (estima-se até agosto/setembro)\n\nParagem Alternativa: Rua Dom Duarte (Parque de Estacionamento)",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030353",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799294,
+      "lat": 38.7566306,
+      "lon": -9.2463142,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Av Aljubarrota 28",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030351",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799295,
+      "lat": 38.7558095,
+      "lon": -9.2442878,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Av Aljubarrota 1",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030349",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799296,
+      "lat": 38.7572175,
+      "lon": -9.243363,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Praça de Angola",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030348",
+        "shelter": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799297,
+      "lat": 38.7571272,
+      "lon": -9.2435067,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Praça de Angola",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030347",
+        "shelter": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799298,
+      "lat": 38.7598426,
+      "lon": -9.2408051,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Av D Nuno Álv Pereira (C Emprego)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av D Nuno Álv Pereira (C Emprego)",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030346",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799299,
+      "lat": 38.762125,
+      "lon": -9.2398989,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Pedro Álvares Cabral Fte 5",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030344",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799300,
+      "lat": 38.76215,
+      "lon": -9.2400395,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Pedro Álvares Cabral 5",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030343",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799301,
+      "lat": 38.7682313,
+      "lon": -9.237881,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Melhorar localização",
+        "highway": "bus_stop",
+        "name": "EB1 Aprigio Gomes",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030339"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799302,
+      "lat": 38.769,
+      "lon": -9.23417,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Camilo Pessanha",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030337"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799304,
+      "lat": 38.7670522,
+      "lon": -9.2346851,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Artur Semedo 66",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030333"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799305,
+      "lat": 38.7667055,
+      "lon": -9.2349797,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Cottinelli Telmo Lte 61",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030331",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799306,
+      "lat": 38.7642116,
+      "lon": -9.2395997,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Melhorar localização",
+        "highway": "bus_stop",
+        "name": "Av Pedro Álvares Cabral 37A",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030330"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799307,
+      "lat": 38.764221,
+      "lon": -9.2394599,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Melhorar localização",
+        "highway": "bus_stop",
+        "name": "Av Pedro Álvares Cabral 34",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030329"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799308,
+      "lat": 38.7609985,
+      "lon": -9.2455112,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "R Elias Garcia 323",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "030326",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799309,
+      "lat": 38.7605343,
+      "lon": -9.2426582,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Hosp Luz)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030323",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799310,
+      "lat": 38.7603331,
+      "lon": -9.241066,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Hosp Luz)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "030322",
+        "shelter": "yes",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799311,
+      "lat": 38.7581206,
+      "lon": -9.2347722,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Amadora (Estação) P6 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Amadora (Estação) P6 Entrada Sul",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030317",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799312,
+      "lat": 38.7556252,
+      "lon": -9.2382104,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Pio XII",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030315",
+        "shelter": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799313,
+      "lat": 38.7550263,
+      "lon": -9.2431194,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "name": "R Gonçalves Ramos",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030313",
+        "shelter": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799331,
+      "lat": 38.7636611,
+      "lon": -9.2336007,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Marquês Pombal Fte 25",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030249",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799332,
+      "lat": 38.7661669,
+      "lon": -9.2321516,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Sebastião Gama 10",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030248",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799333,
+      "lat": 38.7661833,
+      "lon": -9.2322865,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Sebastião Gama 10",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030247",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799371,
+      "lat": 38.7661069,
+      "lon": -9.2294823,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Casal São Brás",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030177",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799372,
+      "lat": 38.7654428,
+      "lon": -9.231603,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Vasco Lima Couto 10",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030175",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799373,
+      "lat": 38.762586,
+      "lon": -9.2317985,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Bomb Volunt 27",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030173",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799374,
+      "lat": 38.7630402,
+      "lon": -9.2382092,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Marquês Pombal 44",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030171"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799375,
+      "lat": 38.7641217,
+      "lon": -9.2375721,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Luis Gomes 55",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030169",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799376,
+      "lat": 38.7682416,
+      "lon": -9.2312367,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Francisco Bugalho 6",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030168",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799378,
+      "lat": 38.7669871,
+      "lon": -9.2306095,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Serra Mira (Móveis Salima)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030165",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799379,
+      "lat": 38.7619487,
+      "lon": -9.2285947,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Falagueira 60",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030163",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799391,
+      "lat": 38.7619222,
+      "lon": -9.2278176,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "no",
+        "highway": "bus_stop",
+        "name": "Trav Qta Bolacha 6",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030142",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799392,
+      "lat": 38.7618295,
+      "lon": -9.227719,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Trav Qta Bolacha 3",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030141",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799394,
+      "lat": 38.7651339,
+      "lon": -9.2306202,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Serra Mira 32",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030138",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799396,
+      "lat": 38.7669343,
+      "lon": -9.2318443,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Oliveira Martins 5A",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030136",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799398,
+      "lat": 38.7679996,
+      "lon": -9.234066,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R F Bugalho (X) R Daniel Filipe",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030134",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799399,
+      "lat": 38.7678665,
+      "lon": -9.2341614,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Franc Bugalho (X) Pcta Teix Gomes",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030133",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799400,
+      "lat": 38.7676498,
+      "lon": -9.2361064,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Fernando Valle (X) Av Canto Castro",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030132",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799401,
+      "lat": 38.7675699,
+      "lon": -9.2359181,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Fernando Valle 50",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030131",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799402,
+      "lat": 38.7673491,
+      "lon": -9.2384887,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Fernando Valle (Rotunda)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030130",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799403,
+      "lat": 38.7673043,
+      "lon": -9.2379296,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Fernando Valle 29",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030129",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799404,
+      "lat": 38.7662196,
+      "lon": -9.2381427,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Av Cottinelli Telmo 74",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030128"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799405,
+      "lat": 38.7663315,
+      "lon": -9.2383227,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Melhorar localização",
+        "highway": "bus_stop",
+        "name": "Av Cottinelli Telmo 36",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "30127"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799406,
+      "lat": 38.7659197,
+      "lon": -9.2365737,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av C Castro (X) Av Cottinelli Telmo",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030126",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799407,
+      "lat": 38.7660081,
+      "lon": -9.236453,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av C Castro (X) Av Cottinelli Telmo",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030125",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799408,
+      "lat": 38.7652426,
+      "lon": -9.2371134,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dr Azevedo Neves 96",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030124",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799409,
+      "lat": 38.7652777,
+      "lon": -9.2369974,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dr Azevedo Neves 96",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030123",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799410,
+      "lat": 38.7631925,
+      "lon": -9.236748,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Combatentes Grande Guerra 64",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030121",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799415,
+      "lat": 38.7561698,
+      "lon": -9.2277944,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Brasil (Jardim Infantil)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030107",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799416,
+      "lat": 38.7596864,
+      "lon": -9.2295218,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Com Luis Antonio Silva 62B",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030105",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799417,
+      "lat": 38.7603137,
+      "lon": -9.2336217,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Bombeiros Volunt 4C (Mercado da Mina)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030103",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799418,
+      "lat": 38.7592098,
+      "lon": -9.2331577,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Henrique Nogueira 12A (Jardim)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030101",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799419,
+      "lat": 38.762225,
+      "lon": -9.2377074,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Gen Humberto Delgado 122",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030097"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799420,
+      "lat": 38.7613956,
+      "lon": -9.233941,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Gen Humb Delgado (Supermercado)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030095",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799421,
+      "lat": 38.7575296,
+      "lon": -9.2273491,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av do Brasil 6",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030091",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799774,
+      "lat": 38.7614931,
+      "lon": -9.2533254,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Moínhos 24",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172117"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799801,
+      "lat": 38.7565969,
+      "lon": -9.2500263,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av D Pedro IV 8",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av D Pedro IV 8",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172066",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799802,
+      "lat": 38.7564333,
+      "lon": -9.2504326,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av D Pedro IV (Bomb V Queluz)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av D Pedro IV (Bomb V Queluz)",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172065",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799814,
+      "lat": 38.7642991,
+      "lon": -9.251809,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Carenque (X) Bica Costa",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172041",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290799815,
+      "lat": 38.7639313,
+      "lon": -9.2518954,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Carenque (X) Bica Costa",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "172039",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800547,
+      "lat": 38.761483,
+      "lon": -9.2509611,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Estr Carenque (X) Bº Alto Moínhos",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171097",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800548,
+      "lat": 38.7627841,
+      "lon": -9.2527654,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Fern Mendes Pinto (C Comunit Pendão)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171095"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800582,
+      "lat": 38.7620459,
+      "lon": -9.2527156,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Fernão Mendes Pinto (X) R Moínhos",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171037"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800583,
+      "lat": 38.7608479,
+      "lon": -9.2524627,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Fernão Mendes Pinto 90",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "public_transport": "platform",
+        "ref": "171036"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800584,
+      "lat": 38.7606979,
+      "lon": -9.2522643,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Melhorar localização",
+        "highway": "bus_stop",
+        "name": "R Fernão Mendes Pinto 79",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171035"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800587,
+      "lat": 38.7588698,
+      "lon": -9.2527046,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dralb Ferraz (X) Imp João Fern Labrad",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171032"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800588,
+      "lat": 38.7590813,
+      "lon": -9.252477,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "R Dralb Ferraz (X) Imp João Fern Labrad",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171031"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800589,
+      "lat": 38.7592532,
+      "lon": -9.2504782,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Elias Garcia 40",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171028",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290800590,
+      "lat": 38.7594111,
+      "lon": -9.2503401,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Elias Garcia 25",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "171027",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10699091521,
+      "lat": 38.7555607,
+      "lon": -9.2442005,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "flag": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Estrada Velha de Queluz (Amadora)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030654",
+        "shelter": "no",
+        "tactile_paving": "no",
+        "website": "https://www.carrismetropolitana.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10797123922,
+      "lat": 38.7567392,
+      "lon": -9.2490218,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Restaurants Stallone"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10926110033,
+      "lat": 38.7630389,
+      "lon": -9.2374474,
+      "tags": {
+        "addr:street": "Avenida Marquês de Pombal",
+        "brand": "Covirán",
+        "name": "Coviran",
+        "payment:cards": "yes",
+        "payment:cash": "yes",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "shop": "supermarket",
+        "stroller": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10929541446,
+      "lat": 38.7579363,
+      "lon": -9.2343609,
+      "tags": {
+        "bus": "yes",
+        "name": "Amadora (Estação) P8 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10965586868,
+      "lat": 38.7589162,
+      "lon": -9.2373973,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "231A",
+        "addr:postcode": "2700-319",
+        "addr:street": "Rua Elias Garcia",
+        "amenity": "bank",
+        "brand": "Novo Banco",
+        "brand:wikidata": "Q17488861",
+        "brand:wikipedia": "pt:Novo Banco",
+        "contact:fax": "+351 218834493",
+        "contact:phone": "+351 218834491",
+        "name": "Novo Banco",
+        "operator": "Novo Banco",
+        "operator:old_name": "Banco Espírito Santo",
+        "operator:old_name:short": "BES",
+        "operator:wikidata": "Q17488861",
+        "operator:wikipedia": "pt:Novo Banco",
+        "ref": "B0224",
+        "ref_name": "Amadora"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10965704288,
+      "lat": 38.7597695,
+      "lon": -9.2505452,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Pimenta Doce"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10965704294,
+      "lat": 38.759309,
+      "lon": -9.2505824,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Açúcar Café"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11015469737,
+      "lat": 38.7633994,
+      "lon": -9.2437596,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av General Humberto Delgado",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av General Humberto Delgado",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030336"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11015469738,
+      "lat": 38.7635596,
+      "lon": -9.2438002,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Av Gen Humberto Delgado (Estaleiro)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Av Gen Humberto Delgado (Estaleiro)",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "030334"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11318393054,
+      "lat": 38.7582306,
+      "lon": -9.2454265,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "43B",
+        "addr:postcode": "2700-254",
+        "addr:street": "Av. Dom Nuno Álvares Pereira",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Centro Clínico Bairro Janeiro",
+        "phone": "+351214947601",
+        "website": "http://ccbjaneiro.sitesbc.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11438343503,
+      "lat": 38.7639789,
+      "lon": -9.2306276,
+      "tags": {
+        "addr:city": "Amadora",
+        "leisure": "park",
+        "sport": "fitness;futsal;gymnastics",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11842188987,
+      "lat": 38.7632736,
+      "lon": -9.2370853,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "47",
+        "addr:postcode": "2700-208",
+        "addr:street": "Avenida Combatentes da Grande Guerra",
+        "addr:unit": "R/C",
+        "amenity": "school",
+        "email": "ext.nsrapazamadora@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Externato Nossa Senhora da Paz",
+        "operator:type": "private",
+        "phone": "+351 214 932 500",
+        "ref": "504361",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11845034140,
+      "lat": 38.7610954,
+      "lon": -9.2377726,
+      "tags": {
+        "bus": "yes",
+        "name": "Amadora (Estação) P1 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11845034141,
+      "lat": 38.7609321,
+      "lon": -9.2374756,
+      "tags": {
+        "bus": "yes",
+        "name": "Amadora (Estação) P2 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11845034142,
+      "lat": 38.7606125,
+      "lon": -9.2368942,
+      "tags": {
+        "bus": "yes",
+        "name": "Amadora (Estação) P4 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11845034143,
+      "lat": 38.7607937,
+      "lon": -9.2372238,
+      "tags": {
+        "bus": "yes",
+        "name": "Amadora (Estação) P3 Entrada Norte",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11849935579,
+      "lat": 38.7565899,
+      "lon": -9.2277341,
+      "tags": {
+        "addr:housenumber": "20",
+        "addr:street": "Avenida do Brasil",
+        "amenity": "cafe",
+        "name": "Pastelaria Ruivos",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11874374502,
+      "lat": 38.7578279,
+      "lon": -9.2325337,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "149",
+        "addr:postcode": "2700-317",
+        "addr:street": "Rua Elias Garcia",
+        "addr:unit": "3B",
+        "amenity": "college",
+        "name": "Academia de Artes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11874374515,
+      "lat": 38.7583332,
+      "lon": -9.2315852,
+      "tags": {
+        "adress": "Av. Miguel Bombarda 5, 2700-579 Amadora",
+        "amenity": "restaurant",
+        "name": "Restaurante Café Sofia",
+        "note": "Aceita reservas",
+        "toilets": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11874374519,
+      "lat": 38.7589941,
+      "lon": -9.2326797,
+      "tags": {
+        "adress": "Praça Mte. Simões de Almeida 5, 2700-317 Amadora",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Clube Desportivo Cá-Te-Espero",
+        "phone": "+351 21 137 7317"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11874374520,
+      "lat": 38.7585513,
+      "lon": -9.2327974,
+      "tags": {
+        "adress": "Praça Mte. Simões de Almeida 5, 2700-317 Amadora",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Clube Desportivo Cá-Te-Espero",
+        "phone": "+351 21 137 7317"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11874374525,
+      "lat": 38.7586041,
+      "lon": -9.2313459,
+      "tags": {
+        "adress": "R. Cândido dos Reis, 2700-580 Amadora",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "name": "Novodia Cafetaria Snack-Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11874968690,
+      "lat": 38.7558322,
+      "lon": -9.227733,
+      "tags": {
+        "addr:city": "Falagueira-Venda Nova Amadora",
+        "addr:postcode": "2700-133",
+        "addr:street": "Avenida do Brasil",
+        "amenity": "restaurant",
+        "cuisine": "barbecue",
+        "name": "Bom churrasco",
+        "phone": "+351 21 409 8149"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11874968711,
+      "lat": 38.7581209,
+      "lon": -9.2265005,
+      "tags": {
+        "addr:postcode": "2700",
+        "addr:street": "Rua Elias Garcia",
+        "amenity": "restaurant",
+        "cuisine": "kebab",
+        "name": "Epiicfantasy, LDA",
+        "phone": "+351 21 825 6148"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12062079838,
+      "lat": 38.7582178,
+      "lon": -9.2501294,
+      "tags": {
+        "addr:city": "Queluz",
+        "addr:housenumber": "LT 51B",
+        "addr:postcode": "2745-091",
+        "addr:street": "Rua César de Oliveira",
+        "amenity": "school",
+        "branch": "Queluz",
+        "contact:email": "ep.geiffelqueluz@escolas.min-edu.pt",
+        "contact:fax": "+351 214364577",
+        "contact:phone": "+351 214362521",
+        "contact:website": "http://www.cooptecnica.pt",
+        "grades": "12-17",
+        "name": "Escola Profissional Gustave Eiffel",
+        "operator": "Escola Profissional Gustave Eiffel",
+        "operator:type": "private",
+        "ref": "802744",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063069340,
+      "lat": 38.7618086,
+      "lon": -9.2374963,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "7",
+        "addr:postcode": "2700-529",
+        "addr:street": "Rua Luís Gomes",
+        "amenity": "kindergarten",
+        "contact:email": "ext.marite@escolas.min-edu.pt",
+        "contact:fax": "+351 214932831",
+        "contact:phone": "+351 214932831",
+        "grades": "3-5",
+        "name": "Externato \"Marité\"",
+        "operator:type": "private",
+        "ref": "503915",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063069343,
+      "lat": 38.7605473,
+      "lon": -9.2412569,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:floor": "1",
+        "addr:housenumber": "386",
+        "addr:postcode": "2700-339",
+        "addr:street": "Rua Elias Garcia",
+        "addr:unit": "Dir.",
+        "amenity": "kindergarten",
+        "contact:email": "ji.ocaracolpimpao@escolas.min-edu.pt",
+        "contact:phone": "+351 214937104",
+        "grades": "3-5",
+        "name": "Jardim Infantil \"O Caracol Pimpão\"",
+        "operator:type": "private",
+        "ref": "504476",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063069344,
+      "lat": 38.7563341,
+      "lon": -9.2382287,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:floor": "0",
+        "addr:housenumber": "14",
+        "addr:postcode": "2700-657",
+        "addr:street": "Rua Pio XII",
+        "amenity": "school",
+        "contact:email": "ext.aljubarrota@escolas.min-edu.pt",
+        "contact:phone": "+351 214935841",
+        "grades": "3-9",
+        "name": "Externato \"Aljubarrota\"",
+        "operator:type": "private",
+        "ref": "501748",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063069345,
+      "lat": 38.752137,
+      "lon": -9.2304547,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "18B",
+        "addr:postcode": "2720-136",
+        "addr:street": "Rua Correia Teles",
+        "amenity": "school",
+        "contact:email": "secretaria@obaloico.com;financas@obaloico.com",
+        "contact:fax": "+351 214968081",
+        "contact:phone": "+351 214 953 955;+351 214 968 025",
+        "contact:website": "http://www.obaloico.com",
+        "grades": "3-9",
+        "name": "Externato \"O Baloiço\"",
+        "operator": "Matos e Ribeiro, Lda.",
+        "operator:type": "private",
+        "ref": "502017",
+        "ref:aeep": "1104",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063069346,
+      "lat": 38.7525807,
+      "lon": -9.2310791,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:floor": "0",
+        "addr:housenumber": "19",
+        "addr:postcode": "2720-163",
+        "addr:street": "Rua Dom Dinis",
+        "amenity": "school",
+        "contact:email": "ext.rainhadestefanea@escolas.min-edu.pt",
+        "contact:fax": "+351 214954988",
+        "contact:phone": "+351 214950403",
+        "grades": "3-9",
+        "name": "Externato \"Rainha Dona Estefânea\"",
+        "operator:type": "private",
+        "ref": "503060",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063069354,
+      "lat": 38.7578034,
+      "lon": -9.2288221,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:floor": "0",
+        "addr:housenumber": "1",
+        "addr:postcode": "2700-585",
+        "addr:street": "Praceta Miguel Cláudio",
+        "addr:unit": "Dir.",
+        "amenity": "school",
+        "contact:email": "extdjoaovi@escolas.min-edu.pt",
+        "contact:fax": "+351 214958277",
+        "contact:phone": "+351 214958277",
+        "grades": "3-9",
+        "name": "Colégio Dom João VI",
+        "operator:type": "private",
+        "ref": "503526",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063110977,
+      "lat": 38.7665114,
+      "lon": -9.2389242,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "LT 26",
+        "addr:postcode": "2700-781",
+        "addr:street": "Avenida Cottinnelli Telmo",
+        "amenity": "kindergarten",
+        "contact:email": "pequenosorriso@netcabo.pt",
+        "contact:fax": "+351 309968500",
+        "contact:phone": "+351 309968500",
+        "grades": "3-5",
+        "name": "Colégio \"Pequenos Sorrisos\"",
+        "operator:type": "private",
+        "ref": "804196",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12063110978,
+      "lat": 38.7672385,
+      "lon": -9.2379152,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "LT 30",
+        "addr:postcode": "2700-392",
+        "addr:street": "Avenida Fernando Valle",
+        "addr:unit": "LJ B",
+        "amenity": "kindergarten",
+        "contact:email": "geral@estrelasdeluz.pt",
+        "contact:phone": "+351 214930638;+351 963925114",
+        "contact:website": "www.estrelasdeluz.pt",
+        "grades": "3-5",
+        "name": "Jardim de Infância \"Estrelas de Luz\"",
+        "operator:type": "private",
+        "ref": "806701",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12076223332,
+      "lat": 38.766156,
+      "lon": -9.2294591,
+      "tags": {
+        "bus": "yes",
+        "name": "Casal São Brás",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12092132439,
+      "lat": 38.7677436,
+      "lon": -9.2393948,
+      "tags": {
+        "bus": "yes",
+        "name": "Av Pedro Álvares Cabral (Fte Escola)",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12096668458,
+      "lat": 38.7580527,
+      "lon": -9.2347829,
+      "tags": {
+        "bus": "yes",
+        "name": "Amadora (Estação) P6 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12116102152,
+      "lat": 38.7584137,
+      "lon": -9.2345633,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "3;3A",
+        "addr:postcode": "2700-279",
+        "addr:street": "Largo Doutor Dário Gandra Nunes",
+        "alt_name": "Continente Bom Dia Amadora",
+        "branch": "Amadora",
+        "brand": "Continente Bom Dia",
+        "brand:wikidata": "Q123570507",
+        "brand:wikipedia": "pt:Continente Bom Dia",
+        "contact:facebook": "continenteoficial",
+        "contact:instagram": "continente",
+        "contact:phone": "+351 214 985 640",
+        "contact:youtube": "https://www.youtube.com/user/continentept",
+        "name": "Continente Bom Dia",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "ref": "488b8712-5b21-502c-80ca-77b7b44b3509",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://feed.continente.pt/lojas/continente-bom-dia-amadora"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12152787602,
+      "lat": 38.7529339,
+      "lon": -9.2328836,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "fixme": "verificar localização",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida Conde de Oeiras (Farmácia)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Avenida Conde de Oeiras (Farmácia)",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "032043",
+        "route_ref": "1002",
+        "shelter": "no",
+        "short_name": "Av. Conde de Oeiras (Farmácia)",
+        "website": "https://www.carrismetropolitana.pt/stops/032043"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12157222002,
+      "lat": 38.7567513,
+      "lon": -9.25031,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Laura Alves (X) Rua Dom Pedro IV",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Rua Laura Alves (X) Rua Dom Pedro IV",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "175188",
+        "route_ref": "1519",
+        "short_name": "R. Laura Alves (X) R. D. Pedro IV",
+        "website": "https://www.carrismetropolitana.pt/stops/175188"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12176569680,
+      "lat": 38.7566132,
+      "lon": -9.2326344,
+      "tags": {
+        "air_conditioning": "yes",
+        "amenity": "restaurant",
+        "changing_table": "no",
+        "cuisine": "portuguese",
+        "indoor_seating": "yes",
+        "name": "Stop",
+        "opening_hours": "Mo-Sa 09:30-21:00",
+        "outdoor_seating": "no",
+        "payment:credit_cards": "no",
+        "payment:debit_cards": "no",
+        "smoking": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12176797787,
+      "lat": 38.7555486,
+      "lon": -9.2327034,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Petiscos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12178109964,
+      "lat": 38.7512481,
+      "lon": -9.2315867,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Daktari"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12178803269,
+      "lat": 38.7531509,
+      "lon": -9.2334173,
+      "tags": {
+        "brand": "Spar",
+        "brand:wikidata": "Q610492",
+        "name": "Spar",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12178843979,
+      "lat": 38.7533186,
+      "lon": -9.2334047,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Oceânico"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12204938606,
+      "lat": 38.7531591,
+      "lon": -9.2335571,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Arkadas",
+        "opening_hours": "Mo,We-Fr 08:00-24:00, Sa,Su 09:00-24:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12204940045,
+      "lat": 38.7540827,
+      "lon": -9.233504,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2720-119",
+        "amenity": "bank",
+        "branch": "Reboleira",
+        "branch:type": "retail",
+        "brand": "Caixa Geral de Depósitos",
+        "brand:website": "https://www.cgd.pt/",
+        "brand:wikidata": "Q1026044",
+        "brand:wikipedia": "pt:Caixa Geral de Depósitos",
+        "contact:facebook": "caixageraldedepositos",
+        "contact:instagram": "caixageraldedepositos",
+        "contact:linkedin": "https://www.linkedin.com/company/caixageraldedepositos/",
+        "contact:phone": "+351 217 900 790",
+        "contact:youtube": "http://www.youtube.com/user/mediacgd",
+        "name": "Caixa Geral de Depósitos",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa,Su,PH off",
+        "operator": "Caixa Geral de Depósitos",
+        "operator:wikidata": "Q1026044",
+        "operator:wikipedia": "pt:Caixa Geral de Depósitos",
+        "ref": "1357",
+        "short_name": "CGD",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.cgd.pt/Corporativo/Rede-CGD/Pages/REBOLEIRA.aspx"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12269893019,
+      "lat": 38.7575138,
+      "lon": -9.2340254,
+      "tags": {
+        "bus": "yes",
+        "name": "Amadora (Estação) P9 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12292530576,
+      "lat": 38.7573691,
+      "lon": -9.2339349,
+      "tags": {
+        "bus": "yes",
+        "name": "Amadora (Estação) P10 Entrada Sul",
+        "network": "Carris Metropolitana",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12582007312,
+      "lat": 38.7588778,
+      "lon": -9.2349201,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "12-B",
+        "addr:postcode": "2700-624",
+        "addr:street": "Avenida 11 de Setembro de 1979",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Amadora - Estação",
+        "brand": "Santander",
+        "brand:website": "https://www.santander.pt/",
+        "brand:wikidata": "Q4854116",
+        "brand:wikipedia": "pt:Banco Santander Portugal",
+        "cash_in": "yes",
+        "cash_out": "yes",
+        "contact:email": "amadora.estacao@santander.pt",
+        "contact:facebook": "santanderpt",
+        "contact:instagram": "santanderpt",
+        "contact:linkedin": "https://www.linkedin.com/company/santanderpt/",
+        "contact:phone": "+351 214 986 670",
+        "contact:twitter": "santanderpt",
+        "contact:youtube": "@santanderpt",
+        "internet_access": "wlan",
+        "language:en": "yes",
+        "language:es": "yes",
+        "language:pt": "yes",
+        "name": "Santander",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa-Su off; Jan 01,Apr 25,May 25,Jun 01,Jun 26,Aug 10,Aug 24,Oct 15,Nov 05,Dec 01,Dec 08,Dec 25 off",
+        "operator": "Banco Santander (Portugal)",
+        "operator:wikidata": "Q4854116",
+        "operator:wikipedia": "pt:Banco Santander Portugal",
+        "ref": "3211",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.santander.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12582007313,
+      "lat": 38.7515199,
+      "lon": -9.2335112,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "4 C",
+        "addr:postcode": "2720-369",
+        "addr:street": "Rua Mário Barata da Cruz",
+        "amenity": "bank",
+        "atm": "yes",
+        "branch": "Amadora - Reboleira",
+        "brand": "Santander",
+        "brand:website": "https://www.santander.pt/",
+        "brand:wikidata": "Q4854116",
+        "brand:wikipedia": "pt:Banco Santander Portugal",
+        "cash_in": "yes",
+        "cash_out": "yes",
+        "cheque_in": "yes",
+        "contact:email": "amadora.reboleira@santander.pt",
+        "contact:facebook": "santanderpt",
+        "contact:instagram": "santanderpt",
+        "contact:linkedin": "https://www.linkedin.com/company/santanderpt/",
+        "contact:phone": "+351 214 999 130",
+        "contact:twitter": "santanderpt",
+        "contact:youtube": "@santanderpt",
+        "internet_access": "wlan",
+        "language:en": "yes",
+        "language:es": "yes",
+        "language:fr": "yes",
+        "language:pt": "yes",
+        "name": "Santander",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa-Su off; Jan 01,Apr 25,May 25,Jun 01,Jun 26,Aug 10,Aug 24,Oct 15,Nov 05,Dec 01,Dec 08,Dec 25 off",
+        "operator": "Banco Santander (Portugal)",
+        "operator:wikidata": "Q4854116",
+        "operator:wikipedia": "pt:Banco Santander Portugal",
+        "ref": "334",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.santander.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12598722522,
+      "lat": 38.7517636,
+      "lon": -9.2329922,
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "11B",
+        "addr:postcode": "2720-418",
+        "addr:street": "Rua Octávio Cardoso Pereira",
+        "amenity": "bank",
+        "brand": "Novo Banco",
+        "brand:wikidata": "Q17488861",
+        "brand:wikipedia": "pt:Novo Banco",
+        "contact:fax": "+351 218834798",
+        "contact:phone": "+351 218834797",
+        "name": "Novo Banco",
+        "opening_hours": "Mo-Fr 08:30-15:00",
+        "operator": "Novo Banco",
+        "operator:wikidata": "Q17488861",
+        "operator:wikipedia": "pt:Novo Banco",
+        "ref": "B1016",
+        "ref_name": "Reboleira"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12732068554,
+      "lat": 38.7572545,
+      "lon": -9.2481286,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Rua Dom Duarte (Parque de Estacionamento)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "note": "PARAGEM PROVISÓRIA (estima-se até agosto/setembro)",
+        "official_name": "Rua Dom Duarte (Parque de Estacionamento)",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "031332",
+        "route_ref": "1009;1509;1514;1518;1601;1716;1717",
+        "short_name": "R. D. Duarte (Pq. De Estacionamento)",
+        "website": "https://www.carrismetropolitana.pt/stops/031332"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12732068555,
+      "lat": 38.7579378,
+      "lon": -9.2463297,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida Dom Nuno Álvares Pereira 51",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "note": "PARAGEM PROVISÓRIA (estima-se até agosto/setembro)",
+        "official_name": "Avenida Dom Nuno Álvares Pereira 51",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "035898",
+        "route_ref": "1509;1514;1518;1601;1716;1717",
+        "shelter": "no",
+        "short_name": "Av. D. Nuno Álvares Pereira 51",
+        "website": "https://www.carrismetropolitana.pt/stops/035898"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13023361322,
+      "lat": 38.7583283,
+      "lon": -9.2509921,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Avenida José Elias Garcia 68",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Avenida José Elias Garcia 68",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "176453",
+        "route_ref": "1230;1510;1511;1512;1513;1515;1518;1519;1601;1715;1716;1720;1721;1740",
+        "short_name": "Av José Elias Garcia 68",
+        "website": "https://carrismetropolitana.pt/stops/176453"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13301796903,
+      "lat": 38.7604727,
+      "lon": -9.2363474,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Confeitaria Glória"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13525037841,
+      "lat": 38.7619858,
+      "lon": -9.2398272,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pérola da Ponte"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13525065895,
+      "lat": 38.7609939,
+      "lon": -9.2329688,
+      "tags": {
+        "name": "Meu Super",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13527414604,
+      "lat": 38.7583512,
+      "lon": -9.2448248,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "grill",
+        "name": "Dom Nuno",
+        "phone": "+351 214 927 342"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13814997321,
+      "lat": 38.762528,
+      "lon": -9.2387509,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Orquídea"
+      }
+    },
+    {
+      "type": "way",
+      "id": 24616307,
+      "center": {
+        "lat": 38.7518137,
+        "lon": -9.2412562
+      },
+      "tags": {
+        "alt_name": "Aquartelamento da Academia Militar Amadora",
+        "amenity": "university",
+        "landuse": "military",
+        "military": "barracks",
+        "name": "Academia Militar",
+        "source": "bing"
+      }
+    },
+    {
+      "type": "way",
+      "id": 26979110,
+      "center": {
+        "lat": 38.7589184,
+        "lon": -9.2366526
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque Delfim Guimarães",
+        "website": "https://www.cm-amadora.pt/desporto-lazer/parques-e-jardins/684-parque-delfim-guimaraes.html",
+        "wikidata": "Q98940408",
+        "wikimedia_commons": "Category:Parque Delfim Guimarães"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100443688,
+      "center": {
+        "lat": 38.7635695,
+        "lon": -9.2351475
+      },
+      "tags": {
+        "addr:housenumber": "22 B",
+        "addr:postcode": "2700-571",
+        "addr:street": "Avenida Marquês de Pombal",
+        "amenity": "university",
+        "architect": "Vittorio Gregotti;Gregotti Associati;Manuel Salgado;Risco",
+        "architect:wikidata": "Q124740782;Q10324486;Q133459220;Q679049",
+        "name": "Escola Superior de Teatro e Cinema",
+        "wikidata": "Q1367284",
+        "wikimedia_commons": "Category:Escola Superior de Teatro e Cinema",
+        "wikipedia": "pt:Escola Superior de Teatro e Cinema"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100444567,
+      "center": {
+        "lat": 38.761084,
+        "lon": -9.2345707
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque Central da Amadora",
+        "website": "https://www.cm-amadora.pt/desporto-lazer/parques-e-jardins/671-parque-central.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100483577,
+      "center": {
+        "lat": 38.7553611,
+        "lon": -9.2302144
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2720-012",
+        "addr:street": "Avenida Alexandre Salles",
+        "amenity": "school",
+        "education": "school",
+        "email": "direcao@aepap.edu.gov.pt;servicos@aepap.edu.gov.pt",
+        "grades": "15-17",
+        "name": "Escola Secundária da Amadora",
+        "operator": "Agrupamento de Escolas Pioneiros da Aviação Portuguesa, Amadora",
+        "operator:ref": "170744",
+        "operator:type": "public",
+        "phone": "+351 214 996 280",
+        "ref": "400816",
+        "ref:qzp": "QZP.45",
+        "website": "https://www.aepap.edu.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100483579,
+      "center": {
+        "lat": 38.7539898,
+        "lon": -9.2319235
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2720-059",
+        "addr:street": "Avenida da Aviação Portuguesa",
+        "amenity": "school",
+        "education": "school",
+        "email": "eb23.roquegameiro@escolas.min-edu.pt",
+        "grades": "6-14",
+        "name": "Escola Básica Roque Gameiro",
+        "operator": "Agrupamento de Escolas Pioneiros da Aviação Portuguesa, Amadora",
+        "operator:ref": "170744",
+        "operator:type": "public",
+        "phone": "+351 214 998 580",
+        "ref": "342968",
+        "ref:qzp": "QZP.45",
+        "short_name": "Escola EB 2,3 Roque Gameiro",
+        "website": "http://www.aepap.edu.pt/site/index.php/agrupamento/escolas/escola-basica-roque-gameiro"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100486889,
+      "center": {
+        "lat": 38.7581975,
+        "lon": -9.2347597
+      },
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Centro de Saúde da Amadora"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100624806,
+      "center": {
+        "lat": 38.7634127,
+        "lon": -9.2268117
+      },
+      "tags": {
+        "addr:housenumber": "21",
+        "addr:place": "Amadora",
+        "addr:street": "Rua da Quinta da Bolacha",
+        "amenity": "restaurant",
+        "building": "retail",
+        "cuisine": "asian",
+        "name": "Go Chef Amadora"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100720308,
+      "center": {
+        "lat": 38.763419,
+        "lon": -9.2302627
+      },
+      "tags": {
+        "alt_name": "Parque Aventura da Amadora",
+        "leisure": "park",
+        "name": "Parque Aventura",
+        "website": "https://www.cm-amadora.pt/desporto-lazer/parques-e-jardins/666-parque-aventura.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 101206070,
+      "center": {
+        "lat": 38.761295,
+        "lon": -9.2280423
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-715",
+        "addr:street": "Praceta das Roiçadas",
+        "amenity": "school",
+        "email": "eb1.arturbual@escolas.min-edu.pt",
+        "grades": "6-9",
+        "name": "Escola Básica Artur Bual",
+        "operator": "Agrupamento de Escolas Mães d’Água, Amadora",
+        "operator:ref": "172303",
+        "operator:type": "public",
+        "phone": "+351 214 920 579",
+        "ref": "238405",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1 Artur Bual"
+      }
+    },
+    {
+      "type": "way",
+      "id": 101206075,
+      "center": {
+        "lat": 38.754737,
+        "lon": -9.2267442
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-129",
+        "addr:street": "Avenida do Brasil",
+        "amenity": "school",
+        "email": "eb1.terraarcos@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica da Terra dos Arcos",
+        "operator": "Agrupamento de Escolas Pioneiros da Aviação Portuguesa, Amadora",
+        "operator:ref": "170744",
+        "operator:type": "public",
+        "phone": "+351 214 956 766",
+        "ref": "252463",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 1/JI Terra dos Arcos"
+      }
+    },
+    {
+      "type": "way",
+      "id": 101209663,
+      "center": {
+        "lat": 38.7590534,
+        "lon": -9.2300861
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "34",
+        "addr:postcode": "2700-582",
+        "addr:street": "Avenida Miguel Bombarda",
+        "amenity": "school",
+        "email": "eb1.n1.mina@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica da Mina",
+        "operator": "Agrupamento de Escolas Cardoso Lopes, Amadora",
+        "operator:ref": "171232",
+        "operator:type": "public",
+        "phone": "+351 214 935 537",
+        "ref": "239641",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 182099748,
+      "center": {
+        "lat": 38.7541325,
+        "lon": -9.2521795
+      },
+      "tags": {
+        "addr:city": "Queluz",
+        "addr:postcode": "2745-190",
+        "addr:street": "Avenida Paiva Couceiro",
+        "amenity": "school",
+        "email": "direcao@aequeluz-belas.edu.gov.pt;servicos@aequeluz-belas.edu.gov.pt",
+        "grades": "10-17",
+        "name": "Escola Básica e Secundária Padre Alberto Neto",
+        "operator": "Agrupamento de Escolas de Queluz-Belas, Sintra",
+        "operator:ref": "172121",
+        "operator:type": "public",
+        "phone": "+351 214 343 200",
+        "ref": "402369",
+        "ref:qzp": "QZP.45",
+        "website": "https://www.espan.edu.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 276187542,
+      "center": {
+        "lat": 38.7590644,
+        "lon": -9.2443549
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "13",
+        "addr:postcode": "2700-058",
+        "addr:street": "Rua de Angola",
+        "branch": "Amadora - Rua de Angola",
+        "brand": "Lidl",
+        "brand:wikidata": "Q151954",
+        "brand:wikipedia": "pt:Lidl",
+        "building": "commercial",
+        "contact:facebook": "lidlportugal",
+        "contact:instagram": "lidlportugal",
+        "contact:linkedin": "https://www.linkedin.com/company/lidl-portugal",
+        "contact:phone": "+351 210 207 000",
+        "contact:tiktok": "lidl.portugal",
+        "contact:youtube": "https://www.youtube.com/user/LidlPortugal",
+        "name": "Lidl",
+        "opening_hours": "Mo-Su 08:00-21:30",
+        "ref": "PT00119",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.lidl.pt/s/pt-PT/pesquisa-de-loja/amadora/rua-de-angola-13/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 315400924,
+      "center": {
+        "lat": 38.7561654,
+        "lon": -9.2341673
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2720-057",
+        "addr:street": "Avenida da Aviação Portuguesa",
+        "amenity": "school",
+        "barrier": "fence",
+        "email": "eb1.gagocoutinho@escolas.min-edu.pt",
+        "grades": "6-9",
+        "name": "Escola Básica Gago Coutinho",
+        "operator": "Agrupamento de Escolas Pioneiros da Aviação Portuguesa, Amadora",
+        "operator:ref": "170744",
+        "operator:type": "public",
+        "phone": "+351 214 951 685",
+        "ref": "240928",
+        "ref:qzp": "QZP.45",
+        "short_name": "Escola EB 1 Gago Coutinho"
+      }
+    },
+    {
+      "type": "way",
+      "id": 369730724,
+      "center": {
+        "lat": 38.7487537,
+        "lon": -9.2364904
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque da Fantasia",
+        "website": "https://www.cm-amadora.pt/pt/desporto-lazer/parques-e-jardins/688-parque-da-fantasia.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 388722440,
+      "center": {
+        "lat": 38.7554976,
+        "lon": -9.2291598
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque da Juventude",
+        "website": "https://www.cm-amadora.pt/pt/desporto-lazer/parques-e-jardins/672-parque-da-juventude.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 395597799,
+      "center": {
+        "lat": 38.7690003,
+        "lon": -9.236085
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-782",
+        "addr:street": "Avenida Canto e Castro",
+        "amenity": "school",
+        "grades": "3-9",
+        "name": "Escola Básica Aprígio Gomes",
+        "operator": "Agrupamento de Escolas Cardoso Lopes, Amadora",
+        "operator:ref": "171232",
+        "operator:type": "public",
+        "ref": "295700",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB1/JI/Creche Aprígio Gomes",
+        "website": "https://cardosolopes.net/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 395597811,
+      "center": {
+        "lat": 38.7689327,
+        "lon": -9.2384303
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-621",
+        "addr:street": "Avenida António Ribeiro Chiado",
+        "amenity": "school",
+        "email": "direcao@aeclopes.edu.gov.pt;servicos@aeclopes.edu.gov.pt",
+        "grades": "10-14",
+        "name": "Escola Básica Cardoso Lopes",
+        "operator": "Agrupamento de Escolas Cardoso Lopes, Amadora",
+        "operator:ref": "171232",
+        "operator:type": "public",
+        "phone": "+351 214 986 560",
+        "ref": "340492",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB 2+3 Cardoso Lopes",
+        "website": "https://cardosolopes.net/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 468562418,
+      "center": {
+        "lat": 38.7596796,
+        "lon": -9.2357261
+      },
+      "tags": {
+        "ele": "140",
+        "landuse": "railway",
+        "name": "Amadora",
+        "nat_ref": "60087",
+        "official_name": "Estação Ferroviária de Amadora",
+        "old_name": "Porcalhota",
+        "operator": "Infraestruturas de Portugal",
+        "operator:short": "IP",
+        "operator:wikidata": "Q20730106",
+        "public_transport": "station",
+        "railway": "station",
+        "railway:ref": "ARA",
+        "start_date": "1887-04-02",
+        "train": "yes",
+        "website": "https://servicos.infraestruturasdeportugal.pt/pt-pt/estacoes?estacaoId=9460087",
+        "wikidata": "Q4120783",
+        "wikimedia_commons": "Category:Amadora train station",
+        "wikipedia": "pt:Estação Ferroviária de Amadora"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470077925,
+      "center": {
+        "lat": 38.7624631,
+        "lon": -9.2363053
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Mina de Agua"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470077930,
+      "center": {
+        "lat": 38.765951,
+        "lon": -9.2371367
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470077932,
+      "center": {
+        "lat": 38.7667997,
+        "lon": -9.2374692
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque Infantil de Vila Chã",
+        "website": "https://www.cm-amadora.pt/pt/desporto-lazer/parques-e-jardins.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470077937,
+      "center": {
+        "lat": 38.7669884,
+        "lon": -9.2354522
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470077939,
+      "center": {
+        "lat": 38.7671965,
+        "lon": -9.2336121
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470077940,
+      "center": {
+        "lat": 38.768521,
+        "lon": -9.231962
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Jardim Doutor António Macedo",
+        "website": "https://www.cm-amadora.pt/pt/desporto-lazer/parques-e-jardins/714-jardim-dr-antonio-macedo.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470077941,
+      "center": {
+        "lat": 38.7686087,
+        "lon": -9.2330211
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-228",
+        "addr:street": "Praceta Daniel Filipe",
+        "leisure": "park",
+        "name": "Parque Daniel Filipe",
+        "website": "https://www.cm-amadora.pt/pt/desporto-lazer/parques-e-jardins.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470077943,
+      "center": {
+        "lat": 38.7681243,
+        "lon": -9.2358682
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470079389,
+      "center": {
+        "lat": 38.75636,
+        "lon": -9.2341907
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470079390,
+      "center": {
+        "lat": 38.7539417,
+        "lon": -9.2337796
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque Conde Castro Guimarães",
+        "website": "https://www.cm-amadora.pt/desporto-lazer/parques-e-jardins/910-parque-conde-castro-guimaraes.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470079394,
+      "center": {
+        "lat": 38.7523796,
+        "lon": -9.2327061
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470079399,
+      "center": {
+        "lat": 38.7504351,
+        "lon": -9.2337871
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 470079748,
+      "center": {
+        "lat": 38.7561022,
+        "lon": -9.2332019
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 543799481,
+      "center": {
+        "lat": 38.7662784,
+        "lon": -9.2319416
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 543799482,
+      "center": {
+        "lat": 38.7675142,
+        "lon": -9.2329072
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-400",
+        "addr:street": "Rua Francisco Bugalho",
+        "amenity": "school",
+        "email": "eb1.amartinhosimoes@escolas.min-edu.pt",
+        "grades": "6-9",
+        "name": "Escola Básica Artur Martinho Simões",
+        "operator": "Agrupamento de Escolas Miguel Torga, Amadora",
+        "operator:ref": "171244",
+        "operator:type": "public",
+        "phone": "+351 214 920 730",
+        "ref": "254435",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB1 Artur Martinho Simões",
+        "website": "http://agmigueltorga.edu.pt/index.php/agrupamento/historia/escola-eb1-artur-martinho-simoes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 563313925,
+      "center": {
+        "lat": 38.7581251,
+        "lon": -9.2489839
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque da Ilha Mágica do Lido",
+        "url": "https://www.cm-amadora.pt/desporto-lazer/parques-e-jardins/691-parque-da-ilha-magica-do-lido.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 646130280,
+      "center": {
+        "lat": 38.7608158,
+        "lon": -9.242604
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Praça Ernesto Melo Antunes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 813420692,
+      "center": {
+        "lat": 38.7593529,
+        "lon": -9.2474349
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "329",
+        "addr:postcode": "2700-323",
+        "addr:street": "Rua Elias Garcia",
+        "amenity": "school",
+        "barrier": "fence",
+        "email": "direcao@aeamadora-oeste.edu.gov.pt;servicos@aeamadora-oeste.edu.gov.pt",
+        "grades": "12-17",
+        "name": "Escola Secundária Seomara da Costa Primo",
+        "operator": "Agrupamento de Escolas Amadora Oeste, Amadora",
+        "operator:ref": "171451",
+        "operator:type": "public",
+        "phone": "+351 214 985 990",
+        "ref": "402760",
+        "ref:qzp": "QZP.45",
+        "website": "http://esseomaracostaprimo.ccems.pt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 813420723,
+      "center": {
+        "lat": 38.760491,
+        "lon": -9.2452741
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 813659353,
+      "center": {
+        "lat": 38.7579072,
+        "lon": -9.2423499
+      },
+      "tags": {
+        "addr:city": "Venteira",
+        "addr:housenumber": "2",
+        "addr:postcode": "2700-668",
+        "addr:street": "Praceta Primeiro de Dezembro",
+        "alt_name": "Casa de Roque Gameiro;Casa-Museu Roque Gameiro",
+        "building": "yes",
+        "heritage": "2",
+        "heritage:operator": "dgpc",
+        "heritage:ref": "MIP",
+        "heritage:website": "https://servicos.dgpc.gov.pt/pesquisapatrimonioimovel/detalhes.php?code=8476005",
+        "heritage:website:sipa": "http://monumentos.pt/Site/APP_PagesUser/SIPA.aspx?id=22635",
+        "name": "Casa Roque Gameiro",
+        "operator": "Câmara Municipal da Amadora",
+        "protection_title": "Monumento de Interesse Público",
+        "ref:dgpc": "8476005",
+        "ref:ipa": "22635",
+        "site_status": "Classificado",
+        "source:ref": "http://dre.pt/pdf2sdip/2012/11/212000000/3610436104.pdf",
+        "tourism": "museum",
+        "wikidata": "Q74474383",
+        "wikimedia_commons": "Category:Casa Roque Gameiro"
+      }
+    },
+    {
+      "type": "way",
+      "id": 813667484,
+      "center": {
+        "lat": 38.7534398,
+        "lon": -9.2310241
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 813667507,
+      "center": {
+        "lat": 38.7510144,
+        "lon": -9.232152
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2720-127",
+        "addr:street": "Avenida Conde de Oeiras",
+        "amenity": "school",
+        "email": "eb1ji.vmartinsrebolo@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica Vasco Martins Rebolo",
+        "operator": "Agrupamento de Escolas Pioneiros da Aviação Portuguesa, Amadora",
+        "operator:ref": "170744",
+        "operator:type": "public",
+        "phone": "+351 214 951 428",
+        "ref": "248370",
+        "ref:qzp": "QZP.45",
+        "short_name": "Escola EB 1/JI Vasco Martins Rebolo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 860677852,
+      "center": {
+        "lat": 38.7681465,
+        "lon": -9.2441351
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 860677894,
+      "center": {
+        "lat": 38.7664823,
+        "lon": -9.2383166
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 860677901,
+      "center": {
+        "lat": 38.7676218,
+        "lon": -9.2378092
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 860677923,
+      "center": {
+        "lat": 38.767245,
+        "lon": -9.2341293
+      },
+      "tags": {
+        "amenity": "school",
+        "name": "Amorama"
+      }
+    },
+    {
+      "type": "way",
+      "id": 860753794,
+      "center": {
+        "lat": 38.7657729,
+        "lon": -9.2289679
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 860753827,
+      "center": {
+        "lat": 38.7642775,
+        "lon": -9.2289689
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 860753852,
+      "center": {
+        "lat": 38.7620887,
+        "lon": -9.2262032
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 915803404,
+      "center": {
+        "lat": 38.7551759,
+        "lon": -9.2318673
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 943305404,
+      "center": {
+        "lat": 38.7607436,
+        "lon": -9.2494648
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1002161597,
+      "center": {
+        "lat": 38.762564,
+        "lon": -9.2434862
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1060236347,
+      "center": {
+        "lat": 38.7682849,
+        "lon": -9.2474797
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque do Vento",
+        "opening_hours": "24/7",
+        "website": "https://www.cm-amadora.pt/pt/desporto-lazer/parques-e-jardins/713-parque-do-vento.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1105429139,
+      "center": {
+        "lat": 38.7576095,
+        "lon": -9.2445281
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-465",
+        "addr:street": "Pctª Infante D. Fernando",
+        "amenity": "school",
+        "barrier": "fence",
+        "email": "eb1.n1.venteira@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica da Venteira",
+        "operator": "Agrupamento de Escolas Amadora Oeste, Amadora",
+        "operator:ref": "171451",
+        "operator:type": "public",
+        "phone": "+351 214 931 070",
+        "ref": "242287",
+        "ref:qzp": "QZP.45",
+        "short_name": "EB1/JI da Venteira"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1105434120,
+      "center": {
+        "lat": 38.7600559,
+        "lon": -9.2463892
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "327",
+        "addr:postcode": "2700-324",
+        "addr:street": "Rua Elias Garcia",
+        "amenity": "school",
+        "barrier": "fence",
+        "email": "eb23.dfmanuelmelo@escolas.min-edu.pt",
+        "grades": "6-14",
+        "name": "Escola Básica D. Francisco Manuel Melo",
+        "operator": "Agrupamento de Escolas Amadora Oeste, Amadora",
+        "operator:ref": "171451",
+        "operator:type": "public",
+        "phone": "+351 214 929 680",
+        "ref": "341538",
+        "ref:qzp": "QZP.45",
+        "short_name": "Escola EB 2,3 Dom Francisco Manuel de Melo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1105434121,
+      "center": {
+        "lat": 38.7560544,
+        "lon": -9.2421188
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-576",
+        "addr:street": "Praceta Mestre Roque Gameiro",
+        "amenity": "kindergarten",
+        "barrier": "fence",
+        "contact:email": "eb1.raquelgameiro@escolas.min-edu.pt",
+        "contact:fax": "+351 214939719",
+        "contact:phone": "+351 214939719",
+        "grades": "3-5",
+        "name": "Jardim de Infância Raquel Gameiro",
+        "old_name": "Escola Básica do 1º Ciclo e Jardim de Infância Raquel Gameiro",
+        "operator": "Agrupamento de Escolas Amadora Oeste, Amadora",
+        "operator:ref": "171451",
+        "operator:type": "public",
+        "ref": "249671",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1125321856,
+      "center": {
+        "lat": 38.7624171,
+        "lon": -9.2525968
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1154575743,
+      "center": {
+        "lat": 38.7553655,
+        "lon": -9.2503062
+      },
+      "tags": {
+        "addr:city": "QUELUZ",
+        "addr:postcode": "2745-190",
+        "addr:street": "Av. Paiva Couceiro",
+        "amenity": "school",
+        "contact:email": "eb1.n2.queluz@escolas.min-edu.pt",
+        "contact:fax": "+351 214 350 165",
+        "contact:phone": "+351 214 357 357",
+        "grades": "3-9",
+        "name": "Escola Básica n.º 2 de Queluz, Sintra",
+        "operator": "Agrupamento de Escolas de Queluz-Belas, Sintra",
+        "operator:ref": "172121",
+        "operator:type": "public",
+        "ref": "248290",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1175882994,
+      "center": {
+        "lat": 38.7619337,
+        "lon": -9.2292644
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parquinho das crias"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1212070085,
+      "center": {
+        "lat": 38.7576068,
+        "lon": -9.2430475
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-057",
+        "addr:street": "Praça de Angola",
+        "leisure": "park",
+        "name": "Praça de Angola",
+        "website": "https://www.cm-amadora.pt/desporto-lazer/parques-e-jardins/911-parque-bairro-janeiro.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1213310183,
+      "center": {
+        "lat": 38.7672303,
+        "lon": -9.2331753
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1213733372,
+      "center": {
+        "lat": 38.7555413,
+        "lon": -9.2392926
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "110",
+        "addr:postcode": "2700-439",
+        "addr:street": "Rua Gonçalves Ramos",
+        "amenity": "college",
+        "name": "Albifor",
+        "website": "https://www.albifor.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1216791233,
+      "center": {
+        "lat": 38.7570131,
+        "lon": -9.2413811
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "12",
+        "addr:postcode": "2700-578",
+        "addr:street": "Rua Mestre Roque Gameiro",
+        "amenity": "school",
+        "building": "yes",
+        "contact:email": "cerciama@escolas.min-edu.pt",
+        "contact:fax": "+351 214986838",
+        "contact:phone": "+351 214986930",
+        "name": "Cooperativa de Educação e Reabilitação de Cidadãos Inadaptados da Amadora",
+        "office": "association",
+        "operator:type": "private",
+        "ref": "800140",
+        "ref:qzp": "QZP.45",
+        "short_name": "CERCIAMA",
+        "website": "https://cerciama.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1275385008,
+      "center": {
+        "lat": 38.7570091,
+        "lon": -9.235584
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "4;6",
+        "addr:postcode": "2700-535",
+        "addr:street": "Rua Luis de Camões",
+        "amenity": "school",
+        "email": "ep.geiffelamadora@escolas.min-edu.pt",
+        "grades": "15-17",
+        "name": "Escola Profissional Gustave Eiffel",
+        "operator:type": "private",
+        "phone": "+351 214 987 950",
+        "ref": "802743",
+        "ref:qzp": "QZP.45",
+        "website": "http://www.cooptecnica.pt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1276780774,
+      "center": {
+        "lat": 38.7599619,
+        "lon": -9.2310182
+      },
+      "tags": {
+        "addr:city": "AMADORA",
+        "addr:postcode": "2700-195",
+        "addr:street": "Praceta Cerrado da Bica - Mina",
+        "amenity": "kindergarten",
+        "contact:email": "ji.cerradobica@escolas.min-edu.pt",
+        "contact:phone": "+351 214 928 491",
+        "grades": "3-5",
+        "name": "Jardim de Infância do Cerrado da Bica",
+        "operator": "Agrupamento de Escolas Cardoso Lopes, Amadora",
+        "operator:ref": "171232",
+        "operator:type": "public",
+        "ref": "642381",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302493205,
+      "center": {
+        "lat": 38.7610894,
+        "lon": -9.2356295
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:floor": "0",
+        "addr:housenumber": "12",
+        "addr:postcode": "2700-595",
+        "addr:street": "Avenida do Movimento das Forças Armadas",
+        "amenity": "school",
+        "contact:email": "viveirinho@sapo.pt",
+        "contact:fax": "+351 214932179",
+        "contact:phone": "+351 214932179",
+        "grades": "3-9",
+        "name": "Externato \"O Viveirinho\"",
+        "operator": "Maria Dulce Fernandes Ribeiro Cissé",
+        "operator:type": "private",
+        "ref": "505262",
+        "ref:aeep": "1087",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302493206,
+      "center": {
+        "lat": 38.7539228,
+        "lon": -9.2301228
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2720-192",
+        "addr:street": "Praça Dona Maria II",
+        "amenity": "kindergarten",
+        "contact:email": "geral@misericordia-oeiras.pt;ji.jpstcmisericordia@escolas.min-edu.pt",
+        "contact:fax": "+351 214228641",
+        "contact:phone": "+351 214950505",
+        "education": "kindergarten",
+        "grades": "3-5",
+        "name": "Jardim de Infância Julieta Pimenta",
+        "network": "Santa Casa da Misericórdia",
+        "operator": "Santa Casa da Misericórdia de Oeiras",
+        "operator:type": "private",
+        "ref": "516284",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302493207,
+      "center": {
+        "lat": 38.7589445,
+        "lon": -9.2279586
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:postcode": "2700-691",
+        "addr:street": "Praceta da Quinta da Conceição",
+        "amenity": "kindergarten",
+        "grades": "3-5",
+        "name": "Jardim de Infância da Falagueira",
+        "official_name": "Creche + Jardim de Infância da Falagueira",
+        "operator": "Agrupamento de Escolas Mães d’Água, Amadora",
+        "operator:ref": "172303",
+        "operator:type": "public",
+        "ref": "645734",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302493214,
+      "center": {
+        "lat": 38.7560672,
+        "lon": -9.2454821
+      },
+      "tags": {
+        "addr:city": "Amadora",
+        "addr:housenumber": "13A",
+        "addr:postcode": "2700-039",
+        "addr:street": "Avenida de Aljubarrota",
+        "amenity": "school",
+        "contact:email": "ext.ocisne@escolas.min-edu.pt",
+        "contact:fax": "+351 214928420",
+        "contact:phone": "+351 214937069",
+        "contact:website": "http://www.ocisne.pt",
+        "grades": "3-9",
+        "name": "Externato \"O Cisne\"",
+        "operator:type": "private",
+        "ref": "502637",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 11771573,
+      "center": {
+        "lat": 38.7667929,
+        "lon": -9.2385147
+      },
+      "tags": {
+        "leisure": "park",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 11919357,
+      "center": {
+        "lat": 38.7624786,
+        "lon": -9.2262225
+      },
+      "tags": {
+        "leisure": "park",
+        "type": "multipolygon"
+      }
+    }
+  ]
+}

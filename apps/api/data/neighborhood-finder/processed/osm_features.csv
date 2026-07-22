@@ -1,0 +1,19 @@
+name,zone,lat,lng,schools_count,transport_count,amenities_count,schools_score,transport_score,amenities_score
+Parque das Nações,Lisbon East,38.7676,-9.094,13,186,240,3.53,5.0,5.0
+Avenidas Novas,Central Lisbon,38.738,-9.15,61,329,668,5.0,5.0,5.0
+Campo de Ourique,Central Lisbon,38.7172,-9.1662,45,371,365,5.0,5.0,5.0
+Alfama,Historic Lisbon,38.7115,-9.13,23,365,892,5.0,5.0,5.0
+Belém,Lisbon West,38.6968,-9.2065,27,160,200,5.0,5.0,5.0
+Marvila,Lisbon East,38.745,-9.105,13,216,47,3.53,5.0,2.46
+Príncipe Real,Central Lisbon,38.7167,-9.1487,54,452,1332,5.0,5.0,5.0
+Estrela,Central Lisbon,38.7139,-9.1594,53,395,693,5.0,5.0,5.0
+Alvalade,Central Lisbon,38.7533,-9.1436,53,282,320,5.0,5.0,5.0
+Benfica,Lisbon North,38.7506,-9.2024,30,319,204,5.0,5.0,5.0
+Lumiar,Lisbon North,38.771,-9.159,31,245,149,5.0,5.0,5.0
+Arroios,Central Lisbon,38.7276,-9.1353,57,409,809,5.0,5.0,5.0
+Graça,Historic Lisbon,38.7188,-9.129,40,422,808,5.0,5.0,5.0
+Oeiras,Greater Lisbon West,38.697,-9.3017,18,176,167,4.58,5.0,5.0
+Cascais,Greater Lisbon Coast,38.6968,-9.4215,13,75,237,3.53,5.0,5.0
+Sintra,Greater Lisbon North-West,38.8029,-9.3817,14,103,130,3.74,5.0,5.0
+Amadora,Greater Lisbon North-West,38.7597,-9.2397,40,164,150,5.0,5.0,5.0
+Loures,Greater Lisbon North,38.8309,-9.1685,12,94,109,3.32,5.0,4.62

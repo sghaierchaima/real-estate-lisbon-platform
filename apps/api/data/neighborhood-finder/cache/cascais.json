@@ -1,0 +1,4974 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-28T10:26:11Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 242798713,
+      "lat": 38.7008489,
+      "lon": -9.4178362,
+      "tags": {
+        "local_ref": "3",
+        "name": "Cascais",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q800613",
+        "wikipedia": "pt:Estação Ferroviária de Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 260297516,
+      "lat": 38.702055,
+      "lon": -9.4209407,
+      "tags": {
+        "bus": "yes",
+        "name": "Mercado Municipal de Cascais",
+        "name:TML": "Av D Pedro I (Mercado)",
+        "network": "MobiCascais;Carris Metropolitana",
+        "network:wikidata": "Q85875734;Q111611112",
+        "operator": "Casbuscais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "stop_position",
+        "ref": "20079"
+      }
+    },
+    {
+      "type": "node",
+      "id": 578418252,
+      "lat": 38.7024658,
+      "lon": -9.4171466,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:country": "PT",
+        "addr:postcode": "2754-522",
+        "addr:street": "Avenida Marginal",
+        "branch": "Cascais",
+        "brand": "Auchan",
+        "brand:wikidata": "Q758603",
+        "brand:wikipedia": "pt:Auchan",
+        "check_date": "2026-05-07",
+        "contact:email": "apoiocliente@auchan.pt",
+        "contact:facebook": "AuchanPortugal",
+        "contact:instagram": "auchan_pt",
+        "contact:phone": "+351 210 403 270",
+        "contact:tiktok": "auchan_pt",
+        "contact:youtube": "https://www.youtube.com/channel/UC6FSI7tYO9ISV11U2PHBBYQ",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Auchan",
+        "opening_hours": "Mo-Su 08:00-22:00; easter,Dec 25,Jan 01 off",
+        "operator": "Auchan",
+        "operator:wikidata": "Q758603",
+        "operator:wikipedia": "pt:Auchan",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "ref": "022",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.auchan.pt/pt/loja?StoreID=022",
+        "wheelchair": "yes",
+        "wheelchair:description": "very wheelchair accessble. toilet is behind the elevator."
+      }
+    },
+    {
+      "type": "node",
+      "id": 888412279,
+      "lat": 38.7020724,
+      "lon": -9.4209989,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Mercado Municipal de Cascais",
+        "name:TML": "Av D Pedro I (Mercado)",
+        "network": "MobiCascais;Carris Metropolitana",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "Mercado Municipal de Cascais",
+        "operator": "Casbuscais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "20079",
+        "ref:TML": "050249",
+        "route_ref": "M02;M05;M09;M14;M15;M22",
+        "shelter": "yes",
+        "short_name": "Mercado Municipal de Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1140100094,
+      "lat": 38.7008099,
+      "lon": -9.4178223,
+      "tags": {
+        "local_ref": "2",
+        "name": "Cascais",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q800613",
+        "wikipedia": "pt:Estação Ferroviária de Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1140100170,
+      "lat": 38.7009571,
+      "lon": -9.4178444,
+      "tags": {
+        "local_ref": "5",
+        "name": "Cascais",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q800613",
+        "wikipedia": "pt:Estação Ferroviária de Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1140100183,
+      "lat": 38.7009257,
+      "lon": -9.417839,
+      "tags": {
+        "local_ref": "4",
+        "name": "Cascais",
+        "public_transport": "stop_position",
+        "railway": "stop",
+        "train": "yes",
+        "wikidata": "Q800613",
+        "wikipedia": "pt:Estação Ferroviária de Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1156195920,
+      "lat": 38.7025616,
+      "lon": -9.4273197,
+      "tags": {
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "name": "Farmácia Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1156195924,
+      "lat": 38.698297,
+      "lon": -9.4199877,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "17",
+        "addr:postcode": "2754-510",
+        "addr:street": "Largo Cidade Vitória",
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "name": "Farmácia Cordeiro",
+        "opening_hours": "Mo-Su,PH 09:00-21:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1156195934,
+      "lat": 38.6977946,
+      "lon": -9.4206799,
+      "tags": {
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "name": "Farmácia Misericórdia Cascais",
+        "opening_hours": "Mo-Fr 09:00-19:00; Sa 09:00-13:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1156195935,
+      "lat": 38.7002918,
+      "lon": -9.4206316,
+      "tags": {
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "name": "Farmácia Marginal"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1315111993,
+      "lat": 38.7024816,
+      "lon": -9.4305366,
+      "tags": {
+        "bus": "yes",
+        "name": "Rotunda Doutor José Rodrigues Duarte",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position",
+        "ref": "20931"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1315112004,
+      "lat": 38.7026904,
+      "lon": -9.4308814,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rua Engenheiro Dom António Castelo Branco",
+        "name:TML": "R Eng António Castelo Branco 107",
+        "network": "MobiCascais;Carris Metropolitana",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "Rotunda Dr. José Rodrigues Duarte;R Eng António Castelo Branco 107",
+        "operator": "Casbuscais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "20056",
+        "ref:TML": "050313",
+        "route_ref": "M02;M03;M09;M14;M22",
+        "shelter": "yes",
+        "short_name": "R. Eng. D. António Castelo Branco"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1315112023,
+      "lat": 38.7044242,
+      "lon": -9.4309875,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Engenheiro Dom António Castelo Branco",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position",
+        "ref": "20932"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1315112026,
+      "lat": 38.704209,
+      "lon": -9.4311314,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rua Engenheiro Dom António Castelo Branco (PSP)",
+        "name:TML": "R Eng António Castelo Branco",
+        "network": "MobiCascais;Carris Metropolitana",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "R Eng António Castelo Branco;Rua Eng. António Castelo Branco",
+        "operator": "Casbuscais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "20126",
+        "ref:TML": "050311",
+        "route_ref": "M02;M03;M09;M14",
+        "shelter": "yes",
+        "short_name": "R. Eng. D. António Castelo Branco (PSP)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1482490895,
+      "lat": 38.7004341,
+      "lon": -9.4185741,
+      "tags": {
+        "bus": "yes",
+        "name": "Cascais (Estação)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais;Cascais Próxima",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1605525870,
+      "lat": 38.6976084,
+      "lon": -9.4187408,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Vin Rouge",
+        "source": "knowledge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1651548388,
+      "lat": 38.6920057,
+      "lon": -9.4194362,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2022-09-10",
+        "cuisine": "italian",
+        "diet:vegetarian": "yes",
+        "name": "Mercearia Vencedora",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1651548408,
+      "lat": 38.6918732,
+      "lon": -9.4192611,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1651548426,
+      "lat": 38.6920496,
+      "lon": -9.4195157,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2022-09-10",
+        "cuisine": "italian;pizza",
+        "diet:vegetarian": "yes",
+        "name": "Gordinni",
+        "outdoor_seating": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1832674630,
+      "lat": 38.7002766,
+      "lon": -9.4256905,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida 25 de Abril",
+        "name:TML": "Av 25 de Abril (Hotel Cidadela)",
+        "network": "MobiCascais;Carris Metropolitana",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "Av. 25 Abril;Av 25 de Abril (Hotel Cidadela)",
+        "operator": "Casbuscais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "20128",
+        "ref:TML": "050317",
+        "route_ref": "M02;M04;M05;M09;M14;M15;M22;M34",
+        "shelter": "yes",
+        "short_name": "Av. 25 de Abril"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1946371335,
+      "lat": 38.6975202,
+      "lon": -9.4218336,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "burger",
+        "name": "Big Al's"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1946993310,
+      "lat": 38.6998803,
+      "lon": -9.4210882,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:postcode": "2750",
+        "addr:street": "Passeio Luís Pinto Coelho",
+        "amenity": "cafe",
+        "brand": "Starbucks",
+        "brand:wikidata": "Q37158",
+        "brand:wikipedia": "pt:Starbucks",
+        "contact:email": "starbucks@starbucks.pt",
+        "contact:facebook": "StarbucksPortugal",
+        "contact:instagram": "starbucksptg",
+        "contact:tiktok": "starbucksportugal",
+        "contact:twitter": "starbucksPTG",
+        "cuisine": "coffee_shop",
+        "name": "Starbucks",
+        "official_name": "Starbucks Coffee",
+        "opening_hours": "Mo-Th,Su 08:00-21:00; Fr,Sa 08:00-22:00",
+        "ref": "78637-308662",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "takeaway": "yes",
+        "website": "https://www.starbucks.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1946993743,
+      "lat": 38.7001374,
+      "lon": -9.4211723,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Instituto de Imagiologia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1962993785,
+      "lat": 38.6978052,
+      "lon": -9.4253224,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "indian"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1967088823,
+      "lat": 38.6979685,
+      "lon": -9.4203814,
+      "tags": {
+        "addr:housenumber": "7-2750",
+        "addr:street": "Largo Luis de Camões",
+        "amenity": "restaurant",
+        "cuisine": "fish;pizza;portuguese;grill;burger",
+        "name": "Chequers"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2050429866,
+      "lat": 38.6990586,
+      "lon": -9.4206312,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-01-06",
+        "cuisine": "chicken",
+        "name": "Jardim dos Frangos",
+        "payment:cards": "no",
+        "payment:cash": "yes",
+        "payment:credit_cards": "no",
+        "payment:debit_cards": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2050500855,
+      "lat": 38.6986169,
+      "lon": -9.4213688,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "sushi",
+        "name": "Sushissimo",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129434736,
+      "lat": 38.6999532,
+      "lon": -9.4207111,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:postcode": "2750-326",
+        "amenity": "bank",
+        "branch": "Cascais",
+        "branch:type": "retail",
+        "brand": "Caixa Geral de Depósitos",
+        "brand:website": "https://www.cgd.pt/",
+        "brand:wikidata": "Q1026044",
+        "brand:wikipedia": "pt:Caixa Geral de Depósitos",
+        "contact:facebook": "caixageraldedepositos",
+        "contact:instagram": "caixageraldedepositos",
+        "contact:linkedin": "https://www.linkedin.com/company/caixageraldedepositos/",
+        "contact:phone": "+351 217 900 790",
+        "contact:youtube": "http://www.youtube.com/user/mediacgd",
+        "name": "Caixa Geral de Depósitos",
+        "opening_hours": "Mo-Fr 08:30-15:00; Sa,Su,PH off",
+        "operator": "Caixa Geral de Depósitos",
+        "operator:wikidata": "Q1026044",
+        "operator:wikipedia": "pt:Caixa Geral de Depósitos",
+        "ref": "1222",
+        "short_name": "CGD",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.cgd.pt/Corporativo/Rede-CGD/Pages/CASCAIS.aspx"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129434740,
+      "lat": 38.7008935,
+      "lon": -9.4207053,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "20",
+        "addr:street": "Avenida 25 de Abril",
+        "addr:unit": "B",
+        "amenity": "bank",
+        "branch": "Cascais",
+        "brand": "Millennium bcp",
+        "brand:wikidata": "Q118581",
+        "brand:wikipedia": "pt:Banco Comercial Português",
+        "name": "Millennium bcp",
+        "opening_hours": "Mo-Sa 08:30-15:00",
+        "operator": "Banco Comercial Português",
+        "operator:wikidata": "Q118581",
+        "operator:wikipedia": "pt:Banco Comercial Português"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129434744,
+      "lat": 38.702286,
+      "lon": -9.4204852,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Mercado Municipal de Cascais",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Mercado Municipal de Cascais",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20477",
+        "route_ref": "M04;M27;M34",
+        "shelter": "yes",
+        "short_name": "Mercado Municipal de Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477339,
+      "lat": 38.6985635,
+      "lon": -9.4194118,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "A Taberna do Lipe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477340,
+      "lat": 38.6984153,
+      "lon": -9.4195448,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Aqafarina"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477341,
+      "lat": 38.6984289,
+      "lon": -9.4193283,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Castro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477342,
+      "lat": 38.6985021,
+      "lon": -9.4193593,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "House of Wonders"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477343,
+      "lat": 38.6986318,
+      "lon": -9.4194913,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Cló - Cló"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477344,
+      "lat": 38.6983134,
+      "lon": -9.4193186,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Mimos do Mar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477346,
+      "lat": 38.700554,
+      "lon": -9.4224023,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Pereira"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477347,
+      "lat": 38.6981832,
+      "lon": -9.4190691,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Porto de Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477348,
+      "lat": 38.698383,
+      "lon": -9.4193124,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Sagres"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477349,
+      "lat": 38.6986473,
+      "lon": -9.4195803,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "bangkok"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2129477367,
+      "lat": 38.6989498,
+      "lon": -9.4192219,
+      "tags": {
+        "shop": "mall"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2132721612,
+      "lat": 38.6963712,
+      "lon": -9.4227696,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Associação dos Armadores da Costa do Estoril"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2295831373,
+      "lat": 38.6974004,
+      "lon": -9.4204862,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Solar do Bitoque"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2382793710,
+      "lat": 38.7037505,
+      "lon": -9.4124958,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Pedaços de Aventura"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2574545781,
+      "lat": 38.6960361,
+      "lon": -9.4210903,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "28 Sabores do Mundo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2696186326,
+      "lat": 38.6935376,
+      "lon": -9.4191669,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Citadela"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2696711368,
+      "lat": 38.6941264,
+      "lon": -9.4194487,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Taberna da Praca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2936706503,
+      "lat": 38.6996954,
+      "lon": -9.4242155,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Lambrettazzurra",
+        "phone": "+351 21 8029365",
+        "website": "https://www.facebook.com/LambrettazzurraPizzeria"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2936706504,
+      "lat": 38.6917085,
+      "lon": -9.4185066,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Skipper"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2936706701,
+      "lat": 38.6989266,
+      "lon": -9.4235787,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Dom Fausto"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3008910733,
+      "lat": 38.6963372,
+      "lon": -9.4209411,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3575234267,
+      "lat": 38.7015898,
+      "lon": -9.4291562,
+      "tags": {
+        "amenity": "school",
+        "name": "Escola Secundária da Cidadela"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3575235403,
+      "lat": 38.6984556,
+      "lon": -9.4193065,
+      "tags": {
+        "addr:housenumber": "53",
+        "addr:postcode": "2750-436",
+        "addr:street": "Rua da Misercórdia",
+        "amenity": "restaurant",
+        "check_date": "2024-05-21",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "name": "House of Wonders",
+        "opening_hours": "Mo-Su 08:00-23:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+351 911 702 428"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3588615507,
+      "lat": 38.6985093,
+      "lon": -9.4213917,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:country": "PT",
+        "addr:housenumber": "10A",
+        "addr:street": "Rua Nova da Alfarrobeira",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "A Antiguinha",
+        "phone": "+351 21 4864204"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3588615508,
+      "lat": 38.702219,
+      "lon": -9.4218808,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:country": "PT",
+        "addr:housenumber": "19",
+        "addr:place": "Mercado Municipal de Cascais",
+        "addr:postcode": "2750-437",
+        "addr:street": "Rua Padre Moises da Silva",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Marisco na Praça",
+        "opening_hours": "Mo-Su 12:00-00:00",
+        "phone": "+351 21 4822130"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4257788454,
+      "lat": 38.6949894,
+      "lon": -9.4278429,
+      "tags": {
+        "addr:street": "Travessa Emídio Navarro",
+        "amenity": "school",
+        "name": "DeRose Method Cascais",
+        "website": "http://www.metododerosecascais.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4334593203,
+      "lat": 38.6915979,
+      "lon": -9.4189212,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Tasca da Linha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4338768445,
+      "lat": 38.6963585,
+      "lon": -9.4302049,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "106",
+        "addr:postcode": "2750-167",
+        "addr:street": "Avenida Infante Dom Henrique",
+        "branch": "Cascais",
+        "brand": "Meu Super",
+        "brand:wikidata": "Q119948154",
+        "contact:facebook": "meusuperoficial",
+        "contact:instagram": "meusuperoficial",
+        "contact:linkedin": "https://www.linkedin.com/company/meusuperoficial",
+        "contact:phone": "+351 916 870 655",
+        "name": "Meu Super",
+        "opening_hours": "Mo-Sa 08:30-21:30; Su,PH 09:00-21:00",
+        "ref": "527",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "website": "https://www.meusuper.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4401850692,
+      "lat": 38.6987677,
+      "lon": -9.4200962,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "6A",
+        "addr:postcode": "2750-133",
+        "addr:street": "Rua da Palmeira",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/ChefJoseAvillez/",
+        "contact:instagram": "https://www.instagram.com/cantinho_do_avillez/",
+        "contact:youtube": "https://www.youtube.com/c/chefjoseavillez",
+        "cuisine": "portuguese",
+        "name": "Cantinho do Avillez",
+        "opening_hours": "Mo-Fr 12:30-15:30,18:00-23:00; Sa-Su,PH 12:30-16:00,18:00-23:00",
+        "phone": "+35 1211389666",
+        "takeaway": "yes",
+        "website": "https://www.cantinhodoavillez.pt/pt/restaurantes/rua-da-palmeira.html"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4432154690,
+      "lat": 38.6970276,
+      "lon": -9.4210879,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Bistro 19",
+        "name:pt": "Bistro 19"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4432155892,
+      "lat": 38.6984098,
+      "lon": -9.4191742,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-05-21",
+        "name": "Café Galeria House of Wonders",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4432155893,
+      "lat": 38.6981301,
+      "lon": -9.4215856,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Dona Flor",
+        "name:pt": "Dona Flor Cafe & Bistro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4439269494,
+      "lat": 38.6984389,
+      "lon": -9.4205559,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2026-04-07",
+        "check_date:opening_hours": "2024-10-05",
+        "name": "Sacolinha",
+        "name:pt": "Sacolinha",
+        "opening_hours": "Mo-Su,PH 08:00-20:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4547175301,
+      "lat": 38.699432,
+      "lon": -9.419772,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Hot Dog da Villa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4610499761,
+      "lat": 38.7047536,
+      "lon": -9.4292039,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "steak_house",
+        "name": "Adega dos Bifes",
+        "outdoor_seating": "yes",
+        "smoking": "outside",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4610501023,
+      "lat": 38.7037594,
+      "lon": -9.429051,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "internet_access": "wlan",
+        "name": "Doce de Canela",
+        "outdoor_seating": "yes",
+        "wifi": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4610534309,
+      "lat": 38.7041278,
+      "lon": -9.4284958,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "seafood",
+        "name": "Vela Azul",
+        "smoking": "outside"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4610545693,
+      "lat": 38.7034077,
+      "lon": -9.4305423,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Grande Muralha",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4610641910,
+      "lat": 38.7037648,
+      "lon": -9.4306803,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "delivery": "yes",
+        "name": "Lusitânia Expresso",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4613131505,
+      "lat": 38.7038511,
+      "lon": -9.4292395,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua Conde Castro Guimarães",
+        "name:TML": "Av Eng Adelino Amaro Costa 1A",
+        "network": "Carris Metropolitana;MobiCascais",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "Av Eng Adelino Amaro Costa 1A;Rua Conde Castro Guimarães",
+        "operator": "MobiCascais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "155681",
+        "ref:TML": "050255",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4677130719,
+      "lat": 38.7040821,
+      "lon": -9.4293389,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Sabores da Vila",
+        "outdoor_seating": "yes",
+        "smoking": "outside"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4677161464,
+      "lat": 38.7038246,
+      "lon": -9.430621,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Fato Justo",
+        "outdoor_seating": "yes",
+        "smoking": "outside"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4704216230,
+      "lat": 38.6990065,
+      "lon": -9.4211747,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Padaria Portuguesa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4704216231,
+      "lat": 38.6981278,
+      "lon": -9.4281976,
+      "tags": {
+        "amenity": "bank",
+        "brand": "Caixa Geral de Depósitos",
+        "brand:website": "https://www.cgd.pt/",
+        "brand:wikidata": "Q1026044",
+        "brand:wikipedia": "pt:Caixa Geral de Depósitos",
+        "name": "Caixa Geral de Depósitos",
+        "operator": "Caixa Geral de Depósitos",
+        "operator:wikidata": "Q1026044",
+        "operator:wikipedia": "pt:Caixa Geral de Depósitos",
+        "short_name": "CGD"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4753087823,
+      "lat": 38.699923,
+      "lon": -9.4214898,
+      "tags": {
+        "addr:housenumber": "50",
+        "addr:street": "Visconde da Luz",
+        "amenity": "restaurant",
+        "name": "Fogo de Chão Rodízio Churrascaria"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4804146421,
+      "lat": 38.6985563,
+      "lon": -9.4198368,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Panisol",
+        "opening_hours": "Mo-Sa 07:00-19:00, Su 08:00-19:00",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4985002121,
+      "lat": 38.7010853,
+      "lon": -9.4140994,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "portuguese;sandwich",
+        "name": "John David's Snack Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4985896727,
+      "lat": 38.6994742,
+      "lon": -9.4188223,
+      "tags": {
+        "addr:street": "Rua Frederico Arouca",
+        "amenity": "restaurant",
+        "name": "Dom Prego",
+        "phone": "+351 21 445 4104"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5007223617,
+      "lat": 38.7051846,
+      "lon": -9.4274915,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:street": "Rua José Florindo",
+        "amenity": "restaurant",
+        "capacity": "12",
+        "cuisine": "pizza",
+        "delivery": "yes",
+        "name": "Bordas",
+        "outdoor_seating": "yes",
+        "takeaway": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5041793687,
+      "lat": 38.7009802,
+      "lon": -9.4257928,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Av. Eng. Adelino Amaro da Costa",
+        "name:TML": "Av Eng Adelino Amaro Costa (Cidadela)",
+        "network": "Carris Metropolitana;MobiCascais",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "Av. Eng. Adelino Amaro da Costa;Av Eng Adelino Amaro Costa (Cidadela)",
+        "operator": "MobiCascais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "155679",
+        "ref:TML": "050251",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5059292421,
+      "lat": 38.6974858,
+      "lon": -9.4215229,
+      "tags": {
+        "addr:housenumber": "16A",
+        "addr:postcode": "2750-469",
+        "addr:street": "Travessa do Poço Novo",
+        "amenity": "restaurant",
+        "cuisine": "mediterranean;portuguese",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "internet_access": "wlan",
+        "name": "Bubbles & Bites",
+        "opening_hours": "We-Mo 14:00-00:00",
+        "phone": "+35 1219016254"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5117381224,
+      "lat": 38.6988406,
+      "lon": -9.4217405,
+      "tags": {
+        "addr:street": "Rua Nova da Alfarrobeira",
+        "amenity": "restaurant",
+        "cuisine": "seafood;regional;portuguese",
+        "name": "Moules & Gin"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5184641305,
+      "lat": 38.6956243,
+      "lon": -9.4197775,
+      "tags": {
+        "addr:housenumber": "6",
+        "addr:street": "Avenida Dom Carlos I",
+        "amenity": "restaurant",
+        "cuisine": "seafood",
+        "name": "Baía do Peixe",
+        "website": "https://www.baiadopeixe.com/cascais.html"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5257504628,
+      "lat": 38.6976777,
+      "lon": -9.4202855,
+      "tags": {
+        "addr:housenumber": "Loja 5",
+        "addr:postcode": "2750-642",
+        "addr:street": "Rua Regimento 19 da Infantaria",
+        "amenity": "restaurant",
+        "name": "Incanto",
+        "phone": "+351211384855"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5470100421,
+      "lat": 38.6982702,
+      "lon": -9.4191695,
+      "tags": {
+        "addr:housenumber": "10-A",
+        "addr:postcode": "2750-348",
+        "addr:street": "Rua das Flores",
+        "amenity": "restaurant",
+        "cuisine": "seafood;portuguese;fish",
+        "email": "reserva@foradepe.com",
+        "internet_access": "wlan",
+        "name": "Foradepe",
+        "phone": "+351927605833",
+        "website": "http://foradepe.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5529024721,
+      "lat": 38.6990198,
+      "lon": -9.4277539,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "cake;breakfast",
+        "name": "Sacolinha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5565373810,
+      "lat": 38.6979725,
+      "lon": -9.4220382,
+      "tags": {
+        "addr:housenumber": "195",
+        "addr:postcode": "2750-467",
+        "addr:street": "Rua do Poço Novo",
+        "amenity": "restaurant",
+        "name": "Melody",
+        "phone": "+351 21 484 0030"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5613445361,
+      "lat": 38.6998258,
+      "lon": -9.4186024,
+      "tags": {
+        "addr:unit": "35 R/C",
+        "amenity": "restaurant",
+        "name": "Taberna Económica de Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5614171368,
+      "lat": 38.7003677,
+      "lon": -9.4169607,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "263",
+        "addr:street": "Rua Frederico Arouca",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "description": "Bar",
+        "name": "Capricciosa - Beach Lounge"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5614171370,
+      "lat": 38.7010807,
+      "lon": -9.4144025,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "175A",
+        "addr:street": "Alameda Duquesa de Palmela",
+        "amenity": "restaurant",
+        "description": "Restaurante e Bar",
+        "name": "Cascais Brisa Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5614171371,
+      "lat": 38.701065,
+      "lon": -9.4148156,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "175A",
+        "addr:street": "Alameda Duquesa de Palmela",
+        "amenity": "restaurant",
+        "description": "Restaurante e Bar",
+        "email": "reservas@duchebar.com",
+        "internet_access": "wlan",
+        "name": "Duche Bar",
+        "phone": "+351 214 831379",
+        "toilets": "customers",
+        "website": "https://duchebar.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5614229658,
+      "lat": 38.6976741,
+      "lon": -9.4252529,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "15B",
+        "addr:street": "Rua Freitas Reis",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "Tandoori Mayora"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5614231123,
+      "lat": 38.6977891,
+      "lon": -9.4253246,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "17B",
+        "addr:street": "Rua Freitas Reis",
+        "amenity": "restaurant",
+        "cuisine": "coffee_shop;regional",
+        "name": "Sabores de Casa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5614311316,
+      "lat": 38.6982515,
+      "lon": -9.4254716,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "24E",
+        "addr:postcode": "2750-642",
+        "addr:street": "Rua Freitas Reis",
+        "amenity": "restaurant",
+        "cuisine": "regional"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5614311323,
+      "lat": 38.6991122,
+      "lon": -9.427748,
+      "tags": {
+        "addr:street": "Avenida 25 de Abril",
+        "amenity": "bank",
+        "brand": "BBVA",
+        "brand:wikidata": "Q806189",
+        "brand:wikipedia": "en:Banco Bilbao Vizcaya Argentaria",
+        "name": "BBVA",
+        "official_name": "Banco Bilbao Vizcaya Argentaria",
+        "opening_hours": "Mo-Sa 08:30-15:00",
+        "operator": "BBVA",
+        "operator:wikidata": "Q806189",
+        "operator:wikipedia": "en:Banco Bilbao Vizcaya Argentaria"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5614311325,
+      "lat": 38.6992979,
+      "lon": -9.4275778,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:street": "Avenida 25 de Abril",
+        "amenity": "restaurant",
+        "cuisine": "coffee_shop",
+        "name": "Sacolinha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615200591,
+      "lat": 38.6993876,
+      "lon": -9.4183335,
+      "tags": {
+        "amenity": "cafe",
+        "description": "Pastelaria",
+        "name": "Pastelaria Samiola",
+        "opening_hours": "Mo-Su 09:00-21:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615200594,
+      "lat": 38.6993355,
+      "lon": -9.4183531,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "D.Prego",
+        "opening_hours": "Mo-Su 12:00-24:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615200595,
+      "lat": 38.6993188,
+      "lon": -9.4184067,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "fast_food",
+        "name": "Pop Sandwish"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615261712,
+      "lat": 38.6992358,
+      "lon": -9.4187611,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Massala Indian Restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615261713,
+      "lat": 38.6991112,
+      "lon": -9.418755,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "wine",
+        "name": "The Tasting Room"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615296048,
+      "lat": 38.6991252,
+      "lon": -9.4189571,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Gallery Bisho Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615296055,
+      "lat": 38.6988501,
+      "lon": -9.4192442,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Gandhi Palace"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615296059,
+      "lat": 38.6988195,
+      "lon": -9.4194761,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Gastronomia Italiana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615565261,
+      "lat": 38.6985888,
+      "lon": -9.427857,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "775",
+        "addr:postcode": "2750-642",
+        "addr:street": "Avenida 25 de Abril",
+        "addr:unit": "B",
+        "name": "Mix loja de roupa",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615565267,
+      "lat": 38.6982061,
+      "lon": -9.4289469,
+      "tags": {
+        "addr:housenumber": "890",
+        "addr:street": "Avenida 25 de Abril",
+        "addr:unit": "A/B/C",
+        "amenity": "bank",
+        "atm": "no",
+        "brand": "Banco Montepio",
+        "brand:wikidata": "Q1946091",
+        "brand:wikipedia": "pt:Banco Montepio",
+        "name": "Banco Montepio",
+        "opening_hours": "Mo-Fr 08:30-15:00",
+        "operator": "Associação Mutualista Montepio",
+        "operator:wikidata": "Q1946091",
+        "operator:wikipedia": "pt:Banco Montepio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615565268,
+      "lat": 38.6979148,
+      "lon": -9.4287009,
+      "tags": {
+        "addr:housenumber": "901",
+        "addr:street": "Avenida 25 de Abril",
+        "amenity": "bank",
+        "brand": "Abanca",
+        "brand:wikidata": "Q9598744",
+        "brand:wikipedia": "pt:Abanca",
+        "name": "Abanca",
+        "operator": "Abanca",
+        "operator:wikidata": "Q9598744",
+        "operator:wikipedia": "pt:Abanca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5615565279,
+      "lat": 38.7026582,
+      "lon": -9.4273393,
+      "tags": {
+        "addr:street": "Rua Conde Monte Real",
+        "name": "Merciaria do Bairro",
+        "opening_hours": "Mo-Sa 09:00-22:00",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5724228224,
+      "lat": 38.6960933,
+      "lon": -9.4210972,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Os Bordallos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5724277021,
+      "lat": 38.6985853,
+      "lon": -9.4217124,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Hamburgueria Do Bairro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5783043453,
+      "lat": 38.7010336,
+      "lon": -9.4152777,
+      "tags": {
+        "addr:postcode": "2750-335",
+        "addr:street": "Alameda Duquesa de Palmela",
+        "amenity": "restaurant",
+        "name": "Capriccio",
+        "name:en": "Pizzeria Capricciosa",
+        "name:es": "Pizzeria Capricciosa",
+        "name:pt": "Pizzeria Capricciosa",
+        "website": "https://grupocapricciosa.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5878981776,
+      "lat": 38.6975749,
+      "lon": -9.4337965,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida Pedro Álvares Cabral (Escola Secundária de Cascais)",
+        "name:Flixbus": "Cascais, Avenida Pedro Álvares Cabral",
+        "network": "MobiCascais;Flixbus",
+        "network:wikidata": "Q85875734;Q15712258",
+        "official_name": "Escola Sec. Cascais",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20152",
+        "route_ref": "M04;M05;M14;M15;M27",
+        "route_ref:Flixbus": "Flixbus N793;407",
+        "shelter": "yes",
+        "short_name": "Av. Pedro Álvares Cabral (Escola Secundária de Cascais)",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020340289,
+      "lat": 38.6991219,
+      "lon": -9.420483,
+      "tags": {
+        "amenity": "restaurant"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020340293,
+      "lat": 38.6995327,
+      "lon": -9.4196529,
+      "tags": {
+        "amenity": "cafe",
+        "cuisine": "crepe",
+        "name": "Happy Chocolate"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020340298,
+      "lat": 38.6977388,
+      "lon": -9.4206509,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020340300,
+      "lat": 38.6981346,
+      "lon": -9.4208106,
+      "tags": {
+        "amenity": "restaurant",
+        "level": "1",
+        "name": "O Poeta"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020340301,
+      "lat": 38.6981402,
+      "lon": -9.4206243,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "seafood",
+        "name": "Marisquera"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020340303,
+      "lat": 38.6982342,
+      "lon": -9.420865,
+      "tags": {
+        "amenity": "cafe",
+        "name": "pastelearia Galeão"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020340304,
+      "lat": 38.6983519,
+      "lon": -9.4208868,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Tasca da Vila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020340305,
+      "lat": 38.6984062,
+      "lon": -9.4209056,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "Indian Flavour"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020340306,
+      "lat": 38.6985157,
+      "lon": -9.4207678,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6020340307,
+      "lat": 38.6986963,
+      "lon": -9.4208146,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Pica Pica"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6142124188,
+      "lat": 38.6990644,
+      "lon": -9.4200758,
+      "tags": {
+        "addr:housenumber": "8B",
+        "addr:postcode": "2750-508",
+        "addr:street": "Avenida Valbom",
+        "amenity": "restaurant",
+        "check_date": "2026-03-28",
+        "cuisine": "local",
+        "name": "Flecha Azul",
+        "phone": "+351 21 484 1067"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6293455032,
+      "lat": 38.6982359,
+      "lon": -9.4191224,
+      "tags": {
+        "addr:housenumber": "10-B",
+        "addr:postcode": "2750-348",
+        "addr:street": "Rua das Flores",
+        "amenity": "restaurant",
+        "check_date": "2024-05-21",
+        "cuisine": "portuguese;fish;seafood",
+        "email": "reserva@restaurantepescador.com",
+        "internet_access": "wlan",
+        "name": "O Pescador",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+351214832054",
+        "website": "http://restaurantepescador.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6327432087,
+      "lat": 38.6976006,
+      "lon": -9.4252322,
+      "tags": {
+        "addr:postcode": "2750-357",
+        "amenity": "restaurant",
+        "cuisine": "barbecue;mediterranean;portuguese;seafood;grill;steak_house;fish",
+        "name": "Nacos & Co",
+        "opening_hours": "Tu-Fr 09:00-15:30, 19:30-23:00; Sa 13:00-15:30, 19:30-23:00; Su 13:00-16:00",
+        "phone": "+351214861191"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6521098085,
+      "lat": 38.6981485,
+      "lon": -9.4217788,
+      "tags": {
+        "amenity": "restaurant",
+        "indoor_seating": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "internet_access:ssid": "Clandestina Guest",
+        "name": "Clandestina",
+        "opening_hours": "Mo 12:00-22:30; We-Sa 12:00-23:00; Su 12:00-22:30",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6616334185,
+      "lat": 38.6953141,
+      "lon": -9.4213219,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "5 sentidos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6616394585,
+      "lat": 38.696995,
+      "lon": -9.4209864,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Dom Pedro 1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6720056286,
+      "lat": 38.6939729,
+      "lon": -9.4182553,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2025-04-19",
+        "cuisine": "seafood",
+        "name": "Maria Pia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6720498089,
+      "lat": 38.7009443,
+      "lon": -9.4191582,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Portofino"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6856077186,
+      "lat": 38.6981735,
+      "lon": -9.4204541,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Pizzagueti"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7285504686,
+      "lat": 38.6974129,
+      "lon": -9.4209415,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "crepe",
+        "internet_access": "wlan",
+        "name": "Crepes da Vila",
+        "opening_hours": "Tu-Su 12:00-22:00; Mo 12:00-19:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7423758366,
+      "lat": 38.6975515,
+      "lon": -9.43386,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Pedro Álvares Cabral (Escola Secundária de Cascais=",
+        "name:Flixbus": "Cascais, Pedro Álvares Cabral",
+        "network": "MobiCascais;Flixbus",
+        "network:wikidata": "Q85875734;Q15712258",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7704637919,
+      "lat": 38.6978445,
+      "lon": -9.4201675,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "36",
+        "addr:postcode": "2750-295",
+        "addr:street": "Rua do Arco",
+        "amenity": "restaurant",
+        "cuisine": "ice_cream;crepe;waffle",
+        "name": "Amori D'Ana",
+        "opening_hours": "We-Mo 11:00-23:00; Tu off",
+        "phone": "+351218210891",
+        "website": "amoridana.pt"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8091120294,
+      "lat": 38.6966137,
+      "lon": -9.4340056,
+      "tags": {
+        "amenity": "school"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8110994656,
+      "lat": 38.7010553,
+      "lon": -9.4143612,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "43A",
+        "addr:street": "Paredão de Cascais",
+        "amenity": "school",
+        "description": "Escola de surf e paddle",
+        "education": "school",
+        "name": "Surf n Paddle"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8629459637,
+      "lat": 38.7008235,
+      "lon": -9.4205637,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "20",
+        "addr:street": "Avenida 25 de Abril",
+        "addr:unit": "A",
+        "amenity": "bank",
+        "branch": "Cascais",
+        "brand": "Millennium bcp",
+        "brand:wikidata": "Q118581",
+        "brand:wikipedia": "pt:Banco Comercial Português",
+        "description": "Balcão 6058",
+        "name": "Millennium bcp",
+        "opening_hours": "Mo-Sa 08:30-15:00",
+        "operator": "Banco Comercial Português",
+        "operator:wikidata": "Q118581",
+        "operator:wikipedia": "pt:Banco Comercial Português"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942326,
+      "lat": 38.6985195,
+      "lon": -9.420914,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Dona Tábua"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942331,
+      "lat": 38.6985614,
+      "lon": -9.4219225,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Confraria"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942332,
+      "lat": 38.6984316,
+      "lon": -9.4218366,
+      "tags": {
+        "amenity": "restaurant",
+        "indoor_seating": "no",
+        "name": "la cotessa- carpaccio House",
+        "opening_hours": "Mo-Fr 12:00-22:30; Sa,Su,PH 12:00-23:00",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942334,
+      "lat": 38.6983772,
+      "lon": -9.4219681,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Le Marocain"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942335,
+      "lat": 38.6983018,
+      "lon": -9.4220834,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-01-11",
+        "name": "Soya Noodle Bar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942338,
+      "lat": 38.6981406,
+      "lon": -9.4224536,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Manjar da Vila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942339,
+      "lat": 38.6979795,
+      "lon": -9.4219037,
+      "tags": {
+        "addr:housenumber": "180",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "name": "Izakaya"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942340,
+      "lat": 38.6987184,
+      "lon": -9.4221397,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "The Grill Steakhouse"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942341,
+      "lat": 38.6986577,
+      "lon": -9.422239,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Tasca",
+        "opening_hours": "\"Temporariamente fechado\""
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942342,
+      "lat": 38.6975817,
+      "lon": -9.4215979,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Pizzeria Il Siciliano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942343,
+      "lat": 38.6975315,
+      "lon": -9.4214343,
+      "tags": {
+        "amenity": "restaurant",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "name": "Tanah Vegan"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8687942345,
+      "lat": 38.6982606,
+      "lon": -9.4217805,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "mexican",
+        "name": "malacopa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8911155217,
+      "lat": 38.6991856,
+      "lon": -9.4214301,
+      "tags": {
+        "amenity": "restaurant",
+        "name:en": "Labrettazzurra pizzeria"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9169926356,
+      "lat": 38.7004891,
+      "lon": -9.4185747,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "J",
+        "name": "Cascais (Estação)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Cascais (Estação)",
+        "operator": "Casbuscais;Cascais Próxima",
+        "public_transport": "platform",
+        "ref": "20007",
+        "route_ref": "M34;M43;M44",
+        "shelter": "yes",
+        "short_name": "Cascais (Estação)",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9458772188,
+      "lat": 38.7022263,
+      "lon": -9.4213068,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Local"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9458776053,
+      "lat": 38.7021988,
+      "lon": -9.4211919,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Cantina da Vila"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9458785274,
+      "lat": 38.7023368,
+      "lon": -9.4216096,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Sushi del Mar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9458785539,
+      "lat": 38.7023061,
+      "lon": -9.4215123,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Páteo do Petisco"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9458801437,
+      "lat": 38.7019635,
+      "lon": -9.4212715,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Gulli"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9458805473,
+      "lat": 38.702255,
+      "lon": -9.4214087,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "H3"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9458806036,
+      "lat": 38.7020455,
+      "lon": -9.4212368,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Rubro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9458810719,
+      "lat": 38.6956351,
+      "lon": -9.4208651,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-05-21",
+        "cuisine": "sushi",
+        "name": "Confraria",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9734996617,
+      "lat": 38.6981506,
+      "lon": -9.4221737,
+      "tags": {
+        "addr:housenumber": "205 b",
+        "addr:street": "Rua do Poço Novo",
+        "amenity": "restaurant",
+        "check_date": "2025-10-26",
+        "name": "A Nova Estrela",
+        "opening_hours": "Mo-Sa 12:00-15:30, 18:30-21:30"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9819972897,
+      "lat": 38.6991126,
+      "lon": -9.4190007,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "55",
+        "addr:postcode": "2750-355",
+        "addr:street": "Rua Frederico Arouca",
+        "amenity": "restaurant",
+        "name": "Casa Portuguesa do Pastel de Bacalhau - Cascais",
+        "phone": "+351211648919",
+        "website": "https://www.pasteldebacalhau.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9845677417,
+      "lat": 38.7017681,
+      "lon": -9.4180479,
+      "tags": {
+        "bus": "yes",
+        "description": "Desembarque",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "D",
+        "name": "Cascais (Terminal)",
+        "public_transport": "platform",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9845677418,
+      "lat": 38.7020263,
+      "lon": -9.4188136,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "covered": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "G",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Cascais - Terminal",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20078",
+        "route_ref": "M08;M18;M22",
+        "shelter": "yes",
+        "short_name": "Cascais (Terminal)",
+        "tactile_paving": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9845677419,
+      "lat": 38.7017521,
+      "lon": -9.4181453,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "D",
+        "name": "Cascais (Terminai)",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9845677420,
+      "lat": 38.7019674,
+      "lon": -9.4188371,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "G",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9845696418,
+      "lat": 38.7008699,
+      "lon": -9.4194945,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "M",
+        "name": "Avenida Marginal (Estação)",
+        "name:TML": "Av Marginal (Chaves do Areeiro)",
+        "network": "MobiCascais;Carris Metropolitana",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "Cascais Estação - Av. Marginal",
+        "operator": "Casbuscais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "20129",
+        "ref:TML": "050319",
+        "route_ref": "M02;M14;M22;M27",
+        "route_ref:TML": "1624",
+        "shelter": "yes",
+        "short_name": "Av. Marginal (Estação)",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9909554717,
+      "lat": 38.6983386,
+      "lon": -9.4195922,
+      "tags": {
+        "addr:housenumber": "37",
+        "addr:postcode": "2750-319",
+        "addr:street": "Largo Cidade de Vitória",
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "level": "0",
+        "name": "Marítimo",
+        "name:en": "Maritimo",
+        "opening_hours": "Mo-Sa 12:00-20:00",
+        "outdoor_seating": "yes",
+        "phone": "+351214843988",
+        "self_service": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10015381355,
+      "lat": 38.6919346,
+      "lon": -9.4200834,
+      "tags": {
+        "check_date": "2022-09-10",
+        "name": "Quinta do Saloio",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10015381356,
+      "lat": 38.6919424,
+      "lon": -9.4201701,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2022-09-10"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10015381357,
+      "lat": 38.6921572,
+      "lon": -9.4198251,
+      "tags": {
+        "amenity": "pharmacy",
+        "check_date": "2022-09-10",
+        "healthcare": "pharmacy",
+        "name": "Pharmaville"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10015381359,
+      "lat": 38.7004943,
+      "lon": -9.4199037,
+      "tags": {
+        "amenity": "bank",
+        "brand": "Banco Português de Investimento",
+        "brand:wikidata": "Q537886",
+        "brand:wikipedia": "pt:Banco Português de Investimento",
+        "check_date": "2022-09-10",
+        "name": "BPI",
+        "official_name": "Banco Português de Investimento",
+        "operator": "Banco Português de Investimento",
+        "operator:wikidata": "Q537886",
+        "operator:wikipedia": "pt:Banco Português de Investimento"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10015381361,
+      "lat": 38.7012221,
+      "lon": -9.4194406,
+      "tags": {
+        "amenity": "bank",
+        "brand": "Banco CTT",
+        "brand:wikidata": "Q65161642",
+        "brand:wikipedia": "pt:Banco CTT",
+        "check_date": "2026-03-20",
+        "name": "Banco CTT",
+        "operator": "CTT",
+        "operator:wikidata": "Q1024518",
+        "operator:wikipedia": "pt:CTT Correios de Portugal"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10278609592,
+      "lat": 38.6978116,
+      "lon": -9.4350215,
+      "tags": {
+        "addr:postcode": "2750-642",
+        "branch": "Cascais - Guia",
+        "brand": "Pingo Doce",
+        "brand:wikidata": "Q1575057",
+        "brand:wikipedia": "pt:Pingo Doce",
+        "contact:facebook": "pingodoce",
+        "contact:instagram": "pingodoce",
+        "contact:linkedin": "https://www.linkedin.com/company/pingo-doce",
+        "contact:phone": "+351 938 875 253",
+        "contact:tiktok": "pingodoce",
+        "contact:youtube": "pingodocept",
+        "name": "Pingo Doce",
+        "opening_hours": "Mo-Su 08:00-21:30; easter 08:00-14:00",
+        "ref": "891",
+        "shop": "supermarket",
+        "source:contact": "website",
+        "source:opening_hours": "website",
+        "website": "https://www.pingodoce.pt/lojas/cascais-guia/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10287898209,
+      "lat": 38.7013445,
+      "lon": -9.4296665,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rua Jaime Thompsom (Escola)",
+        "name:TML": "R Jayme Thompson 309 (Escola)",
+        "network": "MobiCascais;Carris Metropolitana",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "Escola Sec. Cidadela;R Jayme Thompson 309 (Escola)",
+        "operator": "Casbuscais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "20127",
+        "ref:TML": "050315",
+        "route_ref": "M02;M04;M05;M09;M14;M15;M22;M27;M34",
+        "shelter": "yes",
+        "short_name": "R. Jaime Thompsom (Escola)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10287898210,
+      "lat": 38.7026593,
+      "lon": -9.4278343,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Bairro da Assunção",
+        "name:TML": "Av Eng Adelino Amaro Costa 310",
+        "network": "Carris Metropolitana;MobiCascais",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "Av Eng Adelino Amaro Costa 310;Bairro da Assunção",
+        "operator": "MobiCascais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "155680",
+        "ref:TML": "050253",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10288558450,
+      "lat": 38.7059407,
+      "lon": -9.4179403,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida de Sintra",
+        "name:TML": "Av Sintra 546",
+        "network": "MobiCascais;Carris Metropolitana",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "Bairro do Alcaide;Av Sintra 546",
+        "operator": "Casbuscais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "20159",
+        "ref:TML": "050209",
+        "route_ref": "M06;M07;M08;M11;M12;M13;M17;M18",
+        "shelter": "yes",
+        "short_name": "Av. de Sintra",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10288672433,
+      "lat": 38.7051169,
+      "lon": -9.4179039,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida de Sintra",
+        "name:TML": "Av Sintra 546",
+        "network": "MobiCascais;Carris Metropolitana",
+        "network:wikidata": "Q85875734;Q111611112",
+        "official_name": "Bairro do Alcaide;Av Sintra 546",
+        "operator": "Casbuscais",
+        "operator:TML": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "20238",
+        "ref:TML": "050210",
+        "route_ref": "M06;M07;M08;M11;M12;M13;M17;M18",
+        "shelter": "no",
+        "short_name": "Av. de Sintra",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10288672434,
+      "lat": 38.703442,
+      "lon": -9.4183024,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "R Henrique Seixas 203",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "R Henrique Seixas 203",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "050207",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10288672436,
+      "lat": 38.7022145,
+      "lon": -9.417865,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Av Sintra Fte Jumbo",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "050247",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290798980,
+      "lat": 38.7019552,
+      "lon": -9.4189353,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "covered": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "C",
+        "name": "Cascais (Terminal)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "official_name": "Cascais (Terminal)",
+        "operator": "Viação Alvorada",
+        "public_transport": "platform",
+        "ref": "056531",
+        "route_ref": "1620;1621;1623;1624;1625;1639",
+        "shelter": "yes",
+        "short_name": "Cascais (Terminal)",
+        "tactile_paving": "yes",
+        "website": "https://www.carrismetropolitana.pt/stops/056531"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10290798994,
+      "lat": 38.7019756,
+      "lon": -9.4185821,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "covered": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "F",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Cascais - Terminal",
+        "operator": "Casbuscais;Cascais Próxima",
+        "public_transport": "platform",
+        "ref": "20078",
+        "route_ref": "M02;M14;M39",
+        "shelter": "yes",
+        "short_name": "Cascais (Terminal)",
+        "tactile_paving": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10314947117,
+      "lat": 38.6959801,
+      "lon": -9.4224992,
+      "tags": {
+        "addr:housenumber": "133",
+        "addr:street": "Avenida Vasco da Gama",
+        "amenity": "restaurant",
+        "name": "Casa dos Pescadores"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10591199247,
+      "lat": 38.7018422,
+      "lon": -9.4187144,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "B",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10591199248,
+      "lat": 38.7019026,
+      "lon": -9.4186933,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "covered": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "B",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Cascais - Terminal",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20078",
+        "route_ref": "M06;M07;M11",
+        "shelter": "yes",
+        "short_name": "Cascais (Terminal)",
+        "tactile_paving": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10591199249,
+      "lat": 38.701918,
+      "lon": -9.4186038,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "F",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais;Cascais Próxima",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10591199253,
+      "lat": 38.7018956,
+      "lon": -9.4189561,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "C",
+        "name": "Cascais (Terminal)",
+        "network": "Carris Metropolitana",
+        "network:wikidata": "Q111611112",
+        "operator": "Viação Alvorada",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10591199254,
+      "lat": 38.7020167,
+      "lon": -9.4190705,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "H",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10591199255,
+      "lat": 38.702077,
+      "lon": -9.4190452,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "covered": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "H",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Cascais - Terminal",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20078",
+        "route_ref": "M12;M13;M17",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10591199257,
+      "lat": 38.7008867,
+      "lon": -9.4188313,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "L",
+        "name": "Cascais (Estação)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10591199260,
+      "lat": 38.7008966,
+      "lon": -9.4187761,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "L",
+        "name": "Cascais (Estação)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Cascais Estação",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "7621",
+        "route_ref": "M04;M05;M15",
+        "shelter": "yes",
+        "short_name": "Cascais (Estação)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649799883,
+      "lat": 38.6986078,
+      "lon": -9.4281864,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida 25 de Abril (X) Rua Joaquim Ereira",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Rua Joaquim Garcia",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20150",
+        "route_ref": "M04;M05;M14;M15;M27;M34",
+        "shelter": "yes",
+        "short_name": "Av. 25 de Abril (X) R. Joaquim Ereira"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649799887,
+      "lat": 38.7000225,
+      "lon": -9.4269083,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rua Jaime Thompsom",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Rua Jayme Thompson",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20149",
+        "route_ref": "M04;M05;M14;M15;M27",
+        "shelter": "yes",
+        "short_name": "R. Jaime Thompsom"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649799896,
+      "lat": 38.7024995,
+      "lon": -9.4304919,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Rotunda Doutor José Rodrigues Duarte",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Rotunda Dr. José Rodrigues Duarte",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20931",
+        "route_ref": "M14",
+        "shelter": "no",
+        "short_name": "Rot. Dr. José Rodrigues Duarte"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862305,
+      "lat": 38.6967331,
+      "lon": -9.4308669,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida Infante Dom Henrique (Posto de Abastecimento)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Av. Inf. D. Henrique - Torre Inf.",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20140",
+        "route_ref": "M02;M04;M05;M15;M34",
+        "shelter": "yes",
+        "short_name": "Av. Inf. D. Henrique (Posto de Abastecimento)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862306,
+      "lat": 38.6968045,
+      "lon": -9.4307172,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida Infante Dom Henrique (Posto de Abastecimento)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Av. Inf. D. Henrique - Torre Inf.",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20151",
+        "route_ref": "M04;M05;M14;M15;M27;M34",
+        "shelter": "no",
+        "short_name": "Av. Inf. D. Henrique (Posto de Abastecimento)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862316,
+      "lat": 38.7032487,
+      "lon": -9.4267194,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Rua Conde Monte Real",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Rua Conde Monte Real",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20304",
+        "route_ref": "M09",
+        "shelter": "no",
+        "short_name": "R. Conde Mte. Real"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862317,
+      "lat": 38.7040945,
+      "lon": -9.4279187,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Rua Conde Castro Guimarães",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Rua Conde Castro Guimarães",
+        "operator": "MobiCascais",
+        "public_transport": "platform",
+        "ref": "156036"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862352,
+      "lat": 38.7056915,
+      "lon": -9.4291007,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Bairro J. Pimenta",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Bairro J. Pimenta",
+        "operator": "MobiCascais",
+        "public_transport": "platform",
+        "ref": "156054"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862385,
+      "lat": 38.7044349,
+      "lon": -9.4309038,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Rua Engenheiro Dom António Castelo Branco",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Rua Eng. António Castelo Branco",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20932",
+        "route_ref": "M14",
+        "shelter": "no",
+        "short_name": "R. Eng. D. António Castelo Branco"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862446,
+      "lat": 38.699688,
+      "lon": -9.4326483,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida Infante Dom Henrique",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Av. Inf. D. Henrique",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "5020",
+        "route_ref": "M34",
+        "shelter": "yes",
+        "short_name": "Av. Inf. D. Henrique"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862447,
+      "lat": 38.6994086,
+      "lon": -9.4326697,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida Infante Dom Henrique",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Av. Inf. D. Henrique",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "5019",
+        "shelter": "yes",
+        "short_name": "Av. Inf. D. Henrique"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862493,
+      "lat": 38.6972417,
+      "lon": -9.4339132,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida Pedro Álvares Cabral (Escola Secundária de Cascais)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Escola Sec. Cascais",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20139",
+        "route_ref": "M02;M04;M05;M15",
+        "shelter": "yes",
+        "short_name": "Av. Pedro Álvares Cabral (Escola Secundária de Cascais)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862552,
+      "lat": 38.7013885,
+      "lon": -9.4236377,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Alto da Bela Vista",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Alto da Bela Vista",
+        "operator": "MobiCascais",
+        "public_transport": "platform",
+        "ref": "156387",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862553,
+      "lat": 38.7021482,
+      "lon": -9.4319115,
+      "tags": {
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Rua Joaquim Ereira",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Praceta Joaquim Ereira",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "5080",
+        "route_ref": "M03",
+        "shelter": "no",
+        "short_name": "R. Joaquim Ereira"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862588,
+      "lat": 38.6914534,
+      "lon": -9.4301747,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Boca do Inferno",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Boca do Inferno",
+        "operator": "MobiCascais",
+        "public_transport": "platform",
+        "ref": "156394",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862629,
+      "lat": 38.7015843,
+      "lon": -9.4241264,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rua N. Sra. Assunção",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Rua N. Sra. Assunção",
+        "operator": "MobiCascais",
+        "public_transport": "platform",
+        "ref": "156033"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862630,
+      "lat": 38.7032062,
+      "lon": -9.4252185,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Casal das Rosas",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Casal das Rosas",
+        "operator": "MobiCascais",
+        "public_transport": "platform",
+        "ref": "156034"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862690,
+      "lat": 38.6981624,
+      "lon": -9.4200507,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Pelourinho de Cascais",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Pelourinho de Cascais",
+        "operator": "MobiCascais",
+        "public_transport": "platform",
+        "ref": "156399"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862704,
+      "lat": 38.6946554,
+      "lon": -9.4203157,
+      "tags": {
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Igreja Matriz",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Igreja Matriz",
+        "operator": "MobiCascais",
+        "public_transport": "platform",
+        "ref": "156397"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862776,
+      "lat": 38.6967584,
+      "lon": -9.4203437,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "fixme": "Verificar localização",
+        "highway": "bus_stop",
+        "name": "Praça 5 de Outubro",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Praça 5 de Outubro",
+        "operator": "MobiCascais",
+        "public_transport": "platform",
+        "ref": "156398",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649862979,
+      "lat": 38.6983727,
+      "lon": -9.4283093,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Avenida 25 de Abril (X) Rua Joaquim Ereira",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Rua Joaquim Garcia",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20141",
+        "route_ref": "M02;M04;M05;M15;M34",
+        "shelter": "yes",
+        "short_name": "Av. 25 de Abril (X) R. Joaquim Ereira"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649863298,
+      "lat": 38.6945066,
+      "lon": -9.4234382,
+      "tags": {
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "name": "Avenida da Repúlica (Casa das Histórias Paula Rego)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Casa das Histórias",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "7614",
+        "route_ref": "M27",
+        "shelter": "no",
+        "short_name": "Av. da República (Casa das Histórias Paula Rego)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10649863302,
+      "lat": 38.6941355,
+      "lon": -9.4269498,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Hipódromo Municipal Manuel Possolo",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Hipódromo",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "7613",
+        "route_ref": "M27",
+        "shelter": "no",
+        "short_name": "Hipódromo Municipal Manuel Possolo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10783321231,
+      "lat": 38.7008746,
+      "lon": -9.417913,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:postcode": "2750-340",
+        "addr:street": "Largo da Estação",
+        "ele": "10",
+        "name": "Cascais",
+        "nat_ref": "69260",
+        "official_name": "Estação Ferroviária de Cascais",
+        "old_name": "Cascaes",
+        "operator": "Infraestruturas de Portugal",
+        "operator:short": "IP",
+        "operator:wikidata": "Q20730106",
+        "public_transport": "station",
+        "railway": "station",
+        "railway:ref": "CIS",
+        "start_date": "1889-09-30",
+        "train": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q800613",
+        "wikimedia_commons": "Category:Cascais train station",
+        "wikipedia": "pt:Estação Ferroviária de Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11056448865,
+      "lat": 38.7024699,
+      "lon": -9.4173508,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:postcode": "2754-522",
+        "amenity": "restaurant",
+        "name": "The Green Affair",
+        "opening_hours": "Mo-Su 12:00-23:00",
+        "phone": "+351969001065"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11494488808,
+      "lat": 38.6980831,
+      "lon": -9.4189972,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-01-06",
+        "cuisine": "seafood;portuguese;fish",
+        "diet:local": "yes",
+        "diet:meat": "yes",
+        "diet:non-vegetarian": "yes",
+        "diet:omnivore": "yes",
+        "diet:pescetarian": "yes",
+        "diet:seafood": "yes",
+        "name": "Beira Mar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11920618530,
+      "lat": 38.6976196,
+      "lon": -9.4188211,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "1",
+        "addr:postcode": "2750-342",
+        "addr:street": "Rua Fernandes Thomaz",
+        "amenity": "restaurant",
+        "check_date": "2024-05-20",
+        "cuisine": "italian",
+        "name": "Corleone",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+351 964 236 029",
+        "website": "https://www.corleone.pt/en/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11921760610,
+      "lat": 38.6977007,
+      "lon": -9.419006,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-05-21",
+        "cuisine": "portuguese",
+        "name": "Joyeux",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "website": "https://joyeux.pt"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11927907557,
+      "lat": 38.6907724,
+      "lon": -9.4288197,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-05-22",
+        "name": "The"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12024302274,
+      "lat": 38.700662,
+      "lon": -9.418766,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "K",
+        "name": "Cascais (Estação)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12024302275,
+      "lat": 38.7006715,
+      "lon": -9.4187107,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "departures_board": "timetable",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "K",
+        "name": "Cascais (Estação)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Cascais Estação",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "7622",
+        "route_ref": "M09",
+        "shelter": "yes",
+        "short_name": "Cascais (Estação)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12024302276,
+      "lat": 38.7019249,
+      "lon": -9.4183505,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "covered": "yes",
+        "description": "Desembarque",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "E",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Cascais - Terminal",
+        "operator": "Casbuscais;Cascais Próxima",
+        "public_transport": "platform",
+        "ref": "20078",
+        "shelter": "yes",
+        "short_name": "Cascais (Terminal)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12024302277,
+      "lat": 38.7018687,
+      "lon": -9.4183704,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "E",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais;Cascais Próxima",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12024302278,
+      "lat": 38.7017887,
+      "lon": -9.4184728,
+      "tags": {
+        "bus": "yes",
+        "local_ref": "A",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12024302279,
+      "lat": 38.7018501,
+      "lon": -9.4184514,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "covered": "yes",
+        "description": "Desembarque",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "local_ref": "A",
+        "name": "Cascais (Terminal)",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "official_name": "Cascais - Terminal",
+        "operator": "Casbuscais",
+        "public_transport": "platform",
+        "ref": "20078",
+        "shelter": "yes",
+        "short_name": "Cascais (Terminal)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12071979237,
+      "lat": 38.7008184,
+      "lon": -9.4201772,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2026-03-20",
+        "name": "The Craft Company Cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12087398970,
+      "lat": 38.6916267,
+      "lon": -9.4189907,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Sacas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12087399670,
+      "lat": 38.7012448,
+      "lon": -9.4191643,
+      "tags": {
+        "addr:housenumber": "9203",
+        "addr:street": "Avenida Marginal",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "dental_oral_maxillo_facial_surgery",
+        "name": "Clinica Médis"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12137792190,
+      "lat": 38.6974293,
+      "lon": -9.4210856,
+      "tags": {
+        "addr:housenumber": "12",
+        "addr:street": "Rua Afonso Sanches",
+        "amenity": "cafe",
+        "cuisine": "breakfast",
+        "indoor_seating": "yes",
+        "name": "Euphoria",
+        "opening_hours": "Mo-Su 08:00-18:00",
+        "outdoor_seating": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12194220134,
+      "lat": 38.6989269,
+      "lon": -9.4258908,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-09-23",
+        "name": "Nicolau",
+        "website": "https://www.ilovenicolau.com/pt/onde-estamos/nicolau-cascais/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12194435294,
+      "lat": 38.6989269,
+      "lon": -9.4258907,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2024-09-23",
+        "name": "Nicolau",
+        "website": "https://www.ilovenicolau.com/pt/onde-estamos/nicolau-cascais/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12441596562,
+      "lat": 38.6926296,
+      "lon": -9.4191415,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2024-12-22",
+        "name": "Ar Mar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12467263660,
+      "lat": 38.7009175,
+      "lon": -9.4195322,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Marginal (Estação)",
+        "name:TML": "Av Marginal (Chaves do Areeiro)",
+        "network": "MobiCascais;Carris Metropolitana",
+        "network:wikidata": "Q85875734;Q111611112",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12598722529,
+      "lat": 38.701463,
+      "lon": -9.4222409,
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housename": "Edifício Grei",
+        "addr:housenumber": "184A",
+        "addr:postcode": "2750-511",
+        "addr:street": "Avenida 25 de Abril",
+        "amenity": "bank",
+        "brand": "Novo Banco",
+        "brand:wikidata": "Q17488861",
+        "brand:wikipedia": "pt:Novo Banco",
+        "contact:fax": "+351 218834635",
+        "contact:phone": "+351 218834633",
+        "name": "Novo Banco",
+        "operator": "Novo Banco",
+        "operator:wikidata": "Q17488861",
+        "operator:wikipedia": "pt:Novo Banco",
+        "ref": "B0246",
+        "ref_name": "Cascais"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12815499167,
+      "lat": 38.7000226,
+      "lon": -9.4182402,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2025-05-06",
+        "coffee:brand": "Delta",
+        "cuisine": "pizza",
+        "name": "Roots café"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13123113903,
+      "lat": 38.6974867,
+      "lon": -9.4214362,
+      "tags": {
+        "addr:housenumber": "10",
+        "addr:street": "Travessa do Poço Novo",
+        "amenity": "cafe",
+        "brand": "The Coffee",
+        "brand:wikidata": "Q112042753",
+        "cuisine": "coffee_shop",
+        "name": "The Coffee",
+        "opening_hours": "Mo-Su 08:00-19:00",
+        "takeaway": "yes",
+        "website": "https://thecoffee.jp/shortcut/portugal/cascais/the-coffee-caiscais-centro",
+        "website:menu": "https://thecoffee.jp/shortcut/portugal/cascais/the-coffee-caiscais-centro/menu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13123380701,
+      "lat": 38.6919423,
+      "lon": -9.4188355,
+      "tags": {
+        "amenity": "cafe",
+        "brand": "The Coffee",
+        "brand:wikidata": "Q112042753",
+        "cuisine": "coffee_shop",
+        "name": "The Coffee",
+        "opening_hours": "Mo-Su 09:00-19:30",
+        "takeaway": "yes",
+        "website": "https://thecoffee.jp/shortcut/portugal/cascais/the-coffee-marina-de-caiscais",
+        "website:menu": "https://thecoffee.jp/shortcut/portugal/cascais/the-coffee-marina-de-caiscais/menu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13123439301,
+      "lat": 38.691677,
+      "lon": -9.4190255,
+      "tags": {
+        "amenity": "cafe",
+        "name": "Kafeine"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13123664301,
+      "lat": 38.6978731,
+      "lon": -9.4219816,
+      "tags": {
+        "amenity": "restaurant",
+        "delivery": "no",
+        "indoor_seating": "yes",
+        "name": "Mana",
+        "outdoor_seating": "yes",
+        "payment:cards": "yes",
+        "payment:cash": "yes",
+        "payment:qr_code": "no",
+        "phone": "+351 915 669 206",
+        "takeaway": "no",
+        "toilets": "yes",
+        "website": "https://www.manacascais.pt/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13123666201,
+      "lat": 38.6983087,
+      "lon": -9.4219515,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Chutnify"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13124056301,
+      "lat": 38.6984529,
+      "lon": -9.4220985,
+      "tags": {
+        "amenity": "restaurant",
+        "name": "Residente"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13124056401,
+      "lat": 38.6985871,
+      "lon": -9.4221878,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2026-06-13",
+        "name": "Chutnity"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13124058301,
+      "lat": 38.6986029,
+      "lon": -9.4220138,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2026-06-13",
+        "name": "Asian Papa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13125114146,
+      "lat": 38.6939418,
+      "lon": -9.4195969,
+      "tags": {
+        "amenity": "cafe",
+        "check_date": "2025-09-07",
+        "name": "Dibble Café"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13127691801,
+      "lat": 38.6972864,
+      "lon": -9.4210935,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "fish;seafood",
+        "name": "Caravela"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13278349481,
+      "lat": 38.6994241,
+      "lon": -9.432631,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Infante Dom Henrique",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position",
+        "ref": "5019"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13278349482,
+      "lat": 38.6996714,
+      "lon": -9.4326915,
+      "tags": {
+        "bus": "yes",
+        "name": "Avenida Infante Dom Henrique",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position",
+        "ref": "5020"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13301238658,
+      "lat": 38.7000626,
+      "lon": -9.418955,
+      "tags": {
+        "amenity": "restaurant",
+        "brand": "Honest Greens",
+        "brand:wikidata": "Q116859710",
+        "cuisine": "organic",
+        "name": "Honest Greens"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13314228148,
+      "lat": 38.7025902,
+      "lon": -9.4169435,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "portuguese",
+        "email": "geral@mariapimenta.pt",
+        "name": "Maria Pimenta (Cascais)",
+        "phone": "+351 963 594 517",
+        "reservation": "recommended",
+        "website": "https://www.mariapimenta.pt"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13384313723,
+      "lat": 38.7032183,
+      "lon": -9.4267339,
+      "tags": {
+        "bus": "yes",
+        "name": "Rua Conde Monte Real",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position",
+        "ref": "20304"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13384313724,
+      "lat": 38.694182,
+      "lon": -9.4269596,
+      "tags": {
+        "bus": "yes",
+        "name": "Hipódromo Municipal Manuel Possolo",
+        "network": "MobiCascais",
+        "network:wikidata": "Q85875734",
+        "operator": "Casbuscais",
+        "public_transport": "stop_position",
+        "ref": "7613"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13456745901,
+      "lat": 38.699599,
+      "lon": -9.419579,
+      "tags": {
+        "addr:housenumber": "9 Loja 4",
+        "addr:postcode": "2750-508",
+        "addr:street": "Avenida Valbom",
+        "amenity": "restaurant",
+        "cuisine": "asian;chinese;japanese;oriental;vietnamese",
+        "internet_access": "wlan",
+        "name": "TwoToo Cascais",
+        "opening_hours": "Mo-Su 10:00-20:00",
+        "phone": "+351 21 588 7047",
+        "self_service": "no",
+        "website": "https://www.twotoobubbletea.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13647896652,
+      "lat": 38.6905719,
+      "lon": -9.4212811,
+      "tags": {
+        "amenity": "cafe"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13649960001,
+      "lat": 38.698481,
+      "lon": -9.4190125,
+      "tags": {
+        "name": "MUSEU DA MISERICÓRDIA DE CASCAIS",
+        "tourism": "museum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13656306456,
+      "lat": 38.7006216,
+      "lon": -9.4257459,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2026-03-17",
+        "check_date:opening_hours": "2026-03-17",
+        "name": "Ardea",
+        "opening_hours": "Mo-Su 07:00-11:00,12:30-15:00,17:00-22:00",
+        "website": "https://www.hilton.com/en/hotels/lctlhqq-legacy-hotel-cascais/dining/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13787483301,
+      "lat": 38.6985348,
+      "lon": -9.4209195,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "thai",
+        "name": "Amazing Thai"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13936811792,
+      "lat": 38.6987198,
+      "lon": -9.422271,
+      "tags": {
+        "amenity": "restaurant",
+        "check_date": "2026-06-13",
+        "cuisine": "peruvian",
+        "name": "Miski"
+      }
+    },
+    {
+      "type": "way",
+      "id": 95418225,
+      "center": {
+        "lat": 38.6952835,
+        "lon": -9.4223284
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Jardim da Parada"
+      }
+    },
+    {
+      "type": "way",
+      "id": 101090594,
+      "center": {
+        "lat": 38.6929966,
+        "lon": -9.4229155
+      },
+      "tags": {
+        "alt_name": "Parque Condes Castro Guimarães",
+        "leisure": "park",
+        "name": "Parque Marechal Carmona",
+        "opening_hours": "Mo-Su 08:30-20:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 152335510,
+      "center": {
+        "lat": 38.6939547,
+        "lon": -9.4214998
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "building": "yes",
+        "historic": "monastery",
+        "name": "Centro Cultural de Cascais",
+        "old_name": "Convento de Nossa Senhora da Piedade",
+        "tourism": "museum",
+        "wheelchair": "yes",
+        "wikidata": "Q111944823",
+        "wikimedia_commons": "Category:Centro Cultural de Cascais",
+        "wikipedia": "en:Cascais Cultural Centre"
+      }
+    },
+    {
+      "type": "way",
+      "id": 152337735,
+      "center": {
+        "lat": 38.6948717,
+        "lon": -9.4207646
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Largo da Assunção"
+      }
+    },
+    {
+      "type": "way",
+      "id": 169031274,
+      "center": {
+        "lat": 38.6905948,
+        "lon": -9.4211544
+      },
+      "tags": {
+        "area": "yes",
+        "highway": "pedestrian",
+        "name": "Farol Museu de Santa Marta",
+        "tourism": "museum",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "way",
+      "id": 183895701,
+      "center": {
+        "lat": 38.7019201,
+        "lon": -9.4131177
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 184241448,
+      "center": {
+        "lat": 38.700051,
+        "lon": -9.4215715
+      },
+      "tags": {
+        "building": "yes",
+        "shop": "mall",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 184241451,
+      "center": {
+        "lat": 38.7004898,
+        "lon": -9.4202019
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 184241496,
+      "center": {
+        "lat": 38.6951858,
+        "lon": -9.4238184
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Jardins do Museu do Mar"
+      }
+    },
+    {
+      "type": "way",
+      "id": 185592355,
+      "center": {
+        "lat": 38.6979792,
+        "lon": -9.4247758
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 185651272,
+      "center": {
+        "lat": 38.6987,
+        "lon": -9.4252582
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "5",
+        "addr:postcode": "2750-498",
+        "addr:street": "Lg. Maestro Taborda",
+        "amenity": "school",
+        "email": "eb1.josejorgeletria@escolas.min-edu.pt",
+        "grades": "3-9",
+        "name": "Escola Básica José Jorge Letria",
+        "operator": "Agrupamento de Escolas da Cidadela, Cascais",
+        "operator:ref": "172443",
+        "operator:type": "public",
+        "phone": "+351 214 845 344",
+        "ref": "237644",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 202986083,
+      "center": {
+        "lat": 38.7044138,
+        "lon": -9.4187237
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "440",
+        "addr:postcode": "2750-329",
+        "addr:street": "Avenida Costa Pinto",
+        "amenity": "kindergarten",
+        "contact:email": "achupeta@sapo.pt",
+        "contact:phone": "+351 214821521;+351 914849649",
+        "grades": "3-5",
+        "name": "A Chupeta",
+        "operator:type": "private",
+        "ref": "806762",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 207657325,
+      "center": {
+        "lat": 38.7014127,
+        "lon": -9.4171051
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 228758880,
+      "center": {
+        "lat": 38.7048968,
+        "lon": -9.4131455
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque de Palmela",
+        "wikidata": "Q98443786"
+      }
+    },
+    {
+      "type": "way",
+      "id": 235584379,
+      "center": {
+        "lat": 38.7033017,
+        "lon": -9.4199915
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 235584382,
+      "center": {
+        "lat": 38.7035092,
+        "lon": -9.4194729
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 251710287,
+      "center": {
+        "lat": 38.7031388,
+        "lon": -9.4327801
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 361155104,
+      "center": {
+        "lat": 38.7019546,
+        "lon": -9.4122166
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 361155106,
+      "center": {
+        "lat": 38.7023297,
+        "lon": -9.4133624
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 466429603,
+      "center": {
+        "lat": 38.7051191,
+        "lon": -9.4283199
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 466429611,
+      "center": {
+        "lat": 38.7041527,
+        "lon": -9.429556
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 466431384,
+      "center": {
+        "lat": 38.7040751,
+        "lon": -9.4318947
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 466464414,
+      "center": {
+        "lat": 38.7055316,
+        "lon": -9.4282493
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 466467580,
+      "center": {
+        "lat": 38.7055102,
+        "lon": -9.4277907
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 466468642,
+      "center": {
+        "lat": 38.7040116,
+        "lon": -9.429155
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 466517672,
+      "center": {
+        "lat": 38.7014281,
+        "lon": -9.4278843
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 469222608,
+      "center": {
+        "lat": 38.7040853,
+        "lon": -9.4315637
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 473643562,
+      "center": {
+        "lat": 38.7029512,
+        "lon": -9.4290676
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 473643568,
+      "center": {
+        "lat": 38.7067519,
+        "lon": -9.4206278
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque Urbano Outeiro da Vela",
+        "opening_hours": "24/7",
+        "operator": "Câmara Municipal de Cascais"
+      }
+    },
+    {
+      "type": "way",
+      "id": 516257216,
+      "center": {
+        "lat": 38.7075866,
+        "lon": -9.4219293
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 534649226,
+      "center": {
+        "lat": 38.6950736,
+        "lon": -9.4217148
+      },
+      "tags": {
+        "alt_name": "Arquivo Histórico Municipal de Cascais",
+        "alt_name_1": "Livraria Municipal de Cascais",
+        "building": "yes",
+        "name": "Casa Sommer",
+        "opening_hours": "Mo-Fr 09:00-13:00, 14:00-17:00; Sa, Su 10:00-13:00, 14:00-18:00",
+        "tourism": "museum",
+        "wheelchair": "yes",
+        "wikidata": "Q20053183",
+        "wikimedia_commons": "Category:Casa Sommer",
+        "wikipedia": "en:Casa Sommer"
+      }
+    },
+    {
+      "type": "way",
+      "id": 539474757,
+      "center": {
+        "lat": 38.7018877,
+        "lon": -9.4185944
+      },
+      "tags": {
+        "amenity": "bus_station",
+        "bus": "yes",
+        "name": "Terminal Rodoviário de Cascais",
+        "public_transport": "station",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556115922,
+      "center": {
+        "lat": 38.6975052,
+        "lon": -9.4335501
+      },
+      "tags": {
+        "addr:city": "Cascais e Estoril",
+        "addr:housenumber": "236",
+        "addr:postcode": "2750-184",
+        "addr:street": "Avenida Pedro Alvares Cabral",
+        "amenity": "pharmacy",
+        "building": "yes",
+        "healthcare": "pharmacy",
+        "name": "Farmácia Silveira",
+        "website": "https://www.farmaciasilveira.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556173472,
+      "center": {
+        "lat": 38.6910977,
+        "lon": -9.4213631
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:postcode": "2750-341",
+        "addr:street": "Rua do Farol Santa Marta",
+        "building": "yes",
+        "fee": "yes",
+        "name": "Casa de Santa Maria",
+        "name:zh": "圣玛丽亚之家",
+        "tourism": "museum",
+        "wheelchair": "no",
+        "wikidata": "Q48988931",
+        "wikimedia_commons": "Category:Casa de Santa Maria, avenida Rei Umberto",
+        "wikipedia": "en:Casa de Santa Maria, Cascais"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556173545,
+      "center": {
+        "lat": 38.6937649,
+        "lon": -9.4223305
+      },
+      "tags": {
+        "amenity": "cafe",
+        "building": "roof"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556173559,
+      "center": {
+        "lat": 38.692993,
+        "lon": -9.4210081
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Fundação Dom Luís",
+        "tourism": "museum"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556179670,
+      "center": {
+        "lat": 38.6983856,
+        "lon": -9.4205247
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Manolo dos Frangos"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556179719,
+      "center": {
+        "lat": 38.6999153,
+        "lon": -9.4183607
+      },
+      "tags": {
+        "amenity": "bank",
+        "brand": "Millennium bcp",
+        "brand:wikidata": "Q118581",
+        "brand:wikipedia": "pt:Banco Comercial Português",
+        "building": "yes",
+        "name": "Millennium bcp",
+        "operator": "Banco Comercial Português",
+        "operator:wikidata": "Q118581",
+        "operator:wikipedia": "pt:Banco Comercial Português"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556180470,
+      "center": {
+        "lat": 38.6955671,
+        "lon": -9.4235941
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Museu do Mar",
+        "tourism": "museum"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556180535,
+      "center": {
+        "lat": 38.6952237,
+        "lon": -9.4241255
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Casa das Histórias - Paula Rego",
+        "tourism": "museum",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556180927,
+      "center": {
+        "lat": 38.6950244,
+        "lon": -9.4234856
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Museu do Mar",
+        "tourism": "museum",
+        "wheelchair": "yes",
+        "wikidata": "Q48816433",
+        "wikimedia_commons": "Category:Museu do Mar Rei D. Carlos",
+        "wikipedia": "en:Museum of the Sea, Cascais"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556180940,
+      "center": {
+        "lat": 38.6970192,
+        "lon": -9.4230158
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "check_date": "2024-10-10",
+        "cuisine": "steak_house",
+        "indoor_seating": "yes",
+        "name": "Apeadeiro",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556181060,
+      "center": {
+        "lat": 38.6971057,
+        "lon": -9.4231069
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "check_date": "2024-09-26",
+        "cuisine": "steak_house",
+        "name": "O Viriato"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556181157,
+      "center": {
+        "lat": 38.6977083,
+        "lon": -9.4205006
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "19",
+        "addr:postcode": "2750-474",
+        "addr:street": "Rua Regimento 19 da Infantaria",
+        "amenity": "restaurant",
+        "building": "yes",
+        "layer": "-1",
+        "name": "Flamingo Café Cascais",
+        "opening_hours:url": "https://www.facebook.com/FlamingoCafeCascais/info?tab=page_info",
+        "phone": "+351929147232"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556181321,
+      "center": {
+        "lat": 38.6973748,
+        "lon": -9.4231979
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "chicken",
+        "name": "Somos um Regalo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556181422,
+      "center": {
+        "lat": 38.700252,
+        "lon": -9.4181424
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "branch": "Cascais",
+        "brand": "100 Montaditos",
+        "brand:wikidata": "Q8355805",
+        "building": "yes",
+        "check_date": "2025-10-05",
+        "cuisine": "sandwich",
+        "name": "100 Montaditos"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556182339,
+      "center": {
+        "lat": 38.6996739,
+        "lon": -9.4214511
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "retail",
+        "name": "Visconde da Luz"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556182358,
+      "center": {
+        "lat": 38.6996106,
+        "lon": -9.4185661
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "15",
+        "addr:street": "Rua Sebastião José de Carvalho e Melo",
+        "addr:unit": "15 A",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "indian;italian_pizza",
+        "name": "Restaurante Indiano e Italiano"
+      }
+    },
+    {
+      "type": "way",
+      "id": 564972173,
+      "center": {
+        "lat": 38.7006557,
+        "lon": -9.4186098
+      },
+      "tags": {
+        "amenity": "cafe",
+        "indoor": "room",
+        "level_name": "0",
+        "name": "Come Já"
+      }
+    },
+    {
+      "type": "way",
+      "id": 655676191,
+      "center": {
+        "lat": 38.6974733,
+        "lon": -9.422807
+      },
+      "tags": {
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 723922588,
+      "center": {
+        "lat": 38.6924138,
+        "lon": -9.420669
+      },
+      "tags": {
+        "building": "yes",
+        "contact:website": "http://motorpassion.pt",
+        "fee": "no",
+        "name": "Motor Passion",
+        "tourism": "museum"
+      }
+    },
+    {
+      "type": "way",
+      "id": 918698344,
+      "center": {
+        "lat": 38.69617,
+        "lon": -9.4242935
+      },
+      "tags": {
+        "access": "customers",
+        "leisure": "park"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1162425805,
+      "center": {
+        "lat": 38.706688,
+        "lon": -9.4211108
+      },
+      "tags": {
+        "amenity": "cafe",
+        "building": "yes",
+        "name": "7 Seas Bistro"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1190789450,
+      "center": {
+        "lat": 38.6962808,
+        "lon": -9.4337097
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:place": "Bairro do Rosário",
+        "addr:postcode": "2754-513",
+        "amenity": "school",
+        "email": "direcao@aecascais.edu.gov.pt;servicos@aecascais.edu.gov.pt",
+        "grades": "15-17",
+        "name": "Escola Secundária de Cascais",
+        "operator": "Agrupamento de Escolas de Cascais",
+        "operator:ref": "170732",
+        "operator:type": "public",
+        "phone": "+351 214 865 435",
+        "ref": "400555",
+        "ref:qzp": "QZP.45",
+        "website": "http://www.escola-sec-cascais.net"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1262553238,
+      "center": {
+        "lat": 38.7019888,
+        "lon": -9.4291404
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:postcode": "2750-503",
+        "addr:street": "Rua Doutor Fernando M. F. Baptista Viegas",
+        "amenity": "school",
+        "email": "direcao@cidadela.edu.gov.pt;servicos@cidadela.edu.gov.pt",
+        "grades": "10-17",
+        "name": "Escola Básica e Secundária da Cidadela",
+        "operator": "Agrupamento de Escolas da Cidadela, Cascais",
+        "operator:ref": "172443",
+        "operator:type": "public",
+        "phone": "+351 214 864 080",
+        "ref": "401201",
+        "ref:qzp": "QZP.45",
+        "website": "https://aecidadela.pt/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1262587228,
+      "center": {
+        "lat": 38.7012736,
+        "lon": -9.4322134
+      },
+      "tags": {
+        "amenity": "kindergarten"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302046684,
+      "center": {
+        "lat": 38.7065996,
+        "lon": -9.4237806
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "52",
+        "addr:postcode": "2750-147",
+        "addr:street": "Rua de São Tomé",
+        "addr:suburb": "Bairro de São José",
+        "amenity": "kindergarten",
+        "contact:email": "ji.ostraquinasestremoz@escolas.min-edu.pt",
+        "contact:fax": "+351 214830925",
+        "contact:phone": "+351 214830925",
+        "grades": "3-5",
+        "name": "Jardim de Infância \"Os Traquinas\"",
+        "operator:type": "private",
+        "ref": "803826",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302046686,
+      "center": {
+        "lat": 38.7004376,
+        "lon": -9.4242301
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "8",
+        "addr:postcode": "2750-406",
+        "addr:street": "Rua Padre José Maria Loureiro",
+        "amenity": "school",
+        "contact:email": "economa.por@salesianas.pt;dp.ensa@salesianas.pt",
+        "contact:fax": "+351 214836716",
+        "contact:phone": "+351 214831258",
+        "contact:website": "https://ensa.salesianas.pt/",
+        "grades": "3-9",
+        "name": "Externato Nossa Senhora da Assunção",
+        "operator": "Centro Educativo e Social Nossa Senhora de Fátima",
+        "operator:type": "private",
+        "ref": "511316",
+        "ref:aeep": "1054",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302046687,
+      "center": {
+        "lat": 38.7003514,
+        "lon": -9.4288102
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "192",
+        "addr:postcode": "2750-390",
+        "addr:street": "Rua Joaquim Ereira",
+        "amenity": "kindergarten",
+        "contact:email": "cl.cachabiu@escolas.min-edu.pt",
+        "contact:phone": "+351 214822481",
+        "grades": "3-5",
+        "name": "Colégio Cachabiu",
+        "operator:type": "private",
+        "ref": "502303",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1302095461,
+      "center": {
+        "lat": 38.7047336,
+        "lon": -9.4156642
+      },
+      "tags": {
+        "addr:city": "Cascais",
+        "addr:housenumber": "366",
+        "addr:postcode": "2750-312",
+        "addr:street": "Rua Marechal Carmona",
+        "amenity": "kindergarten",
+        "contact:email": "cl.stjohn@escolas.min-edu.pt",
+        "contact:fax": "+351 214823151",
+        "contact:phone": "+351 214867966",
+        "grades": "3-5",
+        "name": "Saint John's School",
+        "operator:type": "private",
+        "ref": "800437",
+        "ref:qzp": "QZP.45"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1453189665,
+      "center": {
+        "lat": 38.6909548,
+        "lon": -9.4300029
+      },
+      "tags": {
+        "amenity": "restaurant",
+        "building": "yes",
+        "check_date": "2024-09-22",
+        "name": "Mar do Inferno"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 7943775,
+      "center": {
+        "lat": 38.6921042,
+        "lon": -9.4216985
+      },
+      "tags": {
+        "building": "house",
+        "castle_type": "stately",
+        "check_date": "2024-05-22",
+        "historic": "castle",
+        "name": "Museu Condes de Castro Guimarães",
+        "tourism": "museum",
+        "type": "multipolygon",
+        "wikidata": "Q10344066",
+        "wikipedia": "en:Palácio dos Condes de Castro Guimarães"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 8060899,
+      "center": {
+        "lat": 38.702711,
+        "lon": -9.4211617
+      },
+      "tags": {
+        "amenity": "hospital",
+        "building": "yes",
+        "name": "Centro de Saúde de Cascais",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 8898949,
+      "center": {
+        "lat": 38.6967662,
+        "lon": -9.420763
+      },
+      "tags": {
+        "building": "yes",
+        "description": "Edifício notável",
+        "name": "Museu da Vila",
+        "old_name": "Paços do Concelho de Cascais",
+        "operator": "Câmara Municipal de Cascais",
+        "tourism": "museum",
+        "type": "multipolygon",
+        "wheelchair": "yes",
+        "wikidata": "Q10344064"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 15084846,
+      "center": {
+        "lat": 38.7014334,
+        "lon": -9.4324783
+      },
+      "tags": {
+        "leisure": "park",
+        "name": "Parque Urbano da Ribeira dos Mochos",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 16464320,
+      "center": {
+        "lat": 38.7047598,
+        "lon": -9.428032
+      },
+      "tags": {
+        "leisure": "park",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 16464321,
+      "center": {
+        "lat": 38.7047368,
+        "lon": -9.4286105
+      },
+      "tags": {
+        "leisure": "park",
+        "type": "multipolygon"
+      }
+    }
+  ]
+}
