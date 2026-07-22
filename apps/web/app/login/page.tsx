@@ -4,14 +4,14 @@ import Link from "next/link";
 import Navbar from "@/components/web/Navbar";
 import Footer from "@/components/web/Footer";
 import { Eye, EyeOff, Lock, Mail, ShieldCheck } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Suspense, } from "react";
 import { useRouter,useSearchParams } from "next/navigation";
 import { login } from "@/lib/auth-api";
 import { saveSession } from "@/lib/session";
 import GoogleLoginButton from "@/components/auth/GoogleLoginButton";
 import { useToast } from "@/components/ui/ToastProvider";
 
-export default function LoginPage() {
+function LoginPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 const toast = useToast();
@@ -250,5 +250,22 @@ router.push("/dashboard");
 
       <Footer />
     </main>
+  );
+}
+export default function LoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-[#F8F9FA]">
+          <div className="flex min-h-screen items-center justify-center">
+            <p className="text-[#1B365D]">
+              Loading...
+            </p>
+          </div>
+        </main>
+      }
+    >
+      <LoginPageContent />
+    </Suspense>
   );
 }

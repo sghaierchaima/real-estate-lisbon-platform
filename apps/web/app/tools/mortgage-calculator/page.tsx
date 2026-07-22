@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, Suspense } from "react";
 import Navbar from "@/components/web/Navbar";
 import Footer from "@/components/web/Footer";
 import Link from "next/link";
@@ -47,7 +47,7 @@ type MortgageResult = {
   totalCost: number;
 };
 
-export default function MortgageCalculatorPage() {
+function MortgageCalculatorPageContent() {
   const searchParams = useSearchParams();
   const priceFromUrl = searchParams.get("price");
   const toast = useToast();
@@ -505,5 +505,27 @@ export default function MortgageCalculatorPage() {
 
       <Footer />
     </>
+  );
+}
+
+export default function MortgageCalculatorPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-[#F8F9FA]">
+          <Navbar />
+
+          <div className="flex min-h-[80vh] items-center justify-center">
+            <p className="text-lg font-medium text-[#1B365D]">
+              Loading mortgage calculator...
+            </p>
+          </div>
+
+          <Footer />
+        </main>
+      }
+    >
+      <MortgageCalculatorPageContent />
+    </Suspense>
   );
 }

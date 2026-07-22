@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState,Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/web/Navbar";
@@ -103,7 +103,7 @@ function ResultRow({
   );
 }
 
-export default function PriceCheckerPage() {
+function PriceCheckerPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const toast = useToast();
@@ -670,5 +670,29 @@ export default function PriceCheckerPage() {
 
       <Footer />
     </>
+  );
+}
+
+export default function PriceCheckerPage() {
+  return (
+    <Suspense
+      fallback={
+        <>
+          <Navbar />
+
+          <main className="min-h-screen bg-[#F8F9FA]">
+            <div className="flex min-h-[80vh] items-center justify-center">
+              <p className="text-lg font-medium text-[#1B365D]">
+                Loading price checker...
+              </p>
+            </div>
+          </main>
+
+          <Footer />
+        </>
+      }
+    >
+      <PriceCheckerPageContent />
+    </Suspense>
   );
 }

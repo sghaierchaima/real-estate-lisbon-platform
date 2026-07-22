@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import {   Suspense, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowLeft, Eye, EyeOff, Lock, ShieldCheck } from "lucide-react";
@@ -9,7 +9,7 @@ import Navbar from "@/components/web/Navbar";
 import Footer from "@/components/web/Footer";
 import { resetPassword } from "@/lib/auth-api";
 
-export default function ResetPasswordPage() {
+function ResetPasswordPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -176,5 +176,27 @@ if (
 
       <Footer />
     </main>
+  );
+}
+
+export default function ResetPasswordPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-[#F8F9FA] text-[#0F2340]">
+          <Navbar />
+
+          <section className="flex min-h-[70vh] items-center justify-center">
+            <p className="text-lg font-medium text-[#1B365D]">
+              Loading...
+            </p>
+          </section>
+
+          <Footer />
+        </main>
+      }
+    >
+      <ResetPasswordPageContent />
+    </Suspense>
   );
 }

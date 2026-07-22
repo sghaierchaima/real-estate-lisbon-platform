@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState ,Suspense} from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/web/Navbar";
@@ -107,8 +107,7 @@ function ResultRow({
     </div>
   );
 }
-
-export default function AffordabilityCalculatorPage() {
+ function AffordabilityCalculatorPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const toast = useToast();
@@ -750,5 +749,23 @@ export default function AffordabilityCalculatorPage() {
 
       <Footer />
     </>
+  );
+}
+
+export default function AffordabilityCalculatorPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-[#F8F9FA]">
+          <div className="flex min-h-screen items-center justify-center">
+            <p className="text-[#1B365D]">
+              Loading calculator...
+            </p>
+          </div>
+        </main>
+      }
+    >
+      <AffordabilityCalculatorPageContent />
+    </Suspense>
   );
 }
