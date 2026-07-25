@@ -198,22 +198,27 @@ const [aiSummary, setAiSummary] = useState("");
 )}
 
             
-            <button
-                onClick={handleExtractWithAI}
-                disabled={extracting}
-                className="mt-7 inline-flex h-14 items-center gap-2 rounded-2xl border border-[#D0D5DD] bg-white px-7 font-semibold text-[#1B365D] disabled:opacity-60"
-                >
-                <WandSparkles size={18} />
-                {extracting ? "Analyzing..." : "Smart Property Analysis<"}
-            </button>
-            <button
-              onClick={handleCreateRequest}
-              disabled={saving}
-              className="mt-7 inline-flex h-14 items-center gap-2 rounded-2xl bg-[#1B365D] px-7 font-semibold text-white disabled:opacity-60"
-            >
-              <Search size={18} />
-              {saving ? "Creating request..." : "Create Buyer Request"}
-            </button>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+  <button
+    type="button"
+    onClick={handleExtractWithAI}
+    disabled={extracting}
+    className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border border-[#D0D5DD] bg-white px-7 font-semibold text-[#1B365D] transition hover:bg-[#F8FAFC] disabled:cursor-not-allowed disabled:opacity-60"
+  >
+    <WandSparkles size={18} />
+    {extracting ? "Analyzing..." : "Analyze with AI"}
+  </button>
+
+  <button
+    type="button"
+    onClick={handleCreateRequest}
+    disabled={saving}
+    className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-[#1B365D] px-7 font-semibold text-white transition hover:bg-[#0F2340] disabled:cursor-not-allowed disabled:opacity-60"
+  >
+    <Search size={18} />
+    {saving ? "Creating request..." : "Create Buyer Request"}
+  </button>
+</div>
             
 {mustHave.length > 0 && (
   <div className="mt-6 rounded-2xl bg-[#F8F9FA] p-5">

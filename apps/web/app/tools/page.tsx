@@ -8,9 +8,23 @@ import {
   TrendingUp,
   Shield,
   BadgeCheck,
+  Sparkles,
 } from "lucide-react";
 
 const tools = [
+    {
+    title: "Property Search Assistant",
+    description:
+      "Describe your ideal property in natural language and let AI extract your search criteria automatically.",
+    features: [
+      "AI search analysis",
+      "Automatic criteria extraction",
+      "Buyer request creation",
+    ],
+    href: "/tools/property-search-assistant",
+    iconBg: "#6D28D9",
+    icon: <Sparkles size={22} strokeWidth={2.3} />,
+  },
   {
     title: "Mortgage Calculator",
     description:
@@ -77,16 +91,16 @@ export default function ToolsPage() {
           <div className="mx-auto max-w-[1680px] text-center">
             <div className="mb-[28px] inline-flex items-center rounded-full bg-[#dfe5eb] px-[22px] py-[14px] text-[17px] font-medium text-[#10284d]">
               <Calculator size={18} className="mr-2" />
-              All Tools Free • No Login Required
+              Free Tools • AI Powered • Login Required Only to Save Requests
             </div>
 
             <h1 className="mx-auto mb-[24px] max-w-[1120px] text-[44px] font-bold leading-[1.08] tracking-[-0.03em] text-[#081a33] lg:text-[56px]">
-              Professional-Grade Property Tools
+              Smart Property Buying Tools
             </h1>
 
             <p className="mx-auto max-w-[820px] text-[20px] font-normal leading-[1.85] tracking-[0.015em] text-[#6f7c91]">
-              Make informed decisions with our calculators and analysis tools,
-              designed for foreign buyers purchasing property in Portugal.
+              Use AI-powered assistants, calculators and market analysis tools to
+              make confident property decisions in Portugal.
             </p>
           </div>
         </section>
@@ -114,18 +128,18 @@ export default function ToolsPage() {
               {[
                 {
                   number: "01",
-                  title: "Use Free Tools",
-                  text: "Start with any calculator. No login required. Get instant results.",
+                  title: "Explore Smart Tools",
+                  text: "Use calculators, market analysis tools and the AI assistant to understand your property needs.",
                 },
                 {
                   number: "02",
-                  title: "Create a Lead",
-                  text: "After using a tool, you can request professional help with your email.",
+                  title: "Save Your Request",
+                  text: "Sign in as a buyer to save your property search and create a request for professional support.",
                 },
                 {
                   number: "03",
                   title: "Get Matched",
-                  text: "The platform connects you with verified professionals based on your needs.",
+                  text: "The platform connects your request with verified professionals based on your needs.",
                 },
               ].map((step) => (
                 <div key={step.number} className="text-center">

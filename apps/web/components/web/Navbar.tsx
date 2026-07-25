@@ -8,6 +8,7 @@ import { getStoredUser } from "@/lib/session";
 import type { AuthUser } from "@/lib/auth-api";
 
 const toolsLinks = [
+   { title: "Property Search Assistant", href: "/tools/property-search-assistant", desc: "Describe your needs and find suitable properties", },
   { title: "Mortgage Calculator", href: "/tools/mortgage-calculator", desc: "Estimate monthly payments" },
   { title: "Affordability Calculator", href: "/tools/affordability-calculator", desc: "Know your buying power" },
   { title: "Neighborhood Finder", href: "/tools/neighborhood-finder", desc: "Explore Portugal neighborhoods" },

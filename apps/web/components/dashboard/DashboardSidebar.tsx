@@ -241,16 +241,22 @@ export default function DashboardSidebar() {
   }
 
   return (
-    <aside className="hidden h-screen w-[295px] flex-col border-r border-[#E9EDF3] bg-white lg:flex">
+    <aside className="sticky top-0 hidden h-screen w-[295px] shrink-0 flex-col overflow-hidden border-r border-[#E9EDF3] bg-white lg:flex">
       <div className="flex h-[76px] shrink-0 items-center border-b border-[#E9EDF3] px-7">
-        <img
-          src="/images/pfelogo.png"
-          alt="Logo"
-          className="h-14 w-auto object-contain"
-        />
-      </div>
+  <Link
+    href="/"
+    aria-label="Return to home page"
+    className="inline-flex items-center"
+  >
+    <img
+      src="/images/pfelogo.png"
+      alt="Real Estate Lisbon"
+      className="h-14 w-auto object-contain"
+    />
+  </Link>
+</div>
 
-      <div className="flex-1 px-4 py-5">
+      <div className="sidebar-scroll min-h-0 flex-1 overflow-y-auto px-4 py-5">
         <nav className="space-y-2">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -310,7 +316,7 @@ export default function DashboardSidebar() {
         </nav>
       </div>
 
-      <div className="border-t border-[#E9EDF3] bg-white p-4">
+      <div className="shrink-0 border-t border-[#E9EDF3] bg-white p-4">
         <div className="mb-4 flex items-center gap-3 rounded-2xl p-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(to_bottom_right,#1B365D,#C9A227)] text-[18px] font-semibold text-white">
             {userInitial}
