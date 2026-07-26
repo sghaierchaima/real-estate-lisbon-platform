@@ -18,7 +18,7 @@ import {
   getMyProfessionalApplication,
   type MyProfessionalProfile,
 } from "@/lib/professionals-api";
-import { getToken } from "@/lib/session";
+import { clearSession , getToken } from "@/lib/session";
 import { useToast } from "@/components/ui/ToastProvider";
 
 export default function ProfessionalApplicationCard() {
@@ -95,22 +95,19 @@ export default function ProfessionalApplicationCard() {
     };
   }, [toast]);
   function handleOpenProfessionalWorkspace() {
-    setOpeningWorkspace(true);
+  setOpeningWorkspace(true);
 
-    toast.success(
-      "Professional account activated",
-      "Please sign in again to refresh your professional permissions.",
-    );
+  /*
+   * Le token actuel contient encore BUYER.
+   * On supprime donc complètement l’ancienne
+   * session avant de demander une reconnexion.
+   */
+  clearSession();
 
-    /*
-     * Le rôle a bien été modifié dans la base,
-     * mais le JWT actuel contient encore BUYER.
-     * Nous redirigeons donc vers la connexion.
-     */
-    router.replace(
-      "/login?reason=professional-activated",
-    );
-  }
+  router.replace(
+    "/login?reason=professional-activated",
+  );
+}
 
   if (loading) {
     return (

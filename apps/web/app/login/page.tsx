@@ -7,7 +7,10 @@ import { Eye, EyeOff, Lock, Mail, ShieldCheck } from "lucide-react";
 import { useEffect, useRef, useState, Suspense, } from "react";
 import { useRouter,useSearchParams } from "next/navigation";
 import { login } from "@/lib/auth-api";
-import { saveSession } from "@/lib/session";
+import {
+  clearSession,
+  saveSession,
+} from "@/lib/session";
 import GoogleLoginButton from "@/components/auth/GoogleLoginButton";
 import { useToast } from "@/components/ui/ToastProvider";
 
@@ -36,6 +39,8 @@ useEffect(() => {
   if (reason === "session-expired") {
     sessionToastShownRef.current = true;
 
+    clearSession();
+
     toast.warning(
       "Session expired",
       "Your session has expired. Please sign in again.",
@@ -50,6 +55,13 @@ useEffect(() => {
     "professional-activated"
   ) {
     sessionToastShownRef.current = true;
+
+    /*
+     * Sécurité supplémentaire :
+     * on s’assure qu’aucune ancienne session
+     * BUYER n’est encore stockée.
+     */
+    clearSession();
 
     toast.success(
       "Professional account activated",
@@ -121,7 +133,7 @@ router.push("/dashboard");
     <main className="min-h-screen bg-[#F8F9FA] text-[#0F2340]">
       <Navbar />
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1B365D] to-[#0F2340] py-16 lg:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#1B365D] to-[#0F2340] px-4 py-8 lg:py-10">
         <div className="absolute inset-0 opacity-20">
           <div
             className="h-full w-full"
@@ -134,18 +146,18 @@ router.push("/dashboard");
         </div>
 
         <div className="container-page relative">
-          <div className="mx-auto max-w-md rounded-[28px] bg-white p-8 shadow-[0_20px_60px_rgba(15,35,64,0.18)]">
-            <div className="mb-10 flex items-start gap-5">
-              <div className="flex h-20 w-20 items-center justify-center rounded-md bg-[#F8F9FA]">
+          <div className="mx-auto w-full max-w-md rounded-[26px] bg-white p-6 shadow-[0_20px_60px_rgba(15,35,64,0.18)] sm:p-7">
+            <div className="mb-6 flex items-start gap-4">
+              <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-[#F8F9FA]">
                 <img
                   src="/images/pfelogo.png"
                   alt="Logo"
-                  className="h-16 w-auto object-contain"
+                  className="h-12 w-auto object-contain"
                 />
               </div>
 
               <div className="flex-1">
-                <h1 className="text-5xl font-bold leading-[0.95] text-[#1B365D]">
+                <h1 className="text-4xl font-bold leading-[0.95] tracking-[-0.03em] text-[#1B365D]">
                   Welcome
                   <br />
                   Back
@@ -155,18 +167,18 @@ router.push("/dashboard");
                   Sign in to your account
                 </p>
 
-                <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#DADADA] bg-[#F6F4EC] px-5 py-3 text-[15px] font-medium text-gray-700">
+                <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#DADADA] bg-[#F6F4EC] px-4 py-2 text-sm font-medium text-gray-700">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#67D48A]" />
                   Secure Login
                 </div>
               </div>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-4">
   <GoogleLoginButton />
 </div>
 
-<div className="relative my-6">
+<div className="relative my-4">
   <div className="absolute inset-0 flex items-center">
     <div className="w-full border-t border-gray-200"></div>
   </div>
@@ -178,19 +190,19 @@ router.push("/dashboard");
   </div>
 </div>
 
-            <form onSubmit={handleLogin} className="space-y-7">
+            <form onSubmit={handleLogin} className="space-y-5">
               <div>
-                <label className="mb-3 block text-[18px] font-medium text-[#1B365D]">
+                <label className="mb-2 block text-base font-semibold text-[#1B365D]">
                   Email
                 </label>
                 <div className="relative">
                   <Mail className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
                   <input
-                    type="email"
+                    type="required"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
-                    className="h-14 w-full rounded-2xl border border-[#E5E7EB] bg-white pl-12 pr-4 text-[17px] text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+                    className="h-12 w-full rounded-2xl border border-[#E5E7EB] bg-white pl-12 pr-4 text-[17px] text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
                   />
                 </div>
               </div>
@@ -212,10 +224,11 @@ router.push("/dashboard");
                 <div className="relative">
                   <Lock className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
                   <input
+                  required
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="h-14 w-full rounded-2xl border border-[#E5E7EB] bg-white pl-12 pr-12 text-[17px] text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+                    className="h-12 w-full rounded-2xl border border-[#E5E7EB] bg-white pl-12 pr-12 text-[17px] text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
                     placeholder="Enter your password"
                   />
 
@@ -236,14 +249,13 @@ router.push("/dashboard");
               <button
                 type="submit"
                 disabled={loading}
-                className="h-14 w-full rounded-2xl bg-[#1B365D] text-[20px] font-semibold text-white transition hover:bg-[#0F2340] disabled:opacity-60"
-              >
+                className="h-12 w-full rounded-xl bg-[#1B365D] text-base font-semibold text-white transition hover:bg-[#0F2340] disabled:cursor-not-allowed disabled:opacity-60">
                 {loading ? "Signing in..." : "Sign In"}
               </button>
             </form>
 
-            <div className="mt-10 text-center">
-              <p className="text-[17px] text-gray-500">
+            <div className="mt-16 text-center">
+              <p className="text-sm text-gray-500">
                 Don&apos;t have an account?{" "}
                 <Link
                   href="/register"
@@ -254,7 +266,7 @@ router.push("/dashboard");
               </p>
             </div>
 
-            <div className="mt-8 flex items-start gap-3 rounded-2xl bg-[#F8F9FA] p-4">
+            <div className="mt-5 flex items-start gap-3 rounded-xl bg-[#F8F9FA] p-3.5">
               <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#2E7D32]" />
               <p className="text-sm leading-6 text-gray-600">
                 Your login is encrypted and protected. We never share your data
