@@ -27,20 +27,37 @@ useEffect(() => {
     searchParams.get("reason");
 
   if (
-    reason !== "session-expired" ||
+    !reason ||
     sessionToastShownRef.current
   ) {
     return;
   }
 
-  sessionToastShownRef.current = true;
+  if (reason === "session-expired") {
+    sessionToastShownRef.current = true;
 
-  toast.warning(
-    "Session expired",
-    "Your session has expired. Please sign in again.",
-  );
+    toast.warning(
+      "Session expired",
+      "Your session has expired. Please sign in again.",
+    );
 
-  router.replace("/login");
+    router.replace("/login");
+    return;
+  }
+
+  if (
+    reason ===
+    "professional-activated"
+  ) {
+    sessionToastShownRef.current = true;
+
+    toast.success(
+      "Professional account activated",
+      "Sign in again to open your professional workspace.",
+    );
+
+    router.replace("/login");
+  }
 }, [router, searchParams, toast]);
 
   function getFriendlyError(

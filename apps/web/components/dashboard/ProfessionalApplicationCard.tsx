@@ -6,6 +6,7 @@ import {
 } from "react";
 import {
   AlertCircle,
+  Loader2,
   BadgeCheck,
   BriefcaseBusiness,
   Clock3,
@@ -35,6 +36,11 @@ export default function ProfessionalApplicationCard() {
     loading,
     setLoading,
   ] = useState(true);
+
+  const [
+    openingWorkspace,
+    setOpeningWorkspace,
+  ] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -88,6 +94,23 @@ export default function ProfessionalApplicationCard() {
       cancelled = true;
     };
   }, [toast]);
+  function handleOpenProfessionalWorkspace() {
+    setOpeningWorkspace(true);
+
+    toast.success(
+      "Professional account activated",
+      "Please sign in again to refresh your professional permissions.",
+    );
+
+    /*
+     * Le rôle a bien été modifié dans la base,
+     * mais le JWT actuel contient encore BUYER.
+     * Nous redirigeons donc vers la connexion.
+     */
+    router.replace(
+      "/login?reason=professional-activated",
+    );
+  }
 
   if (loading) {
     return (
@@ -209,14 +232,19 @@ export default function ProfessionalApplicationCard() {
 
             <button
               type="button"
-              onClick={() =>
-                router.push(
-                  "/dashboard/professional",
-                )
+              disabled={openingWorkspace}
+              onClick={
+                handleOpenProfessionalWorkspace
               }
-              className="mt-5 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800"
+              className="mt-5 inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Open Professional Workspace
+              {openingWorkspace && (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              )}
+
+              {openingWorkspace
+                ? "Redirecting..."
+                : "Open Professional Workspace"}
             </button>
           </div>
         </div>

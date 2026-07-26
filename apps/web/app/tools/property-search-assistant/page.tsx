@@ -12,9 +12,9 @@ import { extractPropertySearch } from "@/lib/ai-api";
 import { WandSparkles } from "lucide-react";
 export default function PropertySearchAssistantPage() {
   const toast = useToast();
-const [extracting, setExtracting] = useState(false);
-const [mustHave, setMustHave] = useState<string[]>([]);
-const [aiSummary, setAiSummary] = useState("");
+  const [extracting, setExtracting] = useState(false);
+  const [mustHave, setMustHave] = useState<string[]>([]);
+  const [aiSummary, setAiSummary] = useState("");
   const [searchText, setSearchText] = useState("");
   const [location, setLocation] = useState("");
   const [budget, setBudget] = useState("");
@@ -22,7 +22,7 @@ const [aiSummary, setAiSummary] = useState("");
   const [bedrooms, setBedrooms] = useState("");
   const [goal, setGoal] = useState("buy");
   const [saving, setSaving] = useState(false);
-  const [confidence ,setConfidence] = useState<number | null>(null);
+  const [confidence, setConfidence] = useState<number | null>(null);
 
 
   async function handleCreateRequest() {
@@ -78,41 +78,41 @@ const [aiSummary, setAiSummary] = useState("");
     }
   }
   async function handleExtractWithAI() {
-    
-  if (!searchText.trim()) {
-    toast.warning(
-      "Search required",
-      "Please describe what you are looking for."
-    );
-    return;
-  }
-  try {
-    
-    setExtracting(true);
 
-    const extracted = await extractPropertySearch(searchText);
+    if (!searchText.trim()) {
+      toast.warning(
+        "Search required",
+        "Please describe what you are looking for."
+      );
+      return;
+    }
+    try {
 
-    setLocation(extracted.location || "");
-    setBudget(extracted.budget || "");
-    setPropertyType(extracted.propertyType || "apartment");
-    setBedrooms(extracted.bedrooms || "");
-    setGoal(extracted.goal || "buy");
-    setMustHave(extracted.mustHave || []);
-    setAiSummary(extracted.summary || "");
-    setConfidence(extracted.confidence || null);
-    toast.success(
-      "Search analyzed",
-      "AI extracted the key search criteria successfully."
-    );
-  } catch (error) {
-    toast.error(
-      "AI extraction failed",
-      error instanceof Error ? error.message : "Please try again later."
-    );
-  } finally {
-    setExtracting(false);
+      setExtracting(true);
+
+      const extracted = await extractPropertySearch(searchText);
+
+      setLocation(extracted.location || "");
+      setBudget(extracted.budget || "");
+      setPropertyType(extracted.propertyType || "apartment");
+      setBedrooms(extracted.bedrooms || "");
+      setGoal(extracted.goal || "buy");
+      setMustHave(extracted.mustHave || []);
+      setAiSummary(extracted.summary || "");
+      setConfidence(extracted.confidence || null);
+      toast.success(
+        "Search analyzed",
+        "AI extracted the key search criteria successfully."
+      );
+    } catch (error) {
+      toast.error(
+        "AI extraction failed",
+        error instanceof Error ? error.message : "Please try again later."
+      );
+    } finally {
+      setExtracting(false);
+    }
   }
-}
   return (
     <>
       <Navbar />
@@ -191,55 +191,55 @@ const [aiSummary, setAiSummary] = useState("");
               </select>
             </div>
 
-{confidence !== null && (
-  <p className="mt-3 text-sm font-semibold text-[#1B365D]">
-    Confidence score: {confidence}%
-  </p>
-)}
+            {confidence !== null && (
+              <p className="mt-3 text-sm font-semibold text-[#1B365D]">
+                Confidence score: {confidence}%
+              </p>
+            )}
 
-            
+
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-  <button
-    type="button"
-    onClick={handleExtractWithAI}
-    disabled={extracting}
-    className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border border-[#D0D5DD] bg-white px-7 font-semibold text-[#1B365D] transition hover:bg-[#F8FAFC] disabled:cursor-not-allowed disabled:opacity-60"
-  >
-    <WandSparkles size={18} />
-    {extracting ? "Analyzing..." : "Analyze with AI"}
-  </button>
+              <button
+                type="button"
+                onClick={handleExtractWithAI}
+                disabled={extracting}
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border border-[#D0D5DD] bg-white px-7 font-semibold text-[#1B365D] transition hover:bg-[#F8FAFC] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <WandSparkles size={18} />
+                {extracting ? "Analyzing..." : "Analyze with AI"}
+              </button>
 
-  <button
-    type="button"
-    onClick={handleCreateRequest}
-    disabled={saving}
-    className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-[#1B365D] px-7 font-semibold text-white transition hover:bg-[#0F2340] disabled:cursor-not-allowed disabled:opacity-60"
-  >
-    <Search size={18} />
-    {saving ? "Creating request..." : "Create Buyer Request"}
-  </button>
-</div>
-            
-{mustHave.length > 0 && (
-  <div className="mt-6 rounded-2xl bg-[#F8F9FA] p-5">
-    <p className="font-semibold text-[#0F2340]">AI extracted priorities</p>
+              <button
+                type="button"
+                onClick={handleCreateRequest}
+                disabled={saving}
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-[#1B365D] px-7 font-semibold text-white transition hover:bg-[#0F2340] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <Search size={18} />
+                {saving ? "Creating request..." : "Create Buyer Request"}
+              </button>
+            </div>
 
-    <div className="mt-3 flex flex-wrap gap-2">
-      {mustHave.map((item) => (
-        <span
-          key={item}
-          className="rounded-full bg-[#FFF8E1] px-4 py-2 text-sm font-semibold text-[#8A6400]"
-        >
-          {item}
-        </span>
-      ))}
-    </div>
+            {mustHave.length > 0 && (
+              <div className="mt-6 rounded-2xl bg-[#F8F9FA] p-5">
+                <p className="font-semibold text-[#0F2340]">AI extracted priorities</p>
 
-    {aiSummary && (
-      <p className="mt-4 text-sm leading-6 text-[#667085]">{aiSummary}</p>
-    )}
-  </div>
-)}
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {mustHave.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full bg-[#FFF8E1] px-4 py-2 text-sm font-semibold text-[#8A6400]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+
+                {aiSummary && (
+                  <p className="mt-4 text-sm leading-6 text-[#667085]">{aiSummary}</p>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </main>

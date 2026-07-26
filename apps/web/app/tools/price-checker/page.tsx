@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState,Suspense } from "react";
+import { useEffect, useMemo, useState, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/web/Navbar";
@@ -91,11 +91,10 @@ function ResultRow({
 }) {
   return (
     <div
-      className={`flex items-center justify-between gap-4 ${
-        strong
+      className={`flex items-center justify-between gap-4 ${strong
           ? "text-[17px] font-semibold text-[#0F2340]"
           : "text-[15px] text-[#4B5563]"
-      }`}
+        }`}
     >
       <span>{label}</span>
       <span className="text-right">{value}</span>

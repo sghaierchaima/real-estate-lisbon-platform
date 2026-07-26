@@ -7,6 +7,7 @@ import {
   BriefcaseBusiness,
   CheckCircle2,
   Eye,
+  Loader2,
   Mail,
   Search,
   ShieldAlert,
@@ -108,20 +109,20 @@ export default function ProfessionalsPage() {
       return Boolean(matchesSearch && matchesStatus);
     });
   }, [professionals, search, statusFilter]);
-const totalPages = Math.max(
-  1,
-  Math.ceil(filteredProfessionals.length / ITEMS_PER_PAGE),
-);
-
-const paginatedProfessionals = useMemo(() => {
-  const startIndex =
-    (currentPage - 1) * ITEMS_PER_PAGE;
-
-  return filteredProfessionals.slice(
-    startIndex,
-    startIndex + ITEMS_PER_PAGE,
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredProfessionals.length / ITEMS_PER_PAGE),
   );
-}, [filteredProfessionals, currentPage]);
+
+  const paginatedProfessionals = useMemo(() => {
+    const startIndex =
+      (currentPage - 1) * ITEMS_PER_PAGE;
+
+    return filteredProfessionals.slice(
+      startIndex,
+      startIndex + ITEMS_PER_PAGE,
+    );
+  }, [filteredProfessionals, currentPage]);
   const stats = useMemo(() => {
     return {
       total: professionals.length,
@@ -134,30 +135,73 @@ const paginatedProfessionals = useMemo(() => {
     };
   }, [professionals]);
 
-  async function handleApprove(id: string) {
+  async function handleApprove(
+    id: string,
+  ) {
     const token = getToken();
 
     if (!token) {
-      toast.warning("Session required", "Please sign in again.");
+      toast.warning(
+        "Session required",
+        "Please sign in again.",
+      );
+      return;
+    }
+
+    /*
+     * Empêche un deuxième clic pendant
+     * qu'une action est déjà en cours.
+     */
+    if (processingId) {
       return;
     }
 
     setProcessingId(id);
 
     try {
-      const updated = await approveProfessional(token, id);
-
-      setProfessionals((prev) =>
-        prev.map((item) => (item.id === id ? { ...item, ...updated } : item))
+      /*
+       * Première étape :
+       * demander au backend d'approuver
+       * le professionnel.
+       */
+      await approveProfessional(
+        token,
+        id,
       );
 
-      toast.success("Professional approved", "The profile is now active.");
+      /*
+       * Deuxième étape :
+       * récupérer de nouveau toute la liste
+       * depuis la base de données.
+       */
+      const refreshedProfessionals =
+        await getProfessionals(token);
+
+      /*
+       * Troisième étape :
+       * remplacer la liste locale par la liste
+       * réelle retournée par le backend.
+       */
+      setProfessionals(
+        refreshedProfessionals,
+      );
+
+      toast.success(
+        "Professional approved",
+        "The profile is now active.",
+      );
     } catch (error) {
       toast.error(
         "Approval failed",
-        error instanceof Error ? error.message : "Unable to approve professional."
+        error instanceof Error
+          ? error.message
+          : "Unable to approve professional.",
       );
     } finally {
+      /*
+       * Toujours remettre l'état à null,
+       * même si l'API échoue.
+       */
       setProcessingId(null);
     }
   }
@@ -258,11 +302,10 @@ const paginatedProfessionals = useMemo(() => {
                       setStatusFilter(status);
                       setCurrentPage(1);
                     }}
-                    className={`rounded-2xl px-5 py-3 text-[15px] font-semibold transition ${
-                      statusFilter === status
+                    className={`rounded-2xl px-5 py-3 text-[15px] font-semibold transition ${statusFilter === status
                         ? "bg-[#1B365D] text-white"
                         : "bg-[#F8FAFC] text-[#344054] hover:bg-[#EEF3F8]"
-                    }`}
+                      }`}
                   >
                     {status}
                   </button>
@@ -376,11 +419,20 @@ const paginatedProfessionals = useMemo(() => {
                             <button
                               type="button"
                               disabled={isProcessing}
-                              onClick={() => handleApprove(pro.id)}
-                              className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#DCFCE7] px-4 text-sm font-semibold text-[#16A34A] transition hover:bg-[#BBF7D0] disabled:opacity-60"
+                              onClick={() =>
+                                void handleApprove(pro.id)
+                              }
+                              className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#DCFCE7] px-4 text-sm font-semibold text-[#16A34A] transition hover:bg-[#BBF7D0] disabled:cursor-not-allowed disabled:opacity-60"
                             >
-                              <CheckCircle2 className="h-4 w-4" />
-                              Approve
+                              {isProcessing ? (
+                                <Loader2 className="h-4 w-4 animate-spin" />
+                              ) : (
+                                <CheckCircle2 className="h-4 w-4" />
+                              )}
+
+                              {isProcessing
+                                ? "Approving..."
+                                : "Approve"}
                             </button>
 
                             <button
@@ -408,71 +460,70 @@ const paginatedProfessionals = useMemo(() => {
             </div>
           )}
           {filteredProfessionals.length > 0 && (
-  <div className="flex flex-col gap-4 border-t border-[#E4E7EC] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-    <p className="text-sm text-[#667085]">
-      Showing{" "}
-      <span className="font-semibold text-[#0F2340]">
-        {(currentPage - 1) * ITEMS_PER_PAGE + 1}
-      </span>{" "}
-      to{" "}
-      <span className="font-semibold text-[#0F2340]">
-        {Math.min(
-          currentPage * ITEMS_PER_PAGE,
-          filteredProfessionals.length,
-        )}
-      </span>{" "}
-      of{" "}
-      <span className="font-semibold text-[#0F2340]">
-        {filteredProfessionals.length}
-      </span>{" "}
-      professionals
-    </p>
+            <div className="flex flex-col gap-4 border-t border-[#E4E7EC] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm text-[#667085]">
+                Showing{" "}
+                <span className="font-semibold text-[#0F2340]">
+                  {(currentPage - 1) * ITEMS_PER_PAGE + 1}
+                </span>{" "}
+                to{" "}
+                <span className="font-semibold text-[#0F2340]">
+                  {Math.min(
+                    currentPage * ITEMS_PER_PAGE,
+                    filteredProfessionals.length,
+                  )}
+                </span>{" "}
+                of{" "}
+                <span className="font-semibold text-[#0F2340]">
+                  {filteredProfessionals.length}
+                </span>{" "}
+                professionals
+              </p>
 
-    <div className="flex flex-wrap items-center gap-2">
-      <button
-        disabled={currentPage === 1}
-        onClick={() =>
-          setCurrentPage((p) => Math.max(1, p - 1))
-        }
-        className="h-10 rounded-xl border border-[#D0D5DD] px-4 text-sm font-semibold disabled:opacity-40"
-      >
-        Previous
-      </button>
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  disabled={currentPage === 1}
+                  onClick={() =>
+                    setCurrentPage((p) => Math.max(1, p - 1))
+                  }
+                  className="h-10 rounded-xl border border-[#D0D5DD] px-4 text-sm font-semibold disabled:opacity-40"
+                >
+                  Previous
+                </button>
 
-      {Array.from(
-        { length: totalPages },
-        (_, i) => i + 1,
-      ).map((page) => (
-        <button
-          key={page}
-          onClick={() => setCurrentPage(page)}
-          className={`h-10 min-w-10 rounded-xl ${
-            currentPage === page
-              ? "bg-[#1B365D] text-white"
-              : "border border-[#D0D5DD]"
-          }`}
-        >
-          {page}
-        </button>
-      ))}
+                {Array.from(
+                  { length: totalPages },
+                  (_, i) => i + 1,
+                ).map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`h-10 min-w-10 rounded-xl ${currentPage === page
+                        ? "bg-[#1B365D] text-white"
+                        : "border border-[#D0D5DD]"
+                      }`}
+                  >
+                    {page}
+                  </button>
+                ))}
 
-      <button
-        disabled={currentPage === totalPages}
-        onClick={() =>
-          setCurrentPage((p) =>
-            Math.min(totalPages, p + 1),
-          )
-        }
-        className="h-10 rounded-xl border border-[#D0D5DD] px-4 text-sm font-semibold disabled:opacity-40"
-      >
-        Next
-      </button>
-    </div>
-  </div>
-)}
+                <button
+                  disabled={currentPage === totalPages}
+                  onClick={() =>
+                    setCurrentPage((p) =>
+                      Math.min(totalPages, p + 1),
+                    )
+                  }
+                  className="h-10 rounded-xl border border-[#D0D5DD] px-4 text-sm font-semibold disabled:opacity-40"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      
+
     </div>
   );
 }
