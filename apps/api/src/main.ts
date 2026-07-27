@@ -74,9 +74,12 @@ async function bootstrap() {
         new Error(
           `Origin ${origin} is not allowed by CORS`,
         ),
+        false,
       );
     },
+
     credentials: true,
+
     methods: [
       'GET',
       'POST',
@@ -85,9 +88,13 @@ async function bootstrap() {
       'DELETE',
       'OPTIONS',
     ],
+
     allowedHeaders: [
       'Content-Type',
       'Authorization',
+      'Accept',
+      'Origin',
+      'X-Requested-With',
     ],
   });
 
