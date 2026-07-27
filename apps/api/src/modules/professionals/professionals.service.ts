@@ -1,4 +1,9 @@
-import {BadRequestException,Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
 import {
   ProfessionalType,
   Role,
@@ -14,6 +19,8 @@ import { CreateProfessionalApplicationDto } from './dto/create-professional-appl
 
 @Injectable()
 export class ProfessionalsService {
+  private readonly logger = new Logger(ProfessionalsService.name);
+
   constructor(
   private readonly prisma: PrismaService,
   private readonly notificationsService: NotificationsService,
@@ -101,251 +108,292 @@ export class ProfessionalsService {
   return professional;
 }
 
- async approve(id: string) {
-  const professional =
-    await this.prisma.professionalProfile.findUnique({
-      where: {
-        id,
-      },
-      include: {
-        user: true,
-      },
+  async approve(id: string) {
+    const professional =
+      await this.prisma.professionalProfile.findUnique({
+        where: {
+          id,
+        },
+        include: {
+          user: true,
+        },
+      });
+
+    if (!professional) {
+      throw new NotFoundException(
+        'Professional application not found',
+      );
+    }
+
+    if (
+      professional.verificationStatus ===
+      VerificationStatus.ACTIVE
+    ) {
+      throw new BadRequestException(
+        'This professional application is already approved',
+      );
+    }
+
+    if (
+      professional.verificationStatus !==
+      VerificationStatus.PENDING
+    ) {
+      throw new BadRequestException(
+        'Only pending professional applications can be approved',
+      );
+    }
+
+    const updated =
+      await this.prisma.$transaction(
+        async (tx) => {
+          await tx.user.update({
+            where: {
+              id: professional.userId,
+            },
+            data: {
+              role: Role.PROFESSIONAL,
+            },
+          });
+
+          return tx.professionalProfile.update({
+            where: {
+              id: professional.id,
+            },
+            data: {
+              verificationStatus:
+                VerificationStatus.ACTIVE,
+            },
+            include: {
+              user: {
+                select: {
+                  id: true,
+                  email: true,
+                  fullName: true,
+                  role: true,
+                  avatarUrl: true,
+                  phone: true,
+                  country: true,
+                  city: true,
+                },
+              },
+              properties: {
+                where: {
+                  status: 'PUBLISHED',
+                },
+                orderBy: {
+                  createdAt: 'desc',
+                },
+                take: 6,
+              },
+            },
+          });
+        },
+      );
+
+    /*
+     * La notification est conservée et attendue :
+     * elle est enregistrée avant la réponse HTTP.
+     */
+    await this.notificationsService.create({
+      userId: professional.userId,
+      title: 'Professional Profile Approved',
+      message:
+        'Your professional profile has been approved. Sign in again to access your professional workspace.',
+      type: NotificationType.SYSTEM,
     });
 
-  if (!professional) {
-    throw new NotFoundException(
-      'Professional application not found',
-    );
-  }
-
-  if (
-    professional.verificationStatus ===
-    VerificationStatus.ACTIVE
-  ) {
-    throw new BadRequestException(
-      'This professional application is already approved',
-    );
-  }
-
-  if (
-    professional.verificationStatus !==
-    VerificationStatus.PENDING
-  ) {
-    throw new BadRequestException(
-      'Only pending professional applications can be approved',
-    );
-  }
-
-  const updated =
-    await this.prisma.$transaction(
-      async (tx) => {
-        await tx.user.update({
-          where: {
-            id: professional.userId,
-          },
-          data: {
-            role: Role.PROFESSIONAL,
-          },
-        });
-
-        return tx.professionalProfile.update({
-          where: {
-            id: professional.id,
-          },
-          data: {
-            verificationStatus:
-              VerificationStatus.ACTIVE,
-          },
-          include: {
-            user: {
-              select: {
-                id: true,
-                email: true,
-                fullName: true,
-                role: true,
-                avatarUrl: true,
-                phone: true,
-                country: true,
-                city: true,
-              },
-            },
-            properties: {
-              where: {
-                status: 'PUBLISHED',
-              },
-              orderBy: {
-                createdAt: 'desc',
-              },
-              take: 6,
-            },
-          },
-        });
-      },
-    );
-
-  await this.notificationsService.create({
-    userId: professional.userId,
-    title: 'Professional Profile Approved',
-    message:
-      'Your professional profile has been approved. Sign in again to access your professional workspace.',
-    type: NotificationType.SYSTEM,
-  });
-
-  await this.emailService.sendMail({
-    to: professional.user.email,
-    subject:
-      'Your professional profile has been approved',
-    html: `
-      <div style="font-family:Arial,sans-serif;line-height:1.6;color:#0F2340">
-        <h2>Professional profile approved</h2>
-
-        <p>
-          Hello ${
-            professional.user.fullName ||
-            'Professional'
-          },
-        </p>
-
-        <p>
-          Your professional profile has been approved
-          and is now active.
-        </p>
-
-        <p>
-          Please sign out and sign in again to access
-          your professional workspace.
-        </p>
-
-        <p>
-          You can now receive buyer matches and manage
-          your professional activity.
-        </p>
-      </div>
-    `,
-  });
-
-  return updated;
-}
-
- async reject(id: string) {
-  const professional =
-    await this.prisma.professionalProfile.findUnique({
-      where: {
-        id,
-      },
-      include: {
-        user: true,
-      },
+    /*
+     * L'e-mail est lancé sans bloquer la réponse HTTP.
+     * Une erreur d'envoi est enregistrée dans les logs
+     * sans annuler l'approbation déjà effectuée.
+     */
+    void this.sendApprovalEmail({
+      email: professional.user.email,
+      fullName: professional.user.fullName,
     });
 
-  if (!professional) {
-    throw new NotFoundException(
-      'Professional application not found',
-    );
+    return updated;
   }
 
-  if (
-    professional.verificationStatus ===
-    VerificationStatus.REJECTED
-  ) {
-    throw new BadRequestException(
-      'This professional application is already rejected',
-    );
+  private async sendApprovalEmail(data: {
+    email: string;
+    fullName: string | null;
+  }): Promise<void> {
+    try {
+      await this.emailService.sendMail({
+        to: data.email,
+        subject:
+          'Your professional profile has been approved',
+        html: `
+          <div style="font-family:Arial,sans-serif;line-height:1.6;color:#0F2340">
+            <h2>Professional profile approved</h2>
+
+            <p>
+              Hello ${data.fullName || 'Professional'},
+            </p>
+
+            <p>
+              Your professional profile has been approved
+              and is now active.
+            </p>
+
+            <p>
+              Please sign out and sign in again to access
+              your professional workspace.
+            </p>
+
+            <p>
+              You can now receive buyer matches and manage
+              your professional activity.
+            </p>
+          </div>
+        `,
+      });
+    } catch (error) {
+      this.logger.error(
+        `Unable to send approval email to ${data.email}`,
+        error instanceof Error
+          ? error.stack
+          : String(error),
+      );
+    }
   }
 
-  if (
-    professional.verificationStatus !==
-    VerificationStatus.PENDING
-  ) {
-    throw new BadRequestException(
-      'Only pending professional applications can be rejected',
-    );
-  }
+  async reject(id: string) {
+    const professional =
+      await this.prisma.professionalProfile.findUnique({
+        where: {
+          id,
+        },
+        include: {
+          user: true,
+        },
+      });
 
-  const updated =
-    await this.prisma.$transaction(
-      async (tx) => {
-        await tx.user.update({
-          where: {
-            id: professional.userId,
-          },
-          data: {
-            role: Role.BUYER,
-          },
-        });
+    if (!professional) {
+      throw new NotFoundException(
+        'Professional application not found',
+      );
+    }
 
-        return tx.professionalProfile.update({
-          where: {
-            id: professional.id,
-          },
-          data: {
-            verificationStatus:
-              VerificationStatus.REJECTED,
-          },
-          include: {
-            user: {
-              select: {
-                id: true,
-                email: true,
-                fullName: true,
-                role: true,
-                avatarUrl: true,
-                phone: true,
-                country: true,
-                city: true,
+    if (
+      professional.verificationStatus ===
+      VerificationStatus.REJECTED
+    ) {
+      throw new BadRequestException(
+        'This professional application is already rejected',
+      );
+    }
+
+    if (
+      professional.verificationStatus !==
+      VerificationStatus.PENDING
+    ) {
+      throw new BadRequestException(
+        'Only pending professional applications can be rejected',
+      );
+    }
+
+    const updated =
+      await this.prisma.$transaction(
+        async (tx) => {
+          await tx.user.update({
+            where: {
+              id: professional.userId,
+            },
+            data: {
+              role: Role.BUYER,
+            },
+          });
+
+          return tx.professionalProfile.update({
+            where: {
+              id: professional.id,
+            },
+            data: {
+              verificationStatus:
+                VerificationStatus.REJECTED,
+            },
+            include: {
+              user: {
+                select: {
+                  id: true,
+                  email: true,
+                  fullName: true,
+                  role: true,
+                  avatarUrl: true,
+                  phone: true,
+                  country: true,
+                  city: true,
+                },
+              },
+              properties: {
+                where: {
+                  status: 'PUBLISHED',
+                },
+                orderBy: {
+                  createdAt: 'desc',
+                },
+                take: 6,
               },
             },
-            properties: {
-              where: {
-                status: 'PUBLISHED',
-              },
-              orderBy: {
-                createdAt: 'desc',
-              },
-              take: 6,
-            },
-          },
-        });
-      },
-    );
+          });
+        },
+      );
 
-  await this.notificationsService.create({
-    userId: professional.userId,
-    title: 'Professional Profile Rejected',
-    message:
-      'Your professional application has been rejected. Please contact support for more information.',
-    type: NotificationType.SYSTEM,
-  });
+    await this.notificationsService.create({
+      userId: professional.userId,
+      title: 'Professional Profile Rejected',
+      message:
+        'Your professional application has been rejected. Please contact support for more information.',
+      type: NotificationType.SYSTEM,
+    });
 
-  await this.emailService.sendMail({
-    to: professional.user.email,
-    subject:
-      'Your professional application has been rejected',
-    html: `
-      <div style="font-family:Arial,sans-serif;line-height:1.6;color:#0F2340">
-        <h2>Professional application rejected</h2>
+    void this.sendRejectionEmail({
+      email: professional.user.email,
+      fullName: professional.user.fullName,
+    });
 
-        <p>
-          Hello ${
-            professional.user.fullName ||
-            'Professional'
-          },
-        </p>
+    return updated;
+  }
 
-        <p>
-          Your professional application was not approved.
-        </p>
+  private async sendRejectionEmail(data: {
+    email: string;
+    fullName: string | null;
+  }): Promise<void> {
+    try {
+      await this.emailService.sendMail({
+        to: data.email,
+        subject:
+          'Your professional application has been rejected',
+        html: `
+          <div style="font-family:Arial,sans-serif;line-height:1.6;color:#0F2340">
+            <h2>Professional application rejected</h2>
 
-        <p>
-          Please contact the platform administration
-          if you need more information.
-        </p>
-      </div>
-    `,
-  });
+            <p>
+              Hello ${data.fullName || 'Professional'},
+            </p>
 
-  return updated;
-}
+            <p>
+              Your professional application was not approved.
+            </p>
+
+            <p>
+              Please contact the platform administration
+              if you need more information.
+            </p>
+          </div>
+        `,
+      });
+    } catch (error) {
+      this.logger.error(
+        `Unable to send rejection email to ${data.email}`,
+        error instanceof Error
+          ? error.stack
+          : String(error),
+      );
+    }
+  }
 
   async create(dto: CreateProfessionalDto) {
   const user = await this.prisma.user.findUnique({
