@@ -39,6 +39,7 @@ async function bootstrap() {
 
   const allowedOrigins = [
     'http://localhost:3000',
+     'https://real-estate-lisbon-platform-amber.vercel.app',
     'https://real-estate-lisbon-platform-amber.vercel.app',
     'https://real-estate-lisbon-platform-git-main-sghaierchaimas-projects.vercel.app',
   ];
@@ -74,12 +75,9 @@ async function bootstrap() {
         new Error(
           `Origin ${origin} is not allowed by CORS`,
         ),
-        false,
       );
     },
-
     credentials: true,
-
     methods: [
       'GET',
       'POST',
@@ -88,13 +86,9 @@ async function bootstrap() {
       'DELETE',
       'OPTIONS',
     ],
-
     allowedHeaders: [
       'Content-Type',
       'Authorization',
-      'Accept',
-      'Origin',
-      'X-Requested-With',
     ],
   });
 

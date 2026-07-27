@@ -115,7 +115,17 @@ export default function PublicPropertiesPage() {
     setCurrentPage(1);
   }, [search, propertyType, selectedBedrooms, sortBy]);
 
-  const totalPages = Math.max(1, Math.ceil(filteredProperties.length / itemsPerPage));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredProperties.length / itemsPerPage)
+  );
+
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(totalPages);
+    }
+  }, [currentPage, totalPages]);
+
   const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedProperties = filteredProperties.slice(
     startIndex,
