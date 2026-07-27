@@ -190,7 +190,7 @@ export class PropertiesService {
       { featured: 'desc' },
       { createdAt: 'desc' },
     ],
-    take: 6,
+    
   });
 }
 async findPublicOne(id: string) {
