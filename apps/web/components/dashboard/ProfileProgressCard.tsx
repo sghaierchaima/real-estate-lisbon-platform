@@ -95,5 +95,5 @@ export default function ProfileProgressCard({
         </div>
       )}
     </div>
-  );
+  ); 
 }

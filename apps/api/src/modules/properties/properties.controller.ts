@@ -13,6 +13,7 @@ import {
 } from '@nestjs/common';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
+
 import {
   generateSafeImageFilename,
   validateImageFile,
@@ -21,59 +22,102 @@ import { Permissions } from '../../common/decorators/permissions.decorator';
 import { PermissionsGuard } from '../../common/guards/permissions.guard';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { AuthenticatedRequest } from '../../common/types/authenticated-request';
-import { PropertiesService } from './properties.service';
-import { UpdatePropertyDto } from './dto/update-property.dto';
 
+import { PropertiesService } from './properties.service';
 
 @Controller('properties')
 export class PropertiesController {
-  constructor(private readonly propertiesService: PropertiesService) {}
+  constructor(
+    private readonly propertiesService: PropertiesService,
+  ) {}
 
   @Get()
-@UseGuards(JwtAuthGuard, PermissionsGuard)
-@Permissions('properties.read')
-findAll(@Req() req: AuthenticatedRequest) {
-    return this.propertiesService.findAll(req.user);
+  @UseGuards(
+    JwtAuthGuard,
+    PermissionsGuard,
+  )
+  @Permissions('properties.read')
+  findAll(
+    @Req() req: AuthenticatedRequest,
+  ) {
+    return this.propertiesService.findAll(
+      req.user,
+    );
   }
-  
+
   @Get('public')
-findPublic() {
-  return this.propertiesService.findPublic();
-}
-@Get('public/:id')
-findPublicOne(@Param('id') id: string) {
-  return this.propertiesService.findPublicOne(id);
-}
-   
+  findPublic() {
+    return this.propertiesService.findPublic();
+  }
+
+  @Get('public/:id')
+  findPublicOne(
+    @Param('id') id: string,
+  ) {
+    return this.propertiesService.findPublicOne(
+      id,
+    );
+  }
+
   @Get(':id')
-@UseGuards(JwtAuthGuard, PermissionsGuard)
-@Permissions('properties.read')
-  findOne(@Param('id') id: string, @Req() req: AuthenticatedRequest) {
-    return this.propertiesService.findOne(id, req.user);
+  @UseGuards(
+    JwtAuthGuard,
+    PermissionsGuard,
+  )
+  @Permissions('properties.read')
+  findOne(
+    @Param('id') id: string,
+    @Req() req: AuthenticatedRequest,
+  ) {
+    return this.propertiesService.findOne(
+      id,
+      req.user,
+    );
   }
 
   @Post()
-@UseGuards(JwtAuthGuard, PermissionsGuard)
-@Permissions('properties.create')
-@UseInterceptors(
-  FilesInterceptor('images', 10, {
-    storage: diskStorage({
-      destination: './uploads/properties',
-      filename: (_req, file, callback) => {
-        const uniqueName = generateSafeImageFilename(file.originalname);
-        callback(null, uniqueName);
-      },
+  @UseGuards(
+    JwtAuthGuard,
+    PermissionsGuard,
+  )
+  @Permissions('properties.create')
+  @UseInterceptors(
+    FilesInterceptor('images', 10, {
+      storage: diskStorage({
+        destination:
+          `${
+            process.env.UPLOAD_ROOT ||
+            './uploads'
+          }/properties`,
+
+        filename: (
+          _req,
+          file,
+          callback,
+        ) => {
+          const uniqueName =
+            generateSafeImageFilename(
+              file.originalname,
+            );
+
+          callback(null, uniqueName);
+        },
+      }),
     }),
-  }),
-)
+  )
   create(
-    @UploadedFiles() files: Express.Multer.File[],
+    @UploadedFiles()
+    files: Express.Multer.File[],
     @Body() body: any,
     @Req() req: AuthenticatedRequest,
   ) {
     files?.forEach(validateImageFile);
+
     const imageUrls =
-      files?.map((file) => `/uploads/properties/${file.filename}`) || [];
+      files?.map(
+        (file) =>
+          `/uploads/properties/${file.filename}`,
+      ) || [];
 
     return this.propertiesService.create(
       {
@@ -85,80 +129,125 @@ findPublicOne(@Param('id') id: string) {
         price: Number(body.price),
         propertyType: body.propertyType,
         status: body.status,
-        featured: body.featured === 'true',
+        featured:
+          body.featured === 'true',
         bedrooms: Number(body.bedrooms),
-        bathrooms: Number(body.bathrooms),
+        bathrooms: Number(
+          body.bathrooms,
+        ),
         area: Number(body.area),
         landArea: Number(body.landArea),
-        constructionYear: Number(body.constructionYear),
-        equipments: body.equipments ? JSON.parse(body.equipments) : [],
+        constructionYear: Number(
+          body.constructionYear,
+        ),
+        equipments: body.equipments
+          ? JSON.parse(body.equipments)
+          : [],
         imageUrls,
       },
       req.user,
     );
   }
 
- @Patch(':id')
-@UseGuards(JwtAuthGuard, PermissionsGuard)
-@Permissions('properties.update')
-@UseInterceptors(
-  FilesInterceptor('images', 10, {
-    storage: diskStorage({
-      destination: './uploads/properties',
-      filename: (_req, file, callback) => {
-       const uniqueName = generateSafeImageFilename(file.originalname);
+  @Patch(':id')
+  @UseGuards(
+    JwtAuthGuard,
+    PermissionsGuard,
+  )
+  @Permissions('properties.update')
+  @UseInterceptors(
+    FilesInterceptor('images', 10, {
+      storage: diskStorage({
+        destination:
+          `${
+            process.env.UPLOAD_ROOT ||
+            './uploads'
+          }/properties`,
 
+        filename: (
+          _req,
+          file,
+          callback,
+        ) => {
+          const uniqueName =
+            generateSafeImageFilename(
+              file.originalname,
+            );
 
-        callback(null, uniqueName);
-      },
+          callback(null, uniqueName);
+        },
+      }),
     }),
-  }),
-)
-update(
-  @Param('id') id: string,
-  @UploadedFiles() files: Express.Multer.File[],
-  @Body() body: any,
-  @Req() req: AuthenticatedRequest,
-) {
-  files?.forEach(validateImageFile);
-  const newImageUrls =
-    files?.map((file) => `/uploads/properties/${file.filename}`) || [];
+  )
+  update(
+    @Param('id') id: string,
+    @UploadedFiles()
+    files: Express.Multer.File[],
+    @Body() body: any,
+    @Req() req: AuthenticatedRequest,
+  ) {
+    files?.forEach(validateImageFile);
 
-  const existingImageUrls = body.existingImageUrls
-    ? JSON.parse(body.existingImageUrls)
-    : [];
+    const newImageUrls =
+      files?.map(
+        (file) =>
+          `/uploads/properties/${file.filename}`,
+      ) || [];
 
-  return this.propertiesService.update(
-    id,
-    {
-      title: body.title,
-      description: body.description,
-      location: body.location,
-      region: body.region,
-      city: body.city,
-      price: Number(body.price),
-      propertyType: body.propertyType,
-      status: body.status,
-      featured: body.featured === 'true',
-      bedrooms: Number(body.bedrooms),
-      bathrooms: Number(body.bathrooms),
-      area: Number(body.area),
-      landArea: Number(body.landArea),
-      constructionYear: Number(body.constructionYear),
-      equipments: body.equipments ? JSON.parse(body.equipments) : [],
-      imageUrls: [...existingImageUrls, ...newImageUrls],
-    },
-    req.user,
-  );
-}
+    const existingImageUrls =
+      body.existingImageUrls
+        ? JSON.parse(
+            body.existingImageUrls,
+          )
+        : [];
+
+    return this.propertiesService.update(
+      id,
+      {
+        title: body.title,
+        description: body.description,
+        location: body.location,
+        region: body.region,
+        city: body.city,
+        price: Number(body.price),
+        propertyType: body.propertyType,
+        status: body.status,
+        featured:
+          body.featured === 'true',
+        bedrooms: Number(body.bedrooms),
+        bathrooms: Number(
+          body.bathrooms,
+        ),
+        area: Number(body.area),
+        landArea: Number(body.landArea),
+        constructionYear: Number(
+          body.constructionYear,
+        ),
+        equipments: body.equipments
+          ? JSON.parse(body.equipments)
+          : [],
+        imageUrls: [
+          ...existingImageUrls,
+          ...newImageUrls,
+        ],
+      },
+      req.user,
+    );
+  }
 
   @Delete(':id')
-@UseGuards(JwtAuthGuard, PermissionsGuard)
-@Permissions('properties.delete')
-remove(
-  @Param('id') id: string,
-  @Req() req: AuthenticatedRequest,
-) {
-  return this.propertiesService.remove(id, req.user);
-}
+  @UseGuards(
+    JwtAuthGuard,
+    PermissionsGuard,
+  )
+  @Permissions('properties.delete')
+  remove(
+    @Param('id') id: string,
+    @Req() req: AuthenticatedRequest,
+  ) {
+    return this.propertiesService.remove(
+      id,
+      req.user,
+    );
+  }
 }

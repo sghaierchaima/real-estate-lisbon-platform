@@ -1,7 +1,12 @@
-import { ValidationPipe } from '@nestjs/common';
+import {
+  ValidationPipe,
+} from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { NestExpressApplication } from '@nestjs/platform-express';
+import {
+  NestExpressApplication,
+} from '@nestjs/platform-express';
 import * as express from 'express';
+import { mkdirSync } from 'fs';
 import helmet from 'helmet';
 import { join } from 'path';
 
@@ -20,16 +25,62 @@ async function bootstrap() {
       crossOriginResourcePolicy: {
         policy: 'cross-origin',
       },
+
       hsts:
         process.env.NODE_ENV ===
         'production',
     }),
   );
 
+  /*
+   * En local :
+   * <project>/uploads
+   *
+   * Sur Railway :
+   * /app/uploads
+   */
+  const uploadsRoot =
+    process.env.UPLOAD_ROOT ||
+    join(
+      process.cwd(),
+      'uploads',
+    );
+
+  /*
+   * Crée automatiquement :
+   *
+   * /app/uploads/properties
+   *
+   * ou en local :
+   *
+   * ./uploads/properties
+   */
+  mkdirSync(
+    join(
+      uploadsRoot,
+      'properties',
+    ),
+    {
+      recursive: true,
+    },
+  );
+
+  /*
+   * Rend les fichiers accessibles publiquement.
+   *
+   * Exemple :
+   *
+   * /app/uploads/properties/image.webp
+   *
+   * devient :
+   *
+   * https://backend.up.railway.app/
+   * uploads/properties/image.webp
+   */
   app.use(
     '/uploads',
     express.static(
-      join(process.cwd(), 'uploads'),
+      uploadsRoot,
       {
         maxAge: '7d',
         index: false,
@@ -39,16 +90,19 @@ async function bootstrap() {
 
   const allowedOrigins = [
     'http://localhost:3000',
-     'https://real-estate-lisbon-platform-amber.vercel.app',
     'https://real-estate-lisbon-platform-amber.vercel.app',
     'https://real-estate-lisbon-platform-git-main-sghaierchaimas-projects.vercel.app',
   ];
 
   app.enableCors({
-    origin: (origin, callback) => {
+    origin: (
+      origin,
+      callback,
+    ) => {
       /*
        * Autorise les requêtes sans origine :
-       * Postman, Railway, appels serveur, etc.
+       * Postman, Railway,
+       * appels serveur, etc.
        */
       if (!origin) {
         callback(null, true);
@@ -56,7 +110,9 @@ async function bootstrap() {
       }
 
       const isStableOrigin =
-        allowedOrigins.includes(origin);
+        allowedOrigins.includes(
+          origin,
+        );
 
       const isVercelDeployment =
         /^https:\/\/real-estate-lisbon-platform-[a-z0-9-]+-sghaierchaimas-projects\.vercel\.app$/.test(
@@ -77,7 +133,9 @@ async function bootstrap() {
         ),
       );
     },
+
     credentials: true,
+
     methods: [
       'GET',
       'POST',
@@ -86,6 +144,7 @@ async function bootstrap() {
       'DELETE',
       'OPTIONS',
     ],
+
     allowedHeaders: [
       'Content-Type',
       'Authorization',
@@ -97,6 +156,7 @@ async function bootstrap() {
       whitelist: true,
       forbidNonWhitelisted: true,
       transform: true,
+
       transformOptions: {
         enableImplicitConversion: true,
       },
@@ -104,12 +164,20 @@ async function bootstrap() {
   );
 
   const port =
-    Number(process.env.PORT) || 3001;
+    Number(process.env.PORT) ||
+    3001;
 
-  await app.listen(port, '0.0.0.0');
+  await app.listen(
+    port,
+    '0.0.0.0',
+  );
 
   console.log(
     `API running on port ${port}`,
+  );
+
+  console.log(
+    `Uploads directory: ${uploadsRoot}`,
   );
 }
 
