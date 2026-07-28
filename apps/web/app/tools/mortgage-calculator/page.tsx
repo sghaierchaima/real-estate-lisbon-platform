@@ -27,7 +27,7 @@ import {
 } from "recharts";
 import { calculateMortgage } from "@/lib/calculators-api";
 import { createCalculatorLead } from "@/lib/calculator-leads-api";
-import { getStoredUser } from "@/lib/session";
+import { getStoredUser, getToken } from "@/lib/session";
 import type { AuthUser } from "@/lib/auth-api";
 import { useToast } from "@/components/ui/ToastProvider";
 function formatEuro(value: number) {
@@ -114,48 +114,84 @@ function MortgageCalculatorPageContent() {
 }
 
   async function handleCreateLead() {
-  const cleanEmail = leadEmail.trim().toLowerCase();
+    const token = getToken();
+    const user = getStoredUser<AuthUser>();
+    const cleanEmail = leadEmail.trim().toLowerCase();
 
-  if (!cleanEmail) {
-    toast.warning("Email required", "Please enter your email address.");
-    return;
-  }
-
-  setSavingLead(true);
-
-  try {
-    const createdLead = await createCalculatorLead({
-      fullName: leadName.trim() || undefined,
-      email: cleanEmail,
-      phone: leadPhone.trim() || undefined,
-      source: "Mortgage Calculator",
-      interest: "Mortgage / Property Purchase",
-      location: "Portugal",
-      budget: `${formatEuro(propertyPrice)} property`,
-    });
-
-    setLeadSaved(true);
-
-    if (createdLead.alreadyExists) {
+    if (!token || !user) {
       toast.warning(
-        "Request already exists",
-        "You already have a similar request. Please check My Requests."
+        "Login required",
+        "Please sign in as a buyer before submitting your request."
       );
-    } else {
-      toast.success(
-        "Request submitted",
-        "Your request has been saved. We can now match you with a mortgage broker."
-      );
+      return;
     }
-  } catch (error) {
-    toast.error(
-      "Login required to contact a broker",
-      error instanceof Error ? error.message : "Please try again later."
-    );
-  } finally {
-    setSavingLead(false);
+
+    if (user.role !== "BUYER") {
+      toast.warning(
+        "Buyer account required",
+        "Only buyers can submit a mortgage request."
+      );
+      return;
+    }
+
+    if (!cleanEmail) {
+      toast.warning("Email required", "Please enter your email address.");
+      return;
+    }
+
+    if (!result) {
+      toast.warning(
+        "Calculation required",
+        "Please calculate your mortgage before submitting a request."
+      );
+      return;
+    }
+
+    setSavingLead(true);
+
+    try {
+      const createdLead =
+  await createCalculatorLead({
+    fullName:
+      leadName.trim() ||
+      user.fullName ||
+      undefined,
+    email: cleanEmail,
+    phone:
+      leadPhone.trim() ||
+      undefined,
+    source: "Mortgage Calculator",
+    interest:
+      "Mortgage / Property Purchase",
+    location: "Portugal",
+    budget:
+      `${formatEuro(propertyPrice)} property`,
+  });
+
+      setLeadSaved(true);
+
+      if (createdLead.alreadyExists) {
+        toast.warning(
+          "Request already exists",
+          "You already have a similar request. Please check My Requests."
+        );
+      } else {
+        toast.success(
+          "Request submitted",
+          "Your request has been saved. We can now match you with a mortgage broker."
+        );
+      }
+    } catch (error) {
+      toast.error(
+        "Request failed",
+        error instanceof Error
+          ? error.message
+          : "Unable to save your request. Please try again later."
+      );
+    } finally {
+      setSavingLead(false);
+    }
   }
-}
 
   const displayResult = result;
 
@@ -287,6 +323,7 @@ function MortgageCalculatorPageContent() {
                   </div>
 
                   <button
+                    type="button"
                     onClick={handleCalculate}
                     disabled={calculating}
                     className="mt-[34px] flex w-full items-center justify-center gap-2 rounded-[14px] bg-[#1B365D] px-[20px] py-[14px] text-[17px] font-semibold text-white transition hover:bg-[#10284d] disabled:opacity-60"
@@ -324,6 +361,7 @@ function MortgageCalculatorPageContent() {
                         />
 
                         <button
+                          type="button"
                           onClick={handleCreateLead}
                           disabled={savingLead || leadSaved}
                           className="h-12 w-full rounded-xl bg-[#C9A227] font-semibold text-white disabled:opacity-60"
