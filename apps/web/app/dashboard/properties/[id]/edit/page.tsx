@@ -311,9 +311,21 @@ export default function EditPropertyPage() {
             Back to Properties
           </Link>
 
-          <span className="inline-flex items-center rounded-[14px] bg-[#1B3B6F] px-6 py-2.5 text-[15px] font-semibold text-white">
-            {formData.status}
-          </span>
+          <span
+  className={`inline-flex items-center rounded-[14px] px-6 py-2.5 text-[15px] font-semibold text-white ${
+    formData.status === "PUBLISHED"
+      ? "bg-emerald-600"
+      : formData.status === "ARCHIVED"
+        ? "bg-gray-600"
+        : "bg-[#CFA320]"
+  }`}
+>
+  {formData.status === "PUBLISHED"
+    ? "Published"
+    : formData.status === "ARCHIVED"
+      ? "Archived"
+      : "Draft"}
+</span>
         </div>
 
         <div>
@@ -575,37 +587,113 @@ export default function EditPropertyPage() {
             </div>
           )}
 
-          <div className="flex items-center justify-between rounded-[30px] border border-[#E1E6EC] bg-white p-6">
-            <button
-              type="button"
-              onClick={prevStep}
-              disabled={currentStep === "info"}
-              className="h-12 rounded-[16px] border border-[#D0D5DD] px-6 font-semibold text-[#344054] disabled:opacity-40"
-            >
-              Previous
-            </button>
+          <div className="sticky bottom-6 rounded-[28px] border border-[#DDE3EA] bg-white px-7 py-5 shadow-[0_12px_32px_rgba(16,24,40,0.10)]">
+  <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
+    <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-8">
+      {/* Featured Property */}
+      <button
+        type="button"
+        onClick={() =>
+          updateField(
+            "featured",
+            !formData.featured
+          )
+        }
+        className="inline-flex items-center gap-3"
+      >
+        <span
+          className={`relative h-8 w-14 rounded-full transition ${
+            formData.featured
+              ? "bg-[#163B73]"
+              : "bg-[#D0D5DD]"
+          }`}
+        >
+          <span
+            className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow-sm transition ${
+              formData.featured
+                ? "left-7"
+                : "left-1"
+            }`}
+          />
+        </span>
 
-            <div className="flex gap-3">
-              {currentStep !== "photos" ? (
-                <button
-                  type="button"
-                  onClick={nextStep}
-                  className="h-12 rounded-[16px] bg-[#163B73] px-6 font-semibold text-white"
-                >
-                  Continue
-                </button>
-              ) : (
-                <button
-                  type="submit"
-                  disabled={saving}
-                  className="inline-flex h-12 items-center gap-2 rounded-[16px] bg-[#163B73] px-6 font-semibold text-white disabled:opacity-60"
-                >
-                  <Save className="h-4 w-4" />
-                  {saving ? "Saving..." : "Update"}
-                </button>
-              )}
-            </div>
-          </div>
+        <span className="text-[17px] font-medium text-[#22324D]">
+          Featured Property
+        </span>
+      </button>
+
+      {/* Property Status */}
+      <div className="flex items-center gap-4">
+        <span className="text-[17px] font-medium text-[#22324D]">
+          Status:
+        </span>
+
+        <div className="relative">
+          <select
+            value={formData.status}
+            onChange={(event) =>
+              updateField(
+                "status",
+                event.target
+                  .value as PropertyStatus
+              )
+            }
+            className="h-[46px] appearance-none rounded-[16px] border border-[#D0D5DD] bg-white pl-4 pr-12 text-[16px] font-medium text-[#22324D] outline-none focus:border-[#163B73] focus:ring-4 focus:ring-[#163B73]/10"
+          >
+            <option value="DRAFT">
+              Draft
+            </option>
+
+            <option value="PUBLISHED">
+              Published
+            </option>
+
+            <option value="ARCHIVED">
+              Archived
+            </option>
+          </select>
+
+          <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#98A2B3]" />
+        </div>
+      </div>
+    </div>
+
+    {/* Navigation buttons */}
+    <div className="flex flex-wrap items-center justify-end gap-4">
+      <button
+        type="button"
+        onClick={prevStep}
+        disabled={currentStep === "info"}
+        className="inline-flex h-[46px] items-center justify-center rounded-[16px] border border-[#D0D5DD] bg-[#F9FAFB] px-8 text-[16px] font-medium text-[#22324D] transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+      >
+        Previous
+      </button>
+
+      {currentStep !== "photos" ? (
+        <button
+          type="button"
+          onClick={nextStep}
+          className="inline-flex h-[46px] items-center justify-center rounded-[16px] bg-[#163B73] px-8 text-[16px] font-semibold text-white shadow-[0_10px_20px_rgba(22,59,115,0.18)] transition hover:bg-[#102F5C]"
+        >
+          Continue
+        </button>
+      ) : (
+        <button
+          type="submit"
+          disabled={saving}
+          className="inline-flex h-[46px] items-center justify-center gap-3 rounded-[16px] bg-[#163B73] px-8 text-[16px] font-semibold text-white shadow-[0_10px_20px_rgba(22,59,115,0.18)] transition hover:bg-[#102F5C] disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          <Save className="h-4 w-4" />
+
+          {saving
+            ? "Saving..."
+            : "Update Property"}
+        </button>
+      )}
+    </div>
+  </div>
+</div>
+             
         </form>
       </div>
     </div>
