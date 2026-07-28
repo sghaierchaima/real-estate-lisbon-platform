@@ -218,3 +218,74 @@ export function getMyLeads(token: string) {
     token,
   });
 }
+
+export type MortgageLeadPayload = {
+  fullName?: string;
+  email: string;
+  phone?: string;
+  propertyPrice: string;
+  downPayment: string;
+  interestRate: string;
+  loanTermYears: string;
+  loanAmount: string;
+  monthlyPayment: string;
+  totalInterest: string;
+  totalCost: string;
+};
+
+export type MortgageLeadResponse = {
+  id: string;
+  fullName: string | null;
+  email: string | null;
+  source: string | null;
+  quality: "HOT" | "WARM" | "COLD";
+  status:
+    | "NEW"
+    | "CONTACTED"
+    | "MATCHED"
+    | "CLOSED"
+    | "LOST";
+  alreadyExists: boolean;
+};
+
+
+
+
+export type MortgageCalculatorLeadPayload = {
+  fullName?: string;
+  email: string;
+  phone?: string;
+  source: string;
+  interest?: string;
+  location?: string;
+  budget?: string;
+};
+
+export type MortgageCalculatorLeadResponse = {
+  id: string;
+  fullName: string | null;
+  email: string | null;
+  source: string | null;
+  quality: "HOT" | "WARM" | "COLD";
+  status:
+    | "NEW"
+    | "CONTACTED"
+    | "MATCHED"
+    | "CLOSED"
+    | "LOST";
+  alreadyExists: boolean;
+};
+
+export function createLeadFromMortgageCalculator(
+  token: string,
+  payload: MortgageCalculatorLeadPayload
+) {
+  return apiFetch<MortgageCalculatorLeadResponse>(
+    "/leads/from-calculator",
+    {
+      method: "POST",
+      token,
+      body: payload,
+    }
+  );
+}

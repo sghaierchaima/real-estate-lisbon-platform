@@ -26,10 +26,14 @@ import {
   Legend,
 } from "recharts";
 import { calculateMortgage } from "@/lib/calculators-api";
-import { createCalculatorLead } from "@/lib/calculator-leads-api";
 import { getStoredUser, getToken } from "@/lib/session";
 import type { AuthUser } from "@/lib/auth-api";
 import { useToast } from "@/components/ui/ToastProvider";
+
+import {
+  createLeadFromMortgageCalculator,
+} from "@/lib/leads-api";
+
 function formatEuro(value: number) {
   return new Intl.NumberFormat("fr-FR", {
     style: "currency",
@@ -114,84 +118,94 @@ function MortgageCalculatorPageContent() {
 }
 
   async function handleCreateLead() {
-    const token = getToken();
-    const user = getStoredUser<AuthUser>();
-    const cleanEmail = leadEmail.trim().toLowerCase();
+  const token = getToken();
+  const user = getStoredUser<AuthUser>();
+  const cleanEmail = leadEmail.trim().toLowerCase();
 
-    if (!token || !user) {
-      toast.warning(
-        "Login required",
-        "Please sign in as a buyer before submitting your request."
-      );
-      return;
-    }
-
-    if (user.role !== "BUYER") {
-      toast.warning(
-        "Buyer account required",
-        "Only buyers can submit a mortgage request."
-      );
-      return;
-    }
-
-    if (!cleanEmail) {
-      toast.warning("Email required", "Please enter your email address.");
-      return;
-    }
-
-    if (!result) {
-      toast.warning(
-        "Calculation required",
-        "Please calculate your mortgage before submitting a request."
-      );
-      return;
-    }
-
-    setSavingLead(true);
-
-    try {
-      const createdLead =
-  await createCalculatorLead({
-    fullName:
-      leadName.trim() ||
-      user.fullName ||
-      undefined,
-    email: cleanEmail,
-    phone:
-      leadPhone.trim() ||
-      undefined,
-    source: "Mortgage Calculator",
-    interest:
-      "Mortgage / Property Purchase",
-    location: "Portugal",
-    budget:
-      `${formatEuro(propertyPrice)} property`,
-  });
-
-      setLeadSaved(true);
-
-      if (createdLead.alreadyExists) {
-        toast.warning(
-          "Request already exists",
-          "You already have a similar request. Please check My Requests."
-        );
-      } else {
-        toast.success(
-          "Request submitted",
-          "Your request has been saved. We can now match you with a mortgage broker."
-        );
-      }
-    } catch (error) {
-      toast.error(
-        "Request failed",
-        error instanceof Error
-          ? error.message
-          : "Unable to save your request. Please try again later."
-      );
-    } finally {
-      setSavingLead(false);
-    }
+  if (!token || !user) {
+    toast.warning(
+      "Login required",
+      "Please sign in as a buyer before submitting your request."
+    );
+    return;
   }
+
+  if (user.role !== "BUYER") {
+    toast.warning(
+      "Buyer account required",
+      "Only buyers can submit a mortgage request."
+    );
+    return;
+  }
+
+  if (!cleanEmail) {
+    toast.warning(
+      "Email required",
+      "Please enter your email address."
+    );
+    return;
+  }
+
+  if (!result) {
+    toast.warning(
+      "Calculation required",
+      "Please calculate your mortgage before submitting a request."
+    );
+    return;
+  }
+
+  setSavingLead(true);
+
+  try {
+   const createdLead =
+  await createLeadFromMortgageCalculator(
+    token,
+    {
+      fullName:
+        leadName.trim() ||
+        user.fullName ||
+        undefined,
+      email: cleanEmail,
+      phone:
+        leadPhone.trim() ||
+        undefined,
+      source: "Mortgage Calculator",
+      interest:
+        `Mortgage / Property Purchase - Monthly payment: ${formatEuro(
+          result.monthlyPayment
+        )}`,
+      location: "Portugal",
+      budget:
+        `${formatEuro(propertyPrice)} property`,
+    }
+  );
+
+    setLeadSaved(true);
+
+    if (createdLead.alreadyExists) {
+      toast.info(
+        "Request already exists",
+        "This mortgage request is already available in My Requests."
+      );
+
+      return;
+    }
+
+    toast.success(
+      "Buyer request created",
+      "Your mortgage request is now waiting for admin matching."
+    );
+  } catch (error) {
+    toast.error(
+      "Unable to create request",
+      error instanceof Error
+        ? error.message
+        : "Please try again later."
+    );
+  } finally {
+    setSavingLead(false);
+  }
+}
 
   const displayResult = result;
 

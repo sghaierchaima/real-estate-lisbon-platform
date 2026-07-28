@@ -1,6 +1,7 @@
 import { apiFetch } from "./api";
+import { getToken } from "./session";
 
-export function createCalculatorLead(payload: {
+export type CalculatorLeadPayload = {
   fullName?: string;
   email: string;
   phone?: string;
@@ -8,18 +9,40 @@ export function createCalculatorLead(payload: {
   interest?: string;
   location?: string;
   budget?: string;
-  alreadyExists?: boolean;
-}) {
-  return apiFetch<{
-    id: string;
-    fullName: string | null;
-    email: string | null;
-    source: string | null;
-    quality: "HOT" | "WARM" | "COLD";
-    status: "NEW" | "CONTACTED" | "MATCHED" | "CLOSED" | "LOST";
-    alreadyExists: boolean;
-  }>("/leads/from-calculator", {
-    method: "POST",
-    body: payload,
-  });
+};
+
+export type CalculatorLeadResponse = {
+  id: string;
+  fullName: string | null;
+  email: string | null;
+  source: string | null;
+  quality: "HOT" | "WARM" | "COLD";
+  status:
+    | "NEW"
+    | "CONTACTED"
+    | "MATCHED"
+    | "CLOSED"
+    | "LOST";
+  alreadyExists: boolean;
+};
+
+export function createCalculatorLead(
+  payload: CalculatorLeadPayload
+) {
+  const token = getToken();
+
+  if (!token) {
+    throw new Error(
+      "You must be signed in to submit a request."
+    );
+  }
+
+  return apiFetch<CalculatorLeadResponse>(
+    "/leads/from-calculator",
+    {
+      method: "POST",
+      token,
+      body: payload,
+    }
+  );
 }
