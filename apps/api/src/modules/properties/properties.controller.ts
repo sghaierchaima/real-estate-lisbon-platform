@@ -12,12 +12,10 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FilesInterceptor } from '@nestjs/platform-express';
-import { diskStorage } from 'multer';
+import { memoryStorage } from 'multer';
+import { CloudinaryService } from '../../common/cloudinary/cloudinary.service';
+import { validateImageFile } from '../../common/utils/file-upload.util';
 
-import {
-  generateSafeImageFilename,
-  validateImageFile,
-} from '../../common/utils/file-upload.util';
 import { Permissions } from '../../common/decorators/permissions.decorator';
 import { PermissionsGuard } from '../../common/guards/permissions.guard';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
@@ -29,6 +27,7 @@ import { PropertiesService } from './properties.service';
 export class PropertiesController {
   constructor(
     private readonly propertiesService: PropertiesService,
+    private readonly cloudinaryService: CloudinaryService,
   ) {}
 
   @Get()
@@ -82,30 +81,14 @@ export class PropertiesController {
   )
   @Permissions('properties.create')
   @UseInterceptors(
-    FilesInterceptor('images', 10, {
-      storage: diskStorage({
-        destination:
-          `${
-            process.env.UPLOAD_ROOT ||
-            './uploads'
-          }/properties`,
-
-        filename: (
-          _req,
-          file,
-          callback,
-        ) => {
-          const uniqueName =
-            generateSafeImageFilename(
-              file.originalname,
-            );
-
-          callback(null, uniqueName);
-        },
-      }),
-    }),
-  )
-  create(
+  FilesInterceptor('images', 10, {
+    storage: memoryStorage(),
+    limits: {
+      fileSize: 5 * 1024 * 1024,
+    },
+  }),
+)
+  async create(
     @UploadedFiles()
     files: Express.Multer.File[],
     @Body() body: any,
@@ -113,11 +96,15 @@ export class PropertiesController {
   ) {
     files?.forEach(validateImageFile);
 
-    const imageUrls =
-      files?.map(
-        (file) =>
-          `/uploads/properties/${file.filename}`,
-      ) || [];
+const uploadedImages = await Promise.all(
+  (files || []).map((file) =>
+    this.cloudinaryService.uploadPropertyImage(file),
+  ),
+);
+
+const imageUrls = uploadedImages.map(
+  (image) => image.secure_url,
+);
 
     return this.propertiesService.create(
       {
@@ -156,30 +143,14 @@ export class PropertiesController {
   )
   @Permissions('properties.update')
   @UseInterceptors(
-    FilesInterceptor('images', 10, {
-      storage: diskStorage({
-        destination:
-          `${
-            process.env.UPLOAD_ROOT ||
-            './uploads'
-          }/properties`,
-
-        filename: (
-          _req,
-          file,
-          callback,
-        ) => {
-          const uniqueName =
-            generateSafeImageFilename(
-              file.originalname,
-            );
-
-          callback(null, uniqueName);
-        },
-      }),
-    }),
-  )
-  update(
+  FilesInterceptor('images', 10, {
+    storage: memoryStorage(),
+    limits: {
+      fileSize: 5 * 1024 * 1024,
+    },
+  }),
+)
+  async update(
     @Param('id') id: string,
     @UploadedFiles()
     files: Express.Multer.File[],
@@ -188,11 +159,15 @@ export class PropertiesController {
   ) {
     files?.forEach(validateImageFile);
 
-    const newImageUrls =
-      files?.map(
-        (file) =>
-          `/uploads/properties/${file.filename}`,
-      ) || [];
+const uploadedImages = await Promise.all(
+  (files || []).map((file) =>
+    this.cloudinaryService.uploadPropertyImage(file),
+  ),
+);
+
+const newImageUrls = uploadedImages.map(
+  (image) => image.secure_url,
+);
 
     const existingImageUrls =
       body.existingImageUrls
