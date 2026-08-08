@@ -9,6 +9,8 @@ import {
   createLeadFromPropertySearch,
   type MatchedProperty,
 } from "@/lib/leads-api";
+import FloatingChatWindow from "@/components/chat/FloatingChatWindow";
+
 import { useToast } from "@/components/ui/ToastProvider";
 import {
   Search,
@@ -28,6 +30,8 @@ import { useRouter } from "next/navigation";
 
 export default function PropertySearchAssistantPage() {
   const toast = useToast();
+  const [activeChatRoomId, setActiveChatRoomId] =
+    useState<string | null>(null);
 
   const [extracting, setExtracting] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -208,7 +212,7 @@ export default function PropertySearchAssistantPage() {
           : "A conversation with the property agent has been created."
       );
 
-      router.push(`/chat/${result.chatRoom.id}`);
+      setActiveChatRoomId(result.chatRoom.id);
     } catch (error) {
       toast.error(
         "Unable to contact agent",
@@ -443,10 +447,10 @@ export default function PropertySearchAssistantPage() {
                       {/* MATCH BADGE */}
                       <div
                         className={`absolute right-4 top-4 z-10 rounded-full px-4 py-2 text-sm font-bold text-white shadow ${property.matchScore >= 90
-                            ? "bg-emerald-600"
-                            : property.matchScore >= 75
-                              ? "bg-amber-500"
-                              : "bg-slate-600"
+                          ? "bg-emerald-600"
+                          : property.matchScore >= 75
+                            ? "bg-amber-500"
+                            : "bg-slate-600"
                           }`}
                       >
                         {property.matchScore}% Match
@@ -678,6 +682,14 @@ export default function PropertySearchAssistantPage() {
       </main>
 
       <Footer />
+      {activeChatRoomId && (
+        <FloatingChatWindow
+          roomId={activeChatRoomId}
+          onClose={() =>
+            setActiveChatRoomId(null)
+          }
+        />
+      )}
     </>
   );
 }
