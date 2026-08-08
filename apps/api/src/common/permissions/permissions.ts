@@ -23,6 +23,7 @@ export type Permission =
   |  'matching.approve'
   |  'matching.reject'
   |  'matching.contact'
+  | 'matching.contact.property'
   |  'matching.complete'
 
   | 'audit.read'
@@ -93,7 +94,7 @@ export const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
     'properties.delete',
 
     'matching.read.own.professional',
-    'matching.contact',
+    'matching.contact',  
     'matching.complete',
 
     'stories.read',
@@ -111,6 +112,7 @@ export const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
 
   // Le Buyer peut consulter uniquement ses propres matchs.
   'matching.read.own.buyer',
+  'matching.contact.property',
 
   'stories.read',
   'stories.create',

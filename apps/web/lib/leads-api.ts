@@ -126,18 +126,48 @@ export async function createLeadFromPropertyValuation(
     }
   );
 }
+import type { Property } from "@/lib/properties-api";
+export type MatchedProperty = Property & {
+  matchScore: number;
+  matchedCriteria: string[];
+  missingCriteria: string[];
+  recommendation: string;
+};
+
+export type PropertySearchRequestPayload = {
+  searchText: string;
+  location?: string;
+  budget?: string;
+  propertyType?: string;
+  bedrooms?: number;
+  bathrooms?: number;
+  minBudget?: number;
+  maxBudget?: number;
+  goal?: string;
+  mustHave?: string[];
+  aiSummary?: string;
+  confidence?: number;
+  notificationsEnabled?: boolean;
+};
+
+export type PropertySearchResponse =
+  | {
+      found: true;
+      properties: MatchedProperty[];
+      alreadyExists: false;
+    }
+  | {
+      found: false;
+      lead: Lead;
+      notifiedAgents: number;
+      alreadyExists: boolean;
+    };
+
 export async function createLeadFromPropertySearch(
   token: string,
-  data: {
-    searchText: string;
-    location?: string;
-    budget?: string;
-    propertyType?: string;
-    bedrooms?: string;
-    goal?: string;
-  }
+  data: PropertySearchRequestPayload
 ) {
-  return apiFetch<Lead & { alreadyExists?: boolean }>(
+  return apiFetch<PropertySearchResponse>(
     "/leads/from-property-search",
     {
       method: "POST",

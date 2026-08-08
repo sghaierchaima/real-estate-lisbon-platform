@@ -406,6 +406,124 @@ async reject(id: string, user: { id: string; role: Role }) {
 
   return ProfessionalType.PROPERTY_AGENT;
 }
+
+async contactProperty(
+  propertyId: string,
+  user: { id: string; role: Role },
+) {
+  if (user.role !== Role.BUYER) {
+    throw new ForbiddenException(
+      'Only buyers can contact a property agent',
+    );
+  }
+
+  const property = await this.prisma.property.findUnique({
+    where: { id: propertyId },
+    include: {
+      professionalProfile: {
+        include: {
+          user: true,
+        },
+      },
+    },
+  });
+
+  if (!property) {
+    throw new NotFoundException('Property not found');
+  }
+
+  if (property.status !== 'PUBLISHED') {
+    throw new ForbiddenException(
+      'Only published properties can be contacted',
+    );
+  }
+
+  const professional = property.professionalProfile;
+
+  const existingMatch = await this.prisma.match.findFirst({
+    where: {
+      buyerId: user.id,
+      professionalId: professional.id,
+      propertyId: property.id,
+      status: {
+        in: [
+          MatchStatus.PENDING,
+          MatchStatus.ACTIVE,
+          MatchStatus.CONTACTED,
+        ],
+      },
+    },
+    include: {
+      chatRoom: true,
+    },
+  });
+
+  if (existingMatch) {
+    const room =
+      existingMatch.chatRoom ??
+      (await this.prisma.chatRoom.create({
+        data: {
+          matchId: existingMatch.id,
+          buyerId: user.id,
+          professionalId: professional.userId,
+        },
+      }));
+
+    return {
+      alreadyExists: true,
+      match: existingMatch,
+      chatRoom: room,
+    };
+  }
+
+  const match = await this.prisma.match.create({
+    data: {
+      buyerId: user.id,
+      professionalId: professional.id,
+      propertyId: property.id,
+      score: 100,
+      status: MatchStatus.ACTIVE,
+    },
+    include: {
+      professional: {
+        include: {
+          user: true,
+        },
+      },
+      property: true,
+    },
+  });
+
+  const room = await this.prisma.chatRoom.create({
+    data: {
+      matchId: match.id,
+      buyerId: user.id,
+      professionalId: professional.userId,
+    },
+  });
+
+  await this.notificationsService.create({
+    userId: professional.userId,
+    title: 'New property inquiry',
+    message: `A buyer is interested in "${property.title}".`,
+    type: NotificationType.MATCH,
+  });
+
+  await this.auditService.log({
+    userId: user.id,
+    userRole: user.role,
+    action: 'PROPERTY_CONTACT_CREATED',
+    entity: 'Match',
+    entityId: match.id,
+    description: `Buyer contacted property ${property.id}`,
+  });
+
+  return {
+    alreadyExists: false,
+    match,
+    chatRoom: room,
+  };
+}
   
   
 async markAsContacted(id: string, user: { id: string; role: Role }) {

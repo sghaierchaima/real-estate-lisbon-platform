@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ExtractPropertySearchDto } from './dto/extract-property-search.dto';
+import { ExplainPropertyMatchesDto } from './dto/explain-property-matches.dto';
 
 type PropertySearchExtraction = {
   location: string;
@@ -356,4 +357,7 @@ export class AiService {
 
   return `Buyer is looking for a ${bedroomText} ${data.propertyType} in ${data.location}${budgetText}. The property is intended ${goalMap[data.goal] || 'to buy'}.${featuresText}`;
 }
+
+
+
 }

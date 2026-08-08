@@ -149,6 +149,7 @@ model Property {
 
   professionalProfile ProfessionalProfile @relation(fields: [professionalProfileId], references: [id], onDelete: Cascade)
   savedBy             SavedProperty[]
+  matches             Match[]
 }
 
 model SavedProperty {
@@ -181,6 +182,23 @@ model Lead {
   location String?
   budget   String?
 
+  // Critères structurés de la recherche
+  propertyType String?
+  bedrooms     Int?
+  bathrooms    Int?
+  minBudget    Float?
+  maxBudget    Float?
+  goal         String?
+  mustHave     String[]
+  searchText   String?
+  aiSummary    String?
+  confidence   Int?
+
+  // Recherche persistante
+  isActive             Boolean   @default(true)
+  notificationsEnabled Boolean   @default(true)
+  lastMatchedAt        DateTime?
+
   quality LeadQuality @default(COLD)
   status  LeadStatus  @default(NEW)
 
@@ -189,6 +207,11 @@ model Lead {
 
   user    User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
   matches Match[]
+
+  @@index([userId])
+  @@index([location])
+  @@index([status, createdAt])
+  @@index([isActive, notificationsEnabled])
 }
 
 model Match {
@@ -196,6 +219,7 @@ model Match {
   buyerId        String?
   professionalId String
   leadId         String?
+  propertyId     String?
 
   score  Int         @default(0)
   status MatchStatus @default(PENDING)
@@ -203,11 +227,21 @@ model Match {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  buyer        User?               @relation("BuyerMatches", fields: [buyerId], references: [id], onDelete: SetNull)
+  buyer User? @relation("BuyerMatches", fields: [buyerId], references: [id], onDelete: SetNull)
+
   professional ProfessionalProfile @relation("ProfessionalMatches", fields: [professionalId], references: [id], onDelete: Cascade)
-  lead         Lead?               @relation(fields: [leadId], references: [id], onDelete: SetNull)
-  chatRoom     ChatRoom?
-  review       Review?
+
+  lead Lead? @relation(fields: [leadId], references: [id], onDelete: SetNull)
+
+  property Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+
+  chatRoom ChatRoom?
+  review   Review?
+
+  @@index([buyerId])
+  @@index([professionalId])
+  @@index([leadId])
+  @@index([propertyId])
 }
 
 model Story {
@@ -254,6 +288,8 @@ enum NotificationType {
   LEAD
   STORY
   SYSTEM
+  PROPERTY_REQUEST
+  PROPERTY_MATCH
 }
 
 model ChatRoom {

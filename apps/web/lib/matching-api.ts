@@ -151,3 +151,37 @@ export function markMatchCompleted(token: string, id: string) {
     token,
   });
 }
+
+
+
+export type ContactPropertyResponse = {
+  alreadyExists: boolean;
+
+  match: {
+    id: string;
+    buyerId: string | null;
+    professionalId: string;
+    propertyId: string | null;
+    status: string;
+  };
+
+  chatRoom: {
+    id: string;
+    matchId: string;
+    buyerId: string;
+    professionalId: string;
+  };
+};
+
+export function contactProperty(
+  token: string,
+  propertyId: string
+) {
+  return apiFetch<ContactPropertyResponse>(
+    `/matching/contact-property/${propertyId}`,
+    {
+      method: "POST",
+      token,
+    }
+  );
+}

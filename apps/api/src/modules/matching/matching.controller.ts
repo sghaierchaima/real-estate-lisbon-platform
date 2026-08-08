@@ -74,6 +74,18 @@ export class MatchingController {
   findMyBuyerMatches(@Req() req: AuthenticatedRequest) {
     return this.matchingService.findByBuyer(req.user.id);
   }
+  @Post('contact-property/:propertyId')
+@UseGuards(JwtAuthGuard, PermissionsGuard)
+@Permissions('matching.contact.property')
+contactProperty(
+  @Param('propertyId') propertyId: string,
+  @Req() req: AuthenticatedRequest,
+) {
+  return this.matchingService.contactProperty(
+    propertyId,
+    req.user,
+  );
+}
 
   /*
    * ============================================================
