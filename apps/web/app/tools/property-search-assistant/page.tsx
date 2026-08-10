@@ -668,6 +668,16 @@ export default function PropertySearchAssistantPage() {
                                   ? "Opening conversation..."
                                   : "Contact this Agent"}
                               </button>
+                              <a
+                                href={`https://wa.me/${property.professionalProfile.user.phone?.replace(/\D/g, "")}?text=${encodeURIComponent(
+                                  `Hello, I'm interested in the property "${property.title}" on Real Estate Lisbon.`
+                                )}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex h-12 w-full items-center justify-center rounded-xl border border-green-600 bg-white px-5 font-semibold text-green-700 transition hover:bg-green-50"
+                              >
+                                Contact on WhatsApp
+                              </a>
                             </div>
                           </div>
                         )}
