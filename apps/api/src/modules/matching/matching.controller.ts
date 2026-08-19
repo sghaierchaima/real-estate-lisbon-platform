@@ -16,50 +16,40 @@ import { AuthenticatedRequest } from '../../common/types/authenticated-request';
 import { MatchingService } from './matching.service';
 
 @Controller('matching')
+@UseGuards(
+  JwtAuthGuard,
+  PermissionsGuard,
+)
 export class MatchingController {
-  constructor(private readonly matchingService: MatchingService) {}
+  constructor(
+    private readonly matchingService:
+      MatchingService,
+  ) {}
 
   /*
    * ============================================================
-   * ADMIN ROUTES
+   * ADMIN — MONITORING ONLY
+   * ============================================================
+   *
+   * Admin can inspect all matches.
+   *
+   * No:
+   * - Generate
+   * - Approve
+   * - Reject
+   *
+   * Automatic matching is managed by AutoMatchingService.
    * ============================================================
    */
 
   @Get()
-  @UseGuards(JwtAuthGuard, PermissionsGuard)
   @Permissions('matching.read.all')
-  findAll(@Req() req: AuthenticatedRequest) {
-    return this.matchingService.findAll(req.user);
-  }
-
-  @Post('generate/:leadId')
-  @UseGuards(JwtAuthGuard, PermissionsGuard)
-  @Permissions('matching.generate')
-  generate(
-    @Param('leadId') leadId: string,
+  findAll(
     @Req() req: AuthenticatedRequest,
   ) {
-    return this.matchingService.generateForLead(leadId, req.user);
-  }
-
-  @Patch(':id/approve')
-  @UseGuards(JwtAuthGuard, PermissionsGuard)
-  @Permissions('matching.approve')
-  approve(
-    @Param('id') id: string,
-    @Req() req: AuthenticatedRequest,
-  ) {
-    return this.matchingService.approve(id, req.user);
-  }
-
-  @Patch(':id/reject')
-  @UseGuards(JwtAuthGuard, PermissionsGuard)
-  @Permissions('matching.reject')
-  reject(
-    @Param('id') id: string,
-    @Req() req: AuthenticatedRequest,
-  ) {
-    return this.matchingService.reject(id, req.user);
+    return this.matchingService.findAll(
+      req.user,
+    );
   }
 
   /*
@@ -69,23 +59,44 @@ export class MatchingController {
    */
 
   @Get('me/buyer')
-  @UseGuards(JwtAuthGuard, PermissionsGuard)
-  @Permissions('matching.read.own.buyer')
-  findMyBuyerMatches(@Req() req: AuthenticatedRequest) {
-    return this.matchingService.findByBuyer(req.user.id);
+  @Permissions(
+    'matching.read.own.buyer',
+  )
+  findMyBuyerMatches(
+    @Req() req: AuthenticatedRequest,
+  ) {
+    return this.matchingService.findByBuyer(
+      req.user.id,
+    );
   }
-  @Post('contact-property/:propertyId')
-@UseGuards(JwtAuthGuard, PermissionsGuard)
-@Permissions('matching.contact.property')
-contactProperty(
-  @Param('propertyId') propertyId: string,
-  @Req() req: AuthenticatedRequest,
-) {
-  return this.matchingService.contactProperty(
-    propertyId,
-    req.user,
-  );
-}
+
+  /*
+   * Buyer explicitly contacts a property.
+   *
+   * This creates an ACTIVE match immediately
+   * with the Property Agent responsible for
+   * that property.
+   *
+   * No Admin approval.
+   */
+  @Post(
+    'contact-property/:propertyId',
+  )
+  @Permissions(
+    'matching.contact.property',
+  )
+  contactProperty(
+    @Param('propertyId')
+    propertyId: string,
+
+    @Req()
+    req: AuthenticatedRequest,
+  ) {
+    return this.matchingService.contactProperty(
+      propertyId,
+      req.user,
+    );
+  }
 
   /*
    * ============================================================
@@ -94,31 +105,61 @@ contactProperty(
    */
 
   @Get('me/professional')
-  @UseGuards(JwtAuthGuard, PermissionsGuard)
-  @Permissions('matching.read.own.professional')
+  @Permissions(
+    'matching.read.own.professional',
+  )
   findMyProfessionalMatches(
     @Req() req: AuthenticatedRequest,
   ) {
-    return this.matchingService.findByProfessionalUser(req.user.id);
+    return this.matchingService
+      .findByProfessionalUser(
+        req.user.id,
+      );
   }
 
+  /*
+   * ACTIVE
+   *   ↓
+   * CONTACTED
+   *
+   * Only the assigned Professional.
+   */
   @Patch(':id/contacted')
-  @UseGuards(JwtAuthGuard, PermissionsGuard)
   @Permissions('matching.contact')
   markAsContacted(
-    @Param('id') id: string,
-    @Req() req: AuthenticatedRequest,
+    @Param('id')
+    id: string,
+
+    @Req()
+    req: AuthenticatedRequest,
   ) {
-    return this.matchingService.markAsContacted(id, req.user);
+    return this.matchingService.markAsContacted(
+      id,
+      req.user,
+    );
   }
 
+  /*
+   * CONTACTED
+   *   ↓
+   * COMPLETED
+   *   ↓
+   * associated Lead = CLOSED
+   *
+   * Only the assigned Professional.
+   */
   @Patch(':id/completed')
-  @UseGuards(JwtAuthGuard, PermissionsGuard)
   @Permissions('matching.complete')
   markAsCompleted(
-    @Param('id') id: string,
-    @Req() req: AuthenticatedRequest,
+    @Param('id')
+    id: string,
+
+    @Req()
+    req: AuthenticatedRequest,
   ) {
-    return this.matchingService.markAsCompleted(id, req.user);
+    return this.matchingService.markAsCompleted(
+      id,
+      req.user,
+    );
   }
 }

@@ -6,7 +6,6 @@ import { MatchingEngineService } from './matching-engine.service';
 import { AutoMatchingService } from './auto-matching.service';
 
 import { PrismaModule } from '../../database/prisma.module';
-
 import { EmailModule } from '../email/email.module';
 import { NotificationsModule } from '../notifications/notifications.module';
 import { ChatModule } from '../chat/chat.module';
