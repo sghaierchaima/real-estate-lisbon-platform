@@ -1,56 +1,88 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
 import {
-  CheckCircle2,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+
+import {
+  useRouter,
+} from "next/navigation";
+
+import {
+  Bot,
   ChevronLeft,
   ChevronRight,
-  Clock3,
   GitBranch,
   Mail,
   Search,
-  ShieldX,
+  Sparkles,
   Star,
   Target,
   UserCheck,
-  X,
 } from "lucide-react";
 
-import type { AuthUser } from "@/lib/auth-api";
+import type {
+  AuthUser,
+} from "@/lib/auth-api";
+
 import {
-  approveMatch,
   getAdminMatches,
   type MatchItem,
   type MatchStatus,
-  rejectMatch,
 } from "@/lib/matching-api";
-import { getStoredUser, getToken } from "@/lib/session";
-import { useToast } from "@/components/ui/ToastProvider";
+
+import {
+  getStoredUser,
+  getToken,
+} from "@/lib/session";
+
+import {
+  useToast,
+} from "@/components/ui/ToastProvider";
 
 const ITEMS_PER_PAGE = 3;
 
-type StatusFilter = "ALL" | MatchStatus;
-type ProcessingAction = "approve" | "reject" | null;
+type StatusFilter =
+  | "ALL"
+  | MatchStatus;
 
-function statusBadge(status: MatchStatus) {
-  if (status === "ACTIVE") {
+function statusBadge(
+  status: MatchStatus,
+) {
+  if (
+    status ===
+    "ACTIVE"
+  ) {
     return "bg-[#DCFCE7] text-[#16A34A]";
   }
 
-  if (status === "CONTACTED") {
+  if (
+    status ===
+    "CONTACTED"
+  ) {
     return "bg-[#DBEAFE] text-[#2563EB]";
   }
 
-  if (status === "PENDING") {
+  if (
+    status ===
+    "PENDING"
+  ) {
     return "bg-[#FEF3C7] text-[#EA580C]";
   }
 
-  if (status === "COMPLETED") {
+  if (
+    status ===
+    "COMPLETED"
+  ) {
     return "bg-[#EDE9FE] text-[#7C3AED]";
   }
 
-  if (status === "CANCELLED") {
+  if (
+    status ===
+    "CANCELLED"
+  ) {
     return "bg-[#FEE2E2] text-[#EF4444]";
   }
 
@@ -62,90 +94,199 @@ function initials(
   email?: string | null,
 ) {
   return (
-    name?.trim().charAt(0).toUpperCase() ||
-    email?.trim().charAt(0).toUpperCase() ||
+    name
+      ?.trim()
+      .charAt(0)
+      .toUpperCase() ||
+    email
+      ?.trim()
+      .charAt(0)
+      .toUpperCase() ||
     "M"
   );
 }
 
-function formatProfessionalType(type: string) {
+function formatProfessionalType(
+  type: string,
+) {
   return type
     .toLowerCase()
     .split("_")
     .map(
       (word) =>
-        word.charAt(0).toUpperCase() +
+        word
+          .charAt(0)
+          .toUpperCase() +
         word.slice(1),
     )
     .join(" ");
 }
 
-function formatDate(value: string) {
-  const date = new Date(value);
+function formatDate(
+  value: string,
+) {
+  const date =
+    new Date(
+      value,
+    );
 
-  if (Number.isNaN(date.getTime())) {
+  if (
+    Number.isNaN(
+      date.getTime(),
+    )
+  ) {
     return "-";
   }
 
   return date.toLocaleDateString();
 }
 
+function getAutomationLabel(
+  status: MatchStatus,
+) {
+  if (
+    status ===
+    "ACTIVE"
+  ) {
+    return {
+      label:
+        "Auto Matched",
+      className:
+        "border-[#BBF7D0] bg-[#F0FDF4] text-[#15803D]",
+    };
+  }
+
+  if (
+    status ===
+    "CONTACTED"
+  ) {
+    return {
+      label:
+        "Professional Engaged",
+      className:
+        "border-[#BFDBFE] bg-[#EFF6FF] text-[#2563EB]",
+    };
+  }
+
+  if (
+    status ===
+    "COMPLETED"
+  ) {
+    return {
+      label:
+        "Completed",
+      className:
+        "border-[#DDD6FE] bg-[#F5F3FF] text-[#7C3AED]",
+    };
+  }
+
+  if (
+    status ===
+    "CANCELLED"
+  ) {
+    return {
+      label:
+        "Cancelled",
+      className:
+        "border-[#FECACA] bg-[#FEF2F2] text-[#DC2626]",
+    };
+  }
+
+  /*
+   * PENDING should only remain
+   * for historical matches created
+   * before the automatic architecture.
+   */
+  return {
+    label:
+      "Legacy Pending",
+    className:
+      "border-[#FDE68A] bg-[#FFFBEB] text-[#A16207]",
+  };
+}
+
 export default function MatchingPage() {
-  const router = useRouter();
-  const toast = useToast();
+  const router =
+    useRouter();
 
-  const user = getStoredUser<AuthUser>();
+  const toast =
+    useToast();
 
-  const [matches, setMatches] =
-    useState<MatchItem[]>([]);
-
-  const [search, setSearch] =
-    useState("");
-
-  const [statusFilter, setStatusFilter] =
-    useState<StatusFilter>("ALL");
-
-  const [loading, setLoading] =
-    useState(true);
-
-  const [currentPage, setCurrentPage] =
-    useState(1);
-
-  const [processingId, setProcessingId] =
-    useState<string | null>(null);
+  const user =
+    getStoredUser<AuthUser>();
 
   const [
-    processingAction,
-    setProcessingAction,
-  ] = useState<ProcessingAction>(null);
+    matches,
+    setMatches,
+  ] =
+    useState<
+      MatchItem[]
+    >([]);
 
-  const [matchToReject, setMatchToReject] =
-    useState<MatchItem | null>(null);
+  const [
+    search,
+    setSearch,
+  ] =
+    useState("");
 
-  const [rejectingMatch, setRejectingMatch] =
-    useState(false);
+  const [
+    statusFilter,
+    setStatusFilter,
+  ] =
+    useState<
+      StatusFilter
+    >("ALL");
+
+  const [
+    loading,
+    setLoading,
+  ] =
+    useState(true);
+
+  const [
+    currentPage,
+    setCurrentPage,
+  ] =
+    useState(1);
 
   useEffect(() => {
     async function loadMatches() {
-      const token = getToken();
+      const token =
+        getToken();
 
-      if (!token || !user) {
-        router.replace("/login");
+      if (
+        !token ||
+        !user
+      ) {
+        router.replace(
+          "/login",
+        );
         return;
       }
 
-      if (user.role !== "ADMIN") {
-        router.replace("/access-denied");
+      if (
+        user.role !==
+        "ADMIN"
+      ) {
+        router.replace(
+          "/access-denied",
+        );
         return;
       }
 
       try {
-        setLoading(true);
+        setLoading(
+          true,
+        );
 
         const data =
-          await getAdminMatches(token);
+          await getAdminMatches(
+            token,
+          );
 
-        setMatches(data);
+        setMatches(
+          data,
+        );
       } catch (error) {
         const message =
           error instanceof Error
@@ -156,19 +297,33 @@ export default function MatchingPage() {
           message.toLowerCase();
 
         if (
-          normalized.includes("401") ||
-          normalized.includes("unauthorized")
+          normalized.includes(
+            "401",
+          ) ||
+          normalized.includes(
+            "unauthorized",
+          )
         ) {
-          router.replace("/login");
+          router.replace(
+            "/login",
+          );
           return;
         }
 
         if (
-          normalized.includes("403") ||
-          normalized.includes("forbidden") ||
-          normalized.includes("permission")
+          normalized.includes(
+            "403",
+          ) ||
+          normalized.includes(
+            "forbidden",
+          ) ||
+          normalized.includes(
+            "permission",
+          )
         ) {
-          router.replace("/access-denied");
+          router.replace(
+            "/access-denied",
+          );
           return;
         }
 
@@ -177,329 +332,358 @@ export default function MatchingPage() {
           message,
         );
       } finally {
-        setLoading(false);
+        setLoading(
+          false,
+        );
       }
     }
 
     void loadMatches();
-  }, [router, toast, user?.role]);
+  }, [
+    router,
+    toast,
+    user?.role,
+  ]);
 
   useEffect(() => {
-    setCurrentPage(1);
-  }, [search, statusFilter]);
-
-  const filteredMatches = useMemo(() => {
-    const query = search
-      .trim()
-      .toLowerCase();
-
-    return matches.filter((match) => {
-      const matchesSearch =
-        !query ||
-        [
-          match.id,
-          match.status,
-          match.lead?.fullName,
-          match.lead?.email,
-          match.lead?.phone,
-          match.lead?.interest,
-          match.lead?.location,
-          match.lead?.budget,
-          match.professional.user.fullName,
-          match.professional.user.email,
-          match.professional.companyName,
-          match.professional.professionalType,
-        ]
-          .filter(Boolean)
-          .join(" ")
-          .toLowerCase()
-          .includes(query);
-
-      const matchesStatus =
-        statusFilter === "ALL" ||
-        match.status === statusFilter;
-
-      return matchesSearch && matchesStatus;
-    });
-  }, [matches, search, statusFilter]);
-
-  const totalPages = Math.max(
-    1,
-    Math.ceil(
-      filteredMatches.length /
-        ITEMS_PER_PAGE,
-    ),
-  );
-
-  useEffect(() => {
-    if (currentPage > totalPages) {
-      setCurrentPage(totalPages);
-    }
-  }, [currentPage, totalPages]);
-
-  const paginatedMatches = useMemo(() => {
-    const startIndex =
-      (currentPage - 1) *
-      ITEMS_PER_PAGE;
-
-    return filteredMatches.slice(
-      startIndex,
-      startIndex + ITEMS_PER_PAGE,
-    );
-  }, [filteredMatches, currentPage]);
-
-  const visiblePages = useMemo(() => {
-    const pages: number[] = [];
-
-    const startPage = Math.max(
+    setCurrentPage(
       1,
-      currentPage - 2,
     );
+  }, [
+    search,
+    statusFilter,
+  ]);
 
-    const endPage = Math.min(
-      totalPages,
-      currentPage + 2,
-    );
+  const filteredMatches =
+    useMemo(() => {
+      const query =
+        search
+          .trim()
+          .toLowerCase();
 
-    for (
-      let page = startPage;
-      page <= endPage;
-      page += 1
-    ) {
-      pages.push(page);
-    }
+      return matches.filter(
+        (match) => {
+          const matchesSearch =
+            !query ||
+            [
+              match.id,
+              match.status,
+              match.lead?.fullName,
+              match.lead?.email,
+              match.lead?.phone,
+              match.lead?.interest,
+              match.lead?.location,
+              match.lead?.budget,
+              match.professional
+                .user
+                .fullName,
+              match.professional
+                .user
+                .email,
+              match.professional
+                .companyName,
+              match.professional
+                .professionalType,
+            ]
+              .filter(
+                Boolean,
+              )
+              .join(" ")
+              .toLowerCase()
+              .includes(
+                query,
+              );
 
-    return pages;
-  }, [currentPage, totalPages]);
+          const matchesStatus =
+            statusFilter ===
+              "ALL" ||
+            match.status ===
+              statusFilter;
 
-  const stats = useMemo(() => {
-    const averageScore =
-      matches.length === 0
-        ? 0
-        : Math.round(
-            matches.reduce(
-              (total, match) =>
-                total + match.score,
-              0,
-            ) / matches.length,
+          return (
+            matchesSearch &&
+            matchesStatus
           );
+        },
+      );
+    }, [
+      matches,
+      search,
+      statusFilter,
+    ]);
 
-    return [
-      {
-        label: "Total Matches",
-        value: matches.length,
-        icon: GitBranch,
-        sub: "All generated matches",
-      },
-      {
-        label: "Pending",
-        value: matches.filter(
+  const totalPages =
+    Math.max(
+      1,
+      Math.ceil(
+        filteredMatches.length /
+          ITEMS_PER_PAGE,
+      ),
+    );
+
+  useEffect(() => {
+    if (
+      currentPage >
+      totalPages
+    ) {
+      setCurrentPage(
+        totalPages,
+      );
+    }
+  }, [
+    currentPage,
+    totalPages,
+  ]);
+
+  const paginatedMatches =
+    useMemo(() => {
+      const startIndex =
+        (currentPage -
+          1) *
+        ITEMS_PER_PAGE;
+
+      return filteredMatches.slice(
+        startIndex,
+        startIndex +
+          ITEMS_PER_PAGE,
+      );
+    }, [
+      filteredMatches,
+      currentPage,
+    ]);
+
+  const visiblePages =
+    useMemo(() => {
+      const pages:
+        number[] = [];
+
+      const startPage =
+        Math.max(
+          1,
+          currentPage -
+            2,
+        );
+
+      const endPage =
+        Math.min(
+          totalPages,
+          currentPage +
+            2,
+        );
+
+      for (
+        let page =
+          startPage;
+        page <=
+        endPage;
+        page += 1
+      ) {
+        pages.push(
+          page,
+        );
+      }
+
+      return pages;
+    }, [
+      currentPage,
+      totalPages,
+    ]);
+
+  const stats =
+    useMemo(() => {
+      const averageScore =
+        matches.length ===
+        0
+          ? 0
+          : Math.round(
+              matches.reduce(
+                (
+                  total,
+                  match,
+                ) =>
+                  total +
+                  match.score,
+                0,
+              ) /
+                matches.length,
+            );
+
+      const activeMatches =
+        matches.filter(
           (match) =>
-            match.status === "PENDING",
-        ).length,
-        icon: Clock3,
-        sub: "Awaiting approval",
-      },
-      {
-        label: "Active",
-        value: matches.filter(
+            match.status ===
+            "ACTIVE",
+        ).length;
+
+      const engagedMatches =
+        matches.filter(
           (match) =>
-            match.status === "ACTIVE",
-        ).length,
-        icon: UserCheck,
-        sub: "Approved matches",
-      },
-      {
-        label: "Average Score",
-        value: `${averageScore}%`,
-        icon: Target,
-        sub: "Matching quality",
-      },
-    ];
-  }, [matches]);
+            match.status ===
+              "CONTACTED" ||
+            match.status ===
+              "COMPLETED",
+        ).length;
+
+      return [
+        {
+          label:
+            "Smart Matches",
+
+          value:
+            matches.length,
+
+          icon:
+            Sparkles,
+
+          sub:
+            "Generated automatically",
+        },
+
+        {
+          label:
+            "Active",
+
+          value:
+            activeMatches,
+
+          icon:
+            UserCheck,
+
+          sub:
+            "Activated automatically",
+        },
+
+        {
+          label:
+            "Engaged",
+
+          value:
+            engagedMatches,
+
+          icon:
+            GitBranch,
+
+          sub:
+            "Contacted or completed",
+        },
+
+        {
+          label:
+            "Average Score",
+
+          value:
+            `${averageScore}%`,
+
+          icon:
+            Target,
+
+          sub:
+            "Matching quality",
+        },
+      ];
+    }, [
+      matches,
+    ]);
 
   const firstVisibleMatch =
-    filteredMatches.length === 0
+    filteredMatches.length ===
+    0
       ? 0
-      : (currentPage - 1) *
+      : (currentPage -
+            1) *
           ITEMS_PER_PAGE +
         1;
 
-  const lastVisibleMatch = Math.min(
-    currentPage * ITEMS_PER_PAGE,
-    filteredMatches.length,
-  );
+  const lastVisibleMatch =
+    Math.min(
+      currentPage *
+        ITEMS_PER_PAGE,
+      filteredMatches.length,
+    );
 
-  async function handleApprove(
-    match: MatchItem,
+  if (
+    loading
   ) {
-    if (match.status !== "PENDING") {
-      toast.warning(
-        "Action unavailable",
-        "Only pending matches can be approved.",
-      );
-      return;
-    }
-
-    const token = getToken();
-
-    if (!token) {
-      router.replace("/login");
-      return;
-    }
-
-    setProcessingId(match.id);
-    setProcessingAction("approve");
-
-    try {
-      const updated = await approveMatch(
-        token,
-        match.id,
-      );
-
-      setMatches((currentMatches) =>
-        currentMatches.map((item) =>
-          item.id === match.id
-            ? {
-                ...item,
-                ...updated,
-              }
-            : item,
-        ),
-      );
-
-      toast.success(
-        "Match approved",
-        "The match is now active.",
-      );
-    } catch (error) {
-      toast.error(
-        "Approval failed",
-        error instanceof Error
-          ? error.message
-          : "Unable to approve match.",
-      );
-    } finally {
-      setProcessingId(null);
-      setProcessingAction(null);
-    }
-  }
-
-  function requestRejectMatch(
-    match: MatchItem,
-  ) {
-    if (match.status !== "PENDING") {
-      toast.warning(
-        "Action unavailable",
-        "Only pending matches can be rejected.",
-      );
-      return;
-    }
-
-    setMatchToReject(match);
-  }
-
-  async function confirmRejectMatch() {
-    if (
-      !matchToReject ||
-      rejectingMatch
-    ) {
-      return;
-    }
-
-    const token = getToken();
-
-    if (!token) {
-      router.replace("/login");
-      return;
-    }
-
-    setRejectingMatch(true);
-    setProcessingId(matchToReject.id);
-    setProcessingAction("reject");
-
-    try {
-      const updated = await rejectMatch(
-        token,
-        matchToReject.id,
-      );
-
-      setMatches((currentMatches) =>
-        currentMatches.map((item) =>
-          item.id === matchToReject.id
-            ? {
-                ...item,
-                ...updated,
-              }
-            : item,
-        ),
-      );
-
-      toast.success(
-        "Match rejected",
-        "The match was cancelled.",
-      );
-
-      setMatchToReject(null);
-    } catch (error) {
-      toast.error(
-        "Rejection failed",
-        error instanceof Error
-          ? error.message
-          : "Unable to reject match.",
-      );
-    } finally {
-      setRejectingMatch(false);
-      setProcessingId(null);
-      setProcessingAction(null);
-    }
-  }
-
-  if (loading) {
-    return <MatchingPageSkeleton />;
+    return (
+      <MatchingPageSkeleton />
+    );
   }
 
   return (
-    <>
-      <div className="space-y-8">
-      <div>
-        <h1 className="text-[42px] font-semibold leading-none tracking-[-0.02em] text-[#0F2340] md:text-[52px]">
-          Matching System
-        </h1>
+    <div className="space-y-8">
+      <div className="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
+        <div>
+          <h1 className="text-[42px] font-semibold leading-none tracking-[-0.02em] text-[#0F2340] md:text-[52px]">
+            Smart Matching
+          </h1>
 
-        <p className="mt-3 text-[18px] text-[#667085]">
-          Review and approve
-          buyer-professional matches.
-        </p>
+          <p className="mt-3 max-w-[760px] text-[18px] leading-8 text-[#667085]">
+            Monitor automatically
+            generated buyer-professional
+            matches and their engagement
+            progress.
+          </p>
+        </div>
+
+        <div className="flex max-w-[560px] items-start gap-4 rounded-[24px] border border-[#D7E3F0] bg-[#F4F8FC] p-5">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#1B365D] text-white">
+            <Bot className="h-6 w-6" />
+          </div>
+
+          <div>
+            <p className="font-semibold text-[#0F2340]">
+              Automatic Matching Active
+            </p>
+
+            <p className="mt-1 text-sm leading-6 text-[#667085]">
+              Eligible verified professionals
+              are scored automatically.
+              Matches reaching the required
+              threshold are activated without
+              administrator approval.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {stats.map((item) => {
-          const Icon = item.icon;
+        {stats.map(
+          (item) => {
+            const Icon =
+              item.icon;
 
-          return (
-            <div
-              key={item.label}
-              className="rounded-[28px] border border-[#E4E7EC] bg-white p-7 shadow-[0_4px_20px_rgba(15,35,64,0.04)]"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EEF3F8] text-[#1B365D]">
-                <Icon className="h-6 w-6" />
+            return (
+              <div
+                key={
+                  item.label
+                }
+                className="rounded-[28px] border border-[#E4E7EC] bg-white p-7 shadow-[0_4px_20px_rgba(15,35,64,0.04)]"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EEF3F8] text-[#1B365D]">
+                  <Icon className="h-6 w-6" />
+                </div>
+
+                <p className="mt-10 text-[48px] font-semibold leading-none text-[#0F2340]">
+                  {
+                    item.value
+                  }
+                </p>
+
+                <p className="mt-3 text-[18px] text-[#344054]">
+                  {
+                    item.label
+                  }
+                </p>
+
+                <p className="mt-3 text-[15px] text-[#667085]">
+                  {
+                    item.sub
+                  }
+                </p>
               </div>
-
-              <p className="mt-10 text-[48px] font-semibold leading-none text-[#0F2340]">
-                {item.value}
-              </p>
-
-              <p className="mt-3 text-[18px] text-[#344054]">
-                {item.label}
-              </p>
-
-              <p className="mt-3 text-[15px] text-[#667085]">
-                {item.sub}
-              </p>
-            </div>
-          );
-        })}
+            );
+          },
+        )}
       </div>
 
       <section className="overflow-hidden rounded-[28px] border border-[#E4E7EC] bg-white shadow-[0_4px_20px_rgba(15,35,64,0.04)]">
@@ -509,12 +693,19 @@ export default function MatchingPage() {
               <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-[#98A2B3]" />
 
               <input
-                value={search}
-                onChange={(event) =>
-                  setSearch(event.target.value)
+                value={
+                  search
+                }
+                onChange={(
+                  event,
+                ) =>
+                  setSearch(
+                    event.target
+                      .value,
+                  )
                 }
                 placeholder="Search by buyer, professional, company or type..."
-                aria-label="Search matches"
+                aria-label="Search smart matches"
                 className="h-14 w-full rounded-2xl border border-[#D0D5DD] bg-white pl-14 pr-4 text-[17px] text-[#0F2340] outline-none placeholder:text-[#98A2B3] focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
               />
             </div>
@@ -523,83 +714,108 @@ export default function MatchingPage() {
               {(
                 [
                   "ALL",
-                  "PENDING",
                   "ACTIVE",
                   "CONTACTED",
                   "COMPLETED",
                   "CANCELLED",
+                  "PENDING",
                 ] as const
-              ).map((status) => (
-                <button
-                  key={status}
-                  type="button"
-                  onClick={() =>
-                    setStatusFilter(status)
-                  }
-                  className={`h-11 rounded-2xl px-5 text-sm font-semibold transition ${
-                    statusFilter === status
-                      ? "bg-[#1B365D] text-white"
-                      : "border border-[#D0D5DD] bg-white text-[#1B365D] hover:bg-[#F8F9FA]"
-                  }`}
-                >
-                  {status}
-                </button>
-              ))}
+              ).map(
+                (
+                  status,
+                ) => (
+                  <button
+                    key={
+                      status
+                    }
+                    type="button"
+                    onClick={() =>
+                      setStatusFilter(
+                        status,
+                      )
+                    }
+                    className={`h-11 rounded-2xl px-5 text-sm font-semibold transition ${
+                      statusFilter ===
+                      status
+                        ? "bg-[#1B365D] text-white"
+                        : "border border-[#D0D5DD] bg-white text-[#1B365D] hover:bg-[#F8F9FA]"
+                    }`}
+                  >
+                    {status ===
+                    "PENDING"
+                      ? "LEGACY PENDING"
+                      : status}
+                  </button>
+                ),
+              )}
             </div>
           </div>
         </div>
 
         <div className="divide-y divide-[#EAECF0]">
           {paginatedMatches.map(
-            (match) => {
-              const isProcessing =
-                processingId === match.id;
-
-              const canModerate =
-                match.status === "PENDING";
+            (
+              match,
+            ) => {
+              const automation =
+                getAutomationLabel(
+                  match.status,
+                );
 
               return (
                 <article
-                  key={match.id}
+                  key={
+                    match.id
+                  }
                   className="p-7 transition hover:bg-[#FAFBFC]"
                 >
                   <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
                     <div className="flex min-w-0 items-start gap-5 xl:w-[34%]">
                       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#475467_0%,#D4AF37_100%)] text-[20px] font-semibold text-white">
                         {initials(
-                          match.lead?.fullName,
-                          match.lead?.email,
+                          match
+                            .lead
+                            ?.fullName,
+                          match
+                            .lead
+                            ?.email,
                         )}
                       </div>
 
                       <div className="min-w-0">
                         <p className="truncate text-[19px] font-semibold text-[#0F2340]">
-                          {match.lead?.fullName ||
-                            "Unnamed lead"}
+                          {match.lead
+                            ?.fullName ||
+                            "Unnamed buyer"}
                         </p>
 
                         <p className="mt-1 truncate text-[15px] text-[#667085]">
-                          {match.lead?.email || "-"}
+                          {match.lead
+                            ?.email ||
+                            "-"}
                         </p>
 
                         <p className="mt-4 text-[16px] text-[#344054]">
                           Interest:{" "}
-                          {match.lead?.interest ||
+                          {match.lead
+                            ?.interest ||
                             "-"}
                         </p>
 
                         <p className="mt-1 text-[15px] leading-6 text-[#667085]">
                           Budget:{" "}
-                          {match.lead?.budget ||
+                          {match.lead
+                            ?.budget ||
                             "-"}
                           {" • "}
                           Location:{" "}
-                          {match.lead?.location ||
+                          {match.lead
+                            ?.location ||
                             "-"}
                         </p>
 
                         <p className="mt-2 text-xs text-[#98A2B3]">
-                          Generated{" "}
+                          Auto-generated{" "}
                           {formatDate(
                             match.createdAt,
                           )}
@@ -608,19 +824,26 @@ export default function MatchingPage() {
                     </div>
 
                     <div className="flex flex-col gap-2 rounded-2xl bg-[#F8FAFC] p-5 xl:w-[31%]">
-                      <p className="text-sm font-semibold uppercase tracking-[0.08em] text-[#667085]">
-                        Recommended Professional
-                      </p>
+                      <div className="flex items-center gap-2">
+                        <Sparkles className="h-4 w-4 text-[#C9A227]" />
+
+                        <p className="text-sm font-semibold uppercase tracking-[0.08em] text-[#667085]">
+                          Smart Recommended
+                          Professional
+                        </p>
+                      </div>
 
                       <p className="text-[18px] font-semibold text-[#0F2340]">
-                        {match.professional.user
+                        {match.professional
+                          .user
                           .fullName ||
                           "Unnamed professional"}
                       </p>
 
                       <p className="text-[15px] text-[#667085]">
                         {formatProfessionalType(
-                          match.professional
+                          match
+                            .professional
                             .professionalType,
                         )}
                       </p>
@@ -634,9 +857,12 @@ export default function MatchingPage() {
                       <p className="text-sm text-[#667085]">
                         Rating:{" "}
                         {Number(
-                          match.professional.rating ||
+                          match.professional
+                            .rating ||
                             0,
-                        ).toFixed(1)}
+                        ).toFixed(
+                          1,
+                        )}
                       </p>
                     </div>
 
@@ -644,7 +870,11 @@ export default function MatchingPage() {
                       <div className="flex flex-wrap items-center gap-3">
                         <div className="inline-flex items-center gap-2 rounded-full bg-[#FFF7E2] px-4 py-2 text-sm font-semibold text-[#B78103]">
                           <Star className="h-4 w-4 fill-current" />
-                          {match.score}%
+
+                          {
+                            match.score
+                          }
+                          %
                         </div>
 
                         <span
@@ -652,12 +882,25 @@ export default function MatchingPage() {
                             match.status,
                           )}`}
                         >
-                          {match.status}
+                          {
+                            match.status
+                          }
+                        </span>
+
+                        <span
+                          className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold ${automation.className}`}
+                        >
+                          <Sparkles className="h-4 w-4" />
+
+                          {
+                            automation.label
+                          }
                         </span>
                       </div>
 
                       <div className="flex flex-wrap gap-3 xl:justify-end">
-                        {match.professional.user
+                        {match.professional
+                          .user
                           .email && (
                           <a
                             href={`mailto:${match.professional.user.email}`}
@@ -668,53 +911,39 @@ export default function MatchingPage() {
                           </a>
                         )}
 
-                        {canModerate ? (
-                          <>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                handleApprove(
-                                  match,
-                                )
-                              }
-                              disabled={
-                                isProcessing
-                              }
-                              className="inline-flex h-11 items-center gap-2 rounded-xl bg-[#1B365D] px-4 text-sm font-semibold text-white transition hover:bg-[#10284D] disabled:cursor-not-allowed disabled:opacity-50"
-                            >
-                              <CheckCircle2 className="h-4 w-4" />
+                        {match.status ===
+                          "ACTIVE" && (
+                          <span className="inline-flex h-11 items-center gap-2 rounded-xl bg-[#ECFDF3] px-4 text-sm font-semibold text-[#15803D]">
+                            <UserCheck className="h-4 w-4" />
+                            Activated Automatically
+                          </span>
+                        )}
 
-                              {isProcessing &&
-                              processingAction ===
-                                "approve"
-                                ? "Approving..."
-                                : "Approve"}
-                            </button>
+                        {match.status ===
+                          "CONTACTED" && (
+                          <span className="inline-flex h-11 items-center rounded-xl bg-[#EFF6FF] px-4 text-sm font-semibold text-[#2563EB]">
+                            Professional Contacted Buyer
+                          </span>
+                        )}
 
-                            <button
-                              type="button"
-                              onClick={() =>
-                                requestRejectMatch(
-                                  match,
-                                )
-                              }
-                              disabled={
-                                isProcessing
-                              }
-                              className="inline-flex h-11 items-center gap-2 rounded-xl border border-red-200 px-4 text-sm font-semibold text-red-600 transition hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-50"
-                            >
-                              <ShieldX className="h-4 w-4" />
+                        {match.status ===
+                          "COMPLETED" && (
+                          <span className="inline-flex h-11 items-center rounded-xl bg-[#F5F3FF] px-4 text-sm font-semibold text-[#7C3AED]">
+                            Journey Completed
+                          </span>
+                        )}
 
-                              {isProcessing &&
-                              processingAction ===
-                                "reject"
-                                ? "Rejecting..."
-                                : "Reject"}
-                            </button>
-                          </>
-                        ) : (
-                          <span className="inline-flex h-11 items-center rounded-xl bg-[#F2F4F7] px-4 text-sm font-semibold text-[#667085]">
-                            Moderation completed
+                        {match.status ===
+                          "CANCELLED" && (
+                          <span className="inline-flex h-11 items-center rounded-xl bg-[#FEF2F2] px-4 text-sm font-semibold text-[#DC2626]">
+                            Match Cancelled
+                          </span>
+                        )}
+
+                        {match.status ===
+                          "PENDING" && (
+                          <span className="inline-flex h-11 items-center rounded-xl bg-[#FFFBEB] px-4 text-sm font-semibold text-[#A16207]">
+                            Historical Match
                           </span>
                         )}
                       </div>
@@ -725,36 +954,44 @@ export default function MatchingPage() {
             },
           )}
 
-          {filteredMatches.length === 0 && (
+          {filteredMatches.length ===
+            0 && (
             <div className="p-14 text-center">
               <GitBranch className="mx-auto h-11 w-11 text-[#98A2B3]" />
 
               <p className="mt-4 font-semibold text-[#344054]">
-                No matches found
+                No smart matches found
               </p>
 
               <p className="mt-2 text-sm text-[#667085]">
-                Try another search or status
-                filter.
+                Try another search
+                or status filter.
               </p>
             </div>
           )}
         </div>
 
-        {filteredMatches.length > 0 && (
+        {filteredMatches.length >
+          0 && (
           <div className="flex flex-col gap-4 border-t border-[#E4E7EC] px-7 py-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-[#667085]">
               Showing{" "}
               <span className="font-semibold text-[#0F2340]">
-                {firstVisibleMatch}
+                {
+                  firstVisibleMatch
+                }
               </span>{" "}
               to{" "}
               <span className="font-semibold text-[#0F2340]">
-                {lastVisibleMatch}
+                {
+                  lastVisibleMatch
+                }
               </span>{" "}
               of{" "}
               <span className="font-semibold text-[#0F2340]">
-                {filteredMatches.length}
+                {
+                  filteredMatches.length
+                }
               </span>{" "}
               matches
             </p>
@@ -762,10 +999,20 @@ export default function MatchingPage() {
             <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
-                disabled={currentPage === 1}
+                disabled={
+                  currentPage ===
+                  1
+                }
                 onClick={() =>
-                  setCurrentPage((page) =>
-                    Math.max(1, page - 1),
+                  setCurrentPage(
+                    (
+                      page,
+                    ) =>
+                      Math.max(
+                        1,
+                        page -
+                          1,
+                      ),
                   )
                 }
                 className="inline-flex h-10 items-center gap-2 rounded-xl border border-[#D0D5DD] px-4 text-sm font-semibold text-[#344054] transition hover:bg-[#F8F9FA] disabled:cursor-not-allowed disabled:opacity-40"
@@ -775,9 +1022,13 @@ export default function MatchingPage() {
               </button>
 
               {visiblePages.map(
-                (pageNumber) => (
+                (
+                  pageNumber,
+                ) => (
                   <button
-                    key={pageNumber}
+                    key={
+                      pageNumber
+                    }
                     type="button"
                     onClick={() =>
                       setCurrentPage(
@@ -791,7 +1042,9 @@ export default function MatchingPage() {
                         : "border border-[#D0D5DD] bg-white text-[#344054] hover:bg-[#F8F9FA]"
                     }`}
                   >
-                    {pageNumber}
+                    {
+                      pageNumber
+                    }
                   </button>
                 ),
               )}
@@ -799,14 +1052,19 @@ export default function MatchingPage() {
               <button
                 type="button"
                 disabled={
-                  currentPage === totalPages
+                  currentPage ===
+                  totalPages
                 }
                 onClick={() =>
-                  setCurrentPage((page) =>
-                    Math.min(
-                      totalPages,
-                      page + 1,
-                    ),
+                  setCurrentPage(
+                    (
+                      page,
+                    ) =>
+                      Math.min(
+                        totalPages,
+                        page +
+                          1,
+                      ),
                   )
                 }
                 className="inline-flex h-10 items-center gap-2 rounded-xl border border-[#D0D5DD] px-4 text-sm font-semibold text-[#344054] transition hover:bg-[#F8F9FA] disabled:cursor-not-allowed disabled:opacity-40"
@@ -818,110 +1076,7 @@ export default function MatchingPage() {
           </div>
         )}
       </section>
-      </div>
-
-      {matchToReject && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0F2340]/60 px-4 backdrop-blur-sm"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="reject-match-title"
-          onMouseDown={(event) => {
-            if (
-              event.target ===
-                event.currentTarget &&
-              !rejectingMatch
-            ) {
-              setMatchToReject(null);
-            }
-          }}
-        >
-          <div className="relative w-full max-w-[500px] rounded-[28px] border border-[#E4E7EC] bg-white p-7 shadow-[0_24px_80px_rgba(15,35,64,0.30)]">
-            <button
-              type="button"
-              disabled={rejectingMatch}
-              onClick={() =>
-                setMatchToReject(null)
-              }
-              aria-label="Close rejection confirmation"
-              className="absolute right-5 top-5 rounded-full p-2 text-[#667085] transition hover:bg-[#F2F4F7] disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <X className="h-5 w-5" />
-            </button>
-
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#FEE2E2] text-[#DC2626]">
-              <ShieldX className="h-7 w-7" />
-            </div>
-
-            <h2
-              id="reject-match-title"
-              className="mt-5 text-[26px] font-semibold tracking-[-0.02em] text-[#0F2340]"
-            >
-              Reject this match?
-            </h2>
-
-            <p className="mt-3 text-[15px] leading-7 text-[#667085]">
-              You are about to reject the match
-              between{" "}
-              <span className="font-semibold text-[#0F2340]">
-                {matchToReject.lead
-                  ?.fullName ||
-                  "this buyer"}
-              </span>{" "}
-              and{" "}
-              <span className="font-semibold text-[#0F2340]">
-                {matchToReject.professional
-                  .user.fullName ||
-                  matchToReject.professional
-                    .companyName ||
-                  "this professional"}
-              </span>
-              .
-            </p>
-
-            <div className="mt-4 rounded-2xl border border-[#FECACA] bg-[#FEF2F2] p-4">
-              <p className="text-sm font-medium text-[#B42318]">
-                Once rejected:
-              </p>
-
-              <p className="mt-2 text-sm leading-6 text-[#667085]">
-                The match will be cancelled and
-                will no longer be available for
-                approval.
-              </p>
-            </div>
-
-            <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-              <button
-                type="button"
-                disabled={rejectingMatch}
-                onClick={() =>
-                  setMatchToReject(null)
-                }
-                className="h-12 rounded-xl border border-[#D0D5DD] px-6 font-semibold text-[#344054] transition hover:bg-[#F8F9FA] disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                Cancel
-              </button>
-
-              <button
-                type="button"
-                disabled={rejectingMatch}
-                onClick={() =>
-                  void confirmRejectMatch()
-                }
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[#DC2626] px-6 font-semibold text-white transition hover:bg-[#B91C1C] disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                <ShieldX className="h-5 w-5" />
-
-                {rejectingMatch
-                  ? "Rejecting..."
-                  : "Reject match"}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+    </div>
   );
 }
 
@@ -930,14 +1085,22 @@ function MatchingPageSkeleton() {
     <div className="space-y-8">
       <div className="space-y-3">
         <div className="h-12 w-80 animate-pulse rounded-xl bg-[#E9EDF3]" />
+
         <div className="h-6 w-96 animate-pulse rounded-xl bg-[#E9EDF3]" />
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {Array.from({ length: 4 }).map(
-          (_, index) => (
+        {Array.from({
+          length: 4,
+        }).map(
+          (
+            _,
+            index,
+          ) => (
             <div
-              key={index}
+              key={
+                index
+              }
               className="h-60 animate-pulse rounded-[28px] bg-[#E9EDF3]"
             />
           ),
