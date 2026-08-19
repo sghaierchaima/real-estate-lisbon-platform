@@ -2,21 +2,18 @@ import {
   BadRequestException,
   ForbiddenException,
   Injectable,
+  Logger,
   NotFoundException,
 } from '@nestjs/common';
 
 import {
   LeadStatus,
-  NotificationType,
-  ProfessionalType,
   PropertyStatus,
   Role,
-  VerificationStatus,
 } from '@prisma/client';
 
 import { PrismaService } from '../../database/prisma.service';
 
-import { CreateLeadDto } from './dto/create-lead.dto';
 import { UpdateLeadDto } from './dto/update-lead.dto';
 import { CreateCalculatorLeadDto } from './dto/create-calculator-lead.dto';
 import { CreateNeighborhoodLeadDto } from './dto/create-neighborhood-lead.dto';
@@ -32,6 +29,7 @@ import { AutoMatchingService } from '../matching/auto-matching.service';
 
 @Injectable()
 export class LeadsService {
+  private readonly logger = new Logger(LeadsService.name);
   constructor(
     private readonly prisma: PrismaService,
     private readonly leadScoringService: LeadScoringService,
@@ -42,49 +40,67 @@ export class LeadsService {
   // ============================================================
   // BASIC LEAD CREATION
   // ============================================================
+  private async finalizeBuyerLead(leadId: string) {
+  let autoMatching:
+    | Awaited<ReturnType<AutoMatchingService['matchLead']>>
+    | null = null;
 
-  async create(
-    dto: CreateLeadDto,
-    user: {
-      id: string;
-      role: Role;
-    },
-  ) {
-    const quality =
-      this.leadScoringService.calculateQuality({
-        phone: dto.phone,
-        budget: dto.budget,
-        location: dto.location,
-        interest: dto.interest,
-      });
-
-    const lead =
-      await this.prisma.lead.create({
-        data: {
-          userId: user.id,
-          fullName: dto.fullName,
-          email: dto.email,
-          phone: dto.phone,
-          source: dto.source,
-          interest: dto.interest,
-          location: dto.location,
-          budget: dto.budget,
-
-          quality:
-            dto.quality || quality,
-
-          status:
-            dto.status ||
-            LeadStatus.NEW,
-        },
-      });
-
-    await this.profileScoreService.updateUserScore(
-      user.id,
+  try {
+    autoMatching =
+      await this.autoMatchingService.matchLead(leadId);
+  } catch (error) {
+    this.logger.error(
+      `Automatic matching failed for lead ${leadId}`,
+      error instanceof Error
+        ? error.stack
+        : String(error),
     );
-
-    return lead;
   }
+
+  /*
+   * AutoMatchingService peut avoir modifié le Lead :
+   *
+   * NEW
+   *   ↓
+   * automatic matching
+   *   ↓
+   * MATCHED si au moins un professionnel compatible existe
+   *
+   * On recharge donc toujours le Lead depuis la DB.
+   */
+  const lead = await this.prisma.lead.findUnique({
+    where: {
+      id: leadId,
+    },
+
+    include: {
+      matches: {
+        orderBy: {
+          score: 'desc',
+        },
+
+        include: {
+          professional: {
+            include: {
+              user: true,
+            },
+          },
+        },
+      },
+    },
+  });
+
+  if (!lead) {
+    throw new NotFoundException(
+      'Lead not found after automatic matching',
+    );
+  }
+
+  return {
+    ...lead,
+    autoMatching,
+  };
+}
 
   // ============================================================
   // FIND ALL
@@ -241,6 +257,22 @@ export class LeadsService {
       );
     }
 
+    // MATCHED is exclusively managed by the automatic matching engine.
+    if (dto.status === LeadStatus.MATCHED) {
+      throw new BadRequestException(
+        'MATCHED is managed automatically by the smart matching system',
+      );
+    }
+
+    if (
+      lead.status === LeadStatus.MATCHED &&
+      dto.status === LeadStatus.NEW
+    ) {
+      throw new BadRequestException(
+        'A matched lead cannot be manually returned to NEW',
+      );
+    }
+
     const quality =
       this.leadScoringService.calculateQuality({
         phone:
@@ -347,166 +379,80 @@ export class LeadsService {
       role: Role;
     },
   ) {
-    if (
-      user.role !== Role.BUYER
-    ) {
+    if (user.role !== Role.BUYER) {
       throw new ForbiddenException(
         'Only buyers can create calculator requests',
       );
     }
 
-    const buyer =
-      await this.prisma.user.findUnique({
-        where: {
-          id: user.id,
-        },
-      });
+    const buyer = await this.prisma.user.findUnique({
+      where: { id: user.id },
+    });
 
     if (!buyer) {
-      throw new NotFoundException(
-        'Buyer not found',
-      );
+      throw new NotFoundException('Buyer not found');
     }
 
-    const cleanEmail =
-      dto.email
-        .trim()
-        .toLowerCase();
+    const cleanEmail = dto.email.trim().toLowerCase();
+    const cleanSource = dto.source || 'Mortgage Calculator';
+    const cleanInterest = dto.interest || 'Mortgage / Property Purchase';
+    const cleanLocation = dto.location || 'Portugal';
+    const cleanBudget = dto.budget;
 
-    const cleanSource =
-      dto.source ||
-      'Mortgage Calculator';
+    const quality = this.leadScoringService.calculateQuality({
+      phone: dto.phone || buyer.phone,
+      budget: cleanBudget,
+      location: cleanLocation,
+      interest: cleanInterest,
+    });
 
-    const cleanInterest =
-      dto.interest ||
-      'Mortgage / Property Purchase';
-
-    const cleanLocation =
-      dto.location ||
-      'Portugal';
-
-    const cleanBudget =
-      dto.budget;
-
-    const quality =
-      this.leadScoringService.calculateQuality({
-        phone: dto.phone,
-        budget: cleanBudget,
-        location: cleanLocation,
+    const existingLead = await this.prisma.lead.findFirst({
+      where: {
+        userId: user.id,
+        source: cleanSource,
         interest: cleanInterest,
-      });
-
-    const existingUser =
-      await this.prisma.user.findUnique({
-        where: {
-          email: cleanEmail,
+        budget: cleanBudget,
+        status: {
+          in: [
+            LeadStatus.NEW,
+            LeadStatus.CONTACTED,
+            LeadStatus.MATCHED,
+          ],
         },
-      });
-
-    const existingLead =
-      await this.prisma.lead.findFirst({
-        where: {
-          email: cleanEmail,
-          source: cleanSource,
-          interest: cleanInterest,
-          budget: cleanBudget,
-
-          status: {
-            in: [
-              LeadStatus.NEW,
-              LeadStatus.CONTACTED,
-              LeadStatus.MATCHED,
-            ],
-          },
-        },
-
-        orderBy: {
-          createdAt: 'desc',
-        },
-      });
+      },
+      orderBy: { createdAt: 'desc' },
+    });
 
     if (existingLead) {
-      if (
-        existingUser &&
-        !existingLead.userId
-      ) {
-        const linkedLead =
-          await this.prisma.lead.update({
-            where: {
-              id:
-                existingLead.id,
-            },
-
-            data: {
-              userId:
-                existingUser.id,
-
-              fullName:
-                existingLead.fullName ||
-                dto.fullName,
-
-              phone:
-                existingLead.phone ||
-                dto.phone,
-            },
-          });
-
-        await this.profileScoreService.updateUserScore(
-          existingUser.id,
-        );
-
-        return linkedLead;
+      if (existingLead.status === LeadStatus.NEW) {
+        const processedLead = await this.finalizeBuyerLead(existingLead.id);
+        return { ...processedLead, alreadyExists: true };
       }
 
-      return {
-        ...existingLead,
-        alreadyExists: true,
-      };
+      return { ...existingLead, alreadyExists: true };
     }
 
-    const lead =
-      await this.prisma.lead.create({
-        data: {
-          userId:
-            existingUser?.id ||
-            null,
+    const lead = await this.prisma.lead.create({
+      data: {
+        userId: user.id,
+        fullName: buyer.fullName || dto.fullName,
+        email: buyer.email || cleanEmail,
+        phone: buyer.phone || dto.phone,
+        source: cleanSource,
+        interest: cleanInterest,
+        location: cleanLocation,
+        budget: cleanBudget,
+        quality,
+        status: LeadStatus.NEW,
+      },
+    });
 
-          fullName:
-            dto.fullName,
+    await this.profileScoreService.updateUserScore(user.id);
 
-          email:
-            cleanEmail,
-
-          phone:
-            dto.phone,
-
-          source:
-            cleanSource,
-
-          interest:
-            cleanInterest,
-
-          location:
-            cleanLocation,
-
-          budget:
-            cleanBudget,
-
-          quality,
-
-          status:
-            LeadStatus.NEW,
-        },
-      });
-
-    if (existingUser) {
-      await this.profileScoreService.updateUserScore(
-        existingUser.id,
-      );
-    }
+    const processedLead = await this.finalizeBuyerLead(lead.id);
 
     return {
-      ...lead,
+      ...processedLead,
       alreadyExists: false,
     };
   }
@@ -595,6 +541,16 @@ export class LeadsService {
       });
 
     if (existingLead) {
+      if (existingLead.status === LeadStatus.NEW) {
+        const processedLead =
+          await this.finalizeBuyerLead(existingLead.id);
+
+        return {
+          ...processedLead,
+          alreadyExists: true,
+        };
+      }
+
       return {
         ...existingLead,
         alreadyExists: true,
@@ -650,8 +606,11 @@ export class LeadsService {
       user.id,
     );
 
+    const processedLead =
+      await this.finalizeBuyerLead(lead.id);
+
     return {
-      ...lead,
+      ...processedLead,
       alreadyExists: false,
     };
   }
@@ -726,6 +685,16 @@ export class LeadsService {
       });
 
     if (existingLead) {
+      if (existingLead.status === LeadStatus.NEW) {
+        const processedLead =
+          await this.finalizeBuyerLead(existingLead.id);
+
+        return {
+          ...processedLead,
+          alreadyExists: true,
+        };
+      }
+
       return {
         ...existingLead,
         alreadyExists: true,
@@ -772,8 +741,11 @@ export class LeadsService {
       user.id,
     );
 
+    const processedLead =
+      await this.finalizeBuyerLead(lead.id);
+
     return {
-      ...lead,
+      ...processedLead,
       alreadyExists: false,
     };
   }
@@ -1328,19 +1300,46 @@ export class LeadsService {
       });
 
     if (existingLead) {
-      return {
-        found: false,
+  /*
+   * Un ancien Lead encore NEW doit repasser
+   * automatiquement dans le moteur de matching.
+   *
+   * Aucune intervention Admin.
+   */
+  if (existingLead.status === LeadStatus.NEW) {
+    const processedLead =
+      await this.finalizeBuyerLead(
+        existingLead.id,
+      );
 
-        lead:
-          existingLead,
+    return {
+      found: false,
 
-        notifiedAgents:
-          0,
+      lead: processedLead,
 
-        alreadyExists:
-          true,
-      };
-    }
+      notifiedAgents:
+        processedLead.autoMatching?.matched
+          ? processedLead.autoMatching.count
+          : 0,
+
+      alreadyExists: true,
+    };
+  }
+
+  /*
+   * MATCHED / CONTACTED :
+   * il a déjà été traité.
+   */
+  return {
+    found: false,
+
+    lead: existingLead,
+
+    notifiedAgents: 0,
+
+    alreadyExists: true,
+  };
+}
 
     const quality =
       this.leadScoringService.calculateQuality({
@@ -1436,93 +1435,25 @@ export class LeadsService {
         },
       });
 
-    /*
-     * ==========================================================
-     * STEP 6
-     * Find ACTIVE PROPERTY AGENTS.
-     * ==========================================================
-     */
-
-    const activePropertyAgents =
-      await this.prisma.professionalProfile.findMany(
-        {
-          where: {
-            professionalType:
-              ProfessionalType.PROPERTY_AGENT,
-
-            verificationStatus:
-              VerificationStatus.ACTIVE,
-          },
-
-          select: {
-            userId:
-              true,
-          },
-        },
-      );
-
-    /*
-     * ==========================================================
-     * STEP 7
-     * Notify active property agents.
-     * ==========================================================
-     */
-
-    if (
-      activePropertyAgents.length >
-      0
-    ) {
-      await this.prisma.notification.createMany(
-        {
-          data:
-            activePropertyAgents.map(
-              (agent) => ({
-                userId:
-                  agent.userId,
-
-                type:
-                  NotificationType.PROPERTY_REQUEST,
-
-                title:
-                  'New buyer property request',
-
-                message:
-                  `A buyer is looking for a ` +
-                  `${
-                    dto.bedrooms
-                      ? `${dto.bedrooms}-bedroom `
-                      : ''
-                  }` +
-                  `${
-                    dto.propertyType ||
-                    'property'
-                  } in ${location}` +
-                  `${
-                    numericBudget
-                      ? ` with a maximum budget of €${numericBudget.toLocaleString()}`
-                      : ''
-                  }.`,
-              }),
-            ),
-        },
-      );
-    }
-
     await this.profileScoreService.updateUserScore(
       user.id,
     );
 
+    const processedLead =
+      await this.finalizeBuyerLead(lead.id);
+
     return {
-      found: false,
+  found: false,
 
-      lead,
+  lead: processedLead,
 
-      notifiedAgents:
-        activePropertyAgents.length,
+  notifiedAgents:
+    processedLead.autoMatching?.matched
+      ? processedLead.autoMatching.count
+      : 0,
 
-      alreadyExists:
-        false,
-    };
+  alreadyExists: false,
+};
   }
 
   // ============================================================
@@ -1593,6 +1524,16 @@ export class LeadsService {
       });
 
     if (existingLead) {
+      if (existingLead.status === LeadStatus.NEW) {
+        const processedLead =
+          await this.finalizeBuyerLead(existingLead.id);
+
+        return {
+          ...processedLead,
+          alreadyExists: true,
+        };
+      }
+
       return {
         ...existingLead,
         alreadyExists: true,
@@ -1641,8 +1582,11 @@ export class LeadsService {
       user.id,
     );
 
+    const processedLead =
+      await this.finalizeBuyerLead(lead.id);
+
     return {
-      ...lead,
+      ...processedLead,
       alreadyExists: false,
     };
   }
@@ -1718,6 +1662,16 @@ export class LeadsService {
     });
 
   if (existingLead) {
+    if (existingLead.status === LeadStatus.NEW) {
+      const processedLead =
+        await this.finalizeBuyerLead(existingLead.id);
+
+      return {
+        ...processedLead,
+        alreadyExists: true,
+      };
+    }
+
     return {
       ...existingLead,
       alreadyExists: true,
@@ -1786,20 +1740,15 @@ export class LeadsService {
    *       ↓
    * ACTIVE matches automatically
    */
-  const autoMatching =
-    await this.autoMatchingService
-      .matchLead(
-        lead.id,
-      );
+ const processedLead =
+  await this.finalizeBuyerLead(
+    lead.id,
+  );
 
-  return {
-    ...lead,
-
-    alreadyExists:
-      false,
-
-    autoMatching,
-  };
+return {
+  ...processedLead,
+  alreadyExists: false,
+};
 }
 
   // ============================================================
@@ -1870,10 +1819,19 @@ export class LeadsService {
       });
 
     if (existingLead) {
+      if (existingLead.status === LeadStatus.NEW) {
+        const processedLead =
+          await this.finalizeBuyerLead(existingLead.id);
+
+        return {
+          ...processedLead,
+          alreadyExists: true,
+        };
+      }
+
       return {
         ...existingLead,
-        alreadyExists:
-          true,
+        alreadyExists: true,
       };
     }
 
@@ -1917,10 +1875,12 @@ export class LeadsService {
       user.id,
     );
 
+    const processedLead =
+      await this.finalizeBuyerLead(lead.id);
+
     return {
-      ...lead,
-      alreadyExists:
-        false,
+      ...processedLead,
+      alreadyExists: false,
     };
   }
 
