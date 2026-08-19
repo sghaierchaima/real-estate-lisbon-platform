@@ -5,7 +5,9 @@ import {
   useMemo,
   useState,
 } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+
 import {
   Bell,
   CheckCheck,
@@ -29,7 +31,15 @@ import {
 import { getToken } from "@/lib/session";
 import { useToast } from "@/components/ui/ToastProvider";
 const ITEMS_PER_PAGE = 3;
-function getNotificationIcon(type: string) {
+function getNotificationIcon(
+  type: string,
+) {
+  if (
+    type === "PROPERTY_MATCH"
+  ) {
+    return Home;
+  }
+
   if (type === "MATCH") {
     return GitBranch;
   }
@@ -45,7 +55,15 @@ function getNotificationIcon(type: string) {
   return Bell;
 }
 
-function getTypeBadgeStyle(type: string) {
+function getTypeBadgeStyle(
+  type: string,
+) {
+  if (
+    type === "PROPERTY_MATCH"
+  ) {
+    return "bg-[#DCFCE7] text-[#15803D]";
+  }
+
   if (type === "MATCH") {
     return "bg-[#EDE9FE] text-[#7C3AED]";
   }
@@ -61,7 +79,15 @@ function getTypeBadgeStyle(type: string) {
   return "bg-[#F3F4F6] text-[#475467]";
 }
 
-function getIconStyle(type: string) {
+function getIconStyle(
+  type: string,
+) {
+  if (
+    type === "PROPERTY_MATCH"
+  ) {
+    return "bg-[#DCFCE7] text-[#15803D]";
+  }
+
   if (type === "MATCH") {
     return "bg-[#F3E8FF] text-[#7C3AED]";
   }
@@ -723,7 +749,27 @@ const paginatedNotifications =
                       </div>
 
                       <div className="flex shrink-0 flex-wrap gap-3">
+                        {notification.type ===
+    "PROPERTY_MATCH" &&
+    notification.propertyId && (
+      <Link
+        href={`/properties/${notification.propertyId}`}
+        onClick={() => {
+          if (
+            !notification.isRead
+          ) {
+            void handleMarkAsRead(
+              notification.id,
+            );
+          }
+        }}
+        className="inline-flex h-11 items-center justify-center rounded-xl bg-[#1B365D] px-5 text-sm font-semibold text-white transition hover:bg-[#0F2340]"
+      >
+        View Property
+      </Link>
+    )}
                         {!notification.isRead && (
+                          
                           <button
                             type="button"
                             disabled={

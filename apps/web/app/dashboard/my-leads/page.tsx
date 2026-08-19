@@ -13,7 +13,11 @@ import {
 
 import { getToken, getStoredUser } from "@/lib/session";
 import type { AuthUser } from "@/lib/auth-api";
-import { getLeads, getMyLeads, type Lead } from "@/lib/leads-api";
+import {
+  getMyLeads,
+  updatePropertyAlerts,
+  type Lead,
+} from "@/lib/leads-api";
 import { useToast } from "@/components/ui/ToastProvider";
 
 function qualityBadge(quality: Lead["quality"]) {
@@ -40,6 +44,7 @@ export default function MyLeadsPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
+  const [updatingAlertId, setUpdatingAlertId] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadLeads() {
@@ -69,6 +74,72 @@ export default function MyLeadsPage() {
     loadLeads();
   }, [toast]);
 
+  async function handleTogglePropertyAlerts(
+  lead: Lead,
+) {
+  const token = getToken();
+
+  if (!token) {
+    toast.warning(
+      "Session required",
+      "Please sign in again.",
+    );
+    return;
+  }
+
+  if (updatingAlertId === lead.id) {
+  return;
+}
+
+  const nextEnabled =
+    !Boolean(lead.notificationsEnabled);
+
+  try {
+    setUpdatingAlertId(lead.id);
+
+    const updated =
+      await updatePropertyAlerts(
+        token,
+        lead.id,
+        nextEnabled,
+      );
+
+    setLeads((currentLeads) =>
+      currentLeads.map((item) =>
+        item.id === lead.id
+          ? {
+              ...item,
+              isActive: updated.isActive,
+              notificationsEnabled:
+                updated.notificationsEnabled,
+            }
+          : item,
+      ),
+    );
+
+    if (updated.notificationsEnabled) {
+      toast.success(
+        "Property alerts enabled",
+        "We will notify you when a new property matches this search.",
+      );
+    } else {
+      toast.info(
+        "Property alerts disabled",
+        "Your search remains saved, but you will no longer receive matching property notifications.",
+      );
+    }
+  } catch (error) {
+    toast.error(
+      "Unable to update property alerts",
+      error instanceof Error
+        ? error.message
+        : "Please try again.",
+    );
+  } finally {
+    setUpdatingAlertId(null);
+  }
+}
+
   const filteredLeads = useMemo(() => {
     const q = search.toLowerCase().trim();
 
@@ -84,6 +155,12 @@ export default function MyLeadsPage() {
         lead.interest,
         lead.location,
         lead.budget,
+        lead.searchText,
+
+        lead.propertyType,
+        lead.goal,
+        lead.mustHave?.join(" "),
+        
         lead.quality,
         lead.status,
         bestMatch?.status,
@@ -285,6 +362,95 @@ export default function MyLeadsPage() {
                       )}
                     </div>
                   </div>
+
+                  {lead.source ===
+                    "Property Search Assistant" &&
+                    lead.searchText && (
+                      <div className="mt-6 rounded-[22px] border border-[#DCE4EE] bg-[#F8FAFC] p-5">
+                        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                          <div className="min-w-0">
+                            <div className="flex flex-wrap items-center gap-3">
+                              <p className="text-[17px] font-semibold text-[#0F2340]">
+                                Property Alerts
+                              </p>
+
+                              <span
+                                className={`rounded-full px-3 py-1 text-xs font-semibold ${lead.notificationsEnabled
+                                    ? "bg-[#DCFCE7] text-[#15803D]"
+                                    : "bg-[#EAECF0] text-[#667085]"
+                                  }`}
+                              >
+                                {lead.notificationsEnabled
+                                  ? "ACTIVE"
+                                  : "OFF"}
+                              </span>
+                            </div>
+
+                            <p className="mt-2 max-w-[700px] text-sm leading-6 text-[#667085]">
+                              {lead.notificationsEnabled
+                                ? "This search remains active. We will notify you when a newly published property reaches at least a 70% match."
+                                : "This search is still saved, but notifications for new matching properties are disabled."}
+                            </p>
+
+                            {lead.lastMatchedAt && (
+                              <p className="mt-2 text-xs font-medium text-[#98A2B3]">
+                                Last matching property detected:{" "}
+                                {new Date(
+                                  lead.lastMatchedAt,
+                                ).toLocaleString()}
+                              </p>
+                            )}
+                          </div>
+
+                          <button
+                            type="button"
+                            onClick={() =>
+                              void handleTogglePropertyAlerts(
+                                lead,
+                              )
+                            }
+                            disabled={
+                              updatingAlertId ===
+                              lead.id
+                            }
+                            aria-pressed={
+                              Boolean(
+                                lead.notificationsEnabled,
+                              )
+                            }
+                            aria-label={
+                              lead.notificationsEnabled
+                                ? "Disable property alerts"
+                                : "Enable property alerts"
+                            }
+                            className="inline-flex shrink-0 items-center gap-3 disabled:cursor-not-allowed disabled:opacity-60"
+                          >
+                            <span
+                              className={`relative h-8 w-14 rounded-full transition ${lead.notificationsEnabled
+                                  ? "bg-[#1B365D]"
+                                  : "bg-[#D0D5DD]"
+                                }`}
+                            >
+                              <span
+                                className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow-sm transition-all ${lead.notificationsEnabled
+                                    ? "left-7"
+                                    : "left-1"
+                                  }`}
+                              />
+                            </span>
+
+                            <span className="min-w-[70px] text-left text-sm font-semibold text-[#0F2340]">
+                              {updatingAlertId ===
+                                lead.id
+                                ? "Saving..."
+                                : lead.notificationsEnabled
+                                  ? "ON"
+                                  : "OFF"}
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    )}
 
                   {bestMatch && (
                     <div className="mt-6 rounded-[22px] border border-[#E4E7EC] bg-[#F8F9FA] p-5">

@@ -17,6 +17,7 @@ import { CreateValuationLeadDto } from './dto/create-valuation-lead.dto';
 import { UpdateLeadDto } from './dto/update-lead.dto';
 
 import { LeadsService } from './leads.service';
+import { UpdatePropertyAlertsDto } from './dto/update-property-alerts.dto';
 
 @Controller('leads')
 export class LeadsController {
@@ -137,6 +138,24 @@ export class LeadsController {
    * Les routes dynamiques :id doivent rester après les routes
    * statiques telles que /me et /from-property-search.
    */
+
+  @Patch(':id/property-alerts')
+@UseGuards(
+  JwtAuthGuard,
+  PermissionsGuard,
+)
+@Permissions('leads.update.own')
+updatePropertyAlerts(
+  @Param('id') id: string,
+  @Body() dto: UpdatePropertyAlertsDto,
+  @Req() req: AuthenticatedRequest,
+) {
+  return this.leadsService.updatePropertyAlerts(
+    id,
+    dto.enabled,
+    req.user,
+  );
+}
 
   @Get(':id')
   @UseGuards(JwtAuthGuard, PermissionsGuard)

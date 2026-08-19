@@ -151,7 +151,7 @@ export default function PropertySearchAssistantPage() {
 
       setPropertyType(
         extracted.propertyType ||
-          "apartment"
+        "apartment"
       );
 
       setBedrooms(
@@ -285,8 +285,8 @@ export default function PropertySearchAssistantPage() {
 
       if (result.alreadyExists) {
         toast.info(
-          "Search already exists",
-          "This property search request is already active."
+          "Search already active",
+          "This property search is already saved. You can manage its property alerts from My Requests.",
         );
 
         return;
@@ -298,8 +298,8 @@ export default function PropertySearchAssistantPage() {
        */
 
       toast.success(
-        "Buyer request created",
-        `${result.notifiedAgents} property agents have been notified.`
+        "Search saved & alerts activated",
+        `No property currently reaches the required match level. Your search remains active, and ${result.notifiedAgents} property agent(s) have been notified. We will notify you when a matching property is published.`,
       );
     } catch (error) {
       toast.error(
@@ -550,51 +550,51 @@ export default function PropertySearchAssistantPage() {
             {(confidence !== null ||
               mustHave.length > 0 ||
               aiSummary) && (
-              <div className="mt-6 rounded-2xl border border-[#E4E7EC] bg-[#F8FAFC] p-5">
+                <div className="mt-6 rounded-2xl border border-[#E4E7EC] bg-[#F8FAFC] p-5">
 
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div className="flex items-center gap-2">
-                    <Sparkles
-                      size={17}
-                      className="text-[#C9A227]"
-                    />
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex items-center gap-2">
+                      <Sparkles
+                        size={17}
+                        className="text-[#C9A227]"
+                      />
 
-                    <p className="font-semibold text-[#0F2340]">
-                      Search analysis
-                    </p>
+                      <p className="font-semibold text-[#0F2340]">
+                        Search analysis
+                      </p>
+                    </div>
+
+                    {confidence !==
+                      null && (
+                        <span className="rounded-full bg-[#EEF4FF] px-3 py-1 text-sm font-semibold text-[#1B365D]">
+                          Confidence{" "}
+                          {confidence}%
+                        </span>
+                      )}
                   </div>
 
-                  {confidence !==
-                    null && (
-                    <span className="rounded-full bg-[#EEF4FF] px-3 py-1 text-sm font-semibold text-[#1B365D]">
-                      Confidence{" "}
-                      {confidence}%
-                    </span>
+                  {mustHave.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {mustHave.map(
+                        (item) => (
+                          <span
+                            key={item}
+                            className="rounded-full bg-[#FFF8E1] px-4 py-2 text-sm font-semibold text-[#8A6400]"
+                          >
+                            {item}
+                          </span>
+                        )
+                      )}
+                    </div>
+                  )}
+
+                  {aiSummary && (
+                    <p className="mt-4 text-sm leading-6 text-[#667085]">
+                      {aiSummary}
+                    </p>
                   )}
                 </div>
-
-                {mustHave.length > 0 && (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {mustHave.map(
-                      (item) => (
-                        <span
-                          key={item}
-                          className="rounded-full bg-[#FFF8E1] px-4 py-2 text-sm font-semibold text-[#8A6400]"
-                        >
-                          {item}
-                        </span>
-                      )
-                    )}
-                  </div>
-                )}
-
-                {aiSummary && (
-                  <p className="mt-4 text-sm leading-6 text-[#667085]">
-                    {aiSummary}
-                  </p>
-                )}
-              </div>
-            )}
+              )}
 
             {/* ==================================================
                 ACTION BUTTONS
@@ -642,75 +642,75 @@ export default function PropertySearchAssistantPage() {
 
           {matchingProperties.length >
             0 && (
-            <section className="mt-14">
+              <section className="mt-14">
 
-              {/* RESULTS HEADER */}
+                {/* RESULTS HEADER */}
 
-              <div className="mb-8">
-                <div className="mb-2 flex items-center gap-2">
-                  <Sparkles
-                    size={20}
-                    className="text-[#C9A227]"
-                  />
+                <div className="mb-8">
+                  <div className="mb-2 flex items-center gap-2">
+                    <Sparkles
+                      size={20}
+                      className="text-[#C9A227]"
+                    />
 
-                  <span className="text-sm font-semibold uppercase tracking-wide text-[#C9A227]">
-                    Smart
-                    recommendations
-                  </span>
+                    <span className="text-sm font-semibold uppercase tracking-wide text-[#C9A227]">
+                      Smart
+                      recommendations
+                    </span>
+                  </div>
+
+                  <h2 className="text-3xl font-bold text-[#0F2340]">
+                    Matching Properties
+                  </h2>
+
+                  <p className="mt-2 text-[#667085]">
+                    We found{" "}
+                    {
+                      matchingProperties.length
+                    }{" "}
+                    properties that match
+                    your search criteria.
+                  </p>
                 </div>
 
-                <h2 className="text-3xl font-bold text-[#0F2340]">
-                  Matching Properties
-                </h2>
+                {/* PROPERTY GRID */}
 
-                <p className="mt-2 text-[#667085]">
-                  We found{" "}
-                  {
-                    matchingProperties.length
-                  }{" "}
-                  properties that match
-                  your search criteria.
-                </p>
-              </div>
+                <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
 
-              {/* PROPERTY GRID */}
+                  {matchingProperties.map(
+                    (property) => {
+                      /*
+                       * ==========================================
+                       * WHATSAPP
+                       * ==========================================
+                       */
 
-              <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+                      const phone =
+                        property
+                          .professionalProfile
+                          ?.user.phone?.replace(
+                            /\D/g,
+                            ""
+                          );
 
-                {matchingProperties.map(
-                  (property) => {
-                    /*
-                     * ==========================================
-                     * WHATSAPP
-                     * ==========================================
-                     */
+                      /*
+                       * Avoid direct unguarded window access
+                       * during server rendering.
+                       */
 
-                    const phone =
-                      property
-                        .professionalProfile
-                        ?.user.phone?.replace(
-                          /\D/g,
-                          ""
-                        );
-
-                    /*
-                     * Avoid direct unguarded window access
-                     * during server rendering.
-                     */
-
-                    const origin =
-                      typeof window !==
-                      "undefined"
-                        ? window.location
+                      const origin =
+                        typeof window !==
+                          "undefined"
+                          ? window.location
                             .origin
-                        : process.env
+                          : process.env
                             .NEXT_PUBLIC_APP_URL ||
                           "";
 
-                    const propertyUrl =
-                      `${origin}/properties/${property.id}`;
+                      const propertyUrl =
+                        `${origin}/properties/${property.id}`;
 
-                    const whatsappMessage = `
+                      const whatsappMessage = `
 👋 Hello ${property.professionalProfile?.user.fullName ?? ""},
 
 I found your property on Real Estate Lisbon.
@@ -734,384 +734,383 @@ Could you please let me know when you are available?
 Thank you!
 `.trim();
 
-                    const whatsappUrl =
-                      phone
-                        ? `https://wa.me/${phone}?text=${encodeURIComponent(
+                      const whatsappUrl =
+                        phone
+                          ? `https://wa.me/${phone}?text=${encodeURIComponent(
                             whatsappMessage
                           )}`
-                        : null;
+                          : null;
 
-                    return (
-                      <article
-                        key={
-                          property.id
-                        }
-                        className="relative flex h-full flex-col overflow-hidden rounded-[26px] border border-[#E4E7EC] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
-                      >
+                      return (
+                        <article
+                          key={
+                            property.id
+                          }
+                          className="relative flex h-full flex-col overflow-hidden rounded-[26px] border border-[#E4E7EC] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                        >
 
-                        {/* ======================================
+                          {/* ======================================
                             MATCH SCORE
                         ====================================== */}
 
-                        <div
-                          className={`absolute right-4 top-4 z-10 rounded-full px-4 py-2 text-sm font-bold text-white shadow ${
-                            property.matchScore >=
-                            90
-                              ? "bg-emerald-600"
-                              : property.matchScore >=
+                          <div
+                            className={`absolute right-4 top-4 z-10 rounded-full px-4 py-2 text-sm font-bold text-white shadow ${property.matchScore >=
+                                90
+                                ? "bg-emerald-600"
+                                : property.matchScore >=
                                   75
-                                ? "bg-amber-500"
-                                : "bg-slate-600"
-                          }`}
-                        >
-                          {
-                            property.matchScore
-                          }
-                          % Match
-                        </div>
+                                  ? "bg-amber-500"
+                                  : "bg-slate-600"
+                              }`}
+                          >
+                            {
+                              property.matchScore
+                            }
+                            % Match
+                          </div>
 
-                        {/* ======================================
+                          {/* ======================================
                             PROPERTY IMAGE
                         ====================================== */}
 
-                        <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-                          <img
-                            src={
-                              property
-                                .imageUrls?.[0] ||
-                              "/images/placeholder-property.png"
-                            }
-                            alt={
-                              property.title
-                            }
-                            className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                          />
-                        </div>
+                          <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+                            <img
+                              src={
+                                property
+                                  .imageUrls?.[0] ||
+                                "/images/placeholder-property.png"
+                              }
+                              alt={
+                                property.title
+                              }
+                              className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                            />
+                          </div>
 
-                        <div className="flex flex-1 flex-col p-6">
+                          <div className="flex flex-1 flex-col p-6">
 
-                          {/* ====================================
+                            {/* ====================================
                               PROPERTY INFORMATION
                           ==================================== */}
 
-                          <h3 className="text-xl font-bold leading-snug text-[#101828]">
-                            {
-                              property.title
-                            }
-                          </h3>
+                            <h3 className="text-xl font-bold leading-snug text-[#101828]">
+                              {
+                                property.title
+                              }
+                            </h3>
 
-                          <div className="mt-2 flex items-center gap-1 text-sm text-[#667085]">
-                            <MapPin
-                              size={15}
-                            />
-
-                            <span>
-                              {[
-                                property.city,
-                                property.region,
-                              ]
-                                .filter(
-                                  Boolean
-                                )
-                                .join(
-                                  ", "
-                                ) ||
-                                property.location ||
-                                "Portugal"}
-                            </span>
-                          </div>
-
-                          <p className="mt-4 text-2xl font-bold text-[#1B365D]">
-                            €
-                            {property.price.toLocaleString()}
-                          </p>
-
-                          {/* PROPERTY SPECS */}
-
-                          <div className="mt-4 grid grid-cols-3 gap-2 rounded-xl bg-[#F8FAFC] p-3 text-center text-sm text-[#475467]">
-
-                            <div className="flex items-center justify-center gap-1">
-                              <BedDouble
-                                size={16}
+                            <div className="mt-2 flex items-center gap-1 text-sm text-[#667085]">
+                              <MapPin
+                                size={15}
                               />
 
-                              {property.bedrooms ??
-                                "—"}
+                              <span>
+                                {[
+                                  property.city,
+                                  property.region,
+                                ]
+                                  .filter(
+                                    Boolean
+                                  )
+                                  .join(
+                                    ", "
+                                  ) ||
+                                  property.location ||
+                                  "Portugal"}
+                              </span>
                             </div>
 
-                            <div className="flex items-center justify-center gap-1">
-                              <Bath
-                                size={16}
-                              />
+                            <p className="mt-4 text-2xl font-bold text-[#1B365D]">
+                              €
+                              {property.price.toLocaleString()}
+                            </p>
 
-                              {property.bathrooms ??
-                                "—"}
+                            {/* PROPERTY SPECS */}
+
+                            <div className="mt-4 grid grid-cols-3 gap-2 rounded-xl bg-[#F8FAFC] p-3 text-center text-sm text-[#475467]">
+
+                              <div className="flex items-center justify-center gap-1">
+                                <BedDouble
+                                  size={16}
+                                />
+
+                                {property.bedrooms ??
+                                  "—"}
+                              </div>
+
+                              <div className="flex items-center justify-center gap-1">
+                                <Bath
+                                  size={16}
+                                />
+
+                                {property.bathrooms ??
+                                  "—"}
+                              </div>
+
+                              <div className="flex items-center justify-center gap-1">
+                                <Maximize
+                                  size={16}
+                                />
+
+                                {property.area
+                                  ? `${property.area}m²`
+                                  : "—"}
+                              </div>
                             </div>
 
-                            <div className="flex items-center justify-center gap-1">
-                              <Maximize
-                                size={16}
-                              />
-
-                              {property.area
-                                ? `${property.area}m²`
-                                : "—"}
-                            </div>
-                          </div>
-
-                          {/* ====================================
+                            {/* ====================================
                               SMART ANALYSIS
                           ==================================== */}
 
-                          <div className="mt-5 rounded-2xl border border-[#E4E7EC] bg-[#F8FAFC] p-4">
+                            <div className="mt-5 rounded-2xl border border-[#E4E7EC] bg-[#F8FAFC] p-4">
 
-                            <div className="flex items-center gap-2">
-                              <Sparkles
-                                size={17}
-                                className="text-[#C9A227]"
-                              />
+                              <div className="flex items-center gap-2">
+                                <Sparkles
+                                  size={17}
+                                  className="text-[#C9A227]"
+                                />
 
-                              <p className="font-semibold text-[#0F2340]">
-                                Smart
-                                Property
-                                Analysis
+                                <p className="font-semibold text-[#0F2340]">
+                                  Smart
+                                  Property
+                                  Analysis
+                                </p>
+                              </div>
+
+                              <p className="mt-3 text-sm leading-6 text-[#667085]">
+                                {
+                                  property.recommendation
+                                }
                               </p>
+
+                              {/* MATCHED CRITERIA */}
+
+                              {property
+                                .matchedCriteria
+                                .length >
+                                0 && (
+                                  <div className="mt-4">
+
+                                    <p className="text-sm font-semibold text-emerald-700">
+                                      Matches
+                                      your
+                                      criteria
+                                    </p>
+
+                                    <ul className="mt-2 space-y-2">
+
+                                      {property.matchedCriteria.map(
+                                        (
+                                          criterion
+                                        ) => (
+                                          <li
+                                            key={
+                                              criterion
+                                            }
+                                            className="flex items-start gap-2 text-sm text-[#475467]"
+                                          >
+                                            <CheckCircle2
+                                              size={
+                                                16
+                                              }
+                                              className="mt-[2px] shrink-0 text-emerald-600"
+                                            />
+
+                                            <span>
+                                              {
+                                                criterion
+                                              }
+                                            </span>
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  </div>
+                                )}
+
+                              {/* MISSING CRITERIA */}
+
+                              {property
+                                .missingCriteria
+                                .length >
+                                0 && (
+                                  <div className="mt-4">
+
+                                    <p className="text-sm font-semibold text-amber-700">
+                                      Things
+                                      to
+                                      consider
+                                    </p>
+
+                                    <ul className="mt-2 space-y-2">
+
+                                      {property.missingCriteria.map(
+                                        (
+                                          criterion
+                                        ) => (
+                                          <li
+                                            key={
+                                              criterion
+                                            }
+                                            className="flex items-start gap-2 text-sm text-[#475467]"
+                                          >
+                                            <AlertCircle
+                                              size={
+                                                16
+                                              }
+                                              className="mt-[2px] shrink-0 text-amber-500"
+                                            />
+
+                                            <span>
+                                              {
+                                                criterion
+                                              }
+                                            </span>
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  </div>
+                                )}
                             </div>
 
-                            <p className="mt-3 text-sm leading-6 text-[#667085]">
-                              {
-                                property.recommendation
-                              }
-                            </p>
-
-                            {/* MATCHED CRITERIA */}
-
-                            {property
-                              .matchedCriteria
-                              .length >
-                              0 && (
-                              <div className="mt-4">
-
-                                <p className="text-sm font-semibold text-emerald-700">
-                                  Matches
-                                  your
-                                  criteria
-                                </p>
-
-                                <ul className="mt-2 space-y-2">
-
-                                  {property.matchedCriteria.map(
-                                    (
-                                      criterion
-                                    ) => (
-                                      <li
-                                        key={
-                                          criterion
-                                        }
-                                        className="flex items-start gap-2 text-sm text-[#475467]"
-                                      >
-                                        <CheckCircle2
-                                          size={
-                                            16
-                                          }
-                                          className="mt-[2px] shrink-0 text-emerald-600"
-                                        />
-
-                                        <span>
-                                          {
-                                            criterion
-                                          }
-                                        </span>
-                                      </li>
-                                    )
-                                  )}
-                                </ul>
-                              </div>
-                            )}
-
-                            {/* MISSING CRITERIA */}
-
-                            {property
-                              .missingCriteria
-                              .length >
-                              0 && (
-                              <div className="mt-4">
-
-                                <p className="text-sm font-semibold text-amber-700">
-                                  Things
-                                  to
-                                  consider
-                                </p>
-
-                                <ul className="mt-2 space-y-2">
-
-                                  {property.missingCriteria.map(
-                                    (
-                                      criterion
-                                    ) => (
-                                      <li
-                                        key={
-                                          criterion
-                                        }
-                                        className="flex items-start gap-2 text-sm text-[#475467]"
-                                      >
-                                        <AlertCircle
-                                          size={
-                                            16
-                                          }
-                                          className="mt-[2px] shrink-0 text-amber-500"
-                                        />
-
-                                        <span>
-                                          {
-                                            criterion
-                                          }
-                                        </span>
-                                      </li>
-                                    )
-                                  )}
-                                </ul>
-                              </div>
-                            )}
-                          </div>
-
-                          {/* ====================================
+                            {/* ====================================
                               AGENT
                           ==================================== */}
 
-                          {property.professionalProfile && (
-                            <div className="mt-auto pt-5">
-                              <div className="border-t border-[#E4E7EC] pt-5">
+                            {property.professionalProfile && (
+                              <div className="mt-auto pt-5">
+                                <div className="border-t border-[#E4E7EC] pt-5">
 
-                                {/* AGENT INFO */}
+                                  {/* AGENT INFO */}
 
-                                <div className="mb-4 flex items-center gap-3">
-
-                                  {property
-                                    .professionalProfile
-                                    .user
-                                    .avatarUrl ? (
-                                    <img
-                                      src={
-                                        property
-                                          .professionalProfile
-                                          .user
-                                          .avatarUrl
-                                      }
-                                      alt={
-                                        property
-                                          .professionalProfile
-                                          .user
-                                          .fullName ||
-                                        "Property Agent"
-                                      }
-                                      className="h-11 w-11 rounded-full object-cover"
-                                    />
-                                  ) : (
-                                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#EEF4FF] text-[#1B365D]">
-                                      <UserRound
-                                        size={
-                                          20
-                                        }
-                                      />
-                                    </div>
-                                  )}
-
-                                  <div className="min-w-0">
-                                    <p className="text-xs font-medium uppercase tracking-wide text-[#98A2B3]">
-                                      Listed
-                                      by
-                                    </p>
-
-                                    <p className="truncate font-semibold text-[#0F2340]">
-                                      {property
-                                        .professionalProfile
-                                        .user
-                                        .fullName ||
-                                        "Property Agent"}
-                                    </p>
+                                  <div className="mb-4 flex items-center gap-3">
 
                                     {property
                                       .professionalProfile
-                                      .companyName && (
-                                      <p className="truncate text-xs text-[#667085]">
-                                        {
+                                      .user
+                                      .avatarUrl ? (
+                                      <img
+                                        src={
                                           property
                                             .professionalProfile
-                                            .companyName
+                                            .user
+                                            .avatarUrl
                                         }
-                                      </p>
+                                        alt={
+                                          property
+                                            .professionalProfile
+                                            .user
+                                            .fullName ||
+                                          "Property Agent"
+                                        }
+                                        className="h-11 w-11 rounded-full object-cover"
+                                      />
+                                    ) : (
+                                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#EEF4FF] text-[#1B365D]">
+                                        <UserRound
+                                          size={
+                                            20
+                                          }
+                                        />
+                                      </div>
                                     )}
-                                  </div>
-                                </div>
 
-                                {/* ==================================
+                                    <div className="min-w-0">
+                                      <p className="text-xs font-medium uppercase tracking-wide text-[#98A2B3]">
+                                        Listed
+                                        by
+                                      </p>
+
+                                      <p className="truncate font-semibold text-[#0F2340]">
+                                        {property
+                                          .professionalProfile
+                                          .user
+                                          .fullName ||
+                                          "Property Agent"}
+                                      </p>
+
+                                      {property
+                                        .professionalProfile
+                                        .companyName && (
+                                          <p className="truncate text-xs text-[#667085]">
+                                            {
+                                              property
+                                                .professionalProfile
+                                                .companyName
+                                            }
+                                          </p>
+                                        )}
+                                    </div>
+                                  </div>
+
+                                  {/* ==================================
                                     CONTACT BUTTONS
                                 ================================== */}
 
-                                <div className="space-y-3">
+                                  <div className="space-y-3">
 
-                                  {/* INTERNAL CHAT */}
+                                    {/* INTERNAL CHAT */}
 
-                                  <button
-                                    type="button"
-                                    onClick={() =>
-                                      handleContactAgent(
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        handleContactAgent(
+                                          property.id
+                                        )
+                                      }
+                                      disabled={
+                                        contactingPropertyId ===
                                         property.id
-                                      )
-                                    }
-                                    disabled={
-                                      contactingPropertyId ===
-                                      property.id
-                                    }
-                                    className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#1B365D] px-5 font-semibold text-white transition hover:bg-[#0F2340] disabled:cursor-not-allowed disabled:opacity-60"
-                                  >
-                                    <MessageCircle
-                                      size={
-                                        18
                                       }
-                                    />
-
-                                    {contactingPropertyId ===
-                                    property.id
-                                      ? "Opening conversation..."
-                                      : "Contact in App"}
-                                  </button>
-
-                                  {/* WHATSAPP */}
-
-                                  {whatsappUrl && (
-                                    <a
-                                      href={
-                                        whatsappUrl
-                                      }
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-green-600 bg-white px-5 font-semibold text-green-700 transition hover:bg-green-50"
+                                      className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#1B365D] px-5 font-semibold text-white transition hover:bg-[#0F2340] disabled:cursor-not-allowed disabled:opacity-60"
                                     >
-                                      <Phone
+                                      <MessageCircle
                                         size={
                                           18
                                         }
                                       />
 
-                                      Contact
-                                      on
-                                      WhatsApp
-                                    </a>
-                                  )}
+                                      {contactingPropertyId ===
+                                        property.id
+                                        ? "Opening conversation..."
+                                        : "Contact in App"}
+                                    </button>
+
+                                    {/* WHATSAPP */}
+
+                                    {whatsappUrl && (
+                                      <a
+                                        href={
+                                          whatsappUrl
+                                        }
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-green-600 bg-white px-5 font-semibold text-green-700 transition hover:bg-green-50"
+                                      >
+                                        <Phone
+                                          size={
+                                            18
+                                          }
+                                        />
+
+                                        Contact
+                                        on
+                                        WhatsApp
+                                      </a>
+                                    )}
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          )}
-                        </div>
-                      </article>
-                    );
-                  }
-                )}
-              </div>
-            </section>
-          )}
+                            )}
+                          </div>
+                        </article>
+                      );
+                    }
+                  )}
+                </div>
+              </section>
+            )}
         </div>
       </main>
 

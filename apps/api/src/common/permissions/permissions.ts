@@ -15,6 +15,7 @@ export type Permission =
   | 'leads.create.own'
   | 'leads.update'
   | 'leads.delete'
+  | 'leads.update.own'
 
   |  'matching.read.all'
   |  'matching.read.own.buyer'
@@ -109,6 +110,7 @@ export const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
 
   'leads.read.own',
   'leads.create.own',
+  'leads.update.own',
 
   // Le Buyer peut consulter uniquement ses propres matchs.
   'matching.read.own.buyer',

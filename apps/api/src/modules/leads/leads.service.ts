@@ -1,10 +1,11 @@
 import {
+  BadRequestException,
   ForbiddenException,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
+
 import {
-  LeadQuality,
   LeadStatus,
   NotificationType,
   ProfessionalType,
@@ -12,18 +13,22 @@ import {
   Role,
   VerificationStatus,
 } from '@prisma/client';
+
 import { PrismaService } from '../../database/prisma.service';
+
 import { CreateLeadDto } from './dto/create-lead.dto';
 import { UpdateLeadDto } from './dto/update-lead.dto';
 import { CreateCalculatorLeadDto } from './dto/create-calculator-lead.dto';
-import { ProfileScoreService } from '../users/profile-score.service';
-import { LeadScoringService } from './lead-scoring.service';
 import { CreateNeighborhoodLeadDto } from './dto/create-neighborhood-lead.dto';
 import { CreateValuationLeadDto } from './dto/create-valuation-lead.dto';
 import { CreatePropertySearchLeadDto } from './dto/create-property-search-lead.dto';
 import { CreatePriceCheckerDto } from './dto/create-price-checker.dto';
-import { CreateAffordabilityLeadDto } from './dto/create-affordability-lead.dto'; 
+import { CreateAffordabilityLeadDto } from './dto/create-affordability-lead.dto';
 import { CreateTrueCostLeadDto } from './dto/create-true-cost-lead.dto';
+
+import { ProfileScoreService } from '../users/profile-score.service';
+import { LeadScoringService } from './lead-scoring.service';
+import { AutoMatchingService } from '../matching/auto-matching.service';
 
 @Injectable()
 export class LeadsService {
@@ -31,40 +36,72 @@ export class LeadsService {
     private readonly prisma: PrismaService,
     private readonly leadScoringService: LeadScoringService,
     private readonly profileScoreService: ProfileScoreService,
+    private readonly autoMatchingService: AutoMatchingService,
   ) {}
 
-  async create(dto: CreateLeadDto, user: { id: string; role: Role }) {
-    const quality = this.leadScoringService.calculateQuality({
-      phone: dto.phone,
-      budget: dto.budget,
-      location: dto.location,
-      interest: dto.interest,
-    });
+  // ============================================================
+  // BASIC LEAD CREATION
+  // ============================================================
 
-    const lead = await this.prisma.lead.create({
-      data: {
-        userId: user.id,
-        fullName: dto.fullName,
-        email: dto.email,
+  async create(
+    dto: CreateLeadDto,
+    user: {
+      id: string;
+      role: Role;
+    },
+  ) {
+    const quality =
+      this.leadScoringService.calculateQuality({
         phone: dto.phone,
-        source: dto.source,
-        interest: dto.interest,
-        location: dto.location,
         budget: dto.budget,
-        quality: dto.quality || quality,
-        status: dto.status || LeadStatus.NEW,
-      },
-    });
+        location: dto.location,
+        interest: dto.interest,
+      });
 
-    await this.profileScoreService.updateUserScore(user.id);
+    const lead =
+      await this.prisma.lead.create({
+        data: {
+          userId: user.id,
+          fullName: dto.fullName,
+          email: dto.email,
+          phone: dto.phone,
+          source: dto.source,
+          interest: dto.interest,
+          location: dto.location,
+          budget: dto.budget,
+
+          quality:
+            dto.quality || quality,
+
+          status:
+            dto.status ||
+            LeadStatus.NEW,
+        },
+      });
+
+    await this.profileScoreService.updateUserScore(
+      user.id,
+    );
 
     return lead;
   }
 
-  async findAll(user: { id: string; role: Role }) {
+  // ============================================================
+  // FIND ALL
+  // ============================================================
+
+  async findAll(
+    user: {
+      id: string;
+      role: Role;
+    },
+  ) {
     if (user.role === Role.ADMIN) {
       return this.prisma.lead.findMany({
-        orderBy: { createdAt: 'desc' },
+        orderBy: {
+          createdAt: 'desc',
+        },
+
         include: {
           user: {
             select: {
@@ -74,6 +111,7 @@ export class LeadsService {
               role: true,
             },
           },
+
           matches: true,
         },
       });
@@ -81,28 +119,37 @@ export class LeadsService {
 
     if (user.role === Role.BUYER) {
       return this.prisma.lead.findMany({
-  where: { userId: user.id },
-  orderBy: { createdAt: 'desc' },
-  include: {
-    matches: {
-      orderBy: { score: 'desc' },
-      include: {
-        professional: {
-          include: {
-            user: {
-              select: {
-                id: true,
-                fullName: true,
-                email: true,
-                role: true,
+        where: {
+          userId: user.id,
+        },
+
+        orderBy: {
+          createdAt: 'desc',
+        },
+
+        include: {
+          matches: {
+            orderBy: {
+              score: 'desc',
+            },
+
+            include: {
+              professional: {
+                include: {
+                  user: {
+                    select: {
+                      id: true,
+                      fullName: true,
+                      email: true,
+                      role: true,
+                    },
+                  },
+                },
               },
             },
           },
         },
-      },
-    },
-  },
-});
+      });
     }
 
     throw new ForbiddenException(
@@ -110,31 +157,55 @@ export class LeadsService {
     );
   }
 
-  async findOne(id: string, user: { id: string; role: Role }) {
-    const lead = await this.prisma.lead.findUnique({
-      where: { id },
-      include: {
-        user: {
-          select: {
-            id: true,
-            fullName: true,
-            email: true,
-            role: true,
-          },
+  // ============================================================
+  // FIND ONE
+  // ============================================================
+
+  async findOne(
+    id: string,
+    user: {
+      id: string;
+      role: Role;
+    },
+  ) {
+    const lead =
+      await this.prisma.lead.findUnique({
+        where: {
+          id,
         },
-        matches: true,
-      },
-    });
+
+        include: {
+          user: {
+            select: {
+              id: true,
+              fullName: true,
+              email: true,
+              role: true,
+            },
+          },
+
+          matches: true,
+        },
+      });
 
     if (!lead) {
-      throw new NotFoundException('Lead not found');
+      throw new NotFoundException(
+        'Lead not found',
+      );
     }
 
-    if (user.role === Role.BUYER && lead.userId !== user.id) {
-      throw new ForbiddenException('You can only access your own leads');
+    if (
+      user.role === Role.BUYER &&
+      lead.userId !== user.id
+    ) {
+      throw new ForbiddenException(
+        'You can only access your own leads',
+      );
     }
 
-    if (user.role === Role.PROFESSIONAL) {
+    if (
+      user.role === Role.PROFESSIONAL
+    ) {
       throw new ForbiddenException(
         'Professionals can access leads only through matching',
       );
@@ -143,807 +214,1449 @@ export class LeadsService {
     return lead;
   }
 
+  // ============================================================
+  // UPDATE
+  // ============================================================
+
   async update(
     id: string,
     dto: UpdateLeadDto,
-    user: { id: string; role: Role },
+    user: {
+      id: string;
+      role: Role;
+    },
   ) {
-    const lead = await this.findOne(id, user);
+    const lead =
+      await this.findOne(
+        id,
+        user,
+      );
 
-    if (user.role !== Role.ADMIN && lead.userId !== user.id) {
-      throw new ForbiddenException('You cannot update this lead');
+    if (
+      user.role !== Role.ADMIN &&
+      lead.userId !== user.id
+    ) {
+      throw new ForbiddenException(
+        'You cannot update this lead',
+      );
     }
 
-    const quality = this.leadScoringService.calculateQuality({
-      phone: dto.phone ?? lead.phone,
-      budget: dto.budget ?? lead.budget,
-      location: dto.location ?? lead.location,
-      interest: dto.interest ?? lead.interest,
-    });
+    const quality =
+      this.leadScoringService.calculateQuality({
+        phone:
+          dto.phone ??
+          lead.phone,
 
-    const updatedLead = await this.prisma.lead.update({
-      where: { id },
-      data: {
-        fullName: dto.fullName,
-        email: dto.email,
-        phone: dto.phone,
-        source: dto.source,
-        interest: dto.interest,
-        location: dto.location,
-        budget: dto.budget,
-        quality: dto.quality || quality,
-        status: dto.status,
-      },
-    });
+        budget:
+          dto.budget ??
+          lead.budget,
+
+        location:
+          dto.location ??
+          lead.location,
+
+        interest:
+          dto.interest ??
+          lead.interest,
+      });
+
+    const updatedLead =
+      await this.prisma.lead.update({
+        where: {
+          id,
+        },
+
+        data: {
+          fullName: dto.fullName,
+          email: dto.email,
+          phone: dto.phone,
+          source: dto.source,
+          interest: dto.interest,
+          location: dto.location,
+          budget: dto.budget,
+
+          quality:
+            dto.quality ||
+            quality,
+
+          status: dto.status,
+        },
+      });
 
     if (updatedLead.userId) {
-      await this.profileScoreService.updateUserScore(updatedLead.userId);
+      await this.profileScoreService.updateUserScore(
+        updatedLead.userId,
+      );
     }
 
     return updatedLead;
   }
 
-  async remove(id: string, user: { id: string; role: Role }) {
-    const lead = await this.findOne(id, user);
+  // ============================================================
+  // DELETE
+  // ============================================================
 
-    if (user.role !== Role.ADMIN && lead.userId !== user.id) {
-      throw new ForbiddenException('You cannot delete this lead');
+  async remove(
+    id: string,
+    user: {
+      id: string;
+      role: Role;
+    },
+  ) {
+    const lead =
+      await this.findOne(
+        id,
+        user,
+      );
+
+    if (
+      user.role !== Role.ADMIN &&
+      lead.userId !== user.id
+    ) {
+      throw new ForbiddenException(
+        'You cannot delete this lead',
+      );
     }
 
     await this.prisma.lead.delete({
-      where: { id },
+      where: {
+        id,
+      },
     });
 
     if (lead.userId) {
-      await this.profileScoreService.updateUserScore(lead.userId);
+      await this.profileScoreService.updateUserScore(
+        lead.userId,
+      );
     }
 
     return {
-      message: 'Lead deleted successfully',
+      message:
+        'Lead deleted successfully',
     };
   }
 
- async createFromCalculator(
-  dto: CreateCalculatorLeadDto,
-  user: { id: string; role: Role },
-) {
-  if (user.role !== Role.BUYER) {
-    throw new ForbiddenException(
-      'Only buyers can create calculator requests',
-    );
-  }
+  // ============================================================
+  // MORTGAGE CALCULATOR
+  // ============================================================
 
-  const buyer = await this.prisma.user.findUnique({
-    where: {
-      id: user.id,
+  async createFromCalculator(
+    dto: CreateCalculatorLeadDto,
+    user: {
+      id: string;
+      role: Role;
     },
-  });
+  ) {
+    if (
+      user.role !== Role.BUYER
+    ) {
+      throw new ForbiddenException(
+        'Only buyers can create calculator requests',
+      );
+    }
 
-  if (!buyer) {
-    throw new NotFoundException('Buyer not found');
-  }
-  const cleanEmail = dto.email.trim().toLowerCase();
-  const cleanSource = dto.source || 'Mortgage Calculator';
-  const cleanInterest = dto.interest || 'Mortgage / Property Purchase';
-  const cleanLocation = dto.location || 'Portugal';
-  const cleanBudget = dto.budget;
-
-  const quality = this.leadScoringService.calculateQuality({
-    phone: dto.phone,
-    budget: cleanBudget,
-    location: cleanLocation,
-    interest: cleanInterest,
-  });
-
-  const existingUser = await this.prisma.user.findUnique({
-    where: {
-      email: cleanEmail,
-    },
-  });
-
-  const existingLead = await this.prisma.lead.findFirst({
-    where: {
-      email: cleanEmail,
-      source: cleanSource,
-      interest: cleanInterest,
-      budget: cleanBudget,
-      status: {
-        in: [
-          LeadStatus.NEW,
-          LeadStatus.CONTACTED,
-          LeadStatus.MATCHED,
-        ],
-      },
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-  });
-
-  if (existingLead) {
-    if (existingUser && !existingLead.userId) {
-      const linkedLead = await this.prisma.lead.update({
-        where: { id: existingLead.id },
-        data: {
-          userId: existingUser.id,
-          fullName: existingLead.fullName || dto.fullName,
-          phone: existingLead.phone || dto.phone,
+    const buyer =
+      await this.prisma.user.findUnique({
+        where: {
+          id: user.id,
         },
       });
 
-      await this.profileScoreService.updateUserScore(existingUser.id);
+    if (!buyer) {
+      throw new NotFoundException(
+        'Buyer not found',
+      );
+    }
 
-      return linkedLead;
+    const cleanEmail =
+      dto.email
+        .trim()
+        .toLowerCase();
+
+    const cleanSource =
+      dto.source ||
+      'Mortgage Calculator';
+
+    const cleanInterest =
+      dto.interest ||
+      'Mortgage / Property Purchase';
+
+    const cleanLocation =
+      dto.location ||
+      'Portugal';
+
+    const cleanBudget =
+      dto.budget;
+
+    const quality =
+      this.leadScoringService.calculateQuality({
+        phone: dto.phone,
+        budget: cleanBudget,
+        location: cleanLocation,
+        interest: cleanInterest,
+      });
+
+    const existingUser =
+      await this.prisma.user.findUnique({
+        where: {
+          email: cleanEmail,
+        },
+      });
+
+    const existingLead =
+      await this.prisma.lead.findFirst({
+        where: {
+          email: cleanEmail,
+          source: cleanSource,
+          interest: cleanInterest,
+          budget: cleanBudget,
+
+          status: {
+            in: [
+              LeadStatus.NEW,
+              LeadStatus.CONTACTED,
+              LeadStatus.MATCHED,
+            ],
+          },
+        },
+
+        orderBy: {
+          createdAt: 'desc',
+        },
+      });
+
+    if (existingLead) {
+      if (
+        existingUser &&
+        !existingLead.userId
+      ) {
+        const linkedLead =
+          await this.prisma.lead.update({
+            where: {
+              id:
+                existingLead.id,
+            },
+
+            data: {
+              userId:
+                existingUser.id,
+
+              fullName:
+                existingLead.fullName ||
+                dto.fullName,
+
+              phone:
+                existingLead.phone ||
+                dto.phone,
+            },
+          });
+
+        await this.profileScoreService.updateUserScore(
+          existingUser.id,
+        );
+
+        return linkedLead;
+      }
+
+      return {
+        ...existingLead,
+        alreadyExists: true,
+      };
+    }
+
+    const lead =
+      await this.prisma.lead.create({
+        data: {
+          userId:
+            existingUser?.id ||
+            null,
+
+          fullName:
+            dto.fullName,
+
+          email:
+            cleanEmail,
+
+          phone:
+            dto.phone,
+
+          source:
+            cleanSource,
+
+          interest:
+            cleanInterest,
+
+          location:
+            cleanLocation,
+
+          budget:
+            cleanBudget,
+
+          quality,
+
+          status:
+            LeadStatus.NEW,
+        },
+      });
+
+    if (existingUser) {
+      await this.profileScoreService.updateUserScore(
+        existingUser.id,
+      );
     }
 
     return {
-  ...existingLead,
-  alreadyExists: true,
-};
-  }
-
-  const lead = await this.prisma.lead.create({
-    data: {
-      userId: existingUser?.id || null,
-      fullName: dto.fullName,
-      email: cleanEmail,
-      phone: dto.phone,
-      source: cleanSource,
-      interest: cleanInterest,
-      location: cleanLocation,
-      budget: cleanBudget,
-      quality,
-      status: LeadStatus.NEW,
-    },
-  });
-
-  if (existingUser) {
-    await this.profileScoreService.updateUserScore(existingUser.id);
-  }
-
-  return {
-  ...lead,
-  alreadyExists: false,
-};
-}
-async createFromNeighborhoodFinder(
-  dto: CreateNeighborhoodLeadDto,
-  user: { id: string; role: Role },
-) {
-  if (user.role !== Role.BUYER) {
-    throw new ForbiddenException('Only buyers can create neighborhood requests');
-  }
-
-  const buyer = await this.prisma.user.findUnique({
-    where: { id: user.id },
-  });
-
-  if (!buyer) {
-    throw new NotFoundException('Buyer not found');
-  }
-
-  const neighborhood = await this.prisma.neighborhood.findUnique({
-    where: { id: dto.neighborhoodId },
-  });
-
-  if (!neighborhood) {
-    throw new NotFoundException('Neighborhood not found');
-  }
-
-  const budget =
-    dto.budgetMin && dto.budgetMax
-      ? `€${dto.budgetMin} - €${dto.budgetMax}`
-      : dto.budgetMax
-        ? `Up to €${dto.budgetMax}`
-        : neighborhood.avgPrice
-          ? `€${neighborhood.avgPrice}`
-          : 'Not specified';
-
-  const interest = `Neighborhood Finder / ${dto.goal}`;
-
-  const existingLead = await this.prisma.lead.findFirst({
-    where: {
-      userId: user.id,
-      source: 'Neighborhood Finder',
-      interest,
-      location: neighborhood.name,
-      status: {
-        in: [LeadStatus.NEW, LeadStatus.MATCHED, LeadStatus.CONTACTED],
-      },
-    },
-  });
-
-  if (existingLead) {
-    return {
-      ...existingLead,
-      alreadyExists: true,
+      ...lead,
+      alreadyExists: false,
     };
   }
 
-  const quality = this.leadScoringService.calculateQuality({
-    phone: buyer.phone || '',
-    budget,
-    location: neighborhood.name,
-    interest,
-  });
+  // ============================================================
+  // NEIGHBORHOOD FINDER
+  // ============================================================
 
-  const lead = await this.prisma.lead.create({
-    data: {
-      userId: user.id,
-      fullName: buyer.fullName,
-      email: buyer.email,
-      phone: buyer.phone,
-      source: 'Neighborhood Finder',
-      interest,
-      location: neighborhood.name,
-      budget,
-      quality,
-      status: LeadStatus.NEW,
+  async createFromNeighborhoodFinder(
+    dto: CreateNeighborhoodLeadDto,
+    user: {
+      id: string;
+      role: Role;
     },
-  });
+  ) {
+    if (
+      user.role !== Role.BUYER
+    ) {
+      throw new ForbiddenException(
+        'Only buyers can create neighborhood requests',
+      );
+    }
 
-  await this.profileScoreService.updateUserScore(user.id);
+    const buyer =
+      await this.prisma.user.findUnique({
+        where: {
+          id: user.id,
+        },
+      });
 
-  return {
-    ...lead,
-    alreadyExists: false,
-  };
-}
+    if (!buyer) {
+      throw new NotFoundException(
+        'Buyer not found',
+      );
+    }
 
-async createFromPropertyValuation(
-  dto: CreateValuationLeadDto,
-  user: { id: string; role: Role },
-) {
-  if (user.role !== Role.BUYER) {
-    throw new ForbiddenException('Only buyers can create valuation requests');
-  }
+    const neighborhood =
+      await this.prisma.neighborhood.findUnique({
+        where: {
+          id:
+            dto.neighborhoodId,
+        },
+      });
 
-  const buyer = await this.prisma.user.findUnique({
-    where: { id: user.id },
-  });
+    if (!neighborhood) {
+      throw new NotFoundException(
+        'Neighborhood not found',
+      );
+    }
 
-  if (!buyer) {
-    throw new NotFoundException('Buyer not found');
-  }
+    const budget =
+      dto.budgetMin &&
+      dto.budgetMax
+        ? `€${dto.budgetMin} - €${dto.budgetMax}`
+        : dto.budgetMax
+          ? `Up to €${dto.budgetMax}`
+          : neighborhood.avgPrice
+            ? `€${neighborhood.avgPrice}`
+            : 'Not specified';
 
-  const source = 'Property Valuation';
-  const interest = 'Property Valuation';
-  const location = dto.address || 'Portugal';
-  const budget = dto.estimatedValue || dto.askingPrice || 'Not specified';
+    const interest =
+      `Neighborhood Finder / ${dto.goal}`;
 
-  const existingLead = await this.prisma.lead.findFirst({
-    where: {
-      userId: user.id,
-      source,
-      interest,
-      location,
-      budget,
-      status: {
-        in: [LeadStatus.NEW, LeadStatus.MATCHED, LeadStatus.CONTACTED],
-      },
-    },
-  });
+    const existingLead =
+      await this.prisma.lead.findFirst({
+        where: {
+          userId:
+            user.id,
 
-  if (existingLead) {
-    return {
-      ...existingLead,
-      alreadyExists: true,
-    };
-  }
+          source:
+            'Neighborhood Finder',
 
-  const quality = this.leadScoringService.calculateQuality({
-    phone: buyer.phone || '',
-    budget,
-    location,
-    interest,
-  });
+          interest,
 
-  const lead = await this.prisma.lead.create({
-    data: {
-      userId: user.id,
-      fullName: buyer.fullName,
-      email: buyer.email,
-      phone: buyer.phone,
-      source,
-      interest,
-      location,
-      budget,
-      quality,
-      status: LeadStatus.NEW,
-    },
-  });
+          location:
+            neighborhood.name,
 
-  await this.profileScoreService.updateUserScore(user.id);
-
-  return {
-    ...lead,
-    alreadyExists: false,
-  };
-}
-
-async createFromPropertySearch(
-  dto: CreatePropertySearchLeadDto,
-  user: { id: string; role: Role },
-) {
-  if (user.role !== Role.BUYER) {
-    throw new ForbiddenException(
-      'Only buyers can create property search requests',
-    );
-  }
-
-  const buyer = await this.prisma.user.findUnique({
-    where: { id: user.id },
-  });
-
-  if (!buyer) {
-    throw new NotFoundException('Buyer not found');
-  }
-
-  const location = dto.location?.trim() || 'Portugal';
-  const budget = dto.budget?.trim() || 'Not specified';
-  const interest = `Property Search / ${dto.goal || 'buy'}`;
-
-  const numericBudget =
-  dto.maxBudget ??
-  (Number(String(dto.budget ?? '').replace(/[^\d.]/g, '')) || undefined);
-
-  /*
-   * Étape 1 : rechercher les propriétés déjà publiées.
-   */
-  const matchingProperties = await this.prisma.property.findMany({
-    where: {
-      status: PropertyStatus.PUBLISHED,
-
-      ...(dto.location
-        ? {
-            OR: [
-              {
-                city: {
-                  contains: dto.location,
-                  mode: 'insensitive',
-                },
-              },
-              {
-                region: {
-                  contains: dto.location,
-                  mode: 'insensitive',
-                },
-              },
-              {
-                location: {
-                  contains: dto.location,
-                  mode: 'insensitive',
-                },
-              },
+          status: {
+            in: [
+              LeadStatus.NEW,
+              LeadStatus.MATCHED,
+              LeadStatus.CONTACTED,
             ],
-          }
-        : {}),
+          },
+        },
+      });
 
-      ...(dto.propertyType
-        ? {
-            propertyType: {
-              equals: dto.propertyType,
-              mode: 'insensitive',
-            },
-          }
-        : {}),
+    if (existingLead) {
+      return {
+        ...existingLead,
+        alreadyExists: true,
+      };
+    }
 
-      ...(dto.bedrooms !== undefined
-        ? {
-            bedrooms: dto.bedrooms,
-          }
-        : {}),
+    const quality =
+      this.leadScoringService.calculateQuality({
+        phone:
+          buyer.phone || '',
 
-      ...(dto.bathrooms !== undefined
-        ? {
-            bathrooms: {
-              gte: dto.bathrooms,
-            },
-          }
-        : {}),
+        budget,
 
-      ...(numericBudget
-        ? {
-            price: {
-              lte: numericBudget,
-            },
-          }
-        : {}),
+        location:
+          neighborhood.name,
+
+        interest,
+      });
+
+    const lead =
+      await this.prisma.lead.create({
+        data: {
+          userId:
+            user.id,
+
+          fullName:
+            buyer.fullName,
+
+          email:
+            buyer.email,
+
+          phone:
+            buyer.phone,
+
+          source:
+            'Neighborhood Finder',
+
+          interest,
+
+          location:
+            neighborhood.name,
+
+          budget,
+
+          quality,
+
+          status:
+            LeadStatus.NEW,
+        },
+      });
+
+    await this.profileScoreService.updateUserScore(
+      user.id,
+    );
+
+    return {
+      ...lead,
+      alreadyExists: false,
+    };
+  }
+
+  // ============================================================
+  // PROPERTY VALUATION
+  // ============================================================
+
+  async createFromPropertyValuation(
+    dto: CreateValuationLeadDto,
+    user: {
+      id: string;
+      role: Role;
     },
+  ) {
+    if (
+      user.role !== Role.BUYER
+    ) {
+      throw new ForbiddenException(
+        'Only buyers can create valuation requests',
+      );
+    }
 
-    orderBy: [
-      { featured: 'desc' },
-      { createdAt: 'desc' },
-    ],
+    const buyer =
+      await this.prisma.user.findUnique({
+        where: {
+          id:
+            user.id,
+        },
+      });
 
-    include: {
-      professionalProfile: {
+    if (!buyer) {
+      throw new NotFoundException(
+        'Buyer not found',
+      );
+    }
+
+    const source =
+      'Property Valuation';
+
+    const interest =
+      'Property Valuation';
+
+    const location =
+      dto.address ||
+      'Portugal';
+
+    const budget =
+      dto.estimatedValue ||
+      dto.askingPrice ||
+      'Not specified';
+
+    const existingLead =
+      await this.prisma.lead.findFirst({
+        where: {
+          userId:
+            user.id,
+
+          source,
+          interest,
+          location,
+          budget,
+
+          status: {
+            in: [
+              LeadStatus.NEW,
+              LeadStatus.MATCHED,
+              LeadStatus.CONTACTED,
+            ],
+          },
+        },
+      });
+
+    if (existingLead) {
+      return {
+        ...existingLead,
+        alreadyExists: true,
+      };
+    }
+
+    const quality =
+      this.leadScoringService.calculateQuality({
+        phone:
+          buyer.phone || '',
+
+        budget,
+        location,
+        interest,
+      });
+
+    const lead =
+      await this.prisma.lead.create({
+        data: {
+          userId:
+            user.id,
+
+          fullName:
+            buyer.fullName,
+
+          email:
+            buyer.email,
+
+          phone:
+            buyer.phone,
+
+          source,
+          interest,
+          location,
+          budget,
+          quality,
+
+          status:
+            LeadStatus.NEW,
+        },
+      });
+
+    await this.profileScoreService.updateUserScore(
+      user.id,
+    );
+
+    return {
+      ...lead,
+      alreadyExists: false,
+    };
+  }
+
+  // ============================================================
+  // PROPERTY SEARCH ASSISTANT
+  // ============================================================
+
+  async createFromPropertySearch(
+    dto: CreatePropertySearchLeadDto,
+    user: {
+      id: string;
+      role: Role;
+    },
+  ) {
+    if (
+      user.role !== Role.BUYER
+    ) {
+      throw new ForbiddenException(
+        'Only buyers can create property search requests',
+      );
+    }
+
+    const buyer =
+      await this.prisma.user.findUnique({
+        where: {
+          id:
+            user.id,
+        },
+      });
+
+    if (!buyer) {
+      throw new NotFoundException(
+        'Buyer not found',
+      );
+    }
+
+    const location =
+      dto.location?.trim() ||
+      'Portugal';
+
+    const budget =
+      dto.budget?.trim() ||
+      'Not specified';
+
+    const interest =
+      `Property Search / ${dto.goal || 'buy'}`;
+
+    const numericBudget =
+      dto.maxBudget ??
+      (
+        Number(
+          String(
+            dto.budget ?? '',
+          ).replace(
+            /[^\d.]/g,
+            '',
+          ),
+        ) || undefined
+      );
+
+    /*
+     * ==========================================================
+     * STEP 1
+     * Load all published properties.
+     *
+     * We intentionally do not use strict Prisma filters here.
+     * The score below determines whether a property is
+     * sufficiently relevant.
+     * ==========================================================
+     */
+
+    const publishedProperties =
+      await this.prisma.property.findMany({
+        where: {
+          status:
+            PropertyStatus.PUBLISHED,
+        },
+
+        orderBy: [
+          {
+            featured:
+              'desc',
+          },
+          {
+            createdAt:
+              'desc',
+          },
+        ],
+
         include: {
-          user: {
-            select: {
-              id: true,
-              fullName: true,
-              email: true,
-              phone: true,
-              avatarUrl: true,
+          professionalProfile: {
+            include: {
+              user: {
+                select: {
+                  id: true,
+                  fullName: true,
+                  email: true,
+                  phone: true,
+                  avatarUrl: true,
+                },
+              },
             },
           },
         },
-      },
-    },
-  });
-  const scoredProperties = matchingProperties
-  .map((property) => {
-    let score = 0;
-    let totalCriteria = 0;
-
-    const matchedCriteria: string[] = [];
-    const missingCriteria: string[] = [];
+      });
 
     /*
-     * LOCATION
+     * ==========================================================
+     * STEP 2
+     * Score every published property.
+     * ==========================================================
      */
-    if (dto.location) {
-      totalCriteria++;
 
-      const requestedLocation = dto.location.toLowerCase();
+    const scoredProperties =
+      publishedProperties
+        .map(
+          (property) => {
+            let score = 0;
+            let totalCriteria = 0;
 
-      const matchesLocation =
-        property.city?.toLowerCase().includes(requestedLocation) ||
-        property.region?.toLowerCase().includes(requestedLocation) ||
-        property.location?.toLowerCase().includes(requestedLocation);
+            const matchedCriteria: string[] =
+              [];
 
-      if (matchesLocation) {
-        score++;
-        matchedCriteria.push(`Located in ${dto.location}`);
-      } else {
-        missingCriteria.push(`Preferred location: ${dto.location}`);
-      }
+            const missingCriteria: string[] =
+              [];
+
+            // --------------------------------------------------
+            // LOCATION
+            // --------------------------------------------------
+
+            if (
+              dto.location?.trim()
+            ) {
+              totalCriteria += 1;
+
+              const requestedLocation =
+                dto.location
+                  .trim()
+                  .toLowerCase();
+
+              const locations = [
+                property.city,
+                property.region,
+                property.location,
+              ]
+                .filter(
+                  (
+                    value,
+                  ): value is string =>
+                    Boolean(value),
+                )
+                .map(
+                  (value) =>
+                    value
+                      .trim()
+                      .toLowerCase(),
+                );
+
+              const matchesLocation =
+                locations.some(
+                  (value) =>
+                    value.includes(
+                      requestedLocation,
+                    ) ||
+                    requestedLocation.includes(
+                      value,
+                    ),
+                );
+
+              if (
+                matchesLocation
+              ) {
+                score += 1;
+
+                matchedCriteria.push(
+                  `Located in ${dto.location}`,
+                );
+              } else {
+                missingCriteria.push(
+                  `Preferred location: ${dto.location}`,
+                );
+              }
+            }
+
+            // --------------------------------------------------
+            // PROPERTY TYPE
+            // --------------------------------------------------
+
+            if (
+              dto.propertyType?.trim()
+            ) {
+              totalCriteria += 1;
+
+              const requestedType =
+                dto.propertyType
+                  .trim()
+                  .toLowerCase();
+
+              const currentType =
+                property.propertyType
+                  ?.trim()
+                  .toLowerCase();
+
+              if (
+                currentType ===
+                requestedType
+              ) {
+                score += 1;
+
+                matchedCriteria.push(
+                  `Matches property type: ${dto.propertyType}`,
+                );
+              } else {
+                missingCriteria.push(
+                  `Requested type: ${dto.propertyType}`,
+                );
+              }
+            }
+
+            // --------------------------------------------------
+            // BEDROOMS
+            // --------------------------------------------------
+
+            if (
+              dto.bedrooms !==
+                undefined &&
+              dto.bedrooms !==
+                null
+            ) {
+              totalCriteria += 1;
+
+              if (
+                property.bedrooms !==
+                  null &&
+                property.bedrooms >=
+                  dto.bedrooms
+              ) {
+                score += 1;
+
+                matchedCriteria.push(
+                  `${property.bedrooms} bedroom${
+                    property.bedrooms >
+                    1
+                      ? 's'
+                      : ''
+                  }`,
+                );
+              } else {
+                missingCriteria.push(
+                  `Requested at least ${dto.bedrooms} bedroom${
+                    dto.bedrooms >
+                    1
+                      ? 's'
+                      : ''
+                  }`,
+                );
+              }
+            }
+
+            // --------------------------------------------------
+            // BATHROOMS
+            // --------------------------------------------------
+
+            if (
+              dto.bathrooms !==
+                undefined &&
+              dto.bathrooms !==
+                null
+            ) {
+              totalCriteria += 1;
+
+              if (
+                property.bathrooms !==
+                  null &&
+                property.bathrooms >=
+                  dto.bathrooms
+              ) {
+                score += 1;
+
+                matchedCriteria.push(
+                  `${property.bathrooms} bathroom${
+                    property.bathrooms >
+                    1
+                      ? 's'
+                      : ''
+                  }`,
+                );
+              } else {
+                missingCriteria.push(
+                  `Requested at least ${dto.bathrooms} bathroom${
+                    dto.bathrooms >
+                    1
+                      ? 's'
+                      : ''
+                  }`,
+                );
+              }
+            }
+
+            // --------------------------------------------------
+            // BUDGET
+            // --------------------------------------------------
+
+            if (
+              numericBudget !==
+              undefined
+            ) {
+              totalCriteria += 1;
+
+              if (
+                property.price <=
+                numericBudget
+              ) {
+                score += 1;
+
+                matchedCriteria.push(
+                  `Within budget (€${property.price.toLocaleString()})`,
+                );
+              } else {
+                const difference =
+                  property.price -
+                  numericBudget;
+
+                missingCriteria.push(
+                  `€${difference.toLocaleString()} above budget`,
+                );
+              }
+            }
+
+            // --------------------------------------------------
+            // MUST HAVE
+            // --------------------------------------------------
+
+            if (
+              dto.mustHave &&
+              dto.mustHave.length >
+                0
+            ) {
+              totalCriteria += 1;
+
+              const propertyEquipments =
+                property.equipments.map(
+                  (
+                    equipment,
+                  ) =>
+                    equipment
+                      .trim()
+                      .toLowerCase(),
+                );
+
+              const matchedMustHave =
+                dto.mustHave.filter(
+                  (
+                    wanted,
+                  ) => {
+                    const normalizedWanted =
+                      wanted
+                        .trim()
+                        .toLowerCase();
+
+                    return propertyEquipments.some(
+                      (
+                        equipment,
+                      ) =>
+                        equipment.includes(
+                          normalizedWanted,
+                        ) ||
+                        normalizedWanted.includes(
+                          equipment,
+                        ),
+                    );
+                  },
+                );
+
+              const mustHaveRatio =
+                matchedMustHave.length /
+                dto.mustHave.length;
+
+              /*
+               * At least half of the requested special
+               * features must be available for this
+               * criterion to count as matched.
+               */
+
+              if (
+                mustHaveRatio >=
+                0.5
+              ) {
+                score += 1;
+
+                matchedCriteria.push(
+                  `${matchedMustHave.length}/${dto.mustHave.length} requested features available`,
+                );
+              } else {
+                missingCriteria.push(
+                  `Only ${matchedMustHave.length}/${dto.mustHave.length} requested features available`,
+                );
+              }
+            }
+
+            // --------------------------------------------------
+            // SCORE
+            // --------------------------------------------------
+
+            const matchScore =
+              totalCriteria > 0
+                ? Math.round(
+                    (
+                      score /
+                      totalCriteria
+                    ) *
+                      100,
+                  )
+                : 0;
+
+            // --------------------------------------------------
+            // RECOMMENDATION
+            // --------------------------------------------------
+
+            let recommendation =
+              '';
+
+            if (
+              matchScore >= 90
+            ) {
+              recommendation =
+                'Excellent match. This property satisfies almost all of your main search criteria.';
+            } else if (
+              matchScore >= 80
+            ) {
+              recommendation =
+                'Very strong match. This property meets most of your main requirements.';
+            } else if (
+              matchScore >= 70
+            ) {
+              recommendation =
+                'Good match. This property meets enough of your criteria to be worth considering.';
+            } else {
+              recommendation =
+                'This property does not meet enough of your current search criteria.';
+            }
+
+            return {
+              ...property,
+
+              matchScore,
+
+              matchedCriteria,
+
+              missingCriteria,
+
+              recommendation,
+            };
+          },
+        )
+
+        /*
+         * ======================================================
+         * ONLY 70% OR HIGHER
+         * ======================================================
+         */
+
+        .filter(
+          (property) =>
+            property.matchScore >=
+            70,
+        )
+
+        .sort(
+          (a, b) =>
+            b.matchScore -
+            a.matchScore,
+        );
+
+    /*
+     * ==========================================================
+     * STEP 3
+     * At least one strong enough property already exists.
+     *
+     * No persistent Lead is created in this case.
+     * ==========================================================
+     */
+
+    if (
+      scoredProperties.length >
+      0
+    ) {
+      return {
+        found: true,
+
+        properties:
+          scoredProperties,
+
+        alreadyExists:
+          false,
+      };
     }
 
     /*
-     * PROPERTY TYPE
+     * ==========================================================
+     * STEP 4
+     * No property >= 70%.
+     *
+     * Check whether this buyer already has the same
+     * persistent search.
+     * ==========================================================
      */
-    if (dto.propertyType) {
-      totalCriteria++;
 
-      const matchesType =
-        property.propertyType?.toLowerCase() ===
-        dto.propertyType.toLowerCase();
+    const existingLead =
+      await this.prisma.lead.findFirst({
+        where: {
+          userId:
+            user.id,
 
-      if (matchesType) {
-        score++;
-        matchedCriteria.push(
-          `Matches property type: ${dto.propertyType}`,
-        );
-      } else {
-        missingCriteria.push(
-          `Requested type: ${dto.propertyType}`,
-        );
-      }
+          source:
+            'Property Search Assistant',
+
+          location,
+
+          propertyType:
+            dto.propertyType,
+
+          bedrooms:
+            dto.bedrooms,
+
+          bathrooms:
+            dto.bathrooms,
+
+          maxBudget:
+            numericBudget,
+
+          goal:
+            dto.goal,
+
+          isActive:
+            true,
+
+          status: {
+            in: [
+              LeadStatus.NEW,
+              LeadStatus.MATCHED,
+              LeadStatus.CONTACTED,
+            ],
+          },
+        },
+
+        orderBy: {
+          createdAt:
+            'desc',
+        },
+      });
+
+    if (existingLead) {
+      return {
+        found: false,
+
+        lead:
+          existingLead,
+
+        notifiedAgents:
+          0,
+
+        alreadyExists:
+          true,
+      };
     }
+
+    const quality =
+      this.leadScoringService.calculateQuality({
+        phone:
+          buyer.phone || '',
+
+        budget,
+
+        location,
+
+        interest,
+      });
 
     /*
-     * BEDROOMS
+     * ==========================================================
+     * STEP 5
+     * Create persistent buyer search.
+     * ==========================================================
      */
-    if (dto.bedrooms !== undefined) {
-      totalCriteria++;
 
-      if (
-        property.bedrooms !== null &&
-        property.bedrooms !== undefined &&
-        property.bedrooms >= dto.bedrooms
-      ) {
-        score++;
-        matchedCriteria.push(
-          `${property.bedrooms} bedroom${property.bedrooms > 1 ? 's' : ''}`,
-        );
-      } else {
-        missingCriteria.push(
-          `Requested at least ${dto.bedrooms} bedroom${
-            dto.bedrooms > 1 ? 's' : ''
-          }`,
-        );
-      }
-    }
+    const lead =
+      await this.prisma.lead.create({
+        data: {
+          userId:
+            user.id,
+
+          fullName:
+            buyer.fullName,
+
+          email:
+            buyer.email,
+
+          phone:
+            buyer.phone,
+
+          source:
+            'Property Search Assistant',
+
+          interest,
+
+          location,
+
+          budget,
+
+          searchText:
+            dto.searchText,
+
+          propertyType:
+            dto.propertyType,
+
+          bedrooms:
+            dto.bedrooms,
+
+          bathrooms:
+            dto.bathrooms,
+
+          minBudget:
+            dto.minBudget,
+
+          maxBudget:
+            numericBudget,
+
+          goal:
+            dto.goal,
+
+          mustHave:
+            dto.mustHave ||
+            [],
+
+          aiSummary:
+            dto.aiSummary,
+
+          confidence:
+            dto.confidence,
+
+          /*
+           * Persistent search.
+           */
+          isActive:
+            true,
+
+          /*
+           * Alerts ON by default.
+           */
+          notificationsEnabled:
+            dto.notificationsEnabled ??
+            true,
+
+          quality,
+
+          status:
+            LeadStatus.NEW,
+        },
+      });
 
     /*
-     * BATHROOMS
+     * ==========================================================
+     * STEP 6
+     * Find ACTIVE PROPERTY AGENTS.
+     * ==========================================================
      */
-    if (dto.bathrooms !== undefined) {
-      totalCriteria++;
 
-      if (
-        property.bathrooms !== null &&
-        property.bathrooms !== undefined &&
-        property.bathrooms >= dto.bathrooms
-      ) {
-        score++;
-        matchedCriteria.push(
-          `${property.bathrooms} bathroom${
-            property.bathrooms > 1 ? 's' : ''
-          }`,
-        );
-      } else {
-        missingCriteria.push(
-          `Requested at least ${dto.bathrooms} bathroom${
-            dto.bathrooms > 1 ? 's' : ''
-          }`,
-        );
-      }
-    }
+    const activePropertyAgents =
+      await this.prisma.professionalProfile.findMany(
+        {
+          where: {
+            professionalType:
+              ProfessionalType.PROPERTY_AGENT,
+
+            verificationStatus:
+              VerificationStatus.ACTIVE,
+          },
+
+          select: {
+            userId:
+              true,
+          },
+        },
+      );
 
     /*
-     * BUDGET
+     * ==========================================================
+     * STEP 7
+     * Notify active property agents.
+     * ==========================================================
      */
-    if (numericBudget !== undefined) {
-      totalCriteria++;
 
-      if (property.price <= numericBudget) {
-        score++;
+    if (
+      activePropertyAgents.length >
+      0
+    ) {
+      await this.prisma.notification.createMany(
+        {
+          data:
+            activePropertyAgents.map(
+              (agent) => ({
+                userId:
+                  agent.userId,
 
-        matchedCriteria.push(
-          `Within budget (€${property.price.toLocaleString()})`,
-        );
-      } else {
-        const difference = property.price - numericBudget;
+                type:
+                  NotificationType.PROPERTY_REQUEST,
 
-        missingCriteria.push(
-          `€${difference.toLocaleString()} above budget`,
-        );
-      }
+                title:
+                  'New buyer property request',
+
+                message:
+                  `A buyer is looking for a ` +
+                  `${
+                    dto.bedrooms
+                      ? `${dto.bedrooms}-bedroom `
+                      : ''
+                  }` +
+                  `${
+                    dto.propertyType ||
+                    'property'
+                  } in ${location}` +
+                  `${
+                    numericBudget
+                      ? ` with a maximum budget of €${numericBudget.toLocaleString()}`
+                      : ''
+                  }.`,
+              }),
+            ),
+        },
+      );
     }
 
-    const matchScore =
-      totalCriteria > 0
-        ? Math.round((score / totalCriteria) * 100)
-        : 100;
+    await this.profileScoreService.updateUserScore(
+      user.id,
+    );
 
-    let recommendation = '';
-
-    if (matchScore >= 90) {
-      recommendation =
-        'Excellent match. This property satisfies almost all of your main search criteria.';
-    } else if (matchScore >= 75) {
-      recommendation =
-        'Strong match. This property meets most of your requirements.';
-    } else if (matchScore >= 50) {
-      recommendation =
-        'Possible match. Some of your requirements are satisfied, but there are differences to consider.';
-    } else {
-      recommendation =
-        'Partial match. This property differs from several of your requested criteria.';
-    }
-
-    return {
-      ...property,
-      matchScore,
-      matchedCriteria,
-      missingCriteria,
-      recommendation,
-    };
-  })
-  .sort((a, b) => b.matchScore - a.matchScore);
-
-  /*
-   * Si des propriétés correspondent, aucun Lead n'est créé.
-   */
-  if (scoredProperties.length > 0) {
-  return {
-    found: true,
-    properties: scoredProperties,
-    alreadyExists: false,
-  };
-}
-
-  /*
-   * Étape 2 : empêcher uniquement les vraies demandes dupliquées.
-   */
-  const existingLead = await this.prisma.lead.findFirst({
-    where: {
-      userId: user.id,
-      source: 'Property Search Assistant',
-      location,
-      propertyType: dto.propertyType,
-      bedrooms: dto.bedrooms,
-      maxBudget: numericBudget,
-      goal: dto.goal,
-      isActive: true,
-      status: {
-        in: [
-          LeadStatus.NEW,
-          LeadStatus.MATCHED,
-          LeadStatus.CONTACTED,
-        ],
-      },
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-  });
-
-  if (existingLead) {
     return {
       found: false,
-      lead: existingLead,
-      notifiedAgents: 0,
-      alreadyExists: true,
+
+      lead,
+
+      notifiedAgents:
+        activePropertyAgents.length,
+
+      alreadyExists:
+        false,
     };
   }
 
-  const quality = this.leadScoringService.calculateQuality({
-    phone: buyer.phone || '',
-    budget,
-    location,
-    interest,
-  });
+  // ============================================================
+  // PRICE CHECKER
+  // ============================================================
 
-  /*
-   * Étape 3 : créer la recherche persistante du Buyer.
-   */
-  const lead = await this.prisma.lead.create({
-    data: {
-      userId: user.id,
-      fullName: buyer.fullName,
-      email: buyer.email,
-      phone: buyer.phone,
-
-      source: 'Property Search Assistant',
-      interest,
-      location,
-      budget,
-
-      searchText: dto.searchText,
-      propertyType: dto.propertyType,
-      bedrooms: dto.bedrooms,
-      bathrooms: dto.bathrooms,
-      minBudget: dto.minBudget,
-      maxBudget: numericBudget,
-      goal: dto.goal,
-      mustHave: dto.mustHave || [],
-      aiSummary: dto.aiSummary,
-      confidence: dto.confidence,
-
-      isActive: true,
-      notificationsEnabled: dto.notificationsEnabled ?? true,
-
-      quality,
-      status: LeadStatus.NEW,
+  async createFromPriceChecker(
+    dto: CreatePriceCheckerDto,
+    user: {
+      id: string;
+      role: Role;
     },
-  });
+  ) {
+    if (
+      user.role !== Role.BUYER
+    ) {
+      throw new ForbiddenException(
+        'Only buyers can create price checker requests',
+      );
+    }
 
-  /*
-   * Étape 4 : récupérer les agents immobiliers actifs.
-   */
-  const activePropertyAgents =
-    await this.prisma.professionalProfile.findMany({
-      where: {
-        professionalType: ProfessionalType.PROPERTY_AGENT,
-        verificationStatus: VerificationStatus.ACTIVE,
-      },
-      select: {
-        userId: true,
-      },
-    });
+    const buyer =
+      await this.prisma.user.findUnique({
+        where: {
+          id:
+            user.id,
+        },
+      });
 
-  /*
-   * Étape 5 : créer une notification dans la plateforme.
-   */
-  if (activePropertyAgents.length > 0) {
-    await this.prisma.notification.createMany({
-      data: activePropertyAgents.map((agent) => ({
-        userId: agent.userId,
-        type: NotificationType.PROPERTY_REQUEST,
-        title: 'New buyer property request',
-        message:
-          `A buyer is looking for a ` +
-          `${dto.bedrooms ? `${dto.bedrooms}-bedroom ` : ''}` +
-          `${dto.propertyType || 'property'} in ${location}` +
-          `${numericBudget ? ` with a maximum budget of €${numericBudget}` : ''}.`,
-      })),
-    });
-  }
+    if (!buyer) {
+      throw new NotFoundException(
+        'Buyer not found',
+      );
+    }
 
-  await this.profileScoreService.updateUserScore(user.id);
+    const location =
+      dto.location ||
+      'Portugal';
 
-  return {
-    found: false,
-    lead,
-    notifiedAgents: activePropertyAgents.length,
-    alreadyExists: false,
-  };
-}
+    const budget =
+      dto.askingPrice ||
+      dto.marketPrice ||
+      'Not specified';
 
+    const interest =
+      'Price Checker';
 
-async createFromPriceChecker(
-  dto: CreatePriceCheckerDto,
-  user: { id: string; role: Role },
-) {
-  if (user.role !== Role.BUYER) {
-    throw new ForbiddenException(
-      'Only buyers can create price checker requests',
+    const existingLead =
+      await this.prisma.lead.findFirst({
+        where: {
+          userId:
+            user.id,
+
+          source:
+            'Price Checker',
+
+          interest,
+          location,
+
+          status: {
+            in: [
+              LeadStatus.NEW,
+              LeadStatus.MATCHED,
+              LeadStatus.CONTACTED,
+            ],
+          },
+        },
+      });
+
+    if (existingLead) {
+      return {
+        ...existingLead,
+        alreadyExists: true,
+      };
+    }
+
+    const quality =
+      this.leadScoringService.calculateQuality({
+        phone:
+          buyer.phone || '',
+
+        budget,
+        location,
+        interest,
+      });
+
+    const lead =
+      await this.prisma.lead.create({
+        data: {
+          userId:
+            user.id,
+
+          fullName:
+            buyer.fullName,
+
+          email:
+            buyer.email,
+
+          phone:
+            buyer.phone,
+
+          source:
+            'Price Checker',
+
+          interest,
+          location,
+          budget,
+          quality,
+
+          status:
+            LeadStatus.NEW,
+        },
+      });
+
+    await this.profileScoreService.updateUserScore(
+      user.id,
     );
-  }
 
-  const buyer = await this.prisma.user.findUnique({
-    where: {
-      id: user.id,
-    },
-  });
-
-  if (!buyer) {
-    throw new NotFoundException('Buyer not found');
-  }
-
-  const location = dto.location || 'Portugal';
-
-  const budget = dto.askingPrice || dto.marketPrice || 'Not specified';
-
-  const interest = 'Price Checker';
-
-  const existingLead = await this.prisma.lead.findFirst({
-    where: {
-      userId: user.id,
-      source: 'Price Checker',
-      interest,
-      location,
-      status: {
-        in: [
-          LeadStatus.NEW,
-          LeadStatus.MATCHED,
-          LeadStatus.CONTACTED,
-        ],
-      },
-    },
-  });
-
-  if (existingLead) {
     return {
-      ...existingLead,
-      alreadyExists: true,
+      ...lead,
+      alreadyExists: false,
     };
   }
 
-  const quality = this.leadScoringService.calculateQuality({
-    phone: buyer.phone || '',
-    budget,
-    location,
-    interest,
-  });
+  // ============================================================
+  // AFFORDABILITY CALCULATOR
+  // ============================================================
 
-  const lead = await this.prisma.lead.create({
-    data: {
-      userId: user.id,
-      fullName: buyer.fullName,
-      email: buyer.email,
-      phone: buyer.phone,
-
-      source: 'Price Checker',
-
-      interest,
-
-      location,
-
-      budget,
-
-      quality,
-
-      status: LeadStatus.NEW,
-    },
-  });
-
-  await this.profileScoreService.updateUserScore(user.id);
-
-  return {
-    ...lead,
-    alreadyExists: false,
-  };
-}
-
-
-async createFromAffordabilityCalculator(
+  async createFromAffordabilityCalculator(
   dto: CreateAffordabilityLeadDto,
-  user: { id: string; role: Role },
+  user: {
+    id: string;
+    role: Role;
+  },
 ) {
   if (user.role !== Role.BUYER) {
     throw new ForbiddenException(
@@ -951,104 +1664,58 @@ async createFromAffordabilityCalculator(
     );
   }
 
-  const buyer = await this.prisma.user.findUnique({
-    where: { id: user.id },
-  });
+  const buyer =
+    await this.prisma.user.findUnique({
+      where: {
+        id: user.id,
+      },
+    });
 
   if (!buyer) {
-    throw new NotFoundException('Buyer not found');
-  }
-
-  const source = 'Affordability Calculator';
-  const interest = 'Mortgage / Affordability Review';
-  const location = 'Portugal';
-  const budget = dto.recommendedBudget || dto.maximumBudget || 'Not specified';
-
-  const existingLead = await this.prisma.lead.findFirst({
-    where: {
-      userId: user.id,
-      source,
-      interest,
-      budget,
-      status: {
-        in: [LeadStatus.NEW, LeadStatus.MATCHED, LeadStatus.CONTACTED],
-      },
-    },
-  });
-
-  if (existingLead) {
-    return {
-      ...existingLead,
-      alreadyExists: true,
-    };
-  }
-
-  const quality = this.leadScoringService.calculateQuality({
-    phone: buyer.phone || '',
-    budget,
-    location,
-    interest,
-  });
-
-  const lead = await this.prisma.lead.create({
-    data: {
-      userId: user.id,
-      fullName: buyer.fullName,
-      email: buyer.email,
-      phone: buyer.phone,
-      source,
-      interest,
-      location,
-      budget,
-      quality,
-      status: LeadStatus.NEW,
-    },
-  });
-
-  await this.profileScoreService.updateUserScore(user.id);
-
-  return {
-    ...lead,
-    alreadyExists: false,
-  };
-}
-
-
-
-async createFromTrueCostCalculator(
-  dto: CreateTrueCostLeadDto,
-  user: { id: string; role: Role },
-) {
-  if (user.role !== Role.BUYER) {
-    throw new ForbiddenException(
-      'Only buyers can create true cost requests',
+    throw new NotFoundException(
+      'Buyer not found',
     );
   }
 
-  const buyer = await this.prisma.user.findUnique({
-    where: { id: user.id },
-  });
+  const source =
+    'Affordability Calculator';
 
-  if (!buyer) {
-    throw new NotFoundException('Buyer not found');
-  }
+  const interest =
+    'Mortgage / Affordability Review';
 
-  const source = 'True Cost Calculator';
-  const interest = 'Portugal Buying Costs / Legal Support';
-  const location = 'Portugal';
-  const budget = dto.totalCost || dto.propertyPrice || 'Not specified';
+  const location =
+    'Portugal';
 
-  const existingLead = await this.prisma.lead.findFirst({
-    where: {
-      userId: user.id,
-      source,
-      interest,
-      budget,
-      status: {
-        in: [LeadStatus.NEW, LeadStatus.MATCHED, LeadStatus.CONTACTED],
+  const budget =
+    dto.recommendedBudget ||
+    dto.maximumBudget ||
+    'Not specified';
+
+  /*
+   * Avoid creating the same active
+   * affordability request twice.
+   */
+  const existingLead =
+    await this.prisma.lead.findFirst({
+      where: {
+        userId: user.id,
+        source,
+        interest,
+        budget,
+
+        status: {
+          in: [
+            LeadStatus.NEW,
+            LeadStatus.MATCHED,
+            LeadStatus.CONTACTED,
+          ],
+        },
       },
-    },
-  });
+
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
 
   if (existingLead) {
     return {
@@ -1057,66 +1724,343 @@ async createFromTrueCostCalculator(
     };
   }
 
-  const quality = this.leadScoringService.calculateQuality({
-    phone: buyer.phone || '',
-    budget,
-    location,
-    interest,
-  });
+  const quality =
+    this.leadScoringService.calculateQuality({
+      phone:
+        buyer.phone || '',
 
-  const lead = await this.prisma.lead.create({
-    data: {
-      userId: user.id,
-      fullName: buyer.fullName,
-      email: buyer.email,
-      phone: buyer.phone,
-      source,
-      interest,
-      location,
       budget,
-      quality,
-      status: LeadStatus.NEW,
-    },
-  });
+      location,
+      interest,
+    });
 
-  await this.profileScoreService.updateUserScore(user.id);
+  /*
+   * Create the Buyer request.
+   */
+  const lead =
+    await this.prisma.lead.create({
+      data: {
+        userId:
+          user.id,
+
+        fullName:
+          buyer.fullName,
+
+        email:
+          buyer.email,
+
+        phone:
+          buyer.phone,
+
+        source,
+        interest,
+        location,
+        budget,
+        quality,
+
+        status:
+          LeadStatus.NEW,
+      },
+    });
+
+  /*
+   * Update Buyer profile score.
+   */
+  await this.profileScoreService
+    .updateUserScore(
+      user.id,
+    );
+
+  /*
+   * ============================================================
+   * SMART AUTO MATCHING
+   * ============================================================
+   *
+   * Affordability Calculator
+   *       ↓
+   * MORTGAGE_BROKER
+   *       ↓
+   * score >= 70%
+   *       ↓
+   * Top 3
+   *       ↓
+   * ACTIVE matches automatically
+   */
+  const autoMatching =
+    await this.autoMatchingService
+      .matchLead(
+        lead.id,
+      );
 
   return {
     ...lead,
-    alreadyExists: false,
+
+    alreadyExists:
+      false,
+
+    autoMatching,
   };
 }
-async findMine(userId: string) {
-  return this.prisma.lead.findMany({
-    where: {
-      userId,
+
+  // ============================================================
+  // TRUE COST CALCULATOR
+  // ============================================================
+
+  async createFromTrueCostCalculator(
+    dto: CreateTrueCostLeadDto,
+    user: {
+      id: string;
+      role: Role;
     },
-    orderBy: {
-      createdAt: 'desc',
-    },
-    include: {
-      matches: {
-        include: {
-          professional: {
-            select: {
-              id: true,
-              professionalType: true,
-              companyName: true,
-              verificationStatus: true,
-              user: {
-                select: {
-                  id: true,
-                  fullName: true,
-                  email: true,
-                  avatarUrl: true,
+  ) {
+    if (
+      user.role !== Role.BUYER
+    ) {
+      throw new ForbiddenException(
+        'Only buyers can create true cost requests',
+      );
+    }
+
+    const buyer =
+      await this.prisma.user.findUnique({
+        where: {
+          id:
+            user.id,
+        },
+      });
+
+    if (!buyer) {
+      throw new NotFoundException(
+        'Buyer not found',
+      );
+    }
+
+    const source =
+      'True Cost Calculator';
+
+    const interest =
+      'Portugal Buying Costs / Legal Support';
+
+    const location =
+      'Portugal';
+
+    const budget =
+      dto.totalCost ||
+      dto.propertyPrice ||
+      'Not specified';
+
+    const existingLead =
+      await this.prisma.lead.findFirst({
+        where: {
+          userId:
+            user.id,
+
+          source,
+          interest,
+          budget,
+
+          status: {
+            in: [
+              LeadStatus.NEW,
+              LeadStatus.MATCHED,
+              LeadStatus.CONTACTED,
+            ],
+          },
+        },
+      });
+
+    if (existingLead) {
+      return {
+        ...existingLead,
+        alreadyExists:
+          true,
+      };
+    }
+
+    const quality =
+      this.leadScoringService.calculateQuality({
+        phone:
+          buyer.phone || '',
+
+        budget,
+        location,
+        interest,
+      });
+
+    const lead =
+      await this.prisma.lead.create({
+        data: {
+          userId:
+            user.id,
+
+          fullName:
+            buyer.fullName,
+
+          email:
+            buyer.email,
+
+          phone:
+            buyer.phone,
+
+          source,
+          interest,
+          location,
+          budget,
+          quality,
+
+          status:
+            LeadStatus.NEW,
+        },
+      });
+
+    await this.profileScoreService.updateUserScore(
+      user.id,
+    );
+
+    return {
+      ...lead,
+      alreadyExists:
+        false,
+    };
+  }
+
+  // ============================================================
+  // MY LEADS
+  // ============================================================
+
+  async findMine(
+    userId: string,
+  ) {
+    return this.prisma.lead.findMany({
+      where: {
+        userId,
+      },
+
+      orderBy: {
+        createdAt:
+          'desc',
+      },
+
+      include: {
+        matches: {
+          orderBy: {
+            score:
+              'desc',
+          },
+
+          include: {
+            professional: {
+              select: {
+                id:
+                  true,
+
+                professionalType:
+                  true,
+
+                companyName:
+                  true,
+
+                verificationStatus:
+                  true,
+
+                user: {
+                  select: {
+                    id:
+                      true,
+
+                    fullName:
+                      true,
+
+                    email:
+                      true,
+
+                    avatarUrl:
+                      true,
+                  },
                 },
               },
             },
           },
         },
       },
-    },
-  });
-}
+    });
+  }
 
+  // ============================================================
+  // PROPERTY SEARCH ALERT TOGGLE
+  // ============================================================
+
+  async updatePropertyAlerts(
+    leadId: string,
+    enabled: boolean,
+    user: {
+      id: string;
+      role: Role;
+    },
+  ) {
+    if (
+      user.role !== Role.BUYER
+    ) {
+      throw new ForbiddenException(
+        'Only buyers can manage property alerts.',
+      );
+    }
+
+    const lead =
+      await this.prisma.lead.findUnique({
+        where: {
+          id:
+            leadId,
+        },
+      });
+
+    if (!lead) {
+      throw new NotFoundException(
+        'Buyer request not found.',
+      );
+    }
+
+    if (
+      lead.userId !==
+      user.id
+    ) {
+      throw new ForbiddenException(
+        'You can only update your own property search.',
+      );
+    }
+
+    if (
+      lead.source !==
+        'Property Search Assistant' ||
+      !lead.searchText
+    ) {
+      throw new BadRequestException(
+        'Property alerts are only available for Property Search Assistant requests.',
+      );
+    }
+
+    const updatedLead =
+      await this.prisma.lead.update({
+        where: {
+          id:
+            leadId,
+        },
+
+        data: {
+          notificationsEnabled:
+            enabled,
+        },
+      });
+
+    return {
+      id:
+        updatedLead.id,
+
+      isActive:
+        updatedLead.isActive,
+
+      notificationsEnabled:
+        updatedLead.notificationsEnabled,
+    };
+  }
 }

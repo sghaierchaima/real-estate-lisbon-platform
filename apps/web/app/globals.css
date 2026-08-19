@@ -1025,3 +1025,253 @@ main {
 .sidebar-scroll::-webkit-scrollbar-thumb:hover {
   background-color: #94a3b8;
 }
+
+/* ============================================================
+   GLOBAL RESPONSIVE BASE
+============================================================ */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+/* ============================================================
+   RESPONSIVE SECTION SPACING
+============================================================ */
+
+.section-space {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+  .section-space {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-space {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
+/* ============================================================
+   DASHBOARD LAYOUT
+============================================================ */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100dvh;
+  width: 100%;
+  background: #f7f8fa;
+}
+
+.dashboard-sidebar {
+  width: 295px;
+  min-width: 295px;
+}
+
+.dashboard-main {
+  min-width: 0;
+  flex: 1;
+  min-height: 100dvh;
+  background: #f7f8fa;
+}
+
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: white;
+}
+
+/* ============================================================
+   DASHBOARD CONTENT
+============================================================ */
+
+.dashboard-content {
+  width: 100%;
+  min-width: 0;
+  padding: 20px 16px 40px;
+}
+
+@media (min-width: 640px) {
+  .dashboard-content {
+    padding: 24px 24px 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-content {
+    padding: 32px 32px 56px;
+  }
+}
+
+/* ============================================================
+   DASHBOARD RESPONSIVE ELEMENTS
+============================================================ */
+
+.tb-page-header {
+  @apply mb-6 flex flex-col items-start gap-4 sm:mb-8 lg:flex-row lg:justify-between;
+}
+
+.tb-page-header-actions {
+  @apply flex w-full flex-col gap-3 sm:flex-row lg:w-auto;
+}
+
+.tb-page-header-actions > * {
+  @apply w-full sm:w-auto;
+}
+
+.tb-page-title {
+  @apply text-[30px] font-bold leading-tight text-[#0F1F3D] sm:text-3xl lg:text-4xl;
+}
+
+.tb-page-subtitle {
+  @apply text-sm leading-6 text-gray-600 sm:text-base;
+}
+
+.tb-stats-grid {
+  @apply mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mb-8 lg:grid-cols-4 lg:gap-6;
+}
+
+.tb-filter-bar {
+  @apply flex flex-col items-stretch gap-3 md:flex-row md:flex-wrap md:items-center;
+}
+
+.tb-search-input-wrapper {
+  @apply relative min-w-0 w-full flex-1 md:min-w-[260px];
+}
+
+.tb-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tb-table {
+  min-width: 760px;
+}
+
+.tb-pagination-wrapper {
+  @apply mt-6 flex flex-col gap-4 rounded-xl border border-gray-200/80 bg-white p-4 sm:p-6 lg:flex-row lg:items-center lg:justify-between;
+}
+
+.tb-pagination-controls {
+  @apply flex w-full flex-wrap items-center gap-2 lg:w-auto;
+}
+
+/* ============================================================
+   OLD PROPERTY CARDS - RESPONSIVE
+============================================================ */
+
+.properties-page-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.properties-grid-old {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.properties-card-old {
+  width: 100%;
+  min-width: 0;
+  border-radius: 22px;
+}
+
+.properties-card-image-old {
+  height: 220px;
+}
+
+@media (min-width: 640px) {
+  .properties-page-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .properties-card-image-old {
+    height: 260px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .properties-page-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .properties-grid-old {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .properties-card-image-old {
+    height: 300px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .properties-page-container {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+/* ============================================================
+   MOBILE SAFETY
+============================================================ */
+
+@media (max-width: 639px) {
+  .btn-primary,
+  .btn-white,
+  .btn-navy,
+  .btn-outline {
+    min-height: 52px;
+    height: auto;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .question-card {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .tool-card,
+  .professional-card {
+    padding: 20px;
+  }
+
+  .tb-dashboard-card {
+    border-radius: 20px;
+  }
+
+  .tb-dashboard-card-24 {
+    border-radius: 20px;
+  }
+}

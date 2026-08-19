@@ -4,7 +4,9 @@ export type NotificationType =
   | 'MATCH'
   | 'LEAD'
   | 'STORY'
-  | 'SYSTEM';
+  | 'SYSTEM'
+  | "PROPERTY_REQUEST"
+  | "PROPERTY_MATCH";
 
 export type NotificationFilter =
   | 'all'
@@ -18,6 +20,8 @@ export type NotificationItem = {
   message: string;
   type: NotificationType;
   isRead: boolean;
+  propertyId?: string | null;
+  leadId?: string | null;
   createdAt: string;
   updatedAt: string;
 };

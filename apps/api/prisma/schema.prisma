@@ -227,16 +227,18 @@ model Match {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  buyer User? @relation("BuyerMatches", fields: [buyerId], references: [id], onDelete: SetNull)
+  buyer User? @relation("BuyerMatches",fields: [buyerId],references: [id], onDelete: SetNull )
 
-  professional ProfessionalProfile @relation("ProfessionalMatches", fields: [professionalId], references: [id], onDelete: Cascade)
+  professional ProfessionalProfile @relation("ProfessionalMatches",fields: [professionalId], references: [id], onDelete: Cascade )
 
-  lead Lead? @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  lead Lead? @relation(    fields: [leadId],    references: [id],    onDelete: SetNull  )
 
-  property Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  property Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull  )
 
   chatRoom ChatRoom?
   review   Review?
+
+  @@unique([leadId, professionalId])
 
   @@index([buyerId])
   @@index([professionalId])
@@ -272,8 +274,12 @@ model Notification {
   title   String
   message String
   type    NotificationType
+  
 
   isRead Boolean @default(false)
+
+  propertyId String?
+  leadId     String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
