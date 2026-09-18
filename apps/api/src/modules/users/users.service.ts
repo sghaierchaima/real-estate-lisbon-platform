@@ -42,6 +42,10 @@ export class UsersService {
         country: true,
         city: true,
         avatarUrl: true,
+        emailNotifications: true,
+        leadNotifications: true,
+        matchNotifications: true,
+        propertyAlertNotifications: true,
         createdAt: true,
         updatedAt: true,
       },
@@ -219,4 +223,37 @@ const journey = {
     journey,
   };
 } 
+
+async updateNotificationPreferences(
+  userId: string,
+  dto: {
+    emailNotifications?: boolean;
+    leadNotifications?: boolean;
+    matchNotifications?: boolean;
+    propertyAlertNotifications?: boolean;
+  },
+) {
+  await this.findOne(userId);
+
+  return this.prisma.user.update({
+    where: {
+      id: userId,
+    },
+    data: {
+      emailNotifications: dto.emailNotifications,
+      leadNotifications: dto.leadNotifications,
+      matchNotifications: dto.matchNotifications,
+      propertyAlertNotifications:
+        dto.propertyAlertNotifications,
+    },
+    select: {
+      id: true,
+      emailNotifications: true,
+      leadNotifications: true,
+      matchNotifications: true,
+      propertyAlertNotifications: true,
+    },
+  });
+} 
+
 }

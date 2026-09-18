@@ -18,6 +18,10 @@ export type LoginResponse = {
   accessToken: string;
 };
 
+export type GoogleLoginPayload = {
+  idToken: string;
+};
+
 export async function login(
   payload: LoginPayload,
 ) {
@@ -38,6 +42,20 @@ export async function register(
     {
       method: "POST",
       body: payload,
+    },
+  );
+}
+
+export async function googleLogin(
+  idToken: string,
+) {
+  return apiFetch<LoginResponse>(
+    "/auth/google",
+    {
+      method: "POST",
+      body: {
+        idToken,
+      },
     },
   );
 }

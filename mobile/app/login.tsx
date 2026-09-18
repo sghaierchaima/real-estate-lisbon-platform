@@ -12,6 +12,8 @@ import {
   View,
 } from "react-native";
 
+
+
 import {
   SafeAreaView,
 } from "react-native-safe-area-context";
@@ -33,11 +35,14 @@ import { useState } from "react";
 import { login } from "@/lib/auth-api";
 
 import {
+  clearSession,
   saveToken,
   saveUser,
 } from "@/lib/session";
 
 import { Colors } from "@/constants/colors";
+import GoogleAuthButton from "@/components/GoogleAuthButton";
+
 
 export default function LoginScreen() {
   const [email, setEmail] =
@@ -46,8 +51,10 @@ export default function LoginScreen() {
   const [password, setPassword] =
     useState("");
 
-  const [showPassword, setShowPassword] =
-    useState(false);
+  const [
+    showPassword,
+    setShowPassword,
+  ] = useState(false);
 
   const [loading, setLoading] =
     useState(false);
@@ -90,21 +97,45 @@ export default function LoginScreen() {
     try {
       setLoading(true);
 
+      // Remove any previous local session before authenticating
+      // another account on this device.
+      await clearSession();
+
       const result = await login({
         email: cleanEmail,
         password,
       });
 
+      // The mobile application is strictly reserved for BUYER.
+      // ADMIN and PROFESSIONAL can be valid backend accounts,
+      // but they must never receive a mobile session.
+      if (result.user.role !== "BUYER") {
+        await clearSession();
+
+        Alert.alert(
+          "Buyer application",
+          "The mobile application is available only for buyer accounts.",
+        );
+
+        return;
+      }
+
+      // Persist the session only after the role has been validated.
       await saveToken(
         result.accessToken,
       );
 
-      await saveUser(result.user);
+      await saveUser(
+        result.user,
+      );
 
       router.replace(
         "/(tabs)/home",
       );
     } catch (error) {
+      // Avoid leaving a partial/stale session after a failed login.
+      await clearSession();
+
       Alert.alert(
         "Unable to sign in",
         error instanceof Error
@@ -141,7 +172,9 @@ export default function LoginScreen() {
             styles.scrollContent
           }
         >
-          {/* NAVIGATION */}
+          {/* ============================= */}
+          {/* NAVIGATION                    */}
+          {/* ============================= */}
 
           <View style={styles.topBar}>
             <Pressable
@@ -150,6 +183,7 @@ export default function LoginScreen() {
               }
               style={({ pressed }) => [
                 styles.backButton,
+
                 pressed &&
                   styles.pressed,
               ]}
@@ -182,7 +216,9 @@ export default function LoginScreen() {
             </View>
           </View>
 
-          {/* BRAND */}
+          {/* ============================= */}
+          {/* BRAND                         */}
+          {/* ============================= */}
 
           <View style={styles.brand}>
             <View
@@ -204,12 +240,13 @@ export default function LoginScreen() {
                 styles.brandCaption
               }
             >
-              YOUR PORTUGAL PROPERTY
-              JOURNEY
+              YOUR PORTUGAL PROPERTY JOURNEY
             </Text>
           </View>
 
-          {/* INTRODUCTION */}
+          {/* ============================= */}
+          {/* INTRODUCTION                  */}
+          {/* ============================= */}
 
           <View style={styles.intro}>
             <Text style={styles.title}>
@@ -225,7 +262,9 @@ export default function LoginScreen() {
             </Text>
           </View>
 
-          {/* FORM CARD */}
+          {/* ============================= */}
+          {/* FORM                          */}
+          {/* ============================= */}
 
           <View style={styles.card}>
             <View
@@ -254,9 +293,7 @@ export default function LoginScreen() {
             {/* EMAIL */}
 
             <View style={styles.field}>
-              <Text
-                style={styles.label}
-              >
+              <Text style={styles.label}>
                 Email address
               </Text>
 
@@ -280,9 +317,7 @@ export default function LoginScreen() {
 
                 <TextInput
                   value={email}
-                  onChangeText={
-                    setEmail
-                  }
+                  onChangeText={setEmail}
                   autoCapitalize="none"
                   autoCorrect={false}
                   keyboardType="email-address"
@@ -384,14 +419,12 @@ export default function LoginScreen() {
               </View>
             </View>
 
-            {/* LOGIN */}
+            {/* LOGIN BUTTON */}
 
             <Pressable
               disabled={loading}
               onPress={handleLogin}
-              style={({
-                pressed,
-              }) => [
+              style={({ pressed }) => [
                 styles.primaryButton,
 
                 pressed &&
@@ -446,7 +479,27 @@ export default function LoginScreen() {
             </Pressable>
           </View>
 
-          {/* REGISTER */}
+          {/* ============================= */}
+          {/* GOOGLE AUTH                   */}
+          {/* ============================= */}
+
+          <View style={styles.oauthSection}>
+  <View style={styles.dividerRow}>
+    <View style={styles.dividerLine} />
+
+    <Text style={styles.dividerText}>
+      OR
+    </Text>
+
+    <View style={styles.dividerLine} />
+  </View>
+
+  <GoogleAuthButton disabled={loading} />
+</View>
+
+          {/* ============================= */}
+          {/* REGISTER                      */}
+          {/* ============================= */}
 
           <View
             style={
@@ -459,8 +512,7 @@ export default function LoginScreen() {
                   styles.registerTitle
                 }
               >
-                New to Real Estate
-                Lisbon?
+                New to Real Estate Lisbon?
               </Text>
 
               <Text
@@ -482,6 +534,7 @@ export default function LoginScreen() {
               }
               style={({ pressed }) => [
                 styles.createButton,
+
                 pressed &&
                   styles.pressed,
               ]}
@@ -630,6 +683,7 @@ const styles =
         width: 0,
         height: 8,
       },
+
       elevation: 3,
     },
 
@@ -715,10 +769,12 @@ const styles =
       borderRadius: 18,
       backgroundColor:
         Colors.navy,
+
       flexDirection: "row",
       alignItems: "center",
       justifyContent:
         "space-between",
+
       gap: 10,
     },
 
@@ -749,6 +805,35 @@ const styles =
       justifyContent: "center",
     },
 
+    /*
+     * GOOGLE AUTH
+     */
+
+    oauthSection: {
+      marginTop: 24,
+      gap: 18,
+    },
+
+    dividerRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 14,
+    },
+
+    dividerLine: {
+      flex: 1,
+      height: 1,
+      backgroundColor:
+        "#E4E7EC",
+    },
+
+    dividerText: {
+      color: "#98A2B3",
+      fontSize: 12,
+      fontWeight: "700",
+      letterSpacing: 1.2,
+    },
+
     registerCard: {
       marginTop: 18,
       padding: 18,
@@ -758,6 +843,7 @@ const styles =
         Colors.border,
       backgroundColor:
         "#F8FAFC",
+
       flexDirection: "row",
       alignItems: "center",
       gap: 14,

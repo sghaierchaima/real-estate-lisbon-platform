@@ -46,6 +46,23 @@ export default function PublicPropertiesPage() {
 
   const itemsPerPage = 6;
 
+  const [locationFilter, setLocationFilter] = useState("");
+const [minPrice, setMinPrice] = useState("");
+const [maxPrice, setMaxPrice] = useState("");
+const [selectedBathrooms, setSelectedBathrooms] = useState<number[]>([]);
+const [minSurface, setMinSurface] = useState("");
+const [maxSurface, setMaxSurface] = useState("");
+const [selectedAmenities, setSelectedAmenities] = useState<string[]>([]);
+const [featuredOnly, setFeaturedOnly] = useState(false);
+const amenitiesOptions = [
+  "Parking",
+  "Balcony",
+  "Pool",
+  "Garden",
+  "Elevator",
+  "Air Conditioning",
+];
+
   useEffect(() => {
     async function loadProperties() {
       try {
@@ -68,52 +85,210 @@ export default function PublicPropertiesPage() {
   }
 
   function clearFilters() {
-    setSearch("");
-    setPropertyType("all");
-    setSelectedBedrooms([]);
-    setSortBy("featured");
-    setCurrentPage(1);
+  setSearch("");
+  setLocationFilter("");
+  setPropertyType("all");
+  setMinPrice("");
+  setMaxPrice("");
+  setSelectedBedrooms([]);
+  setSelectedBathrooms([]);
+  setMinSurface("");
+  setMaxSurface("");
+  setSelectedAmenities([]);
+  setFeaturedOnly(false);
+  setSortBy("featured");
+  setCurrentPage(1);
+}
+function toggleBathroom(bathroom: number) {
+  setSelectedBathrooms((prev) =>
+    prev.includes(bathroom)
+      ? prev.filter((item) => item !== bathroom)
+      : [...prev, bathroom]
+  );
+}
+
+function toggleAmenity(amenity: string) {
+  setSelectedAmenities((prev) =>
+    prev.includes(amenity)
+      ? prev.filter((item) => item !== amenity)
+      : [...prev, amenity]
+  );
+}
+
+function getPropertyAmenities(property: Property): string[] {
+  const value = (
+    property as Property & {
+      amenities?: unknown;
+    }
+  ).amenities;
+
+  if (Array.isArray(value)) {
+    return value
+      .filter((item): item is string => typeof item === "string")
+      .map((item) => item.toLowerCase());
   }
 
+  if (typeof value === "string") {
+    return value
+      .split(",")
+      .map((item) => item.trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  return [];
+}
   const filteredProperties = useMemo(() => {
-    const q = search.toLowerCase().trim();
+  const keyword = search.toLowerCase().trim();
+  const location = locationFilter.toLowerCase().trim();
 
-    const result = properties.filter((property) => {
-      const matchesSearch =
-        !q ||
-        property.title.toLowerCase().includes(q) ||
-        property.city?.toLowerCase().includes(q) ||
-        property.region?.toLowerCase().includes(q) ||
-        property.location?.toLowerCase().includes(q);
+  const minimumPrice = minPrice ? Number(minPrice) : null;
+  const maximumPrice = maxPrice ? Number(maxPrice) : null;
 
-      const matchesType =
-        propertyType === "all" || property.propertyType === propertyType;
+  const minimumSurface = minSurface ? Number(minSurface) : null;
+  const maximumSurface = maxSurface ? Number(maxSurface) : null;
 
-      const matchesBedrooms =
-        selectedBedrooms.length === 0 ||
-        selectedBedrooms.some((bed) =>
-          bed === 5 ? Number(property.bedrooms || 0) >= 5 : property.bedrooms === bed
-        );
+  const result = properties.filter((property) => {
+    const matchesKeyword =
+      !keyword ||
+      property.title?.toLowerCase().includes(keyword);
 
-      return matchesSearch && matchesType && matchesBedrooms;
-    });
+    const matchesLocation =
+      !location ||
+      property.city?.toLowerCase().includes(location) ||
+      property.region?.toLowerCase().includes(location) ||
+      property.location?.toLowerCase().includes(location);
 
-    if (sortBy === "price-asc") result.sort((a, b) => a.price - b.price);
-    if (sortBy === "price-desc") result.sort((a, b) => b.price - a.price);
-    if (sortBy === "featured") {
-      result.sort(
-        (a, b) =>
-          Number(Boolean(b.featured)) - Number(Boolean(a.featured)) ||
-          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    const matchesType =
+      propertyType === "all" ||
+      property.propertyType === propertyType;
+
+    const matchesMinPrice =
+      minimumPrice === null ||
+      Number(property.price || 0) >= minimumPrice;
+
+    const matchesMaxPrice =
+      maximumPrice === null ||
+      Number(property.price || 0) <= maximumPrice;
+
+    const matchesBedrooms =
+      selectedBedrooms.length === 0 ||
+      selectedBedrooms.some((bed) =>
+        bed === 5
+          ? Number(property.bedrooms || 0) >= 5
+          : Number(property.bedrooms || 0) === bed
       );
-    }
 
-    return result;
-  }, [properties, search, propertyType, selectedBedrooms, sortBy]);
+    const matchesBathrooms =
+      selectedBathrooms.length === 0 ||
+      selectedBathrooms.some((bathroom) =>
+        bathroom === 5
+          ? Number(property.bathrooms || 0) >= 5
+          : Number(property.bathrooms || 0) === bathroom
+      );
+
+    const propertyArea = Number(property.area || 0);
+
+    const matchesMinSurface =
+      minimumSurface === null ||
+      propertyArea >= minimumSurface;
+
+    const matchesMaxSurface =
+      maximumSurface === null ||
+      propertyArea <= maximumSurface;
+
+    const propertyAmenities = getPropertyAmenities(property);
+
+    const matchesAmenities =
+      selectedAmenities.length === 0 ||
+      selectedAmenities.every((amenity) =>
+        propertyAmenities.includes(amenity.toLowerCase())
+      );
+
+    const matchesFeatured =
+      !featuredOnly || Boolean(property.featured);
+
+    return (
+      matchesKeyword &&
+      matchesLocation &&
+      matchesType &&
+      matchesMinPrice &&
+      matchesMaxPrice &&
+      matchesBedrooms &&
+      matchesBathrooms &&
+      matchesMinSurface &&
+      matchesMaxSurface &&
+      matchesAmenities &&
+      matchesFeatured
+    );
+  });
+
+  if (sortBy === "newest") {
+    result.sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() -
+        new Date(a.createdAt).getTime()
+    );
+  }
+
+  if (sortBy === "price-asc") {
+    result.sort((a, b) => a.price - b.price);
+  }
+
+  if (sortBy === "price-desc") {
+    result.sort((a, b) => b.price - a.price);
+  }
+
+  if (sortBy === "area-desc") {
+    result.sort(
+      (a, b) =>
+        Number(b.area || 0) -
+        Number(a.area || 0)
+    );
+  }
+
+  if (sortBy === "featured") {
+    result.sort(
+      (a, b) =>
+        Number(Boolean(b.featured)) -
+          Number(Boolean(a.featured)) ||
+        new Date(b.createdAt).getTime() -
+          new Date(a.createdAt).getTime()
+    );
+  }
+
+  return result;
+}, [
+  properties,
+  search,
+  locationFilter,
+  propertyType,
+  minPrice,
+  maxPrice,
+  selectedBedrooms,
+  selectedBathrooms,
+  minSurface,
+  maxSurface,
+  selectedAmenities,
+  featuredOnly,
+  sortBy,
+]);
 
   useEffect(() => {
-    setCurrentPage(1);
-  }, [search, propertyType, selectedBedrooms, sortBy]);
+  setCurrentPage(1);
+}, [
+  search,
+  locationFilter,
+  propertyType,
+  minPrice,
+  maxPrice,
+  selectedBedrooms,
+  selectedBathrooms,
+  minSurface,
+  maxSurface,
+  selectedAmenities,
+  featuredOnly,
+  sortBy,
+]);
 
   const totalPages = Math.max(
     1,
@@ -167,7 +342,7 @@ export default function PublicPropertiesPage() {
                 <input
                   value={search}
                   onChange={(event) => setSearch(event.target.value)}
-                  placeholder="Search by location, city, region or property name..."
+                  placeholder="Search by keyword or property name..."
                   className="h-14 w-full rounded-lg border border-gray-300 bg-white pl-12 pr-4 text-base text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
                 />
               </div>
@@ -189,69 +364,312 @@ export default function PublicPropertiesPage() {
       </section>
 
       {showFilters && (
-        <section className="border-b border-gray-200 bg-white">
-          <div className="container-page py-8">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <div>
-                <label className="mb-3 block text-sm font-medium text-gray-700">
-                  Property Type
-                </label>
+  <section className="border-b border-gray-200 bg-[#F8FAFC]">
+    <div className="container-page py-8">
 
-                <div className="relative">
-                  <select
-                    value={propertyType}
-                    onChange={(event) => setPropertyType(event.target.value)}
-                    className="h-10 w-full appearance-none rounded-lg border border-gray-300 bg-white px-4 text-sm text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
-                  >
-                    <option value="all">All Types</option>
-                    <option value="Apartment">Apartment</option>
-                    <option value="House">House</option>
-                    <option value="Villa">Villa</option>
-                    <option value="Penthouse">Penthouse</option>
-                  </select>
+      <div className="mb-6 flex items-center justify-between">
+        <div>
+          <h2 className="text-xl font-bold text-[#0F2340]">
+            Advanced Filters
+          </h2>
 
-                  <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
-                </div>
-              </div>
+          <p className="mt-1 text-sm text-gray-500">
+            Refine your property search
+          </p>
+        </div>
 
-              <div>
-                <label className="mb-3 block text-sm font-medium text-gray-700">
-                  Bedrooms
-                </label>
+        <button
+          onClick={clearFilters}
+          className="text-sm font-semibold text-[#1B365D] transition hover:text-[#C9A227]"
+        >
+          Clear all filters
+        </button>
+      </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {[1, 2, 3, 4, 5].map((bed) => {
-                    const active = selectedBedrooms.includes(bed);
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 
-                    return (
-                      <button
-                        key={bed}
-                        onClick={() => toggleBedroom(bed)}
-                        className={`h-9 rounded-lg border px-4 text-sm font-medium transition ${
-                          active
-                            ? "border-[#1B365D] bg-[#1B365D] text-white"
-                            : "border-gray-300 bg-white text-gray-700 hover:border-gray-400 hover:bg-gray-50"
-                        }`}
-                      >
-                        {bed === 5 ? "5+" : bed}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
+        {/* LOCATION */}
 
-              <div className="flex items-end">
-                <button
-                  onClick={clearFilters}
-                  className="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-[#1B365D] transition hover:bg-[#1B365D]/5"
-                >
-                  Clear all filters
-                </button>
-              </div>
-            </div>
+        <div>
+          <label className="mb-2 block text-sm font-medium text-gray-700">
+            Location / City
+          </label>
+
+          <div className="relative">
+            <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+
+            <input
+              value={locationFilter}
+              onChange={(event) =>
+                setLocationFilter(event.target.value)
+              }
+              placeholder="Lisbon, Cascais..."
+              className="h-11 w-full rounded-lg border border-gray-300 bg-white pl-10 pr-3 text-sm text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+            />
           </div>
-        </section>
-      )}
+        </div>
+
+        {/* PROPERTY TYPE */}
+
+        <div>
+          <label className="mb-2 block text-sm font-medium text-gray-700">
+            Property Type
+          </label>
+
+          <div className="relative">
+            <select
+              value={propertyType}
+              onChange={(event) =>
+                setPropertyType(event.target.value)
+              }
+              className="h-11 w-full appearance-none rounded-lg border border-gray-300 bg-white px-4 text-sm text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+            >
+              <option value="all">All Types</option>
+              <option value="Apartment">Apartment</option>
+              <option value="House">House</option>
+              <option value="Villa">Villa</option>
+              <option value="Penthouse">Penthouse</option>
+            </select>
+
+            <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+          </div>
+        </div>
+
+        {/* MIN PRICE */}
+
+        <div>
+          <label className="mb-2 block text-sm font-medium text-gray-700">
+            Min Price
+          </label>
+
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-gray-400">
+              €
+            </span>
+
+            <input
+              type="number"
+              min="0"
+              value={minPrice}
+              onChange={(event) =>
+                setMinPrice(event.target.value)
+              }
+              placeholder="200,000"
+              className="h-11 w-full rounded-lg border border-gray-300 bg-white pl-8 pr-3 text-sm text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+            />
+          </div>
+        </div>
+
+        {/* MAX PRICE */}
+
+        <div>
+          <label className="mb-2 block text-sm font-medium text-gray-700">
+            Max Price
+          </label>
+
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-gray-400">
+              €
+            </span>
+
+            <input
+              type="number"
+              min="0"
+              value={maxPrice}
+              onChange={(event) =>
+                setMaxPrice(event.target.value)
+              }
+              placeholder="750,000"
+              className="h-11 w-full rounded-lg border border-gray-300 bg-white pl-8 pr-3 text-sm text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* BEDROOMS + BATHROOMS */}
+
+      <div className="mt-7 grid gap-6 md:grid-cols-2">
+
+        <div>
+          <label className="mb-3 block text-sm font-medium text-gray-700">
+            Bedrooms
+          </label>
+
+          <div className="flex flex-wrap gap-2">
+            {[1, 2, 3, 4, 5].map((bed) => {
+              const active =
+                selectedBedrooms.includes(bed);
+
+              return (
+                <button
+                  key={bed}
+                  type="button"
+                  onClick={() => toggleBedroom(bed)}
+                  className={`h-10 min-w-12 rounded-lg border px-4 text-sm font-semibold transition ${
+                    active
+                      ? "border-[#1B365D] bg-[#1B365D] text-white"
+                      : "border-gray-300 bg-white text-gray-700 hover:border-[#1B365D]"
+                  }`}
+                >
+                  {bed === 5 ? "5+" : bed}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div>
+          <label className="mb-3 block text-sm font-medium text-gray-700">
+            Bathrooms
+          </label>
+
+          <div className="flex flex-wrap gap-2">
+            {[1, 2, 3, 4, 5].map((bathroom) => {
+              const active =
+                selectedBathrooms.includes(bathroom);
+
+              return (
+                <button
+                  key={bathroom}
+                  type="button"
+                  onClick={() =>
+                    toggleBathroom(bathroom)
+                  }
+                  className={`h-10 min-w-12 rounded-lg border px-4 text-sm font-semibold transition ${
+                    active
+                      ? "border-[#1B365D] bg-[#1B365D] text-white"
+                      : "border-gray-300 bg-white text-gray-700 hover:border-[#1B365D]"
+                  }`}
+                >
+                  {bathroom === 5
+                    ? "5+"
+                    : bathroom}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* SURFACE */}
+
+      <div className="mt-7 grid gap-6 md:grid-cols-2">
+
+        <div>
+          <label className="mb-2 block text-sm font-medium text-gray-700">
+            Min Surface
+          </label>
+
+          <div className="relative">
+            <input
+              type="number"
+              min="0"
+              value={minSurface}
+              onChange={(event) =>
+                setMinSurface(event.target.value)
+              }
+              placeholder="50"
+              className="h-11 w-full rounded-lg border border-gray-300 bg-white px-4 pr-12 text-sm text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+            />
+
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-400">
+              m²
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <label className="mb-2 block text-sm font-medium text-gray-700">
+            Max Surface
+          </label>
+
+          <div className="relative">
+            <input
+              type="number"
+              min="0"
+              value={maxSurface}
+              onChange={(event) =>
+                setMaxSurface(event.target.value)
+              }
+              placeholder="250"
+              className="h-11 w-full rounded-lg border border-gray-300 bg-white px-4 pr-12 text-sm text-gray-900 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+            />
+
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-400">
+              m²
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* AMENITIES */}
+
+      <div className="mt-7">
+        <label className="mb-3 block text-sm font-medium text-gray-700">
+          Amenities
+        </label>
+
+        <div className="flex flex-wrap gap-2">
+          {amenitiesOptions.map((amenity) => {
+            const active =
+              selectedAmenities.includes(amenity);
+
+            return (
+              <button
+                key={amenity}
+                type="button"
+                onClick={() =>
+                  toggleAmenity(amenity)
+                }
+                className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+                  active
+                    ? "border-[#C9A227] bg-[#C9A227] text-white"
+                    : "border-gray-300 bg-white text-gray-700 hover:border-[#C9A227]"
+                }`}
+              >
+                {amenity}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* FEATURED */}
+
+      <div className="mt-7 flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4">
+        <div>
+          <p className="font-semibold text-[#0F2340]">
+            Featured properties only
+          </p>
+
+          <p className="text-sm text-gray-500">
+            Show highlighted properties first
+          </p>
+        </div>
+
+        <button
+          type="button"
+          onClick={() =>
+            setFeaturedOnly((prev) => !prev)
+          }
+          className={`relative h-7 w-12 rounded-full transition ${
+            featuredOnly
+              ? "bg-[#1B365D]"
+              : "bg-gray-300"
+          }`}
+        >
+          <span
+            className={`absolute top-1 h-5 w-5 rounded-full bg-white shadow transition ${
+              featuredOnly
+                ? "left-6"
+                : "left-1"
+            }`}
+          />
+        </button>
+      </div>
+    </div>
+  </section>
+)}
 
       <section className="container-page py-12">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">

@@ -61,6 +61,22 @@ export class StoriesController {
     return this.storiesService.findAll(req.user);
   }
 
+  @Get('me')
+@UseGuards(
+  JwtAuthGuard,
+  PermissionsGuard,
+)
+@Permissions('stories.read')
+findMyStories(
+  @Req()
+  req: AuthenticatedRequest,
+) {
+  return this.storiesService.findMyStories(
+    req.user,
+  );
+}
+  
+
   @Post()
   @UseGuards(JwtAuthGuard, PermissionsGuard)
   @Permissions('stories.create')

@@ -713,57 +713,172 @@ export default function NeighborhoodFinderPage() {
     currentPage * ITEMS_PER_PAGE
   );
 
-  async function handleSaveNeighborhood(item: Neighborhood) {
+  async function handleSaveNeighborhood(
+  item: Neighborhood,
+) {
   const token = getToken();
-  const user = getStoredUser<AuthUser>();
+  const user =
+    getStoredUser<AuthUser>();
 
-  if (!token || !user) {
+  if (
+    !token ||
+    !user
+  ) {
     toast.warning(
       "Login required",
-      "Please sign in as a buyer to save this result."
+      "Please sign in as a Buyer to create a neighborhood request.",
     );
+
     return;
   }
 
-  if (user.role !== "BUYER") {
+  if (
+    user.role !==
+    "BUYER"
+  ) {
     toast.warning(
       "Buyer account required",
-      "Only buyers can create property requests from this tool."
+      "Only Buyer accounts can create property requests from this tool.",
     );
+
     return;
   }
 
   try {
-    setSavingName(item.name);
+    setSavingName(
+      item.name,
+    );
 
-    const lead = await createLeadFromNeighborhoodFinder(token, {
-      neighborhoodId: item.id,
-      neighborhoodName: item.name,
-      budgetMin,
-      budgetMax,
-      profile,
-      goal,
-    });
+    const lead =
+      await createLeadFromNeighborhoodFinder(
+        token,
+        {
+          neighborhoodId:
+            item.id,
 
-    if (lead.alreadyExists) {
-      toast.info(
-        "Request already exists",
-        "This neighborhood request is already available in My Requests."
+          neighborhoodName:
+            item.name,
+
+          budgetMin,
+
+          budgetMax,
+
+          profile,
+
+          goal,
+        },
       );
+
+    /*
+     * ==========================================================
+     * AUTOMATIC MATCH FOUND
+     * ==========================================================
+     */
+
+    if (
+      lead.status ===
+        "MATCHED" ||
+      lead.autoMatching
+        ?.matched
+    ) {
+      const bestMatch =
+        lead.matches?.[0];
+
+      const professionalName =
+        bestMatch
+          ?.professional
+          ?.user
+          ?.fullName;
+
+      const score =
+        bestMatch?.score;
+
+      /*
+       * Existing request that has just been
+       * automatically reprocessed.
+       */
+      if (
+        lead.alreadyExists
+      ) {
+        if (
+          professionalName &&
+          typeof score ===
+            "number"
+        ) {
+          toast.success(
+            "Smart match found",
+            `${professionalName} is matched to your ${item.name} request with a ${score}% compatibility score.`,
+          );
+        } else {
+          toast.success(
+            "Neighborhood request matched",
+            `Your existing ${item.name} request has been automatically matched with a compatible verified property professional.`,
+          );
+        }
+
+        return;
+      }
+
+      /*
+       * Brand-new request automatically matched.
+       */
+      if (
+        professionalName &&
+        typeof score ===
+          "number"
+      ) {
+        toast.success(
+          "Smart match found",
+          `${professionalName} has been automatically matched to your ${item.name} request with a ${score}% compatibility score.`,
+        );
+      } else {
+        toast.success(
+          "Professional matched",
+          `A compatible verified professional has been automatically assigned to your ${item.name} request.`,
+        );
+      }
+
       return;
     }
 
+    /*
+     * ==========================================================
+     * EXISTING REQUEST — NO MATCH YET
+     * ==========================================================
+     */
+
+    if (
+      lead.alreadyExists
+    ) {
+      toast.info(
+        "Request already active",
+        `Your ${item.name} request already exists. Smart Matching will continue looking automatically for a compatible verified professional.`,
+      );
+
+      return;
+    }
+
+    /*
+     * ==========================================================
+     * NEW REQUEST — NO PROFESSIONAL >= THRESHOLD YET
+     * ==========================================================
+     */
+
     toast.success(
-      "Request created",
-      "Your neighborhood request has been saved. You can track it in My Requests."
+      "Neighborhood request created",
+      `Your ${item.name} request is now active. Smart Matching will automatically connect you with a compatible verified property professional when one meets the required score.`,
     );
   } catch (error) {
     toast.error(
-      "Unable to save request",
-      error instanceof Error ? error.message : "Please try again later."
+      "Unable to create request",
+      error instanceof Error
+        ? error.message
+        : "Something went wrong while creating your neighborhood request. Please try again.",
     );
   } finally {
-    setSavingName(null);
+    setSavingName(
+      null,
+    );
   }
 }
 

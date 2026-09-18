@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState,   Suspense,} from "react";
+import { useEffect, useMemo, useState, Suspense, } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/web/Navbar";
@@ -122,11 +122,10 @@ function ResultRow({
 }) {
   return (
     <div
-      className={`flex items-center justify-between gap-4 ${
-        strong
-          ? "text-[17px] font-semibold text-[#0F2340]"
-          : "text-[15px] text-[#4B5563]"
-      }`}
+      className={`flex items-center justify-between gap-4 ${strong
+        ? "text-[17px] font-semibold text-[#0F2340]"
+        : "text-[15px] text-[#4B5563]"
+        }`}
     >
       <span>{label}</span>
       <span className="text-right">{value}</span>
@@ -278,70 +277,183 @@ function PropertyValuationPageContent() {
     if (!token || !user) {
       toast.warning(
         "Login required",
-        "Please sign in as a buyer to create a valuation request."
+        "Please sign in as a Buyer to create a valuation request.",
       );
+
       return;
     }
 
     if (user.role !== "BUYER") {
       toast.warning(
         "Buyer account required",
-        "Only buyers can create valuation requests."
+        "Only Buyer accounts can create valuation requests.",
       );
+
       return;
     }
 
-    if (!address.trim() || !sizeInput.trim() || !askingPrice.trim()) {
+    if (
+      !address.trim() ||
+      !sizeInput.trim() ||
+      !askingPrice.trim()
+    ) {
       toast.warning(
         "Missing information",
-        "Please enter address, size and asking price before creating a request."
+        "Please enter the address, property size and asking price before creating a request.",
       );
+
       return;
     }
 
     if (valuation.marketValue <= 0) {
       toast.warning(
         "Invalid valuation",
-        "Please check the property size and asking price."
+        "Please check the property size and asking price.",
       );
+
       return;
     }
 
     try {
       setSavingRequest(true);
 
-      const lead = await createLeadFromPropertyValuation(token, {
-        address,
-        propertyType,
-        condition,
-        size: sizeInput,
-        askingPrice,
-        bedrooms,
-        bathrooms,
-        floorLevel,
-        estimatedValue: String(Math.round(valuation.marketValue)),
-        valuationRange: `${Math.round(valuation.lowRange)} - ${Math.round(
-          valuation.highRange
-        )}`,
-        verdict: valuation.verdict,
-      });
+      const lead =
+        await createLeadFromPropertyValuation(
+          token,
+          {
+            address:
+              address.trim(),
 
-      if (lead.alreadyExists) {
-        toast.info(
-          "Request already exists",
-          "This valuation request is already available in My Requests."
+            propertyType,
+
+            condition,
+
+            size:
+              sizeInput,
+
+            askingPrice,
+
+            bedrooms,
+
+            bathrooms,
+
+            floorLevel,
+
+            estimatedValue:
+              String(
+                Math.round(
+                  valuation.marketValue,
+                ),
+              ),
+
+            valuationRange:
+              `${Math.round(
+                valuation.lowRange,
+              )} - ${Math.round(
+                valuation.highRange,
+              )}`,
+
+            verdict:
+              valuation.verdict,
+          },
         );
+
+      /*
+       * ==========================================================
+       * SMART MATCH FOUND
+       * ==========================================================
+       */
+
+      if (
+        lead.status === "MATCHED" ||
+        lead.autoMatching?.matched
+      ) {
+        const bestMatch =
+          lead.matches?.[0];
+
+        const professionalName =
+          bestMatch
+            ?.professional
+            ?.user
+            ?.fullName;
+
+        const score =
+          bestMatch?.score;
+
+        /*
+         * Existing request automatically reprocessed.
+         */
+        if (lead.alreadyExists) {
+          if (
+            professionalName &&
+            typeof score === "number"
+          ) {
+            toast.success(
+              "Smart match found",
+              `${professionalName} is matched to your valuation request with a ${score}% compatibility score.`,
+            );
+          } else {
+            toast.success(
+              "Valuation request matched",
+              "Your existing valuation request has been automatically matched with a compatible verified property valuer.",
+            );
+          }
+
+          return;
+        }
+
+        /*
+         * Brand-new request automatically matched.
+         */
+        if (
+          professionalName &&
+          typeof score === "number"
+        ) {
+          toast.success(
+            "Smart match found",
+            `${professionalName} has been automatically matched to your valuation request with a ${score}% compatibility score.`,
+          );
+        } else {
+          toast.success(
+            "Property valuer matched",
+            "A compatible verified property valuer has been automatically assigned to your valuation request.",
+          );
+        }
+
         return;
       }
 
+      /*
+       * ==========================================================
+       * EXISTING REQUEST — NO MATCH YET
+       * ==========================================================
+       */
+
+      if (lead.alreadyExists) {
+        toast.info(
+          "Request already active",
+          "This valuation request already exists. Smart Matching will continue looking automatically for a compatible verified property valuer.",
+        );
+
+        return;
+      }
+
+      /*
+       * ==========================================================
+       * NEW REQUEST — NO PROFESSIONAL >= THRESHOLD YET
+       * ==========================================================
+       */
+
       toast.success(
         "Valuation request created",
-        "Your request has been created and is now waiting for admin matching."
+        "Your request is now active. Smart Matching will automatically connect you with a compatible verified property valuer when one meets the required score.",
       );
     } catch (error) {
       toast.error(
         "Unable to create request",
-        error instanceof Error ? error.message : "Please try again later."
+        error instanceof Error
+          ? error.message
+          : "Something went wrong while creating your valuation request. Please try again.",
       );
     } finally {
       setSavingRequest(false);
@@ -393,8 +505,9 @@ function PropertyValuationPageContent() {
 
                 <p className="mt-5 max-w-[760px] text-[18px] leading-8 text-[#4B5563]">
                   Asking prices are not market prices. Get a realistic value
-                  range, compare against area benchmarks, and create a buyer
-                  request when you want a professional valuation review.
+                  range, compare against area benchmarks, and create a Buyer
+                  Request to be automatically matched with a compatible verified
+                  property valuer.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
@@ -427,7 +540,7 @@ function PropertyValuationPageContent() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle size={18} className="text-[#2E7D32]" />
-                    <span>Ready for admin matching</span>
+                    <span>Automatic Smart Matching</span>
                   </div>
                 </div>
               </div>
@@ -808,9 +921,10 @@ function PropertyValuationPageContent() {
                   Ready to go deeper?
                 </h2>
                 <p className="mt-4 max-w-[700px] text-[16px] leading-8 text-white/85">
-                  Valuation helps you understand if the number makes sense. The
-                  next step is creating a request so an approved professional can
-                  help you evaluate the opportunity.
+                  Valuation helps you understand whether the asking price makes
+                  sense. Create a Buyer Request and let Smart Matching
+                  automatically connect you with a compatible verified property
+                  valuer who can review the opportunity in more depth.
                 </p>
               </div>
 

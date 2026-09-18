@@ -160,56 +160,56 @@ export default function PropertyDetailScreen() {
     }, [propertyId]);
 
     async function handleToggleSave() {
-  if (!propertyId || saving) {
-    return;
-  }
+        if (!propertyId || saving) {
+            return;
+        }
 
-  const token = await getToken();
-  const user =
-    await getStoredUser<AuthUser>();
+        const token = await getToken();
+        const user =
+            await getStoredUser<AuthUser>();
 
-  if (!token || !user) {
-    Alert.alert(
-      "Login required",
-      "Please sign in to save properties.",
-    );
-    return;
-  }
+        if (!token || !user) {
+            Alert.alert(
+                "Login required",
+                "Please sign in to save properties.",
+            );
+            return;
+        }
 
-  if (user.role !== "BUYER") {
-    Alert.alert(
-      "Buyer account required",
-      "Only buyers can save properties.",
-    );
-    return;
-  }
+        if (user.role !== "BUYER") {
+            Alert.alert(
+                "Buyer account required",
+                "Only buyers can save properties.",
+            );
+            return;
+        }
 
-  try {
-    setSaving(true);
+        try {
+            setSaving(true);
 
-    const result =
-      await toggleSavedProperty(
-        token,
-        propertyId,
-      );
+            const result =
+                await toggleSavedProperty(
+                    token,
+                    propertyId,
+                );
 
-    setSaved(result.isSaved);
+            setSaved(result.isSaved);
 
-    console.log(
-      "SAVED PROPERTY:",
-      result,
-    );
-  } catch (error) {
-    Alert.alert(
-      "Unable to update saved property",
-      error instanceof Error
-        ? error.message
-        : "Please try again.",
-    );
-  } finally {
-    setSaving(false);
-  }
-}
+            console.log(
+                "SAVED PROPERTY:",
+                result,
+            );
+        } catch (error) {
+            Alert.alert(
+                "Unable to update saved property",
+                error instanceof Error
+                    ? error.message
+                    : "Please try again.",
+            );
+        } finally {
+            setSaving(false);
+        }
+    }
 
     if (loading) {
         return (
@@ -378,24 +378,7 @@ export default function PropertyDetailScreen() {
                             </Text>
                         </View>
                     )}
-                    <View
-                        style={
-                            styles.heroPlaceholder
-                        }
-                    >
-                        <Building2
-                            size={70}
-                            color={Colors.muted}
-                        />
 
-                        <Text
-                            style={
-                                styles.heroPlaceholderText
-                            }
-                        >
-                            No property image
-                        </Text>
-                    </View>
 
 
                     <Pressable
@@ -412,48 +395,40 @@ export default function PropertyDetailScreen() {
 
                     {isBuyer && (
                         <Pressable
-                            style={
-                                styles.favoriteButton
-                            }
+                            style={[
+                                styles.favoriteButton,
+
+                                saved && {
+                                    backgroundColor:
+                                        "rgba(254,242,242,0.96)",
+                                },
+                            ]}
                             disabled={saving}
                             onPress={
                                 handleToggleSave
                             }
                         >
-                            <Pressable
-                                style={[
-                                    styles.favoriteButton,
-
-                                    saved && {
-                                        backgroundColor:
-                                            "rgba(254,242,242,0.96)",
-                                    },
-                                ]}
-                                disabled={saving}
-                                onPress={handleToggleSave}
-                            >
-                                {saving ? (
-                                    <ActivityIndicator
-                                        size="small"
-                                        color="#DC2626"
-                                    />
-                                ) : (
-                                    <Heart
-                                        size={24}
-                                        strokeWidth={2.4}
-                                        color={
-                                            saved
-                                                ? "#DC2626"
-                                                : Colors.navyDark
-                                        }
-                                        fill={
-                                            saved
-                                                ? "#DC2626"
-                                                : "transparent"
-                                        }
-                                    />
-                                )}
-                            </Pressable>
+                            {saving ? (
+                                <ActivityIndicator
+                                    size="small"
+                                    color="#DC2626"
+                                />
+                            ) : (
+                                <Heart
+                                    size={24}
+                                    strokeWidth={2.4}
+                                    color={
+                                        saved
+                                            ? "#DC2626"
+                                            : Colors.navyDark
+                                    }
+                                    fill={
+                                        saved
+                                            ? "#DC2626"
+                                            : "transparent"
+                                    }
+                                />
+                            )}
                         </Pressable>
                     )}
 

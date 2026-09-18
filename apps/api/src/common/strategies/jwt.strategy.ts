@@ -2,7 +2,11 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PassportStrategy } from '@nestjs/passport';
 import { Role } from '@prisma/client';
-import { ExtractJwt, Strategy } from 'passport-jwt';
+
+import {
+  ExtractJwt,
+  Strategy,
+} from 'passport-jwt';
 
 type JwtPayload = {
   sub: string;
@@ -11,18 +15,37 @@ type JwtPayload = {
 };
 
 @Injectable()
-export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
-  constructor(configService: ConfigService) {
+export class JwtStrategy extends PassportStrategy(
+  Strategy,
+  'jwt',
+) {
+  constructor(
+    configService: ConfigService,
+  ) {
+    const secret =
+      configService.get<string>(
+        'JWT_SECRET',
+      );
+
+    if (!secret) {
+      throw new Error(
+        'JWT_SECRET is not configured.',
+      );
+    }
+
     super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      jwtFromRequest:
+        ExtractJwt.fromAuthHeaderAsBearerToken(),
+
       ignoreExpiration: false,
-      secretOrKey:
-        configService.get<string>('JWT_SECRET') ||
-        'real_estate_lisbon_super_secret_key',
+
+      secretOrKey: secret,
     });
   }
 
-  validate(payload: JwtPayload) {
+  validate(
+    payload: JwtPayload,
+  ) {
     return {
       id: payload.sub,
       email: payload.email,

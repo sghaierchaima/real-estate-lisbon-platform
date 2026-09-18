@@ -127,6 +127,25 @@ export class StoriesService {
     });
   }
 
+  async findMyStories(
+  user: AuthenticatedUser,
+) {
+  if (user.role !== Role.BUYER) {
+    throw new ForbiddenException(
+      'Only buyers can access their own stories',
+    );
+  }
+
+  return this.prisma.story.findMany({
+    where: {
+      userId: user.id,
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+}
+
   async findApprovedPublic() {
     return this.prisma.story.findMany({
       where: {

@@ -1,76 +1,163 @@
-
 import { clearSession } from "./session";
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+
+/* ============================================================
+   API TYPES
+============================================================ */
 
 type ApiOptions = {
   method?: "GET" | "POST" | "PATCH" | "DELETE";
   body?: unknown;
   token?: string;
+
+  /**
+   * Par défaut :
+   * un 401 signifie que la session n'est plus valide.
+   *
+   * Certaines routes peuvent cependant retourner 401
+   * pour une erreur métier, par exemple :
+   * "Current password is incorrect".
+   *
+   * Dans ce cas :
+   * logoutOnUnauthorized: false
+   */
+  logoutOnUnauthorized?: boolean;
 };
+
+/* ============================================================
+   API FETCH
+============================================================ */
 
 export async function apiFetch<T>(
   path: string,
-  options: ApiOptions = {}
+  options: ApiOptions = {},
 ): Promise<T> {
   const res = await fetch(`${API_URL}${path}`, {
     method: options.method || "GET",
+
     headers: {
       "Content-Type": "application/json",
+
       ...(options.token
         ? {
             Authorization: `Bearer ${options.token}`,
           }
         : {}),
     },
-    body: options.body ? JSON.stringify(options.body) : undefined,
+
+    body:
+      options.body !== undefined
+        ? JSON.stringify(options.body)
+        : undefined,
   });
+
+  /* ==========================================================
+     READ RESPONSE
+  ========================================================== */
 
   const data = await res.json().catch(() => null);
 
-  if (!res.ok) {
-  if (res.status === 401) {
-    clearSession();
+  /* ==========================================================
+     ERROR HANDLING
+  ========================================================== */
 
-    if (typeof window !== "undefined") {
-      window.location.replace("/login?reason=session-expired");
+  if (!res.ok) {
+    /*
+     * IMPORTANT
+     *
+     * 401 ne provoque une déconnexion automatique
+     * que si logoutOnUnauthorized n'est pas false.
+     *
+     * Cela permet par exemple à change-password
+     * d'afficher "Current password is incorrect"
+     * sans déconnecter l'utilisateur.
+     */
+
+    if (
+      res.status === 401 &&
+      options.logoutOnUnauthorized !== false
+    ) {
+      clearSession();
+
+      if (typeof window !== "undefined") {
+        window.location.replace(
+          "/login?reason=session-expired",
+        );
+      }
+
+      throw new Error("Session expired");
     }
 
-    throw new Error("Session expired");
+    /* --------------------------------------------------------
+       Extract backend error message
+    -------------------------------------------------------- */
+
+    let message = "API request failed";
+
+    if (typeof data?.message === "string") {
+      message = data.message;
+    } else if (Array.isArray(data?.message)) {
+      message = data.message.join(", ");
+    } else if (typeof data?.error === "string") {
+      message = data.error;
+    }
+
+    throw new Error(message);
   }
 
-  throw new Error(data?.message || "API request failed");
-}
-
-  return data;
+  return data as T;
 }
 
 /* ============================================================
-   Asset URL Helper
+   ASSET URL HELPER
 ============================================================ */
 
 export function getAssetUrl(
   path?: string | null,
-  fallback = "/images/prop1.png"
+  fallback = "/images/prop1.png",
 ) {
   if (!path) {
     return fallback;
   }
 
-  // URL complète
+  const cleanPath = path.trim();
+
+  if (!cleanPath) {
+    return fallback;
+  }
+
+  /* ----------------------------------------------------------
+     Full external URL / browser-generated URL
+  ---------------------------------------------------------- */
+
   if (
-    path.startsWith("http://") ||
-    path.startsWith("https://") ||
-    path.startsWith("blob:") ||
-    path.startsWith("data:")
+    cleanPath.startsWith("http://") ||
+    cleanPath.startsWith("https://") ||
+    cleanPath.startsWith("blob:") ||
+    cleanPath.startsWith("data:")
   ) {
-    return path;
+    return cleanPath;
   }
 
-  // Image locale de Next.js
-  if (path.startsWith("/images/")) {
-    return path;
+  /* ----------------------------------------------------------
+     Local Next.js image
+  ---------------------------------------------------------- */
+
+  if (cleanPath.startsWith("/images/")) {
+    return cleanPath;
   }
 
-  // Image provenant du backend
-  return `${API_URL}${path.startsWith("/") ? path : `/${path}`}`;
+  /* ----------------------------------------------------------
+     Backend asset
+     Example:
+     /uploads/avatars/avatar.jpg
+  ---------------------------------------------------------- */
+
+  return `${API_URL}${
+    cleanPath.startsWith("/")
+      ? cleanPath
+      : `/${cleanPath}`
+  }`;
 }

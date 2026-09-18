@@ -46,6 +46,14 @@ import { useToast } from "@/components/ui/ToastProvider";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
 
+const API_ORIGIN = (() => {
+  try {
+    return new URL(API_URL).origin;
+  } catch {
+    return API_URL.replace(/\/api\/?$/, "");
+  }
+})();
+
 type PublicProperty = Property & {
   professionalProfile?: {
     id: string;
@@ -67,8 +75,134 @@ type TabType = "overview" | "features" | "location" | "financials";
 
 function imageUrl(url?: string | null) {
   if (!url) return "/images/prop3.png";
-  if (url.startsWith("http")) return url;
-  return `${API_URL}${url}`;
+
+  const value = url.trim();
+
+  if (!value) return "/images/prop3.png";
+
+  if (
+    value.startsWith("http://") ||
+    value.startsWith("https://") ||
+    value.startsWith("data:") ||
+    value.startsWith("blob:")
+  ) {
+    return value;
+  }
+
+  if (value.startsWith("/images/") || value.startsWith("/assets/")) {
+    return value;
+  }
+
+  return `${API_ORIGIN}${value.startsWith("/") ? "" : "/"}${value}`;
+}
+
+function normalizeLocationParts(
+  ...values: Array<string | null | undefined>
+) {
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  for (const value of values) {
+    if (!value) continue;
+
+    for (const rawPart of value.split(",")) {
+      const part = rawPart.trim();
+
+      if (!part) continue;
+
+      const key = part.toLocaleLowerCase();
+
+      if (seen.has(key)) continue;
+
+      seen.add(key);
+      result.push(part);
+    }
+  }
+
+  return result;
+}
+
+function formatPropertyLocation(property: {
+  city?: string | null;
+  region?: string | null;
+  location?: string | null;
+}) {
+  const parts = normalizeLocationParts(
+    property.city,
+    property.region,
+    property.location,
+  );
+
+  return parts.length
+    ? parts.join(", ")
+    : "Portugal";
+}
+
+function getSimilarityScore(
+  base: Property,
+  candidate: Property,
+) {
+  let score = 0;
+
+  if (
+    base.city &&
+    candidate.city &&
+    base.city.toLocaleLowerCase() ===
+      candidate.city.toLocaleLowerCase()
+  ) {
+    score += 4;
+  }
+
+  if (
+    base.region &&
+    candidate.region &&
+    base.region.toLocaleLowerCase() ===
+      candidate.region.toLocaleLowerCase()
+  ) {
+    score += 3;
+  }
+
+  if (
+    base.propertyType &&
+    candidate.propertyType &&
+    base.propertyType.toLocaleLowerCase() ===
+      candidate.propertyType.toLocaleLowerCase()
+  ) {
+    score += 2;
+  }
+
+  if (
+    base.bedrooms != null &&
+    candidate.bedrooms != null
+  ) {
+    score += Math.max(
+      0,
+      2 -
+        Math.abs(
+          base.bedrooms -
+            candidate.bedrooms,
+        ),
+    );
+  }
+
+  if (
+    base.price > 0 &&
+    candidate.price > 0
+  ) {
+    const ratio =
+      Math.abs(
+        base.price -
+          candidate.price,
+      ) / base.price;
+
+    if (ratio <= 0.2) {
+      score += 2;
+    } else if (ratio <= 0.4) {
+      score += 1;
+    }
+  }
+
+  return score;
 }
 
 function formatPrice(price: number) {
@@ -133,7 +267,19 @@ export default function PropertyDetailsPage() {
       setSimilar(
         publicProperties
           .filter((item) => item.id !== id)
-          .slice(0, 3),
+          .map((item) => ({
+            item,
+            score: getSimilarityScore(
+              propertyData,
+              item,
+            ),
+          }))
+          .sort(
+            (a, b) =>
+              b.score - a.score,
+          )
+          .slice(0, 3)
+          .map(({ item }) => item),
       );
     } catch {
       if (!cancelled) {
@@ -186,17 +332,6 @@ export default function PropertyDetailsPage() {
 
       if (!cancelled) {
         setIsSaved(result.isSaved);
-        if (result.isSaved) {
-          toast.success(
-            "Property saved",
-            "The property was added to your saved properties.",
-          );
-        } else {
-            toast.success(
-              "Property removed",
-              "The property was removed from your saved properties.",
-            );
-          }
       }
     } catch {
       if (!cancelled) {
@@ -432,8 +567,7 @@ async function handleToggleSave() {
   }
 
   const location =
-    [property.city, property.region, property.location].filter(Boolean).join(", ") ||
-    "Portugal";
+    formatPropertyLocation(property);
 
   const taxes = estimateTaxes(property.price);
   const fees = estimateFees(property.price);
@@ -503,9 +637,36 @@ async function handleToggleSave() {
             </div>
 
             <div className="flex flex-wrap gap-6 border-y border-gray-200 py-4">
-              <QuickStat icon={<BedDouble className="h-5 w-5 text-gray-400" />} text={`${property.bedrooms ?? 0} Bedrooms`} />
-              <QuickStat icon={<Bath className="h-5 w-5 text-gray-400" />} text={`${property.bathrooms ?? 0} Bathrooms`} />
-              <QuickStat icon={<Maximize className="h-5 w-5 text-gray-400" />} text={`${property.area ?? 0}m²`} />
+              <QuickStat
+                icon={
+                  <BedDouble className="h-5 w-5 text-gray-400" />
+                }
+                text={
+                  property.bedrooms != null
+                    ? `${property.bedrooms} Bedrooms`
+                    : "Bedrooms unavailable"
+                }
+              />
+              <QuickStat
+                icon={
+                  <Bath className="h-5 w-5 text-gray-400" />
+                }
+                text={
+                  property.bathrooms != null
+                    ? `${property.bathrooms} Bathrooms`
+                    : "Bathrooms unavailable"
+                }
+              />
+              <QuickStat
+                icon={
+                  <Maximize className="h-5 w-5 text-gray-400" />
+                }
+                text={
+                  property.area
+                    ? `${property.area}m²`
+                    : "Surface unavailable"
+                }
+              />
               <QuickStat icon={<Home className="h-5 w-5 text-gray-400" />} text={property.propertyType || "Property"} />
             </div>
 
@@ -648,9 +809,17 @@ async function handleToggleSave() {
                       className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-[2px] hover:shadow-lg"
                     >
                       <img
-                        src={imageUrl(item.imageUrls?.[0])}
+                        src={imageUrl(
+                          item.imageUrls?.[0],
+                        )}
                         alt={item.title}
                         className="aspect-[4/3] w-full object-cover"
+                        onError={(event) => {
+                          event.currentTarget.onerror =
+                            null;
+                          event.currentTarget.src =
+                            "/images/prop3.png";
+                        }}
                       />
                       <div className="p-4">
                         <h3 className="mb-2 text-lg font-semibold text-gray-900">
@@ -658,7 +827,7 @@ async function handleToggleSave() {
                         </h3>
                         <div className="mb-3 flex items-center gap-1 text-sm text-gray-600">
                           <MapPin className="h-4 w-4" />
-                          {[item.city, item.region, item.location].filter(Boolean).join(", ") || "Portugal"}
+                          {formatPropertyLocation(item)}
                         </div>
                         <div className="text-2xl font-bold text-[#1B365D]">
                           {formatPrice(item.price)}

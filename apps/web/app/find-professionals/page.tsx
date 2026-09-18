@@ -45,9 +45,9 @@ function averageRating(
       (sum, item) =>
         sum +
         Number(item.rating || 0) *
-          Number(
-            item.reviewsCount || 0,
-          ),
+        Number(
+          item.reviewsCount || 0,
+        ),
       0,
     );
 
@@ -95,33 +95,33 @@ function ProfessionalCard({
         </div>
 
         <div>
-  {rating > 0 ? (
-    <>
-      <div className="flex items-center gap-2 text-[22px] font-bold text-[#C9A227]">
-        <Star
-          size={16}
-          fill="#C9A227"
-        />
+          {rating > 0 ? (
+            <>
+              <div className="flex items-center gap-2 text-[22px] font-bold text-[#C9A227]">
+                <Star
+                  size={16}
+                  fill="#C9A227"
+                />
 
-        {rating.toFixed(1)}
-      </div>
+                {rating.toFixed(1)}
+              </div>
 
-      <div className="text-[15px] text-[#4B5563]">
-        Avg Rating
-      </div>
-    </>
-  ) : (
-    <>
-      <div className="text-[17px] font-semibold text-[#667085]">
-        No reviews yet
-      </div>
+              <div className="text-[15px] text-[#4B5563]">
+                Avg Rating
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="text-[17px] font-semibold text-[#667085]">
+                No reviews yet
+              </div>
 
-      <div className="text-[15px] text-[#4B5563]">
-        Avg Rating
-      </div>
-    </>
-  )}
-</div>
+              <div className="text-[15px] text-[#4B5563]">
+                Avg Rating
+              </div>
+            </>
+          )}
+        </div>
       </div>
 
       <div className="mb-[26px] h-px bg-[#E5E7EB]" />
@@ -225,8 +225,8 @@ export default function FindProfessionalsPage() {
               </h1>
 
               <p className="mx-auto max-w-[720px] text-[20px] leading-[1.6] text-[#4B5563]">
-                All visible professionals are approved by the admin and marked
-                as active in the platform.
+                Connect with verified real estate professionals who can guide you through
+                every step of your property purchase in Portugal.
               </p>
             </div>
 
@@ -271,8 +271,7 @@ export default function FindProfessionalsPage() {
               </h2>
 
               <p className="mx-auto mb-[50px] max-w-[700px] text-center text-[16px] text-white/90">
-                Every public professional must have an ACTIVE verification
-                status.
+                Work with trusted experts selected to support property buyers across Portugal.
               </p>
 
               <div className="grid gap-[30px] md:grid-cols-2 xl:grid-cols-4">

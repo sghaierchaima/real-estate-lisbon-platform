@@ -12,6 +12,8 @@ import {
   View,
 } from "react-native";
 
+
+
 import {
   SafeAreaView,
 } from "react-native-safe-area-context";
@@ -42,6 +44,7 @@ import {
 } from "@/lib/session";
 
 import { Colors } from "@/constants/colors";
+import GoogleAuthButton from "@/components/GoogleAuthButton";
 
 export default function RegisterScreen() {
   const [fullName, setFullName] =
@@ -144,7 +147,9 @@ export default function RegisterScreen() {
         result.accessToken,
       );
 
-      await saveUser(result.user);
+      await saveUser(
+        result.user,
+      );
 
       router.replace(
         "/(tabs)/home",
@@ -186,12 +191,15 @@ export default function RegisterScreen() {
             styles.scrollContent
           }
         >
-          {/* TOP */}
+          {/* ============================= */}
+          {/* TOP                           */}
+          {/* ============================= */}
 
           <View style={styles.topBar}>
             <Pressable
               style={({ pressed }) => [
                 styles.backButton,
+
                 pressed &&
                   styles.pressed,
               ]}
@@ -227,7 +235,9 @@ export default function RegisterScreen() {
             </View>
           </View>
 
-          {/* LOGO */}
+          {/* ============================= */}
+          {/* LOGO                          */}
+          {/* ============================= */}
 
           <View style={styles.brand}>
             <Image
@@ -247,7 +257,9 @@ export default function RegisterScreen() {
             </Text>
           </View>
 
-          {/* INTRO */}
+          {/* ============================= */}
+          {/* INTRO                         */}
+          {/* ============================= */}
 
           <View style={styles.intro}>
             <Text style={styles.title}>
@@ -264,7 +276,9 @@ export default function RegisterScreen() {
             </Text>
           </View>
 
-          {/* FORM */}
+          {/* ============================= */}
+          {/* FORM                          */}
+          {/* ============================= */}
 
           <View style={styles.card}>
             <Text
@@ -287,9 +301,7 @@ export default function RegisterScreen() {
             {/* NAME */}
 
             <View style={styles.field}>
-              <Text
-                style={styles.label}
-              >
+              <Text style={styles.label}>
                 Full name
               </Text>
 
@@ -330,9 +342,7 @@ export default function RegisterScreen() {
             {/* EMAIL */}
 
             <View style={styles.field}>
-              <Text
-                style={styles.label}
-              >
+              <Text style={styles.label}>
                 Email address
               </Text>
 
@@ -374,9 +384,7 @@ export default function RegisterScreen() {
             {/* PASSWORD */}
 
             <View style={styles.field}>
-              <Text
-                style={styles.label}
-              >
+              <Text style={styles.label}>
                 Password
               </Text>
 
@@ -441,7 +449,7 @@ export default function RegisterScreen() {
               </View>
             </View>
 
-            {/* PASSWORD CHECKS */}
+            {/* PASSWORD REQUIREMENTS */}
 
             <View
               style={
@@ -474,19 +482,19 @@ export default function RegisterScreen() {
               />
 
               <Requirement
-                valid={/\d/.test(
-                  password,
-                )}
+                valid={
+                  /\d/.test(
+                    password,
+                  )
+                }
                 text="Number"
               />
             </View>
 
-            {/* CONFIRM */}
+            {/* CONFIRM PASSWORD */}
 
             <View style={styles.field}>
-              <Text
-                style={styles.label}
-              >
+              <Text style={styles.label}>
                 Confirm password
               </Text>
 
@@ -576,16 +584,14 @@ export default function RegisterScreen() {
               )}
             </View>
 
-            {/* CREATE */}
+            {/* CREATE BUTTON */}
 
             <Pressable
               disabled={loading}
               onPress={
                 handleRegister
               }
-              style={({
-                pressed,
-              }) => [
+              style={({ pressed }) => [
                 styles.primaryButton,
 
                 pressed &&
@@ -640,7 +646,27 @@ export default function RegisterScreen() {
             </Pressable>
           </View>
 
-          {/* LOGIN */}
+          {/* ============================= */}
+          {/* GOOGLE AUTH                   */}
+          {/* ============================= */}
+
+          <View style={styles.oauthSection}>
+  <View style={styles.dividerRow}>
+    <View style={styles.dividerLine} />
+
+    <Text style={styles.dividerText}>
+      OR
+    </Text>
+
+    <View style={styles.dividerLine} />
+  </View>
+
+  <GoogleAuthButton disabled={loading} />
+</View>
+
+          {/* ============================= */}
+          {/* LOGIN                         */}
+          {/* ============================= */}
 
           <View style={styles.loginRow}>
             <Text
@@ -767,6 +793,7 @@ const styles =
       borderRadius: 999,
       backgroundColor:
         "#ECFDF3",
+
       flexDirection: "row",
       alignItems: "center",
       gap: 7,
@@ -833,6 +860,7 @@ const styles =
         width: 0,
         height: 8,
       },
+
       elevation: 3,
     },
 
@@ -870,6 +898,7 @@ const styles =
       backgroundColor:
         "#FAFBFC",
       paddingHorizontal: 13,
+
       flexDirection: "row",
       alignItems: "center",
       gap: 11,
@@ -904,8 +933,10 @@ const styles =
       flexDirection: "row",
       alignItems: "center",
       gap: 5,
+
       paddingHorizontal: 8,
       paddingVertical: 5,
+
       borderRadius: 999,
       backgroundColor:
         "#F4F6F9",
@@ -956,8 +987,10 @@ const styles =
       borderRadius: 18,
       backgroundColor:
         Colors.navy,
+
       paddingLeft: 22,
       paddingRight: 8,
+
       flexDirection: "row",
       alignItems: "center",
       justifyContent:
@@ -989,6 +1022,35 @@ const styles =
         Colors.gold,
       alignItems: "center",
       justifyContent: "center",
+    },
+
+    /*
+     * GOOGLE AUTH
+     */
+
+    oauthSection: {
+      marginTop: 24,
+      gap: 18,
+    },
+
+    dividerRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 14,
+    },
+
+    dividerLine: {
+      flex: 1,
+      height: 1,
+      backgroundColor:
+        "#E4E7EC",
+    },
+
+    dividerText: {
+      color: "#98A2B3",
+      fontSize: 12,
+      fontWeight: "700",
+      letterSpacing: 1.2,
     },
 
     loginRow: {

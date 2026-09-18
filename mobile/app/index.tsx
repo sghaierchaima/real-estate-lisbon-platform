@@ -1,4 +1,5 @@
 import {
+  ActivityIndicator,
   Image,
   Pressable,
   SafeAreaView,
@@ -17,16 +18,152 @@ import {
 } from "lucide-react-native";
 
 import {
+  useEffect,
+  useState,
+} from "react";
+
+import {
   Colors,
 } from "@/constants/colors";
 
+import {
+  getMe,
+} from "@/lib/auth-api";
+
+import {
+  clearSession,
+  getToken,
+  saveUser,
+} from "@/lib/session";
+
 export default function WelcomeScreen() {
+  const [
+    checkingSession,
+    setCheckingSession,
+  ] = useState(true);
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function restoreSession() {
+      try {
+        const token =
+          await getToken();
+
+        // Aucun token sauvegardé :
+        // l'utilisateur reste sur Welcome.
+        if (!token) {
+          return;
+        }
+
+        // IMPORTANT :
+        // un token présent dans SecureStore
+        // n'est pas forcément encore valide.
+        //
+        // On demande donc au backend de le vérifier.
+        const user =
+          await getMe(token);
+
+        // L'application mobile actuelle
+        // est réservée aux BUYER.
+        if (
+          user.role !== "BUYER"
+        ) {
+          await clearSession();
+          return;
+        }
+
+        // Le backend accepte le token.
+        // On actualise également l'utilisateur
+        // sauvegardé localement.
+        await saveUser(user);
+
+        if (!mounted) {
+          return;
+        }
+
+        router.replace(
+          "/(tabs)/home",
+        );
+      } catch {
+        // Token expiré / invalide /
+        // utilisateur supprimé / 401...
+        //
+        // On ne garde surtout pas
+        // une fausse session locale.
+        await clearSession();
+      } finally {
+        if (mounted) {
+          setCheckingSession(
+            false,
+          );
+        }
+      }
+    }
+
+    void restoreSession();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  // ------------------------------------------------------------
+  // SESSION CHECK
+  // ------------------------------------------------------------
+
+  if (checkingSession) {
+    return (
+      <SafeAreaView
+        style={styles.safeArea}
+      >
+        <View
+          style={
+            styles.loadingContainer
+          }
+        >
+          <Image
+            source={require(
+              "../assets/images/icon.png",
+            )}
+            style={styles.loadingLogo}
+            resizeMode="contain"
+          />
+
+          <ActivityIndicator
+            size="small"
+            color={Colors.navy}
+            style={{
+              marginTop: 20,
+            }}
+          />
+
+          <Text
+            style={
+              styles.loadingText
+            }
+          >
+            Checking session...
+          </Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  // ------------------------------------------------------------
+  // WELCOME
+  // ------------------------------------------------------------
+
   return (
     <SafeAreaView
       style={styles.safeArea}
     >
       <View style={styles.container}>
-        <View style={styles.logoContainer}>
+        <View
+          style={
+            styles.logoContainer
+          }
+        >
           <Image
             source={require(
               "../assets/images/icon.png",
@@ -42,7 +179,9 @@ export default function WelcomeScreen() {
             color={Colors.gold}
           />
 
-          <Text style={styles.badgeText}>
+          <Text
+            style={styles.badgeText}
+          >
             Property buying in Portugal
           </Text>
         </View>
@@ -53,14 +192,18 @@ export default function WelcomeScreen() {
           with confidence.
         </Text>
 
-        <Text style={styles.description}>
+        <Text
+          style={styles.description}
+        >
           Explore verified properties,
           compare opportunities and connect
           with trusted professionals across
           Portugal.
         </Text>
 
-        <View style={styles.heroIcon}>
+        <View
+          style={styles.heroIcon}
+        >
           <Building2
             size={86}
             color={Colors.gold}
@@ -70,7 +213,9 @@ export default function WelcomeScreen() {
 
         <View style={styles.actions}>
           <Pressable
-            style={styles.primaryButton}
+            style={
+              styles.primaryButton
+            }
             onPress={() =>
               router.push("/login")
             }
@@ -85,7 +230,9 @@ export default function WelcomeScreen() {
           </Pressable>
 
           <Pressable
-            style={styles.secondaryButton}
+            style={
+              styles.secondaryButton
+            }
             onPress={() =>
               router.push("/register")
             }
@@ -100,7 +247,9 @@ export default function WelcomeScreen() {
           </Pressable>
         </View>
 
-        <Text style={styles.footerText}>
+        <Text
+          style={styles.footerText}
+        >
           Real Estate Lisbon
         </Text>
       </View>
@@ -114,6 +263,26 @@ const styles =
       flex: 1,
       backgroundColor:
         Colors.background,
+    },
+
+    loadingContainer: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      paddingHorizontal: 24,
+    },
+
+    loadingLogo: {
+      width: 72,
+      height: 72,
+    },
+
+    loadingText: {
+      marginTop: 12,
+      color:
+        Colors.textSecondary,
+      fontSize: 13,
+      fontWeight: "600",
     },
 
     container: {

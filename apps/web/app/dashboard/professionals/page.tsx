@@ -25,7 +25,14 @@ import {
   Professional,
   rejectProfessional,
 } from "@/lib/professionals-api";
-import { getToken } from "@/lib/session";
+import {
+  getStoredUser,
+  getToken,
+} from "@/lib/session";
+
+import type { AuthUser } from "@/lib/auth-api";
+
+import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/ToastProvider";
 
 const API_URL =
@@ -101,6 +108,7 @@ function statusBadge(status: string) {
 
 export default function ProfessionalsPage() {
   const toast = useToast();
+  const router = useRouter();
 
   const [
     professionals,
@@ -129,53 +137,98 @@ export default function ProfessionalsPage() {
   ] = useState(1);
 
   useEffect(() => {
-    let isMounted = true;
+  let isMounted = true;
 
-    async function loadProfessionals() {
-      const token = getToken();
+  async function loadProfessionals() {
+    /*
+     * ============================================================
+     * FRONTEND ACCESS CONTROL
+     * ============================================================
+     *
+     * This page is strictly reserved for administrators.
+     *
+     * IMPORTANT:
+     * The role is checked BEFORE calling the professionals API.
+     * Therefore a BUYER or PROFESSIONAL:
+     *
+     * - cannot see the admin interface,
+     * - cannot trigger getProfessionals(),
+     * - is immediately redirected to /access-denied.
+     */
 
-      if (!token) {
-        if (isMounted) {
-          toast.warning(
-            "Session required",
-            "Please sign in again.",
-          );
+    const user = getStoredUser<AuthUser>();
 
-          setLoading(false);
-        }
-
-        return;
+    if (!user) {
+      if (isMounted) {
+        router.replace("/login");
       }
 
-      try {
-        const data =
-          await getProfessionals(token);
-
-        if (isMounted) {
-          setProfessionals(data);
-        }
-      } catch (error) {
-        if (isMounted) {
-          toast.error(
-            "Unable to load professionals",
-            error instanceof Error
-              ? error.message
-              : "Failed to load professionals.",
-          );
-        }
-      } finally {
-        if (isMounted) {
-          setLoading(false);
-        }
-      }
+      return;
     }
 
-    void loadProfessionals();
+    if (user.role !== "ADMIN") {
+      if (isMounted) {
+        router.replace("/access-denied");
+      }
 
-    return () => {
-      isMounted = false;
-    };
-  }, [toast]);
+      return;
+    }
+
+    /*
+     * ============================================================
+     * TOKEN CHECK
+     * ============================================================
+     */
+
+    const token = getToken();
+
+    if (!token) {
+      if (isMounted) {
+        toast.warning(
+          "Session required",
+          "Please sign in again.",
+        );
+
+        router.replace("/login");
+      }
+
+      return;
+    }
+
+    /*
+     * ============================================================
+     * ADMIN DATA
+     * ============================================================
+     */
+
+    try {
+      const data = await getProfessionals(token);
+
+      if (isMounted) {
+        setProfessionals(data);
+      }
+    } catch (error) {
+      if (isMounted) {
+        toast.error(
+          "Unable to load professionals",
+          error instanceof Error
+            ? error.message
+            : "Failed to load professionals.",
+        );
+      }
+    } finally {
+      if (isMounted) {
+        setLoading(false);
+      }
+    }
+  }
+
+  void loadProfessionals();
+
+  return () => {
+    isMounted = false;
+  };
+}, [router, toast]);
 
   const filteredProfessionals =
     useMemo(() => {

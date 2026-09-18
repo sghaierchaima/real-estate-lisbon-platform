@@ -187,25 +187,29 @@ export class AuthService {
 
     await this.profileScoreService
       .updateUserScore(user.id);
-  } else {
-    user =
-      await this.prisma.user.update({
-        where: {
-          id: user.id,
-        },
-        data: {
-          fullName:
-            user.fullName ||
-            payload.name?.trim() ||
-            null,
+ } else {
+  user = await this.prisma.user.update({
+    where: {
+      id: user.id,
+    },
+    data: {
+      // Ne pas écraser les informations personnalisées
+      // déjà enregistrées par l'utilisateur.
+      fullName:
+        user.fullName ||
+        payload.name?.trim() ||
+        null,
 
-          avatarUrl:
-            payload.picture ||
-            user.avatarUrl ||
-            null,
-        },
-      });
-  }
+      // IMPORTANT :
+      // l'avatar personnalisé enregistré dans la DB
+      // est prioritaire sur l'avatar Google.
+      avatarUrl:
+        user.avatarUrl ||
+        payload.picture ||
+        null,
+    },
+  });
+}
 
   const accessToken =
     this.generateToken(

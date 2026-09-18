@@ -9,11 +9,18 @@ export default function DashboardLayout({
 }) {
   return (
     <AuthGuard>
-      <div className="flex min-h-screen bg-[#F8F9FA]">
+      <div className="flex h-screen overflow-hidden bg-[#F8F9FA]">
+        {/* Sidebar reste toujours fixe */}
         <DashboardSidebar />
-        <div className="flex min-h-screen flex-1 flex-col">
+
+        {/* Partie droite */}
+        <div className="flex min-w-0 flex-1 flex-col h-screen">
           <DashboardHeader />
-          <main className="flex-1 overflow-y-auto p-6 lg:p-8">{children}</main>
+
+          {/* Seul le contenu du dashboard scroll */}
+          <main className="min-h-0 flex-1 overflow-y-auto p-6 lg:p-8">
+            {children}
+          </main>
         </div>
       </div>
     </AuthGuard>

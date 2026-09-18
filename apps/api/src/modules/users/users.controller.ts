@@ -21,6 +21,7 @@ import {
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
+import { UpdateNotificationPreferencesDto } from './dto/update-notification-preferences.dto';
 import { validateImageFile } from '../../common/utils/file-upload.util';
 import { Permissions } from '../../common/decorators/permissions.decorator';
 import { PermissionsGuard } from '../../common/guards/permissions.guard';
@@ -47,6 +48,16 @@ export class UsersController {
   @UseGuards(JwtAuthGuard)
   getProfileProgress(@Req() req: AuthenticatedRequest) {
   return this.usersService.getProfileProgress(req.user.id);
+}
+@Patch('me/notification-preferences')
+updateNotificationPreferences(
+  @Req() req: AuthenticatedRequest,
+  @Body() dto: UpdateNotificationPreferencesDto,
+) {
+  return this.usersService.updateNotificationPreferences(
+    req.user.id,
+    dto,
+  );
 }
 
  @Get(':id')

@@ -1,18 +1,58 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { StoriesController } from './stories.controller';
+import {
+  Test,
+  TestingModule,
+} from '@nestjs/testing';
 
-describe('StoriesController', () => {
-  let controller: StoriesController;
+import {
+  StoriesController,
+} from './stories.controller';
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      controllers: [StoriesController],
-    }).compile();
+import {
+  StoriesService,
+} from './stories.service';
 
-    controller = module.get<StoriesController>(StoriesController);
-  });
+describe(
+  'StoriesController',
+  () => {
+    let controller:
+      StoriesController;
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
-});
+    const storiesServiceMock = {};
+
+    beforeEach(
+      async () => {
+        const module:
+          TestingModule =
+          await Test.createTestingModule({
+            controllers: [
+              StoriesController,
+            ],
+
+            providers: [
+              {
+                provide:
+                  StoriesService,
+
+                useValue:
+                  storiesServiceMock,
+              },
+            ],
+          }).compile();
+
+        controller =
+          module.get<StoriesController>(
+            StoriesController,
+          );
+      },
+    );
+
+    it(
+      'should be defined',
+      () => {
+        expect(
+          controller,
+        ).toBeDefined();
+      },
+    );
+  },
+);

@@ -59,15 +59,53 @@ export function getPublicStory(id: string) {
  * Buyer:
  * soumettre une nouvelle story avec une image.
  */
-export function createStoryWithImage(
+export async function createStoryWithImage(
   token: string,
   formData: FormData,
 ) {
-  return apiFetch<Story>("/stories", {
-    method: "POST",
-    token,
-    body: formData,
-  });
+  const apiUrl =
+    process.env.NEXT_PUBLIC_API_URL ||
+    "http://localhost:3001";
+
+  const response = await fetch(
+    `${apiUrl}/stories`,
+    {
+      method: "POST",
+
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+
+      body: formData,
+    },
+  );
+
+  if (!response.ok) {
+    let message =
+      "Error submitting story.";
+
+    try {
+      const data = await response.json();
+
+      if (Array.isArray(data?.message)) {
+        message = data.message.join(", ");
+      } else if (
+        typeof data?.message === "string"
+      ) {
+        message = data.message;
+      }
+    } catch {
+      const text = await response.text();
+
+      if (text) {
+        message = text;
+      }
+    }
+
+    throw new Error(message);
+  }
+
+  return response.json();
 }
 
 /**
@@ -105,6 +143,16 @@ export function deleteStory(
     `/stories/${encodeURIComponent(id)}`,
     {
       method: "DELETE",
+      token,
+    },
+  );
+}
+export function getMyStories(
+  token: string,
+) {
+  return apiFetch<Story[]>(
+    "/stories/me",
+    {
       token,
     },
   );

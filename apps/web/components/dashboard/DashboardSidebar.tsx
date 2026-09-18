@@ -69,7 +69,7 @@ const otherProfessionalItems: NavItem[] = [
 const buyerItems: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "My Requests", href: "/dashboard/my-leads", icon: UserPlus },
-  { label: "My Matches", href: "/dashboard/my-matches", icon: GitBranch },  { label: "Stories", href: "/dashboard/stories", icon: FileText },
+  { label: "My Matches", href: "/dashboard/my-matches", icon: GitBranch },  { label: "Stories", href: "/dashboard/my-stories", icon: FileText },
   { label: "Notifications", href: "/dashboard/notifications", icon: Bell },
   { label: "Messages",    href: "/dashboard/messages", icon: Bell},
   { label: "Settings", href: "/dashboard/settings", icon: Settings },
@@ -241,7 +241,7 @@ export default function DashboardSidebar() {
   }
 
   return (
-    <aside className="sticky top-0 hidden h-screen w-[295px] shrink-0 flex-col overflow-hidden border-r border-[#E9EDF3] bg-white lg:flex">
+   <aside className="hidden h-screen w-[295px] shrink-0 flex-col overflow-hidden border-r border-[#E9EDF3] bg-white lg:flex">
       <div className="flex h-[76px] shrink-0 items-center border-b border-[#E9EDF3] px-7">
   <Link
     href="/"

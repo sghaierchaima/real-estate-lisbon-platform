@@ -34,6 +34,33 @@ export type MatchStatus =
   | "CANCELLED";
 
 // ============================================================
+// AUTO MATCHING RESULT
+// ============================================================
+
+export type AutoMatchingResult =
+  | {
+      matched: true;
+      professionalType: string;
+      threshold: number;
+      count: number;
+      matches?: LeadMatch[];
+    }
+  | {
+      matched: false;
+      reason:
+        | "LEAD_NOT_FOUND"
+        | "LEAD_HAS_NO_BUYER"
+        | "NO_ELIGIBLE_PROFESSIONAL"
+        | "NO_CANDIDATE_ABOVE_THRESHOLD"
+        | "MATCH_CREATION_FAILED"
+        | string;
+
+      professionalType?: string;
+      threshold?: number;
+      matches?: LeadMatch[];
+    };
+
+// ============================================================
 // LEAD MATCH
 // ============================================================
 
@@ -43,6 +70,8 @@ export type LeadMatch = {
   buyerId: string | null;
   professionalId: string;
   leadId: string | null;
+
+  propertyId?: string | null;
 
   score: number;
   status: MatchStatus;
@@ -61,6 +90,10 @@ export type LeadMatch = {
 
     verificationStatus?: string;
 
+    rating?: number;
+    reviewsCount?: number;
+    clientsCount?: number;
+
     user: {
       id: string;
 
@@ -74,6 +107,10 @@ export type LeadMatch = {
         | "PROFESSIONAL";
 
       avatarUrl?: string | null;
+
+      phone?: string | null;
+      city?: string | null;
+      country?: string | null;
     };
   };
 };
@@ -146,6 +183,18 @@ export type Lead = {
   matches?: LeadMatch[];
 
   // ==========================================================
+  // AUTO MATCHING
+  // ==========================================================
+
+  autoMatching?: AutoMatchingResult | null;
+
+  // ==========================================================
+  // RESPONSE METADATA
+  // ==========================================================
+
+  alreadyExists?: boolean;
+
+  // ==========================================================
   // TIMESTAMPS
   // ==========================================================
 
@@ -153,6 +202,17 @@ export type Lead = {
 
   updatedAt: string;
 };
+
+// ============================================================
+// BUYER REQUEST RESPONSE
+// ============================================================
+
+export type BuyerRequestResponse =
+  Lead & {
+    alreadyExists?: boolean;
+
+    autoMatching?: AutoMatchingResult | null;
+  };
 
 // ============================================================
 // ADMIN - GET ALL LEADS
@@ -187,6 +247,14 @@ export function getMyLeads(
 // ============================================================
 // ADMIN - UPDATE LEAD
 // ============================================================
+//
+// Important:
+// MATCHED must never be set manually by Admin.
+// Backend already protects this.
+//
+// This function remains available only for legitimate lifecycle
+// changes such as CLOSED / LOST or other administrative data.
+// ============================================================
 
 export function updateLead(
   token: string,
@@ -219,24 +287,6 @@ export function deleteLead(
     `/leads/${id}`,
     {
       method: "DELETE",
-
-      token,
-    },
-  );
-}
-
-// ============================================================
-// ADMIN - GENERATE MATCH
-// ============================================================
-
-export function generateMatch(
-  token: string,
-  leadId: string,
-) {
-  return apiFetch(
-    `/matching/generate/${leadId}`,
-    {
-      method: "POST",
 
       token,
     },
@@ -296,11 +346,7 @@ export function createLeadFromNeighborhoodFinder(
   token: string,
   data: NeighborhoodLeadPayload,
 ) {
-  return apiFetch<
-    Lead & {
-      alreadyExists?: boolean;
-    }
-  >(
+  return apiFetch<BuyerRequestResponse>(
     "/leads/from-neighborhood-finder",
     {
       method: "POST",
@@ -344,11 +390,7 @@ export function createLeadFromPropertyValuation(
   token: string,
   data: PropertyValuationLeadPayload,
 ) {
-  return apiFetch<
-    Lead & {
-      alreadyExists?: boolean;
-    }
-  >(
+  return apiFetch<BuyerRequestResponse>(
     "/leads/from-property-valuation",
     {
       method: "POST",
@@ -418,7 +460,7 @@ export type PropertySearchFoundResponse = {
 export type PropertySearchLeadResponse = {
   found: false;
 
-  lead: Lead;
+  lead: BuyerRequestResponse;
 
   notifiedAgents: number;
 
@@ -467,11 +509,7 @@ export function createLeadFromPriceChecker(
   token: string,
   data: PriceCheckerLeadPayload,
 ) {
-  return apiFetch<
-    Lead & {
-      alreadyExists?: boolean;
-    }
-  >(
+  return apiFetch<BuyerRequestResponse>(
     "/leads/from-price-checker",
     {
       method: "POST",
@@ -509,11 +547,7 @@ export function createLeadFromAffordabilityCalculator(
   token: string,
   data: AffordabilityLeadPayload,
 ) {
-  return apiFetch<
-    Lead & {
-      alreadyExists?: boolean;
-    }
-  >(
+  return apiFetch<BuyerRequestResponse>(
     "/leads/from-affordability-calculator",
     {
       method: "POST",
@@ -551,11 +585,7 @@ export function createLeadFromTrueCostCalculator(
   token: string,
   data: TrueCostLeadPayload,
 ) {
-  return apiFetch<
-    Lead & {
-      alreadyExists?: boolean;
-    }
-  >(
+  return apiFetch<BuyerRequestResponse>(
     "/leads/from-true-cost-calculator",
     {
       method: "POST",
@@ -615,27 +645,11 @@ export type MortgageCalculatorLeadPayload = {
   budget?: string;
 };
 
-export type MortgageCalculatorLeadResponse = {
-  id: string;
-
-  fullName: string | null;
-
-  email: string | null;
-
-  source: string | null;
-
-  quality: LeadQuality;
-
-  status: LeadStatus;
-
-  alreadyExists?: boolean;
-};
-
 export function createLeadFromMortgageCalculator(
   token: string,
   payload: MortgageCalculatorLeadPayload,
 ) {
-  return apiFetch<MortgageCalculatorLeadResponse>(
+  return apiFetch<BuyerRequestResponse>(
     "/leads/from-calculator",
     {
       method: "POST",

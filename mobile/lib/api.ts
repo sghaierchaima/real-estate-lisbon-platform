@@ -1,75 +1,160 @@
-const API_URL =
-  process.env.EXPO_PUBLIC_API_URL ||
-  "http://192.168.100.71:3001";
+const rawApiUrl =
+  process.env.EXPO_PUBLIC_API_URL?.trim();
+
+if (!rawApiUrl) {
+  throw new Error(
+    "Missing EXPO_PUBLIC_API_URL. Configure it in the mobile environment.",
+  );
+}
+
+/*
+ * Remove trailing slashes so:
+ *
+ * https://api.example.com/
+ *
+ * becomes:
+ *
+ * https://api.example.com
+ */
+export const API_URL =
+  rawApiUrl.replace(
+    /\/+$/,
+    "",
+  );
 
 type ApiFetchOptions = {
-  method?: "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
+  method?:
+    | "GET"
+    | "POST"
+    | "PATCH"
+    | "PUT"
+    | "DELETE";
+
   token?: string | null;
+
   body?: unknown;
 };
+
+function normalizeEndpoint(
+  endpoint: string,
+) {
+  if (!endpoint) {
+    return "";
+  }
+
+  return endpoint.startsWith("/")
+    ? endpoint
+    : `/${endpoint}`;
+}
 
 export async function apiFetch<T>(
   endpoint: string,
   options: ApiFetchOptions = {},
 ): Promise<T> {
-  const response = await fetch(
-    `${API_URL}${endpoint}`,
-    {
-      method: options.method || "GET",
+  const url =
+    `${API_URL}${normalizeEndpoint(
+      endpoint,
+    )}`;
 
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+  let response: Response;
 
-        ...(options.token
+  try {
+    response = await fetch(
+      url,
+      {
+        method:
+          options.method ??
+          "GET",
+
+        headers: {
+          Accept:
+            "application/json",
+
+          "Content-Type":
+            "application/json",
+
+          ...(options.token
+            ? {
+                Authorization:
+                  `Bearer ${options.token}`,
+              }
+            : {}),
+        },
+
+        ...(options.body !==
+        undefined
           ? {
-              Authorization: `Bearer ${options.token}`,
+              body:
+                JSON.stringify(
+                  options.body,
+                ),
             }
           : {}),
       },
+    );
+  } catch {
+    throw new Error(
+      "Unable to reach the server. Check your connection and API configuration.",
+    );
+  }
 
-      ...(options.body !== undefined
-        ? {
-            body: JSON.stringify(options.body),
-          }
-        : {}),
-    },
-  );
+  const raw =
+    await response.text();
 
-  const raw = await response.text();
-
-  let data: unknown = null;
+  let data: unknown =
+    null;
 
   if (raw) {
     try {
-      data = JSON.parse(raw);
+      data =
+        JSON.parse(raw);
     } catch {
-      data = raw;
+      data =
+        raw;
     }
   }
 
   if (!response.ok) {
-    let message = `Request failed (${response.status})`;
+    let message =
+      `Request failed (${response.status})`;
 
     if (
-      typeof data === "object" &&
+      typeof data ===
+        "object" &&
       data !== null &&
       "message" in data
     ) {
-      const serverMessage = (
-        data as {
-          message?: string | string[];
-        }
-      ).message;
+      const serverMessage =
+        (
+          data as {
+            message?:
+              | string
+              | string[];
+          }
+        ).message;
 
-      if (Array.isArray(serverMessage)) {
-        message = serverMessage.join(", ");
-      } else if (serverMessage) {
-        message = serverMessage;
+      if (
+        Array.isArray(
+          serverMessage,
+        )
+      ) {
+        message =
+          serverMessage.join(
+            ", ",
+          );
+      } else if (
+        typeof serverMessage ===
+          "string" &&
+        serverMessage.trim()
+      ) {
+        message =
+          serverMessage;
       }
     }
 
-    throw new Error(message);
+    throw new Error(
+      message,
+    );
   }
 
   return data as T;
@@ -78,6 +163,7 @@ export async function apiFetch<T>(
 export function getApiUrl() {
   return API_URL;
 }
+
 export function getAssetUrl(
   url?: string | null,
 ) {
@@ -85,12 +171,22 @@ export function getAssetUrl(
     return null;
   }
 
-  if (
-    url.startsWith("http://") ||
-    url.startsWith("https://")
-  ) {
-    return url;
+  const cleanUrl =
+    url.trim();
+
+  if (!cleanUrl) {
+    return null;
   }
 
-  return `${API_URL}${url}`;
+  if (
+    /^https?:\/\//i.test(
+      cleanUrl,
+    )
+  ) {
+    return cleanUrl;
+  }
+
+  return `${API_URL}${normalizeEndpoint(
+    cleanUrl,
+  )}`;
 }

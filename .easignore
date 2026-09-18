@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Git
+.git/
+
+# Expo / caches
+.expo/
+**/.expo/
+.metro-cache/
+**/.metro-cache/
+.eas-inspect/
+**/.eas-inspect/
+
+# Editors
+.vscode/
+**/.vscode/
+.idea/
+**/.idea/
+.claude/
+**/.claude/
+
+# Build outputs
+dist/
+**/dist/
+build/
+**/build/
+coverage/
+**/coverage/
+.next/
+**/.next/
+
+# Logs
+*.log
+**/*.log
+
+# Temporary files
+.cache/
+**/.cache/
+tmp/
+**/tmp/
+temp/
+**/temp/
+
+# Mobile unused example
+mobile/app-example/
+
+# Large archives
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# OS
+.DS_Store
+Thumbs.db

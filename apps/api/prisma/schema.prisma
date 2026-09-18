@@ -86,6 +86,11 @@ model User {
   city      String?
   avatarUrl String?
 
+  emailNotifications         Boolean @default(true)
+  leadNotifications          Boolean @default(true)
+  matchNotifications         Boolean @default(true)
+  propertyAlertNotifications Boolean @default(true)
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

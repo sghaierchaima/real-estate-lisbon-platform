@@ -53,7 +53,55 @@ function normalize(value: string) {
   return value
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\blisbon\b/g, "lisboa")
+    .replace(/\boporto\b/g, "porto");
+}
+
+function getMedian(values: number[]) {
+  if (!values.length) {
+    return 0;
+  }
+
+  const sorted = [...values].sort((a, b) => a - b);
+  const middle = Math.floor(sorted.length / 2);
+
+  if (sorted.length % 2 === 0) {
+    return (sorted[middle - 1] + sorted[middle]) / 2;
+  }
+
+  return sorted[middle];
+}
+
+function matchesLocation(
+  neighborhood: Neighborhood,
+  location: string,
+) {
+  const query = normalize(location);
+
+  if (!query) {
+    return false;
+  }
+
+  const name = normalize(neighborhood.name || "");
+  const zone = normalize(neighborhood.zone || "");
+
+  const nameMatches =
+    name.length > 0 &&
+    (name === query ||
+      name.includes(query) ||
+      query.includes(name));
+
+  const zoneMatches =
+    zone.length > 0 &&
+    (zone === query ||
+      zone.includes(query) ||
+      query.includes(zone));
+
+  return nameMatches || zoneMatches;
 }
 
 function SectionCard({
@@ -120,7 +168,7 @@ function PriceCheckerPageContent() {
   const [neighborhoods, setNeighborhoods] = useState<Neighborhood[]>([]);
   const [detectedNeighborhood, setDetectedNeighborhood] = useState("");
   const [loadingMarketPrice, setLoadingMarketPrice] = useState(false);
-  const [marketDataLocked, setMarketDataLocked] = useState(false);
+  const [marketDataLocked, setMarketDataLocked] = useState(initialMarketPrice !== "");
   const [savingRequest, setSavingRequest] = useState(false);
 
   useEffect(() => {
@@ -158,31 +206,96 @@ function PriceCheckerPageContent() {
   }, [askingPrice, marketPrice, sizeInput, location, router]);
 
   useEffect(() => {
-    if (!location || !sizeInput || marketDataLocked) return;
+    if (
+      !location.trim() ||
+      !sizeInput.trim() ||
+      marketDataLocked
+    ) {
+      return;
+    }
 
     const size = parseNumber(sizeInput);
-    if (size <= 0) return;
+
+    if (size <= 0) {
+      setMarketPrice("");
+      setDetectedNeighborhood("");
+      return;
+    }
+
+    if (!neighborhoods.length) {
+      return;
+    }
 
     setLoadingMarketPrice(true);
 
-    const matched = neighborhoods.find((item) => {
-      const area = normalize(item.name || "");
-      const zone = normalize(item.zone || "");
+    try {
+      const matchingNeighborhoods = neighborhoods.filter(
+        (item) =>
+          matchesLocation(item, location) &&
+          item.pricePerSqm != null &&
+          Number(item.pricePerSqm) > 0,
+      );
+
+      if (!matchingNeighborhoods.length) {
+        setMarketPrice("");
+        setDetectedNeighborhood("");
+        return;
+      }
+
       const query = normalize(location);
 
-      return query.includes(area) || area.includes(query) || zone.includes(query);
-    });
+      const exactNeighborhood = matchingNeighborhoods.find(
+        (item) => normalize(item.name || "") === query,
+      );
 
-    if (matched?.pricePerSqm) {
-      const computedMarketPrice = Math.round(Number(matched.pricePerSqm) * size);
+      let referencePricePerSqm: number;
+      let referenceLabel: string;
+
+      if (
+        exactNeighborhood?.pricePerSqm != null &&
+        Number(exactNeighborhood.pricePerSqm) > 0
+      ) {
+        referencePricePerSqm = Number(
+          exactNeighborhood.pricePerSqm,
+        );
+        referenceLabel = exactNeighborhood.name;
+      } else {
+        const prices = matchingNeighborhoods
+          .map((item) => Number(item.pricePerSqm))
+          .filter((value) => Number.isFinite(value) && value > 0);
+
+        referencePricePerSqm = getMedian(prices);
+
+        const exactZone = matchingNeighborhoods.find(
+          (item) => normalize(item.zone || "") === query,
+        )?.zone;
+
+        referenceLabel =
+          exactZone?.trim() ||
+          location.trim();
+      }
+
+      if (referencePricePerSqm <= 0) {
+        setMarketPrice("");
+        setDetectedNeighborhood("");
+        return;
+      }
+
+      const computedMarketPrice = Math.round(
+        referencePricePerSqm * size,
+      );
+
       setMarketPrice(String(computedMarketPrice));
-      setDetectedNeighborhood(matched.name);
-    } else {
-      setDetectedNeighborhood("");
+      setDetectedNeighborhood(referenceLabel);
+    } finally {
+      setLoadingMarketPrice(false);
     }
-
-    setLoadingMarketPrice(false);
-  }, [location, sizeInput, neighborhoods, marketDataLocked]);
+  }, [
+    location,
+    sizeInput,
+    neighborhoods,
+    marketDataLocked,
+  ]);
 
   const hasUserInput =
     askingPrice !== "" || marketPrice !== "" || sizeInput !== "" || location !== "";
@@ -243,68 +356,174 @@ function PriceCheckerPageContent() {
   }, [askingPrice, marketPrice, sizeInput]);
 
   async function handleCreateBuyerRequest() {
-    const token = getToken();
-    const user = getStoredUser<AuthUser>();
+  const token = getToken();
+  const user = getStoredUser<AuthUser>();
 
-    if (!token || !user) {
-      toast.warning("Login required", "Please sign in as a buyer.");
-      return;
-    }
+  if (!token || !user) {
+    toast.warning(
+      "Login required",
+      "Please sign in as a Buyer to create a price review request.",
+    );
+    return;
+  }
 
-    if (user.role !== "BUYER") {
-      toast.warning("Buyer account required", "Only buyers can create requests.");
-      return;
-    }
+  if (user.role !== "BUYER") {
+    toast.warning(
+      "Buyer account required",
+      "Only Buyer accounts can create property requests.",
+    );
+    return;
+  }
 
-    if (!location.trim() || !askingPrice.trim() || !sizeInput.trim()) {
-      toast.warning(
-        "Missing information",
-        "Please enter location, asking price and property size."
+  if (
+    !location.trim() ||
+    !askingPrice.trim() ||
+    !sizeInput.trim()
+  ) {
+    toast.warning(
+      "Missing information",
+      "Please enter the location, asking price and property size.",
+    );
+    return;
+  }
+
+  if (
+    !marketPrice.trim() ||
+    results.market <= 0
+  ) {
+    toast.warning(
+      "Market value required",
+      "Please enter or auto-detect the estimated market value.",
+    );
+    return;
+  }
+
+  try {
+    setSavingRequest(true);
+
+    const lead =
+      await createLeadFromPriceChecker(
+        token,
+        {
+          location:
+            location.trim(),
+
+          askingPrice,
+
+          marketPrice,
+
+          size:
+            sizeInput,
+
+          verdict:
+            results.verdict,
+
+          variancePct:
+            results.variancePct.toFixed(1),
+        },
       );
-      return;
-    }
 
-    if (!marketPrice.trim() || results.market <= 0) {
-      toast.warning(
-        "Market value required",
-        "Please enter or auto-detect the estimated market value."
-      );
-      return;
-    }
+    /*
+     * ==========================================================
+     * SMART MATCH FOUND
+     * ==========================================================
+     */
 
-    try {
-      setSavingRequest(true);
+    if (
+      lead.status === "MATCHED" ||
+      lead.autoMatching?.matched
+    ) {
+      const bestMatch =
+        lead.matches?.[0];
 
-      const lead = await createLeadFromPriceChecker(token, {
-        location,
-        askingPrice,
-        marketPrice,
-        size: sizeInput,
-        verdict: results.verdict,
-        variancePct: results.variancePct.toFixed(1),
-      });
+      const professionalName =
+        bestMatch
+          ?.professional
+          ?.user
+          ?.fullName;
 
+      const score =
+        bestMatch?.score;
+
+      /*
+       * Existing request automatically reprocessed.
+       */
       if (lead.alreadyExists) {
-        toast.info(
-          "Request already exists",
-          "This price checker request is already available in My Requests."
-        );
+        if (
+          professionalName &&
+          typeof score === "number"
+        ) {
+          toast.success(
+            "Smart match found",
+            `${professionalName} is matched to your price review request with a ${score}% compatibility score.`,
+          );
+        } else {
+          toast.success(
+            "Price review matched",
+            "Your existing request has been automatically matched with a compatible verified property valuer.",
+          );
+        }
+
         return;
       }
 
-      toast.success(
-        "Buyer request created",
-        "Your price checker request is now waiting for admin matching."
-      );
-    } catch (error) {
-      toast.error(
-        "Unable to create request",
-        error instanceof Error ? error.message : "Please try again later."
-      );
-    } finally {
-      setSavingRequest(false);
+      /*
+       * Brand-new request automatically matched.
+       */
+      if (
+        professionalName &&
+        typeof score === "number"
+      ) {
+        toast.success(
+          "Smart match found",
+          `${professionalName} has been automatically matched to your price review request with a ${score}% compatibility score.`,
+        );
+      } else {
+        toast.success(
+          "Property valuer matched",
+          "A compatible verified property valuer has been automatically assigned to your request.",
+        );
+      }
+
+      return;
     }
+
+    /*
+     * ==========================================================
+     * EXISTING REQUEST — NO MATCH YET
+     * ==========================================================
+     */
+
+    if (lead.alreadyExists) {
+      toast.info(
+        "Request already active",
+        "This price review request already exists. Smart Matching will continue looking automatically for a compatible verified property valuer.",
+      );
+
+      return;
+    }
+
+    /*
+     * ==========================================================
+     * NEW REQUEST — NO PROFESSIONAL >= THRESHOLD YET
+     * ==========================================================
+     */
+
+    toast.success(
+      "Price review request created",
+      "Your request is now active. Smart Matching will automatically connect you with a compatible verified property valuer when one meets the required score.",
+    );
+  } catch (error) {
+    toast.error(
+      "Unable to create request",
+      error instanceof Error
+        ? error.message
+        : "Something went wrong while creating your price review request. Please try again.",
+    );
+  } finally {
+    setSavingRequest(false);
   }
+}
 
   return (
     <>
@@ -333,7 +552,7 @@ function PriceCheckerPageContent() {
 
                 <p className="mt-5 max-w-[760px] text-[18px] leading-8 text-[#4B5563]">
                   Check whether a property looks fairly priced using neighborhood
-                  market data from your Prisma database.
+                  market data from the platform neighborhood dataset.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
@@ -356,7 +575,7 @@ function PriceCheckerPageContent() {
                 <div className="mt-8 flex flex-col gap-3 text-[15px] text-[#4B5563] md:flex-row md:flex-wrap md:gap-6">
                   <div className="flex items-center gap-2">
                     <CircleCheck size={18} className="text-[#2E7D32]" />
-                    <span>Connected to NestJS/Prisma</span>
+                    <span>Live market-data comparison</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CircleCheck size={18} className="text-[#2E7D32]" />
@@ -364,7 +583,7 @@ function PriceCheckerPageContent() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CircleCheck size={18} className="text-[#2E7D32]" />
-                    <span>Ready for admin matching</span>
+                    <span>Automatic Smart Matching</span>
                   </div>
                 </div>
               </div>
@@ -396,7 +615,9 @@ function PriceCheckerPageContent() {
                     <div>
                       <p className="text-[14px] text-white/75">Market value</p>
                       <p className="mt-1 text-[34px] font-bold tracking-[-0.03em]">
-                        {hasUserInput ? formatEuro(results.market) : "—"}
+                        {hasUserInput && results.market > 0
+                          ? formatEuro(results.market)
+                          : "—"}
                       </p>
                     </div>
                   </div>
@@ -412,7 +633,11 @@ function PriceCheckerPageContent() {
                   <div className="space-y-4">
                     <ResultRow
                       label="Difference"
-                      value={hasUserInput ? formatEuro(results.difference) : "—"}
+                      value={
+                        hasUserInput && results.market > 0
+                          ? formatEuro(results.difference)
+                          : "—"
+                      }
                     />
                     <ResultRow
                       label="Variance"
@@ -470,7 +695,7 @@ function PriceCheckerPageContent() {
                         setLocation(e.target.value);
                         setMarketDataLocked(false);
                         setDetectedNeighborhood("");
-                        if (initialMarketPrice === "") setMarketPrice("");
+                        setMarketPrice("");
                       }}
                       className="w-full rounded-[16px] border border-[#D7DCE2] bg-[#FCFCFD] px-4 py-3.5 text-[15px] placeholder:text-[#9CA3AF] outline-none transition focus:border-[#1976D2]"
                     />
@@ -484,11 +709,22 @@ function PriceCheckerPageContent() {
                   )}
 
                   {detectedNeighborhood && !loadingMarketPrice && (
-                    <p className="mt-2 text-[13px] text-[#6B7280]">
-                      Market value estimated from neighborhood data:{" "}
-                      {detectedNeighborhood}
+                    <p className="mt-2 text-[13px] text-[#2E7D32]">
+                      Market value automatically estimated using data for{" "}
+                      <strong>{detectedNeighborhood}</strong>.
                     </p>
                   )}
+
+                  {location.trim() &&
+                    sizeInput.trim() &&
+                    !loadingMarketPrice &&
+                    !detectedNeighborhood &&
+                    !marketPrice && (
+                      <p className="mt-2 text-[13px] text-[#B45309]">
+                        No matching market data found for this location. You can
+                        enter an estimated market value manually.
+                      </p>
+                    )}
                 </div>
 
                 <div>
@@ -526,7 +762,8 @@ function PriceCheckerPageContent() {
                       onChange={(e) => {
                         setSizeInput(e.target.value);
                         setMarketDataLocked(false);
-                        if (initialMarketPrice === "") setMarketPrice("");
+                        setDetectedNeighborhood("");
+                        setMarketPrice("");
                       }}
                       className="w-full rounded-[16px] border border-[#D7DCE2] bg-[#FCFCFD] px-4 py-3.5 text-[15px] placeholder:text-[#9CA3AF] outline-none transition focus:border-[#1976D2]"
                     />
@@ -603,11 +840,19 @@ function PriceCheckerPageContent() {
                     />
                     <ResultRow
                       label="Estimated market value"
-                      value={hasUserInput ? formatEuro(results.market) : "—"}
+                      value={
+                        hasUserInput && results.market > 0
+                          ? formatEuro(results.market)
+                          : "—"
+                      }
                     />
                     <ResultRow
                       label="Difference"
-                      value={hasUserInput ? formatEuro(results.difference) : "—"}
+                      value={
+                        hasUserInput && results.market > 0
+                          ? formatEuro(results.difference)
+                          : "—"
+                      }
                     />
                     <div className="h-px bg-[#E9ECEF]" />
                     <ResultRow
