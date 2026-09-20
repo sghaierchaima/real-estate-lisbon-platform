@@ -15,7 +15,8 @@ import {
   getStoredUser,
   getToken,
 } from "@/lib/session";
-
+import FloatingChatWindow from "@/components/chat/FloatingChatWindow";
+import { contactProperty } from "@/lib/matching-api";
 import {
   getSavedPropertyStatus,
   toggleSavedProperty,
@@ -28,15 +29,16 @@ import {
   Calculator,
   Calendar,
   CheckCircle,
-  
+
   FileText,
   Home,
   MapPin,
   Maximize,
-  
+
   TrendingUp,
   Users,
   BarChart3,
+  MessageCircle,
 } from "lucide-react";
 import { getPublicProperties, getPublicProperty, Property } from "@/lib/properties-api";
 import PropertyHero from "@/components/property/PropertyHero";
@@ -148,7 +150,7 @@ function getSimilarityScore(
     base.city &&
     candidate.city &&
     base.city.toLocaleLowerCase() ===
-      candidate.city.toLocaleLowerCase()
+    candidate.city.toLocaleLowerCase()
   ) {
     score += 4;
   }
@@ -157,7 +159,7 @@ function getSimilarityScore(
     base.region &&
     candidate.region &&
     base.region.toLocaleLowerCase() ===
-      candidate.region.toLocaleLowerCase()
+    candidate.region.toLocaleLowerCase()
   ) {
     score += 3;
   }
@@ -166,7 +168,7 @@ function getSimilarityScore(
     base.propertyType &&
     candidate.propertyType &&
     base.propertyType.toLocaleLowerCase() ===
-      candidate.propertyType.toLocaleLowerCase()
+    candidate.propertyType.toLocaleLowerCase()
   ) {
     score += 2;
   }
@@ -178,10 +180,10 @@ function getSimilarityScore(
     score += Math.max(
       0,
       2 -
-        Math.abs(
-          base.bedrooms -
-            candidate.bedrooms,
-        ),
+      Math.abs(
+        base.bedrooms -
+        candidate.bedrooms,
+      ),
     );
   }
 
@@ -192,7 +194,7 @@ function getSimilarityScore(
     const ratio =
       Math.abs(
         base.price -
-          candidate.price,
+        candidate.price,
       ) / base.price;
 
     if (ratio <= 0.2) {
@@ -224,12 +226,17 @@ function estimateMortgage(price: number) {
 export default function PropertyDetailsPage() {
   const user = getStoredUser<AuthUser>();
   const toast = useToast();
+  const [activeChatRoomId, setActiveChatRoomId] =
+    useState<string | null>(null);
+
+  const [contactingAgent, setContactingAgent] =
+    useState(false);
 
   const [isSaved, setIsSaved] =
-   useState(false);
+    useState(false);
 
   const [savingFavorite, setSavingFavorite] =
-   useState(false);
+    useState(false);
   const params = useParams<{ id: string }>();
   const id = params.id;
 
@@ -240,112 +247,112 @@ export default function PropertyDetailsPage() {
   const [activeTab, setActiveTab] = useState<TabType>("overview");
 
   useEffect(() => {
-  let cancelled = false;
+    let cancelled = false;
 
-  async function loadProperty() {
-    if (!id) {
-      setLoading(false);
-      return;
-    }
-
-    try {
-      setLoading(true);
-
-      const [propertyData, publicProperties] =
-        await Promise.all([
-          getPublicProperty(id),
-          getPublicProperties(),
-        ]);
-
-      if (cancelled) {
+    async function loadProperty() {
+      if (!id) {
+        setLoading(false);
         return;
       }
 
-      setProperty(propertyData);
-      setCurrentImage(0);
+      try {
+        setLoading(true);
 
-      setSimilar(
-        publicProperties
-          .filter((item) => item.id !== id)
-          .map((item) => ({
-            item,
-            score: getSimilarityScore(
-              propertyData,
+        const [propertyData, publicProperties] =
+          await Promise.all([
+            getPublicProperty(id),
+            getPublicProperties(),
+          ]);
+
+        if (cancelled) {
+          return;
+        }
+
+        setProperty(propertyData);
+        setCurrentImage(0);
+
+        setSimilar(
+          publicProperties
+            .filter((item) => item.id !== id)
+            .map((item) => ({
               item,
-            ),
-          }))
-          .sort(
-            (a, b) =>
-              b.score - a.score,
-          )
-          .slice(0, 3)
-          .map(({ item }) => item),
-      );
-    } catch {
-      if (!cancelled) {
-        setProperty(null);
-      }
-    } finally {
-      if (!cancelled) {
-        setLoading(false);
-      }
-    }
-  }
-
-  void loadProperty();
-
-  return () => {
-    cancelled = true;
-  };
-}, [id]);
-  useEffect(() => {
-  let cancelled = false;
-
-  async function loadSavedStatus() {
-    if (
-      !property ||
-      user?.role !== "BUYER"
-    ) {
-      if (!cancelled) {
-        setIsSaved(false);
-      }
-
-      return;
-    }
-
-    const token = getToken();
-
-    if (!token) {
-      if (!cancelled) {
-        setIsSaved(false);
-      }
-
-      return;
-    }
-
-    try {
-      const result =
-        await getSavedPropertyStatus(
-          token,
-          property.id,
+              score: getSimilarityScore(
+                propertyData,
+                item,
+              ),
+            }))
+            .sort(
+              (a, b) =>
+                b.score - a.score,
+            )
+            .slice(0, 3)
+            .map(({ item }) => item),
         );
-
-      if (!cancelled) {
-        setIsSaved(result.isSaved);
-      }
-    } catch {
-      if (!cancelled) {
-        setIsSaved(false);
+      } catch {
+        if (!cancelled) {
+          setProperty(null);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
       }
     }
-  }
 
-  void loadSavedStatus();
+    void loadProperty();
 
-  return () => {
-    cancelled = true;
-  };
-}, [property?.id, user?.role]);
+    return () => {
+      cancelled = true;
+    };
+  }, [id]);
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadSavedStatus() {
+      if (
+        !property ||
+        user?.role !== "BUYER"
+      ) {
+        if (!cancelled) {
+          setIsSaved(false);
+        }
+
+        return;
+      }
+
+      const token = getToken();
+
+      if (!token) {
+        if (!cancelled) {
+          setIsSaved(false);
+        }
+
+        return;
+      }
+
+      try {
+        const result =
+          await getSavedPropertyStatus(
+            token,
+            property.id,
+          );
+
+        if (!cancelled) {
+          setIsSaved(result.isSaved);
+        }
+      } catch {
+        if (!cancelled) {
+          setIsSaved(false);
+        }
+      }
+    }
+
+    void loadSavedStatus();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [property?.id, user?.role]);
 
   const images = useMemo(() => {
     if (!property?.imageUrls?.length) return ["/images/prop3.png"];
@@ -353,106 +360,52 @@ export default function PropertyDetailsPage() {
   }, [property]);
 
   const totalImages = Math.max(
-  1,
-  images.length,
-);
+    1,
+    images.length,
+  );
 
   function prevImage() {
-  setCurrentImage((previous) =>
-    previous === 0
-      ? totalImages - 1
-      : previous - 1,
-  );
-}
-
-function nextImage() {
-  setCurrentImage((previous) =>
-    previous === totalImages - 1
-      ? 0
-      : previous + 1,
-  );
-}
-async function handleToggleSave() {
-  if (!property || savingFavorite) {
-    return;
+    setCurrentImage((previous) =>
+      previous === 0
+        ? totalImages - 1
+        : previous - 1,
+    );
   }
 
-  if (!user) {
-    window.location.href = `/login?redirect=${encodeURIComponent(
-      window.location.pathname,
-    )}`;
-
-    return;
+  function nextImage() {
+    setCurrentImage((previous) =>
+      previous === totalImages - 1
+        ? 0
+        : previous + 1,
+    );
   }
-
-  if (user.role !== "BUYER") {
-    toast.warning(
-      "Buyer account required",
-      "Only buyers can save properties.",
-    );
-
-    return;
-  }
-
-  const token = getToken();
-
-  if (!token) {
-    toast.warning(
-      "Session required",
-      "Please sign in again.",
-    );
-
-    window.location.href = `/login?redirect=${encodeURIComponent(
-      window.location.pathname,
-    )}`;
-
-    return;
-  }
-
-  const previousValue = isSaved;
-
-  setSavingFavorite(true);
-  setIsSaved(!previousValue);
-
-  try {
-    const result = await toggleSavedProperty(
-      token,
-      property.id,
-    );
-
-    setIsSaved(result.isSaved);
-
-    window.dispatchEvent(
-      new Event("saved-properties-changed"),
-    );
-
-    if (result.isSaved) {
-      toast.success(
-        "Property saved",
-        "The property was added to your saved properties.",
-      );
-    } else {
-      toast.success(
-        "Property removed",
-        "The property was removed from your saved properties.",
-      );
+  async function handleToggleSave() {
+    if (!property || savingFavorite) {
+      return;
     }
-  } catch (error) {
-    setIsSaved(previousValue);
 
-    const message =
-      error instanceof Error
-        ? error.message
-        : "Unable to update saved property.";
+    if (!user) {
+      window.location.href = `/login?redirect=${encodeURIComponent(
+        window.location.pathname,
+      )}`;
 
-    const normalizedMessage = message.toLowerCase();
+      return;
+    }
 
-    if (
-      normalizedMessage.includes("401") ||
-      normalizedMessage.includes("unauthorized")
-    ) {
+    if (user.role !== "BUYER") {
       toast.warning(
-        "Session expired",
+        "Buyer account required",
+        "Only buyers can save properties.",
+      );
+
+      return;
+    }
+
+    const token = getToken();
+
+    if (!token) {
+      toast.warning(
+        "Session required",
         "Please sign in again.",
       );
 
@@ -463,76 +416,191 @@ async function handleToggleSave() {
       return;
     }
 
-    if (
-      normalizedMessage.includes("403") ||
-      normalizedMessage.includes("forbidden") ||
-      normalizedMessage.includes("permission")
-    ) {
-      toast.error(
-        "Access denied",
-        "You do not have permission to perform this action.",
+    const previousValue = isSaved;
+
+    setSavingFavorite(true);
+    setIsSaved(!previousValue);
+
+    try {
+      const result = await toggleSavedProperty(
+        token,
+        property.id,
       );
 
+      setIsSaved(result.isSaved);
+
+      window.dispatchEvent(
+        new Event("saved-properties-changed"),
+      );
+
+      if (result.isSaved) {
+        toast.success(
+          "Property saved",
+          "The property was added to your saved properties.",
+        );
+      } else {
+        toast.success(
+          "Property removed",
+          "The property was removed from your saved properties.",
+        );
+      }
+    } catch (error) {
+      setIsSaved(previousValue);
+
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Unable to update saved property.";
+
+      const normalizedMessage = message.toLowerCase();
+
+      if (
+        normalizedMessage.includes("401") ||
+        normalizedMessage.includes("unauthorized")
+      ) {
+        toast.warning(
+          "Session expired",
+          "Please sign in again.",
+        );
+
+        window.location.href = `/login?redirect=${encodeURIComponent(
+          window.location.pathname,
+        )}`;
+
+        return;
+      }
+
+      if (
+        normalizedMessage.includes("403") ||
+        normalizedMessage.includes("forbidden") ||
+        normalizedMessage.includes("permission")
+      ) {
+        toast.error(
+          "Access denied",
+          "You do not have permission to perform this action.",
+        );
+
+        return;
+      }
+
+      toast.error(
+        "Unable to update saved property",
+        message,
+      );
+    } finally {
+      setSavingFavorite(false);
+    }
+  }
+
+  async function handleShare() {
+    if (!property) {
       return;
     }
 
-    toast.error(
-      "Unable to update saved property",
-      message,
-    );
-  } finally {
-    setSavingFavorite(false);
-  }
-}
-  
-  async function handleShare() {
-  if (!property) {
-    return;
-  }
+    const shareData = {
+      title: property.title,
+      text:
+        property.description ||
+        "Discover this property in Portugal.",
+      url: window.location.href,
+    };
 
-  const shareData = {
-    title: property.title,
-    text:
-      property.description ||
-      "Discover this property in Portugal.",
-    url: window.location.href,
-  };
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
 
-  try {
-    if (navigator.share) {
-      await navigator.share(shareData);
+        toast.success(
+          "Property shared",
+          "The property was shared successfully.",
+        );
+
+        return;
+      }
+
+      await navigator.clipboard.writeText(
+        window.location.href,
+      );
 
       toast.success(
-        "Property shared",
-        "The property was shared successfully.",
+        "Link copied",
+        "The property link was copied to your clipboard.",
+      );
+    } catch (error) {
+      if (
+        error instanceof DOMException &&
+        error.name === "AbortError"
+      ) {
+        return;
+      }
+
+      toast.error(
+        "Unable to share property",
+        "The property link could not be shared or copied.",
+      );
+    }
+  }
+  async function handleContactAgent() {
+    if (!property || contactingAgent) {
+      return;
+    }
+
+    const token = getToken();
+    const currentUser = getStoredUser<AuthUser>();
+
+    if (!token || !currentUser) {
+      toast.warning(
+        "Login required",
+        "Please sign in as a buyer to contact this property agent."
+      );
+
+      window.location.href = `/login?redirect=${encodeURIComponent(
+        window.location.pathname
+      )}`;
+
+      return;
+    }
+
+    if (currentUser.role !== "BUYER") {
+      toast.warning(
+        "Buyer account required",
+        "Only buyers can contact property agents."
       );
 
       return;
     }
 
-    await navigator.clipboard.writeText(
-      window.location.href,
-    );
+    try {
+      setContactingAgent(true);
 
-    toast.success(
-      "Link copied",
-      "The property link was copied to your clipboard.",
-    );
-  } catch (error) {
-    if (
-      error instanceof DOMException &&
-      error.name === "AbortError"
-    ) {
-      return;
+      const result = await contactProperty(
+        token,
+        property.id
+      );
+
+      toast.success(
+        result.alreadyExists
+          ? "Conversation already available"
+          : "Agent contacted",
+
+        result.alreadyExists
+          ? "Opening your existing conversation."
+          : "A conversation with the property agent has been created."
+      );
+
+      setActiveChatRoomId(
+        result.chatRoom.id
+      );
+    } catch (error) {
+      toast.error(
+        "Unable to contact agent",
+        error instanceof Error
+          ? error.message
+          : "Please try again later."
+      );
+    } finally {
+      setContactingAgent(false);
     }
-
-    toast.error(
-      "Unable to share property",
-      "The property link could not be shared or copied.",
-    );
   }
-}
-
   if (loading) {
     return (
       <main className="min-h-screen bg-[#F8F9FA] text-[#0F2340]">
@@ -578,27 +646,27 @@ async function handleToggleSave() {
       <Navbar />
 
       <PropertyHero
-  title={property.title}
-  location={location}
-  price={formatPrice(property.price)}
-  image={images[currentImage] || "/images/prop3.png"}
-  currentImage={currentImage}
-  totalImages={totalImages}
-  featured={property.featured}
-  savingFavorite={savingFavorite}
-  isSaved={isSaved}
-  onPrevious={prevImage}
-  onNext={nextImage}
-  onShare={handleShare}
-  onToggleSave={handleToggleSave}
-/>
+        title={property.title}
+        location={location}
+        price={formatPrice(property.price)}
+        image={images[currentImage] || "/images/prop3.png"}
+        currentImage={currentImage}
+        totalImages={totalImages}
+        featured={property.featured}
+        savingFavorite={savingFavorite}
+        isSaved={isSaved}
+        onPrevious={prevImage}
+        onNext={nextImage}
+        onShare={handleShare}
+        onToggleSave={handleToggleSave}
+      />
 
-<PropertyGallery
-  images={images}
-  currentImage={currentImage}
-  title={property.title}
-  onSelect={setCurrentImage}
-/>
+      <PropertyGallery
+        images={images}
+        currentImage={currentImage}
+        title={property.title}
+        onSelect={setCurrentImage}
+      />
 
       <section className="container-page py-12">
         <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
@@ -883,6 +951,35 @@ async function handleToggleSave() {
                   <p className="mt-1 text-sm text-gray-600">
                     {property.professionalProfile.professionalType.replaceAll("_", " ")}
                   </p>
+                  <button
+                    type="button"
+                    onClick={handleContactAgent}
+                    disabled={contactingAgent}
+                    className="
+    mt-4
+    flex
+    w-full
+    items-center
+    justify-center
+    gap-2
+    rounded-lg
+    bg-[#1B365D]
+    px-4
+    py-3
+    font-semibold
+    text-white
+    transition
+    hover:bg-[#0F2340]
+    disabled:cursor-not-allowed
+    disabled:opacity-60
+  "
+                  >
+                    <MessageCircle className="h-5 w-5" />
+
+                    {contactingAgent
+                      ? "Opening conversation..."
+                      : "Contact Property Agent"}
+                  </button>
                 </div>
               )}
 
@@ -907,7 +1004,14 @@ async function handleToggleSave() {
           </aside>
         </div>
       </section>
-
+{activeChatRoomId && (
+  <FloatingChatWindow
+    roomId={activeChatRoomId}
+    onClose={() =>
+      setActiveChatRoomId(null)
+    }
+  />
+)}
       <Footer />
     </main>
   );
@@ -940,11 +1044,10 @@ function TabButton({
   return (
     <button
       onClick={onClick}
-      className={`relative flex-1 whitespace-nowrap px-6 py-4 text-sm font-medium transition ${
-        active
-          ? "border-b-2 border-[#1B365D] text-[#1B365D]"
-          : "border-b-2 border-transparent text-gray-500 hover:bg-[#1B365D]/5 hover:text-[#1B365D]"
-      }`}
+      className={`relative flex-1 whitespace-nowrap px-6 py-4 text-sm font-medium transition ${active
+        ? "border-b-2 border-[#1B365D] text-[#1B365D]"
+        : "border-b-2 border-transparent text-gray-500 hover:bg-[#1B365D]/5 hover:text-[#1B365D]"
+        }`}
     >
       {label}
     </button>
