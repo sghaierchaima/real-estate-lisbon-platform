@@ -15,7 +15,7 @@ import {
   getStoredUser,
   getToken,
 } from "@/lib/session";
-import FloatingChatWindow from "@/components/chat/FloatingChatWindow";
+import PropertyAgentChatWindow from "@/components/property/PropertyAgentChatWindow";
 import { contactProperty } from "@/lib/matching-api";
 import {
   getSavedPropertyStatus,
@@ -1005,8 +1005,14 @@ export default function PropertyDetailsPage() {
         </div>
       </section>
 {activeChatRoomId && (
-  <FloatingChatWindow
+  <PropertyAgentChatWindow
     roomId={activeChatRoomId}
+    propertyTitle={property.title}
+    agentName={
+      property.professionalProfile?.user.fullName ||
+      property.professionalProfile?.companyName ||
+      "Property Agent"
+    }
     onClose={() =>
       setActiveChatRoomId(null)
     }
