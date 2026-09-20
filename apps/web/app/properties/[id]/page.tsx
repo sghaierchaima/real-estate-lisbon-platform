@@ -640,6 +640,10 @@ export default function PropertyDetailsPage() {
   const taxes = estimateTaxes(property.price);
   const fees = estimateFees(property.price);
   const totalCost = property.price + taxes + fees;
+  console.log("=== PROPERTY PRICE DEBUG ===");
+console.log("property.price =", property.price);
+console.log("typeof property.price =", typeof property.price);
+console.log("property =", property);
 
   return (
     <main className="min-h-screen bg-[#F8F9FA] text-[#0F2340]">
