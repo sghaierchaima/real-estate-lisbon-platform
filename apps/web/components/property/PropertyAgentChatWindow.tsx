@@ -130,12 +130,7 @@ export default function PropertyAgentChatWindow({
    * Property Details specific behavior:
    * the first message is only a local editable draft.
    */
-  const [content, setContent] = useState(() =>
-    createPropertyInterestDraft(
-      propertyTitle,
-      agentName,
-    ),
-  );
+  const [content, setContent] = useState("");
 
   const [loading, setLoading] =
     useState(true);
@@ -159,6 +154,8 @@ export default function PropertyAgentChatWindow({
 
   const inputRef =
     useRef<HTMLTextAreaElement | null>(null);
+  const [isSuggestedDraft, setIsSuggestedDraft] =
+    useState(false);
 
   /* ============================================================
      LOAD CHAT ROOM
@@ -180,12 +177,27 @@ export default function PropertyAgentChatWindow({
           roomId,
         );
 
+        const sortedMessages = sortMessages(
+          data.messages || [],
+        );
+
         setRoom({
           ...data,
-          messages: sortMessages(
-            data.messages || [],
-          ),
+          messages: sortedMessages,
         });
+
+        if (sortedMessages.length === 0) {
+          setContent(
+            createPropertyInterestDraft(
+              propertyTitle,
+              agentName,
+            ),
+          );
+          setIsSuggestedDraft(true);
+        } else {
+          setContent("");
+          setIsSuggestedDraft(false);
+        }
 
         await markChatRoomAsRead(
           token,
@@ -474,6 +486,7 @@ export default function PropertyAgentChatWindow({
       });
 
       setContent("");
+      setIsSuggestedDraft(false);
     } catch (error) {
       toast.error(
         "Message not sent",
@@ -528,22 +541,21 @@ export default function PropertyAgentChatWindow({
 
             <span className="flex items-center gap-1.5">
               <span
-                className={`h-1.5 w-1.5 rounded-full ${
-                  connectionStatus ===
+                className={`h-1.5 w-1.5 rounded-full ${connectionStatus ===
                   "connected"
-                    ? "bg-emerald-400"
-                    : connectionStatus ===
-                        "connecting"
-                      ? "bg-amber-300"
-                      : "bg-red-400"
-                }`}
+                  ? "bg-emerald-400"
+                  : connectionStatus ===
+                    "connecting"
+                    ? "bg-amber-300"
+                    : "bg-red-400"
+                  }`}
               />
 
               {connectionStatus ===
-              "connected"
+                "connected"
                 ? "Live"
                 : connectionStatus ===
-                    "connecting"
+                  "connecting"
                   ? "Connecting..."
                   : "Offline"}
             </span>
@@ -645,13 +657,12 @@ export default function PropertyAgentChatWindow({
               ================================================== */}
 
           <div
-            className={`overflow-y-auto bg-[#F8FAFC] px-4 ${
-              expanded
-                ? "flex-1 py-5"
-                : messages.length === 0
-                  ? "h-[145px] py-4"
-                  : "h-[280px] py-4"
-            }`}
+            className={`overflow-y-auto bg-[#F8FAFC] px-4 ${expanded
+              ? "flex-1 py-5"
+              : messages.length === 0
+                ? "h-[145px] py-4"
+                : "h-[280px] py-4"
+              }`}
           >
             {loading ? (
               <div className="flex h-full items-center justify-center">
@@ -697,18 +708,16 @@ export default function PropertyAgentChatWindow({
                     return (
                       <div
                         key={message.id}
-                        className={`flex ${
-                          isMine
-                            ? "justify-end"
-                            : "justify-start"
-                        }`}
+                        className={`flex ${isMine
+                          ? "justify-end"
+                          : "justify-start"
+                          }`}
                       >
                         <div
-                          className={`max-w-[82%] rounded-2xl px-3.5 py-2.5 text-sm shadow-sm ${
-                            isMine
-                              ? "rounded-br-md bg-[#1B365D] text-white"
-                              : "rounded-bl-md border border-[#E4E7EC] bg-white text-[#0F2340]"
-                          }`}
+                          className={`max-w-[82%] rounded-2xl px-3.5 py-2.5 text-sm shadow-sm ${isMine
+                            ? "rounded-br-md bg-[#1B365D] text-white"
+                            : "rounded-bl-md border border-[#E4E7EC] bg-white text-[#0F2340]"
+                            }`}
                         >
                           <p className="whitespace-pre-wrap break-words leading-6">
                             {
@@ -717,11 +726,10 @@ export default function PropertyAgentChatWindow({
                           </p>
 
                           <div
-                            className={`mt-1.5 flex items-center justify-end gap-1 text-[10px] ${
-                              isMine
-                                ? "text-white/60"
-                                : "text-[#98A2B3]"
-                            }`}
+                            className={`mt-1.5 flex items-center justify-end gap-1 text-[10px] ${isMine
+                              ? "text-white/60"
+                              : "text-[#98A2B3]"
+                              }`}
                           >
                             <span>
                               {formatTime(
@@ -734,7 +742,7 @@ export default function PropertyAgentChatWindow({
                                 size={12}
                                 className={
                                   message.isRead ||
-                                  message.status ===
+                                    message.status ===
                                     "READ"
                                     ? "text-sky-300"
                                     : ""
@@ -765,12 +773,12 @@ export default function PropertyAgentChatWindow({
             <div className="mb-2 flex items-end justify-between gap-4">
               <div className="min-w-0">
                 <p className="text-xs font-semibold text-[#344054]">
-                  {content.trim()
+                  {isSuggestedDraft
                     ? "Suggested message"
                     : "Message"}
                 </p>
 
-                {content.trim() && (
+                {isSuggestedDraft && (
                   <p className="mt-0.5 text-[11px] text-[#98A2B3]">
                     Review or edit before sending
                   </p>
@@ -778,12 +786,11 @@ export default function PropertyAgentChatWindow({
               </div>
 
               <span
-                className={`shrink-0 text-[10px] ${
-                  content.length >
+                className={`shrink-0 text-[10px] ${content.length >
                   MAX_MESSAGE_LENGTH * 0.9
-                    ? "font-semibold text-amber-600"
-                    : "text-[#98A2B3]"
-                }`}
+                  ? "font-semibold text-amber-600"
+                  : "text-[#98A2B3]"
+                  }`}
               >
                 {content.length}/
                 {MAX_MESSAGE_LENGTH}
@@ -808,7 +815,7 @@ export default function PropertyAgentChatWindow({
                 onKeyDown={(event) => {
                   if (
                     event.key ===
-                      "Enter" &&
+                    "Enter" &&
                     !event.shiftKey
                   ) {
                     event.preventDefault();
