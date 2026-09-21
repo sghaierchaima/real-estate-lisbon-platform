@@ -65,7 +65,33 @@ function getImageSrc(url: string) {
   if (url.startsWith("http")) return url;
   return `${API_URL}${url}`;
 }
+function parsePropertyPrice(value: string): number {
+  const raw = value.trim().replace(/\s/g, "");
 
+  if (!raw) return 0;
+
+  // European thousands format:
+  // 1.456       -> 1456
+  // 450.000     -> 450000
+  // 1.250.000   -> 1250000
+  if (/^\d{1,3}(\.\d{3})+$/.test(raw)) {
+    return Number(raw.replace(/\./g, ""));
+  }
+
+  // European decimal format:
+  // 1456,50 -> 1456.50
+  if (/^\d+(,\d{1,2})$/.test(raw)) {
+    return Number(raw.replace(",", "."));
+  }
+
+  // Plain numeric format:
+  // 1456
+  // 450000
+  // 1456.50
+  const parsed = Number(raw);
+
+  return Number.isFinite(parsed) ? parsed : 0;
+}
 export default function EditPropertyPage() {
   const params = useParams();
   const router = useRouter();
@@ -229,7 +255,9 @@ export default function EditPropertyPage() {
       return;
     }
 
-    if (!formData.price || Number(formData.price) <= 0) {
+    const parsedPrice = parsePropertyPrice(formData.price);
+
+    if (!formData.price.trim() || parsedPrice <= 0) {
       toast.warning("Price required", "Please enter a valid price.");
       setCurrentStep("info");
       return;
@@ -248,7 +276,7 @@ export default function EditPropertyPage() {
       data.append("location", finalLocation);
       data.append("region", formData.region);
       data.append("city", formData.city);
-      data.append("price", String(Number(formData.price || 0)));
+      data.append("price", String(parsedPrice));
       data.append("propertyType", formData.propertyType);
       data.append("status", formData.status);
       data.append("featured", String(formData.featured));
@@ -312,20 +340,19 @@ export default function EditPropertyPage() {
           </Link>
 
           <span
-  className={`inline-flex items-center rounded-[14px] px-6 py-2.5 text-[15px] font-semibold text-white ${
-    formData.status === "PUBLISHED"
-      ? "bg-emerald-600"
-      : formData.status === "ARCHIVED"
-        ? "bg-gray-600"
-        : "bg-[#CFA320]"
-  }`}
->
-  {formData.status === "PUBLISHED"
-    ? "Published"
-    : formData.status === "ARCHIVED"
-      ? "Archived"
-      : "Draft"}
-</span>
+            className={`inline-flex items-center rounded-[14px] px-6 py-2.5 text-[15px] font-semibold text-white ${formData.status === "PUBLISHED"
+              ? "bg-emerald-600"
+              : formData.status === "ARCHIVED"
+                ? "bg-gray-600"
+                : "bg-[#CFA320]"
+              }`}
+          >
+            {formData.status === "PUBLISHED"
+              ? "Published"
+              : formData.status === "ARCHIVED"
+                ? "Archived"
+                : "Draft"}
+          </span>
         </div>
 
         <div>
@@ -348,11 +375,10 @@ export default function EditPropertyPage() {
                   key={step.key}
                   type="button"
                   onClick={() => setCurrentStep(step.key)}
-                  className={`inline-flex h-[46px] items-center justify-center gap-3 rounded-full px-6 text-[17px] font-medium transition ${
-                    active
-                      ? "bg-white text-[#102A56] shadow-[0_2px_8px_rgba(15,35,64,0.08)]"
-                      : "text-[#102A56] hover:bg-white/70"
-                  }`}
+                  className={`inline-flex h-[46px] items-center justify-center gap-3 rounded-full px-6 text-[17px] font-medium transition ${active
+                    ? "bg-white text-[#102A56] shadow-[0_2px_8px_rgba(15,35,64,0.08)]"
+                    : "text-[#102A56] hover:bg-white/70"
+                    }`}
                 >
                   <Icon className="h-5 w-5" />
                   {step.label}
@@ -387,7 +413,8 @@ export default function EditPropertyPage() {
 
                 <div className="grid gap-7 xl:grid-cols-2">
                   <input
-                    type="number"
+                    type="text"
+                    inputMode="decimal"
                     placeholder="Price"
                     value={formData.price}
                     onChange={(e) => updateField("price", e.target.value)}
@@ -491,11 +518,10 @@ export default function EditPropertyPage() {
                       key={item}
                       type="button"
                       onClick={() => toggleEquipment(item)}
-                      className={`rounded-[18px] border px-5 py-4 text-left font-medium ${
-                        active
-                          ? "border-[#163B73] bg-[#EEF3F8] text-[#163B73]"
-                          : "border-[#D0D5DD] bg-white text-[#344054]"
-                      }`}
+                      className={`rounded-[18px] border px-5 py-4 text-left font-medium ${active
+                        ? "border-[#163B73] bg-[#EEF3F8] text-[#163B73]"
+                        : "border-[#D0D5DD] bg-white text-[#344054]"
+                        }`}
                     >
                       {item}
                     </button>
@@ -588,112 +614,110 @@ export default function EditPropertyPage() {
           )}
 
           <div className="sticky bottom-6 rounded-[28px] border border-[#DDE3EA] bg-white px-7 py-5 shadow-[0_12px_32px_rgba(16,24,40,0.10)]">
-  <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
-    <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-8">
-      {/* Featured Property */}
-      <button
-        type="button"
-        onClick={() =>
-          updateField(
-            "featured",
-            !formData.featured
-          )
-        }
-        className="inline-flex items-center gap-3"
-      >
-        <span
-          className={`relative h-8 w-14 rounded-full transition ${
-            formData.featured
-              ? "bg-[#163B73]"
-              : "bg-[#D0D5DD]"
-          }`}
-        >
-          <span
-            className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow-sm transition ${
-              formData.featured
-                ? "left-7"
-                : "left-1"
-            }`}
-          />
-        </span>
+            <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
+              <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-8">
+                {/* Featured Property */}
+                <button
+                  type="button"
+                  onClick={() =>
+                    updateField(
+                      "featured",
+                      !formData.featured
+                    )
+                  }
+                  className="inline-flex items-center gap-3"
+                >
+                  <span
+                    className={`relative h-8 w-14 rounded-full transition ${formData.featured
+                      ? "bg-[#163B73]"
+                      : "bg-[#D0D5DD]"
+                      }`}
+                  >
+                    <span
+                      className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow-sm transition ${formData.featured
+                        ? "left-7"
+                        : "left-1"
+                        }`}
+                    />
+                  </span>
 
-        <span className="text-[17px] font-medium text-[#22324D]">
-          Featured Property
-        </span>
-      </button>
+                  <span className="text-[17px] font-medium text-[#22324D]">
+                    Featured Property
+                  </span>
+                </button>
 
-      {/* Property Status */}
-      <div className="flex items-center gap-4">
-        <span className="text-[17px] font-medium text-[#22324D]">
-          Status:
-        </span>
+                {/* Property Status */}
+                <div className="flex items-center gap-4">
+                  <span className="text-[17px] font-medium text-[#22324D]">
+                    Status:
+                  </span>
 
-        <div className="relative">
-          <select
-            value={formData.status}
-            onChange={(event) =>
-              updateField(
-                "status",
-                event.target
-                  .value as PropertyStatus
-              )
-            }
-            className="h-[46px] appearance-none rounded-[16px] border border-[#D0D5DD] bg-white pl-4 pr-12 text-[16px] font-medium text-[#22324D] outline-none focus:border-[#163B73] focus:ring-4 focus:ring-[#163B73]/10"
-          >
-            <option value="DRAFT">
-              Draft
-            </option>
+                  <div className="relative">
+                    <select
+                      value={formData.status}
+                      onChange={(event) =>
+                        updateField(
+                          "status",
+                          event.target
+                            .value as PropertyStatus
+                        )
+                      }
+                      className="h-[46px] appearance-none rounded-[16px] border border-[#D0D5DD] bg-white pl-4 pr-12 text-[16px] font-medium text-[#22324D] outline-none focus:border-[#163B73] focus:ring-4 focus:ring-[#163B73]/10"
+                    >
+                      <option value="DRAFT">
+                        Draft
+                      </option>
 
-            <option value="PUBLISHED">
-              Published
-            </option>
+                      <option value="PUBLISHED">
+                        Published
+                      </option>
 
-            <option value="ARCHIVED">
-              Archived
-            </option>
-          </select>
+                      <option value="ARCHIVED">
+                        Archived
+                      </option>
+                    </select>
 
-          <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#98A2B3]" />
-        </div>
-      </div>
-    </div>
+                    <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#98A2B3]" />
+                  </div>
+                </div>
+              </div>
 
-    {/* Navigation buttons */}
-    <div className="flex flex-wrap items-center justify-end gap-4">
-      <button
-        type="button"
-        onClick={prevStep}
-        disabled={currentStep === "info"}
-        className="inline-flex h-[46px] items-center justify-center rounded-[16px] border border-[#D0D5DD] bg-[#F9FAFB] px-8 text-[16px] font-medium text-[#22324D] transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
-      >
-        Previous
-      </button>
+              {/* Navigation buttons */}
+              <div className="flex flex-wrap items-center justify-end gap-4">
+                <button
+                  type="button"
+                  onClick={prevStep}
+                  disabled={currentStep === "info"}
+                  className="inline-flex h-[46px] items-center justify-center rounded-[16px] border border-[#D0D5DD] bg-[#F9FAFB] px-8 text-[16px] font-medium text-[#22324D] transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  Previous
+                </button>
 
-      {currentStep !== "photos" ? (
-        <button
-          type="button"
-          onClick={nextStep}
-          className="inline-flex h-[46px] items-center justify-center rounded-[16px] bg-[#163B73] px-8 text-[16px] font-semibold text-white shadow-[0_10px_20px_rgba(22,59,115,0.18)] transition hover:bg-[#102F5C]"
-        >
-          Continue
-        </button>
-      ) : (
-        <button
-          type="submit"
-          disabled={saving}
-          className="inline-flex h-[46px] items-center justify-center gap-3 rounded-[16px] bg-[#163B73] px-8 text-[16px] font-semibold text-white shadow-[0_10px_20px_rgba(22,59,115,0.18)] transition hover:bg-[#102F5C] disabled:cursor-not-allowed disabled:opacity-60"
-        >
-          <Save className="h-4 w-4" />
+                {currentStep !== "photos" ? (
+                  <button
+                    type="button"
+                    onClick={nextStep}
+                    className="inline-flex h-[46px] items-center justify-center rounded-[16px] bg-[#163B73] px-8 text-[16px] font-semibold text-white shadow-[0_10px_20px_rgba(22,59,115,0.18)] transition hover:bg-[#102F5C]"
+                  >
+                    Continue
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled={saving}
+                    className="inline-flex h-[46px] items-center justify-center gap-3 rounded-[16px] bg-[#163B73] px-8 text-[16px] font-semibold text-white shadow-[0_10px_20px_rgba(22,59,115,0.18)] transition hover:bg-[#102F5C] disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    <Save className="h-4 w-4" />
 
-          {saving
-            ? "Saving..."
-            : "Update Property"}
-        </button>
-      )}
-    </div>
-  </div>
-</div>
-             
+                    {saving
+                      ? "Saving..."
+                      : "Update Property"}
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+
         </form>
       </div>
     </div>
