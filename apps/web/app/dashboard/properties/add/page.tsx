@@ -106,7 +106,7 @@ export default function AddPropertyPage() {
     photos: [] as File[],
   });
 
-  
+
 
   useEffect(() => {
     const token = getToken();
@@ -198,6 +198,28 @@ export default function AddPropertyPage() {
     else if (currentStep === "details") setCurrentStep("info");
   };
 
+
+  const parsePropertyPrice = (value: string): number => {
+    const cleaned = value.trim().replace(/\s/g, "");
+
+    if (!cleaned) {
+      return 0;
+    }
+
+    // Format européen avec points comme séparateurs de milliers
+    // 1.456       -> 1456
+    // 450.000     -> 450000
+    // 1.250.000   -> 1250000
+    if (/^\d{1,3}(\.\d{3})+$/.test(cleaned)) {
+      return Number(cleaned.replace(/\./g, ""));
+    }
+
+    // Nombre simple
+    // 1456 -> 1456
+    // 450000 -> 450000
+    return Number(cleaned);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -224,8 +246,17 @@ export default function AddPropertyPage() {
       return;
     }
 
-    if (!formData.price || Number(formData.price) <= 0) {
-      toast.warning("Price required", "Please enter a valid property price.");
+    const parsedPrice = parsePropertyPrice(formData.price);
+
+    if (
+      !formData.price ||
+      !Number.isFinite(parsedPrice) ||
+      parsedPrice <= 0
+    ) {
+      toast.warning(
+        "Price required",
+        "Please enter a valid property price."
+      );
       setCurrentStep("info");
       return;
     }
@@ -245,34 +276,34 @@ export default function AddPropertyPage() {
 
       const data = new FormData();
 
-data.append("title", formData.title);
-data.append("description", formData.description);
-data.append("location", finalLocation);
-data.append("region", formData.region);
-data.append("city", formData.city);
-data.append("price", String(Number(formData.price || 0)));
-data.append("propertyType", formData.property_type);
-data.append(
-  "status",
-  formData.status === "published" ? "PUBLISHED" : "DRAFT"
-);
-data.append("featured", String(formData.featured));
-data.append("bedrooms", String(Number(formData.bedrooms || 0)));
-data.append("bathrooms", String(Number(formData.bathrooms || 0)));
-data.append("area", String(Number(formData.area || 0)));
-data.append("landArea", String(Number(formData.land_area || 0)));
-data.append(
-  "constructionYear",
-  String(Number(formData.construction_year || 0))
-);
+      data.append("title", formData.title);
+      data.append("description", formData.description);
+      data.append("location", finalLocation);
+      data.append("region", formData.region);
+      data.append("city", formData.city);
+      data.append("price", String(parsedPrice));
+      data.append("propertyType", formData.property_type);
+      data.append(
+        "status",
+        formData.status === "published" ? "PUBLISHED" : "DRAFT"
+      );
+      data.append("featured", String(formData.featured));
+      data.append("bedrooms", String(Number(formData.bedrooms || 0)));
+      data.append("bathrooms", String(Number(formData.bathrooms || 0)));
+      data.append("area", String(Number(formData.area || 0)));
+      data.append("landArea", String(Number(formData.land_area || 0)));
+      data.append(
+        "constructionYear",
+        String(Number(formData.construction_year || 0))
+      );
 
-data.append("equipments", JSON.stringify(formData.equipments));
+      data.append("equipments", JSON.stringify(formData.equipments));
 
-formData.photos.forEach((file) => {
-  data.append("images", file);
-});
+      formData.photos.forEach((file) => {
+        data.append("images", file);
+      });
 
-await createPropertyWithImages(token, data);
+      await createPropertyWithImages(token, data);
 
       toast.success("Property created", "The property was created successfully.");
       router.push("/dashboard/properties");
@@ -331,11 +362,10 @@ await createPropertyWithImages(token, data);
                   key={step.key}
                   type="button"
                   onClick={() => setCurrentStep(step.key)}
-                  className={`inline-flex h-[46px] items-center justify-center gap-3 rounded-full px-6 text-[17px] font-medium transition ${
-                    active
+                  className={`inline-flex h-[46px] items-center justify-center gap-3 rounded-full px-6 text-[17px] font-medium transition ${active
                       ? "bg-white text-[#102A56] shadow-[0_2px_8px_rgba(15,35,64,0.08)]"
                       : "text-[#102A56] hover:bg-white/70"
-                  }`}
+                    }`}
                 >
                   <Icon className="h-5 w-5" />
                   {step.label}
@@ -396,10 +426,17 @@ await createPropertyWithImages(token, data);
                         €
                       </span>
                       <input
-                        type="number"
+                        type="text"
+                        inputMode="numeric"
                         placeholder="450000"
                         value={formData.price}
-                        onChange={(e) => updateField("price", e.target.value)}
+                        onChange={(e) => {
+                          const value = e.target.value;
+
+                          if (/^[0-9.\s]*$/.test(value)) {
+                            updateField("price", value);
+                          }
+                        }}
                         className="h-[46px] w-full rounded-[16px] border border-[#D0D5DD] bg-white pl-11 pr-4 text-[16px] text-[#22324D] outline-none placeholder:text-[#98A2B3] focus:border-[#163B73] focus:ring-4 focus:ring-[#163B73]/10"
                       />
                     </div>
@@ -655,18 +692,16 @@ await createPropertyWithImages(token, data);
                       key={item}
                       type="button"
                       onClick={() => toggleEquipment(item)}
-                      className={`flex h-[58px] items-center gap-4 rounded-[18px] border px-4 text-left text-[17px] font-medium transition ${
-                        checked
+                      className={`flex h-[58px] items-center gap-4 rounded-[18px] border px-4 text-left text-[17px] font-medium transition ${checked
                           ? "border-[#163B73] bg-[#EEF4FF] text-[#163B73]"
                           : "border-[#D0D5DD] bg-white text-[#101828] hover:bg-[#F9FAFB]"
-                      }`}
+                        }`}
                     >
                       <span
-                        className={`flex h-7 w-7 items-center justify-center rounded-full border ${
-                          checked
+                        className={`flex h-7 w-7 items-center justify-center rounded-full border ${checked
                             ? "border-[#163B73] bg-[#163B73]"
                             : "border-[#C5CBD3] bg-white"
-                        }`}
+                          }`}
                       >
                         {checked ? (
                           <span className="h-2.5 w-2.5 rounded-full bg-white" />
@@ -765,14 +800,12 @@ await createPropertyWithImages(token, data);
                   className="inline-flex items-center gap-3"
                 >
                   <span
-                    className={`relative h-8 w-14 rounded-full transition ${
-                      formData.featured ? "bg-[#163B73]" : "bg-[#D0D5DD]"
-                    }`}
+                    className={`relative h-8 w-14 rounded-full transition ${formData.featured ? "bg-[#163B73]" : "bg-[#D0D5DD]"
+                      }`}
                   >
                     <span
-                      className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow-sm transition ${
-                        formData.featured ? "left-7" : "left-1"
-                      }`}
+                      className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow-sm transition ${formData.featured ? "left-7" : "left-1"
+                        }`}
                     />
                   </span>
                   <span className="text-[17px] font-medium text-[#22324D]">
