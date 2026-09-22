@@ -75,70 +75,70 @@ export default function MyLeadsPage() {
   }, [toast]);
 
   async function handleTogglePropertyAlerts(
-  lead: Lead,
-) {
-  const token = getToken();
+    lead: Lead,
+  ) {
+    const token = getToken();
 
-  if (!token) {
-    toast.warning(
-      "Session required",
-      "Please sign in again.",
-    );
-    return;
-  }
-
-  if (updatingAlertId === lead.id) {
-  return;
-}
-
-  const nextEnabled =
-    !Boolean(lead.notificationsEnabled);
-
-  try {
-    setUpdatingAlertId(lead.id);
-
-    const updated =
-      await updatePropertyAlerts(
-        token,
-        lead.id,
-        nextEnabled,
+    if (!token) {
+      toast.warning(
+        "Session required",
+        "Please sign in again.",
       );
+      return;
+    }
 
-    setLeads((currentLeads) =>
-      currentLeads.map((item) =>
-        item.id === lead.id
-          ? {
+    if (updatingAlertId === lead.id) {
+      return;
+    }
+
+    const nextEnabled =
+      !Boolean(lead.notificationsEnabled);
+
+    try {
+      setUpdatingAlertId(lead.id);
+
+      const updated =
+        await updatePropertyAlerts(
+          token,
+          lead.id,
+          nextEnabled,
+        );
+
+      setLeads((currentLeads) =>
+        currentLeads.map((item) =>
+          item.id === lead.id
+            ? {
               ...item,
               isActive: updated.isActive,
               notificationsEnabled:
                 updated.notificationsEnabled,
             }
-          : item,
-      ),
-    );
+            : item,
+        ),
+      );
 
-    if (updated.notificationsEnabled) {
-      toast.success(
-        "Property alerts enabled",
-        "We will notify you when a new property matches this search.",
+      if (updated.notificationsEnabled) {
+        toast.success(
+          "Property alerts enabled",
+          "We will notify you when a new property matches this search.",
+        );
+      } else {
+        toast.info(
+          "Property alerts disabled",
+          "Your search remains saved, but you will no longer receive matching property notifications.",
+        );
+      }
+    } catch (error) {
+      toast.error(
+        "Unable to update property alerts",
+        error instanceof Error
+          ? error.message
+          : "Please try again.",
       );
-    } else {
-      toast.info(
-        "Property alerts disabled",
-        "Your search remains saved, but you will no longer receive matching property notifications.",
-      );
+    } finally {
+      setUpdatingAlertId(null);
     }
-  } catch (error) {
-    toast.error(
-      "Unable to update property alerts",
-      error instanceof Error
-        ? error.message
-        : "Please try again.",
-    );
-  } finally {
-    setUpdatingAlertId(null);
   }
-}
 
   const filteredLeads = useMemo(() => {
     const q = search.toLowerCase().trim();
@@ -160,7 +160,7 @@ export default function MyLeadsPage() {
         lead.propertyType,
         lead.goal,
         lead.mustHave?.join(" "),
-        
+
         lead.quality,
         lead.status,
         bestMatch?.status,
@@ -333,19 +333,19 @@ export default function MyLeadsPage() {
 
                       {!bestMatch && lead.status === "NEW" && (
                         <p className="mt-3 text-sm text-[#667085]">
-                          Waiting for admin matching.
+                          Waiting for a compatible professional.
                         </p>
                       )}
 
                       {bestMatch?.status === "PENDING" && (
                         <p className="mt-3 text-sm text-yellow-700">
-                          Your match is waiting for admin approval.
+                          A compatible professional has been identified and is being processed.
                         </p>
                       )}
 
                       {bestMatch?.status === "ACTIVE" && (
                         <p className="mt-3 text-sm text-green-600">
-                          A professional has been assigned to your request.
+                          A professional has been automatically matched to your request.
                         </p>
                       )}
 
@@ -376,8 +376,8 @@ export default function MyLeadsPage() {
 
                               <span
                                 className={`rounded-full px-3 py-1 text-xs font-semibold ${lead.notificationsEnabled
-                                    ? "bg-[#DCFCE7] text-[#15803D]"
-                                    : "bg-[#EAECF0] text-[#667085]"
+                                  ? "bg-[#DCFCE7] text-[#15803D]"
+                                  : "bg-[#EAECF0] text-[#667085]"
                                   }`}
                               >
                                 {lead.notificationsEnabled
@@ -427,14 +427,14 @@ export default function MyLeadsPage() {
                           >
                             <span
                               className={`relative h-8 w-14 rounded-full transition ${lead.notificationsEnabled
-                                  ? "bg-[#1B365D]"
-                                  : "bg-[#D0D5DD]"
+                                ? "bg-[#1B365D]"
+                                : "bg-[#D0D5DD]"
                                 }`}
                             >
                               <span
                                 className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow-sm transition-all ${lead.notificationsEnabled
-                                    ? "left-7"
-                                    : "left-1"
+                                  ? "left-7"
+                                  : "left-1"
                                   }`}
                               />
                             </span>
