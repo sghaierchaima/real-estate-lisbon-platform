@@ -128,64 +128,118 @@ export class AiService {
   }
 
   private extractLocation(value: string): string {
-    const locations = [
-      'lisbon',
-      'lisboa',
-      'cascais',
-      'oeiras',
-      'sintra',
-      'amadora',
-      'benfica',
-      'alfama',
-      'estrela',
-      'alvalade',
-      'lumiar',
-      'belem',
-      'belém',
-      'marvila',
-      'arroios',
-      'principe real',
-      'príncipe real',
-      'campo de ourique',
-      'parque das nações',
-      'parque das nacoes',
-    ];
+  const locations: Record<string, string> = {
+    // Major Portuguese cities
+    lisbon: 'Lisbon',
+    lisboa: 'Lisbon',
+    porto: 'Porto',
+    faro: 'Faro',
+    braga: 'Braga',
+    coimbra: 'Coimbra',
+    aveiro: 'Aveiro',
+    leiria: 'Leiria',
+    setubal: 'Setúbal',
+    'setúbal': 'Setúbal',
+    evora: 'Évora',
+    'évora': 'Évora',
+    viseu: 'Viseu',
+    santarem: 'Santarém',
+    'santarém': 'Santarém',
+    portimao: 'Portimão',
+    'portimão': 'Portimão',
+    lagos: 'Lagos',
+    albufeira: 'Albufeira',
+    tavira: 'Tavira',
 
-    for (const location of locations) {
-      if (value.includes(location)) {
-        return this.formatLocation(location);
-      }
+    // Lisbon metropolitan area
+    cascais: 'Cascais',
+    oeiras: 'Oeiras',
+    sintra: 'Sintra',
+    amadora: 'Amadora',
+    almada: 'Almada',
+    loures: 'Loures',
+    mafra: 'Mafra',
+    'vila franca de xira': 'Vila Franca de Xira',
+
+    // Lisbon neighbourhoods
+    benfica: 'Benfica',
+    alfama: 'Alfama',
+    estrela: 'Estrela',
+    alvalade: 'Alvalade',
+    lumiar: 'Lumiar',
+    belem: 'Belém',
+    'belém': 'Belém',
+    marvila: 'Marvila',
+    arroios: 'Arroios',
+    'principe real': 'Príncipe Real',
+    'príncipe real': 'Príncipe Real',
+    'campo de ourique': 'Campo de Ourique',
+    'parque das nações': 'Parque das Nações',
+    'parque das nacoes': 'Parque das Nações',
+  };
+
+  // Check longer names first to avoid partial matches.
+  const entries = Object.entries(locations).sort(
+    ([a], [b]) => b.length - a.length,
+  );
+
+  for (const [keyword, formattedLocation] of entries) {
+    if (value.includes(keyword)) {
+      return formattedLocation;
     }
-
-    return 'Portugal';
   }
+
+  return 'Portugal';
+}
 
   private formatLocation(location: string): string {
-    const map: Record<string, string> = {
-      lisbon: 'Lisbon',
-      lisboa: 'Lisbon',
-      cascais: 'Cascais',
-      oeiras: 'Oeiras',
-      sintra: 'Sintra',
-      amadora: 'Amadora',
-      benfica: 'Benfica',
-      alfama: 'Alfama',
-      estrela: 'Estrela',
-      alvalade: 'Alvalade',
-      lumiar: 'Lumiar',
-      belem: 'Belém',
-      belém: 'Belém',
-      marvila: 'Marvila',
-      arroios: 'Arroios',
-      'principe real': 'Príncipe Real',
-      'príncipe real': 'Príncipe Real',
-      'campo de ourique': 'Campo de Ourique',
-      'parque das nações': 'Parque das Nações',
-      'parque das nacoes': 'Parque das Nações',
-    };
+  const map: Record<string, string> = {
+    lisbon: 'Lisbon',
+    lisboa: 'Lisbon',
+    porto: 'Porto',
+    faro: 'Faro',
+    braga: 'Braga',
+    coimbra: 'Coimbra',
+    aveiro: 'Aveiro',
+    leiria: 'Leiria',
+    setubal: 'Setúbal',
+    'setúbal': 'Setúbal',
+    evora: 'Évora',
+    'évora': 'Évora',
+    viseu: 'Viseu',
+    santarem: 'Santarém',
+    'santarém': 'Santarém',
+    portimao: 'Portimão',
+    'portimão': 'Portimão',
+    lagos: 'Lagos',
+    albufeira: 'Albufeira',
+    tavira: 'Tavira',
+    cascais: 'Cascais',
+    oeiras: 'Oeiras',
+    sintra: 'Sintra',
+    amadora: 'Amadora',
+    almada: 'Almada',
+    loures: 'Loures',
+    mafra: 'Mafra',
+    benfica: 'Benfica',
+    alfama: 'Alfama',
+    estrela: 'Estrela',
+    alvalade: 'Alvalade',
+    lumiar: 'Lumiar',
+    belem: 'Belém',
+    'belém': 'Belém',
+    marvila: 'Marvila',
+    arroios: 'Arroios',
+    'principe real': 'Príncipe Real',
+    'príncipe real': 'Príncipe Real',
+    'campo de ourique': 'Campo de Ourique',
+    'parque das nações': 'Parque das Nações',
+    'parque das nacoes': 'Parque das Nações',
+    'vila franca de xira': 'Vila Franca de Xira',
+  };
 
-    return map[location] || 'Portugal';
-  }
+  return map[location] || 'Portugal';
+}
 
   private extractGoal(value: string): string {
     if (
