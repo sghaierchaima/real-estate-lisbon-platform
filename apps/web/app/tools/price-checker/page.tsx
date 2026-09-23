@@ -32,9 +32,32 @@ function formatEuro(value: number) {
 }
 
 function parseNumber(value: string) {
-  const cleaned = value.replace(/[^\d.]/g, "");
+  const cleaned = value
+    .trim()
+    .replace(/\s/g, "")
+    .replace(",", ".");
+
+  if (!cleaned) {
+    return 0;
+  }
+
   const parsed = Number(cleaned);
+
   return Number.isFinite(parsed) ? parsed : 0;
+}
+function isPositiveNumberInput(value: string) {
+  if (value === "") {
+    return true;
+  }
+
+  // Autorise uniquement des chiffres
+  if (!/^\d+$/.test(value)) {
+    return false;
+  }
+
+  const parsed = Number(value);
+
+  return Number.isFinite(parsed) && parsed > 0;
 }
 
 function getQueryString(params: Record<string, string | undefined | null>) {
@@ -140,8 +163,8 @@ function ResultRow({
   return (
     <div
       className={`flex items-center justify-between gap-4 ${strong
-          ? "text-[17px] font-semibold text-[#0F2340]"
-          : "text-[15px] text-[#4B5563]"
+        ? "text-[17px] font-semibold text-[#0F2340]"
+        : "text-[15px] text-[#4B5563]"
         }`}
     >
       <span>{label}</span>
@@ -155,10 +178,25 @@ function PriceCheckerPageContent() {
   const searchParams = useSearchParams();
   const toast = useToast();
 
-  const initialAskingPrice = searchParams.get("askingPrice") || "";
-  const initialMarketPrice = searchParams.get("marketPrice") || "";
-  const initialSize = searchParams.get("size") || "";
+  const askingPriceParam = searchParams.get("askingPrice") || "";
+  const marketPriceParam = searchParams.get("marketPrice") || "";
+  const sizeParam = searchParams.get("size") || "";
   const initialLocation = searchParams.get("location") || "";
+
+  const initialAskingPrice =
+    askingPriceParam && isPositiveNumberInput(askingPriceParam)
+      ? askingPriceParam
+      : "";
+
+  const initialMarketPrice =
+    marketPriceParam && isPositiveNumberInput(marketPriceParam)
+      ? marketPriceParam
+      : "";
+
+  const initialSize =
+    sizeParam && isPositiveNumberInput(sizeParam)
+      ? sizeParam
+      : "";
 
   const [askingPrice, setAskingPrice] = useState(initialAskingPrice);
   const [marketPrice, setMarketPrice] = useState(initialMarketPrice);
@@ -305,38 +343,65 @@ function PriceCheckerPageContent() {
     const market = parseNumber(marketPrice);
     const size = parseNumber(sizeInput);
 
-    const askingPerSqm = size > 0 ? asking / size : 0;
-    const marketPerSqm = size > 0 ? market / size : 0;
-    const difference = asking - market;
-    const variancePct = market > 0 ? (difference / market) * 100 : 0;
+    const hasValidAsking = asking > 0;
+    const hasValidMarket = market > 0;
+    const hasValidSize = size > 0;
 
-    let verdict = "Fairly priced";
-    let badgeText = "Reasonable";
-    let badgeBg = "bg-[#ECFDF3]";
-    let verdictColor = "text-[#2E7D32]";
-    let explanation = "The asking price is close to the estimated market value.";
+    const canCompare =
+      hasValidAsking &&
+      hasValidMarket &&
+      hasValidSize;
 
-    if (market === 0) {
-      verdict = "Waiting for market data";
-      badgeText = "Incomplete";
-      badgeBg = "bg-[#F3F4F6]";
-      verdictColor = "text-[#6B7280]";
+    const askingPerSqm =
+      hasValidAsking && hasValidSize
+        ? asking / size
+        : 0;
+
+    const marketPerSqm =
+      hasValidMarket && hasValidSize
+        ? market / size
+        : 0;
+
+    const difference =
+      canCompare
+        ? asking - market
+        : 0;
+
+    const variancePct =
+      canCompare
+        ? (difference / market) * 100
+        : 0;
+
+    let verdict = "Waiting for valid data";
+    let badgeText = "Incomplete";
+    let badgeBg = "bg-[#F3F4F6]";
+    let verdictColor = "text-[#6B7280]";
+    let explanation =
+      "Enter a valid asking price, market value and property size greater than zero.";
+
+    if (canCompare) {
+      verdict = "Fairly priced";
+      badgeText = "Reasonable";
+      badgeBg = "bg-[#ECFDF3]";
+      verdictColor = "text-[#2E7D32]";
       explanation =
-        "We need neighborhood market data to compare this asking price properly.";
-    } else if (variancePct > 8) {
-      verdict = "Overpriced";
-      badgeText = "Negotiation advised";
-      badgeBg = "bg-[#FFF5F5]";
-      verdictColor = "text-[#B42318]";
-      explanation =
-        "The asking price is meaningfully above the estimated market value.";
-    } else if (variancePct < -6) {
-      verdict = "Below market";
-      badgeText = "Potential opportunity";
-      badgeBg = "bg-[#EFF6FF]";
-      verdictColor = "text-[#1D4ED8]";
-      explanation =
-        "The asking price is below the estimated market value and may be attractive.";
+        "The asking price is close to the estimated market value.";
+
+      if (variancePct > 8) {
+        verdict = "Overpriced";
+        badgeText = "Negotiation advised";
+        badgeBg = "bg-[#FFF5F5]";
+        verdictColor = "text-[#B42318]";
+        explanation =
+          "The asking price is meaningfully above the estimated market value.";
+      } else if (variancePct < -6) {
+        verdict = "Below market";
+        badgeText = "Potential opportunity";
+        badgeBg = "bg-[#EFF6FF]";
+        verdictColor = "text-[#1D4ED8]";
+        explanation =
+          "The asking price is below the estimated market value and may be attractive.";
+      }
     }
 
     return {
@@ -352,115 +417,123 @@ function PriceCheckerPageContent() {
       badgeBg,
       verdictColor,
       explanation,
+      canCompare,
     };
   }, [askingPrice, marketPrice, sizeInput]);
 
   async function handleCreateBuyerRequest() {
-  const token = getToken();
-  const user = getStoredUser<AuthUser>();
+    const token = getToken();
+    const user = getStoredUser<AuthUser>();
 
-  if (!token || !user) {
-    toast.warning(
-      "Login required",
-      "Please sign in as a Buyer to create a price review request.",
-    );
-    return;
-  }
+    if (!token || !user) {
+      toast.warning(
+        "Login required",
+        "Please sign in as a Buyer to create a price review request.",
+      );
+      return;
+    }
 
-  if (user.role !== "BUYER") {
-    toast.warning(
-      "Buyer account required",
-      "Only Buyer accounts can create property requests.",
-    );
-    return;
-  }
+    if (user.role !== "BUYER") {
+      toast.warning(
+        "Buyer account required",
+        "Only Buyer accounts can create property requests.",
+      );
+      return;
+    }
 
-  if (
-    !location.trim() ||
-    !askingPrice.trim() ||
-    !sizeInput.trim()
-  ) {
-    toast.warning(
-      "Missing information",
-      "Please enter the location, asking price and property size.",
-    );
-    return;
-  }
-
-  if (
-    !marketPrice.trim() ||
-    results.market <= 0
-  ) {
-    toast.warning(
-      "Market value required",
-      "Please enter or auto-detect the estimated market value.",
-    );
-    return;
-  }
-
-  try {
-    setSavingRequest(true);
-
-    const lead =
-      await createLeadFromPriceChecker(
-        token,
-        {
-          location:
-            location.trim(),
-
-          askingPrice,
-
-          marketPrice,
-
-          size:
-            sizeInput,
-
-          verdict:
-            results.verdict,
-
-          variancePct:
-            results.variancePct.toFixed(1),
-        },
+    if (!location.trim() || !results.canCompare) {
+      toast.warning(
+        "Invalid information",
+        "Please enter a valid location, asking price, estimated market value and property size greater than zero.",
       );
 
-    /*
-     * ==========================================================
-     * SMART MATCH FOUND
-     * ==========================================================
-     */
+      return;
+    }
 
-    if (
-      lead.status === "MATCHED" ||
-      lead.autoMatching?.matched
-    ) {
-      const bestMatch =
-        lead.matches?.[0];
+    try {
+      setSavingRequest(true);
 
-      const professionalName =
-        bestMatch
-          ?.professional
-          ?.user
-          ?.fullName;
+      const lead =
+        await createLeadFromPriceChecker(
+          token,
+          {
+            location:
+              location.trim(),
 
-      const score =
-        bestMatch?.score;
+            askingPrice,
+
+            marketPrice,
+
+            size:
+              sizeInput,
+
+            verdict:
+              results.verdict,
+
+            variancePct:
+              results.variancePct.toFixed(1),
+          },
+        );
 
       /*
-       * Existing request automatically reprocessed.
+       * ==========================================================
+       * SMART MATCH FOUND
+       * ==========================================================
        */
-      if (lead.alreadyExists) {
+
+      if (
+        lead.status === "MATCHED" ||
+        lead.autoMatching?.matched
+      ) {
+        const bestMatch =
+          lead.matches?.[0];
+
+        const professionalName =
+          bestMatch
+            ?.professional
+            ?.user
+            ?.fullName;
+
+        const score =
+          bestMatch?.score;
+
+        /*
+         * Existing request automatically reprocessed.
+         */
+        if (lead.alreadyExists) {
+          if (
+            professionalName &&
+            typeof score === "number"
+          ) {
+            toast.success(
+              "Smart match found",
+              `${professionalName} is matched to your price review request with a ${score}% compatibility score.`,
+            );
+          } else {
+            toast.success(
+              "Price review matched",
+              "Your existing request has been automatically matched with a compatible verified property valuer.",
+            );
+          }
+
+          return;
+        }
+
+        /*
+         * Brand-new request automatically matched.
+         */
         if (
           professionalName &&
           typeof score === "number"
         ) {
           toast.success(
             "Smart match found",
-            `${professionalName} is matched to your price review request with a ${score}% compatibility score.`,
+            `${professionalName} has been automatically matched to your price review request with a ${score}% compatibility score.`,
           );
         } else {
           toast.success(
-            "Price review matched",
-            "Your existing request has been automatically matched with a compatible verified property valuer.",
+            "Property valuer matched",
+            "A compatible verified property valuer has been automatically assigned to your request.",
           );
         }
 
@@ -468,62 +541,41 @@ function PriceCheckerPageContent() {
       }
 
       /*
-       * Brand-new request automatically matched.
+       * ==========================================================
+       * EXISTING REQUEST — NO MATCH YET
+       * ==========================================================
        */
-      if (
-        professionalName &&
-        typeof score === "number"
-      ) {
-        toast.success(
-          "Smart match found",
-          `${professionalName} has been automatically matched to your price review request with a ${score}% compatibility score.`,
+
+      if (lead.alreadyExists) {
+        toast.info(
+          "Request already active",
+          "This price review request already exists. Smart Matching will continue looking automatically for a compatible verified property valuer.",
         );
-      } else {
-        toast.success(
-          "Property valuer matched",
-          "A compatible verified property valuer has been automatically assigned to your request.",
-        );
+
+        return;
       }
 
-      return;
-    }
+      /*
+       * ==========================================================
+       * NEW REQUEST — NO PROFESSIONAL >= THRESHOLD YET
+       * ==========================================================
+       */
 
-    /*
-     * ==========================================================
-     * EXISTING REQUEST — NO MATCH YET
-     * ==========================================================
-     */
-
-    if (lead.alreadyExists) {
-      toast.info(
-        "Request already active",
-        "This price review request already exists. Smart Matching will continue looking automatically for a compatible verified property valuer.",
+      toast.success(
+        "Price review request created",
+        "Your request is now active. Smart Matching will automatically connect you with a compatible verified property valuer when one meets the required score.",
       );
-
-      return;
+    } catch (error) {
+      toast.error(
+        "Unable to create request",
+        error instanceof Error
+          ? error.message
+          : "Something went wrong while creating your price review request. Please try again.",
+      );
+    } finally {
+      setSavingRequest(false);
     }
-
-    /*
-     * ==========================================================
-     * NEW REQUEST — NO PROFESSIONAL >= THRESHOLD YET
-     * ==========================================================
-     */
-
-    toast.success(
-      "Price review request created",
-      "Your request is now active. Smart Matching will automatically connect you with a compatible verified property valuer when one meets the required score.",
-    );
-  } catch (error) {
-    toast.error(
-      "Unable to create request",
-      error instanceof Error
-        ? error.message
-        : "Something went wrong while creating your price review request. Please try again.",
-    );
-  } finally {
-    setSavingRequest(false);
   }
-}
 
   return (
     <>
@@ -608,14 +660,16 @@ function PriceCheckerPageContent() {
                     <div>
                       <p className="text-[14px] text-white/75">Asking price</p>
                       <p className="mt-1 text-[34px] font-bold tracking-[-0.03em]">
-                        {hasUserInput ? formatEuro(results.asking) : "—"}
+                        {results.asking > 0
+                          ? formatEuro(results.asking)
+                          : "—"}
                       </p>
                     </div>
 
                     <div>
                       <p className="text-[14px] text-white/75">Market value</p>
                       <p className="mt-1 text-[34px] font-bold tracking-[-0.03em]">
-                        {hasUserInput && results.market > 0
+                        {results.market > 0
                           ? formatEuro(results.market)
                           : "—"}
                       </p>
@@ -627,14 +681,16 @@ function PriceCheckerPageContent() {
                   <div
                     className={`mb-5 inline-flex rounded-full px-3 py-1 text-[12px] font-semibold ${results.badgeBg} ${results.verdictColor}`}
                   >
-                    {hasUserInput ? results.badgeText : "Waiting for your data"}
+                    {results.canCompare
+                      ? results.badgeText
+                      : "Waiting for your data"}
                   </div>
 
                   <div className="space-y-4">
                     <ResultRow
                       label="Difference"
                       value={
-                        hasUserInput && results.market > 0
+                        results.canCompare
                           ? formatEuro(results.difference)
                           : "—"
                       }
@@ -642,7 +698,7 @@ function PriceCheckerPageContent() {
                     <ResultRow
                       label="Variance"
                       value={
-                        hasUserInput && results.market > 0
+                        results.canCompare
                           ? `${results.variancePct > 0 ? "+" : ""}${results.variancePct.toFixed(1)}%`
                           : "—"
                       }
@@ -650,16 +706,20 @@ function PriceCheckerPageContent() {
                     <div className="h-px bg-[#E9ECEF]" />
                     <ResultRow
                       label="Verdict"
-                      value={hasUserInput ? results.verdict : "—"}
+                      value={
+                        results.canCompare
+                          ? results.verdict
+                          : "—"
+                      }
                       strong
                     />
                   </div>
 
                   <div className="mt-6 rounded-[16px] border border-[#E9ECEF] bg-[#F8F9FA] p-4">
                     <p className="text-[14px] leading-6 text-[#4B5563]">
-                      {hasUserInput
+                      {results.canCompare
                         ? results.explanation
-                        : "Enter the property price and estimated market value to compare them."}
+                        : "Enter a valid asking price, estimated market value and property size to compare them."}
                     </p>
                   </div>
                 </div>
@@ -729,24 +789,52 @@ function PriceCheckerPageContent() {
 
                 <div>
                   <InputLabel>Asking price</InputLabel>
+
                   <input
                     type="text"
+                    inputMode="numeric"
                     placeholder="Example: 595000"
                     value={askingPrice}
-                    onChange={(e) => setAskingPrice(e.target.value)}
+                    onChange={(e) => {
+                      const value = e.target.value;
+
+                      if (isPositiveNumberInput(value)) {
+                        setAskingPrice(value);
+                      }
+                    }}
+                    onPaste={(e) => {
+                      const pastedValue = e.clipboardData.getData("text").trim();
+
+                      if (!isPositiveNumberInput(pastedValue)) {
+                        e.preventDefault();
+                      }
+                    }}
                     className="w-full rounded-[16px] border border-[#D7DCE2] bg-[#FCFCFD] px-4 py-3.5 text-[15px] placeholder:text-[#9CA3AF] outline-none transition focus:border-[#1976D2]"
                   />
                 </div>
 
                 <div>
                   <InputLabel>Estimated market value</InputLabel>
+
                   <input
                     type="text"
+                    inputMode="numeric"
                     placeholder="Example: 545000"
                     value={marketPrice}
                     onChange={(e) => {
-                      setMarketPrice(e.target.value);
-                      setMarketDataLocked(true);
+                      const value = e.target.value;
+
+                      if (isPositiveNumberInput(value)) {
+                        setMarketPrice(value);
+                        setMarketDataLocked(true);
+                      }
+                    }}
+                    onPaste={(e) => {
+                      const pastedValue = e.clipboardData.getData("text").trim();
+
+                      if (!isPositiveNumberInput(pastedValue)) {
+                        e.preventDefault();
+                      }
                     }}
                     className="w-full rounded-[16px] border border-[#D7DCE2] bg-[#FCFCFD] px-4 py-3.5 text-[15px] placeholder:text-[#9CA3AF] outline-none transition focus:border-[#1976D2]"
                   />
@@ -754,19 +842,33 @@ function PriceCheckerPageContent() {
 
                 <div className="md:col-span-2">
                   <InputLabel>Property size (m²)</InputLabel>
+
                   <div className="flex items-center gap-3">
                     <input
                       type="text"
+                      inputMode="numeric"
                       placeholder="Example: 120"
                       value={sizeInput}
                       onChange={(e) => {
-                        setSizeInput(e.target.value);
-                        setMarketDataLocked(false);
-                        setDetectedNeighborhood("");
-                        setMarketPrice("");
+                        const value = e.target.value;
+
+                        if (isPositiveNumberInput(value)) {
+                          setSizeInput(value);
+                          setMarketDataLocked(false);
+                          setDetectedNeighborhood("");
+                          setMarketPrice("");
+                        }
+                      }}
+                      onPaste={(e) => {
+                        const pastedValue = e.clipboardData.getData("text").trim();
+
+                        if (!isPositiveNumberInput(pastedValue)) {
+                          e.preventDefault();
+                        }
                       }}
                       className="w-full rounded-[16px] border border-[#D7DCE2] bg-[#FCFCFD] px-4 py-3.5 text-[15px] placeholder:text-[#9CA3AF] outline-none transition focus:border-[#1976D2]"
                     />
+
                     <Ruler className="text-[#6B7280]" size={18} />
                   </div>
                 </div>
@@ -813,7 +915,7 @@ function PriceCheckerPageContent() {
                       Asking price / m²
                     </div>
                     <div className="text-[24px] font-semibold text-[#0F2340]">
-                      {hasUserInput && results.size > 0
+                      {results.asking > 0 && results.size > 0
                         ? `${formatEuro(results.askingPerSqm)}/m²`
                         : "—"}
                     </div>
@@ -824,7 +926,7 @@ function PriceCheckerPageContent() {
                       Market value / m²
                     </div>
                     <div className="text-[24px] font-semibold text-[#0F2340]">
-                      {hasUserInput && results.size > 0 && results.market > 0
+                      {results.market > 0 && results.size > 0
                         ? `${formatEuro(results.marketPerSqm)}/m²`
                         : "—"}
                     </div>
@@ -836,12 +938,16 @@ function PriceCheckerPageContent() {
                     <ResultRow label="Location" value={location || "Not provided"} />
                     <ResultRow
                       label="Asking price"
-                      value={hasUserInput ? formatEuro(results.asking) : "—"}
+                      value={
+                        results.asking > 0
+                          ? formatEuro(results.asking)
+                          : "—"
+                      }
                     />
                     <ResultRow
                       label="Estimated market value"
                       value={
-                        hasUserInput && results.market > 0
+                        results.market > 0
                           ? formatEuro(results.market)
                           : "—"
                       }
@@ -849,7 +955,7 @@ function PriceCheckerPageContent() {
                     <ResultRow
                       label="Difference"
                       value={
-                        hasUserInput && results.market > 0
+                        results.canCompare
                           ? formatEuro(results.difference)
                           : "—"
                       }
@@ -857,7 +963,11 @@ function PriceCheckerPageContent() {
                     <div className="h-px bg-[#E9ECEF]" />
                     <ResultRow
                       label="Verdict"
-                      value={hasUserInput ? results.verdict : "—"}
+                      value={
+                        results.canCompare
+                          ? results.verdict
+                          : "—"
+                      }
                       strong
                     />
                   </div>
