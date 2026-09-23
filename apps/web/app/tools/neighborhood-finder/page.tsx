@@ -97,9 +97,9 @@ function normalizeAIScore(value: number | null | undefined) {
 function mapApiNeighborhood(row: ApiNeighborhood): Neighborhood {
   const icon =
     row.icon === "waves" ||
-    row.icon === "tree" ||
-    row.icon === "building" ||
-    row.icon === "sun"
+      row.icon === "tree" ||
+      row.icon === "building" ||
+      row.icon === "sun"
       ? row.icon
       : "building";
 
@@ -318,23 +318,23 @@ function NeighborhoodMap({ items }: { items: Neighborhood[] }) {
 
     if (!mapContainerRef.current) return;
 
-if (!token) {
-  console.error("Missing NEXT_PUBLIC_MAPBOX_TOKEN");
-  return;
-}
+    if (!token) {
+      console.error("Missing NEXT_PUBLIC_MAPBOX_TOKEN");
+      return;
+    }
 
     mapboxgl.accessToken = token;
 
     mapRef.current = new mapboxgl.Map({
-  container: mapContainerRef.current,
-  style: "mapbox://styles/mapbox/light-v11",
-  center: [-9.1393, 38.7223],
-  zoom: 9.4,
-});
+      container: mapContainerRef.current,
+      style: "mapbox://styles/mapbox/light-v11",
+      center: [-9.1393, 38.7223],
+      zoom: 9.4,
+    });
 
-setTimeout(() => {
-  mapRef.current?.resize();
-}, 300);
+    setTimeout(() => {
+      mapRef.current?.resize();
+    }, 300);
 
     mapRef.current.addControl(new mapboxgl.NavigationControl(), "top-right");
 
@@ -439,11 +439,10 @@ function Pagination({
           <button
             key={page}
             onClick={() => onPageChange(page)}
-            className={`h-[44px] w-[44px] rounded-[14px] text-[14px] font-bold transition ${
-              currentPage === page
-                ? "bg-[#1B365D] text-white shadow-[0_8px_20px_rgba(27,54,93,0.25)]"
-                : "border border-[#D9E0E7] bg-white text-[#1B365D] hover:bg-[#F8F9FA]"
-            }`}
+            className={`h-[44px] w-[44px] rounded-[14px] text-[14px] font-bold transition ${currentPage === page
+              ? "bg-[#1B365D] text-white shadow-[0_8px_20px_rgba(27,54,93,0.25)]"
+              : "border border-[#D9E0E7] bg-white text-[#1B365D] hover:bg-[#F8F9FA]"
+              }`}
           >
             {page}
           </button>
@@ -671,38 +670,159 @@ export default function NeighborhoodFinderPage() {
     () => getMarketAverage(neighborhoods),
     [neighborhoods]
   );
+  /* ==========================================================
+ * BUDGET VALIDATION
+ * ========================================================== */
+
+  const budgetValidation = useMemo(() => {
+    const min =
+      budgetMin.trim() === ""
+        ? null
+        : Number(budgetMin);
+
+    const max =
+      budgetMax.trim() === ""
+        ? null
+        : Number(budgetMax);
+
+    // Minimum budget must be a real positive amount
+    if (
+      min !== null &&
+      (!Number.isFinite(min) || min <= 0)
+    ) {
+      return {
+        valid: false,
+        field: "min" as const,
+        message:
+          "Please enter a valid minimum budget greater than €0.",
+      };
+    }
+
+    // Maximum budget must be a real positive amount
+    if (
+      max !== null &&
+      (!Number.isFinite(max) || max <= 0)
+    ) {
+      return {
+        valid: false,
+        field: "max" as const,
+        message:
+          "Please enter a valid maximum budget greater than €0.",
+      };
+    }
+
+    // Minimum cannot be greater than maximum
+    if (
+      min !== null &&
+      max !== null &&
+      min > max
+    ) {
+      return {
+        valid: false,
+        field: "range" as const,
+        message:
+          "Minimum budget cannot be greater than maximum budget.",
+      };
+    }
+
+    return {
+      valid: true,
+      field: null,
+      message: null,
+    };
+  }, [budgetMin, budgetMax]);
 
   const rankedNeighborhoods = useMemo(() => {
+    /*
+     * If the budget itself is invalid, do not perform
+     * a neighborhood search.
+     */
+    if (!budgetValidation.valid) {
+      return [];
+    }
+
     let data = [...neighborhoods];
 
-    const min = Number(budgetMin);
-    const max = Number(budgetMax);
+    const min =
+      budgetMin.trim() === ""
+        ? null
+        : Number(budgetMin);
 
-    if (budgetMin && !Number.isNaN(min)) {
-      data = data.filter((item) => item.avgPrice >= min);
-    }
+    const max =
+      budgetMax.trim() === ""
+        ? null
+        : Number(budgetMax);
 
-    if (budgetMax && !Number.isNaN(max)) {
-      data = data.filter((item) => item.avgPrice <= max);
-    }
-
-    if (search.trim()) {
-      const q = search.toLowerCase();
-
+    /*
+     * Minimum budget filter
+     */
+    if (min !== null) {
       data = data.filter(
-        (item) =>
-          item.name.toLowerCase().includes(q) ||
-          item.zone.toLowerCase().includes(q) ||
-          item.tags.some((tag) => tag.toLowerCase().includes(q))
+        (item) => item.avgPrice >= min
       );
     }
 
+    /*
+     * Maximum budget filter
+     */
+    if (max !== null) {
+      data = data.filter(
+        (item) => item.avgPrice <= max
+      );
+    }
+
+    /*
+     * Search filter
+     */
+    if (search.trim()) {
+      const q = search
+        .trim()
+        .toLowerCase();
+
+      data = data.filter(
+        (item) =>
+          item.name
+            .toLowerCase()
+            .includes(q) ||
+          item.zone
+            .toLowerCase()
+            .includes(q) ||
+          item.tags.some((tag) =>
+            tag
+              .toLowerCase()
+              .includes(q)
+          )
+      );
+    }
+
+    /*
+     * AI ranking
+     */
     return data.sort(
       (a, b) =>
-        getDisplayScore(b, profile, goal, marketAvg) -
-        getDisplayScore(a, profile, goal, marketAvg)
+        getDisplayScore(
+          b,
+          profile,
+          goal,
+          marketAvg
+        ) -
+        getDisplayScore(
+          a,
+          profile,
+          goal,
+          marketAvg
+        )
     );
-  }, [neighborhoods, budgetMin, budgetMax, search, profile, goal, marketAvg]);
+  }, [
+    neighborhoods,
+    budgetMin,
+    budgetMax,
+    search,
+    profile,
+    goal,
+    marketAvg,
+    budgetValidation.valid,
+  ]);
 
   const bestMatch = rankedNeighborhoods[0] || null;
   const topThree = rankedNeighborhoods.slice(0, 3);
@@ -714,105 +834,127 @@ export default function NeighborhoodFinderPage() {
   );
 
   async function handleSaveNeighborhood(
-  item: Neighborhood,
-) {
-  const token = getToken();
-  const user =
-    getStoredUser<AuthUser>();
-
-  if (
-    !token ||
-    !user
+    item: Neighborhood,
   ) {
-    toast.warning(
-      "Login required",
-      "Please sign in as a Buyer to create a neighborhood request.",
-    );
-
-    return;
-  }
-
-  if (
-    user.role !==
-    "BUYER"
-  ) {
-    toast.warning(
-      "Buyer account required",
-      "Only Buyer accounts can create property requests from this tool.",
-    );
-
-    return;
-  }
-
-  try {
-    setSavingName(
-      item.name,
-    );
-
-    const lead =
-      await createLeadFromNeighborhoodFinder(
-        token,
-        {
-          neighborhoodId:
-            item.id,
-
-          neighborhoodName:
-            item.name,
-
-          budgetMin,
-
-          budgetMax,
-
-          profile,
-
-          goal,
-        },
-      );
-
-    /*
-     * ==========================================================
-     * AUTOMATIC MATCH FOUND
-     * ==========================================================
-     */
+    const token = getToken();
+    const user =
+      getStoredUser<AuthUser>();
 
     if (
-      lead.status ===
-        "MATCHED" ||
-      lead.autoMatching
-        ?.matched
+      !token ||
+      !user
     ) {
-      const bestMatch =
-        lead.matches?.[0];
+      toast.warning(
+        "Login required",
+        "Please sign in as a Buyer to create a neighborhood request.",
+      );
 
-      const professionalName =
-        bestMatch
-          ?.professional
-          ?.user
-          ?.fullName;
+      return;
+    }
 
-      const score =
-        bestMatch?.score;
+    if (
+      user.role !==
+      "BUYER"
+    ) {
+      toast.warning(
+        "Buyer account required",
+        "Only Buyer accounts can create property requests from this tool.",
+      );
+
+      return;
+    }
+
+    try {
+      setSavingName(
+        item.name,
+      );
+
+      const lead =
+        await createLeadFromNeighborhoodFinder(
+          token,
+          {
+            neighborhoodId:
+              item.id,
+
+            neighborhoodName:
+              item.name,
+
+            budgetMin,
+
+            budgetMax,
+
+            profile,
+
+            goal,
+          },
+        );
 
       /*
-       * Existing request that has just been
-       * automatically reprocessed.
+       * ==========================================================
+       * AUTOMATIC MATCH FOUND
+       * ==========================================================
        */
+
       if (
-        lead.alreadyExists
+        lead.status ===
+        "MATCHED" ||
+        lead.autoMatching
+          ?.matched
       ) {
+        const bestMatch =
+          lead.matches?.[0];
+
+        const professionalName =
+          bestMatch
+            ?.professional
+            ?.user
+            ?.fullName;
+
+        const score =
+          bestMatch?.score;
+
+        /*
+         * Existing request that has just been
+         * automatically reprocessed.
+         */
+        if (
+          lead.alreadyExists
+        ) {
+          if (
+            professionalName &&
+            typeof score ===
+            "number"
+          ) {
+            toast.success(
+              "Smart match found",
+              `${professionalName} is matched to your ${item.name} request with a ${score}% compatibility score.`,
+            );
+          } else {
+            toast.success(
+              "Neighborhood request matched",
+              `Your existing ${item.name} request has been automatically matched with a compatible verified property professional.`,
+            );
+          }
+
+          return;
+        }
+
+        /*
+         * Brand-new request automatically matched.
+         */
         if (
           professionalName &&
           typeof score ===
-            "number"
+          "number"
         ) {
           toast.success(
             "Smart match found",
-            `${professionalName} is matched to your ${item.name} request with a ${score}% compatibility score.`,
+            `${professionalName} has been automatically matched to your ${item.name} request with a ${score}% compatibility score.`,
           );
         } else {
           toast.success(
-            "Neighborhood request matched",
-            `Your existing ${item.name} request has been automatically matched with a compatible verified property professional.`,
+            "Professional matched",
+            `A compatible verified professional has been automatically assigned to your ${item.name} request.`,
           );
         }
 
@@ -820,67 +962,45 @@ export default function NeighborhoodFinderPage() {
       }
 
       /*
-       * Brand-new request automatically matched.
+       * ==========================================================
+       * EXISTING REQUEST — NO MATCH YET
+       * ==========================================================
        */
+
       if (
-        professionalName &&
-        typeof score ===
-          "number"
+        lead.alreadyExists
       ) {
-        toast.success(
-          "Smart match found",
-          `${professionalName} has been automatically matched to your ${item.name} request with a ${score}% compatibility score.`,
+        toast.info(
+          "Request already active",
+          `Your ${item.name} request already exists. Smart Matching will continue looking automatically for a compatible verified professional.`,
         );
-      } else {
-        toast.success(
-          "Professional matched",
-          `A compatible verified professional has been automatically assigned to your ${item.name} request.`,
-        );
+
+        return;
       }
 
-      return;
-    }
+      /*
+       * ==========================================================
+       * NEW REQUEST — NO PROFESSIONAL >= THRESHOLD YET
+       * ==========================================================
+       */
 
-    /*
-     * ==========================================================
-     * EXISTING REQUEST — NO MATCH YET
-     * ==========================================================
-     */
-
-    if (
-      lead.alreadyExists
-    ) {
-      toast.info(
-        "Request already active",
-        `Your ${item.name} request already exists. Smart Matching will continue looking automatically for a compatible verified professional.`,
+      toast.success(
+        "Neighborhood request created",
+        `Your ${item.name} request is now active. Smart Matching will automatically connect you with a compatible verified property professional when one meets the required score.`,
       );
-
-      return;
+    } catch (error) {
+      toast.error(
+        "Unable to create request",
+        error instanceof Error
+          ? error.message
+          : "Something went wrong while creating your neighborhood request. Please try again.",
+      );
+    } finally {
+      setSavingName(
+        null,
+      );
     }
-
-    /*
-     * ==========================================================
-     * NEW REQUEST — NO PROFESSIONAL >= THRESHOLD YET
-     * ==========================================================
-     */
-
-    toast.success(
-      "Neighborhood request created",
-      `Your ${item.name} request is now active. Smart Matching will automatically connect you with a compatible verified property professional when one meets the required score.`,
-    );
-  } catch (error) {
-    toast.error(
-      "Unable to create request",
-      error instanceof Error
-        ? error.message
-        : "Something went wrong while creating your neighborhood request. Please try again.",
-    );
-  } finally {
-    setSavingName(
-      null,
-    );
   }
-}
 
   return (
     <>
@@ -937,21 +1057,69 @@ export default function NeighborhoodFinderPage() {
                   />
                 </div>
 
-                <input
-                  type="number"
-                  placeholder="Min budget"
-                  value={budgetMin}
-                  onChange={(e) => setBudgetMin(e.target.value)}
-                  className="w-full rounded-[16px] border border-[#D9E0E7] bg-[#FCFCFD] px-[16px] py-[14px] text-[15px] outline-none transition focus:border-[#1B365D] focus:bg-white"
-                />
+                <div>
+                  <input
+                    type="number"
+                    min="1"
+                    step="1"
+                    placeholder="Min budget"
+                    value={budgetMin}
+                    onChange={(e) =>
+                      setBudgetMin(e.target.value)
+                    }
+                    aria-invalid={
+                      budgetValidation.field === "min" ||
+                      budgetValidation.field === "range"
+                    }
+                    className={`w-full rounded-[16px] bg-[#FCFCFD]
+      px-[16px] py-[14px] text-[15px]
+      outline-none transition focus:bg-white
+      ${budgetValidation.field === "min" ||
+                        budgetValidation.field === "range"
+                        ? "border border-red-400 focus:border-red-500"
+                        : "border border-[#D9E0E7] focus:border-[#1B365D]"
+                      }`}
+                  />
 
-                <input
-                  type="number"
-                  placeholder="Max budget"
-                  value={budgetMax}
-                  onChange={(e) => setBudgetMax(e.target.value)}
-                  className="w-full rounded-[16px] border border-[#D9E0E7] bg-[#FCFCFD] px-[16px] py-[14px] text-[15px] outline-none transition focus:border-[#1B365D] focus:bg-white"
-                />
+                  {budgetValidation.field === "min" && (
+                    <p className="mt-2 flex items-center gap-1 text-[12px] font-medium text-red-600">
+                      <AlertCircle size={13} />
+                      Enter an amount greater than €0.
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <input
+                    type="number"
+                    min="1"
+                    step="1"
+                    placeholder="Max budget"
+                    value={budgetMax}
+                    onChange={(e) =>
+                      setBudgetMax(e.target.value)
+                    }
+                    aria-invalid={
+                      budgetValidation.field === "max" ||
+                      budgetValidation.field === "range"
+                    }
+                    className={`w-full rounded-[16px] bg-[#FCFCFD]
+      px-[16px] py-[14px] text-[15px]
+      outline-none transition focus:bg-white
+      ${budgetValidation.field === "max" ||
+                        budgetValidation.field === "range"
+                        ? "border border-red-400 focus:border-red-500"
+                        : "border border-[#D9E0E7] focus:border-[#1B365D]"
+                      }`}
+                  />
+
+                  {budgetValidation.field === "max" && (
+                    <p className="mt-2 flex items-center gap-1 text-[12px] font-medium text-red-600">
+                      <AlertCircle size={13} />
+                      Enter an amount greater than €0.
+                    </p>
+                  )}
+                </div>
 
                 <select
                   value={profile}
@@ -989,6 +1157,26 @@ export default function NeighborhoodFinderPage() {
                   Reset
                 </button>
               </div>
+              {budgetValidation.field === "range" && (
+                <div
+                  role="alert"
+                  className="
+      mt-3
+      flex items-center gap-2
+      rounded-[12px]
+      border border-red-200
+      bg-red-50
+      px-4 py-3
+      text-[13px]
+      font-medium
+      text-red-600
+    "
+                >
+                  <AlertCircle size={16} />
+
+                  Minimum budget cannot be greater than maximum budget.
+                </div>
+              )}
             </div>
 
             {errorMessage && (
@@ -1067,6 +1255,23 @@ export default function NeighborhoodFinderPage() {
             {loading ? (
               <div className="rounded-[24px] border border-[#E5E7EB] bg-white px-[30px] py-[55px] text-center text-[16px] text-[#4B5563]">
                 Loading neighborhoods...
+              </div>
+            ) : !budgetValidation.valid ? (
+              <div className="rounded-[24px] border border-red-200 bg-red-50 px-[30px] py-[55px] text-center">
+
+                <AlertCircle
+                  size={30}
+                  className="mx-auto mb-3 text-red-500"
+                />
+
+                <p className="text-[17px] font-semibold text-red-700">
+                  Invalid budget
+                </p>
+
+                <p className="mt-2 text-[14px] text-red-600">
+                  {budgetValidation.message}
+                </p>
+
               </div>
             ) : rankedNeighborhoods.length === 0 ? (
               <div className="rounded-[24px] border border-[#E5E7EB] bg-white px-[30px] py-[55px] text-center text-[16px] text-[#4B5563]">
