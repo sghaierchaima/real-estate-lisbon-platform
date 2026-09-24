@@ -33,7 +33,7 @@ type AutoMatchResult =
       lead: true;
     };
   }>;
-  
+
 @Injectable()
 export class AutoMatchingService {
   private readonly logger =
@@ -50,7 +50,7 @@ export class AutoMatchingService {
 
     private readonly notificationsService:
       NotificationsService,
-  ) {}
+  ) { }
 
   async matchLead(leadId: string) {
     const lead =
@@ -302,10 +302,9 @@ export class AutoMatchingService {
         'Professionals matched to your request',
 
       message:
-        `${matches.length} verified professional${
-          matches.length > 1
-            ? 's have'
-            : ' has'
+        `${matches.length} verified professional${matches.length > 1
+          ? 's have'
+          : ' has'
         } been automatically matched to your request.`,
     });
 
@@ -322,6 +321,120 @@ export class AutoMatchingService {
         matches.length,
 
       matches,
+    };
+  }
+  async rematchWaitingLeadsForProfessional(
+    professionalId: string,
+  ) {
+    const professional =
+      await this.prisma.professionalProfile.findUnique({
+        where: {
+          id: professionalId,
+        },
+      });
+
+    if (!professional) {
+      return {
+        processed: 0,
+        matched: 0,
+        reason: 'PROFESSIONAL_NOT_FOUND',
+      };
+    }
+
+    /*
+     * Only ACTIVE professionals
+     * can receive buyer matches.
+     */
+    if (
+      professional.verificationStatus !==
+      VerificationStatus.ACTIVE
+    ) {
+      return {
+        processed: 0,
+        matched: 0,
+        reason: 'PROFESSIONAL_NOT_ACTIVE',
+      };
+    }
+
+    /*
+     * Get all buyer requests that are
+     * still waiting for a professional.
+     */
+    const waitingLeads =
+      await this.prisma.lead.findMany({
+        where: {
+          status: LeadStatus.NEW,
+          userId: {
+            not: null,
+          },
+        },
+
+        orderBy: {
+          createdAt: 'asc',
+        },
+      });
+
+    let processed = 0;
+    let matched = 0;
+
+    for (const lead of waitingLeads) {
+      /*
+       * Determine the professional type
+       * required by this request.
+       */
+      const requiredType =
+        this.matchingEngine.detectProfessionalType(
+          `${lead.source || ''} ${lead.interest || ''}`,
+        );
+
+      /*
+       * Ignore requests belonging to
+       * another professional category.
+       */
+      if (
+        requiredType !==
+        professional.professionalType
+      ) {
+        continue;
+      }
+
+      processed++;
+
+      try {
+        /*
+         * Reuse the existing matching engine.
+         *
+         * matchLead() already:
+         * - finds eligible professionals
+         * - calculates scores
+         * - requires >= 70
+         * - creates ACTIVE matches
+         * - changes Lead to MATCHED
+         * - creates notifications
+         */
+        const result =
+          await this.matchLead(lead.id);
+
+        if (result.matched) {
+          matched++;
+        }
+      } catch (error) {
+        this.logger.error(
+          `Unable to rematch waiting lead ${lead.id} after professional ${professional.id} update`,
+          error instanceof Error
+            ? error.stack
+            : String(error),
+        );
+      }
+    }
+
+    this.logger.log(
+      `Professional ${professional.id}: ${processed} waiting leads checked, ${matched} matched`,
+    );
+
+    return {
+      processed,
+      matched,
     };
   }
 }

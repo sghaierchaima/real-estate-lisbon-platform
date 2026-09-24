@@ -15,6 +15,9 @@ import { CreateProfessionalDto } from './dto/create-professional.dto';
 import { NotificationsService } from '../notifications/notifications.service';
 import { EmailService } from '../email/email.service';
 import { CreateProfessionalApplicationDto } from './dto/create-professional-application.dto';
+import {
+  AutoMatchingService,
+} from '../matching/auto-matching.service';
 
 
 @Injectable()
@@ -25,6 +28,8 @@ export class ProfessionalsService {
   private readonly prisma: PrismaService,
   private readonly notificationsService: NotificationsService,
   private readonly emailService: EmailService,
+  private readonly autoMatchingService:
+    AutoMatchingService,
 ) {}
 
   findAll() {
@@ -189,6 +194,29 @@ export class ProfessionalsService {
           });
         },
       );
+      /*
+ * The professional has just become ACTIVE.
+ * Re-check requests that were previously
+ * waiting for a compatible professional.
+ */
+try {
+  const rematchResult =
+    await this.autoMatchingService
+      .rematchWaitingLeadsForProfessional(
+        updated.id,
+      );
+
+  this.logger.log(
+    `Rematching after professional approval: ${JSON.stringify(rematchResult)}`,
+  );
+} catch (error) {
+  this.logger.error(
+    `Unable to rematch waiting requests after approving professional ${updated.id}`,
+    error instanceof Error
+      ? error.stack
+      : String(error),
+  );
+}
 
     /*
      * La notification est conservée et attendue :
@@ -569,7 +597,8 @@ async updateMe(
   });
 }
 
-  return this.prisma.professionalProfile.update({
+  const updated =
+  await this.prisma.professionalProfile.update({
     where: { userId },
     data: {
       companyName: dto.companyName,
@@ -598,6 +627,36 @@ async updateMe(
       },
     },
   });
+  /*
+ * If this professional is ACTIVE,
+ * check whether their updated profile
+ * can satisfy previously waiting requests.
+ */
+if (
+  updated.verificationStatus ===
+  VerificationStatus.ACTIVE
+) {
+  try {
+    const rematchResult =
+      await this.autoMatchingService
+        .rematchWaitingLeadsForProfessional(
+          updated.id,
+        );
+
+    this.logger.log(
+      `Rematching after professional update: ${JSON.stringify(rematchResult)}`,
+    );
+  } catch (error) {
+    this.logger.error(
+      `Unable to rematch waiting requests after updating professional ${updated.id}`,
+      error instanceof Error
+        ? error.stack
+        : String(error),
+    );
+  }
+}
+
+return updated;
 }
 
 private calculateProfileCompletion(data: {
