@@ -12,6 +12,10 @@ import {
   Star,
   ArrowRight,
   Globe,
+  Calculator,
+  SearchCheck,
+  ShieldCheck,
+  ReceiptText,
 } from "lucide-react";
 import { getPublicProfessionals, Professional } from "@/lib/professionals-api";
 
@@ -186,21 +190,55 @@ export default function FindProfessionalsPage() {
 
   const stats = useMemo(() => {
     const brokers = professionals.filter(
-      (item) => item.professionalType === "MORTGAGE_BROKER"
+      (item) =>
+        item.professionalType ===
+        "MORTGAGE_BROKER"
     );
 
     const agents = professionals.filter(
-      (item) => item.professionalType === "PROPERTY_AGENT"
+      (item) =>
+        item.professionalType ===
+        "PROPERTY_AGENT"
     );
 
     const lawyers = professionals.filter(
-      (item) => item.professionalType === "PROPERTY_LAWYER"
+      (item) =>
+        item.professionalType ===
+        "PROPERTY_LAWYER"
+    );
+
+    const taxAdvisors = professionals.filter(
+      (item) =>
+        item.professionalType ===
+        "TAX_ADVISOR"
+    );
+
+    const homeInspectors = professionals.filter(
+      (item) =>
+        item.professionalType ===
+        "HOME_INSPECTOR"
+    );
+
+    const propertyValuers = professionals.filter(
+      (item) =>
+        item.professionalType ===
+        "PROPERTY_VALUER"
+    );
+
+    const insuranceBrokers = professionals.filter(
+      (item) =>
+        item.professionalType ===
+        "INSURANCE_BROKER"
     );
 
     return {
       brokers,
       agents,
       lawyers,
+      taxAdvisors,
+      homeInspectors,
+      propertyValuers,
+      insuranceBrokers,
       total: professionals.length,
     };
   }, [professionals]);
@@ -221,48 +259,117 @@ export default function FindProfessionalsPage() {
               </div>
 
               <h1 className="mx-auto mb-[22px] max-w-[1100px] text-[50px] font-bold leading-[1.05] tracking-[-0.04em] text-[#0F2340]">
-                Find Your Trusted Professionals
+                Find the Right Professional for Your Property Journey
               </h1>
 
-              <p className="mx-auto max-w-[720px] text-[20px] leading-[1.6] text-[#4B5563]">
-                Connect with verified real estate professionals who can guide you through
-                every step of your property purchase in Portugal.
+              <p className="mx-auto max-w-[780px] text-[20px] leading-[1.6] text-[#4B5563]">
+                Connect with verified professionals across financing,
+                property search, legal support, valuation, inspection,
+                taxation, and insurance — all in one place.
               </p>
             </div>
 
-            <div className="grid gap-[36px] lg:grid-cols-3">
+            <div className="grid gap-[36px] md:grid-cols-2 xl:grid-cols-3">
+
+              {/* MORTGAGE BROKERS */}
+
               <ProfessionalCard
                 icon={<BriefcaseBusiness size={24} />}
                 iconBg="#1B365D"
                 title="Mortgage Brokers"
-                description="Get pre-approved and find the best mortgage options from verified brokers."
+                description="Get pre-approved and explore mortgage options with verified brokers who understand property financing in Portugal."
                 count={stats.brokers.length}
                 rating={averageRating(stats.brokers)}
                 buttonLabel="Browse Mortgage Brokers"
                 href="/find-professionals/mortgage-brokers"
               />
 
+              {/* REAL ESTATE AGENTS */}
+
               <ProfessionalCard
                 icon={<Users size={24} />}
                 iconBg="#2E7D32"
                 title="Real Estate Agents"
-                description="Work with verified agents who understand foreign buyers and the Portuguese market."
+                description="Work with verified agents who understand foreign buyers and can guide you through the Portuguese property market."
                 count={stats.agents.length}
                 rating={averageRating(stats.agents)}
                 buttonLabel="Browse Real Estate Agents"
                 href="/find-professionals/real-estate-agents"
               />
 
+              {/* PROPERTY LAWYERS */}
+
               <ProfessionalCard
                 icon={<Scale size={24} />}
                 iconBg="#E5A623"
                 title="Property Lawyers"
-                description="Secure your purchase with verified lawyers specialized in property transactions."
+                description="Navigate contracts and property transactions with verified legal professionals experienced in Portuguese real estate."
                 count={stats.lawyers.length}
                 rating={averageRating(stats.lawyers)}
                 buttonLabel="Browse Property Lawyers"
                 href="/find-professionals/lawyers"
               />
+
+              {/* PROPERTY VALUERS */}
+
+              <ProfessionalCard
+                icon={<Calculator size={24} />}
+                iconBg="#7C3AED"
+                title="Property Valuers"
+                description="Connect with verified property valuation professionals who can help you understand the value of a property before making a decision."
+                count={stats.propertyValuers.length}
+                rating={averageRating(
+                  stats.propertyValuers
+                )}
+                buttonLabel="Browse Property Valuers"
+                href="/find-professionals/property-valuers"
+              />
+
+              {/* HOME INSPECTORS */}
+
+              <ProfessionalCard
+                icon={<SearchCheck size={24} />}
+                iconBg="#0F766E"
+                title="Home Inspectors"
+                description="Connect with verified inspectors who can help assess a property's condition and identify potential issues before purchase."
+                count={stats.homeInspectors.length}
+                rating={averageRating(
+                  stats.homeInspectors
+                )}
+                buttonLabel="Browse Home Inspectors"
+                href="/find-professionals/home-inspectors"
+              />
+
+              {/* TAX ADVISORS */}
+
+              <ProfessionalCard
+                icon={<ReceiptText size={24} />}
+                iconBg="#B45309"
+                title="Tax Advisors"
+                description="Understand property-related tax considerations with verified professionals who support buyers, owners, and investors in Portugal."
+                count={stats.taxAdvisors.length}
+                rating={averageRating(
+                  stats.taxAdvisors
+                )}
+                buttonLabel="Browse Tax Advisors"
+                href="/find-professionals/tax-advisors"
+              />
+
+              {/* INSURANCE BROKERS */}
+
+              <ProfessionalCard
+                icon={<ShieldCheck size={24} />}
+                iconBg="#2563EB"
+                title="Insurance Brokers"
+                description="Explore property insurance options with verified brokers who can help you understand suitable protection for homes and investments."
+                count={stats.insuranceBrokers.length}
+                rating={averageRating(
+                  stats.insuranceBrokers
+                )}
+                buttonLabel="Browse Insurance Brokers"
+                href="/find-professionals/insurance-brokers"
+              />
+
             </div>
 
             <div className="mt-[78px] rounded-[30px] bg-[#163764] px-[54px] py-[58px] text-white">

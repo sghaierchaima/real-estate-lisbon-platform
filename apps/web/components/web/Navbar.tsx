@@ -101,36 +101,45 @@ const toolsLinks = [
 
 const professionalsLinks = [
   {
-    title:
-      "Mortgage Brokers",
-
-    href:
-      "/find-professionals/mortgage-brokers",
-
-    desc:
-      "Find trusted financing experts",
+    title: "Mortgage Brokers",
+    href: "/find-professionals/mortgage-brokers",
+    desc: "Find trusted financing experts",
   },
 
   {
-    title:
-      "Real Estate Agents",
-
-    href:
-      "/find-professionals/real-estate-agents",
-
-    desc:
-      "Connect with verified agents",
+    title: "Real Estate Agents",
+    href: "/find-professionals/real-estate-agents",
+    desc: "Connect with verified agents",
   },
 
   {
-    title:
-      "Property Lawyers",
+    title: "Property Lawyers",
+    href: "/find-professionals/lawyers",
+    desc: "Get legal property support",
+  },
 
-    href:
-      "/find-professionals/lawyers",
+  {
+    title: "Property Valuers",
+    href: "/find-professionals/property-valuers",
+    desc: "Get independent property valuations",
+  },
 
-    desc:
-      "Get legal property support",
+  {
+    title: "Home Inspectors",
+    href: "/find-professionals/home-inspectors",
+    desc: "Assess property condition before buying",
+  },
+
+  {
+    title: "Tax Advisors",
+    href: "/find-professionals/tax-advisors",
+    desc: "Understand property taxes in Portugal",
+  },
+
+  {
+    title: "Insurance Brokers",
+    href: "/find-professionals/insurance-brokers",
+    desc: "Find suitable property insurance",
   },
 ];
 
@@ -250,10 +259,9 @@ export default function Navbar() {
           backdrop-blur-md
           transition-all
           duration-300
-          ${
-            scrolled
-              ? "shadow-[0_4px_12px_rgba(15,35,64,0.12)]"
-              : ""
+          ${scrolled
+            ? "shadow-[0_4px_12px_rgba(15,35,64,0.12)]"
+            : ""
           }
         `}
       >
@@ -703,16 +711,16 @@ function NavLink({
   children,
 }: {
   href:
-    string;
+  string;
 
   active:
-    boolean;
+  boolean;
 
   onClick:
-    () => void;
+  () => void;
 
   children:
-    React.ReactNode;
+  React.ReactNode;
 }) {
   return (
     <Link
@@ -728,10 +736,9 @@ function NavLink({
         text-base
         font-medium
         transition-colors
-        ${
-          active
-            ? "text-[#1B365D]"
-            : "text-[#6C757D] hover:text-[#1B365D]"
+        ${active
+          ? "text-[#1B365D]"
+          : "text-[#6C757D] hover:text-[#1B365D]"
         }
       `}
     >
@@ -750,33 +757,33 @@ function Dropdown({
   onClose,
 }: {
   title:
-    string;
+  string;
 
   href:
-    string;
+  string;
 
   active:
-    boolean;
+  boolean;
 
   open:
-    boolean;
+  boolean;
 
   onToggle:
-    () => void;
+  () => void;
 
   items: {
     title:
-      string;
+    string;
 
     href:
-      string;
+    string;
 
     desc:
-      string;
+    string;
   }[];
 
   onClose:
-    () => void;
+  () => void;
 }) {
   return (
     <div className="relative flex items-center gap-1">
@@ -792,10 +799,9 @@ function Dropdown({
           text-base
           font-medium
           transition-colors
-          ${
-            active
-              ? "text-[#1B365D]"
-              : "text-[#6C757D] hover:text-[#1B365D]"
+          ${active
+            ? "text-[#1B365D]"
+            : "text-[#6C757D] hover:text-[#1B365D]"
           }
         `}
       >
@@ -826,10 +832,9 @@ function Dropdown({
             w-4
             transition-transform
             duration-200
-            ${
-              open
-                ? "rotate-180"
-                : ""
+            ${open
+              ? "rotate-180"
+              : ""
             }
           `}
         />
@@ -847,14 +852,15 @@ function Dropdown({
         >
           <div
             className="
-              w-72
-              overflow-hidden
-              rounded-xl
-              border
-              border-[rgba(27,54,93,0.10)]
-              bg-white
-              shadow-[0_12px_30px_rgba(15,35,64,0.12)]
-            "
+    w-80
+    max-h-[calc(100vh-7rem)]
+    overflow-y-auto
+    rounded-xl
+    border
+    border-[rgba(27,54,93,0.10)]
+    bg-white
+    shadow-[0_12px_30px_rgba(15,35,64,0.12)]
+  "
           >
             {items.map(
               (
@@ -905,13 +911,13 @@ function MobileLink({
   children,
 }: {
   href:
-    string;
+  string;
 
   onClick:
-    () => void;
+  () => void;
 
   children:
-    React.ReactNode;
+  React.ReactNode;
 }) {
   return (
     <Link
@@ -942,27 +948,27 @@ function MobileDropdown({
   onClose,
 }: {
   title:
-    string;
+  string;
 
   open:
-    boolean;
+  boolean;
 
   onToggle:
-    () => void;
+  () => void;
 
   items: {
     title:
-      string;
+    string;
 
     href:
-      string;
+    string;
 
     desc:
-      string;
+    string;
   }[];
 
   onClose:
-    () => void;
+  () => void;
 }) {
   return (
     <div>
@@ -998,10 +1004,9 @@ function MobileDropdown({
             w-4
             transition-transform
             duration-200
-            ${
-              open
-                ? "rotate-180"
-                : ""
+            ${open
+              ? "rotate-180"
+              : ""
             }
           `}
         />

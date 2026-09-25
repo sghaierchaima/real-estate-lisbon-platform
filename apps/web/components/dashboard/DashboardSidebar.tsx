@@ -17,6 +17,7 @@ import {
   Bell,
   Heart,
   Star,
+  Mail,
 } from "lucide-react";
 import {
   getUnreadChatCount,
@@ -45,6 +46,7 @@ const adminItems: NavItem[] = [
   { label: "Analytics", href: "/dashboard/analytics", icon: BarChart3 },
   { label: "Stories", href: "/dashboard/stories", icon: FileText },
   { label: "Notifications", href: "/dashboard/notifications", icon: Bell },
+  { label: "Contact", href: "/dashboard/contact", icon: Mail },
   { label: "Audit", href: "/dashboard/audit", icon: Bell },
   { label: "Settings", href: "/dashboard/settings", icon: Settings },
 ];

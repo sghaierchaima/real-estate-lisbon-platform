@@ -12,6 +12,10 @@ import { AppService } from './app.service';
 import { validateEnv } from './config/env.validation';
 import { PrismaModule } from './database/prisma.module';
 
+import {
+  ContactModule,
+} from './modules/contact/contact.module';
+
 import { AiModule } from './modules/ai/ai.module';
 import { AuditModule } from './modules/audit/audit.module';
 import { AuthModule } from './modules/auth/auth.module';
@@ -62,6 +66,7 @@ import { UsersModule } from './modules/users/users.module';
     AuditModule,
     SavedPropertiesModule,
     ReviewsModule,
+    ContactModule,
   ],
 
   controllers: [
