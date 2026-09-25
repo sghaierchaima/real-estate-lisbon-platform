@@ -373,60 +373,67 @@ export class AutoMatchingService {
           createdAt: 'asc',
         },
       });
+      this.logger.log(
+  `[REMATCH] Found ${waitingLeads.length} NEW waiting leads`,
+);
 
     let processed = 0;
     let matched = 0;
 
     for (const lead of waitingLeads) {
-      /*
-       * Determine the professional type
-       * required by this request.
-       */
-      const requiredType =
-        this.matchingEngine.detectProfessionalType(
-          `${lead.source || ''} ${lead.interest || ''}`,
-        );
+  const detectionText =
+    `${lead.source || ''} ${lead.interest || ''}`;
 
-      /*
-       * Ignore requests belonging to
-       * another professional category.
-       */
-      if (
-        requiredType !==
-        professional.professionalType
-      ) {
-        continue;
-      }
+  const requiredType =
+    this.matchingEngine.detectProfessionalType(
+      detectionText,
+    );
 
-      processed++;
+  this.logger.log(
+    `[REMATCH] Lead=${lead.id} | ` +
+    `status=${lead.status} | ` +
+    `source="${lead.source}" | ` +
+    `interest="${lead.interest}" | ` +
+    `detectionText="${detectionText}" | ` +
+    `requiredType=${requiredType} | ` +
+    `professionalType=${professional.professionalType}`,
+  );
 
-      try {
-        /*
-         * Reuse the existing matching engine.
-         *
-         * matchLead() already:
-         * - finds eligible professionals
-         * - calculates scores
-         * - requires >= 70
-         * - creates ACTIVE matches
-         * - changes Lead to MATCHED
-         * - creates notifications
-         */
-        const result =
-          await this.matchLead(lead.id);
+  if (
+    requiredType !==
+    professional.professionalType
+  ) {
+    this.logger.warn(
+      `[REMATCH] SKIPPED ${lead.id}: ` +
+      `${requiredType} !== ${professional.professionalType}`,
+    );
 
-        if (result.matched) {
-          matched++;
-        }
-      } catch (error) {
-        this.logger.error(
-          `Unable to rematch waiting lead ${lead.id} after professional ${professional.id} update`,
-          error instanceof Error
-            ? error.stack
-            : String(error),
-        );
-      }
+    continue;
+  }
+
+  processed++;
+
+  try {
+    const result =
+      await this.matchLead(lead.id);
+
+    this.logger.log(
+      `[REMATCH] RESULT lead=${lead.id}: ` +
+      JSON.stringify(result),
+    );
+
+    if (result.matched) {
+      matched++;
     }
+  } catch (error) {
+    this.logger.error(
+      `[REMATCH] ERROR lead=${lead.id}`,
+      error instanceof Error
+        ? error.stack
+        : String(error),
+    );
+  }
+}
 
     this.logger.log(
       `Professional ${professional.id}: ${processed} waiting leads checked, ${matched} matched`,
