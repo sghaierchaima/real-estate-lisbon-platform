@@ -9,6 +9,10 @@ import {
   MinLength,
 } from 'class-validator';
 import { ProfessionalType } from '@prisma/client';
+import {
+  Transform,
+} from 'class-transformer';
+
 export class CreateProfessionalApplicationDto {
   @IsEnum(ProfessionalType)
   professionalType!: ProfessionalType;
@@ -25,11 +29,25 @@ export class CreateProfessionalApplicationDto {
   @MaxLength(1500)
   bio?: string;
 
-  @IsArray()
-  @ArrayMinSize(1)
-  @ArrayMaxSize(10)
-  @IsString({
-    each: true,
-  })
-  languages!: string[];
+  @Transform(({ value }) => {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  if (
+    typeof value === 'string' &&
+    value.trim()
+  ) {
+    return [value];
+  }
+
+  return [];
+})
+@IsArray()
+@ArrayMinSize(1)
+@ArrayMaxSize(10)
+@IsString({
+  each: true,
+})
+languages!: string[];
 }

@@ -8,6 +8,9 @@ import {
   BriefcaseBusiness,
   Building2,
   CheckCircle2,
+  ExternalLink,
+  FileText,
+  ImageIcon,
   Languages,
   Mail,
   MapPin,
@@ -202,6 +205,13 @@ export default function ProfessionalDetailsPage() {
         .join(", ") || "-"
     );
   }, [professional]);
+  const verificationDocumentUrl =
+  professional?.verificationDocumentUrl
+    ? getAssetUrl(
+        professional.verificationDocumentUrl,
+        "",
+      )
+    : "";
 
   async function handleApprove() {
     if (!professional) {
@@ -588,6 +598,99 @@ export default function ProfessionalDetailsPage() {
           </a>
         </section>
       </div>
+      <section className="rounded-[28px] border border-[#E4E7EC] bg-white p-7 shadow-sm">
+  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+    <div className="flex items-start gap-3">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#EEF3F8] text-[#1B365D]">
+        <ShieldCheck className="h-6 w-6" />
+      </div>
+
+      <div>
+        <h2 className="text-2xl font-semibold text-[#0F2340]">
+          Professional Verification
+        </h2>
+
+        <p className="mt-2 max-w-2xl text-sm leading-6 text-[#667085]">
+          Verification document submitted by
+          this applicant as proof of professional
+          activity.
+        </p>
+      </div>
+    </div>
+
+    <span
+      className={`w-fit rounded-full border px-3 py-1 text-xs font-semibold ${statusStyle(
+        professional.verificationStatus,
+      )}`}
+    >
+      {professional.verificationStatus}
+    </span>
+  </div>
+
+  {verificationDocumentUrl ? (
+    <div className="mt-7">
+      <div className="rounded-2xl border border-[#E4E7EC] bg-[#F8FAFC] p-5">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex min-w-0 items-center gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-[#1B365D] shadow-sm">
+              {professional.verificationDocumentMimeType?.startsWith(
+                "image/",
+              ) ? (
+                <ImageIcon className="h-6 w-6" />
+              ) : (
+                <FileText className="h-6 w-6" />
+              )}
+            </div>
+
+            <div className="min-w-0">
+              <p className="break-all font-semibold text-[#0F2340]">
+                {professional.verificationDocumentName ||
+                  "Verification document"}
+              </p>
+
+              <p className="mt-1 text-sm text-[#667085]">
+                {professional.verificationDocumentMimeType ||
+                  "Professional verification file"}
+              </p>
+            </div>
+          </div>
+
+          <a
+            href={verificationDocumentUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#1B365D] px-5 text-sm font-semibold text-white transition hover:bg-[#10284D]"
+          >
+            <ExternalLink className="h-4 w-4" />
+            View Document
+          </a>
+        </div>
+      </div>
+
+      <p className="mt-3 text-xs leading-5 text-[#667085]">
+        This document is private and is used
+        only for administrative verification.
+      </p>
+    </div>
+  ) : (
+    <div className="mt-7 rounded-2xl border border-dashed border-[#D0D5DD] bg-[#F9FAFB] p-6">
+      <div className="flex items-start gap-3">
+        <FileText className="mt-0.5 h-5 w-5 shrink-0 text-[#98A2B3]" />
+
+        <div>
+          <p className="font-semibold text-[#344054]">
+            No verification document
+          </p>
+
+          <p className="mt-1 text-sm leading-6 text-[#667085]">
+            No professional verification document
+            is associated with this application.
+          </p>
+        </div>
+      </div>
+    </div>
+  )}
+</section>
 
       {professional.properties &&
   professional.properties.length > 0 && (

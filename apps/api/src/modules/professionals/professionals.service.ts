@@ -18,19 +18,23 @@ import { CreateProfessionalApplicationDto } from './dto/create-professional-appl
 import {
   AutoMatchingService,
 } from '../matching/auto-matching.service';
-
+import {
+  CloudinaryService,
+} from '../../common/cloudinary/cloudinary.service';
 
 @Injectable()
 export class ProfessionalsService {
   private readonly logger = new Logger(ProfessionalsService.name);
 
   constructor(
-  private readonly prisma: PrismaService,
-  private readonly notificationsService: NotificationsService,
-  private readonly emailService: EmailService,
-  private readonly autoMatchingService:
-    AutoMatchingService,
-) {}
+    private readonly prisma: PrismaService,
+    private readonly notificationsService: NotificationsService,
+    private readonly emailService: EmailService,
+    private readonly autoMatchingService:
+      AutoMatchingService,
+    private readonly cloudinaryService:
+      CloudinaryService,
+  ) { }
 
   findAll() {
     return this.prisma.professionalProfile.findMany({
@@ -70,48 +74,48 @@ export class ProfessionalsService {
   }
 
   async findOne(id: string) {
-  const professional =
-    await this.prisma.professionalProfile.findUnique({
-      where: {
-        id,
-      },
-
-      include: {
-        user: {
-          select: {
-            id: true,
-            email: true,
-            fullName: true,
-            role: true,
-            avatarUrl: true,
-            phone: true,
-            country: true,
-            city: true,
-          },
+    const professional =
+      await this.prisma.professionalProfile.findUnique({
+        where: {
+          id,
         },
 
-        properties: {
-          where: {
-            status: "PUBLISHED",
+        include: {
+          user: {
+            select: {
+              id: true,
+              email: true,
+              fullName: true,
+              role: true,
+              avatarUrl: true,
+              phone: true,
+              country: true,
+              city: true,
+            },
           },
 
-          orderBy: {
-            createdAt: "desc",
-          },
+          properties: {
+            where: {
+              status: "PUBLISHED",
+            },
 
-          take: 6,
+            orderBy: {
+              createdAt: "desc",
+            },
+
+            take: 6,
+          },
         },
-      },
-    });
+      });
 
-  if (!professional) {
-    throw new NotFoundException(
-      "Professional not found",
-    );
+    if (!professional) {
+      throw new NotFoundException(
+        "Professional not found",
+      );
+    }
+
+    return professional;
   }
-
-  return professional;
-}
 
   async approve(id: string) {
     const professional =
@@ -139,12 +143,21 @@ export class ProfessionalsService {
       );
     }
 
+
     if (
       professional.verificationStatus !==
       VerificationStatus.PENDING
     ) {
       throw new BadRequestException(
         'Only pending professional applications can be approved',
+      );
+    }
+    if (
+      !professional
+        .verificationDocumentUrl
+    ) {
+      throw new BadRequestException(
+        'This professional application has no verification document.',
       );
     }
 
@@ -194,29 +207,29 @@ export class ProfessionalsService {
           });
         },
       );
-      /*
- * The professional has just become ACTIVE.
- * Re-check requests that were previously
- * waiting for a compatible professional.
- */
-try {
-  const rematchResult =
-    await this.autoMatchingService
-      .rematchWaitingLeadsForProfessional(
-        updated.id,
-      );
+    /*
+* The professional has just become ACTIVE.
+* Re-check requests that were previously
+* waiting for a compatible professional.
+*/
+    try {
+      const rematchResult =
+        await this.autoMatchingService
+          .rematchWaitingLeadsForProfessional(
+            updated.id,
+          );
 
-  this.logger.log(
-    `Rematching after professional approval: ${JSON.stringify(rematchResult)}`,
-  );
-} catch (error) {
-  this.logger.error(
-    `Unable to rematch waiting requests after approving professional ${updated.id}`,
-    error instanceof Error
-      ? error.stack
-      : String(error),
-  );
-}
+      this.logger.log(
+        `Rematching after professional approval: ${JSON.stringify(rematchResult)}`,
+      );
+    } catch (error) {
+      this.logger.error(
+        `Unable to rematch waiting requests after approving professional ${updated.id}`,
+        error instanceof Error
+          ? error.stack
+          : String(error),
+      );
+    }
 
     /*
      * La notification est conservée et attendue :
@@ -424,260 +437,262 @@ try {
   }
 
   async create(dto: CreateProfessionalDto) {
-  const user = await this.prisma.user.findUnique({
-    where: { id: dto.userId },
-  });
+    const user = await this.prisma.user.findUnique({
+      where: { id: dto.userId },
+    });
 
-  if (!user) {
-    throw new NotFoundException('User not found');
-  }
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
 
-  if (user.role !== Role.PROFESSIONAL) {
-    throw new BadRequestException('User must have PROFESSIONAL role');
-  }
+    if (user.role !== Role.PROFESSIONAL) {
+      throw new BadRequestException('User must have PROFESSIONAL role');
+    }
 
-  const existingProfile = await this.prisma.professionalProfile.findUnique({
-    where: { userId: dto.userId },
-  });
+    const existingProfile = await this.prisma.professionalProfile.findUnique({
+      where: { userId: dto.userId },
+    });
 
-  if (existingProfile) {
-    throw new BadRequestException('Professional profile already exists');
-  }
+    if (existingProfile) {
+      throw new BadRequestException('Professional profile already exists');
+    }
 
-  return this.prisma.professionalProfile.create({
-    data: {
-      userId: dto.userId,
-      professionalType: dto.professionalType,
-      companyName: dto.companyName,
-      bio: dto.bio,
-      languages: dto.languages || [],
-      rating: dto.rating || 0,
-      reviewsCount: dto.reviewsCount || 0,
-      clientsCount: dto.clientsCount || 0,
-      verificationStatus: dto.verificationStatus || VerificationStatus.PENDING,
-      isFeatured: dto.isFeatured || false,
-      profileCompletion: dto.profileCompletion || 0,
-    },
-  });
-}
-
-async findPublicByType(type?: ProfessionalType) {
-  return this.prisma.professionalProfile.findMany({
-    where: {
-      verificationStatus: VerificationStatus.ACTIVE,
-      ...(type ? { professionalType: type } : {}),
-    },
-    orderBy: { createdAt: 'desc' },
-    include: {
-      user: {
-        select: {
-          id: true,
-          fullName: true,
-          email: true,
-          avatarUrl: true,
-          role: true,
-        },
-      },
-    },
-  });
-
-}
-async findPublicOne(id: string) {
-  const professional = await this.prisma.professionalProfile.findFirst({
-    where: {
-      id,
-      verificationStatus: VerificationStatus.ACTIVE,
-    },
-   include: {
-  user: {
-    select: {
-      id: true,
-      fullName: true,
-      email: true,
-      avatarUrl: true,
-      role: true,
-      phone: true,
-      country: true,
-      city: true,
-    },
-  },
-  properties: {
-    where: {
-      status: "PUBLISHED",
-    },
-    orderBy: {
-      createdAt: "desc",
-    },
-    take: 6,
-  },
-},
-      
-    
-  });
-
-  if (!professional) {
-    throw new NotFoundException('Professional not found');
-  }
-
-  return professional;
-}
-async findMe(userId: string) {
-  const professional = await this.prisma.professionalProfile.findUnique({
-    where: { userId },
-    include: {
-      user: {
-        select: {
-          id: true,
-          email: true,
-          fullName: true,
-          role: true,
-          avatarUrl: true,
-          phone: true,
-          country: true,
-          city: true,
-        },
-      },
-    },
-  });
-
-  if (!professional) {
-    throw new NotFoundException('Professional profile not found');
-  }
-
-  return professional;
-}
-
-async updateMe(
-  userId: string,
-  dto: {
-    companyName?: string;
-    professionalType?: ProfessionalType;
-    bio?: string;
-    languages?: string[];
-  },
-) {
-  const professional = await this.prisma.professionalProfile.findUnique({
-    where: { userId },
-  });
-
-  if (!professional) {
-  return this.prisma.professionalProfile.create({
-    data: {
-      userId,
-      professionalType: dto.professionalType || ProfessionalType.PROPERTY_AGENT,
-      companyName: dto.companyName,
-      bio: dto.bio,
-      languages: dto.languages || [],
-      rating: 0,
-      reviewsCount: 0,
-      clientsCount: 0,
-      verificationStatus: VerificationStatus.PENDING,
-      isFeatured: false,
-      profileCompletion: this.calculateProfileCompletion({
-        companyName: dto.companyName,
-        professionalType: dto.professionalType || ProfessionalType.PROPERTY_AGENT,
-        bio: dto.bio,
-        languages: dto.languages || [],
-      }),
-    },
-    include: {
-      user: {
-        select: {
-          id: true,
-          email: true,
-          fullName: true,
-          role: true,
-          avatarUrl: true,
-          phone: true,
-          country: true,
-          city: true,
-        },
-      },
-    },
-  });
-}
-
-  const updated =
-  await this.prisma.professionalProfile.update({
-    where: { userId },
-    data: {
-      companyName: dto.companyName,
-      professionalType: dto.professionalType,
-      bio: dto.bio,
-      languages: dto.languages || [],
-      profileCompletion: this.calculateProfileCompletion({
-        companyName: dto.companyName,
+    return this.prisma.professionalProfile.create({
+      data: {
+        userId: dto.userId,
         professionalType: dto.professionalType,
+        companyName: dto.companyName,
         bio: dto.bio,
         languages: dto.languages || [],
-      }),
-    },
-    include: {
-      user: {
-        select: {
-          id: true,
-          email: true,
-          fullName: true,
-          role: true,
-          avatarUrl: true,
-          phone: true,
-          country: true,
-          city: true,
+        rating: dto.rating || 0,
+        reviewsCount: dto.reviewsCount || 0,
+        clientsCount: dto.clientsCount || 0,
+        verificationStatus: dto.verificationStatus || VerificationStatus.PENDING,
+        isFeatured: dto.isFeatured || false,
+        profileCompletion: dto.profileCompletion || 0,
+      },
+    });
+  }
+
+  async findPublicByType(type?: ProfessionalType) {
+    return this.prisma.professionalProfile.findMany({
+      where: {
+        verificationStatus: VerificationStatus.ACTIVE,
+        ...(type ? { professionalType: type } : {}),
+      },
+      orderBy: { createdAt: 'desc' },
+      include: {
+        user: {
+          select: {
+            id: true,
+            fullName: true,
+            email: true,
+            avatarUrl: true,
+            role: true,
+          },
         },
       },
-    },
-  });
-  /*
- * If this professional is ACTIVE,
- * check whether their updated profile
- * can satisfy previously waiting requests.
- */
-if (
-  updated.verificationStatus ===
-  VerificationStatus.ACTIVE
-) {
-  try {
-    const rematchResult =
-      await this.autoMatchingService
-        .rematchWaitingLeadsForProfessional(
-          updated.id,
-        );
+    });
 
-    this.logger.log(
-      `Rematching after professional update: ${JSON.stringify(rematchResult)}`,
-    );
-  } catch (error) {
-    this.logger.error(
-      `Unable to rematch waiting requests after updating professional ${updated.id}`,
-      error instanceof Error
-        ? error.stack
-        : String(error),
-    );
   }
-}
+  async findPublicOne(id: string) {
+    const professional = await this.prisma.professionalProfile.findFirst({
+      where: {
+        id,
+        verificationStatus: VerificationStatus.ACTIVE,
+      },
+      include: {
+        user: {
+          select: {
+            id: true,
+            fullName: true,
+            email: true,
+            avatarUrl: true,
+            role: true,
+            phone: true,
+            country: true,
+            city: true,
+          },
+        },
+        properties: {
+          where: {
+            status: "PUBLISHED",
+          },
+          orderBy: {
+            createdAt: "desc",
+          },
+          take: 6,
+        },
+      },
 
-return updated;
-}
 
-private calculateProfileCompletion(data: {
-  companyName?: string | null;
-  professionalType?: ProfessionalType;
-  bio?: string | null;
-  languages?: string[];
-}) {
-  let score = 0;
+    });
 
-  if (data.companyName) score += 25;
-  if (data.professionalType) score += 25;
-  if (data.bio) score += 30;
-  if (data.languages && data.languages.length > 0) score += 20;
+    if (!professional) {
+      throw new NotFoundException('Professional not found');
+    }
 
-  return score;
-}
+    return professional;
+  }
+  async findMe(userId: string) {
+    const professional = await this.prisma.professionalProfile.findUnique({
+      where: { userId },
+      include: {
+        user: {
+          select: {
+            id: true,
+            email: true,
+            fullName: true,
+            role: true,
+            avatarUrl: true,
+            phone: true,
+            country: true,
+            city: true,
+          },
+        },
+      },
+    });
 
-async apply(
+    if (!professional) {
+      throw new NotFoundException('Professional profile not found');
+    }
+
+    return professional;
+  }
+
+  async updateMe(
+    userId: string,
+    dto: {
+      companyName?: string;
+      professionalType?: ProfessionalType;
+      bio?: string;
+      languages?: string[];
+    },
+  ) {
+    const professional = await this.prisma.professionalProfile.findUnique({
+      where: { userId },
+    });
+
+    if (!professional) {
+      return this.prisma.professionalProfile.create({
+        data: {
+          userId,
+          professionalType: dto.professionalType || ProfessionalType.PROPERTY_AGENT,
+          companyName: dto.companyName,
+          bio: dto.bio,
+          languages: dto.languages || [],
+          rating: 0,
+          reviewsCount: 0,
+          clientsCount: 0,
+          verificationStatus: VerificationStatus.PENDING,
+          isFeatured: false,
+          profileCompletion: this.calculateProfileCompletion({
+            companyName: dto.companyName,
+            professionalType: dto.professionalType || ProfessionalType.PROPERTY_AGENT,
+            bio: dto.bio,
+            languages: dto.languages || [],
+          }),
+        },
+        include: {
+          user: {
+            select: {
+              id: true,
+              email: true,
+              fullName: true,
+              role: true,
+              avatarUrl: true,
+              phone: true,
+              country: true,
+              city: true,
+            },
+          },
+        },
+      });
+    }
+
+    const updated =
+      await this.prisma.professionalProfile.update({
+        where: { userId },
+        data: {
+          companyName: dto.companyName,
+          professionalType: dto.professionalType,
+          bio: dto.bio,
+          languages: dto.languages || [],
+          profileCompletion: this.calculateProfileCompletion({
+            companyName: dto.companyName,
+            professionalType: dto.professionalType,
+            bio: dto.bio,
+            languages: dto.languages || [],
+          }),
+        },
+        include: {
+          user: {
+            select: {
+              id: true,
+              email: true,
+              fullName: true,
+              role: true,
+              avatarUrl: true,
+              phone: true,
+              country: true,
+              city: true,
+            },
+          },
+        },
+      });
+    /*
+   * If this professional is ACTIVE,
+   * check whether their updated profile
+   * can satisfy previously waiting requests.
+   */
+    if (
+      updated.verificationStatus ===
+      VerificationStatus.ACTIVE
+    ) {
+      try {
+        const rematchResult =
+          await this.autoMatchingService
+            .rematchWaitingLeadsForProfessional(
+              updated.id,
+            );
+
+        this.logger.log(
+          `Rematching after professional update: ${JSON.stringify(rematchResult)}`,
+        );
+      } catch (error) {
+        this.logger.error(
+          `Unable to rematch waiting requests after updating professional ${updated.id}`,
+          error instanceof Error
+            ? error.stack
+            : String(error),
+        );
+      }
+    }
+
+    return updated;
+  }
+
+  private calculateProfileCompletion(data: {
+    companyName?: string | null;
+    professionalType?: ProfessionalType;
+    bio?: string | null;
+    languages?: string[];
+  }) {
+    let score = 0;
+
+    if (data.companyName) score += 25;
+    if (data.professionalType) score += 25;
+    if (data.bio) score += 30;
+    if (data.languages && data.languages.length > 0) score += 20;
+
+    return score;
+  }
+
+  async apply(
   userId: string,
   dto: CreateProfessionalApplicationDto,
+  verificationDocument:
+    Express.Multer.File,
 ) {
   const user =
     await this.prisma.user.findUnique({
@@ -773,6 +788,20 @@ async apply(
     );
   }
 
+  // ==========================================
+  // UPLOAD VERIFICATION DOCUMENT TO CLOUDINARY
+  // ==========================================
+
+  const uploadedDocument =
+    await this.cloudinaryService
+      .uploadProfessionalVerification(
+        verificationDocument,
+      );
+
+  // ==========================================
+  // CREATE PROFESSIONAL APPLICATION
+  // ==========================================
+
   const professionalProfile =
     await this.prisma
       .professionalProfile.create({
@@ -795,6 +824,17 @@ async apply(
 
           verificationStatus:
             VerificationStatus.PENDING,
+
+          // Cloudinary HTTPS URL
+          verificationDocumentUrl:
+            uploadedDocument.secure_url,
+
+          // Original file information
+          verificationDocumentName:
+            verificationDocument.originalname,
+
+          verificationDocumentMimeType:
+            verificationDocument.mimetype,
 
           rating: 0,
           reviewsCount: 0,
@@ -828,73 +868,73 @@ async apply(
   };
 }
 
-async getMyApplication(userId: string) {
-  const user = await this.prisma.user.findUnique({
-    where: {
-      id: userId,
-    },
-    select: {
-      id: true,
-      email: true,
-      fullName: true,
-      role: true,
-      avatarUrl: true,
-      professionalProfile: {
-        select: {
-          id: true,
-          userId: true,
-          professionalType: true,
-          companyName: true,
-          bio: true,
-          languages: true,
-          rating: true,
-          reviewsCount: true,
-          clientsCount: true,
-          verificationStatus: true,
-          isFeatured: true,
-          profileCompletion: true,
-          createdAt: true,
-          updatedAt: true,
+  async getMyApplication(userId: string) {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+      select: {
+        id: true,
+        email: true,
+        fullName: true,
+        role: true,
+        avatarUrl: true,
+        professionalProfile: {
+          select: {
+            id: true,
+            userId: true,
+            professionalType: true,
+            companyName: true,
+            bio: true,
+            languages: true,
+            rating: true,
+            reviewsCount: true,
+            clientsCount: true,
+            verificationStatus: true,
+            isFeatured: true,
+            profileCompletion: true,
+            createdAt: true,
+            updatedAt: true,
+          },
         },
       },
-    },
-  });
+    });
 
-  if (!user) {
-    throw new NotFoundException(
-      'User not found',
-    );
+    if (!user) {
+      throw new NotFoundException(
+        'User not found',
+      );
+    }
+
+    return {
+      role: user.role,
+      professionalProfile:
+        user.professionalProfile,
+    };
   }
 
-  return {
-    role: user.role,
-    professionalProfile:
-      user.professionalProfile,
-  };
-}
-
-private calculateApplicationCompletion(
-  dto: CreateProfessionalApplicationDto,
-) {
-  let score = 40;
-
-  if (dto.companyName?.trim()) {
-    score += 20;
-  }
-
-  if (dto.bio?.trim()) {
-    score += 20;
-  }
-
-  if (
-    dto.languages.some(
-      (language) =>
-        language.trim().length > 0,
-    )
+  private calculateApplicationCompletion(
+    dto: CreateProfessionalApplicationDto,
   ) {
-    score += 20;
-  }
+    let score = 40;
 
-  return Math.min(score, 100);
-}
+    if (dto.companyName?.trim()) {
+      score += 20;
+    }
+
+    if (dto.bio?.trim()) {
+      score += 20;
+    }
+
+    if (
+      dto.languages.some(
+        (language) =>
+          language.trim().length > 0,
+      )
+    ) {
+      score += 20;
+    }
+
+    return Math.min(score, 100);
+  }
 }

@@ -23,35 +23,35 @@ const professionalTypes: {
   value: ProfessionalType;
   label: string;
 }[] = [
-  {
-    value: "MORTGAGE_BROKER",
-    label: "Mortgage Broker",
-  },
-  {
-    value: "PROPERTY_AGENT",
-    label: "Property Agent",
-  },
-  {
-    value: "PROPERTY_LAWYER",
-    label: "Property Lawyer",
-  },
-  {
-    value: "TAX_ADVISOR",
-    label: "Tax Advisor",
-  },
-  {
-    value: "HOME_INSPECTOR",
-    label: "Home Inspector",
-  },
-  {
-    value: "PROPERTY_VALUER",
-    label: "Property Valuer",
-  },
-  {
-    value: "INSURANCE_BROKER",
-    label: "Insurance Broker",
-  },
-];
+    {
+      value: "MORTGAGE_BROKER",
+      label: "Mortgage Broker",
+    },
+    {
+      value: "PROPERTY_AGENT",
+      label: "Property Agent",
+    },
+    {
+      value: "PROPERTY_LAWYER",
+      label: "Property Lawyer",
+    },
+    {
+      value: "TAX_ADVISOR",
+      label: "Tax Advisor",
+    },
+    {
+      value: "HOME_INSPECTOR",
+      label: "Home Inspector",
+    },
+    {
+      value: "PROPERTY_VALUER",
+      label: "Property Valuer",
+    },
+    {
+      value: "INSURANCE_BROKER",
+      label: "Insurance Broker",
+    },
+  ];
 
 export default function BecomeProfessionalPage() {
   const router = useRouter();
@@ -78,6 +78,10 @@ export default function BecomeProfessionalPage() {
     languagesText,
     setLanguagesText,
   ] = useState("");
+  const [
+    verificationDocument,
+    setVerificationDocument,
+  ] = useState<File | null>(null);
 
   const [
     submitting,
@@ -137,6 +141,49 @@ export default function BecomeProfessionalPage() {
       );
       return;
     }
+    /* ============================================================
+   PROFESSIONAL VERIFICATION DOCUMENT
+============================================================ */
+
+    if (!verificationDocument) {
+      toast.warning(
+        "Verification document required",
+        "Please upload proof of your professional activity.",
+      );
+      return;
+    }
+
+    const allowedDocumentTypes = [
+      "application/pdf",
+      "image/jpeg",
+      "image/png",
+    ];
+
+    if (
+      !allowedDocumentTypes.includes(
+        verificationDocument.type,
+      )
+    ) {
+      toast.warning(
+        "Invalid document",
+        "Only PDF, JPG, JPEG and PNG files are allowed.",
+      );
+      return;
+    }
+
+    const maximumDocumentSize =
+      5 * 1024 * 1024;
+
+    if (
+      verificationDocument.size >
+      maximumDocumentSize
+    ) {
+      toast.warning(
+        "File too large",
+        "The verification document must not exceed 5 MB.",
+      );
+      return;
+    }
 
     setSubmitting(true);
 
@@ -153,6 +200,7 @@ export default function BecomeProfessionalPage() {
               bio.trim() ||
               undefined,
             languages,
+            verificationDocument,
           },
         );
 
@@ -281,7 +329,73 @@ export default function BecomeProfessionalPage() {
               {bio.length}/1500 characters
             </p>
           </div>
+  {/* ============================================================
+    PROFESSIONAL VERIFICATION
+============================================================ */}
 
+          <div>
+            <label
+              htmlFor="verificationDocument"
+              className="mb-2 block text-sm font-semibold text-slate-800"
+            >
+              Professional Verification{" "}
+              <span className="text-red-500">
+                *
+              </span>
+            </label>
+
+            <p className="mb-3 text-sm leading-6 text-slate-600">
+              Upload an official document that proves
+              your professional activity. You may
+              provide a professional license,
+              certificate, business registration
+              document or another relevant proof.
+            </p>
+
+            <input
+              id="verificationDocument"
+              name="verificationDocument"
+              type="file"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              onChange={(event) => {
+                const file =
+                  event.target.files?.[0] ??
+                  null;
+
+                setVerificationDocument(file);
+              }}
+              disabled={submitting}
+              className="block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-700 outline-none transition file:mr-4 file:rounded-lg file:border-0 file:bg-slate-900 file:px-4 file:py-2 file:font-semibold file:text-white hover:file:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
+            />
+
+            <p className="mt-2 text-xs text-slate-500">
+              Accepted formats: PDF, JPG, JPEG or PNG.
+              Maximum file size: 5 MB.
+            </p>
+
+            <p className="mt-1 text-xs leading-5 text-slate-500">
+              This document is used only to verify
+              your professional application and will
+              not be displayed on your public profile.
+            </p>
+
+            {verificationDocument && (
+  <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+    <p className="break-all text-sm font-semibold text-slate-800">
+      {verificationDocument.name}
+    </p>
+
+    <p className="mt-1 text-xs text-slate-500">
+      {(
+        verificationDocument.size /
+        1024 /
+        1024
+      ).toFixed(2)}{" "}
+      MB
+    </p>
+  </div>
+)}
+          </div>
           <div>
             <label
               htmlFor="languages"
@@ -307,6 +421,7 @@ export default function BecomeProfessionalPage() {
               Separate each language with a comma.
             </p>
           </div>
+        
 
           <div className="flex flex-col gap-3 sm:flex-row">
             <button

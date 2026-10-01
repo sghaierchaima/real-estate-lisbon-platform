@@ -11,6 +11,7 @@ import { useParams } from "next/navigation";
 import Navbar from "@/components/web/Navbar";
 import Footer from "@/components/web/Footer";
 import type { AuthUser } from "@/lib/auth-api";
+import { useRouter } from "next/navigation";
 import {
   getStoredUser,
   getToken,
@@ -224,6 +225,7 @@ function estimateMortgage(price: number) {
 }
 
 export default function PropertyDetailsPage() {
+  const router = useRouter();
   const user = getStoredUser<AuthUser>();
   const toast = useToast();
   const [activeChatRoomId, setActiveChatRoomId] =
@@ -349,10 +351,52 @@ export default function PropertyDetailsPage() {
 
     void loadSavedStatus();
 
+
     return () => {
       cancelled = true;
     };
   }, [property?.id, user?.role]);
+  function handleStartBuyerJourney() {
+  if (!property) {
+    return;
+  }
+
+  const token = getToken();
+  const currentUser = getStoredUser<AuthUser>();
+
+  /*
+   * Not authenticated:
+   * send the visitor to registration while preserving
+   * the Buyer Journey destination.
+   */
+  if (!token || !currentUser) {
+    const destination = `/buyer-journey/${property.id}`;
+
+    router.push(
+      `/register?redirect=${encodeURIComponent(destination)}`
+    );
+
+    return;
+  }
+
+  /*
+   * Only BUYER accounts can start a Buyer Journey.
+   */
+  if (currentUser.role !== "BUYER") {
+    toast.warning(
+      "Buyer account required",
+      "Only buyer accounts can start a Buyer Journey."
+    );
+
+    return;
+  }
+
+  /*
+   * Authenticated BUYER:
+   * continue directly to the Buyer Journey.
+   */
+  router.push(`/buyer-journey/${property.id}`);
+}
 
   const images = useMemo(() => {
     if (!property?.imageUrls?.length) return ["/images/prop3.png"];
@@ -641,9 +685,9 @@ export default function PropertyDetailsPage() {
   const fees = estimateFees(property.price);
   const totalCost = property.price + taxes + fees;
   console.log("=== PROPERTY PRICE DEBUG ===");
-console.log("property.price =", property.price);
-console.log("typeof property.price =", typeof property.price);
-console.log("property =", property);
+  console.log("property.price =", property.price);
+  console.log("typeof property.price =", typeof property.price);
+  console.log("property =", property);
 
   return (
     <main className="min-h-screen bg-[#F8F9FA] text-[#0F2340]">
@@ -919,13 +963,16 @@ console.log("property =", property);
               </h3>
 
               <div className="mb-6 space-y-3">
-                <Link
-                  href="/register"
-                  className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#1B365D] px-4 py-3 font-medium text-white hover:bg-[#0F2340]"
+                {/*
+                <button
+                  type="button"
+                  onClick={handleStartBuyerJourney}
+                  className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#1B365D] px-4 py-3 font-medium text-white transition hover:bg-[#0F2340]"
                 >
                   <Calendar className="h-5 w-5" />
                   Start Buyer Journey
-                </Link>
+                </button>
+                */}
 
                 <Link
                   href="/find-professionals"
@@ -1008,20 +1055,20 @@ console.log("property =", property);
           </aside>
         </div>
       </section>
-{activeChatRoomId && (
-  <PropertyAgentChatWindow
-    roomId={activeChatRoomId}
-    propertyTitle={property.title}
-    agentName={
-      property.professionalProfile?.user.fullName ||
-      property.professionalProfile?.companyName ||
-      "Property Agent"
-    }
-    onClose={() =>
-      setActiveChatRoomId(null)
-    }
-  />
-)}
+      {activeChatRoomId && (
+        <PropertyAgentChatWindow
+          roomId={activeChatRoomId}
+          propertyTitle={property.title}
+          agentName={
+            property.professionalProfile?.user.fullName ||
+            property.professionalProfile?.companyName ||
+            "Property Agent"
+          }
+          onClose={() =>
+            setActiveChatRoomId(null)
+          }
+        />
+      )}
       <Footer />
     </main>
   );

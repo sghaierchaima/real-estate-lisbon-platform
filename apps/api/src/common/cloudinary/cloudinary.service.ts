@@ -38,6 +38,7 @@ export class CloudinaryService {
       );
     }
 
+
     return new Promise((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
         {
@@ -76,4 +77,62 @@ export class CloudinaryService {
       uploadStream.end(file.buffer);
     });
   }
+
+  uploadProfessionalVerification(
+  file: Express.Multer.File,
+): Promise<UploadApiResponse> {
+  if (!file?.buffer) {
+    throw new InternalServerErrorException(
+      'The verification document buffer is missing.',
+    );
+  }
+
+  return new Promise((resolve, reject) => {
+    const uploadStream =
+      cloudinary.uploader.upload_stream(
+        {
+          folder:
+            'real-estate-lisbon/professional-verifications',
+
+          resource_type: 'auto',
+
+          use_filename: true,
+          unique_filename: true,
+          overwrite: false,
+        },
+
+        (
+          error:
+            | UploadApiErrorResponse
+            | undefined,
+
+          result:
+            | UploadApiResponse
+            | undefined,
+        ) => {
+          if (error) {
+            reject(
+              new InternalServerErrorException(
+                `Cloudinary verification upload failed: ${error.message}`,
+              ),
+            );
+            return;
+          }
+
+          if (!result) {
+            reject(
+              new InternalServerErrorException(
+                'Cloudinary returned no verification upload result.',
+              ),
+            );
+            return;
+          }
+
+          resolve(result);
+        },
+      );
+
+    uploadStream.end(file.buffer);
+  });
+}
 }

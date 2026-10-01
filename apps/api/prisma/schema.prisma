@@ -71,6 +71,41 @@ enum StoryStatus {
   REJECTED
 }
 
+enum BuyerJourneyStatus {
+  STARTED
+  FINANCING
+  PROFESSIONAL_MATCHING
+  PROPERTY_REVIEW
+  LEGAL_REVIEW
+  READY_TO_BUY
+  COMPLETED
+  CANCELLED
+}
+
+enum PurchaseGoal {
+  PRIMARY_RESIDENCE
+  SECONDARY_RESIDENCE
+  INVESTMENT
+  RELOCATION
+  OTHER
+}
+
+enum FinancingType {
+  CASH
+  MORTGAGE
+  MIXED
+  UNDECIDED
+}
+
+enum PurchaseTimeline {
+  ASAP
+  ONE_TO_THREE_MONTHS
+  THREE_TO_SIX_MONTHS
+  SIX_TO_TWELVE_MONTHS
+  MORE_THAN_ONE_YEAR
+  UNDECIDED
+}
+
 model User {
   id       String  @id @default(uuid())
   email    String  @unique
@@ -102,6 +137,7 @@ model User {
   passwordResetTokens PasswordResetToken[]
   savedProperties     SavedProperty[]
   reviewsGiven        Review[]             @relation("BuyerReviews")
+  buyerJourneys       BuyerJourney[]
 }
 
 model ProfessionalProfile {
@@ -117,6 +153,11 @@ model ProfessionalProfile {
   verificationStatus VerificationStatus @default(PENDING)
   isFeatured         Boolean            @default(false)
   profileCompletion  Int                @default(0)
+
+  // Professional verification
+  verificationDocumentUrl      String?
+  verificationDocumentName     String?
+  verificationDocumentMimeType String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -155,6 +196,7 @@ model Property {
   professionalProfile ProfessionalProfile @relation(fields: [professionalProfileId], references: [id], onDelete: Cascade)
   savedBy             SavedProperty[]
   matches             Match[]
+  buyerJourneys       BuyerJourney[]
 }
 
 model SavedProperty {
@@ -443,5 +485,68 @@ model ContactMessage {
 
   @@index([email])
   @@index([isRead])
+  @@index([createdAt])
+}
+
+model BuyerJourney {
+  id String @id @default(uuid())
+
+  // =========================================================
+  // RELATIONS
+  // =========================================================
+
+  buyerId    String
+  propertyId String
+
+  buyer User @relation(fields: [buyerId], references: [id], onDelete: Cascade)
+
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  // =========================================================
+  // PURCHASE PROJECT
+  // =========================================================
+
+  goal PurchaseGoal?
+
+  estimatedBudget  Float?
+  availableDeposit Float?
+
+  financingType FinancingType @default(UNDECIDED)
+
+  timeline PurchaseTimeline @default(UNDECIDED)
+
+  // =========================================================
+  // PROFESSIONAL SUPPORT
+  // =========================================================
+
+  needsMortgageBroker  Boolean @default(false)
+  needsPropertyLawyer  Boolean @default(false)
+  needsTaxAdvisor      Boolean @default(false)
+  needsInsuranceBroker Boolean @default(false)
+
+  // =========================================================
+  // JOURNEY PROGRESS
+  // =========================================================
+
+  status BuyerJourneyStatus @default(STARTED)
+
+  progress Int @default(10)
+
+  notes String?
+
+  // =========================================================
+  // TIMESTAMPS
+  // =========================================================
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // A buyer should not create the same journey twice
+  // for the same property.
+  @@unique([buyerId, propertyId])
+  @@index([buyerId])
+  @@index([propertyId])
+  @@index([status])
+  @@index([buyerId, status])
   @@index([createdAt])
 }

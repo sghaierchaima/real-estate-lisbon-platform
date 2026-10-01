@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Get,
@@ -7,8 +8,23 @@ import {
   Post,
   Query,
   Req,
+  UploadedFile,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
+
+import {
+  FileInterceptor,
+} from '@nestjs/platform-express';
+
+import {
+  diskStorage,
+} from 'multer';
+
+import {
+  extname,
+} from 'path';
+
 import { ProfessionalType, Role } from '@prisma/client';
 import { Roles } from '../../common/decorators/roles.decorator';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
@@ -103,18 +119,64 @@ findPublicOne(@Param('id') id: string) {
 })
 @UseGuards(JwtAuthGuard)
 @Post('apply')
+@UseInterceptors(
+  FileInterceptor(
+    'verificationDocument',
+    {
+      limits: {
+        fileSize: 5 * 1024 * 1024,
+      },
+
+      fileFilter: (
+        req,
+        file,
+        callback,
+      ) => {
+        const allowedMimeTypes = [
+          'application/pdf',
+          'image/jpeg',
+          'image/png',
+        ];
+
+        if (
+          !allowedMimeTypes.includes(
+            file.mimetype,
+          )
+        ) {
+          return callback(
+            new BadRequestException(
+              'Only PDF, JPG, JPEG and PNG files are allowed.',
+            ),
+            false,
+          );
+        }
+
+        callback(null, true);
+      },
+    },
+  ),
+)
 apply(
   @Req()
   req: AuthenticatedRequest,
 
+  @UploadedFile()
+  verificationDocument:
+    Express.Multer.File,
+
   @Body()
-  dto: CreateProfessionalApplicationDto,
+  dto:
+    CreateProfessionalApplicationDto,
 ) {
+  if (!verificationDocument) {
+    throw new BadRequestException(
+      'A professional verification document is required.',
+    );
+  }
+
   return this.professionalsService.apply(
     req.user.id,
     dto,
+    verificationDocument,
   );
-}
-
-
-}
+}}

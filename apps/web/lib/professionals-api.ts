@@ -20,6 +20,7 @@ export type ProfessionalApplicationPayload = {
   companyName?: string;
   bio?: string;
   languages: string[];
+  verificationDocument: File;
 };
 
 export type ProfessionalApplicationResponse = {
@@ -38,6 +39,14 @@ export type Professional = {
   reviewsCount: number;
   clientsCount: number;
   verificationStatus: VerificationStatus;
+  verificationDocumentUrl:
+  string | null;
+
+  verificationDocumentName:
+  string | null;
+
+  verificationDocumentMimeType:
+  string | null;
   isFeatured: boolean;
   profileCompletion: number;
   createdAt: string;
@@ -53,22 +62,22 @@ export type Professional = {
     city?: string | null;
   };
   properties?: {
-  id: string;
-  title: string;
-  description: string | null;
-  location: string | null;
-  region: string | null;
-  city: string | null;
-  price: number;
-  propertyType: string | null;
-  status: string;
-  featured: boolean;
-  bedrooms: number | null;
-  bathrooms: number | null;
-  area: number | null;
-  imageUrls: string[];
-  createdAt: string;
-}[];
+    id: string;
+    title: string;
+    description: string | null;
+    location: string | null;
+    region: string | null;
+    city: string | null;
+    price: number;
+    propertyType: string | null;
+    status: string;
+    featured: boolean;
+    bedrooms: number | null;
+    bathrooms: number | null;
+    area: number | null;
+    imageUrls: string[];
+    createdAt: string;
+  }[];
 };
 
 export function getProfessionals(token: string) {
@@ -110,18 +119,94 @@ export function getPublicProfessional(id: string) {
   return apiFetch<Professional>(`/professionals/public/${id}`);
 }
 
-export function submitProfessionalApplication(
+export async function submitProfessionalApplication(
   token: string,
   payload: ProfessionalApplicationPayload,
-) {
-  return apiFetch<ProfessionalApplicationResponse>(
-    "/professionals/apply",
-    {
-      method: "POST",
-      token,
-      body: payload,
+): Promise<ProfessionalApplicationResponse> {
+  const formData = new FormData();
+
+  formData.append(
+    "professionalType",
+    payload.professionalType,
+  );
+
+  if (payload.companyName) {
+    formData.append(
+      "companyName",
+      payload.companyName,
+    );
+  }
+
+  if (payload.bio) {
+    formData.append(
+      "bio",
+      payload.bio,
+    );
+  }
+
+  payload.languages.forEach(
+    (language) => {
+      formData.append(
+        "languages",
+        language,
+      );
     },
   );
+
+  formData.append(
+    "verificationDocument",
+    payload.verificationDocument,
+  );
+
+  const API_URL =
+    process.env.NEXT_PUBLIC_API_URL ||
+    "http://localhost:3001";
+
+  const response = await fetch(
+    `${API_URL}/professionals/apply`,
+    {
+      method: "POST",
+
+      headers: {
+        Authorization:
+          `Bearer ${token}`,
+      },
+
+      body: formData,
+    },
+  );
+
+  const data = await response
+    .json()
+    .catch(() => null);
+
+  if (!response.ok) {
+    let message =
+      "Unable to submit your professional application.";
+
+    if (
+      typeof data?.message ===
+      "string"
+    ) {
+      message = data.message;
+    } else if (
+      Array.isArray(
+        data?.message,
+      )
+    ) {
+      message =
+        data.message.join(", ");
+    } else if (
+      typeof data?.error ===
+      "string"
+    ) {
+      message = data.error;
+    }
+
+    throw new Error(message);
+  }
+
+  return data as ProfessionalApplicationResponse;
 }
 export type MyProfessionalProfile = {
   id: string;
@@ -134,6 +219,14 @@ export type MyProfessionalProfile = {
   reviewsCount: number;
   clientsCount: number;
   verificationStatus: VerificationStatus;
+  verificationDocumentUrl:
+  string | null;
+
+  verificationDocumentName:
+  string | null;
+
+  verificationDocumentMimeType:
+  string | null;
   isFeatured: boolean;
   profileCompletion: number;
   createdAt: string;
@@ -143,8 +236,8 @@ export type MyProfessionalProfile = {
 export type MyProfessionalApplicationResponse = {
   role: "ADMIN" | "BUYER" | "PROFESSIONAL";
   professionalProfile:
-    | MyProfessionalProfile
-    | null;
+  | MyProfessionalProfile
+  | null;
 };
 
 export function getMyProfessionalApplication(

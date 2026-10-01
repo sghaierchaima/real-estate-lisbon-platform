@@ -6,9 +6,10 @@ import { EmailModule } from '../email/email.module';
 import {
   MatchingModule,
 } from '../matching/matching.module';
+import { CloudinaryModule } from 'src/common/cloudinary/cloudinary.module';
 @Module({
   controllers: [ProfessionalsController],
   providers: [ProfessionalsService],
-  imports: [NotificationsModule, EmailModule,MatchingModule],
+  imports: [CloudinaryModule,NotificationsModule, EmailModule,MatchingModule],
 })
 export class ProfessionalsModule {}

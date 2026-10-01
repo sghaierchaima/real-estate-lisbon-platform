@@ -33,6 +33,7 @@ import { SavedPropertiesModule } from './modules/saved-properties/saved-properti
 import { StatsModule } from './modules/stats/stats.module';
 import { StoriesModule } from './modules/stories/stories.module';
 import { UsersModule } from './modules/users/users.module';
+import { BuyerJourneysModule } from './modules/buyer-journeys/buyer-journeys.module';
 
 @Module({
   imports: [
@@ -67,6 +68,7 @@ import { UsersModule } from './modules/users/users.module';
     SavedPropertiesModule,
     ReviewsModule,
     ContactModule,
+    BuyerJourneysModule
   ],
 
   controllers: [
