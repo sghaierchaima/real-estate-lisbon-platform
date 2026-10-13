@@ -5,6 +5,9 @@ export type PropertySearchExtraction = {
   budget: string;
   propertyType: string;
   bedrooms: string;
+  bathrooms?: string;
+  minArea?: number | null;
+  maxArea?: number | null;
   goal: string;
   mustHave: string[];
   summary: string;

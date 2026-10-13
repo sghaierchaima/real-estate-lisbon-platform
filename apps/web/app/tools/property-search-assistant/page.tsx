@@ -87,6 +87,9 @@ export default function PropertySearchAssistantPage() {
 
   const [bedrooms, setBedrooms] =
     useState("");
+  const [bathrooms, setBathrooms] = useState("");
+  const [minArea, setMinArea] = useState("");
+  const [maxArea, setMaxArea] = useState("");
 
   const [goal, setGoal] =
     useState("buy");
@@ -156,6 +159,19 @@ export default function PropertySearchAssistantPage() {
 
       setBedrooms(
         extracted.bedrooms || ""
+      );
+      setBathrooms(extracted.bathrooms || "");
+
+      setMinArea(
+        extracted.minArea != null
+          ? String(extracted.minArea)
+          : ""
+      );
+
+      setMaxArea(
+        extracted.maxArea != null
+          ? String(extracted.maxArea)
+          : ""
       );
 
       setGoal(
@@ -227,6 +243,26 @@ export default function PropertySearchAssistantPage() {
       return;
     }
 
+
+    const parsedMinArea = minArea.trim() ? Number(minArea) : undefined;
+    const parsedMaxArea = maxArea.trim() ? Number(maxArea) : undefined;
+
+    if (
+      (parsedMinArea !== undefined &&
+        (!Number.isFinite(parsedMinArea) || parsedMinArea <= 0)) ||
+      (parsedMaxArea !== undefined &&
+        (!Number.isFinite(parsedMaxArea) || parsedMaxArea <= 0)) ||
+      (parsedMinArea !== undefined &&
+        parsedMaxArea !== undefined &&
+        parsedMinArea > parsedMaxArea)
+    ) {
+      toast.warning(
+        "Invalid surface range",
+        "Please enter a valid minimum and maximum surface."
+      );
+      return;
+    }
+
     try {
       setSaving(true);
 
@@ -249,13 +285,18 @@ export default function PropertySearchAssistantPage() {
 
             propertyType,
 
-            bedrooms:
-              bedrooms
-                ? Number(bedrooms)
-                : undefined,
+            bedrooms: bedrooms.trim()
+              ? Number(bedrooms)
+              : undefined,
+
+            bathrooms: bathrooms.trim()
+              ? Number(bathrooms)
+              : undefined,
+
+            minArea: parsedMinArea,
+            maxArea: parsedMaxArea,
 
             goal,
-
             mustHave,
 
             aiSummary:
@@ -605,6 +646,45 @@ export default function PropertySearchAssistantPage() {
                 inputMode="numeric"
                 className="h-14 rounded-2xl border border-[#D0D5DD] px-5 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
               />
+              {/* BATHROOMS */}
+              <input
+                type="number"
+                min="0"
+                step="1"
+                value={bathrooms}
+                onChange={(event) => setBathrooms(event.target.value)}
+                placeholder="Bathrooms, e.g. 3"
+                className="h-14 rounded-2xl border border-[#D0D5DD] px-5 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+              />
+              {/* MINIMUM SURFACE */}
+              <div>
+                <label className="mb-2 block text-sm font-medium text-[#0F2340]">
+                  Minimum surface (m²)
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  value={minArea}
+                  onChange={(event) => setMinArea(event.target.value)}
+                  placeholder="e.g. 100"
+                  className="h-14 w-full rounded-2xl border border-[#D0D5DD] px-5 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+                />
+              </div>
+
+              {/* MAXIMUM SURFACE */}
+              <div>
+                <label className="mb-2 block text-sm font-medium text-[#0F2340]">
+                  Maximum surface (m²)
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  value={maxArea}
+                  onChange={(event) => setMaxArea(event.target.value)}
+                  placeholder="e.g. 250"
+                  className="h-14 w-full rounded-2xl border border-[#D0D5DD] px-5 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+                />
+              </div>
 
               {/* GOAL */}
 

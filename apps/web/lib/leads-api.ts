@@ -194,6 +194,9 @@ export type Lead = {
 
   alreadyExists?: boolean;
 
+  minArea?: number | null;
+  maxArea?: number | null;
+
   // ==========================================================
   // TIMESTAMPS
   // ==========================================================
@@ -443,6 +446,9 @@ export type PropertySearchRequestPayload = {
   confidence?: number;
 
   notificationsEnabled?: boolean;
+
+  minArea?: number;
+  maxArea?: number;
 };
 
 // ============================================================

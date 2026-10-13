@@ -35,72 +35,72 @@ export class LeadsService {
     private readonly leadScoringService: LeadScoringService,
     private readonly profileScoreService: ProfileScoreService,
     private readonly autoMatchingService: AutoMatchingService,
-  ) {}
+  ) { }
 
   // ============================================================
   // BASIC LEAD CREATION
   // ============================================================
   private async finalizeBuyerLead(leadId: string) {
-  let autoMatching:
-    | Awaited<ReturnType<AutoMatchingService['matchLead']>>
-    | null = null;
+    let autoMatching:
+      | Awaited<ReturnType<AutoMatchingService['matchLead']>>
+      | null = null;
 
-  try {
-    autoMatching =
-      await this.autoMatchingService.matchLead(leadId);
-  } catch (error) {
-    this.logger.error(
-      `Automatic matching failed for lead ${leadId}`,
-      error instanceof Error
-        ? error.stack
-        : String(error),
-    );
-  }
+    try {
+      autoMatching =
+        await this.autoMatchingService.matchLead(leadId);
+    } catch (error) {
+      this.logger.error(
+        `Automatic matching failed for lead ${leadId}`,
+        error instanceof Error
+          ? error.stack
+          : String(error),
+      );
+    }
 
-  /*
-   * AutoMatchingService peut avoir modifié le Lead :
-   *
-   * NEW
-   *   ↓
-   * automatic matching
-   *   ↓
-   * MATCHED si au moins un professionnel compatible existe
-   *
-   * On recharge donc toujours le Lead depuis la DB.
-   */
-  const lead = await this.prisma.lead.findUnique({
-    where: {
-      id: leadId,
-    },
+    /*
+     * AutoMatchingService peut avoir modifié le Lead :
+     *
+     * NEW
+     *   ↓
+     * automatic matching
+     *   ↓
+     * MATCHED si au moins un professionnel compatible existe
+     *
+     * On recharge donc toujours le Lead depuis la DB.
+     */
+    const lead = await this.prisma.lead.findUnique({
+      where: {
+        id: leadId,
+      },
 
-    include: {
-      matches: {
-        orderBy: {
-          score: 'desc',
-        },
+      include: {
+        matches: {
+          orderBy: {
+            score: 'desc',
+          },
 
-        include: {
-          professional: {
-            include: {
-              user: true,
+          include: {
+            professional: {
+              include: {
+                user: true,
+              },
             },
           },
         },
       },
-    },
-  });
+    });
 
-  if (!lead) {
-    throw new NotFoundException(
-      'Lead not found after automatic matching',
-    );
+    if (!lead) {
+      throw new NotFoundException(
+        'Lead not found after automatic matching',
+      );
+    }
+
+    return {
+      ...lead,
+      autoMatching,
+    };
   }
-
-  return {
-    ...lead,
-    autoMatching,
-  };
-}
 
   // ============================================================
   // FIND ALL
@@ -505,7 +505,7 @@ export class LeadsService {
 
     const budget =
       dto.budgetMin &&
-      dto.budgetMax
+        dto.budgetMax
         ? `€${dto.budgetMin} - €${dto.budgetMax}`
         : dto.budgetMax
           ? `Up to €${dto.budgetMax}`
@@ -972,35 +972,33 @@ export class LeadsService {
 
             if (
               dto.bedrooms !==
-                undefined &&
+              undefined &&
               dto.bedrooms !==
-                null
+              null
             ) {
               totalCriteria += 1;
 
               if (
                 property.bedrooms !==
-                  null &&
+                null &&
                 property.bedrooms >=
-                  dto.bedrooms
+                dto.bedrooms
               ) {
                 score += 1;
 
                 matchedCriteria.push(
-                  `${property.bedrooms} bedroom${
-                    property.bedrooms >
+                  `${property.bedrooms} bedroom${property.bedrooms >
                     1
-                      ? 's'
-                      : ''
+                    ? 's'
+                    : ''
                   }`,
                 );
               } else {
                 missingCriteria.push(
-                  `Requested at least ${dto.bedrooms} bedroom${
-                    dto.bedrooms >
+                  `Requested at least ${dto.bedrooms} bedroom${dto.bedrooms >
                     1
-                      ? 's'
-                      : ''
+                    ? 's'
+                    : ''
                   }`,
                 );
               }
@@ -1012,36 +1010,74 @@ export class LeadsService {
 
             if (
               dto.bathrooms !==
-                undefined &&
+              undefined &&
               dto.bathrooms !==
-                null
+              null
             ) {
               totalCriteria += 1;
 
               if (
                 property.bathrooms !==
-                  null &&
+                null &&
                 property.bathrooms >=
-                  dto.bathrooms
+                dto.bathrooms
               ) {
                 score += 1;
 
                 matchedCriteria.push(
-                  `${property.bathrooms} bathroom${
-                    property.bathrooms >
+                  `${property.bathrooms} bathroom${property.bathrooms >
                     1
-                      ? 's'
-                      : ''
+                    ? 's'
+                    : ''
                   }`,
                 );
               } else {
                 missingCriteria.push(
-                  `Requested at least ${dto.bathrooms} bathroom${
-                    dto.bathrooms >
+                  `Requested at least ${dto.bathrooms} bathroom${dto.bathrooms >
                     1
-                      ? 's'
-                      : ''
+                    ? 's'
+                    : ''
                   }`,
+                );
+              }
+            }
+
+            // --------------------------------------------------
+            // SURFACE (m²)
+            // --------------------------------------------------
+
+            const hasMinArea =
+              dto.minArea !== undefined && dto.minArea !== null;
+
+            const hasMaxArea =
+              dto.maxArea !== undefined && dto.maxArea !== null;
+
+            if (hasMinArea || hasMaxArea) {
+              totalCriteria += 1;
+
+              const propertyArea = property.area;
+
+              const matchesMinArea =
+                !hasMinArea ||
+                (propertyArea != null && propertyArea >= dto.minArea!);
+
+              const matchesMaxArea =
+                !hasMaxArea ||
+                (propertyArea != null && propertyArea <= dto.maxArea!);
+
+              if (
+                propertyArea != null &&
+                matchesMinArea &&
+                matchesMaxArea
+              ) {
+                score += 1;
+
+                matchedCriteria.push(
+                  `Surface: ${propertyArea} m² within requested range`,
+                );
+              } else {
+                missingCriteria.push(
+                  `Requested surface: ${dto.minArea ?? 0}–${dto.maxArea ?? "unlimited"} m²`,
                 );
               }
             }
@@ -1083,7 +1119,7 @@ export class LeadsService {
             if (
               dto.mustHave &&
               dto.mustHave.length >
-                0
+              0
             ) {
               totalCriteria += 1;
 
@@ -1154,12 +1190,12 @@ export class LeadsService {
             const matchScore =
               totalCriteria > 0
                 ? Math.round(
-                    (
-                      score /
-                      totalCriteria
-                    ) *
-                      100,
-                  )
+                  (
+                    score /
+                    totalCriteria
+                  ) *
+                  100,
+                )
                 : 0;
 
             // --------------------------------------------------
@@ -1300,46 +1336,46 @@ export class LeadsService {
       });
 
     if (existingLead) {
-  /*
-   * Un ancien Lead encore NEW doit repasser
-   * automatiquement dans le moteur de matching.
-   *
-   * Aucune intervention Admin.
-   */
-  if (existingLead.status === LeadStatus.NEW) {
-    const processedLead =
-      await this.finalizeBuyerLead(
-        existingLead.id,
-      );
+      /*
+       * Un ancien Lead encore NEW doit repasser
+       * automatiquement dans le moteur de matching.
+       *
+       * Aucune intervention Admin.
+       */
+      if (existingLead.status === LeadStatus.NEW) {
+        const processedLead =
+          await this.finalizeBuyerLead(
+            existingLead.id,
+          );
 
-    return {
-      found: false,
+        return {
+          found: false,
 
-      lead: processedLead,
+          lead: processedLead,
 
-      notifiedAgents:
-        processedLead.autoMatching?.matched
-          ? processedLead.autoMatching.count
-          : 0,
+          notifiedAgents:
+            processedLead.autoMatching?.matched
+              ? processedLead.autoMatching.count
+              : 0,
 
-      alreadyExists: true,
-    };
-  }
+          alreadyExists: true,
+        };
+      }
 
-  /*
-   * MATCHED / CONTACTED :
-   * il a déjà été traité.
-   */
-  return {
-    found: false,
+      /*
+       * MATCHED / CONTACTED :
+       * il a déjà été traité.
+       */
+      return {
+        found: false,
 
-    lead: existingLead,
+        lead: existingLead,
 
-    notifiedAgents: 0,
+        notifiedAgents: 0,
 
-    alreadyExists: true,
-  };
-}
+        alreadyExists: true,
+      };
+    }
 
     const quality =
       this.leadScoringService.calculateQuality({
@@ -1443,17 +1479,17 @@ export class LeadsService {
       await this.finalizeBuyerLead(lead.id);
 
     return {
-  found: false,
+      found: false,
 
-  lead: processedLead,
+      lead: processedLead,
 
-  notifiedAgents:
-    processedLead.autoMatching?.matched
-      ? processedLead.autoMatching.count
-      : 0,
+      notifiedAgents:
+        processedLead.autoMatching?.matched
+          ? processedLead.autoMatching.count
+          : 0,
 
-  alreadyExists: false,
-};
+      alreadyExists: false,
+    };
   }
 
   // ============================================================
@@ -1596,160 +1632,160 @@ export class LeadsService {
   // ============================================================
 
   async createFromAffordabilityCalculator(
-  dto: CreateAffordabilityLeadDto,
-  user: {
-    id: string;
-    role: Role;
-  },
-) {
-  if (user.role !== Role.BUYER) {
-    throw new ForbiddenException(
-      'Only buyers can create affordability requests',
-    );
-  }
+    dto: CreateAffordabilityLeadDto,
+    user: {
+      id: string;
+      role: Role;
+    },
+  ) {
+    if (user.role !== Role.BUYER) {
+      throw new ForbiddenException(
+        'Only buyers can create affordability requests',
+      );
+    }
 
-  const buyer =
-    await this.prisma.user.findUnique({
-      where: {
-        id: user.id,
-      },
-    });
-
-  if (!buyer) {
-    throw new NotFoundException(
-      'Buyer not found',
-    );
-  }
-
-  const source =
-    'Affordability Calculator';
-
-  const interest =
-    'Mortgage / Affordability Review';
-
-  const location =
-    'Portugal';
-
-  const budget =
-    dto.recommendedBudget ||
-    dto.maximumBudget ||
-    'Not specified';
-
-  /*
-   * Avoid creating the same active
-   * affordability request twice.
-   */
-  const existingLead =
-    await this.prisma.lead.findFirst({
-      where: {
-        userId: user.id,
-        source,
-        interest,
-        budget,
-
-        status: {
-          in: [
-            LeadStatus.NEW,
-            LeadStatus.MATCHED,
-            LeadStatus.CONTACTED,
-          ],
+    const buyer =
+      await this.prisma.user.findUnique({
+        where: {
+          id: user.id,
         },
-      },
+      });
 
-      orderBy: {
-        createdAt: 'desc',
-      },
-    });
+    if (!buyer) {
+      throw new NotFoundException(
+        'Buyer not found',
+      );
+    }
 
-  if (existingLead) {
-    if (existingLead.status === LeadStatus.NEW) {
-      const processedLead =
-        await this.finalizeBuyerLead(existingLead.id);
+    const source =
+      'Affordability Calculator';
+
+    const interest =
+      'Mortgage / Affordability Review';
+
+    const location =
+      'Portugal';
+
+    const budget =
+      dto.recommendedBudget ||
+      dto.maximumBudget ||
+      'Not specified';
+
+    /*
+     * Avoid creating the same active
+     * affordability request twice.
+     */
+    const existingLead =
+      await this.prisma.lead.findFirst({
+        where: {
+          userId: user.id,
+          source,
+          interest,
+          budget,
+
+          status: {
+            in: [
+              LeadStatus.NEW,
+              LeadStatus.MATCHED,
+              LeadStatus.CONTACTED,
+            ],
+          },
+        },
+
+        orderBy: {
+          createdAt: 'desc',
+        },
+      });
+
+    if (existingLead) {
+      if (existingLead.status === LeadStatus.NEW) {
+        const processedLead =
+          await this.finalizeBuyerLead(existingLead.id);
+
+        return {
+          ...processedLead,
+          alreadyExists: true,
+        };
+      }
 
       return {
-        ...processedLead,
+        ...existingLead,
         alreadyExists: true,
       };
     }
 
+    const quality =
+      this.leadScoringService.calculateQuality({
+        phone:
+          buyer.phone || '',
+
+        budget,
+        location,
+        interest,
+      });
+
+    /*
+     * Create the Buyer request.
+     */
+    const lead =
+      await this.prisma.lead.create({
+        data: {
+          userId:
+            user.id,
+
+          fullName:
+            buyer.fullName,
+
+          email:
+            buyer.email,
+
+          phone:
+            buyer.phone,
+
+          source,
+          interest,
+          location,
+          budget,
+          quality,
+
+          status:
+            LeadStatus.NEW,
+        },
+      });
+
+    /*
+     * Update Buyer profile score.
+     */
+    await this.profileScoreService
+      .updateUserScore(
+        user.id,
+      );
+
+    /*
+     * ============================================================
+     * SMART AUTO MATCHING
+     * ============================================================
+     *
+     * Affordability Calculator
+     *       ↓
+     * MORTGAGE_BROKER
+     *       ↓
+     * score >= 70%
+     *       ↓
+     * Top 3
+     *       ↓
+     * ACTIVE matches automatically
+     */
+    const processedLead =
+      await this.finalizeBuyerLead(
+        lead.id,
+      );
+
     return {
-      ...existingLead,
-      alreadyExists: true,
+      ...processedLead,
+      alreadyExists: false,
     };
   }
-
-  const quality =
-    this.leadScoringService.calculateQuality({
-      phone:
-        buyer.phone || '',
-
-      budget,
-      location,
-      interest,
-    });
-
-  /*
-   * Create the Buyer request.
-   */
-  const lead =
-    await this.prisma.lead.create({
-      data: {
-        userId:
-          user.id,
-
-        fullName:
-          buyer.fullName,
-
-        email:
-          buyer.email,
-
-        phone:
-          buyer.phone,
-
-        source,
-        interest,
-        location,
-        budget,
-        quality,
-
-        status:
-          LeadStatus.NEW,
-      },
-    });
-
-  /*
-   * Update Buyer profile score.
-   */
-  await this.profileScoreService
-    .updateUserScore(
-      user.id,
-    );
-
-  /*
-   * ============================================================
-   * SMART AUTO MATCHING
-   * ============================================================
-   *
-   * Affordability Calculator
-   *       ↓
-   * MORTGAGE_BROKER
-   *       ↓
-   * score >= 70%
-   *       ↓
-   * Top 3
-   *       ↓
-   * ACTIVE matches automatically
-   */
- const processedLead =
-  await this.finalizeBuyerLead(
-    lead.id,
-  );
-
-return {
-  ...processedLead,
-  alreadyExists: false,
-};
-}
 
   // ============================================================
   // TRUE COST CALCULATOR
@@ -1991,7 +2027,7 @@ return {
 
     if (
       lead.source !==
-        'Property Search Assistant' ||
+      'Property Search Assistant' ||
       !lead.searchText
     ) {
       throw new BadRequestException(

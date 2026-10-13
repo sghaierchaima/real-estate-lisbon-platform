@@ -25,7 +25,17 @@ export class CreatePropertySearchLeadDto {
   @IsOptional()
   @IsString()
   propertyType?: string;
+@IsOptional()
+@Type(() => Number)
+@IsNumber()
+@Min(1)
+minArea?: number;
 
+@IsOptional()
+@Type(() => Number)
+@IsNumber()
+@Min(1)
+maxArea?: number;
   @IsOptional()
   @Type(() => Number)
   @IsInt()
