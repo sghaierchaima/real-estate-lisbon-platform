@@ -5,6 +5,8 @@ import { ExplainPropertyMatchesDto } from './dto/explain-property-matches.dto';
 type PropertySearchExtraction = {
   location: string;
   budget: string;
+  minBudget: number | null;
+  maxBudget: number | null;
   propertyType: string;
   bedrooms: string;
   bathrooms: string;
@@ -27,7 +29,10 @@ export class AiService {
   private localPropertySearchExtraction(text: string): PropertySearchExtraction {
     const value = text.toLowerCase();
 
-    const budget = this.extractBudget(value);
+    const { minBudget, maxBudget } = this.extractBudgetRange(value);
+
+    const budget =
+      maxBudget !== null ? String(maxBudget) : '';
     const bedrooms = this.extractBedrooms(value);
     const bathrooms = this.extractBathrooms(value);
     const { minArea, maxArea } = this.extractArea(value);
@@ -51,6 +56,8 @@ export class AiService {
     return {
       location,
       budget,
+      minBudget,
+      maxBudget,
       propertyType,
       bedrooms,
       bathrooms,
@@ -61,6 +68,8 @@ export class AiService {
       summary: this.buildSummary({
         location,
         budget,
+        minBudget,
+        maxBudget,
         propertyType,
         bedrooms,
         bathrooms,
@@ -70,6 +79,62 @@ export class AiService {
         mustHave,
       }),
       confidence,
+    };
+  }
+
+  private extractBudgetRange(value: string): {
+    minBudget: number | null;
+    maxBudget: number | null;
+  } {
+    const money = String.raw`(?:€\s*|eur\s*)?(\d[\d.,\s]*)(?:\s*(k|m))?`;
+
+    const pattern = new RegExp(
+      String.raw`\bbetween\s+${money}\s+and\s+${money}`,
+      'i',
+    );
+
+    const match = value.match(pattern);
+
+    const parseAmount = (
+      raw: string,
+      suffix?: string,
+    ): number | null => {
+      const normalized = raw.replace(/[\s,.]/g, '');
+      let amount = Number(normalized);
+
+      if (!Number.isFinite(amount) || amount <= 0) {
+        return null;
+      }
+
+      if (suffix?.toLowerCase() === 'k') {
+        amount *= 1000;
+      }
+
+      if (suffix?.toLowerCase() === 'm') {
+        amount *= 1000000;
+      }
+
+      return amount;
+    };
+
+    if (match) {
+      const minBudget = parseAmount(match[1], match[2]);
+      const maxBudget = parseAmount(match[3], match[4]);
+
+      if (
+        minBudget !== null &&
+        maxBudget !== null &&
+        minBudget <= maxBudget
+      ) {
+        return { minBudget, maxBudget };
+      }
+    }
+
+    const singleBudget = this.extractBudget(value);
+
+    return {
+      minBudget: null,
+      maxBudget: singleBudget ? Number(singleBudget) : null,
     };
   }
 
@@ -376,8 +441,8 @@ export class AiService {
     budget: string;
     bedrooms: string;
     bathrooms: string;
-minArea: number | null;
-maxArea: number | null;
+    minArea: number | null;
+    maxArea: number | null;
     propertyType: string;
     location: string;
     goal: string;
@@ -396,139 +461,147 @@ maxArea: number | null;
   }
 
   private buildSummary(data: {
-  location: string;
-  budget: string;
-  propertyType: string;
-  bedrooms: string;
-  bathrooms: string;
-  minArea: number | null;
-  maxArea: number | null;
-  goal: string;
-  mustHave: string[];
-}): string {
-  const bedroomText =
-    data.bedrooms === '0'
-      ? 'studio'
-      : data.bedrooms
-        ? `${data.bedrooms}-bedroom`
-        : '';
+    location: string;
+    budget: string;
+    minBudget: number | null;
+    maxBudget: number | null;
+    propertyType: string;
+    bedrooms: string;
+    bathrooms: string;
+    minArea: number | null;
+    maxArea: number | null;
+    goal: string;
+    mustHave: string[];
+  }): string {
+    const bedroomText =
+      data.bedrooms === '0'
+        ? 'studio'
+        : data.bedrooms
+          ? `${data.bedrooms}-bedroom`
+          : '';
 
-  const budgetText = data.budget
-    ? ` with a maximum budget of €${Number(data.budget).toLocaleString('en-US')}`
-    : '';
+    const formatEuro = (amount: number) =>
+      `€${amount.toLocaleString('en-US')}`;
 
-  const bathroomText = data.bathrooms
-    ? ` The property should have ${data.bathrooms} bathroom${data.bathrooms === '1' ? '' : 's'}.`
-    : '';
+    const budgetText =
+      data.minBudget !== null && data.maxBudget !== null
+        ? ` with a budget between ${formatEuro(data.minBudget)} and ${formatEuro(data.maxBudget)}`
+        : data.maxBudget !== null
+          ? ` with a maximum budget of ${formatEuro(data.maxBudget)}`
+          : '';
 
-  let areaText = '';
-
-  if (data.minArea !== null && data.maxArea !== null) {
-    areaText =
-      ` The requested surface is between ${data.minArea} and ${data.maxArea} m².`;
-  } else if (data.minArea !== null) {
-    areaText =
-      ` The minimum requested surface is ${data.minArea} m².`;
-  } else if (data.maxArea !== null) {
-    areaText =
-      ` The maximum requested surface is ${data.maxArea} m².`;
-  }
-
-  const featuresText =
-    data.mustHave.length > 0
-      ? ` Preferred features include ${data.mustHave.join(', ')}.`
+    const bathroomText = data.bathrooms
+      ? ` The property should have ${data.bathrooms} bathroom${data.bathrooms === '1' ? '' : 's'}.`
       : '';
 
-  const goalMap: Record<string, string> = {
-    buy: 'to live in',
-    invest: 'as an investment',
-    relocate: 'for relocation',
-    retire: 'for retirement',
-  };
+    let areaText = '';
 
-  return (
-    `Buyer is looking for a ${bedroomText} ${data.propertyType} ` +
-    `in ${data.location}${budgetText}. ` +
-    `The property is intended ${goalMap[data.goal] || 'to buy'}.` +
-    bathroomText +
-    areaText +
-    featuresText
-  );
-}
+    if (data.minArea !== null && data.maxArea !== null) {
+      areaText =
+        ` The requested surface is between ${data.minArea} and ${data.maxArea} m².`;
+    } else if (data.minArea !== null) {
+      areaText =
+        ` The minimum requested surface is ${data.minArea} m².`;
+    } else if (data.maxArea !== null) {
+      areaText =
+        ` The maximum requested surface is ${data.maxArea} m².`;
+    }
 
-private extractBathrooms(value: string): string {
-  const match = value.match(
-    /(\d+)\s*[- ]?\s*(bathrooms?|baths?)(?!\w)/i,
-  );
+    const featuresText =
+      data.mustHave.length > 0
+        ? ` Preferred features include ${data.mustHave.join(', ')}.`
+        : '';
 
-  return match ? match[1] : '';
-}
+    const goalMap: Record<string, string> = {
+      buy: 'to live in',
+      invest: 'as an investment',
+      relocate: 'for relocation',
+      retire: 'for retirement',
+    };
 
-private extractArea(value: string): {
-  minArea: number | null;
-  maxArea: number | null;
-} {
-  const unit = String.raw`(?:m²|m2|sqm|square\s+met(?:er|re)s?|sq\.?\s*m)`;
-  const end = String.raw`(?![\w²])`;
+    return (
+      `Buyer is looking for a ${bedroomText} ${data.propertyType} ` +
+      `in ${data.location}${budgetText}. ` +
+      `The property is intended ${goalMap[data.goal] || 'to buy'}.` +
+      bathroomText +
+      areaText +
+      featuresText
+    );
+  }
 
-  const between = new RegExp(
-    String.raw`\bbetween\s+(\d+(?:[.,]\d+)?)\s+(?:and|to)\s+(\d+(?:[.,]\d+)?)\s*${unit}${end}`,
-    'i',
-  );
+  private extractBathrooms(value: string): string {
+    const match = value.match(
+      /(\d+)\s*[- ]?\s*(bathrooms?|baths?)(?!\w)/i,
+    );
 
-  const range = new RegExp(
-    String.raw`\b(\d+(?:[.,]\d+)?)\s*(?:-|to)\s*(\d+(?:[.,]\d+)?)\s*${unit}${end}`,
-    'i',
-  );
+    return match ? match[1] : '';
+  }
 
-  const minimum = new RegExp(
-    String.raw`\b(?:at least|minimum|min|over)\s+(\d+(?:[.,]\d+)?)\s*${unit}${end}`,
-    'i',
-  );
+  private extractArea(value: string): {
+    minArea: number | null;
+    maxArea: number | null;
+  } {
+    const unit = String.raw`(?:m²|m2|sqm|square\s+met(?:er|re)s?|sq\.?\s*m)`;
+    const end = String.raw`(?![\w²])`;
 
-  const maximum = new RegExp(
-    String.raw`\b(?:up to|maximum|max|under|below)\s+(\d+(?:[.,]\d+)?)\s*${unit}${end}`,
-    'i',
-  );
+    const between = new RegExp(
+      String.raw`\bbetween\s+(\d+(?:[.,]\d+)?)\s+(?:and|to)\s+(\d+(?:[.,]\d+)?)\s*${unit}${end}`,
+      'i',
+    );
 
-  const parseArea = (raw: string): number | null => {
-    const number = Number(raw.replace(',', '.'));
+    const range = new RegExp(
+      String.raw`\b(\d+(?:[.,]\d+)?)\s*(?:-|to)\s*(\d+(?:[.,]\d+)?)\s*${unit}${end}`,
+      'i',
+    );
 
-    return Number.isFinite(number) && number > 0
-      ? number
-      : null;
-  };
+    const minimum = new RegExp(
+      String.raw`\b(?:at least|minimum|min|over)\s+(\d+(?:[.,]\d+)?)\s*${unit}${end}`,
+      'i',
+    );
 
-  const matchedRange = value.match(between) ?? value.match(range);
+    const maximum = new RegExp(
+      String.raw`\b(?:up to|maximum|max|under|below)\s+(\d+(?:[.,]\d+)?)\s*${unit}${end}`,
+      'i',
+    );
 
-  if (matchedRange) {
-    const minArea = parseArea(matchedRange[1]);
-    const maxArea = parseArea(matchedRange[2]);
+    const parseArea = (raw: string): number | null => {
+      const number = Number(raw.replace(',', '.'));
+
+      return Number.isFinite(number) && number > 0
+        ? number
+        : null;
+    };
+
+    const matchedRange = value.match(between) ?? value.match(range);
+
+    if (matchedRange) {
+      const minArea = parseArea(matchedRange[1]);
+      const maxArea = parseArea(matchedRange[2]);
+
+      if (
+        minArea !== null &&
+        maxArea !== null &&
+        minArea <= maxArea
+      ) {
+        return { minArea, maxArea };
+      }
+    }
+
+    const minMatch = value.match(minimum);
+    const maxMatch = value.match(maximum);
+
+    const minArea = minMatch ? parseArea(minMatch[1]) : null;
+    const maxArea = maxMatch ? parseArea(maxMatch[1]) : null;
 
     if (
       minArea !== null &&
       maxArea !== null &&
-      minArea <= maxArea
+      minArea > maxArea
     ) {
-      return { minArea, maxArea };
+      return { minArea: null, maxArea: null };
     }
+
+    return { minArea, maxArea };
   }
-
-  const minMatch = value.match(minimum);
-  const maxMatch = value.match(maximum);
-
-  const minArea = minMatch ? parseArea(minMatch[1]) : null;
-  const maxArea = maxMatch ? parseArea(maxMatch[1]) : null;
-
-  if (
-    minArea !== null &&
-    maxArea !== null &&
-    minArea > maxArea
-  ) {
-    return { minArea: null, maxArea: null };
-  }
-
-  return { minArea, maxArea };
-}
 
 }

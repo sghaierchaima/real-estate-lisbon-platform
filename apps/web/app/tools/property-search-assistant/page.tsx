@@ -79,8 +79,8 @@ export default function PropertySearchAssistantPage() {
   const [location, setLocation] =
     useState("");
 
-  const [budget, setBudget] =
-    useState("");
+  const [minBudget, setMinBudget] = useState("");
+  const [maxBudget, setMaxBudget] = useState("");
 
   const [propertyType, setPropertyType] =
     useState("apartment");
@@ -148,8 +148,16 @@ export default function PropertySearchAssistantPage() {
         extracted.location || ""
       );
 
-      setBudget(
-        extracted.budget || ""
+      setMinBudget(
+        extracted.minBudget != null
+          ? String(extracted.minBudget)
+          : ""
+      );
+
+      setMaxBudget(
+        extracted.maxBudget != null
+          ? String(extracted.maxBudget)
+          : extracted.budget || ""
       );
 
       setPropertyType(
@@ -263,6 +271,30 @@ export default function PropertySearchAssistantPage() {
       return;
     }
 
+    const parsedMinBudget = minBudget.trim()
+      ? Number(minBudget)
+      : undefined;
+
+    const parsedMaxBudget = maxBudget.trim()
+      ? Number(maxBudget)
+      : undefined;
+
+    if (
+      (parsedMinBudget !== undefined &&
+        (!Number.isFinite(parsedMinBudget) || parsedMinBudget < 0)) ||
+      (parsedMaxBudget !== undefined &&
+        (!Number.isFinite(parsedMaxBudget) || parsedMaxBudget <= 0)) ||
+      (parsedMinBudget !== undefined &&
+        parsedMaxBudget !== undefined &&
+        parsedMinBudget > parsedMaxBudget)
+    ) {
+      toast.warning(
+        "Invalid budget range",
+        "Please enter a valid minimum and maximum budget."
+      );
+      return;
+    }
+
     try {
       setSaving(true);
 
@@ -280,8 +312,12 @@ export default function PropertySearchAssistantPage() {
               undefined,
 
             budget:
-              budget.trim() ||
-              undefined,
+              parsedMaxBudget !== undefined
+                ? String(parsedMaxBudget)
+                : undefined,
+
+            minBudget: parsedMinBudget,
+            maxBudget: parsedMaxBudget,
 
             propertyType,
 
@@ -592,18 +628,33 @@ export default function PropertySearchAssistantPage() {
               />
 
               {/* BUDGET */}
+              <div>
+                <label className="mb-2 block text-sm font-medium text-[#0F2340]">
+                  Minimum budget (€)
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  value={minBudget}
+                  onChange={(event) => setMinBudget(event.target.value)}
+                  placeholder="e.g. 200000"
+                  className="h-14 w-full rounded-2xl border border-[#D0D5DD] px-5 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+                />
+              </div>
 
-              <input
-                value={budget}
-                onChange={(event) =>
-                  setBudget(
-                    event.target.value
-                  )
-                }
-                placeholder="Maximum budget, e.g. 550000"
-                inputMode="numeric"
-                className="h-14 rounded-2xl border border-[#D0D5DD] px-5 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
-              />
+              <div>
+                <label className="mb-2 block text-sm font-medium text-[#0F2340]">
+                  Maximum budget (€)
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  value={maxBudget}
+                  onChange={(event) => setMaxBudget(event.target.value)}
+                  placeholder="e.g. 750000"
+                  className="h-14 w-full rounded-2xl border border-[#D0D5DD] px-5 outline-none transition focus:border-[#1B365D] focus:ring-4 focus:ring-[#1B365D]/10"
+                />
+              </div>
 
               {/* PROPERTY TYPE */}
 

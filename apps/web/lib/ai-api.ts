@@ -3,6 +3,8 @@ import { apiFetch } from "./api";
 export type PropertySearchExtraction = {
   location: string;
   budget: string;
+  minBudget: number | null;
+  maxBudget: number | null;
   propertyType: string;
   bedrooms: string;
   bathrooms?: string;
