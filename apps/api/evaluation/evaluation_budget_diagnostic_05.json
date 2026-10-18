@@ -1,0 +1,92 @@
+[
+  {
+    "id": "B001",
+    "language": "en",
+    "category": "budget_diagnostic",
+    "searchText": "My maximum budget is 310000 euros.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 310000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "B002",
+    "language": "en",
+    "category": "budget_diagnostic",
+    "searchText": "My budget is 310000 euros.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 310000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "B003",
+    "language": "en",
+    "category": "budget_diagnostic",
+    "searchText": "I can spend up to 310000 euros.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 310000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "B004",
+    "language": "en",
+    "category": "budget_diagnostic",
+    "searchText": "My maximum budget is 310000 euros, not 350000.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 310000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "B005",
+    "language": "en",
+    "category": "budget_diagnostic",
+    "searchText": "My maximum budget is 310000 euros, not 350000 euros.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 310000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  }
+]

@@ -745,6 +745,7 @@ ${JSON.stringify(text)}
       /\bup to\s*$/i,
       /\b(?:under|below|less than|at most)\s*$/i,
       /\b(?:maximum|max|budget maximum)\s*$/i,
+      /\b(?:my\s+)?maximum budget(?:\s+is)?\s*$/i,
       /\b(?:moins de|au maximum|au plus)\s*$/i,
       /\b(?:jusqu'a|pas plus de|inferieur a)\s*$/i,
       /\bne depassant pas\s*$/i,

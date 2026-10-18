@@ -1,0 +1,110 @@
+[
+  {
+    "id": "A001",
+    "language": "en",
+    "category": "budget_upper_bound",
+    "searchText": "I need a property under 250000 euros.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 250000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "A002",
+    "language": "fr",
+    "category": "budget_upper_bound",
+    "searchText": "Je cherche un bien \u00e0 moins de 275000 euros.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 275000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "A003",
+    "language": "pt",
+    "category": "budget_upper_bound",
+    "searchText": "Procuro um im\u00f3vel por menos de 280000 euros.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 280000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "A004",
+    "language": "en",
+    "category": "budget_distractor",
+    "searchText": "My maximum budget is 310000 euros, not 350000.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 310000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "A005",
+    "language": "fr",
+    "category": "budget_negation",
+    "searchText": "Je peux payer jusqu'\u00e0 290000 euros, pas davantage.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 290000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "A006",
+    "language": "en",
+    "category": "budget_negation",
+    "searchText": "I want a property for no more than 320000 euros.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": 320000,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  }
+]

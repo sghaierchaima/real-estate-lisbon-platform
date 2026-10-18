@@ -34,7 +34,7 @@ def post(url, search_text, timeout):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--url', default='http://localhost:3001/ai/property-search/extract')
+    parser.add_argument('--url', default='http://127.0.0.1:3001/ai/property-search/extract')
     parser.add_argument('--dataset', default=str(Path(__file__).with_name('evaluation_dataset.json')))
     parser.add_argument('--provider', choices=['ollama', 'regex'], required=True, help='Label; ensure NestJS AI_EXTRACTION_PROVIDER matches this value')
     parser.add_argument('--timeout', type=float, default=90)

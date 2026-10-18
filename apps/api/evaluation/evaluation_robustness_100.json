@@ -1,0 +1,1802 @@
+[
+  {
+    "id": "R001",
+    "language": "en",
+    "category": "max_budget",
+    "searchText": "Can you show me apartments in Lisbon costing less than €210,000?",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": 210000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R002",
+    "language": "en",
+    "category": "max_budget",
+    "searchText": "Can you show me apartments in Porto costing less than €235,000?",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": 235000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R003",
+    "language": "en",
+    "category": "max_budget",
+    "searchText": "Can you show me apartments in Faro costing less than €260,000?",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": 260000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R004",
+    "language": "en",
+    "category": "max_budget",
+    "searchText": "Can you show me apartments in Coimbra costing less than €285,000?",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": 285000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R005",
+    "language": "en",
+    "category": "max_budget",
+    "searchText": "Can you show me apartments in Cascais costing less than €310,000?",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": 310000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R006",
+    "language": "en",
+    "category": "max_budget",
+    "searchText": "Can you show me apartments in Sintra costing less than €335,000?",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": 335000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R007",
+    "language": "en",
+    "category": "max_budget",
+    "searchText": "Can you show me apartments in Braga costing less than €360,000?",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": 360000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R008",
+    "language": "en",
+    "category": "max_budget",
+    "searchText": "Can you show me apartments in Aveiro costing less than €385,000?",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": null,
+      "maxBudget": 385000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R009",
+    "language": "en",
+    "category": "max_budget",
+    "searchText": "Can you show me apartments in Almada costing less than €410,000?",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": 410000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R010",
+    "language": "en",
+    "category": "max_budget",
+    "searchText": "Can you show me apartments in Setúbal costing less than €435,000?",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": 435000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R011",
+    "language": "fr",
+    "category": "max_budget",
+    "searchText": "Je recherche un appartement à Lisbonne pour moins de 180000 euros.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": 180000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R012",
+    "language": "fr",
+    "category": "max_budget",
+    "searchText": "Je recherche un appartement à Porto pour moins de 200000 euros.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": 200000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R013",
+    "language": "fr",
+    "category": "max_budget",
+    "searchText": "Je recherche un appartement à Faro pour moins de 220000 euros.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": 220000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R014",
+    "language": "fr",
+    "category": "max_budget",
+    "searchText": "Je recherche un appartement à Coimbra pour moins de 240000 euros.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": 240000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R015",
+    "language": "fr",
+    "category": "max_budget",
+    "searchText": "Je recherche un appartement à Cascais pour moins de 260000 euros.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": 260000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R016",
+    "language": "fr",
+    "category": "max_budget",
+    "searchText": "Je recherche un appartement à Sintra pour moins de 280000 euros.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": 280000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R017",
+    "language": "fr",
+    "category": "max_budget",
+    "searchText": "Je recherche un appartement à Braga pour moins de 300000 euros.",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": 300000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R018",
+    "language": "fr",
+    "category": "max_budget",
+    "searchText": "Je recherche un appartement à Aveiro pour moins de 320000 euros.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": null,
+      "maxBudget": 320000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R019",
+    "language": "fr",
+    "category": "max_budget",
+    "searchText": "Je recherche un appartement à Almada pour moins de 340000 euros.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": 340000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R020",
+    "language": "fr",
+    "category": "max_budget",
+    "searchText": "Je recherche un appartement à Setúbal pour moins de 360000 euros.",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": 360000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R021",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Procuro um apartamento T1 em Lisboa.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "1",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R022",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Procuro um apartamento T2 em Porto.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "2",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R023",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Procuro um apartamento T3 em Faro.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "3",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R024",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Procuro um apartamento T4 em Coimbra.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "4",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R025",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Procuro um apartamento T1 em Cascais.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "1",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R026",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Procuro um apartamento T2 em Sintra.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "2",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R027",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Procuro um apartamento T3 em Braga.",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "3",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R028",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Procuro um apartamento T4 em Aveiro.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "4",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R029",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Procuro um apartamento T1 em Almada.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "1",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R030",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Procuro um apartamento T2 em Setúbal.",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "2",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R031",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "I need a villa in Lisbon with at least 110 sqm of space.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 110,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R032",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "I need a villa in Porto with at least 125 sqm of space.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 125,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R033",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "I need a villa in Faro with at least 140 sqm of space.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 140,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R034",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "I need a villa in Coimbra with at least 155 sqm of space.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 155,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R035",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "I need a villa in Cascais with at least 170 sqm of space.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 170,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R036",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "I need a villa in Sintra with at least 185 sqm of space.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 185,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R037",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "I need a villa in Braga with at least 200 sqm of space.",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 200,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R038",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "I need a villa in Aveiro with at least 215 sqm of space.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 215,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R039",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "I need a villa in Almada with at least 230 sqm of space.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 230,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R040",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "I need a villa in Setúbal with at least 245 sqm of space.",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 245,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R041",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je cherche un studio à Lisbonne de 35 m² maximum.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 35,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R042",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je cherche un studio à Porto de 40 m² maximum.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 40,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R043",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je cherche un studio à Faro de 45 m² maximum.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 45,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R044",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je cherche un studio à Coimbra de 50 m² maximum.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 50,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R045",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je cherche un studio à Cascais de 55 m² maximum.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 55,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R046",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je cherche un studio à Sintra de 60 m² maximum.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 60,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R047",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je cherche un studio à Braga de 65 m² maximum.",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 65,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R048",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je cherche un studio à Aveiro de 70 m² maximum.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 70,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R049",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je cherche un studio à Almada de 75 m² maximum.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 75,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R050",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je cherche un studio à Setúbal de 80 m² maximum.",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 80,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R051",
+    "language": "pt",
+    "category": "area_range",
+    "searchText": "Quero uma penthouse em Lisboa com 80 a 130 m².",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 80,
+      "maxArea": 130,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R052",
+    "language": "pt",
+    "category": "area_range",
+    "searchText": "Quero uma penthouse em Porto com 85 a 135 m².",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 85,
+      "maxArea": 135,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R053",
+    "language": "pt",
+    "category": "area_range",
+    "searchText": "Quero uma penthouse em Faro com 90 a 140 m².",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 90,
+      "maxArea": 140,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R054",
+    "language": "pt",
+    "category": "area_range",
+    "searchText": "Quero uma penthouse em Coimbra com 95 a 145 m².",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 95,
+      "maxArea": 145,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R055",
+    "language": "pt",
+    "category": "area_range",
+    "searchText": "Quero uma penthouse em Cascais com 100 a 150 m².",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 100,
+      "maxArea": 150,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R056",
+    "language": "pt",
+    "category": "area_range",
+    "searchText": "Quero uma penthouse em Sintra com 105 a 155 m².",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 105,
+      "maxArea": 155,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R057",
+    "language": "pt",
+    "category": "area_range",
+    "searchText": "Quero uma penthouse em Braga com 110 a 160 m².",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 110,
+      "maxArea": 160,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R058",
+    "language": "pt",
+    "category": "area_range",
+    "searchText": "Quero uma penthouse em Aveiro com 115 a 165 m².",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 115,
+      "maxArea": 165,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R059",
+    "language": "pt",
+    "category": "area_range",
+    "searchText": "Quero uma penthouse em Almada com 120 a 170 m².",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 120,
+      "maxArea": 170,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R060",
+    "language": "pt",
+    "category": "area_range",
+    "searchText": "Quero uma penthouse em Setúbal com 125 a 175 m².",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 125,
+      "maxArea": 175,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R061",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "Looking for a house in Lisbon with 2 bathrooms.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "2",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R062",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "Looking for a house in Porto with 3 bathrooms.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "3",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R063",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "Looking for a house in Faro with 4 bathrooms.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "4",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R064",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "Looking for a house in Coimbra with 2 bathrooms.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "2",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R065",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "Looking for a house in Cascais with 3 bathrooms.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "3",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R066",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "Looking for a house in Sintra with 4 bathrooms.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "4",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R067",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "Looking for a house in Braga with 2 bathrooms.",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "2",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R068",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "Looking for a house in Aveiro with 3 bathrooms.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "3",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R069",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "Looking for a house in Almada with 4 bathrooms.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "4",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R070",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "Looking for a house in Setúbal with 2 bathrooms.",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "2",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R071",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Une maison à Lisbonne avec 2 salles de bain, s’il vous plaît.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "2",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R072",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Une maison à Porto avec 3 salles de bain, s’il vous plaît.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "3",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R073",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Une maison à Faro avec 4 salles de bain, s’il vous plaît.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "4",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R074",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Une maison à Coimbra avec 2 salles de bain, s’il vous plaît.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "2",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R075",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Une maison à Cascais avec 3 salles de bain, s’il vous plaît.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "3",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R076",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Une maison à Sintra avec 4 salles de bain, s’il vous plaît.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "4",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R077",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Une maison à Braga avec 2 salles de bain, s’il vous plaît.",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "2",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R078",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Une maison à Aveiro avec 3 salles de bain, s’il vous plaît.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "3",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R079",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Une maison à Almada avec 4 salles de bain, s’il vous plaît.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "4",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R080",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Une maison à Setúbal avec 2 salles de bain, s’il vous plaît.",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "2",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R081",
+    "language": "en",
+    "category": "area_range",
+    "searchText": "Please find an apartment in Lisbon between 65 and 105 sqm.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 65,
+      "maxArea": 105,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R082",
+    "language": "en",
+    "category": "area_range",
+    "searchText": "Please find an apartment in Porto between 70 and 110 sqm.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 70,
+      "maxArea": 110,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R083",
+    "language": "en",
+    "category": "area_range",
+    "searchText": "Please find an apartment in Faro between 75 and 115 sqm.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 75,
+      "maxArea": 115,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R084",
+    "language": "en",
+    "category": "area_range",
+    "searchText": "Please find an apartment in Coimbra between 80 and 120 sqm.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 80,
+      "maxArea": 120,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R085",
+    "language": "en",
+    "category": "area_range",
+    "searchText": "Please find an apartment in Cascais between 85 and 125 sqm.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 85,
+      "maxArea": 125,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R086",
+    "language": "en",
+    "category": "area_range",
+    "searchText": "Please find an apartment in Sintra between 90 and 130 sqm.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 90,
+      "maxArea": 130,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R087",
+    "language": "en",
+    "category": "area_range",
+    "searchText": "Please find an apartment in Braga between 95 and 135 sqm.",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 95,
+      "maxArea": 135,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R088",
+    "language": "en",
+    "category": "area_range",
+    "searchText": "Please find an apartment in Aveiro between 100 and 140 sqm.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 100,
+      "maxArea": 140,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R089",
+    "language": "en",
+    "category": "area_range",
+    "searchText": "Please find an apartment in Almada between 105 and 145 sqm.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 105,
+      "maxArea": 145,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R090",
+    "language": "en",
+    "category": "area_range",
+    "searchText": "Please find an apartment in Setúbal between 110 and 150 sqm.",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 110,
+      "maxArea": 150,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R091",
+    "language": "en",
+    "category": "no_more_than",
+    "searchText": "I would like a villa in Lisbon, no more than 140 sqm.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 140,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R092",
+    "language": "en",
+    "category": "no_more_than",
+    "searchText": "I would like a villa in Porto, no more than 150 sqm.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 150,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R093",
+    "language": "en",
+    "category": "no_more_than",
+    "searchText": "I would like a villa in Faro, no more than 160 sqm.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 160,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R094",
+    "language": "en",
+    "category": "no_more_than",
+    "searchText": "I would like a villa in Coimbra, no more than 170 sqm.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 170,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R095",
+    "language": "en",
+    "category": "no_more_than",
+    "searchText": "I would like a villa in Cascais, no more than 180 sqm.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 180,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R096",
+    "language": "en",
+    "category": "no_more_than",
+    "searchText": "I would like a villa in Sintra, no more than 190 sqm.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 190,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R097",
+    "language": "en",
+    "category": "no_more_than",
+    "searchText": "I would like a villa in Braga, no more than 200 sqm.",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 200,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R098",
+    "language": "en",
+    "category": "no_more_than",
+    "searchText": "I would like a villa in Aveiro, no more than 210 sqm.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 210,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R099",
+    "language": "en",
+    "category": "no_more_than",
+    "searchText": "I would like a villa in Almada, no more than 220 sqm.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 220,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "R100",
+    "language": "en",
+    "category": "no_more_than",
+    "searchText": "I would like a villa in Setúbal, no more than 230 sqm.",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 230,
+      "goal": "buy",
+      "mustHave": []
+    }
+  }
+]
