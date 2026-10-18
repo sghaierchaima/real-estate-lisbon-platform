@@ -1,0 +1,11 @@
+﻿id,language,category,latency_ms,error,all_fields_correct,location_correct,minBudget_correct,maxBudget_correct,propertyType_correct,bedrooms_correct,bathrooms_correct,minArea_correct,maxArea_correct,goal_correct,mustHave_correct
+T01,en,maximum_budget,16817.49,,False,True,False,False,True,True,True,True,True,True,True
+T02,en,minimum_budget,7101.21,,True,True,True,True,True,True,True,True,True,True,True
+T03,en,budget_interval,8504.23,,True,True,True,True,True,True,True,True,True,True,True
+T04,fr,french_maximum,4078.28,<urlopen error [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée>,False,False,False,False,False,False,False,False,False,False,False
+T05,fr,french_area_minimum,22243.08,,False,True,True,True,True,False,True,True,True,True,True
+T06,pt,portuguese_t2,8327.41,,False,True,True,True,True,False,True,False,True,True,True
+T07,pt,portuguese_interval,8660.71,,True,True,True,True,True,True,True,True,True,True,True
+T08,en,area_interval_bathrooms,7821.1,,True,True,True,True,True,True,True,True,True,True,True
+T09,fr,negation,6919.73,,True,True,True,True,True,True,True,True,True,True,True
+T10,en,investment,8173.13,,True,True,True,True,True,True,True,True,True,True,True

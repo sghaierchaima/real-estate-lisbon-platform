@@ -1,0 +1,11 @@
+﻿id,language,category,latency_ms,error,all_fields_correct,location_correct,minBudget_correct,maxBudget_correct,propertyType_correct,bedrooms_correct,bathrooms_correct,minArea_correct,maxArea_correct,goal_correct,mustHave_correct
+T01,en,maximum_budget,24254.04,,True,True,True,True,True,True,True,True,True,True,True
+T02,en,minimum_budget,7605.42,,True,True,True,True,True,True,True,True,True,True,True
+T03,en,budget_interval,8391.2,,True,True,True,True,True,True,True,True,True,True,True
+T04,fr,french_maximum,9602.83,,True,True,True,True,True,True,True,True,True,True,True
+T05,fr,french_area_minimum,7675.96,,True,True,True,True,True,True,True,True,True,True,True
+T06,pt,portuguese_t2,7977.43,,True,True,True,True,True,True,True,True,True,True,True
+T07,pt,portuguese_interval,8380.57,,True,True,True,True,True,True,True,True,True,True,True
+T08,en,area_interval_bathrooms,8985.04,,True,True,True,True,True,True,True,True,True,True,True
+T09,fr,negation,5786.97,,True,True,True,True,True,True,True,True,True,True,True
+T10,en,investment,9541.1,,True,True,True,True,True,True,True,True,True,True,True

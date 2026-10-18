@@ -1,0 +1,11 @@
+﻿id,language,category,latency_ms,error,all_fields_correct,location_correct,minBudget_correct,maxBudget_correct,propertyType_correct,bedrooms_correct,bathrooms_correct,minArea_correct,maxArea_correct,goal_correct,mustHave_correct
+T01,en,maximum_budget,21300.3,,True,True,True,True,True,True,True,True,True,True,True
+T02,en,minimum_budget,8769.07,,True,True,True,True,True,True,True,True,True,True,True
+T03,en,budget_interval,7804.17,,True,True,True,True,True,True,True,True,True,True,True
+T04,fr,french_maximum,9130.91,,False,True,False,False,True,True,True,True,True,True,False
+T05,fr,french_area_minimum,9417.11,,False,True,True,True,True,True,True,True,True,True,False
+T06,pt,portuguese_t2,8314.83,HTTP Error 503: Service Unavailable,False,False,False,False,False,False,False,False,False,False,False
+T07,pt,portuguese_interval,10750.7,,False,True,True,True,False,True,True,True,True,True,False
+T08,en,area_interval_bathrooms,9720.29,,False,True,False,False,True,True,True,False,False,True,True
+T09,fr,negation,7288.06,,True,True,True,True,True,True,True,True,True,True,True
+T10,en,investment,8131.69,,False,True,False,True,True,False,True,True,True,True,True

@@ -1,0 +1,101 @@
+﻿id,language,category,latency_ms,error,all_fields_correct,location_correct,minBudget_correct,maxBudget_correct,propertyType_correct,bedrooms_correct,bathrooms_correct,minArea_correct,maxArea_correct,goal_correct,mustHave_correct
+F001,en,maximum_budget,32731.35,,False,True,False,False,True,True,True,True,True,True,True
+F002,en,minimum_budget,8936.62,,False,True,True,True,True,True,True,True,True,False,True
+F003,en,budget_interval,10038.21,,True,True,True,True,True,True,True,True,True,True,True
+F004,en,bedrooms,7372.92,,True,True,True,True,True,True,True,True,True,True,True
+F005,en,bathrooms,8239.85,,False,True,True,True,True,False,True,True,True,True,True
+F006,en,area_minimum,9097.13,,False,True,True,True,True,True,True,True,True,False,True
+F007,en,area_maximum,9546.97,,False,True,True,False,True,False,True,False,False,True,True
+F008,en,area_interval,7505.2,,True,True,True,True,True,True,True,True,True,True,True
+F009,en,investment,8267.5,,True,True,True,True,True,True,True,True,True,True,True
+F010,en,relocation,9182.7,,True,True,True,True,True,True,True,True,True,True,True
+F011,en,retirement,9273.15,,False,True,True,True,True,True,True,True,True,True,False
+F012,en,negation,7696.88,,True,True,True,True,True,True,True,True,True,True,True
+F013,en,multiple_amenities,8473.73,,True,True,True,True,True,True,True,True,True,True,True
+F014,en,studio,7276.69,,False,True,True,True,True,False,True,True,True,True,False
+F015,en,t_notation,7477.79,,True,True,True,True,True,True,True,True,True,True,True
+F016,en,unspecified,7095.5,,True,True,True,True,True,True,True,True,True,True,True
+F017,en,location_only,7051.72,,False,True,True,True,True,True,True,True,True,False,True
+F018,en,sea_view,7474.28,,False,True,True,True,True,True,True,True,True,False,True
+F019,en,near_train,8931.35,,False,True,True,True,True,True,True,True,True,True,False
+F020,en,pet_friendly,6247.1,,True,True,True,True,True,True,True,True,True,True,True
+F021,en,home_office,8462.12,,False,True,True,True,True,True,True,True,True,False,True
+F022,en,energy_efficiency,7825.35,,True,True,True,True,True,True,True,True,True,True,True
+F023,en,river_view,6991.82,,True,True,True,True,True,True,True,True,True,True,True
+F024,en,near_airport,7183.16,,False,False,True,True,True,True,True,True,True,True,False
+F025,en,budget_and_area,8497.51,,False,True,False,False,True,True,True,True,True,True,True
+F026,en,mixed_constraints,11844.95,HTTP Error 503: Service Unavailable,False,False,False,False,False,False,False,False,False,False,False
+F027,en,minimum_budget,11840.62,,True,True,True,True,True,True,True,True,True,True,True
+F028,en,maximum_budget,10928.1,,False,True,False,False,True,True,True,True,True,False,True
+F029,en,negation,12311.63,,True,True,True,True,True,True,True,True,True,True,True
+F030,en,city_center,9324.78,,False,True,True,True,True,False,True,True,True,True,False
+F031,en,near_beach,10093.55,,False,True,True,True,True,True,True,True,True,True,False
+F032,en,bedrooms_and_area,12902.2,,False,True,True,True,True,True,True,True,True,False,False
+F033,en,budget_interval,13451.01,,True,True,True,True,True,True,True,True,True,True,True
+F034,en,retirement_budget,11386.13,,False,True,False,False,True,True,True,True,True,True,True
+F035,fr,maximum_budget,11833.25,,False,True,False,False,True,True,True,True,True,True,True
+F036,fr,minimum_budget,11501.29,,False,True,True,True,True,True,True,True,True,False,True
+F037,fr,budget_interval,13233.18,,False,True,True,True,True,True,True,True,True,False,False
+F038,fr,bedrooms,8631.38,HTTP Error 503: Service Unavailable,False,False,False,False,False,False,False,False,False,False,False
+F039,fr,bathrooms,12440.58,HTTP Error 503: Service Unavailable,False,False,False,False,False,False,False,False,False,False,False
+F040,fr,area_minimum,12988.3,,True,True,True,True,True,True,True,True,True,True,True
+F041,fr,area_maximum,491568.97,timed out,False,False,False,False,False,False,False,False,False,False,False
+F042,fr,area_interval,30734.56,,False,True,True,True,True,True,True,True,True,False,True
+F043,fr,investment,15481.62,,True,True,True,True,True,True,True,True,True,True,True
+F044,fr,relocation,16543.29,,False,False,True,True,True,True,True,True,True,False,True
+F045,fr,retirement,14085.3,,False,True,True,True,True,True,True,True,True,True,False
+F046,fr,negation,12123.92,,True,True,True,True,True,True,True,True,True,True,True
+F047,fr,multiple_amenities,13248.22,,False,True,True,True,True,True,True,True,True,False,True
+F048,fr,t_notation,9195.34,,True,True,True,True,True,True,True,True,True,True,True
+F049,fr,studio,13725.81,,True,True,True,True,True,True,True,True,True,True,True
+F050,fr,unspecified,9842.28,,False,True,True,True,False,True,True,True,True,False,True
+F051,fr,location_only,13077.94,,False,True,True,True,False,True,True,True,True,False,True
+F052,fr,near_beach,12324.67,HTTP Error 503: Service Unavailable,False,False,False,False,False,False,False,False,False,False,False
+F053,fr,river_view,8747.93,,True,True,True,True,True,True,True,True,True,True,True
+F054,fr,home_office,10725.28,,False,True,True,True,True,True,True,True,True,False,True
+F055,fr,pet_friendly,13034.34,HTTP Error 503: Service Unavailable,False,False,False,False,False,False,False,False,False,False,False
+F056,fr,energy_efficiency,9365.19,,False,True,True,True,True,True,True,True,True,False,True
+F057,fr,near_train,12649.77,,False,True,True,True,True,True,True,True,True,True,False
+F058,fr,city_center,10135.42,,False,True,True,True,False,True,True,True,True,True,False
+F059,fr,near_airport,10944.68,,False,True,True,True,True,True,True,True,True,False,False
+F060,fr,budget_and_area,9685.35,,False,True,True,True,True,True,True,True,True,True,False
+F061,fr,budget_interval,11862.9,,True,True,True,True,True,True,True,True,True,True,True
+F062,fr,negation,11002.91,,True,True,True,True,True,True,True,True,True,True,True
+F063,fr,bedrooms,11274.78,,False,True,True,True,True,True,True,True,True,False,False
+F064,fr,maximum_budget,9103.59,,True,True,True,True,True,True,True,True,True,True,True
+F065,fr,minimum_budget,11351.65,,True,True,True,True,True,True,True,True,True,True,True
+F066,fr,area_interval,12042.03,,False,True,True,False,True,True,True,True,True,True,True
+F067,fr,multiple_amenities,10109.49,,True,True,True,True,True,True,True,True,True,True,True
+F068,pt,maximum_budget,14362.22,,False,True,False,False,True,True,True,True,True,True,True
+F069,pt,minimum_budget,13330.55,,False,True,True,True,True,True,True,True,True,False,True
+F070,pt,budget_interval,14234.8,,False,True,True,True,True,True,True,True,True,False,False
+F071,pt,bedrooms,10820.78,,True,True,True,True,True,True,True,True,True,True,True
+F072,pt,bathrooms,10312.26,,False,True,True,True,True,False,True,True,True,True,True
+F073,pt,area_minimum,10593.81,,True,True,True,True,True,True,True,True,True,True,True
+F074,pt,area_maximum,10937.33,,False,True,True,False,True,True,True,False,False,True,True
+F075,pt,area_interval,15618.12,,True,True,True,True,True,True,True,True,True,True,True
+F076,pt,investment,10987.98,,True,True,True,True,True,True,True,True,True,True,True
+F077,pt,relocation,8463.83,,False,True,True,True,True,True,True,True,True,False,True
+F078,pt,retirement,10894.41,,False,True,True,True,True,True,True,True,True,False,True
+F079,pt,negation,10698.72,,True,True,True,True,True,True,True,True,True,True,True
+F080,pt,multiple_amenities,11556.36,,False,True,True,True,True,True,True,True,True,False,True
+F081,pt,t_notation,11139.47,,True,True,True,True,True,True,True,True,True,True,True
+F082,pt,studio,8774.63,,False,True,True,True,True,True,True,True,True,False,True
+F083,pt,unspecified,10900.56,,False,True,True,True,True,True,True,True,True,False,True
+F084,pt,location_only,8237.17,,False,True,True,True,False,True,True,True,True,False,True
+F085,pt,near_beach,10009.37,,False,True,True,True,True,True,True,True,True,True,False
+F086,pt,river_view,7852.43,,True,True,True,True,True,True,True,True,True,True,True
+F087,pt,home_office,7564.68,HTTP Error 503: Service Unavailable,False,False,False,False,False,False,False,False,False,False,False
+F088,pt,pet_friendly,10299.49,HTTP Error 503: Service Unavailable,False,False,False,False,False,False,False,False,False,False,False
+F089,pt,energy_efficiency,10483.3,,False,True,True,True,True,True,True,True,True,False,True
+F090,pt,near_train,10228.39,,False,True,True,True,True,True,True,True,True,True,False
+F091,pt,city_center,9857.56,,False,True,True,True,True,False,True,True,True,True,False
+F092,pt,near_airport,8471.59,,False,True,True,True,True,True,True,True,True,False,True
+F093,pt,budget_and_area,2383903.55,HTTP Error 503: Service Unavailable,False,False,False,False,False,False,False,False,False,False,False
+F094,pt,budget_interval,104712.62,HTTP Error 503: Service Unavailable,False,False,False,False,False,False,False,False,False,False,False
+F095,pt,negation,20701.47,,True,True,True,True,True,True,True,True,True,True,True
+F096,pt,bedrooms,18881.7,,True,True,True,True,True,True,True,True,True,True,True
+F097,pt,maximum_budget,18181.73,,False,True,False,False,True,True,True,True,True,True,True
+F098,pt,minimum_budget,16672.93,,False,True,True,True,True,True,True,True,True,False,True
+F099,pt,area_interval,16618.9,,True,True,True,True,True,True,True,True,True,True,True
+F100,pt,multiple_amenities,15338.47,,False,True,True,True,True,True,True,True,True,True,False

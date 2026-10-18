@@ -1,0 +1,529 @@
+{
+  "provider_label": "ollama",
+  "endpoint": "http://localhost:3001/ai/property-search/extract",
+  "run_at_utc": "20261017T033055Z",
+  "records": [
+    {
+      "id": "T01",
+      "language": "en",
+      "category": "maximum_budget",
+      "searchText": "I want a 2-bedroom apartment in Lisbon under 300000 euros with parking.",
+      "expected": {
+        "location": "Lisbon",
+        "minBudget": null,
+        "maxBudget": 300000,
+        "propertyType": "apartment",
+        "bedrooms": "2",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Parking"
+        ]
+      },
+      "prediction": {
+        "location": "Lisbon",
+        "budget": "300000",
+        "minBudget": null,
+        "maxBudget": 300000,
+        "propertyType": "apartment",
+        "bedrooms": "2",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Parking"
+        ],
+        "summary": "Buyer is looking for a 2-bedroom apartment in Lisbon with a maximum budget of €300,000. The property is intended to live in. Preferred features include Parking.",
+        "confidence": 100
+      },
+      "error": null,
+      "latency_ms": 22406.23,
+      "matches": {
+        "location": true,
+        "minBudget": true,
+        "maxBudget": true,
+        "propertyType": true,
+        "bedrooms": true,
+        "bathrooms": true,
+        "minArea": true,
+        "maxArea": true,
+        "goal": true,
+        "mustHave": true
+      },
+      "all_fields_correct": true
+    },
+    {
+      "id": "T02",
+      "language": "en",
+      "category": "minimum_budget",
+      "searchText": "Looking for a house in Porto costing at least 200000 euros, with a garden.",
+      "expected": {
+        "location": "Porto",
+        "minBudget": 200000,
+        "maxBudget": null,
+        "propertyType": "house",
+        "bedrooms": "",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Garden"
+        ]
+      },
+      "prediction": {
+        "location": "Porto",
+        "budget": "",
+        "minBudget": 200000,
+        "maxBudget": null,
+        "propertyType": "house",
+        "bedrooms": "",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "invest",
+        "mustHave": [
+          "Garden"
+        ],
+        "summary": "Buyer is looking for a  house in Porto. The property is intended as an investment. Preferred features include Garden.",
+        "confidence": 70
+      },
+      "error": null,
+      "latency_ms": 9614.43,
+      "matches": {
+        "location": true,
+        "minBudget": true,
+        "maxBudget": true,
+        "propertyType": true,
+        "bedrooms": true,
+        "bathrooms": true,
+        "minArea": true,
+        "maxArea": true,
+        "goal": false,
+        "mustHave": true
+      },
+      "all_fields_correct": false
+    },
+    {
+      "id": "T03",
+      "language": "en",
+      "category": "budget_interval",
+      "searchText": "I want a villa in Cascais between 400000 and 650000 euros with a swimming pool.",
+      "expected": {
+        "location": "Cascais",
+        "minBudget": 400000,
+        "maxBudget": 650000,
+        "propertyType": "villa",
+        "bedrooms": "",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Swimming pool"
+        ]
+      },
+      "prediction": {
+        "location": "Cascais",
+        "budget": "650000",
+        "minBudget": 400000,
+        "maxBudget": 650000,
+        "propertyType": "villa",
+        "bedrooms": "",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "invest",
+        "mustHave": [
+          "Swimming pool"
+        ],
+        "summary": "Buyer is looking for a  villa in Cascais with a budget between €400,000 and €650,000. The property is intended as an investment. Preferred features include Swimming pool.",
+        "confidence": 85
+      },
+      "error": null,
+      "latency_ms": 8602.0,
+      "matches": {
+        "location": true,
+        "minBudget": true,
+        "maxBudget": true,
+        "propertyType": true,
+        "bedrooms": true,
+        "bathrooms": true,
+        "minArea": true,
+        "maxArea": true,
+        "goal": false,
+        "mustHave": true
+      },
+      "all_fields_correct": false
+    },
+    {
+      "id": "T04",
+      "language": "fr",
+      "category": "french_maximum",
+      "searchText": "Je cherche un appartement T3 à Benfica, budget maximum 350 000 euros, avec balcon.",
+      "expected": {
+        "location": "Benfica",
+        "minBudget": null,
+        "maxBudget": 350000,
+        "propertyType": "apartment",
+        "bedrooms": "3",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Balcony"
+        ]
+      },
+      "prediction": {
+        "location": "Benfica",
+        "budget": "350000",
+        "minBudget": null,
+        "maxBudget": 350000,
+        "propertyType": "apartment",
+        "bedrooms": "3",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Balcony"
+        ],
+        "summary": "Buyer is looking for a 3-bedroom apartment in Benfica with a maximum budget of €350,000. The property is intended to live in. Preferred features include Balcony.",
+        "confidence": 100
+      },
+      "error": null,
+      "latency_ms": 10279.83,
+      "matches": {
+        "location": true,
+        "minBudget": true,
+        "maxBudget": true,
+        "propertyType": true,
+        "bedrooms": true,
+        "bathrooms": true,
+        "minArea": true,
+        "maxArea": true,
+        "goal": true,
+        "mustHave": true
+      },
+      "all_fields_correct": true
+    },
+    {
+      "id": "T05",
+      "language": "fr",
+      "category": "french_area_minimum",
+      "searchText": "Je souhaite acheter une maison à Sintra avec au moins 120 m² et un jardin.",
+      "expected": {
+        "location": "Sintra",
+        "minBudget": null,
+        "maxBudget": null,
+        "propertyType": "house",
+        "bedrooms": "",
+        "bathrooms": "",
+        "minArea": 120,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Garden"
+        ]
+      },
+      "prediction": {
+        "location": "Sintra",
+        "budget": "",
+        "minBudget": null,
+        "maxBudget": null,
+        "propertyType": "house",
+        "bedrooms": "",
+        "bathrooms": "",
+        "minArea": 120,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Garden"
+        ],
+        "summary": "Buyer is looking for a  house in Sintra. The property is intended to live in. The minimum requested surface is 120 m². Preferred features include Garden.",
+        "confidence": 70
+      },
+      "error": null,
+      "latency_ms": 9207.75,
+      "matches": {
+        "location": true,
+        "minBudget": true,
+        "maxBudget": true,
+        "propertyType": true,
+        "bedrooms": true,
+        "bathrooms": true,
+        "minArea": true,
+        "maxArea": true,
+        "goal": true,
+        "mustHave": true
+      },
+      "all_fields_correct": true
+    },
+    {
+      "id": "T06",
+      "language": "pt",
+      "category": "portuguese_t2",
+      "searchText": "Procuro um apartamento T2 em Almada por menos de 280 mil euros, com garagem.",
+      "expected": {
+        "location": "Almada",
+        "minBudget": null,
+        "maxBudget": 280000,
+        "propertyType": "apartment",
+        "bedrooms": "2",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Parking"
+        ]
+      },
+      "prediction": {
+        "location": "Almada",
+        "budget": "",
+        "minBudget": 280000,
+        "maxBudget": null,
+        "propertyType": "apartment",
+        "bedrooms": "2",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Parking"
+        ],
+        "summary": "Buyer is looking for a 2-bedroom apartment in Almada. The property is intended to live in. Preferred features include Parking.",
+        "confidence": 85
+      },
+      "error": null,
+      "latency_ms": 8295.51,
+      "matches": {
+        "location": true,
+        "minBudget": false,
+        "maxBudget": false,
+        "propertyType": true,
+        "bedrooms": true,
+        "bathrooms": true,
+        "minArea": true,
+        "maxArea": true,
+        "goal": true,
+        "mustHave": true
+      },
+      "all_fields_correct": false
+    },
+    {
+      "id": "T07",
+      "language": "pt",
+      "category": "portuguese_interval",
+      "searchText": "Quero uma moradia em Oeiras entre 300 mil e 450 mil euros, com jardim.",
+      "expected": {
+        "location": "Oeiras",
+        "minBudget": 300000,
+        "maxBudget": 450000,
+        "propertyType": "house",
+        "bedrooms": "",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Garden"
+        ]
+      },
+      "prediction": {
+        "location": "Oeiras",
+        "budget": "450000",
+        "minBudget": 300000,
+        "maxBudget": 450000,
+        "propertyType": "house",
+        "bedrooms": "",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "invest",
+        "mustHave": [
+          "Garden"
+        ],
+        "summary": "Buyer is looking for a  house in Oeiras with a budget between €300,000 and €450,000. The property is intended as an investment. Preferred features include Garden.",
+        "confidence": 85
+      },
+      "error": null,
+      "latency_ms": 8296.26,
+      "matches": {
+        "location": true,
+        "minBudget": true,
+        "maxBudget": true,
+        "propertyType": true,
+        "bedrooms": true,
+        "bathrooms": true,
+        "minArea": true,
+        "maxArea": true,
+        "goal": false,
+        "mustHave": true
+      },
+      "all_fields_correct": false
+    },
+    {
+      "id": "T08",
+      "language": "en",
+      "category": "area_interval_bathrooms",
+      "searchText": "Find a 3-bedroom apartment in Braga, between 90 and 140 m², with 2 bathrooms and an elevator.",
+      "expected": {
+        "location": "Braga",
+        "minBudget": null,
+        "maxBudget": null,
+        "propertyType": "apartment",
+        "bedrooms": "3",
+        "bathrooms": "2",
+        "minArea": 90,
+        "maxArea": 140,
+        "goal": "buy",
+        "mustHave": [
+          "Elevator"
+        ]
+      },
+      "prediction": {
+        "location": "Braga",
+        "budget": "",
+        "minBudget": null,
+        "maxBudget": null,
+        "propertyType": "apartment",
+        "bedrooms": "3",
+        "bathrooms": "2",
+        "minArea": 90,
+        "maxArea": 140,
+        "goal": "buy",
+        "mustHave": [
+          "Elevator"
+        ],
+        "summary": "Buyer is looking for a 3-bedroom apartment in Braga. The property is intended to live in. The property should have 2 bathrooms. The requested surface is between 90 and 140 m². Preferred features include Elevator.",
+        "confidence": 85
+      },
+      "error": null,
+      "latency_ms": 9284.01,
+      "matches": {
+        "location": true,
+        "minBudget": true,
+        "maxBudget": true,
+        "propertyType": true,
+        "bedrooms": true,
+        "bathrooms": true,
+        "minArea": true,
+        "maxArea": true,
+        "goal": true,
+        "mustHave": true
+      },
+      "all_fields_correct": true
+    },
+    {
+      "id": "T09",
+      "language": "fr",
+      "category": "negation",
+      "searchText": "Je veux un appartement à Lisbonne avec parking, mais sans piscine.",
+      "expected": {
+        "location": "Lisbon",
+        "minBudget": null,
+        "maxBudget": null,
+        "propertyType": "apartment",
+        "bedrooms": "",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Parking"
+        ]
+      },
+      "prediction": {
+        "location": "Lisbon",
+        "budget": "",
+        "minBudget": null,
+        "maxBudget": null,
+        "propertyType": "apartment",
+        "bedrooms": "",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "buy",
+        "mustHave": [
+          "Parking"
+        ],
+        "summary": "Buyer is looking for a  apartment in Lisbon. The property is intended to live in. Preferred features include Parking.",
+        "confidence": 70
+      },
+      "error": null,
+      "latency_ms": 9604.56,
+      "matches": {
+        "location": true,
+        "minBudget": true,
+        "maxBudget": true,
+        "propertyType": true,
+        "bedrooms": true,
+        "bathrooms": true,
+        "minArea": true,
+        "maxArea": true,
+        "goal": true,
+        "mustHave": true
+      },
+      "all_fields_correct": true
+    },
+    {
+      "id": "T10",
+      "language": "en",
+      "category": "investment",
+      "searchText": "I am looking to invest in a renovated studio in Alfama near the metro, for up to 180k euros.",
+      "expected": {
+        "location": "Alfama",
+        "minBudget": null,
+        "maxBudget": 180000,
+        "propertyType": "studio",
+        "bedrooms": "0",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "invest",
+        "mustHave": [
+          "Near metro",
+          "Renovated"
+        ]
+      },
+      "prediction": {
+        "location": "Alfama",
+        "budget": "180000",
+        "minBudget": null,
+        "maxBudget": 180000,
+        "propertyType": "studio",
+        "bedrooms": "0",
+        "bathrooms": "",
+        "minArea": null,
+        "maxArea": null,
+        "goal": "invest",
+        "mustHave": [
+          "Renovated",
+          "Near metro"
+        ],
+        "summary": "Buyer is looking for a studio studio in Alfama with a maximum budget of €180,000. The property is intended as an investment. Preferred features include Renovated, Near metro.",
+        "confidence": 100
+      },
+      "error": null,
+      "latency_ms": 9585.07,
+      "matches": {
+        "location": true,
+        "minBudget": true,
+        "maxBudget": true,
+        "propertyType": true,
+        "bedrooms": true,
+        "bathrooms": true,
+        "minArea": true,
+        "maxArea": true,
+        "goal": true,
+        "mustHave": true
+      },
+      "all_fields_correct": true
+    }
+  ]
+}

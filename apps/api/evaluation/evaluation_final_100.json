@@ -1,0 +1,1918 @@
+[
+  {
+    "id": "F001",
+    "language": "en",
+    "category": "maximum_budget",
+    "searchText": "Could you find a penthouse in Faro for no more than €720,000?",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": 720000,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F002",
+    "language": "en",
+    "category": "minimum_budget",
+    "searchText": "Show me villas in Lagos priced above €510,000.",
+    "expected": {
+      "location": "Lagos",
+      "minBudget": 510000,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F003",
+    "language": "en",
+    "category": "budget_interval",
+    "searchText": "I need a townhouse-style house in Aveiro with a price range of €210,000 to €330,000.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": 210000,
+      "maxBudget": 330000,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F004",
+    "language": "en",
+    "category": "bedrooms",
+    "searchText": "Searching for a four-bedroom house in Setúbal.",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "4",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F005",
+    "language": "en",
+    "category": "bathrooms",
+    "searchText": "A flat in Coimbra with at least 2 bathrooms would be ideal.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "2",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F006",
+    "language": "en",
+    "category": "area_minimum",
+    "searchText": "Please find a villa in Tavira with a minimum floor area of 175 sqm.",
+    "expected": {
+      "location": "Tavira",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 175,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F007",
+    "language": "en",
+    "category": "area_maximum",
+    "searchText": "I want a compact apartment in Leiria under 65 m².",
+    "expected": {
+      "location": "Leiria",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 65,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F008",
+    "language": "en",
+    "category": "area_interval",
+    "searchText": "A property in Évora with 85 to 110 square metres, preferably a house.",
+    "expected": {
+      "location": "Évora",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 85,
+      "maxArea": 110,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F009",
+    "language": "en",
+    "category": "investment",
+    "searchText": "For rental yield, I am interested in an apartment in Marvila with a balcony.",
+    "expected": {
+      "location": "Marvila",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "invest",
+      "mustHave": [
+        "Balcony"
+      ]
+    }
+  },
+  {
+    "id": "F010",
+    "language": "en",
+    "category": "relocation",
+    "searchText": "We are relocating to Portugal and need a house in Loures near schools.",
+    "expected": {
+      "location": "Loures",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "relocate",
+      "mustHave": [
+        "Near schools"
+      ]
+    }
+  },
+  {
+    "id": "F011",
+    "language": "en",
+    "category": "retirement",
+    "searchText": "For retirement, I would like a quiet villa in Albufeira.",
+    "expected": {
+      "location": "Albufeira",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "retire",
+      "mustHave": [
+        "Quiet area"
+      ]
+    }
+  },
+  {
+    "id": "F012",
+    "language": "en",
+    "category": "negation",
+    "searchText": "A house in Mafra with a garden but no swimming pool.",
+    "expected": {
+      "location": "Mafra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Garden"
+      ]
+    }
+  },
+  {
+    "id": "F013",
+    "language": "en",
+    "category": "multiple_amenities",
+    "searchText": "Find a renovated apartment in Arroios with a lift and parking.",
+    "expected": {
+      "location": "Arroios",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Renovated",
+        "Elevator",
+        "Parking"
+      ]
+    }
+  },
+  {
+    "id": "F014",
+    "language": "en",
+    "category": "studio",
+    "searchText": "Looking for a studio in Estrela, close to the metro.",
+    "expected": {
+      "location": "Estrela",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near metro"
+      ]
+    }
+  },
+  {
+    "id": "F015",
+    "language": "en",
+    "category": "t_notation",
+    "searchText": "An affordable T4 apartment in Amadora with a balcony.",
+    "expected": {
+      "location": "Amadora",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "4",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Balcony"
+      ]
+    }
+  },
+  {
+    "id": "F016",
+    "language": "en",
+    "category": "unspecified",
+    "searchText": "I am exploring property options in Portugal.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F017",
+    "language": "en",
+    "category": "location_only",
+    "searchText": "I would like to look at homes around Viseu.",
+    "expected": {
+      "location": "Viseu",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F018",
+    "language": "en",
+    "category": "sea_view",
+    "searchText": "Please show penthouses in Belém with a sea view.",
+    "expected": {
+      "location": "Belém",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Sea view"
+      ]
+    }
+  },
+  {
+    "id": "F019",
+    "language": "en",
+    "category": "near_train",
+    "searchText": "Need an apartment in Santarém near a train station.",
+    "expected": {
+      "location": "Santarém",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near train"
+      ]
+    }
+  },
+  {
+    "id": "F020",
+    "language": "en",
+    "category": "pet_friendly",
+    "searchText": "A pet-friendly house in Oeiras is essential.",
+    "expected": {
+      "location": "Oeiras",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Pet friendly"
+      ]
+    }
+  },
+  {
+    "id": "F021",
+    "language": "en",
+    "category": "home_office",
+    "searchText": "I want a villa in Cascais with a dedicated home office.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Home office"
+      ]
+    }
+  },
+  {
+    "id": "F022",
+    "language": "en",
+    "category": "energy_efficiency",
+    "searchText": "An energy-efficient apartment in Parque das Nações is my preference.",
+    "expected": {
+      "location": "Parque das Nações",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Energy efficient"
+      ]
+    }
+  },
+  {
+    "id": "F023",
+    "language": "en",
+    "category": "river_view",
+    "searchText": "Show apartments in Almada with a river view.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "River view"
+      ]
+    }
+  },
+  {
+    "id": "F024",
+    "language": "en",
+    "category": "near_airport",
+    "searchText": "I need a house in Lisboa near the airport.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near airport"
+      ]
+    }
+  },
+  {
+    "id": "F025",
+    "language": "en",
+    "category": "budget_and_area",
+    "searchText": "Find a 2-bedroom flat in Lumiar, at most €410,000, at least 95 m².",
+    "expected": {
+      "location": "Lumiar",
+      "minBudget": null,
+      "maxBudget": 410000,
+      "propertyType": "apartment",
+      "bedrooms": "2",
+      "bathrooms": "",
+      "minArea": 95,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F026",
+    "language": "en",
+    "category": "mixed_constraints",
+    "searchText": "An apartment in Benfica, 3 bathrooms, no more than 160 sqm, and a terrace.",
+    "expected": {
+      "location": "Benfica",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "3",
+      "minArea": null,
+      "maxArea": 160,
+      "goal": "buy",
+      "mustHave": [
+        "Balcony"
+      ]
+    }
+  },
+  {
+    "id": "F027",
+    "language": "en",
+    "category": "minimum_budget",
+    "searchText": "My minimum purchase price is €125,000 for a house in Portimão.",
+    "expected": {
+      "location": "Portimão",
+      "minBudget": 125000,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F028",
+    "language": "en",
+    "category": "maximum_budget",
+    "searchText": "I can spend up to 275k on a villa in Sintra.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": 275000,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F029",
+    "language": "en",
+    "category": "negation",
+    "searchText": "I need a flat in Alvalade without parking but with a balcony.",
+    "expected": {
+      "location": "Alvalade",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Balcony"
+      ]
+    }
+  },
+  {
+    "id": "F030",
+    "language": "en",
+    "category": "city_center",
+    "searchText": "Looking for a studio in Porto city center.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "City center"
+      ]
+    }
+  },
+  {
+    "id": "F031",
+    "language": "en",
+    "category": "near_beach",
+    "searchText": "We want a house in Faro near the beach.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near beach"
+      ]
+    }
+  },
+  {
+    "id": "F032",
+    "language": "en",
+    "category": "bedrooms_and_area",
+    "searchText": "A five-bedroom villa in Cascais with at least 240 m2.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "5",
+      "bathrooms": "",
+      "minArea": 240,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F033",
+    "language": "en",
+    "category": "budget_interval",
+    "searchText": "An apartment in Braga between €145,000 and €225,000 with an elevator.",
+    "expected": {
+      "location": "Braga",
+      "minBudget": 145000,
+      "maxBudget": 225000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Elevator"
+      ]
+    }
+  },
+  {
+    "id": "F034",
+    "language": "en",
+    "category": "retirement_budget",
+    "searchText": "I plan to retire in Lagos and want a house under €390,000.",
+    "expected": {
+      "location": "Lagos",
+      "minBudget": null,
+      "maxBudget": 390000,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "retire",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F035",
+    "language": "fr",
+    "category": "maximum_budget",
+    "searchText": "Je recherche un penthouse à Faro pour un prix ne dépassant pas 680 000 €.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": 680000,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F036",
+    "language": "fr",
+    "category": "minimum_budget",
+    "searchText": "Montrez-moi des maisons à Leiria à partir de 190 000 euros.",
+    "expected": {
+      "location": "Leiria",
+      "minBudget": 190000,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F037",
+    "language": "fr",
+    "category": "budget_interval",
+    "searchText": "Je voudrais une villa à Tavira entre 360 000 et 520 000 euros.",
+    "expected": {
+      "location": "Tavira",
+      "minBudget": 360000,
+      "maxBudget": 520000,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F038",
+    "language": "fr",
+    "category": "bedrooms",
+    "searchText": "Je cherche un appartement avec deux chambres à Arroios.",
+    "expected": {
+      "location": "Arroios",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "2",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F039",
+    "language": "fr",
+    "category": "bathrooms",
+    "searchText": "Je voudrais une maison à Almada avec 3 salles de bain.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "3",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F040",
+    "language": "fr",
+    "category": "area_minimum",
+    "searchText": "Un appartement à Coimbra de 75 m² minimum me conviendrait.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 75,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F041",
+    "language": "fr",
+    "category": "area_maximum",
+    "searchText": "Je préfère un studio à Porto de 45 m² maximum.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 45,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F042",
+    "language": "fr",
+    "category": "area_interval",
+    "searchText": "Je cherche une maison à Setúbal, surface entre 130 et 170 m².",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 130,
+      "maxArea": 170,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F043",
+    "language": "fr",
+    "category": "investment",
+    "searchText": "Pour un investissement locatif, je vise un appartement rénové à Marvila.",
+    "expected": {
+      "location": "Marvila",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "invest",
+      "mustHave": [
+        "Renovated"
+      ]
+    }
+  },
+  {
+    "id": "F044",
+    "language": "fr",
+    "category": "relocation",
+    "searchText": "Nous souhaitons nous installer à Lisbonne et cherchons une maison près des écoles.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "relocate",
+      "mustHave": [
+        "Near schools"
+      ]
+    }
+  },
+  {
+    "id": "F045",
+    "language": "fr",
+    "category": "retirement",
+    "searchText": "Pour ma retraite, je souhaite une villa au calme à Lagos.",
+    "expected": {
+      "location": "Lagos",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "retire",
+      "mustHave": [
+        "Quiet area"
+      ]
+    }
+  },
+  {
+    "id": "F046",
+    "language": "fr",
+    "category": "negation",
+    "searchText": "Un appartement à Benfica avec balcon, mais surtout pas de garage.",
+    "expected": {
+      "location": "Benfica",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Balcony"
+      ]
+    }
+  },
+  {
+    "id": "F047",
+    "language": "fr",
+    "category": "multiple_amenities",
+    "searchText": "Je veux une maison à Mafra avec jardin, piscine et parking.",
+    "expected": {
+      "location": "Mafra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Garden",
+        "Swimming pool",
+        "Parking"
+      ]
+    }
+  },
+  {
+    "id": "F048",
+    "language": "fr",
+    "category": "t_notation",
+    "searchText": "Je cherche un T1 à Oeiras, proche du métro.",
+    "expected": {
+      "location": "Oeiras",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "1",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near metro"
+      ]
+    }
+  },
+  {
+    "id": "F049",
+    "language": "fr",
+    "category": "studio",
+    "searchText": "Un studio à Alfama avec ascenseur serait parfait.",
+    "expected": {
+      "location": "Alfama",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Elevator"
+      ]
+    }
+  },
+  {
+    "id": "F050",
+    "language": "fr",
+    "category": "unspecified",
+    "searchText": "Je voudrais découvrir les biens immobiliers disponibles au Portugal.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F051",
+    "language": "fr",
+    "category": "location_only",
+    "searchText": "Quels logements proposez-vous à Évora ?",
+    "expected": {
+      "location": "Évora",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F052",
+    "language": "fr",
+    "category": "near_beach",
+    "searchText": "Une villa à Albufeira à proximité de la plage.",
+    "expected": {
+      "location": "Albufeira",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near beach"
+      ]
+    }
+  },
+  {
+    "id": "F053",
+    "language": "fr",
+    "category": "river_view",
+    "searchText": "Je cherche un appartement à Belém avec vue sur le fleuve.",
+    "expected": {
+      "location": "Belém",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "River view"
+      ]
+    }
+  },
+  {
+    "id": "F054",
+    "language": "fr",
+    "category": "home_office",
+    "searchText": "Je veux une maison à Sintra avec un bureau pour le télétravail.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Home office"
+      ]
+    }
+  },
+  {
+    "id": "F055",
+    "language": "fr",
+    "category": "pet_friendly",
+    "searchText": "Un appartement à Amadora qui accepte les animaux.",
+    "expected": {
+      "location": "Amadora",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Pet friendly"
+      ]
+    }
+  },
+  {
+    "id": "F056",
+    "language": "fr",
+    "category": "energy_efficiency",
+    "searchText": "Je cherche une maison économe en énergie à Loures.",
+    "expected": {
+      "location": "Loures",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Energy efficient"
+      ]
+    }
+  },
+  {
+    "id": "F057",
+    "language": "fr",
+    "category": "near_train",
+    "searchText": "Un appartement près de la gare à Santarém.",
+    "expected": {
+      "location": "Santarém",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near train"
+      ]
+    }
+  },
+  {
+    "id": "F058",
+    "language": "fr",
+    "category": "city_center",
+    "searchText": "Je préfère un logement en plein centre-ville de Braga.",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "City center"
+      ]
+    }
+  },
+  {
+    "id": "F059",
+    "language": "fr",
+    "category": "near_airport",
+    "searchText": "Une maison à Faro près de l’aéroport.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near airport"
+      ]
+    }
+  },
+  {
+    "id": "F060",
+    "language": "fr",
+    "category": "budget_and_area",
+    "searchText": "Je cherche un T3 à Cascais, au plus 470 000 euros et au moins 110 m².",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": 470000,
+      "propertyType": "apartment",
+      "bedrooms": "3",
+      "bathrooms": "",
+      "minArea": 110,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F061",
+    "language": "fr",
+    "category": "budget_interval",
+    "searchText": "Un appartement à Aveiro avec un budget compris entre 165 000 et 245 000 €.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": 165000,
+      "maxBudget": 245000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F062",
+    "language": "fr",
+    "category": "negation",
+    "searchText": "Une maison à Viseu sans piscine, mais avec un jardin.",
+    "expected": {
+      "location": "Viseu",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Garden"
+      ]
+    }
+  },
+  {
+    "id": "F063",
+    "language": "fr",
+    "category": "bedrooms",
+    "searchText": "Je voudrais une villa de quatre chambres à Oeiras.",
+    "expected": {
+      "location": "Oeiras",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "4",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F064",
+    "language": "fr",
+    "category": "maximum_budget",
+    "searchText": "Je cherche un appartement à Alvalade pour moins de 315 000 euros.",
+    "expected": {
+      "location": "Alvalade",
+      "minBudget": null,
+      "maxBudget": 315000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F065",
+    "language": "fr",
+    "category": "minimum_budget",
+    "searchText": "Mon budget commence à 230 000 euros pour un appartement à Lumiar.",
+    "expected": {
+      "location": "Lumiar",
+      "minBudget": 230000,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F066",
+    "language": "fr",
+    "category": "area_interval",
+    "searchText": "Un penthouse à Parque das Nações entre 115 et 155 m².",
+    "expected": {
+      "location": "Parque das Nações",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 115,
+      "maxArea": 155,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F067",
+    "language": "fr",
+    "category": "multiple_amenities",
+    "searchText": "Je cherche un appartement à Portimão rénové avec ascenseur et balcon.",
+    "expected": {
+      "location": "Portimão",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Renovated",
+        "Elevator",
+        "Balcony"
+      ]
+    }
+  },
+  {
+    "id": "F068",
+    "language": "pt",
+    "category": "maximum_budget",
+    "searchText": "Quero uma penthouse em Faro até 610 mil euros.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": 610000,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F069",
+    "language": "pt",
+    "category": "minimum_budget",
+    "searchText": "Procuro moradias em Lagos por mais de 430 mil euros.",
+    "expected": {
+      "location": "Lagos",
+      "minBudget": 430000,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F070",
+    "language": "pt",
+    "category": "budget_interval",
+    "searchText": "Pretendo uma vivenda em Aveiro entre 220 mil e 315 mil euros.",
+    "expected": {
+      "location": "Aveiro",
+      "minBudget": 220000,
+      "maxBudget": 315000,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F071",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Quero um apartamento com três quartos em Coimbra.",
+    "expected": {
+      "location": "Coimbra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "3",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F072",
+    "language": "pt",
+    "category": "bathrooms",
+    "searchText": "Procuro uma moradia em Sintra com duas casas de banho.",
+    "expected": {
+      "location": "Sintra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "2",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F073",
+    "language": "pt",
+    "category": "area_minimum",
+    "searchText": "Quero uma casa em Évora com pelo menos 145 m².",
+    "expected": {
+      "location": "Évora",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 145,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F074",
+    "language": "pt",
+    "category": "area_maximum",
+    "searchText": "Procuro um apartamento em Braga com no máximo 80 m².",
+    "expected": {
+      "location": "Braga",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": 80,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F075",
+    "language": "pt",
+    "category": "area_interval",
+    "searchText": "Uma moradia em Setúbal com área entre 105 e 155 m².",
+    "expected": {
+      "location": "Setúbal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 105,
+      "maxArea": 155,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F076",
+    "language": "pt",
+    "category": "investment",
+    "searchText": "Quero investir num apartamento em Arroios com varanda.",
+    "expected": {
+      "location": "Arroios",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "invest",
+      "mustHave": [
+        "Balcony"
+      ]
+    }
+  },
+  {
+    "id": "F077",
+    "language": "pt",
+    "category": "relocation",
+    "searchText": "Vou mudar-me para Lisboa e procuro uma casa perto de escolas.",
+    "expected": {
+      "location": "Lisbon",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "relocate",
+      "mustHave": [
+        "Near schools"
+      ]
+    }
+  },
+  {
+    "id": "F078",
+    "language": "pt",
+    "category": "retirement",
+    "searchText": "Para a reforma, quero uma moradia numa zona tranquila em Tavira.",
+    "expected": {
+      "location": "Tavira",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "retire",
+      "mustHave": [
+        "Quiet area"
+      ]
+    }
+  },
+  {
+    "id": "F079",
+    "language": "pt",
+    "category": "negation",
+    "searchText": "Quero um apartamento em Almada com garagem, mas sem piscina.",
+    "expected": {
+      "location": "Almada",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Parking"
+      ]
+    }
+  },
+  {
+    "id": "F080",
+    "language": "pt",
+    "category": "multiple_amenities",
+    "searchText": "Procuro uma casa em Loures com jardim, piscina e varanda.",
+    "expected": {
+      "location": "Loures",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Garden",
+        "Swimming pool",
+        "Balcony"
+      ]
+    }
+  },
+  {
+    "id": "F081",
+    "language": "pt",
+    "category": "t_notation",
+    "searchText": "Preciso de um T4 em Benfica com elevador.",
+    "expected": {
+      "location": "Benfica",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "4",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Elevator"
+      ]
+    }
+  },
+  {
+    "id": "F082",
+    "language": "pt",
+    "category": "studio",
+    "searchText": "Procuro um T0 em Alfama perto do metro.",
+    "expected": {
+      "location": "Alfama",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near metro"
+      ]
+    }
+  },
+  {
+    "id": "F083",
+    "language": "pt",
+    "category": "unspecified",
+    "searchText": "Gostaria de explorar imóveis em Portugal.",
+    "expected": {
+      "location": "Portugal",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F084",
+    "language": "pt",
+    "category": "location_only",
+    "searchText": "Quais são as opções de habitação em Leiria?",
+    "expected": {
+      "location": "Leiria",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F085",
+    "language": "pt",
+    "category": "near_beach",
+    "searchText": "Quero uma vivenda em Albufeira perto da praia.",
+    "expected": {
+      "location": "Albufeira",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near beach"
+      ]
+    }
+  },
+  {
+    "id": "F086",
+    "language": "pt",
+    "category": "river_view",
+    "searchText": "Procuro um apartamento em Belém com vista para o rio.",
+    "expected": {
+      "location": "Belém",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "River view"
+      ]
+    }
+  },
+  {
+    "id": "F087",
+    "language": "pt",
+    "category": "home_office",
+    "searchText": "Quero uma moradia em Cascais com escritório em casa.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Home office"
+      ]
+    }
+  },
+  {
+    "id": "F088",
+    "language": "pt",
+    "category": "pet_friendly",
+    "searchText": "Preciso de um apartamento em Oeiras onde sejam permitidos animais.",
+    "expected": {
+      "location": "Oeiras",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Pet friendly"
+      ]
+    }
+  },
+  {
+    "id": "F089",
+    "language": "pt",
+    "category": "energy_efficiency",
+    "searchText": "Quero uma casa eficiente em termos energéticos em Mafra.",
+    "expected": {
+      "location": "Mafra",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Energy efficient"
+      ]
+    }
+  },
+  {
+    "id": "F090",
+    "language": "pt",
+    "category": "near_train",
+    "searchText": "Procuro um apartamento em Santarém perto da estação de comboios.",
+    "expected": {
+      "location": "Santarém",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near train"
+      ]
+    }
+  },
+  {
+    "id": "F091",
+    "language": "pt",
+    "category": "city_center",
+    "searchText": "Quero um estúdio no centro da cidade do Porto.",
+    "expected": {
+      "location": "Porto",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "studio",
+      "bedrooms": "0",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "City center"
+      ]
+    }
+  },
+  {
+    "id": "F092",
+    "language": "pt",
+    "category": "near_airport",
+    "searchText": "Procuro uma casa em Faro perto do aeroporto.",
+    "expected": {
+      "location": "Faro",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Near airport"
+      ]
+    }
+  },
+  {
+    "id": "F093",
+    "language": "pt",
+    "category": "budget_and_area",
+    "searchText": "Quero um T2 em Lumiar até 390 mil euros e com pelo menos 88 m².",
+    "expected": {
+      "location": "Lumiar",
+      "minBudget": null,
+      "maxBudget": 390000,
+      "propertyType": "apartment",
+      "bedrooms": "2",
+      "bathrooms": "",
+      "minArea": 88,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F094",
+    "language": "pt",
+    "category": "budget_interval",
+    "searchText": "Procuro apartamento em Amadora entre 175 mil e 260 mil euros.",
+    "expected": {
+      "location": "Amadora",
+      "minBudget": 175000,
+      "maxBudget": 260000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F095",
+    "language": "pt",
+    "category": "negation",
+    "searchText": "Quero uma moradia em Viseu com jardim, sem garagem.",
+    "expected": {
+      "location": "Viseu",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Garden"
+      ]
+    }
+  },
+  {
+    "id": "F096",
+    "language": "pt",
+    "category": "bedrooms",
+    "searchText": "Preciso de uma villa com cinco quartos em Cascais.",
+    "expected": {
+      "location": "Cascais",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "villa",
+      "bedrooms": "5",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F097",
+    "language": "pt",
+    "category": "maximum_budget",
+    "searchText": "O meu limite é 295 mil euros para um apartamento em Alvalade.",
+    "expected": {
+      "location": "Alvalade",
+      "minBudget": null,
+      "maxBudget": 295000,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F098",
+    "language": "pt",
+    "category": "minimum_budget",
+    "searchText": "Procuro uma casa em Portimão a partir de 185 mil euros.",
+    "expected": {
+      "location": "Portimão",
+      "minBudget": 185000,
+      "maxBudget": null,
+      "propertyType": "house",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F099",
+    "language": "pt",
+    "category": "area_interval",
+    "searchText": "Quero uma penthouse no Parque das Nações com 100 a 135 m².",
+    "expected": {
+      "location": "Parque das Nações",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "penthouse",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": 100,
+      "maxArea": 135,
+      "goal": "buy",
+      "mustHave": []
+    }
+  },
+  {
+    "id": "F100",
+    "language": "pt",
+    "category": "multiple_amenities",
+    "searchText": "Procuro um apartamento renovado em Marvila com varanda e elevador.",
+    "expected": {
+      "location": "Marvila",
+      "minBudget": null,
+      "maxBudget": null,
+      "propertyType": "apartment",
+      "bedrooms": "",
+      "bathrooms": "",
+      "minArea": null,
+      "maxArea": null,
+      "goal": "buy",
+      "mustHave": [
+        "Renovated",
+        "Balcony",
+        "Elevator"
+      ]
+    }
+  }
+]
