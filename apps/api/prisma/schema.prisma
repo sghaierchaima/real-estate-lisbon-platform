@@ -235,6 +235,8 @@ model Lead {
   bathrooms    Int?
   minBudget    Float?
   maxBudget    Float?
+  minArea      Float?
+  maxArea      Float?
   goal         String?
   mustHave     String[]
   searchText   String?

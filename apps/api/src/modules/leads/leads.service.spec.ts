@@ -1780,7 +1780,131 @@ describe(
             );
           },
         );
+
       },
     );
+
+describe('Property Search Assistant deduplication', () => {
+  const searchDto = {
+    searchText: 'Apartment in Lisbon with parking',
+    location: 'Lisbon',
+    budget: '€250000 - €350000',
+    minBudget: 250000,
+    maxBudget: 350000,
+    minArea: 70,
+    maxArea: 110,
+    propertyType: 'Apartment',
+    bedrooms: 2,
+    bathrooms: 1,
+    goal: 'buy',
+    mustHave: ['Parking'],
+  };
+
+  beforeEach(() => {
+    prisma.user.findUnique.mockResolvedValue(buyer);
+    prisma.property.findMany.mockResolvedValue([]);
+    prisma.lead.findFirst.mockResolvedValue(null);
+
+    prisma.lead.create.mockResolvedValue({
+      ...baseLead,
+      id: 'new-search-lead',
+      source: 'Property Search Assistant',
+      status: LeadStatus.NEW,
+    });
+
+    prisma.lead.findUnique.mockResolvedValue({
+      ...baseLead,
+      id: 'new-search-lead',
+      source: 'Property Search Assistant',
+      status: LeadStatus.NEW,
+      matches: [],
+    });
+
+    leadScoringService.calculateQuality.mockReturnValue(
+      LeadQuality.HOT,
+    );
+
+    autoMatchingService.matchLead.mockResolvedValue({
+      matched: false,
+      count: 0,
+    });
+
+    profileScoreService.updateUserScore.mockResolvedValue(
+      undefined,
+    );
+  });
+
+  it('reuses an identical existing search', async () => {
+    prisma.lead.findFirst.mockResolvedValue({
+      ...baseLead,
+      id: 'existing-search-lead',
+      status: LeadStatus.MATCHED,
+    });
+
+    const result = await service.createFromPropertySearch(
+      searchDto,
+      buyerUser,
+    );
+
+    expect(result.alreadyExists).toBe(true);
+    expect(prisma.lead.create).not.toHaveBeenCalled();
+
+    expect(prisma.lead.findFirst).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: expect.objectContaining({
+          minBudget: 250000,
+          maxBudget: 350000,
+          minArea: 70,
+          maxArea: 110,
+          mustHave: {
+            equals: ['Parking'],
+          },
+        }),
+      }),
+    );
+  });
+
+  it.each([
+    ['minimum budget', { minBudget: 270000 }],
+    ['maximum budget', { maxBudget: 320000 }],
+    ['minimum area', { minArea: 85 }],
+    ['maximum area', { maxArea: 95 }],
+    ['equipment', { mustHave: ['Balcony'] }],
+  ])(
+    'creates a new search when %s differs',
+    async (_criterion, changes) => {
+      const dto = {
+        ...searchDto,
+        ...changes,
+      };
+
+      const result = await service.createFromPropertySearch(
+        dto,
+        buyerUser,
+      );
+
+      expect(result.alreadyExists).toBe(false);
+      expect(prisma.lead.create).toHaveBeenCalledTimes(1);
+
+      expect(prisma.lead.findFirst).toHaveBeenCalledWith(
+        expect.objectContaining({
+          where: expect.objectContaining({
+            minBudget: dto.minBudget,
+            maxBudget: dto.maxBudget,
+            minArea: dto.minArea,
+            maxArea: dto.maxArea,
+            mustHave: {
+              equals: dto.mustHave,
+            },
+          }),
+        }),
+      );
+    },
+  );
+});
+
   },
+
+
+
 );

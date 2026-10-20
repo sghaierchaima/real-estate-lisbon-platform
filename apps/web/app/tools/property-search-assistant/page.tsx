@@ -155,10 +155,10 @@ export default function PropertySearchAssistantPage() {
       );
 
       setMaxBudget(
-        extracted.maxBudget != null
-          ? String(extracted.maxBudget)
-          : extracted.budget || ""
-      );
+  extracted.maxBudget != null
+    ? String(extracted.maxBudget)
+    : ""
+);
 
       setPropertyType(
         extracted.propertyType ||

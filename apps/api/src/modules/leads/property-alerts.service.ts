@@ -68,16 +68,48 @@ export class PropertyAlertsService {
         let notificationsCreated = 0;
         let matchedSearches = 0;
 
-        for (const lead of searches) {
-            if (!lead.userId) {
-                continue;
-            }
+       for (const lead of searches) {
+    if (!lead.userId) {
+        continue;
+    }
 
-            const result =
-                this.calculateMatch(
-                    property,
-                    lead,
-                );
+    // Mandatory price and surface constraints
+    const price = Number(property.price);
+    const area = property.area;
+
+    if (
+        lead.minBudget != null &&
+        (!Number.isFinite(price) || price < lead.minBudget)
+    ) {
+        continue;
+    }
+
+    if (
+        lead.maxBudget != null &&
+        (!Number.isFinite(price) || price > lead.maxBudget)
+    ) {
+        continue;
+    }
+
+    if (
+        lead.minArea != null &&
+        (area == null || area < lead.minArea)
+    ) {
+        continue;
+    }
+
+    if (
+        lead.maxArea != null &&
+        (area == null || area > lead.maxArea)
+    ) {
+        continue;
+    }
+
+    const result =
+        this.calculateMatch(
+            property,
+            lead,
+        );
 
             if (result.score < 70) {
                 continue;

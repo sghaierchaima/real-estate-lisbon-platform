@@ -794,27 +794,27 @@ export class LeadsService {
     const interest =
       `Property Search / ${dto.goal || 'buy'}`;
 
-   const numericBudget = dto.maxBudget;
+    const numericBudget = dto.maxBudget;
 
-if (
-  dto.minBudget != null &&
-  dto.maxBudget != null &&
-  dto.minBudget > dto.maxBudget
-) {
-  throw new BadRequestException(
-    'Minimum budget cannot exceed maximum budget',
-  );
-}
+    if (
+      dto.minBudget != null &&
+      dto.maxBudget != null &&
+      dto.minBudget > dto.maxBudget
+    ) {
+      throw new BadRequestException(
+        'Minimum budget cannot exceed maximum budget',
+      );
+    }
 
-if (
-  dto.minArea != null &&
-  dto.maxArea != null &&
-  dto.minArea > dto.maxArea
-) {
-  throw new BadRequestException(
-    'Minimum surface cannot exceed maximum surface',
-  );
-}
+    if (
+      dto.minArea != null &&
+      dto.maxArea != null &&
+      dto.minArea > dto.maxArea
+    ) {
+      throw new BadRequestException(
+        'Minimum surface cannot exceed maximum surface',
+      );
+    }
 
     /*
      * ==========================================================
@@ -870,41 +870,41 @@ if (
      */
 
     const matchesHardConstraints = (
-  property: (typeof publishedProperties)[number],
-): boolean => {
-  const area = property.area;
-  const price = Number(property.price);
+      property: (typeof publishedProperties)[number],
+    ): boolean => {
+      const area = property.area;
+      const price = Number(property.price);
 
-  if (
-    dto.minArea != null &&
-    (area == null || area < dto.minArea)
-  ) {
-    return false;
-  }
+      if (
+        dto.minArea != null &&
+        (area == null || area < dto.minArea)
+      ) {
+        return false;
+      }
 
-  if (
-    dto.maxArea != null &&
-    (area == null || area > dto.maxArea)
-  ) {
-    return false;
-  }
+      if (
+        dto.maxArea != null &&
+        (area == null || area > dto.maxArea)
+      ) {
+        return false;
+      }
 
-  if (
-    dto.minBudget != null &&
-    (!Number.isFinite(price) || price < dto.minBudget)
-  ) {
-    return false;
-  }
+      if (
+        dto.minBudget != null &&
+        (!Number.isFinite(price) || price < dto.minBudget)
+      ) {
+        return false;
+      }
 
-  if (
-    dto.maxBudget != null &&
-    (!Number.isFinite(price) || price > dto.maxBudget)
-  ) {
-    return false;
-  }
+      if (
+        dto.maxBudget != null &&
+        (!Number.isFinite(price) || price > dto.maxBudget)
+      ) {
+        return false;
+      }
 
-  return true;
-};
+      return true;
+    };
 
     const scoredProperties =
       publishedProperties
@@ -1133,51 +1133,51 @@ if (
             // --------------------------------------------------
 
             if (
-  dto.minBudget != null ||
-  numericBudget != null
-) {
-  totalCriteria += 1;
+              dto.minBudget != null ||
+              numericBudget != null
+            ) {
+              totalCriteria += 1;
 
-  const price = Number(property.price);
+              const price = Number(property.price);
 
-  const withinMinBudget =
-    dto.minBudget == null ||
-    price >= dto.minBudget;
+              const withinMinBudget =
+                dto.minBudget == null ||
+                price >= dto.minBudget;
 
-  const withinMaxBudget =
-    numericBudget == null ||
-    price <= numericBudget;
+              const withinMaxBudget =
+                numericBudget == null ||
+                price <= numericBudget;
 
-  if (
-    Number.isFinite(price) &&
-    withinMinBudget &&
-    withinMaxBudget
-  ) {
-    score += 1;
+              if (
+                Number.isFinite(price) &&
+                withinMinBudget &&
+                withinMaxBudget
+              ) {
+                score += 1;
 
-    matchedCriteria.push(
-      `Within budget (€${price.toLocaleString('en-US')})`,
-    );
-  } else if (
-    numericBudget != null &&
-    price > numericBudget
-  ) {
-    missingCriteria.push(
-      `€${(price - numericBudget).toLocaleString('en-US')} above budget`,
-    );
-  } else if (
-    dto.minBudget != null &&
-    price < dto.minBudget
-  ) {
-    missingCriteria.push(
-      `€${(dto.minBudget - price).toLocaleString('en-US')} below minimum budget`,
-    );
-  } else {
-    missingCriteria.push(
-      'Property price is unavailable',
-    );
-  }
-}
+                matchedCriteria.push(
+                  `Within budget (€${price.toLocaleString('en-US')})`,
+                );
+              } else if (
+                numericBudget != null &&
+                price > numericBudget
+              ) {
+                missingCriteria.push(
+                  `€${(price - numericBudget).toLocaleString('en-US')} above budget`,
+                );
+              } else if (
+                dto.minBudget != null &&
+                price < dto.minBudget
+              ) {
+                missingCriteria.push(
+                  `€${(dto.minBudget - price).toLocaleString('en-US')} below minimum budget`,
+                );
+              } else {
+                missingCriteria.push(
+                  'Property price is unavailable',
+                );
+              }
+            }
 
             // --------------------------------------------------
             // MUST HAVE
@@ -1313,14 +1313,14 @@ if (
          */
 
         .filter(
-  (property) =>
-    property.matchScore >= 70 &&
-    matchesHardConstraints(property),
-)
-.sort(
-  (a, b) =>
-    b.matchScore - a.matchScore,
-);
+          (property) =>
+            property.matchScore >= 70 &&
+            matchesHardConstraints(property),
+        )
+        .sort(
+          (a, b) =>
+            b.matchScore - a.matchScore,
+        );
 
     /*
      * ==========================================================
@@ -1376,8 +1376,22 @@ if (
           bathrooms:
             dto.bathrooms,
 
+          minBudget:
+            dto.minBudget ?? null,
+
           maxBudget:
             numericBudget,
+
+          minArea:
+            dto.minArea ?? null,
+
+                    maxArea:
+            dto.maxArea ?? null,
+
+          mustHave: {
+            equals:
+              dto.mustHave ?? [],
+          },
 
           goal:
             dto.goal,
@@ -1502,6 +1516,12 @@ if (
 
           maxBudget:
             numericBudget,
+
+          minArea:
+            dto.minArea,
+
+          maxArea:
+            dto.maxArea,
 
           goal:
             dto.goal,

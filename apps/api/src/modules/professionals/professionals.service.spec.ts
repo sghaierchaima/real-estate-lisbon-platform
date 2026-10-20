@@ -34,6 +34,10 @@ import {
   CreateProfessionalApplicationDto,
 } from './dto/create-professional-application.dto';
 
+
+import { AutoMatchingService } from '../matching/auto-matching.service';
+import { CloudinaryService } from '../../common/cloudinary/cloudinary.service';
+
 describe(
   'ProfessionalsService',
   () => {
@@ -43,41 +47,41 @@ describe(
     let prisma: {
       user: {
         findUnique:
-          jest.Mock;
+        jest.Mock;
 
         update:
-          jest.Mock;
+        jest.Mock;
       };
 
       professionalProfile: {
         findMany:
-          jest.Mock;
+        jest.Mock;
 
         findUnique:
-          jest.Mock;
+        jest.Mock;
 
         findFirst:
-          jest.Mock;
+        jest.Mock;
 
         create:
-          jest.Mock;
+        jest.Mock;
 
         update:
-          jest.Mock;
+        jest.Mock;
       };
 
       $transaction:
-        jest.Mock;
+      jest.Mock;
     };
 
     let notificationsService: {
       create:
-        jest.Mock;
+      jest.Mock;
     };
 
     let emailService: {
       sendMail:
-        jest.Mock;
+      jest.Mock;
     };
 
     const buyer = {
@@ -207,12 +211,27 @@ describe(
           jest.fn(),
       };
 
+
       service =
         new ProfessionalsService(
           prisma as unknown as PrismaService,
           notificationsService as unknown as NotificationsService,
           emailService as unknown as EmailService,
+         {
+    matchLead: jest.fn(),
+    rematchWaitingLeadsForProfessional:
+      jest.fn().mockResolvedValue(undefined),
+  } as unknown as AutoMatchingService,
+
+          {
+            uploadProfessionalVerification: jest.fn().mockResolvedValue({
+              secure_url: 'https://example.com/test-verification.pdf',
+              public_id: 'test-verification-document',
+            }),
+          } as unknown as CloudinaryService,
+
         );
+
     });
 
     /*
@@ -343,12 +362,10 @@ describe(
         it(
           'should return professional',
           async () => {
-            prisma
-              .professionalProfile
-              .findUnique
-              .mockResolvedValue(
-                pendingProfessional,
-              );
+
+            prisma.professionalProfile.findUnique.mockResolvedValue(
+              pendingProfessional,
+            );
 
             const result =
               await service.findOne(
@@ -641,138 +658,140 @@ describe(
           },
         );
 
-        it(
-          'should approve application and promote user to PROFESSIONAL',
-          async () => {
-            prisma
-              .professionalProfile
-              .findUnique
-              .mockResolvedValue(
-                pendingProfessional,
+
+          it(
+            'should approve application and promote user to PROFESSIONAL',
+            async () => {
+
+              prisma.professionalProfile.findUnique.mockResolvedValue({
+                ...pendingProfessional,
+                verificationDocumentUrl:
+                  'https://example.com/test-verification.pdf',
+              });
+
+
+              const activeProfessional = {
+                ...pendingProfessional,
+
+                verificationStatus:
+                  VerificationStatus.ACTIVE,
+
+                user: {
+                  ...professionalUser,
+
+                  role:
+                    Role.PROFESSIONAL,
+                },
+              };
+
+              const tx = {
+                user: {
+                  update:
+                    jest.fn()
+                      .mockResolvedValue({
+                        ...professionalUser,
+
+                        role:
+                          Role.PROFESSIONAL,
+                      }),
+                },
+
+                professionalProfile: {
+                  update:
+                    jest.fn()
+                      .mockResolvedValue(
+                        activeProfessional,
+                      ),
+                },
+              };
+
+              prisma.$transaction.mockImplementation(
+                async (
+                  callback:
+                    (
+                      transaction: typeof tx,
+                    ) =>
+                      Promise<unknown>,
+                ) =>
+                  callback(
+                    tx,
+                  ),
               );
 
-            const activeProfessional = {
-              ...pendingProfessional,
+              notificationsService
+                .create
+                .mockResolvedValue(
+                  {},
+                );
 
-              verificationStatus:
-                VerificationStatus.ACTIVE,
+              emailService
+                .sendMail
+                .mockResolvedValue(
+                  undefined,
+                );
 
-              user: {
-                ...professionalUser,
+              const result =
+                await service.approve(
+                  'professional-1',
+                );
 
-                role:
-                  Role.PROFESSIONAL,
-              },
-            };
-
-            const tx = {
-              user: {
-                update:
-                  jest.fn()
-                    .mockResolvedValue({
-                      ...professionalUser,
-
-                      role:
-                        Role.PROFESSIONAL,
-                    }),
-              },
-
-              professionalProfile: {
-                update:
-                  jest.fn()
-                    .mockResolvedValue(
-                      activeProfessional,
-                    ),
-              },
-            };
-
-            prisma.$transaction.mockImplementation(
-              async (
-                callback:
-                  (
-                    transaction: typeof tx,
-                  ) =>
-                    Promise<unknown>,
-              ) =>
-                callback(
-                  tx,
-                ),
-            );
-
-            notificationsService
-              .create
-              .mockResolvedValue(
-                {},
-              );
-
-            emailService
-              .sendMail
-              .mockResolvedValue(
-                undefined,
-              );
-
-            const result =
-              await service.approve(
-                'professional-1',
-              );
-
-            expect(
-              tx.user.update,
-            ).toHaveBeenCalledWith({
-              where: {
-                id:
-                  'professional-user-1',
-              },
-
-              data: {
-                role:
-                  Role.PROFESSIONAL,
-              },
-            });
-
-            expect(
-              tx
-                .professionalProfile
-                .update,
-            ).toHaveBeenCalledWith(
-              expect.objectContaining({
+              expect(
+                tx.user.update,
+              ).toHaveBeenCalledWith({
                 where: {
                   id:
-                    'professional-1',
+                    'professional-user-1',
                 },
 
                 data: {
-                  verificationStatus:
-                    VerificationStatus.ACTIVE,
+                  role:
+                    Role.PROFESSIONAL,
                 },
-              }),
-            );
+              });
 
-            expect(
-              notificationsService
-                .create,
-            ).toHaveBeenCalledWith({
-              userId:
-                'professional-user-1',
+              expect(
+                tx
+                  .professionalProfile
+                  .update,
+              ).toHaveBeenCalledWith(
+                expect.objectContaining({
+                  where: {
+                    id:
+                      'professional-1',
+                  },
 
-              title:
-                'Professional Profile Approved',
+                  data: {
+                    verificationStatus:
+                      VerificationStatus.ACTIVE,
+                  },
+                }),
+              );
 
-              message:
-                'Your professional profile has been approved. Sign in again to access your professional workspace.',
+              expect(
+                notificationsService
+                  .create,
+              ).toHaveBeenCalledWith({
+                userId:
+                  'professional-user-1',
 
-              type:
-                NotificationType.SYSTEM,
-            });
+                title:
+                  'Professional Profile Approved',
 
-            expect(
-              result
-                .verificationStatus,
-            ).toBe(
-              VerificationStatus.ACTIVE,
-            );
-          },
-        );
+                message:
+                  'Your professional profile has been approved. Sign in again to access your professional workspace.',
+
+                type:
+                  NotificationType.SYSTEM,
+              });
+
+              expect(
+                result
+                  .verificationStatus,
+              ).toBe(
+                VerificationStatus.ACTIVE,
+              );
+            },
+          );
       },
     );
 
@@ -1347,6 +1366,20 @@ describe(
     describe(
       'apply',
       () => {
+
+        const verificationDocument = {
+          fieldname: 'verificationDocument',
+          originalname: 'verification.pdf',
+          encoding: '7bit',
+          mimetype: 'application/pdf',
+          size: 1024,
+          buffer: Buffer.from('fake-pdf-content'),
+          destination: '',
+          filename: 'verification.pdf',
+          path: '',
+          stream: null,
+        } as unknown as Express.Multer.File;
+
         const applicationDto = {
           professionalType:
             ProfessionalType.PROPERTY_AGENT,
@@ -1377,6 +1410,7 @@ describe(
               service.apply(
                 'missing-user',
                 applicationDto,
+                verificationDocument,
               ),
             ).rejects.toThrow(
               'User not found',
@@ -1400,6 +1434,7 @@ describe(
               service.apply(
                 'admin-1',
                 applicationDto,
+                verificationDocument,
               ),
             ).rejects.toThrow(
               'Administrator accounts cannot submit a professional application',
@@ -1425,6 +1460,7 @@ describe(
               service.apply(
                 buyer.id,
                 applicationDto,
+                verificationDocument,
               ),
             ).rejects.toThrow(
               'Your professional application is already under review',
@@ -1453,6 +1489,7 @@ describe(
               service.apply(
                 professionalUser.id,
                 applicationDto,
+                verificationDocument,
               ),
             ).rejects.toThrow(
               'This account is already an active professional',
@@ -1480,6 +1517,7 @@ describe(
                     '   ',
                   ],
                 },
+                verificationDocument,
               ),
             ).rejects.toThrow(
               'At least one language is required',
@@ -1522,6 +1560,7 @@ describe(
               await service.apply(
                 buyer.id,
                 applicationDto,
+                verificationDocument,
               );
 
             expect(

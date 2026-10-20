@@ -38,6 +38,8 @@ describe(
         create:
           jest.Mock;
       };
+
+
     };
 
     /*
@@ -65,8 +67,11 @@ describe(
       city:
         'Lisbon',
 
-      price:
+            price:
         300000,
+
+      area:
+        90,
 
       propertyType:
         'Apartment',
@@ -110,11 +115,22 @@ describe(
       location:
         'Lisbon',
 
+            minBudget:
+        null,
+
       maxBudget:
         350000,
 
+      minArea:
+        null,
+
+      maxArea:
+        null,
+
       propertyType:
         'Apartment',
+
+
 
       bedrooms:
         2,
@@ -1605,6 +1621,73 @@ describe(
           },
         );
       },
+
     );
+
+describe('hard budget and area constraints', () => {
+  const checkWithLead = async (
+    overrides: Record<string, unknown>,
+    propertyOverrides: Record<string, unknown> = {},
+  ) => {
+    prisma.property.findUnique.mockResolvedValue({
+      ...publishedProperty,
+      ...propertyOverrides,
+    });
+
+    prisma.lead.findMany.mockResolvedValue([
+      {
+        ...matchingLead,
+        ...overrides,
+      },
+    ]);
+
+    prisma.notification.findFirst.mockResolvedValue(null);
+    prisma.notification.create.mockResolvedValue({ id: 'notification-1' });
+    prisma.lead.update.mockResolvedValue({});
+
+    return service.checkNewProperty('property-1');
+  };
+
+  it.each([
+    ['below minimum budget', { minBudget: 350000 }],
+    ['above maximum budget', { maxBudget: 250000 }],
+    ['below minimum area', { minArea: 100 }],
+    ['above maximum area', { maxArea: 80 }],
+  ])('rejects property %s', async (_name, constraints) => {
+    const result = await checkWithLead(constraints);
+
+    expect(result).toEqual({
+      matchedSearches: 0,
+      notificationsCreated: 0,
+    });
+
+    expect(prisma.notification.create).not.toHaveBeenCalled();
+  });
+
+  it('accepts property within all four constraints', async () => {
+    const result = await checkWithLead({
+      minBudget: 250000,
+      maxBudget: 350000,
+      minArea: 80,
+      maxArea: 100,
+    });
+
+    expect(result.matchedSearches).toBe(1);
+    expect(result.notificationsCreated).toBe(1);
+  });
+
+  it('rejects missing area when minimum area is required', async () => {
+    const result = await checkWithLead(
+      { minArea: 80 },
+      { area: null },
+    );
+
+    expect(result.notificationsCreated).toBe(0);
+    expect(result.matchedSearches).toBe(0);
+  });
+});
+
   },
+
+
 );

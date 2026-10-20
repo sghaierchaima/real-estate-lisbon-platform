@@ -665,53 +665,57 @@ describe(
       },
     );
 
-    describe(
-      'apply',
-      () => {
-        it(
-          'should forward authenticated user id and application dto',
-          async () => {
-            const dto =
-              new CreateProfessionalApplicationDto();
 
-            const response = {
-              message:
-                'Professional application submitted successfully',
+describe(
+  'apply',
+  () => {
+    it(
+      'should forward authenticated user id, verification document and application dto',
+      async () => {
+        const dto =
+          new CreateProfessionalApplicationDto();
 
-              professionalProfile: {
-                id:
-                  'professional-1',
-              },
-            };
+        const verificationDocument = {
+          fieldname: 'verificationDocument',
+          originalname: 'verification.pdf',
+          encoding: '7bit',
+          mimetype: 'application/pdf',
+          size: 1024,
+          buffer: Buffer.from('fake-pdf-content'),
+        } as Express.Multer.File;
 
-            professionalsService
-              .apply
-              .mockResolvedValue(
-                response,
-              );
+        const response = {
+          message:
+            'Professional application submitted successfully',
 
-            const result =
-              await controller.apply(
-                buyerRequest as never,
-                dto,
-              );
-
-            expect(
-              professionalsService
-                .apply,
-            ).toHaveBeenCalledWith(
-              'buyer-1',
-              dto,
-            );
-
-            expect(
-              result,
-            ).toEqual(
-              response,
-            );
+          professionalProfile: {
+            id: 'professional-1',
           },
+        };
+
+        professionalsService.apply.mockResolvedValue(
+          response,
         );
+
+        const result = await controller.apply(
+          buyerRequest as never,
+          verificationDocument,
+          dto,
+        );
+
+        expect(
+          professionalsService.apply,
+        ).toHaveBeenCalledWith(
+          'buyer-1',
+          dto,
+          verificationDocument,
+        );
+
+        expect(result).toEqual(response);
       },
     );
+  },
+);
+
   },
 );
