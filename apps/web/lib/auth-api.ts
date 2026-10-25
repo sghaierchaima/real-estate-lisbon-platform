@@ -24,6 +24,7 @@ export async function login(payload: {
   return apiFetch<AuthResponse>("/auth/login", {
     method: "POST",
     body: payload,
+    logoutOnUnauthorized: false,
   });
 }
 
@@ -61,6 +62,7 @@ export async function googleLogin(
       body: {
         idToken,
       },
+      logoutOnUnauthorized: false,
     },
   );
 }
