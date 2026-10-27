@@ -45,7 +45,21 @@ export class MatchingEngineService {
   ): ProfessionalType {
     const value =
       this.normalize(text);
+ /*
+   * TRUE COST CALCULATOR
+   *
+   * Priority routing to TAX_ADVISOR.
+   * Must be checked before LEGAL.
+   */
+  if (
+    value.includes('true cost calculator') ||
+    value.includes('true cost')
+  ) {
+    return ProfessionalType.TAX_ADVISOR;
+  }
 
+
+   
     /*
      * PROPERTY VALUATION
      */
