@@ -84,6 +84,12 @@ export class AutoMatchingService {
       this.matchingEngine.detectProfessionalType(
         `${lead.source || ''} ${lead.interest || ''}`,
       );
+      console.log('[SMART MATCHING DEBUG]', {
+  leadId: lead.id,
+  source: lead.source,
+  interest: lead.interest,
+  requiredType,
+});
 
     /*
      * 2. Only ACTIVE professionals of
@@ -98,6 +104,7 @@ export class AutoMatchingService {
           verificationStatus:
             VerificationStatus.ACTIVE,
         },
+        
 
         include: {
           user: {
@@ -112,6 +119,15 @@ export class AutoMatchingService {
           },
         },
       });
+      console.log('[SMART MATCHING CANDIDATES]', {
+  requiredType,
+  count: professionals.length,
+  professionals: professionals.map((p) => ({
+    id: p.id,
+    type: p.professionalType,
+    status: p.verificationStatus,
+  })),
+});
 
     if (professionals.length === 0) {
       return {
@@ -127,6 +143,25 @@ export class AutoMatchingService {
     /*
      * 3. Calculate all scores.
      */
+    /*
+ * DEBUG: inspect all candidate scores
+ * before applying the 70% threshold.
+ */
+for (const professional of professionals) {
+  const result =
+    this.matchingEngine.calculateDetailedScore(
+      lead,
+      professional,
+    );
+
+  this.logger.log(
+    `[MATCHING SCORE] lead=${lead.id} | ` +
+    `professional=${professional.id} | ` +
+    `type=${professional.professionalType} | ` +
+    `score=${result.score} | ` +
+    `reasons=${JSON.stringify(result.reasons)}`,
+  );
+}
     const candidates =
       professionals
         .map((professional) => {
@@ -169,6 +204,10 @@ export class AutoMatchingService {
         );
 
     if (candidates.length === 0) {
+      this.logger.warn(
+  `[MATCHING] No candidate reached ${this.threshold}% ` +
+  `for lead=${lead.id}, requiredType=${requiredType}`,
+);
       return {
         matched: false,
         reason:
