@@ -267,7 +267,19 @@ ${JSON.stringify(text)}
     try {
       const response = await fetch(`${baseUrl}/api/generate`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(process.env.OLLAMA_BASIC_AUTH_USER &&
+            process.env.OLLAMA_BASIC_AUTH_PASSWORD
+            ? {
+              Authorization:
+                'Basic ' +
+                Buffer.from(
+                  `${process.env.OLLAMA_BASIC_AUTH_USER}:${process.env.OLLAMA_BASIC_AUTH_PASSWORD}`,
+                ).toString('base64'),
+            }
+            : {}),
+        },
         signal: AbortSignal.timeout(60000),
         body: JSON.stringify({
           model,
@@ -1646,18 +1658,18 @@ ${JSON.stringify(text)}
 
     // 2. Minimum before the number
 
-const minimum = new RegExp(
-  String.raw`\b(?:at least|minimum(?:\s+(?:de|floor area of|surface area of|area of))?|min|over|above|more than|au moins|plus de|superieur a|a partir de|pelo menos|mais de|no minimo|acima de)\s+${number}\s*${unit}${end}`,
-  'i',
-);
+    const minimum = new RegExp(
+      String.raw`\b(?:at least|minimum(?:\s+(?:de|floor area of|surface area of|area of))?|min|over|above|more than|au moins|plus de|superieur a|a partir de|pelo menos|mais de|no minimo|acima de)\s+${number}\s*${unit}${end}`,
+      'i',
+    );
 
 
     // 3. Maximum before the number
 
-const maximum = new RegExp(
-  String.raw`\b(?:no more than|not more than|under|below|up to|at most|maximum(?:\s+(?:de|of|surface area of|area of))?|max|less than|moins de|au maximum|au plus|jusqu'a|inferieur a|ate|menos de|no maximo|abaixo de)\s+${number}\s*${unit}${end}`,
-  'i',
-);
+    const maximum = new RegExp(
+      String.raw`\b(?:no more than|not more than|under|below|up to|at most|maximum(?:\s+(?:de|of|surface area of|area of))?|max|less than|moins de|au maximum|au plus|jusqu'a|inferieur a|ate|menos de|no maximo|abaixo de)\s+${number}\s*${unit}${end}`,
+      'i',
+    );
 
 
     // 4. Minimum after the number
