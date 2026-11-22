@@ -15,3 +15,4 @@ Jenkins vérifie la compilation et les tests du backend sur main.
 Si les vérifications réussissent et que le commit est toujours le dernier
 de main, Jenkins publie ce commit sur la branche production.
 Railway et Vercel suivent cette branche pour leurs déploiements de production.
+Les déploiements automatiques Railway sont activés sur la branche production.
